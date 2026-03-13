@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=north,cooked=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon"
+    },
+    "facing=east,cooked=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 90
+    },
+    "facing=south,cooked=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 180
+    },
+    "facing=west,cooked=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 270
+    },
+    "facing=north,cooked=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon"
+    },
+    "facing=east,cooked=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 90
+    },
+    "facing=south,cooked=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 180
+    },
+    "facing=west,cooked=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 270
+    }
+  }
+}

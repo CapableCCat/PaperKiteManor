@@ -1,0 +1,9 @@
+{
+  "type": "papercraft_magic_decoration:papermaking",
+  "ingredient": {
+    "tag": "minecraft:logs"
+  },
+  "result": {
+    "item": "papercraft_magic_decoration:blue_paper_block"
+  }
+}

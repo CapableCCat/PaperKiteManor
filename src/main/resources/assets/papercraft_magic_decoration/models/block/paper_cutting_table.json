@@ -1,0 +1,6 @@
+{
+  "parent": "papercraft_magic_decoration:displaysettings/paper_cutting_table",
+  "textures": {
+    "particle": "papercraft_magic_decoration:block/paper_cutting_table"
+  }
+}

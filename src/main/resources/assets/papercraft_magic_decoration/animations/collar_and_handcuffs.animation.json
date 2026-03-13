@@ -1,0 +1,57 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.collars_and_handcuffs.1": {
+			"animation_length": 0.75,
+			"bones": {
+				"group3": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.25": {
+							"vector": [-4.99527, 0.21782, 2.4905],
+							"easing": "easeOutQuad"
+						},
+						"0.4167": {
+							"vector": [0, 0, -2.5],
+							"easing": "easeOutQuad"
+						},
+						"0.5417": {
+							"vector": [-2.49762, 0.10901, 2.49762],
+							"easing": "easeInOutQuad"
+						},
+						"0.75": {
+							"vector": [0, 0, 0],
+							"easing": "easeInOutQuad"
+						}
+					}
+				},
+				"group5": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.1667": {
+							"vector": [-4.99527, 0.21782, 2.4905],
+							"easing": "easeOutQuad"
+						},
+						"0.3333": {
+							"vector": [0, 0, -2.5],
+							"easing": "easeOutQuad"
+						},
+						"0.4583": {
+							"vector": [-2.49762, 0.10901, 2.49762],
+							"easing": "easeInOutQuad"
+						},
+						"0.75": {
+							"vector": [0, 0, 0],
+							"easing": "easeInOutQuad"
+						}
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

@@ -1,0 +1,11 @@
+{
+  "credit": "Made with Blockbench",
+  "parent": "builtin/entity",
+  "texture_size": [
+    32,
+    32
+  ],
+  "textures": {
+    "particle": "papercraft_magic_decoration:item/gift_from_kazi_manor"
+  }
+}

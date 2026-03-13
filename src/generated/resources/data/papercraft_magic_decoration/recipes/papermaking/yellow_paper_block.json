@@ -1,0 +1,9 @@
+{
+  "type": "papercraft_magic_decoration:papermaking",
+  "ingredient": {
+    "item": "minecraft:moss_block"
+  },
+  "result": {
+    "item": "papercraft_magic_decoration:yellow_paper_block"
+  }
+}

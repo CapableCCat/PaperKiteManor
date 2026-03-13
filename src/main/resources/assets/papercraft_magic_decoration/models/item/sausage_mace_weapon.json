@@ -1,0 +1,6 @@
+{
+  "parent": "papercraft_magic_decoration:displaysettings/sausage_mace_weapon",
+  "textures": {
+    "layer0": "papercraft_magic_decoration:item/sausage_mace_weapon"
+  }
+}
