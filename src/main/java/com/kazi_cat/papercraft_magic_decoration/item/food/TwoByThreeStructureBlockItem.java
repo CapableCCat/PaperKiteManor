@@ -4,6 +4,7 @@ import com.kazi_cat.papercraft_magic_decoration.item.RenamedBlockItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
@@ -39,6 +40,11 @@ public class TwoByThreeStructureBlockItem extends RenamedBlockItem {
         List<BlockState> states = structure.get();
         for (int i = 0; i < 6; i++) {
             level.setBlockAndUpdate(ordered.get(i), states.get(i).trySetValue(HorizontalDirectionalBlock.FACING, direction.getOpposite()));
+        }
+
+        Player player = context.getPlayer();
+        if (!(player != null && player.isCreative())) {
+            context.getItemInHand().shrink(1);
         }
 
         return InteractionResult.SUCCESS;
