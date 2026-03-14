@@ -1,9 +1,10 @@
 package com.kazi_cat.papercraft_magic_decoration.block.food.smeltable;
 
+import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.api.IBlockGeoModelProvider;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.food.smeltable.GeoSmeltableBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.client.model.PathGeoModel;
-import com.kazi_cat.papercraft_magic_decoration.client.model.PathGeoModelFactory;
+import com.kazi_cat.papercraft_magic_decoration.client.model.GeoModelFactory;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
@@ -25,20 +26,11 @@ import java.util.function.Supplier;
 
 @SuppressWarnings("deprecation")
 public class GeoSmeltableBlock extends SmeltableBlock implements IBlockGeoModelProvider {
-    public GeoSmeltableBlock(Properties properties, VoxelShape northShape, int cookingTime, int maxFlipCount,
-                             int flipCooldown, ResourceLocation modelUid, Supplier<ItemStack> rawSupplier, Supplier<ItemStack> resultSupplier) {
+    protected boolean modelRegistered = false;
+
+    public GeoSmeltableBlock(Properties properties, VoxelShape northShape, int cookingTime,
+                             int maxFlipCount, int flipCooldown, Supplier<ItemStack> rawSupplier, Supplier<ItemStack> resultSupplier) {
         super(properties, northShape, cookingTime, maxFlipCount, flipCooldown, rawSupplier, resultSupplier);
-        // 注册 GeckoLib 模型
-        PathGeoModelFactory.put(GeoSmeltableBlockEntity.class, modelUid, "cooked",
-                PathGeoModel.create(GeoSmeltableBlockEntity.class)
-                        .mapper(PathGeoModelFactory.blockMapper())
-                        .texturePrefix("block/").build().get()
-        );
-        PathGeoModelFactory.put(GeoSmeltableBlockEntity.class, modelUid, "raw",
-                PathGeoModel.create(GeoSmeltableBlockEntity.class)
-                        .mapper(PathGeoModelFactory.prefixedBlockMapper("raw_"))
-                        .texturePrefix("block/").build().get()
-        );
     }
 
     @Override
@@ -61,14 +53,34 @@ public class GeoSmeltableBlock extends SmeltableBlock implements IBlockGeoModelP
 
     @Override
     public @Nullable GeoModel<? extends GeoBlockEntity> getModel(GeoBlockEntity animatable) {
+        if (!modelRegistered) {
+            registerModels(getKey());
+            modelRegistered = true;
+        }
+
         if (animatable instanceof GeoSmeltableBlockEntity smeltable) {
             if (smeltable.getBlockState().getValue(COOKED)) {
-                return PathGeoModelFactory.get(GeoSmeltableBlockEntity.class, getKey(), "cooked");
+                return GeoModelFactory.get(GeoSmeltableBlockEntity.class, getKey(), "cooked");
             } else {
-                return PathGeoModelFactory.get(GeoSmeltableBlockEntity.class, getKey(), "raw");
+                return GeoModelFactory.get(GeoSmeltableBlockEntity.class, getKey(), "raw");
             }
         }
         return null;
+    }
+
+    // 注册 GeckoLib 模型
+    @Override
+    public void registerModels(ResourceLocation modelUID) {
+        GeoModelFactory.put(GeoSmeltableBlockEntity.class, modelUID, "cooked",
+                PathGeoModel.create(GeoSmeltableBlockEntity.class)
+                        .mapper(GeoModelFactory.blockMapper())
+                        .texturePrefix("block/").build().get()
+        );
+        GeoModelFactory.put(GeoSmeltableBlockEntity.class, modelUID, "raw",
+                PathGeoModel.create(GeoSmeltableBlockEntity.class)
+                        .mapper(GeoModelFactory.prefixedBlockMapper("raw_"))
+                        .texturePrefix("block/").build().get()
+        );
     }
 
     protected ResourceLocation getKey() {

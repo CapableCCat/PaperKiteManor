@@ -6,6 +6,7 @@ import com.kazi_cat.papercraft_magic_decoration.block.food.smeltable.ChunkySalmo
 import com.kazi_cat.papercraft_magic_decoration.block.food.smeltable.GeoTwoByOneSmeltableBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.food.GlassDrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.PaperCuttingTableBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.food.smeltable.MangaMeatBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.food.smeltable.TwoByOneSmeltableBlock;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.food.smeltable.GeoSmeltableBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.food.GlassDrinkBlockEntity;
@@ -176,7 +177,6 @@ public interface ModBlocks {
                     100,
                     2,
                     21,
-                    PaperKiteManor.resourceLocation("sausage_mace_weapon"),
                     () -> ModItems.RAW_SAUSAGE_MACE_WEAPON.get().getDefaultInstance(),
                     () -> ModItems.SAUSAGE_MACE_WEAPON.get().getDefaultInstance()
             ));
@@ -204,6 +204,16 @@ public interface ModBlocks {
                     () -> ModItems.SMOKED_SALMON_HEAD.get().getDefaultInstance()
             ));
 
+    RegistryObject<Block> MANGA_MEAT = BLOCKS.register("manga_meat", () ->
+            new MangaMeatBlock(
+                    BlockBehaviour.Properties.of().sound(SoundType.SHROOMLIGHT).strength(1f, 10f).noOcclusion(),
+                    Block.box(1, 0, 0, 15, 15, 16),
+                    100,
+                    2,
+                    21,
+                    () -> new ItemStack(ModItems.BLOODY_MARY.get()),
+                    () -> new ItemStack(ModItems.BLOODY_MARY.get())
+            ));
 
     // 剪纸台方块实体
     RegistryObject<BlockEntityType<PaperCuttingTableBlockEntity>> PAPER_CUTTING_TABLE_BE = BLOCK_ENTITIES.register(
@@ -241,7 +251,8 @@ public interface ModBlocks {
     RegistryObject<BlockEntityType<GeoSmeltableBlockEntity>> GEO_SMELTABLE_BE = BLOCK_ENTITIES.register(
             "geo_smeltable_block", () -> BlockEntityType.Builder
                     .of(GeoSmeltableBlockEntity::new,
-                            SAUSAGE_MACE_WEAPON_BLOCK.get()
+                            SAUSAGE_MACE_WEAPON_BLOCK.get(),
+                            MANGA_MEAT.get()
                     ).build(null)
     );
 }

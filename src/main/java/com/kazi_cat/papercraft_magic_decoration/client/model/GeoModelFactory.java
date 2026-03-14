@@ -13,7 +13,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
 
 @SuppressWarnings("unchecked")
-public class PathGeoModelFactory {
+public class GeoModelFactory {
     private static final ConcurrentHashMap<Class<?>, ConcurrentHashMap<ResourceLocation, ConcurrentHashMap<String, GeoModel<?>>>> map;
 
     public static <T extends BlockEntity & GeoBlockEntity> Function<T, ResourceLocation> blockMapper() {
@@ -24,6 +24,20 @@ public class PathGeoModelFactory {
         return  (be) -> {
             ResourceLocation id = Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(be.getBlockState().getBlock()));
             return new ResourceLocation(id.getNamespace(), prefix + id.getPath());
+        };
+    }
+
+    public static <T extends BlockEntity & GeoBlockEntity> Function<T, ResourceLocation> suffixedBlockMapper(String suffix) {
+        return  (be) -> {
+            ResourceLocation id = Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(be.getBlockState().getBlock()));
+            return new ResourceLocation(id.getNamespace(), id.getPath() + suffix);
+        };
+    }
+
+    public static <T extends BlockEntity & GeoBlockEntity> Function<T, ResourceLocation> fullBlockMapper(String prefix, String suffix) {
+        return  (be) -> {
+            ResourceLocation id = Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(be.getBlockState().getBlock()));
+            return new ResourceLocation(id.getNamespace(), prefix + id.getPath() + suffix);
         };
     }
 

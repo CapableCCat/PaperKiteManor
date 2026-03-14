@@ -59,6 +59,8 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.CHUNKY_SALMON.get());
                 output.accept(ModItems.CHUNKY_SMOKED_SALMON.get());
                 output.accept(ModItems.SMOKED_SALMON_HEAD.get());
+                output.accept(ModItems.RAW_MANGA_MEAT.get());
+                output.accept(ModItems.MANGA_MEAT.get());
             }).build());
 
     RegistryObject<CreativeModeTab> MANOR_DECORATION_TAB = TABS.register("manor_decoration", () -> CreativeModeTab.builder()

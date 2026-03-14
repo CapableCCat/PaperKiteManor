@@ -156,4 +156,10 @@ public interface ModItems {
             ModBlocks.CHUNKY_SALMON.get().defaultBlockState().setValue(ChunkySalmonBlock.VARIANT, 3),
             ModBlocks.CHUNKY_SALMON.get().defaultBlockState().setValue(ChunkySalmonBlock.VARIANT, 4)
     ), "jumbo_salmon"));
+
+    RegistryObject<Item> MANGA_MEAT = ITEMS.register("manga_meat", () ->
+            new DisplayBlockItem(ModBlocks.MANGA_MEAT.get(), new Item.Properties(), "manga_meat"));
+
+    RegistryObject<Item> RAW_MANGA_MEAT = ITEMS.register("raw_manga_meat", () ->
+            new DisplayBlockItem(ModBlocks.MANGA_MEAT.get(), new Item.Properties(), "raw_manga_meat"));
 }
