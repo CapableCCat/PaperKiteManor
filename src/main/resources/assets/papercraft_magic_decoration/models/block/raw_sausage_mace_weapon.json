@@ -1,6 +1,6 @@
 {
-  "parent": "papercraft_magic_decoration:displaysettings/raw_sausage_mace_weapon",
+  "parent": "minecraft:block/cube_all",
   "textures": {
-    "particle": "papercraft_magic_decoration:block/raw_sausage_mace_weapon"
+    "all": "papercraft_magic_decoration:block/raw_sausage_mace_weapon"
   }
 }

@@ -1,0 +1,42 @@
+{
+  "variants" : {
+    "facing=north,cooked=false,has_base=false": "0",
+    "facing=east,cooked=false,has_base=false": "0",
+    "facing=south,cooked=false,has_base=false": "0",
+    "facing=west,cooked=false,has_base=false": "0",
+    "facing=north,cooked=true,has_base=false": "1",
+    "facing=east,cooked=true,has_base=false": "1",
+    "facing=south,cooked=true,has_base=false": "1",
+    "facing=west,cooked=true,has_base=false": "1",
+    "facing=north,cooked=false,has_base=true": "2",
+    "facing=east,cooked=false,has_base=true": "2",
+    "facing=south,cooked=false,has_base=true": "2",
+    "facing=west,cooked=false,has_base=true": "2",
+    "facing=north,cooked=true,has_base=true": "3",
+    "facing=east,cooked=true,has_base=true": "3",
+    "facing=south,cooked=true,has_base=true": "3",
+    "facing=west,cooked=true,has_base=true": "3"
+  },
+  "models" : {
+    "0" : {
+      "model": "papercraft_magic_decoration:geo/manga_meat.geo.json",
+      "texture": "papercraft_magic_decoration:textures/block/raw_manga_meat_grill.png",
+      "animation": "papercraft_magic_decoration:animations/manga_meat_grill.animation.json"
+    },
+    "1" : {
+      "model": "papercraft_magic_decoration:geo/manga_meat.geo.json",
+      "texture": "papercraft_magic_decoration:textures/block/manga_meat_grill.png",
+      "animation": "papercraft_magic_decoration:animations/manga_meat_grill.animation.json"
+    },
+    "2" : {
+      "model": "papercraft_magic_decoration:geo/manga_meat_grill.geo.json",
+      "texture": "papercraft_magic_decoration:textures/block/raw_manga_meat_grill.png",
+      "animation": "papercraft_magic_decoration:animations/manga_meat_grill.animation.json"
+    },
+    "3" : {
+      "model": "papercraft_magic_decoration:geo/manga_meat_grill.geo.json",
+      "texture": "papercraft_magic_decoration:textures/block/manga_meat_grill.png",
+      "animation": "papercraft_magic_decoration:animations/manga_meat_grill.animation.json"
+    }
+  }
+}

@@ -18,11 +18,6 @@ public class DataGenerators {
 
         var block = vanillaPack.addProvider(packOutput -> new TagBlock(packOutput, registries, helper));
 
-//        generator.addProvider(event.includeClient(), new BlockModelGenerator(pack, helper));
-//        generator.addProvider(event.includeClient(), new BlockStateGenerator(pack, helper));
-//        generator.addProvider(event.includeClient(), new ItemModelGenerator(pack, helper));
         generator.addProvider(event.includeServer(), new ModRecipeGenerator(pack));
-
-        //var block = vanillaPack.addProvider(packOutput -> new TagBlock(packOutput, registries, helper));
     }
 }

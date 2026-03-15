@@ -47,7 +47,6 @@ public class PaperCuttingTableBlock extends HorizontalDirectionalBlock implement
 
     @Override
     public InteractionResult use(BlockState blockstate, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-        //level.setBlock(pos, blockstate.setValue(ANIMATION, 1), 3);
         if (!(level.getBlockEntity(pos) instanceof PaperCuttingTableBlockEntity table)) {
             return InteractionResult.PASS;
         }
@@ -105,3 +104,4 @@ public class PaperCuttingTableBlock extends HorizontalDirectionalBlock implement
         return shapes.get(state.getValue(FACING));
     }
 }
+

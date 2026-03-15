@@ -1,13 +1,14 @@
 package com.kazi_cat.papercraft_magic_decoration.init;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
-import com.kazi_cat.papercraft_magic_decoration.block.food.smeltable.ChunkySalmonBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.food.smeltable.TwoByOneSmeltableBlock;
-import com.kazi_cat.papercraft_magic_decoration.item.DisplayBlockItem;
-import com.kazi_cat.papercraft_magic_decoration.item.RenamedBlockItem;
-import com.kazi_cat.papercraft_magic_decoration.item.food.TwoByThreeStructureBlockItem;
-import com.kazi_cat.papercraft_magic_decoration.item.tool.AmethystScissorsItem;
+import com.kazi_cat.papercraft_magic_decoration.block.food.ChunkySalmonBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.food.TwoByOneSmeltableBlock;
+import com.kazi_cat.papercraft_magic_decoration.item.GeoBlockItem;
 import com.kazi_cat.papercraft_magic_decoration.item.GlassDrinkBlockItem;
+import com.kazi_cat.papercraft_magic_decoration.item.RenamedBlockItem;
+import com.kazi_cat.papercraft_magic_decoration.item.TwoByThreeStructureBlockItem;
+import com.kazi_cat.papercraft_magic_decoration.item.food.MultiEatGeoBlockItem;
+import com.kazi_cat.papercraft_magic_decoration.item.tool.AmethystScissorsItem;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -124,27 +125,27 @@ public interface ModItems {
 
     // 剪纸台
     RegistryObject<Item> PAPER_CUTTING_TABLE = ITEMS.register("paper_cutting_table", () ->
-            new DisplayBlockItem(ModBlocks.PAPER_CUTTING_TABLE.get(), new Item.Properties(), "paper_cutting_table"));
+            new GeoBlockItem(ModBlocks.PAPER_CUTTING_TABLE.get(), new Item.Properties(), "paper_cutting_table"));
 
     // 烤制食物
     RegistryObject<Item> RAW_SAUSAGE_MACE_WEAPON = ITEMS.register("raw_sausage_mace_weapon", () ->
-            new DisplayBlockItem(ModBlocks.SAUSAGE_MACE_WEAPON_BLOCK.get(), new Item.Properties(), "raw_sausage_mace_weapon"));
+            new GeoBlockItem(ModBlocks.SAUSAGE_MACE_WEAPON_BLOCK.get(), new Item.Properties(), "raw_sausage_mace_weapon"));
 
     RegistryObject<Item> SAUSAGE_MACE_WEAPON = ITEMS.register("sausage_mace_weapon", () ->
-            new DisplayBlockItem(ModBlocks.SAUSAGE_MACE_WEAPON_BLOCK.get(), new Item.Properties(), "sausage_mace_weapon"));
+            new GeoBlockItem(ModBlocks.SAUSAGE_MACE_WEAPON_BLOCK.get(), new Item.Properties(), "sausage_mace_weapon"));
 
-    RegistryObject<Item> CHUNKY_SALMON = ITEMS.register("chunky_salmon", () ->
-            new RenamedBlockItem(ModBlocks.CHUNKY_SALMON.get(),
+    RegistryObject<Item> CUBED_SAUSAGE = ITEMS.register("cubed_sausage", () ->
+            new Item(new Item.Properties().food((new FoodProperties.Builder()).nutrition(14).saturationMod(0.7f).build())));
+
+    RegistryObject<Item> CHUNKY_SALMON = ITEMS.register("chunky_salmon", () -> new RenamedBlockItem(ModBlocks.CHUNKY_SALMON.get(),
                     new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.3f).meat().build()),
                     "chunky_salmon"));
 
-    RegistryObject<Item> CHUNKY_SMOKED_SALMON = ITEMS.register("chunky_smoked_salmon", () ->
-            new RenamedBlockItem(ModBlocks.CHUNKY_SALMON.get(),
+    RegistryObject<Item> CHUNKY_SMOKED_SALMON = ITEMS.register("chunky_smoked_salmon", () -> new RenamedBlockItem(ModBlocks.CHUNKY_SALMON.get(),
                     new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(0.6f).meat().build()),
                     "chunky_smoked_salmon"));
 
-    RegistryObject<Item> SMOKED_SALMON_HEAD = ITEMS.register("smoked_salmon_head", () ->
-            new RenamedBlockItem(ModBlocks.SALMON_HEAD.get(),
+    RegistryObject<Item> SMOKED_SALMON_HEAD = ITEMS.register("smoked_salmon_head", () -> new RenamedBlockItem(ModBlocks.SALMON_HEAD.get(),
                     new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3f).meat().build()),
                     "smoked_salmon_head"));
 
@@ -158,8 +159,16 @@ public interface ModItems {
     ), "jumbo_salmon"));
 
     RegistryObject<Item> MANGA_MEAT = ITEMS.register("manga_meat", () ->
-            new DisplayBlockItem(ModBlocks.MANGA_MEAT.get(), new Item.Properties(), "manga_meat"));
+            new MultiEatGeoBlockItem(ModBlocks.MANGA_MEAT.get(),
+                    new Item.Properties().food(new FoodProperties.Builder().nutrition(15).saturationMod(0.6F).meat().build())
+                            .durability(2).fireResistant(),
+                    "manga_meat", 100));
 
     RegistryObject<Item> RAW_MANGA_MEAT = ITEMS.register("raw_manga_meat", () ->
-            new DisplayBlockItem(ModBlocks.MANGA_MEAT.get(), new Item.Properties(), "raw_manga_meat"));
+            new GeoBlockItem(ModBlocks.MANGA_MEAT.get(), new Item.Properties(), "raw_manga_meat"));
+
+    RegistryObject<Item> MONSTER_STEAK = ITEMS.register("monster_steak", () -> new RenamedBlockItem(ModBlocks.MONSTER_STEAK.get(),
+            new Item.Properties().stacksTo(1), "monster_steak"));
+
+    RegistryObject<Item> LARGE_STEAK = ITEMS.register("large_steak", () -> new Item(new Item.Properties().food((new FoodProperties.Builder()).nutrition(12).saturationMod(0.7f).meat().build())));
 }

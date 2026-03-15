@@ -1,9 +1,9 @@
 package com.kazi_cat.papercraft_magic_decoration.item.tool;
 
+import com.kazi_cat.papercraft_magic_decoration.utils.ItemUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -36,9 +36,7 @@ public class AmethystScissorsItem extends ScissorsItem {
                 context.getItemInHand().hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(context.getHand()));
             }
             level.destroyBlock(pos, false, context.getPlayer(), Block.UPDATE_ALL);
-            ItemEntity itemEntity = new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, new ItemStack(Items.BUDDING_AMETHYST));
-            itemEntity.setDefaultPickUpDelay();
-            level.addFreshEntity(itemEntity);
+            ItemUtils.spawnItemEntity(level, pos.getCenter(), new ItemStack(Items.BUDDING_AMETHYST));
             return InteractionResult.SUCCESS;
         }
 

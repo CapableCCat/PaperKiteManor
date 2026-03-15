@@ -1,7 +1,7 @@
 package com.kazi_cat.papercraft_magic_decoration.item;
 
-import com.kazi_cat.papercraft_magic_decoration.block.food.GlassDrinkBlock;
-import com.kazi_cat.papercraft_magic_decoration.blockentity.food.GlassDrinkBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.block.drink.GlassDrinkBlock;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.GlassDrinkBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;

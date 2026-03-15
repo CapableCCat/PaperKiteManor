@@ -1,10 +1,10 @@
 package com.kazi_cat.papercraft_magic_decoration.item.tool;
 
 import com.kazi_cat.papercraft_magic_decoration.init.ModRecipes;
+import com.kazi_cat.papercraft_magic_decoration.utils.ItemUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.SimpleContainer;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.context.UseOnContext;
@@ -29,9 +29,7 @@ public abstract class ScissorsItem extends ShearsItem {
                         context.getItemInHand().hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(context.getHand()));
                     }
                     level.destroyBlock(pos, false, context.getPlayer(), Block.UPDATE_ALL);
-                    ItemEntity itemEntity = new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, recipe.getResult().copy());
-                    itemEntity.setDefaultPickUpDelay();
-                    level.addFreshEntity(itemEntity);
+                    ItemUtils.spawnItemEntity(level, pos.getCenter(), recipe.getResult().copy());
                     return InteractionResult.SUCCESS;
                 }).orElse(super.useOn(context));
     }

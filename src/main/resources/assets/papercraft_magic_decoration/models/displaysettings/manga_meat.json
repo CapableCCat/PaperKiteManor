@@ -104,6 +104,6 @@
     }
   },
   "textures": {
-    "particle": "papercraft_magic_decoration:block/manga_meat"
+    "particle": "papercraft_magic_decoration:block/manga_meat_particle"
   }
 }

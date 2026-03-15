@@ -22,7 +22,6 @@ public class PaperKiteManor {
 
     public PaperKiteManor() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
         ModBlocks.BLOCKS.register(modEventBus);
         ModBlocks.BLOCK_ENTITIES.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);

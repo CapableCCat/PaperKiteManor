@@ -1,17 +1,15 @@
 package com.kazi_cat.papercraft_magic_decoration.init;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
-import com.kazi_cat.papercraft_magic_decoration.block.food.DrinkBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.food.smeltable.ChunkySalmonBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.food.smeltable.GeoTwoByOneSmeltableBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.food.GlassDrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.PaperCuttingTableBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.food.smeltable.MangaMeatBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.food.smeltable.TwoByOneSmeltableBlock;
-import com.kazi_cat.papercraft_magic_decoration.blockentity.food.smeltable.GeoSmeltableBlockEntity;
-import com.kazi_cat.papercraft_magic_decoration.blockentity.food.GlassDrinkBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.block.decoration.TrayBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.drink.BottleDrinkBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.drink.GlassDrinkBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.food.*;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.AnimatedSmeltableBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.GlassDrinkBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.PaperCuttingTableBlockEntity;
-import com.kazi_cat.papercraft_magic_decoration.blockentity.food.smeltable.SmeltableBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.SmeltableBlockEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
@@ -24,6 +22,8 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.List;
 
 @SuppressWarnings("DataFlowIssue")
 public interface ModBlocks {
@@ -70,32 +70,32 @@ public interface ModBlocks {
     ).offset(1, 0.25).offset(2, 0.5).build());
 
     // 大瓶酒方块
-    RegistryObject<Block> BLAZE_WHISKEY = BLOCKS.register("blaze_whiskey", () -> new DrinkBlock(
+    RegistryObject<Block> BLAZE_WHISKEY = BLOCKS.register("blaze_whiskey", () -> new BottleDrinkBlock(
             Block.box(2, 0, 2, 14, 22, 14),
             () -> new ItemStack(ModItems.GLASS_OF_BLAZE_WHISKEY.get(), 4)
     ));
 
-    RegistryObject<Block> FERRY_WHISKEY = BLOCKS.register("ferry_whiskey", () -> new DrinkBlock(
+    RegistryObject<Block> FERRY_WHISKEY = BLOCKS.register("ferry_whiskey", () -> new BottleDrinkBlock(
             Block.box(2, 0, 2, 14, 20, 14),
             () -> new ItemStack(ModItems.GLASS_OF_FERRY_WHISKEY.get(), 4)
     ));
 
-    RegistryObject<Block> FLY_WHISKEY = BLOCKS.register("fly_whiskey", () -> new DrinkBlock(
+    RegistryObject<Block> FLY_WHISKEY = BLOCKS.register("fly_whiskey", () -> new BottleDrinkBlock(
             Block.box(2, 0, 2, 14, 20, 14),
             () -> new ItemStack(ModItems.GLASS_OF_FLY_WHISKEY.get(), 4)
     ));
 
-    RegistryObject<Block> LAND_NO1 = BLOCKS.register("land_no1", () -> new DrinkBlock(
+    RegistryObject<Block> LAND_NO1 = BLOCKS.register("land_no1", () -> new BottleDrinkBlock(
             Block.box(2, 0, 2, 14, 20, 14),
             () -> new ItemStack(ModItems.GLASS_OF_LAND_NO1.get(), 4)
     ));
 
-    RegistryObject<Block> LUCKY_CACTUS = BLOCKS.register("lucky_cactus", () -> new DrinkBlock(
+    RegistryObject<Block> LUCKY_CACTUS = BLOCKS.register("lucky_cactus", () -> new BottleDrinkBlock(
             Block.box(2, 0, 2, 14, 20, 14),
             () -> new ItemStack(ModItems.GLASS_OF_LUCKY_CACTUS.get(), 4)
     ));
 
-    RegistryObject<Block> POISON_RUM = BLOCKS.register("poison_rum", () -> new DrinkBlock(
+    RegistryObject<Block> POISON_RUM = BLOCKS.register("poison_rum", () -> new BottleDrinkBlock(
             Block.box(2, 0, 2, 14, 20, 14),
             () -> new ItemStack(ModItems.GLASS_OF_POISON_RUM.get(), 4)
     ));
@@ -167,11 +167,11 @@ public interface ModBlocks {
 
     // 可烤制方块
     RegistryObject<Block> SAUSAGE_MACE_WEAPON_BLOCK = BLOCKS.register("sausage_mace_weapon", () ->
-            new GeoTwoByOneSmeltableBlock(
+            new AnimatedTwoByOneSmeltableBlock(
                     BlockBehaviour.Properties.of().sound(SoundType.SHROOMLIGHT).strength(1f, 10f).noOcclusion(),
                     Shapes.or(
                             Block.box(1, 1, 1, 15, 15, 15),
-                            Block.box(6, 6, -16, 10, 10, -16)
+                            Block.box(6, 6, -16, 10, 10, 0)
                     ),
                     Block.box(1, 1, 0, 15, 15, 15),
                     100,
@@ -208,20 +208,36 @@ public interface ModBlocks {
             new MangaMeatBlock(
                     BlockBehaviour.Properties.of().sound(SoundType.SHROOMLIGHT).strength(1f, 10f).noOcclusion(),
                     Block.box(1, 0, 0, 15, 15, 16),
-                    100,
-                    2,
+                    200,
+                    4,
                     21,
-                    () -> new ItemStack(ModItems.BLOODY_MARY.get()),
-                    () -> new ItemStack(ModItems.BLOODY_MARY.get())
+                    () -> new ItemStack(ModItems.RAW_MANGA_MEAT.get()),
+                    () -> new ItemStack(ModItems.MANGA_MEAT.get())
             ));
 
-    // 剪纸台方块实体
-    RegistryObject<BlockEntityType<PaperCuttingTableBlockEntity>> PAPER_CUTTING_TABLE_BE = BLOCK_ENTITIES.register(
-            "paper_cutting_table", () -> BlockEntityType.Builder
-                    .of(PaperCuttingTableBlockEntity::new,
-                            PAPER_CUTTING_TABLE.get()
-                    ).build(null)
-    );
+    RegistryObject<Block> LARGE_STEAK = BLOCKS.register("large_steak", () ->
+            new LargeSteakBlock(BlockBehaviour.Properties.of().sound(SoundType.SHROOMLIGHT).strength(1f, 10f).noOcclusion()));
+
+    RegistryObject<Block> MONSTER_STEAK = BLOCKS.register("monster_steak", () ->
+            new TwoByThreeSmeltableBlock(
+                    BlockBehaviour.Properties.of().sound(SoundType.SHROOMLIGHT).strength(1f, 10f).noOcclusion(),
+                    Block.box(0, 0, 0, 16, 12, 16),
+                    100,
+                    0,
+                    0,
+                    () -> new ItemStack(ModItems.MONSTER_STEAK.get()),
+                    () -> ItemStack.EMPTY,
+                    () -> List.of(
+                            LARGE_STEAK.get().defaultBlockState().setValue(LargeSteakBlock.VARIANT, 1),
+                            LARGE_STEAK.get().defaultBlockState().setValue(LargeSteakBlock.VARIANT, 2),
+                            LARGE_STEAK.get().defaultBlockState().setValue(LargeSteakBlock.VARIANT, 3),
+                            LARGE_STEAK.get().defaultBlockState().setValue(LargeSteakBlock.VARIANT, 4),
+                            LARGE_STEAK.get().defaultBlockState().setValue(LargeSteakBlock.VARIANT, 5),
+                            LARGE_STEAK.get().defaultBlockState().setValue(LargeSteakBlock.VARIANT, 6)
+                    )
+            ));
+
+    RegistryObject<Block> TRAY_BLOCK = BLOCKS.register("tray", TrayBlock::new);
 
     // 杯装酒方块实体
     RegistryObject<BlockEntityType<GlassDrinkBlockEntity>> GLASS_DRINK_BE = BLOCK_ENTITIES.register(
@@ -238,19 +254,28 @@ public interface ModBlocks {
                     ).build(null)
     );
 
+    // 剪纸台方块实体
+    RegistryObject<BlockEntityType<PaperCuttingTableBlockEntity>> PAPER_CUTTING_TABLE_BE = BLOCK_ENTITIES.register(
+            "paper_cutting_table", () -> BlockEntityType.Builder
+                    .of(PaperCuttingTableBlockEntity::new,
+                            PAPER_CUTTING_TABLE.get()
+                    ).build(null)
+    );
+
     // 可烤制方块
     RegistryObject<BlockEntityType<SmeltableBlockEntity>> SMELTABLE_BE = BLOCK_ENTITIES.register(
             "smeltable_block", () -> BlockEntityType.Builder
                     .of(SmeltableBlockEntity::new,
                             CHUNKY_SALMON.get(),
-                            SALMON_HEAD.get()
+                            SALMON_HEAD.get(),
+                            MONSTER_STEAK.get()
                     ).build(null)
     );
 
     // 使用 GeckoLib 模型的可烤制方块
-    RegistryObject<BlockEntityType<GeoSmeltableBlockEntity>> GEO_SMELTABLE_BE = BLOCK_ENTITIES.register(
+    RegistryObject<BlockEntityType<AnimatedSmeltableBlockEntity>> ANIMATED_SMELTABLE_BE = BLOCK_ENTITIES.register(
             "geo_smeltable_block", () -> BlockEntityType.Builder
-                    .of(GeoSmeltableBlockEntity::new,
+                    .of(AnimatedSmeltableBlockEntity::new,
                             SAUSAGE_MACE_WEAPON_BLOCK.get(),
                             MANGA_MEAT.get()
                     ).build(null)
