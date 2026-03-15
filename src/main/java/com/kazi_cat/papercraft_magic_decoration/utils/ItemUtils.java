@@ -6,7 +6,10 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BowlFoodItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.items.ItemHandlerHelper;
@@ -39,5 +42,29 @@ public class ItemUtils {
         ItemEntity itemEntity = new ItemEntity(level, pos.x(), pos.y(), pos.z(), itemStack);
         itemEntity.setDefaultPickUpDelay();
         level.addFreshEntity(itemEntity);
+    }
+
+    public static void spawnItemEntity(Level level, Vec3 pos, ItemStack itemStack, Vec3 deltaMovement) {
+        ItemEntity itemEntity = new ItemEntity(level, pos.x(), pos.y(), pos.z(), itemStack);
+        itemEntity.setDeltaMovement(deltaMovement);
+        itemEntity.setDefaultPickUpDelay();
+        level.addFreshEntity(itemEntity);
+    }
+
+    public static Item getContainerItem(ItemStack stack) {
+        if (stack.isEmpty()) {
+            return Items.AIR;
+        }
+        Item item = stack.getItem();
+        ItemStack remainingItem = item.getCraftingRemainingItem(stack);
+        if (remainingItem != null && !remainingItem.isEmpty()) {
+            return remainingItem.getItem();
+        }
+        if (item instanceof BowlFoodItem) {
+            return Items.BOWL;
+        } else if (stack.is(Items.POTION)) {
+            return Items.GLASS_BOTTLE;
+        }
+        return Items.AIR;
     }
 }

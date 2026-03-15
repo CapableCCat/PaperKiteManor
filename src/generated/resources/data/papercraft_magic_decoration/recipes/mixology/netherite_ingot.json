@@ -1,0 +1,19 @@
+{
+  "type": "papercraft_magic_decoration:mixology",
+  "ingredients": [
+    {
+      "item": "minecraft:coal"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "minecraft:diamond"
+    },
+    []
+  ],
+  "result": {
+    "count": 1,
+    "item": "minecraft:netherite_ingot"
+  }
+}

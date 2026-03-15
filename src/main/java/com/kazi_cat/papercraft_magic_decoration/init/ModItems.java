@@ -24,7 +24,7 @@ public interface ModItems {
     DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, PaperKiteManor.MOD_ID);
 
     // 杯装酒
-    RegistryObject<Item> GLASS_OF_BLAZE_WHISKEY = ITEMS.register("a_glass_of_blaze_whiskey",
+    RegistryObject<Item> GLASS_OF_BLAZE_WHISKEY = ITEMS.register("glass_of_blaze_whiskey",
             () -> new GlassDrinkBlockItem(ModBlocks.GLASS_OF_BLAZE_WHISKEY.get(), GlassDrinkBlockItem.defaultFood.get()
                     .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 400, 0), 1)
                     .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 6000, 1), 1)
@@ -32,35 +32,35 @@ public interface ModItems {
                     .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 6000, 1), 1)
                     .build()));
 
-    RegistryObject<Item> GLASS_OF_FERRY_WHISKEY = ITEMS.register("a_glass_of_ferry_whiskey",
+    RegistryObject<Item> GLASS_OF_FERRY_WHISKEY = ITEMS.register("glass_of_ferry_whiskey",
             () -> new GlassDrinkBlockItem(ModBlocks.GLASS_OF_FERRY_WHISKEY.get(), GlassDrinkBlockItem.defaultFood.get()
                     .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 400, 0), 1)
                     .effect(() -> new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 6000, 1), 1)
                     .effect(() -> new MobEffectInstance(MobEffects.WATER_BREATHING, 6000, 1), 1)
                     .build()));
 
-    RegistryObject<Item> GLASS_OF_FLY_WHISKEY = ITEMS.register("a_glass_of_fly_whiskey",
+    RegistryObject<Item> GLASS_OF_FLY_WHISKEY = ITEMS.register("glass_of_fly_whiskey",
             () -> new GlassDrinkBlockItem(ModBlocks.GLASS_OF_FLY_WHISKEY.get(), GlassDrinkBlockItem.defaultFood.get()
                     .effect(() -> new MobEffectInstance(MobEffects.SLOW_FALLING, 2400, 1), 1)
                     .effect(() -> new MobEffectInstance(MobEffects.LEVITATION, 1200, 1), 1)
                     .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 1400, 1), 1)
                     .build()));
 
-    RegistryObject<Item> GLASS_OF_LAND_NO1 = ITEMS.register("a_glass_of_land_no1",
+    RegistryObject<Item> GLASS_OF_LAND_NO1 = ITEMS.register("glass_of_land_no1",
             () -> new GlassDrinkBlockItem(ModBlocks.GLASS_OF_LAND_NO1.get(), GlassDrinkBlockItem.defaultFood.get()
                     .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 120, 0), 1)
                     .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 6000, 3), 1)
                     .effect(() -> new MobEffectInstance(MobEffects.HEALTH_BOOST, 6000, 2), 1)
                     .build()));
 
-    RegistryObject<Item> GLASS_OF_LUCKY_CACTUS = ITEMS.register("a_glass_of_lucky_cactus",
+    RegistryObject<Item> GLASS_OF_LUCKY_CACTUS = ITEMS.register("glass_of_lucky_cactus",
             () -> new GlassDrinkBlockItem(ModBlocks.GLASS_OF_LUCKY_CACTUS.get(), GlassDrinkBlockItem.defaultFood.get()
                     .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 400, 0), 1)
                     .effect(() -> new MobEffectInstance(MobEffects.LUCK, 6000, 3), 1)
                     .effect(() -> new MobEffectInstance(MobEffects.GLOWING, 6000, 1), 1)
                     .build()));
 
-    RegistryObject<Item> GLASS_OF_POISON_RUM = ITEMS.register("a_glass_of_poison_rum",
+    RegistryObject<Item> GLASS_OF_POISON_RUM = ITEMS.register("glass_of_poison_rum",
             () -> new GlassDrinkBlockItem(ModBlocks.GLASS_OF_POISON_RUM.get(), GlassDrinkBlockItem.defaultFood.get()
                     .effect(() -> new MobEffectInstance(MobEffects.BLINDNESS, 120, 0), 1)
                     .effect(() -> new MobEffectInstance(MobEffects.WITHER, 120, 0), 1)
@@ -82,6 +82,9 @@ public interface ModItems {
                     .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 600, 2), 1)
                     .effect(() -> new MobEffectInstance(MobEffects.SLOW_FALLING, 600, 0), 1)
                     .build()));
+
+    RegistryObject<Item> DEVIL_MARGARITA = ITEMS.register("devil_margarita",
+            () -> new GlassDrinkBlockItem(ModBlocks.DEVIL_MARGARITA.get(), GlassDrinkBlockItem.defaultFood.get().build()));
 
     // 大瓶酒
     RegistryObject<Item> BLAZE_WHISKEY = ITEMS.register("blaze_whiskey",
