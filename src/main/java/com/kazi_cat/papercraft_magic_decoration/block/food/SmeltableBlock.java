@@ -39,20 +39,20 @@ public class SmeltableBlock extends HorizontalDirectionalBlock implements Entity
     public static final BooleanProperty COOKED = BooleanProperty.create("cooked");
     protected final EnumMap<Direction, VoxelShape> shapes;
     protected final int cookingTime;
-    protected final int maxFlipCount;
+    protected final int requiredFlips;
     protected final int flipCooldown;
-    protected final Supplier<ItemStack> rawSupplier;
-    protected final Supplier<ItemStack> resultSupplier;
+    protected final Supplier<ItemStack> ingredient;
+    protected final Supplier<ItemStack> result;
 
-    public SmeltableBlock(Properties properties, VoxelShape northShape, int cookingTime, int maxFlipCount, int flipCooldown,
-                          Supplier<ItemStack> rawSupplier, Supplier<ItemStack> resultSupplier) {
+    public SmeltableBlock(Properties properties, VoxelShape northShape, int cookingTime, int requiredFlips, int flipCooldown,
+                          Supplier<ItemStack> ingredient, Supplier<ItemStack> result) {
         super(properties);
         this.shapes = VoxelShapeUtils.horizontalShapes(northShape);
         this.cookingTime = cookingTime;
-        this.maxFlipCount = maxFlipCount;
+        this.requiredFlips = requiredFlips;
         this.flipCooldown = flipCooldown;
-        this.rawSupplier = rawSupplier;
-        this.resultSupplier = resultSupplier;
+        this.ingredient = ingredient;
+        this.result = result;
 
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(COOKED, false)
@@ -66,7 +66,7 @@ public class SmeltableBlock extends HorizontalDirectionalBlock implements Entity
             return super.use(state, level, pos, player, hand, hitResult);
         }
 
-        if (maxFlipCount > 0 && !player.isSecondaryUseActive() && level.getBlockEntity(pos) instanceof SmeltableBlockEntity smeltable) {
+        if (requiredFlips > 0 && !player.isSecondaryUseActive() && level.getBlockEntity(pos) instanceof SmeltableBlockEntity smeltable) {
             smeltable.onFlip(level, player);
             return InteractionResult.SUCCESS;
         }
@@ -80,7 +80,7 @@ public class SmeltableBlock extends HorizontalDirectionalBlock implements Entity
         ItemStack itemStack = context.getItemInHand();
         return this.defaultBlockState()
                 .setValue(FACING, context.getHorizontalDirection().getOpposite())
-                .setValue(COOKED, resultSupplier.get().is(itemStack.getItem()));
+                .setValue(COOKED, result.get().is(itemStack.getItem()));
     }
 
     @Nullable
@@ -105,7 +105,7 @@ public class SmeltableBlock extends HorizontalDirectionalBlock implements Entity
 
     @Override
     public List<ItemStack> getDrops(BlockState state, LootParams.Builder lootParamsBuilder) {
-        if (state.getValue(COOKED)) return Collections.singletonList(getCooked());
+        if (state.getValue(COOKED)) return Collections.singletonList(getResult());
         BlockEntity parameter = lootParamsBuilder.getParameter(LootContextParams.BLOCK_ENTITY);
         if (parameter instanceof SmeltableBlockEntity smeltable) {
             return Collections.singletonList(smeltable.dropAsItem());
@@ -127,14 +127,14 @@ public class SmeltableBlock extends HorizontalDirectionalBlock implements Entity
     public int getCookingTime() { return this.cookingTime; }
 
     @Override
-    public int getMaxFlipCount() { return this.maxFlipCount; }
+    public int getRequiredFlips() { return this.requiredFlips; }
 
     @Override
     public int getFlipCooldown() { return this.flipCooldown; }
 
     @Override
-    public ItemStack getRaw() { return this.rawSupplier.get(); }
+    public ItemStack getIngredient() { return this.ingredient.get(); }
 
     @Override
-    public ItemStack getCooked() { return this.resultSupplier.get(); }
+    public ItemStack getResult() { return this.result.get(); }
 }

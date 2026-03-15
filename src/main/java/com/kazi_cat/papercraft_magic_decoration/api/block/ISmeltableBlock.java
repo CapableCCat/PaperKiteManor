@@ -24,11 +24,11 @@ public interface ISmeltableBlock {
 
     int getCookingTime();
 
-    int getMaxFlipCount();
+    int getRequiredFlips();
 
     int getFlipCooldown();
 
-    ItemStack getRaw();
+    ItemStack getIngredient();
 
-    ItemStack getCooked();
+    ItemStack getResult();
 }

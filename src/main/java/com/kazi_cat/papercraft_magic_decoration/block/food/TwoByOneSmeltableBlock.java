@@ -44,9 +44,9 @@ public class TwoByOneSmeltableBlock extends SmeltableBlock {
     public static final int BEHIND = 1;
     protected final EnumMap<Direction, VoxelShape> behindShapes;
 
-    public TwoByOneSmeltableBlock(Properties properties, VoxelShape frontShape, VoxelShape behindShape, int cookingTime, int maxFlipCount,
-                                  int flipCooldown, Supplier<ItemStack> rawSupplier, Supplier<ItemStack> resultSupplier) {
-        super(properties, frontShape, cookingTime, maxFlipCount, flipCooldown, rawSupplier, resultSupplier);
+    public TwoByOneSmeltableBlock(Properties properties, VoxelShape frontShape, VoxelShape behindShape, int cookingTime, int requiredFlips,
+                                  int flipCooldown, Supplier<ItemStack> ingredient, Supplier<ItemStack> result) {
+        super(properties, frontShape, cookingTime, requiredFlips, flipCooldown, ingredient, result);
         this.behindShapes = VoxelShapeUtils.horizontalShapes(behindShape);
 
         StateDefinition.Builder<Block, BlockState> builder = new StateDefinition.Builder<>(this);
@@ -84,7 +84,7 @@ public class TwoByOneSmeltableBlock extends SmeltableBlock {
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player,
                                  InteractionHand hand, BlockHitResult hitResult) {
-        if (maxFlipCount <= 0 || player.isSecondaryUseActive() || !player.getItemInHand(hand).isEmpty()) {
+        if (requiredFlips <= 0 || player.isSecondaryUseActive() || !player.getItemInHand(hand).isEmpty()) {
             return InteractionResult.FAIL;
         }
 

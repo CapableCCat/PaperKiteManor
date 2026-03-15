@@ -17,9 +17,9 @@ import java.util.function.Supplier;
 
 @SuppressWarnings("deprecation")
 public class AnimatedTwoByOneSmeltableBlock extends TwoByOneSmeltableBlock{
-    public AnimatedTwoByOneSmeltableBlock(Properties properties, VoxelShape frontShape, VoxelShape behindShape, int cookingTime, int maxFlipCount,
-                                     int flipCooldown, Supplier<ItemStack> rawSupplier, Supplier<ItemStack> resultSupplier) {
-        super(properties, frontShape, behindShape, cookingTime, maxFlipCount, flipCooldown, rawSupplier, resultSupplier);
+    public AnimatedTwoByOneSmeltableBlock(Properties properties, VoxelShape frontShape, VoxelShape behindShape, int cookingTime, int requiredFlips,
+                                     int flipCooldown, Supplier<ItemStack> ingredient, Supplier<ItemStack> result) {
+        super(properties, frontShape, behindShape, cookingTime, requiredFlips, flipCooldown, ingredient, result);
     }
 
     @Override

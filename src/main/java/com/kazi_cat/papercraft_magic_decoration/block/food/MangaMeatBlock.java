@@ -30,9 +30,9 @@ import java.util.function.Supplier;
 public class MangaMeatBlock extends AnimatedSmeltableBlock {
     public static final BooleanProperty HAS_BASE = BooleanProperty.create("has_base");
 
-    public MangaMeatBlock(BlockBehaviour.Properties properties, VoxelShape northShape, int cookingTime, int maxFlipCount,
-                          int flipCooldown, Supplier<ItemStack> rawSupplier, Supplier<ItemStack> resultSupplier) {
-        super(properties, northShape, cookingTime, maxFlipCount, flipCooldown, rawSupplier, resultSupplier);
+    public MangaMeatBlock(BlockBehaviour.Properties properties, VoxelShape northShape, int cookingTime, int requiredFlips,
+                          int flipCooldown, Supplier<ItemStack> ingredient, Supplier<ItemStack> result) {
+        super(properties, northShape, cookingTime, requiredFlips, flipCooldown, ingredient, result);
 
         StateDefinition.Builder<Block, BlockState> builder = new StateDefinition.Builder<>(this);
         this.createBaseBlockStateDefinition(builder);
@@ -72,7 +72,7 @@ public class MangaMeatBlock extends AnimatedSmeltableBlock {
         return this.defaultBlockState()
                 .setValue(HAS_BASE, shouldHasBase(context.getLevel(), context.getClickedPos()))
                 .setValue(FACING, context.getHorizontalDirection().getOpposite())
-                .setValue(COOKED, resultSupplier.get().is(itemStack.getItem()));
+                .setValue(COOKED, result.get().is(itemStack.getItem()));
     }
 
     @Override

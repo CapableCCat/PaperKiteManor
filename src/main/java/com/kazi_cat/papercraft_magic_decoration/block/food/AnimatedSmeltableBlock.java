@@ -18,8 +18,8 @@ import java.util.function.Supplier;
 @SuppressWarnings("deprecation")
 public class AnimatedSmeltableBlock extends SmeltableBlock {
     public AnimatedSmeltableBlock(Properties properties, VoxelShape northShape, int cookingTime,
-                             int maxFlipCount, int flipCooldown, Supplier<ItemStack> rawSupplier, Supplier<ItemStack> resultSupplier) {
-        super(properties, northShape, cookingTime, maxFlipCount, flipCooldown, rawSupplier, resultSupplier);
+                                  int requiredFlips, int flipCooldown, Supplier<ItemStack> ingredient, Supplier<ItemStack> result) {
+        super(properties, northShape, cookingTime, requiredFlips, flipCooldown, ingredient, result);
     }
 
     @Override

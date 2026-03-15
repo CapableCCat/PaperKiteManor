@@ -30,9 +30,9 @@ public class TwoByThreeSmeltableBlock extends SmeltableBlock {
     public static final IntegerProperty POSITION = IntegerProperty.create("position", 1, 6);
     protected final Supplier<List<BlockState>> structure;
 
-    public TwoByThreeSmeltableBlock(Properties properties, VoxelShape northShape, int cookingTime, int maxFlipCount, int flipCooldown,
-                                    Supplier<ItemStack> rawSupplier, Supplier<ItemStack> resultSupplier, Supplier<List<BlockState>> structure) {
-        super(properties, northShape, cookingTime, maxFlipCount, flipCooldown, rawSupplier, resultSupplier);
+    public TwoByThreeSmeltableBlock(Properties properties, VoxelShape northShape, int cookingTime, int requiredFlips, int flipCooldown,
+                                    Supplier<ItemStack> ingredient, Supplier<ItemStack> result, Supplier<List<BlockState>> structure) {
+        super(properties, northShape, cookingTime, requiredFlips, flipCooldown, ingredient, result);
         this.structure = structure;
 
         StateDefinition.Builder<Block, BlockState> builder = new StateDefinition.Builder<>(this);

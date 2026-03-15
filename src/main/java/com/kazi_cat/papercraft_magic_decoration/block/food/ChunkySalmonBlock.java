@@ -19,8 +19,9 @@ import java.util.function.Supplier;
 public class ChunkySalmonBlock extends SmeltableBlock {
     public static final IntegerProperty VARIANT = IntegerProperty.create("variant", 1, 4);
 
-    public ChunkySalmonBlock(Properties properties, VoxelShape northShape, int cookingTime, int maxFlipCount, int flipCooldown, Supplier<ItemStack> rawSupplier, Supplier<ItemStack> resultSupplier) {
-        super(properties, northShape, cookingTime, maxFlipCount, flipCooldown, rawSupplier, resultSupplier);
+    public ChunkySalmonBlock(Properties properties, VoxelShape northShape, int cookingTime, int requiredFlips,
+                             int flipCooldown, Supplier<ItemStack> ingredient, Supplier<ItemStack> result) {
+        super(properties, northShape, cookingTime, requiredFlips, flipCooldown, ingredient, result);
 
         StateDefinition.Builder<Block, BlockState> builder = new StateDefinition.Builder<>(this);
         this.createVariantBlockStateDefinition(builder);

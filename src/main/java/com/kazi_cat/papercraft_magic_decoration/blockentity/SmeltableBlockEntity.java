@@ -51,7 +51,7 @@ public class SmeltableBlockEntity extends BaseBlockEntity implements ISmeltable 
     public boolean onFlip(Level level, LivingEntity user) {
         if (!isInFlipCooldown(level)) {
             lastFlippedTime = level.getGameTime();
-            int maxFlipCount = getMaxFlipCount();
+            int maxFlipCount = getRequiredFlips();
             if (maxFlipCount > 0) {
                 flipCount = Mth.clamp(flipCount + 1, 0, maxFlipCount);
                 return true;
@@ -63,7 +63,7 @@ public class SmeltableBlockEntity extends BaseBlockEntity implements ISmeltable 
     public void cookingTick(Level level) {
         int cookingTime = getCookingTime();
         if (cookingTime <= 0) return;
-        int maxFlipCount = getMaxFlipCount();
+        int maxFlipCount = getRequiredFlips();
         int limit = maxFlipCount == 0 ? cookingTime : cookingTime * flipCount / maxFlipCount;
         if (cookingProgress >= limit) return;
         cookingProgress++;
@@ -90,7 +90,7 @@ public class SmeltableBlockEntity extends BaseBlockEntity implements ISmeltable 
     }
 
     public ItemStack dropAsItem() {
-        ItemStack result = getRaw();
+        ItemStack result = getIngredient();
         CompoundTag tag = new CompoundTag();
         tag.putInt(COOKING_PROGRESS, cookingProgress);
         tag.putInt(FLIP_COUNT, flipCount);
@@ -124,9 +124,9 @@ public class SmeltableBlockEntity extends BaseBlockEntity implements ISmeltable 
         return smeltable == null ? -1 : smeltable.getCookingTime();
     }
 
-    public int getMaxFlipCount() {
+    public int getRequiredFlips() {
         ISmeltableBlock smeltable = getSmeltable();
-        return smeltable == null ? -1 : smeltable.getMaxFlipCount();
+        return smeltable == null ? -1 : smeltable.getRequiredFlips();
     }
 
     public int getFlipCooldown() {
@@ -134,10 +134,10 @@ public class SmeltableBlockEntity extends BaseBlockEntity implements ISmeltable 
         return smeltable == null ? -1 : smeltable.getFlipCooldown();
     }
 
-    public ItemStack getRaw() {
+    public ItemStack getIngredient() {
         ISmeltableBlock smeltable = getSmeltable();
         if (smeltable != null) {
-            return smeltable.getRaw();
+            return smeltable.getIngredient();
         } else {
             return this.getBlockState().getBlock().asItem().getDefaultInstance();
         }
