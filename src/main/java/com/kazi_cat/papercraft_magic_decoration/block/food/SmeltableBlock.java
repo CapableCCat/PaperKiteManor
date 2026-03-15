@@ -1,7 +1,7 @@
 package com.kazi_cat.papercraft_magic_decoration.block.food;
 
 import com.kazi_cat.papercraft_magic_decoration.api.block.ISmeltableBlock;
-import com.kazi_cat.papercraft_magic_decoration.blockentity.SmeltableBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.food.SmeltableBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import com.kazi_cat.papercraft_magic_decoration.utils.VoxelShapeUtils;
 import net.minecraft.core.BlockPos;

@@ -4,12 +4,14 @@ import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.block.PaperCuttingTableBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.TrayBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.BottleDrinkBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.drink.CopperBartenderBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.GlassDrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.food.*;
-import com.kazi_cat.papercraft_magic_decoration.blockentity.AnimatedSmeltableBlockEntity;
-import com.kazi_cat.papercraft_magic_decoration.blockentity.GlassDrinkBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.drink.CopperBartenderBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.food.AnimatedSmeltableBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.drink.GlassDrinkBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.PaperCuttingTableBlockEntity;
-import com.kazi_cat.papercraft_magic_decoration.blockentity.SmeltableBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.food.SmeltableBlockEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
@@ -165,6 +167,9 @@ public interface ModBlocks {
     // 剪纸台方块
     RegistryObject<Block> PAPER_CUTTING_TABLE = BLOCKS.register("paper_cutting_table", PaperCuttingTableBlock::new);
 
+    // 铜酒保方块
+    RegistryObject<Block> COPPER_BARTENDER = BLOCKS.register("copper_bartender", CopperBartenderBlock::new);
+
     // 可烤制方块
     RegistryObject<Block> SAUSAGE_MACE_WEAPON_BLOCK = BLOCKS.register("sausage_mace_weapon", () ->
             new AnimatedTwoByOneSmeltableBlock(
@@ -262,7 +267,7 @@ public interface ModBlocks {
                     ).build(null)
     );
 
-    // 可烤制方块
+    // 可烤制方块实体
     RegistryObject<BlockEntityType<SmeltableBlockEntity>> SMELTABLE_BE = BLOCK_ENTITIES.register(
             "smeltable_block", () -> BlockEntityType.Builder
                     .of(SmeltableBlockEntity::new,
@@ -278,6 +283,14 @@ public interface ModBlocks {
                     .of(AnimatedSmeltableBlockEntity::new,
                             SAUSAGE_MACE_WEAPON_BLOCK.get(),
                             MANGA_MEAT.get()
+                    ).build(null)
+    );
+
+    // 铜酒保方块实体
+    RegistryObject<BlockEntityType<CopperBartenderBlockEntity>> COPPER_BARTENDER_BE = BLOCK_ENTITIES.register(
+            "copper_bartender_block", () -> BlockEntityType.Builder
+                    .of(CopperBartenderBlockEntity::new,
+                            COPPER_BARTENDER.get()
                     ).build(null)
     );
 }

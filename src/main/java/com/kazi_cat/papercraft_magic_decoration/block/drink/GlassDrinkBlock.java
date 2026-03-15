@@ -1,6 +1,6 @@
 package com.kazi_cat.papercraft_magic_decoration.block.drink;
 
-import com.kazi_cat.papercraft_magic_decoration.blockentity.GlassDrinkBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.drink.GlassDrinkBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.utils.VoxelShapeUtils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectArrayMap;
 import net.minecraft.core.BlockPos;

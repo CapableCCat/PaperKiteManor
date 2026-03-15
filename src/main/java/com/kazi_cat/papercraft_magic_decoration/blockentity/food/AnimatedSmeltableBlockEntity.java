@@ -1,4 +1,4 @@
-package com.kazi_cat.papercraft_magic_decoration.blockentity;
+package com.kazi_cat.papercraft_magic_decoration.blockentity.food;
 
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import net.minecraft.core.BlockPos;

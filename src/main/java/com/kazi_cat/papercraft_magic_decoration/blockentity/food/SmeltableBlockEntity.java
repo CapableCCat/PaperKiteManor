@@ -1,7 +1,8 @@
-package com.kazi_cat.papercraft_magic_decoration.blockentity;
+package com.kazi_cat.papercraft_magic_decoration.blockentity.food;
 
 import com.kazi_cat.papercraft_magic_decoration.api.block.ISmeltableBlock;
 import com.kazi_cat.papercraft_magic_decoration.api.blockentity.ISmeltable;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.BaseBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;

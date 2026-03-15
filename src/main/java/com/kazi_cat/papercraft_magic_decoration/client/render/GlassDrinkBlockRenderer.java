@@ -1,7 +1,7 @@
 package com.kazi_cat.papercraft_magic_decoration.client.render;
 
 import com.kazi_cat.papercraft_magic_decoration.block.drink.GlassDrinkBlock;
-import com.kazi_cat.papercraft_magic_decoration.blockentity.GlassDrinkBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.drink.GlassDrinkBlockEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;

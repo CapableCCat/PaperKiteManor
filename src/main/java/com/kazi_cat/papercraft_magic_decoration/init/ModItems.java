@@ -127,6 +127,10 @@ public interface ModItems {
     RegistryObject<Item> PAPER_CUTTING_TABLE = ITEMS.register("paper_cutting_table", () ->
             new GeoBlockItem(ModBlocks.PAPER_CUTTING_TABLE.get(), new Item.Properties(), "paper_cutting_table"));
 
+    // 铜酒保
+    RegistryObject<Item> COPPER_BARTENDER = ITEMS.register("copper_bartender", () ->
+            new GeoBlockItem(ModBlocks.COPPER_BARTENDER.get(), new Item.Properties(), "copper_bartender"));
+
     // 烤制食物
     RegistryObject<Item> RAW_SAUSAGE_MACE_WEAPON = ITEMS.register("raw_sausage_mace_weapon", () ->
             new GeoBlockItem(ModBlocks.SAUSAGE_MACE_WEAPON_BLOCK.get(), new Item.Properties(), "raw_sausage_mace_weapon"));
