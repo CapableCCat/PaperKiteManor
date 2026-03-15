@@ -98,9 +98,9 @@ public class TwoByOneSmeltableBlock extends SmeltableBlock {
                 }
             }
             return InteractionResult.FAIL;
+        } else {
+            return super.use(state, level, pos, player, hand, hitResult);
         }
-
-        return InteractionResult.FAIL;
     }
 
     @Override
