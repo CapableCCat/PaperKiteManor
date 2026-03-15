@@ -62,11 +62,11 @@ public class SmeltableBlock extends HorizontalDirectionalBlock implements Entity
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player,
                                  InteractionHand hand, BlockHitResult hitResult) {
-        if (!player.getItemInHand(hand).isEmpty()) {
+        if (requiredFlips <= 0 || player.isSecondaryUseActive() || !player.getItemInHand(hand).isEmpty()) {
             return super.use(state, level, pos, player, hand, hitResult);
         }
 
-        if (requiredFlips > 0 && !player.isSecondaryUseActive() && level.getBlockEntity(pos) instanceof SmeltableBlockEntity smeltable) {
+        if (level.getBlockEntity(pos) instanceof SmeltableBlockEntity smeltable) {
             smeltable.onFlip(level, player);
             return InteractionResult.SUCCESS;
         }

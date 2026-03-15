@@ -210,7 +210,7 @@ public interface ModBlocks {
                     Block.box(1, 0, 0, 15, 15, 16),
                     200,
                     4,
-                    21,
+                    16,
                     () -> new ItemStack(ModItems.RAW_MANGA_MEAT.get()),
                     () -> new ItemStack(ModItems.MANGA_MEAT.get())
             ));

@@ -13,6 +13,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -41,7 +42,8 @@ public class RightClickEvent {
                         .setValue(TrayBlock.FACING, state.getValue(HorizontalDirectionalBlock.FACING)));
                 success = true;
             } else if (state.is(ModBlocks.SAUSAGE_MACE_WEAPON_BLOCK.get()) && state.getValue(SmeltableBlock.COOKED)) {
-                ItemUtils.spawnItemEntity(level, pos.getCenter(), new ItemStack(ModItems.CUBED_SAUSAGE.get(), 2));
+                ItemUtils.spawnItemEntity(level, pos.getCenter(), new ItemStack(ModItems.CUBED_SAUSAGE.get(), 3));
+                ItemUtils.spawnItemEntity(level, pos.getCenter(), Items.BAMBOO.getDefaultInstance());
                 BlockPos entityPos = state.getValue(TwoByOneSmeltableBlock.POSITION) == 0 ? pos : pos.relative(state.getValue(HorizontalDirectionalBlock.FACING));
                 level.setBlock(entityPos, Blocks.AIR.defaultBlockState(), Block.UPDATE_SUPPRESS_DROPS | Block.UPDATE_ALL);
                 success = true;
@@ -61,6 +63,7 @@ public class RightClickEvent {
                         .setValue(TrayBlock.VARIANT, 2)
                         .setValue(TrayBlock.FACING, state.getValue(HorizontalDirectionalBlock.FACING)));
                 success = true;
+                player.swing(hand);
             }
         }
 
