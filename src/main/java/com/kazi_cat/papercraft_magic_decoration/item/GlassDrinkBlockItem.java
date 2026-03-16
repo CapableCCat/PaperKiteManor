@@ -2,10 +2,12 @@ package com.kazi_cat.papercraft_magic_decoration.item;
 
 import com.kazi_cat.papercraft_magic_decoration.block.drink.GlassDrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.drink.GlassDrinkBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.utils.ItemUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
@@ -76,6 +78,14 @@ public class GlassDrinkBlockItem extends BlockItem {
             be.refresh();
         }
         return super.updateCustomBlockEntityTag(pos, level, player, stack, state);
+    }
+
+    @Override
+    public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
+        if (!(entity instanceof Player player && player.isCreative())) {
+            ItemUtils.getItemToLivingEntity(entity, stack.getCraftingRemainingItem());
+        }
+        return super.finishUsingItem(stack, level, entity);
     }
 
     @Override

@@ -17,16 +17,19 @@ import com.kazi_cat.papercraft_magic_decoration.blockentity.PaperCuttingTableBlo
 import com.kazi_cat.papercraft_magic_decoration.blockentity.food.SmeltableBlockEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -256,6 +259,24 @@ public interface ModBlocks {
 
     // 作物方块
     RegistryObject<Block> COFFEE_PASTINACA_SATIVA = BLOCKS.register("coffee_pastinaca_sativa", CoffeePastinacaSativaCropBlock::new);
+    RegistryObject<Block> COFFEE_PASTINACA_SATIVA_FRUITING_STEM = BLOCKS.register("coffee_pastinaca_sativa_fruiting_stem", () ->
+            new HorizontalDirectionalBlock(BlockBehaviour.Properties.of()
+                    .ignitedByLava()
+                    .instabreak()
+                    .sound(SoundType.LILY_PAD)
+                    .noCollission()
+                    .pushReaction(PushReaction.DESTROY)
+                    .replaceable()) {
+                @Override
+                public @NotNull BlockState rotate(@NotNull BlockState state, @NotNull Rotation rotation) {
+                    return super.rotate(state, rotation);
+                }
+
+                @Override
+                protected void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> builder) {
+                    builder.add(FACING);
+                }
+            });
 
     // 杯装酒方块实体
     RegistryObject<BlockEntityType<GlassDrinkBlockEntity>> GLASS_DRINK_BE = BLOCK_ENTITIES.register(
