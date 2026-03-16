@@ -84,7 +84,7 @@ public class TwoByOneSmeltableBlock extends SmeltableBlock {
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player,
                                  InteractionHand hand, BlockHitResult hitResult) {
-        if (requiredFlips <= 0 || player.isSecondaryUseActive() || !player.getItemInHand(hand).isEmpty()) {
+        if (requiredFlips <= 0 || player.isSecondaryUseActive() || !player.getMainHandItem().isEmpty()) {
             return InteractionResult.FAIL;
         }
 

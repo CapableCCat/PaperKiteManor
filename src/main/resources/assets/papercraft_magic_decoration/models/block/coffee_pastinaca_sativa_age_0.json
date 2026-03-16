@@ -4,7 +4,8 @@
   "render_type": "cutout",
   "texture_size": [32, 32],
   "textures": {
-    "1": "papercraft_magic_decoration:block/coffee_pastinaca_sativa_age_0"
+    "1": "papercraft_magic_decoration:block/coffee_pastinaca_sativa_age_0",
+    "particle": "papercraft_magic_decoration:block/coffee_pastinaca_sativa_age_0"
   },
   "elements": [
     {

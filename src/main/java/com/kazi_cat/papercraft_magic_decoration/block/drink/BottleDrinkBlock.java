@@ -60,7 +60,7 @@ public class BottleDrinkBlock extends HorizontalDirectionalBlock implements Simp
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player,
                                  InteractionHand hand, BlockHitResult hitResult) {
         // 如果是空手，那么可以尝试取得产物
-        if (!player.getItemInHand(hand).isEmpty()) {
+        if (!player.getMainHandItem().isEmpty()) {
             return super.use(state, level, pos, player, hand, hitResult);
         }
 

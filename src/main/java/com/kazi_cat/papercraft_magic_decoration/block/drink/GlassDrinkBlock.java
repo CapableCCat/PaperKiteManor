@@ -85,7 +85,7 @@ public class GlassDrinkBlock extends HorizontalDirectionalBlock implements Simpl
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player,
                                  InteractionHand hand, BlockHitResult hitResult) {
         // 如果是空手，那么可以尝试取回
-        if (!player.getItemInHand(hand).isEmpty()) {
+        if (!player.getMainHandItem().isEmpty()) {
             return super.use(state, level, pos, player, hand, hitResult);
         }
 
