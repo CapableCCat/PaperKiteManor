@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/dirt_hole"
+    },
+    "waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/dirt_hole"
+    }
+  }
+}

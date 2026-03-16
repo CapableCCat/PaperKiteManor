@@ -2,11 +2,14 @@ package com.kazi_cat.papercraft_magic_decoration.init;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.block.PaperCuttingTableBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.crop.CoffeePastinacaSativaCropBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.decoration.DirtHoleBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.TrayBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.BottleDrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.CopperBartenderBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.GlassDrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.food.*;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.decoration.DirtHoleBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.drink.CopperBartenderBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.food.AnimatedSmeltableBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.drink.GlassDrinkBlockEntity;
@@ -248,6 +251,12 @@ public interface ModBlocks {
 
     RegistryObject<Block> TRAY_BLOCK = BLOCKS.register("tray", TrayBlock::new);
 
+    // 土坑方块
+    RegistryObject<Block> DIRT_HOLE = BLOCKS.register("dirt_hole", DirtHoleBlock::new);
+
+    // 作物方块
+    RegistryObject<Block> COFFEE_PASTINACA_SATIVA = BLOCKS.register("coffee_pastinaca_sativa", CoffeePastinacaSativaCropBlock::new);
+
     // 杯装酒方块实体
     RegistryObject<BlockEntityType<GlassDrinkBlockEntity>> GLASS_DRINK_BE = BLOCK_ENTITIES.register(
             "glass_drink", () -> BlockEntityType.Builder
@@ -259,7 +268,8 @@ public interface ModBlocks {
                             GLASS_OF_LUCKY_CACTUS.get(),
                             GLASS_OF_POISON_RUM.get(),
                             BLOODY_MARY.get(),
-                            DIPLOMAT_COFFEE.get()
+                            DIPLOMAT_COFFEE.get(),
+                            DEVIL_MARGARITA.get()
                     ).build(null)
     );
 
@@ -295,6 +305,14 @@ public interface ModBlocks {
             "copper_bartender_block", () -> BlockEntityType.Builder
                     .of(CopperBartenderBlockEntity::new,
                             COPPER_BARTENDER.get()
+                    ).build(null)
+    );
+
+    // 土坑方块实体
+    RegistryObject<BlockEntityType<DirtHoleBlockEntity>> DIRT_HOLE_BE = BLOCK_ENTITIES.register(
+            "dirt_hole", () -> BlockEntityType.Builder
+                    .of(DirtHoleBlockEntity::new,
+                            DIRT_HOLE.get()
                     ).build(null)
     );
 }

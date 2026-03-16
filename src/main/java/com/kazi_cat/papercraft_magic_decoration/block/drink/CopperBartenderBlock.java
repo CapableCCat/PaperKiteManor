@@ -66,11 +66,12 @@ public class CopperBartenderBlock extends HorizontalDirectionalBlock implements 
 
     @Override
     public List<ItemStack> getDrops(BlockState state, LootParams.Builder lootParamsBuilder) {
+        List<ItemStack> stacks = super.getDrops(state, lootParamsBuilder);
         BlockEntity parameter = lootParamsBuilder.getParameter(LootContextParams.BLOCK_ENTITY);
         if (parameter instanceof CopperBartenderBlockEntity bartender) {
-            return bartender.getDrops();
+            stacks.addAll(bartender.getDrops());
         }
-        return super.getDrops(state, lootParamsBuilder);
+        return stacks;
     }
 
     @Override

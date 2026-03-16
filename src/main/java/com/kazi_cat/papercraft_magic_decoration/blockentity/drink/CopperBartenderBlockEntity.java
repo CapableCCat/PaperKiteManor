@@ -3,7 +3,6 @@ package com.kazi_cat.papercraft_magic_decoration.blockentity.drink;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.BaseBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.crafting.recipe.MixologyRecipe;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
-import com.kazi_cat.papercraft_magic_decoration.init.ModItems;
 import com.kazi_cat.papercraft_magic_decoration.init.ModRecipes;
 import com.kazi_cat.papercraft_magic_decoration.inventory.container.CopperBartenderContainer;
 import com.kazi_cat.papercraft_magic_decoration.utils.ItemUtils;
@@ -16,9 +15,7 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
@@ -89,12 +86,8 @@ public class CopperBartenderBlockEntity extends BaseBlockEntity implements GeoBl
                 ItemUtils.spawnItemEntity(level, worldPosition.getCenter(), result, Vec3.ZERO);
             }
         });
-        for (int i = 0; i < this.items.getSlots() - 1; i++) {
-            ItemStack ingredient = this.items.extractItem(i, 1, false);
-            Item container = ItemUtils.getContainerItem(ingredient);
-            if (!container.equals(Items.AIR)) {
-                ItemUtils.spawnItemEntity(level, worldPosition.getCenter(), container.getDefaultInstance(), Vec3.ZERO);
-            }
+        for (int i = 0; i < 4; i++) {
+            this.items.extractItem(i, 1, false);
         }
         refresh();
     }
@@ -150,11 +143,11 @@ public class CopperBartenderBlockEntity extends BaseBlockEntity implements GeoBl
     }
 
     public SimpleContainer getContainer() {
-        SimpleContainer container = new SimpleContainer(this.items.getSlots() - 1);
-        for (int i = 0; i < this.items.getSlots() - 1; i++) {
+        SimpleContainer container = new SimpleContainer(4);
+        for (int i = 0; i < 4; i++) {
             ItemStack stack = this.items.getStackInSlot(i);
             if (!stack.isEmpty()) {
-                container.setItem(this.items.getSlots() - i - 2, stack);
+                container.setItem(3 - i, stack);
             }
         }
         return container;
@@ -168,13 +161,12 @@ public class CopperBartenderBlockEntity extends BaseBlockEntity implements GeoBl
                 drops.add(itemStack);
             }
         }
-        drops.add(ModItems.COPPER_BARTENDER.get().getDefaultInstance());
 
         return drops;
     }
 
     public boolean isInputEmpty() {
-        for (int i = 0; i < this.items.getSlots() - 1; i++) {
+        for (int i = 0; i < 4; i++) {
             if (!items.getStackInSlot(i).isEmpty()) {
                 return false;
             }

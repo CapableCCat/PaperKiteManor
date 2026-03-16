@@ -15,6 +15,7 @@ public interface ModCreativeTabs {
             .icon(ModItems.AMETHYST_SCISSORS.get()::getDefaultInstance)
             .displayItems((par, output) -> {
                 output.accept(ModItems.AMETHYST_SCISSORS.get());
+                output.accept(ModItems.GARDEN_TROWEL.get());
 
                 output.accept(ModItems.BLACK_PAPER_BLOCK.get());
                 output.accept(ModItems.BLUE_PAPER_BLOCK.get());
@@ -67,6 +68,8 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.MANGA_MEAT.get());
                 output.accept(ModItems.MONSTER_STEAK.get());
                 output.accept(ModItems.LARGE_STEAK.get());
+
+                output.accept(ModItems.COFFEE_FRUIT.get());
             }).build());
 
     RegistryObject<CreativeModeTab> MANOR_DECORATION_TAB = TABS.register("manor_decoration", () -> CreativeModeTab.builder()

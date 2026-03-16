@@ -25,6 +25,8 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -34,6 +36,7 @@ import org.jetbrains.annotations.Nullable;
 import org.joml.Vector2i;
 
 import java.util.EnumMap;
+import java.util.List;
 import java.util.function.Supplier;
 
 @SuppressWarnings("all")
@@ -133,6 +136,20 @@ public class GlassDrinkBlock extends HorizontalDirectionalBlock implements Simpl
                 level.levelEvent(LevelEvent.PARTICLES_DESTROY_BLOCK, pos, id);
             }
         }
+    }
+
+    @Override
+    public List<ItemStack> getDrops(BlockState state, LootParams.Builder lootParamsBuilder) {
+        List<ItemStack> stacks = super.getDrops(state, lootParamsBuilder);
+        BlockEntity parameter = lootParamsBuilder.getParameter(LootContextParams.BLOCK_ENTITY);
+        if (parameter instanceof GlassDrinkBlockEntity glass) {
+            glass.getItems().forEach(stack -> {
+                if (!stack.isEmpty()) {
+                    stacks.add(stack);
+                }
+            });
+        }
+        return stacks;
     }
 
     @Override

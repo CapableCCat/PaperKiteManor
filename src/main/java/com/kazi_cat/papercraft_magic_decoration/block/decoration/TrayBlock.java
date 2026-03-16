@@ -30,7 +30,7 @@ public class TrayBlock extends HorizontalDirectionalBlock implements SimpleWater
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final IntegerProperty VARIANT = IntegerProperty.create("variant", 1, 2);
     protected static final EnumMap<Direction, VoxelShape> shapes = VoxelShapeUtils.horizontalShapes(
-            Block.box(0, 0, 0, 16, 3, 16)
+            Block.box(0, 0, 0, 16, 2, 16)
     );
 
     public TrayBlock() {

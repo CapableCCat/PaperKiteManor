@@ -1,6 +1,6 @@
 package com.kazi_cat.papercraft_magic_decoration.inventory.container;
 
-import com.kazi_cat.papercraft_magic_decoration.blockentity.drink.CopperBartenderBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.decoration.DirtHoleBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import com.kazi_cat.papercraft_magic_decoration.init.ModContainers;
 import net.minecraft.network.FriendlyByteBuf;
@@ -18,52 +18,40 @@ import net.minecraftforge.items.SlotItemHandler;
 
 import java.util.Objects;
 
-public class CopperBartenderContainer extends AbstractContainerMenu {
-    public static final MenuType<CopperBartenderContainer> TYPE = IForgeMenuType.create(CopperBartenderContainer::new);
+public class DirtHoleContainer extends AbstractContainerMenu {
+    public static final MenuType<DirtHoleContainer> TYPE = IForgeMenuType.create(DirtHoleContainer::new);
 
-    protected final CopperBartenderBlockEntity blockEntity;
+    protected final DirtHoleBlockEntity blockEntity;
     protected final Level level;
 
-    public CopperBartenderContainer(int containerId, Inventory playerInv, CopperBartenderBlockEntity blockEntity) {
-        super(ModContainers.COPPER_BARTENDER_CONTAINER.get(), containerId);
+    public DirtHoleContainer(int containerId, Inventory playerInv, DirtHoleBlockEntity blockEntity) {
+        super(ModContainers.DIRT_HOLE_CONTAINER.get(), containerId);
         this.blockEntity = blockEntity;
         this.level = playerInv.player.level();
 
         ItemStackHandler items = blockEntity.getItems();
-        this.addSlot(new SlotItemHandler(items, 0, 43, 4){
+        this.addSlot(new SlotItemHandler(items, 0, 71, 29){
             @Override
             public void setChanged() {
                 super.setChanged();
                 blockEntity.setChanged();
             }
         });
-        this.addSlot(new SlotItemHandler(items, 1, 44, 22){
+        this.addSlot(new SlotItemHandler(items, 1, 89, 29){
             @Override
             public void setChanged() {
                 super.setChanged();
                 blockEntity.setChanged();
             }
         });
-        this.addSlot(new SlotItemHandler(items, 2, 43, 40){
+        this.addSlot(new SlotItemHandler(items, 2, 71, 47){
             @Override
             public void setChanged() {
                 super.setChanged();
                 blockEntity.setChanged();
             }
         });
-        this.addSlot(new SlotItemHandler(items, 3, 44, 58){
-            @Override
-            public void setChanged() {
-                super.setChanged();
-                blockEntity.setChanged();
-            }
-        });
-        this.addSlot(new SlotItemHandler(items, 4, 116, 31){
-            @Override
-            public boolean mayPlace(ItemStack stack) {
-                return false;
-            }
-
+        this.addSlot(new SlotItemHandler(items, 3, 89, 47){
             @Override
             public void setChanged() {
                 super.setChanged();
@@ -74,29 +62,16 @@ public class CopperBartenderContainer extends AbstractContainerMenu {
         addPlayerInv(playerInv);
     }
 
-    public CopperBartenderContainer(int containerId, Inventory playerInv, FriendlyByteBuf extraData) {
-        this(containerId, playerInv, (CopperBartenderBlockEntity) Objects.requireNonNull(playerInv.player.level().getBlockEntity(extraData.readBlockPos())));
+    public DirtHoleContainer(int containerId, Inventory playerInv, FriendlyByteBuf extraData) {
+        this(containerId, playerInv, (DirtHoleBlockEntity) Objects.requireNonNull(playerInv.player.level().getBlockEntity(extraData.readBlockPos())));
     }
 
-    private void addPlayerInv(Inventory playerInv) {
+    protected void addPlayerInv(Inventory playerInv) {
         for (int si = 0; si < 3; ++si)
             for (int sj = 0; sj < 9; ++sj)
                 this.addSlot(new Slot(playerInv, sj + (si + 1) * 9, 8 + sj * 18, 84 + si * 18));
         for (int si = 0; si < 9; ++si)
             this.addSlot(new Slot(playerInv, si, 8 + si * 18, 142));
-    }
-
-    @Override
-    public boolean clickMenuButton(Player player, int buttonId) {
-        if (buttonId == 0) {
-            if (!level.isClientSide) {
-                if (blockEntity.tryShake(player.level())) {
-                    player.closeContainer();
-                    return true;
-                }
-            }
-        }
-        return super.clickMenuButton(player, buttonId);
     }
 
     @Override
@@ -106,11 +81,11 @@ public class CopperBartenderContainer extends AbstractContainerMenu {
         if (slot.hasItem()) {
             ItemStack stack2 = slot.getItem();
             stack1 = stack2.copy();
-            if (i > 4) {
-                if (!this.moveItemStackTo(stack2, 0, 5, true)) {
+            if (i > 3) {
+                if (!this.moveItemStackTo(stack2, 0, 4, false)) {
                     return ItemStack.EMPTY;
                 }
-            } else if (!this.moveItemStackTo(stack2, 5, 41, true)) {
+            } else if (!this.moveItemStackTo(stack2, 4, 40, true)) {
                 return ItemStack.EMPTY;
             }
             if (stack2.isEmpty()) {
@@ -124,7 +99,6 @@ public class CopperBartenderContainer extends AbstractContainerMenu {
 
     @Override
     public boolean stillValid(Player player) {
-        return this.blockEntity != null && !this.blockEntity.isShaking()
-                && stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()), player, ModBlocks.COPPER_BARTENDER.get());
+        return this.blockEntity != null && stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()), player, ModBlocks.DIRT_HOLE.get());
     }
 }
