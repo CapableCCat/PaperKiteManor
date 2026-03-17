@@ -5,6 +5,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
@@ -14,11 +15,11 @@ import net.minecraft.world.level.block.state.BlockState;
 import java.util.List;
 import java.util.function.Supplier;
 
-public class TwoByThreeStructureBlockItem extends RenamedBlockItem {
+public class TwoByThreeStructureBlockItem extends ItemNameBlockItem {
     protected final Supplier<List<BlockState>> structure;
 
-    public TwoByThreeStructureBlockItem(Properties properties, Supplier<List<BlockState>> structure, String descriptionId) {
-        super(Blocks.AIR, properties, descriptionId);
+    public TwoByThreeStructureBlockItem(Properties properties, Supplier<List<BlockState>> structure) {
+        super(Blocks.AIR, properties);
         this.structure = structure;
     }
 

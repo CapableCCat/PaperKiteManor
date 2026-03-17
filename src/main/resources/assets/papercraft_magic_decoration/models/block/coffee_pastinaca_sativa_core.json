@@ -6,6 +6,7 @@
     "south": "papercraft_magic_decoration:block/coffee_pastinaca_sativa_side",
     "west": "papercraft_magic_decoration:block/coffee_pastinaca_sativa_side",
     "up": "papercraft_magic_decoration:block/coffee_pastinaca_sativa_top",
-    "down": "papercraft_magic_decoration:block/coffee_pastinaca_sativa_bottom"
+    "down": "papercraft_magic_decoration:block/coffee_pastinaca_sativa_bottom",
+    "particle": "papercraft_magic_decoration:block/coffee_pastinaca_sativa_side"
   }
 }

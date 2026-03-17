@@ -2,6 +2,7 @@ package com.kazi_cat.papercraft_magic_decoration.item;
 
 import com.kazi_cat.papercraft_magic_decoration.client.render.BaseGeoItemRenderer;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
+import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import software.bernie.geckolib.animatable.GeoItem;
@@ -14,11 +15,11 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.function.Consumer;
 
-public class GeoBlockItem extends RenamedBlockItem implements GeoItem {
+public class GeoBlockItem extends ItemNameBlockItem implements GeoItem {
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
-    public GeoBlockItem(Block block, Properties settings, String descriptionId) {
-        super(block, settings, descriptionId);
+    public GeoBlockItem(Block block, Properties settings) {
+        super(block, settings);
     }
 
     @Override

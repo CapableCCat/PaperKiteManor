@@ -1,0 +1,61 @@
+{
+  "type": "minecraft:block",
+  "functions": [
+    {
+      "function": "minecraft:explosion_decay"
+    }
+  ],
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "block": "papercraft_magic_decoration:coffee_pastinaca_sativa",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "age": "0"
+                  }
+                }
+              ],
+              "name": "papercraft_magic_decoration:coffee_fruit"
+            },
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "block": "papercraft_magic_decoration:coffee_pastinaca_sativa",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "age": "1"
+                  }
+                }
+              ],
+              "name": "papercraft_magic_decoration:coffee_pastinaca_sativa_tuber"
+            },
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "block": "papercraft_magic_decoration:coffee_pastinaca_sativa",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "age": "2"
+                  }
+                }
+              ],
+              "name": "papercraft_magic_decoration:coffee_pastinaca_sativa_tuber"
+            }
+          ]
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "kaleidoscope_cookery:blocks/tomato_crop"
+}

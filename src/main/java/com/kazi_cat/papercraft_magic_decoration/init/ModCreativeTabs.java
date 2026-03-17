@@ -32,14 +32,18 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.RED_PAPER.get());
                 output.accept(ModItems.WHITE_PAPER.get());
                 output.accept(ModItems.YELLOW_PAPER.get());
+
+                output.accept(ModItems.COPPER_BARTENDER.get());
+                output.accept(ModItems.VITALITY_SPORES.get());
+                output.accept(ModItems.WHISKEY_RAW.get());
+                output.accept(ModItems.COFFEE_FRUIT.get());
+                output.accept(ModItems.GOLDEN_COFFEE_FRUIT.get());
             }).build());
 
     RegistryObject<CreativeModeTab> MANOR_FOOD_TAB = TABS.register("manor_food", () -> CreativeModeTab.builder()
             .title(Component.translatable("item_group.papercraft_magic_decoration.manor_food.name"))
             .icon(ModItems.GLASS_OF_LAND_NO1.get()::getDefaultInstance)
             .displayItems((par, output) -> {
-                output.accept(ModItems.COPPER_BARTENDER.get());
-
                 output.accept(ModItems.BLAZE_WHISKEY.get());
                 output.accept(ModItems.FERRY_WHISKEY.get());
                 output.accept(ModItems.FLY_WHISKEY.get());
@@ -68,9 +72,7 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.MANGA_MEAT.get());
                 output.accept(ModItems.MONSTER_STEAK.get());
                 output.accept(ModItems.LARGE_STEAK.get());
-
-                output.accept(ModItems.COFFEE_FRUIT.get());
-                output.accept(ModItems.GOLDEN_COFFEE_FRUIT.get());
+                output.accept(ModItems.COFFEE_PASTINACA_SATIVA_TUBER.get());
             }).build());
 
     RegistryObject<CreativeModeTab> MANOR_DECORATION_TAB = TABS.register("manor_decoration", () -> CreativeModeTab.builder()

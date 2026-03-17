@@ -4,7 +4,7 @@
 	"texture_size": [96, 96],
 	"textures": {
 		"0": "papercraft_magic_decoration:block/coffee_pastinaca_sativa",
-		"particle": "papercraft_magic_decoration:block/coffee_pastinaca_sativa"
+		"particle": "papercraft_magic_decoration:block/coffee_pastinaca_sativa_side"
 	},
 	"elements": [
 		{

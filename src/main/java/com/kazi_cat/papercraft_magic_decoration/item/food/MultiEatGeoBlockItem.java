@@ -9,8 +9,8 @@ import net.minecraft.world.level.block.Block;
 public class MultiEatGeoBlockItem extends GeoBlockItem {
     protected final int useDuration;
 
-    public MultiEatGeoBlockItem(Block block, Properties settings, String descriptionId, int useDuration) {
-        super(block, settings, descriptionId);
+    public MultiEatGeoBlockItem(Block block, Properties settings, int useDuration) {
+        super(block, settings);
         this.useDuration = useDuration;
     }
 

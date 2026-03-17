@@ -16,18 +16,19 @@ public class MixologyRecipeProvider extends ModRecipeProvider {
     @Override
     public void buildRecipes(Consumer<FinishedRecipe> consumer) {
         MixologyBuilder.builder()
-                .addIngredient(Items.COAL)
-                .addIngredient(Items.IRON_INGOT)
-                .addIngredient(Items.DIAMOND)
-                .setResult(Items.NETHERITE_INGOT)
-                .save(consumer);
-
-        MixologyBuilder.builder()
                 .addIngredient(ModItems.GLASS_OF_LUCKY_CACTUS.get())
                 .addIngredient(Items.SUGAR)
                 .addIngredient(Items.NETHER_WART)
                 .addIngredient(ModItems.GLASS_OF_LAND_NO1.get())
                 .setResult(ModItems.DEVIL_MARGARITA.get())
+                .save(consumer);
+
+        MixologyBuilder.builder()
+                .addIngredient(ModItems.VITALITY_SPORES.get())
+                .addIngredient(Items.SUGAR_CANE)
+                .addIngredient(Items.SWEET_BERRIES)
+                .addIngredient(ModItems.WHISKEY_RAW.get())
+                .setResult(ModItems.BLOODY_MARY.get())
                 .save(consumer);
     }
 }

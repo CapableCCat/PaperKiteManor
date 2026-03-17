@@ -3,7 +3,7 @@ package com.kazi_cat.papercraft_magic_decoration.init;
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.block.PaperCuttingTableBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.crop.CoffeePastinacaSativaCropBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.decoration.HorizontalDirectionalBushBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.decoration.CoffeePastinacaSativaFruitingStemBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.DirtHoleBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.TrayBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.TwoByOneBlock;
@@ -17,15 +17,11 @@ import com.kazi_cat.papercraft_magic_decoration.blockentity.food.AnimatedSmeltab
 import com.kazi_cat.papercraft_magic_decoration.blockentity.drink.GlassDrinkBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.PaperCuttingTableBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.food.SmeltableBlockEntity;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
@@ -33,7 +29,6 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -265,22 +260,13 @@ public interface ModBlocks {
     RegistryObject<Block> COFFEE_PASTINACA_SATIVA = BLOCKS.register("coffee_pastinaca_sativa", CoffeePastinacaSativaCropBlock::new);
 
     RegistryObject<Block> COFFEE_PASTINACA_SATIVA_FRUITING_STEM = BLOCKS.register("coffee_pastinaca_sativa_fruiting_stem", () ->
-            new HorizontalDirectionalBushBlock(BlockBehaviour.Properties.of()
+            new CoffeePastinacaSativaFruitingStemBlock(BlockBehaviour.Properties.of()
                     .ignitedByLava()
                     .instabreak()
                     .sound(SoundType.LILY_PAD)
                     .noCollission()
                     .pushReaction(PushReaction.DESTROY)
-                    .replaceable()){
-                @Override
-                public boolean canSurvive(@NotNull BlockState state, @NotNull LevelReader level, @NotNull BlockPos pos) {
-                    BlockPos belowPos = pos.below();
-                    BlockState belowState = level.getBlockState(belowPos);
-
-                    return level.getBlockState(pos.below()).is(COFFEE_PASTINACA_SATIVA_RIM.get())
-                        || (belowState.isSolid() && belowState.isFaceSturdy(level, belowPos, Direction.UP));
-                }
-            });
+                    .replaceable()));
 
     RegistryObject<Block> COFFEE_PASTINACA_SATIVA_CORE = BLOCKS.register("coffee_pastinaca_sativa_core", () ->
             new Block(BlockBehaviour.Properties.of().ignitedByLava().strength(1f, 10f).forceSolidOn()));

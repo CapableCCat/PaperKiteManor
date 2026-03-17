@@ -82,7 +82,6 @@ public class CopperBartenderBlock extends HorizontalDirectionalBlock implements 
         } else if (!signal && triggered) {
             level.setBlock(pos, state.setValue(TRIGGERED, false), 4);
         }
-
     }
 
     @Override
