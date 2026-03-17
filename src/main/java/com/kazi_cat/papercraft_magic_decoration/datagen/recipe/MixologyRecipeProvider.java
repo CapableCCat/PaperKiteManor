@@ -25,7 +25,7 @@ public class MixologyRecipeProvider extends ModRecipeProvider {
 
         MixologyBuilder.builder()
                 .addIngredient(ModItems.VITALITY_SPORES.get())
-                .addIngredient(Items.SUGAR_CANE)
+                .addIngredient(Items.BEETROOT)
                 .addIngredient(Items.SWEET_BERRIES)
                 .addIngredient(ModItems.WHISKEY_RAW.get())
                 .setResult(ModItems.BLOODY_MARY.get())
