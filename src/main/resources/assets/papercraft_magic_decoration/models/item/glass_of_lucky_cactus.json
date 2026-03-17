@@ -2,7 +2,7 @@
   "loader": "forge:separate_transforms",
   "gui_light": "front",
   "base": {
-    "parent": "papercraft_magic_decoration:block/glass_of_lucky_cactus_1"
+    "parent": "papercraft_magic_decoration:block/glass_of_lucky_cactus_handheld"
   },
   "perspectives": {
     "gui": {
