@@ -8,6 +8,7 @@ import com.kazi_cat.papercraft_magic_decoration.block.decoration.DirtHoleBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.TrayBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.TwoByOneBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.BottleDrinkBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.drink.GuangSBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.CopperBartenderBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.GlassDrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.food.*;
@@ -79,6 +80,18 @@ public interface ModBlocks {
     RegistryObject<Block> DEVIL_MARGARITA = BLOCKS.register("devil_margarita", GlassDrinkBlock.create().maxCount(1).shapes(
             Block.box(4, 0, 4, 12, 10, 12)
     ).offset(1, 0.25).offset(2, 0.5).build());
+
+    RegistryObject<Block> GUANG_S = BLOCKS.register("guang_s", new GuangSBlock.Builder().maxCount(4).shapes(
+            Block.box(5, 0, 5, 11, 11, 11),
+            Block.box(2, 0, 5, 14, 11, 11),
+            Shapes.or(
+                    Block.box(2, 0, 9, 14, 11, 15),
+                    Block.box(5, 0, 2, 11, 11, 15)
+            ),
+            Block.box(1, 0, 1, 15, 11, 15)
+    ).offset(1, 0.25).offset(2, 0.5).build(
+            BlockBehaviour.Properties.of().noOcclusion().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.LANTERN)
+    ));
 
     // 大瓶酒方块
     RegistryObject<Block> BLAZE_WHISKEY = BLOCKS.register("blaze_whiskey", () -> new BottleDrinkBlock(
@@ -297,7 +310,8 @@ public interface ModBlocks {
                             GLASS_OF_POISON_RUM.get(),
                             BLOODY_MARY.get(),
                             DIPLOMAT_COFFEE.get(),
-                            DEVIL_MARGARITA.get()
+                            DEVIL_MARGARITA.get(),
+                            GUANG_S.get()
                     ).build(null)
     );
 

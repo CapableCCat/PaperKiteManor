@@ -3,9 +3,7 @@ package com.kazi_cat.papercraft_magic_decoration.init;
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.block.food.ChunkySalmonBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.food.TwoByOneSmeltableBlock;
-import com.kazi_cat.papercraft_magic_decoration.item.GeoBlockItem;
-import com.kazi_cat.papercraft_magic_decoration.item.GlassDrinkBlockItem;
-import com.kazi_cat.papercraft_magic_decoration.item.TwoByThreeStructureBlockItem;
+import com.kazi_cat.papercraft_magic_decoration.item.*;
 import com.kazi_cat.papercraft_magic_decoration.item.food.MultiEatGeoBlockItem;
 import com.kazi_cat.papercraft_magic_decoration.item.tool.AmethystScissorsItem;
 import com.kazi_cat.papercraft_magic_decoration.item.tool.GardenTrowelItem;
@@ -87,6 +85,11 @@ public interface ModItems {
 
     RegistryObject<Item> DEVIL_MARGARITA = ITEMS.register("devil_margarita",
             () -> new GlassDrinkBlockItem(ModBlocks.DEVIL_MARGARITA.get(), GlassDrinkBlockItem.defaultFood.get().build()));
+
+    RegistryObject<Item> GUANG_S = ITEMS.register("guang_s",
+            () -> new GlassDrinkBlockItem(ModBlocks.GUANG_S.get(), GlassDrinkBlockItem.defaultFood.get().build()));
+
+    RegistryObject<Item> PACK_OF_GUANG_S = ITEMS.register("pack_of_guang_s", () -> new PackOfGuangSItem(new Item.Properties()));
 
     // 大瓶酒
     RegistryObject<Item> BLAZE_WHISKEY = ITEMS.register("blaze_whiskey",

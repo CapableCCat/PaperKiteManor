@@ -11,6 +11,7 @@
   "block.papercraft_magic_decoration.bloody_mary": "血腥玛丽",
   "block.papercraft_magic_decoration.diplomat_coffee": "外交官咖啡",
   "block.papercraft_magic_decoration.devil_margarita": "恶魔玛格丽特",
+  "block.papercraft_magic_decoration.guang_s": "廣式",
   "block.papercraft_magic_decoration.blaze_whiskey": "瓶装 燃-威士忌",
   "block.papercraft_magic_decoration.ferry_whiskey": "瓶装 舟-威士忌",
   "block.papercraft_magic_decoration.fly_whiskey": "瓶装 飞天-威士忌",
@@ -41,5 +42,8 @@
   "item.papercraft_magic_decoration.blue_paper": "木青纸",
   "item.papercraft_magic_decoration.black_paper": "水黑纸",
   "item.papercraft_magic_decoration.dewy_membrane": "竹露络",
-  "item.papercraft_magic_decoration.cotton_serge": "棉绢纸"
+  "item.papercraft_magic_decoration.cotton_serge": "棉绢纸",
+  "item.papercraft_magic_decoration.coffee_fruit": "地生咖啡果",
+  "item.papercraft_magic_decoration.golden_coffee_fruit": "黄金咖啡果",
+  "item.papercraft_magic_decoration.pack_of_guang_s": "一打廣式"
 }

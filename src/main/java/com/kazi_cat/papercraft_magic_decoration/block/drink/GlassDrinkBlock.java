@@ -42,13 +42,14 @@ import java.util.function.Supplier;
 @SuppressWarnings("all")
 public class GlassDrinkBlock extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock, EntityBlock {
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+    public static final Int2ObjectArrayMap<Double> defaultOffsetMap;
     protected final IntegerProperty countProperty;
     protected final int maxCount;
     protected final EnumMap<Direction, VoxelShape>[] shapes;
     protected final Int2ObjectArrayMap<Double> offsets;
 
-    private GlassDrinkBlock(int maxCount, Int2ObjectArrayMap<Double> offsets, VoxelShape... shapes) {
-        super(Properties.of().noOcclusion().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.GLASS));
+    protected GlassDrinkBlock(Properties properties, int maxCount, Int2ObjectArrayMap<Double> offsets, VoxelShape... shapes) {
+        super(properties);
         this.maxCount = maxCount;
         this.countProperty = IntegerProperty.create("count", 0, maxCount);
         this.offsets = offsets;
@@ -65,6 +66,11 @@ public class GlassDrinkBlock extends HorizontalDirectionalBlock implements Simpl
                 .setValue(countProperty, 1)
                 .setValue(FACING, Direction.NORTH)
                 .setValue(WATERLOGGED, false));
+    }
+
+    protected GlassDrinkBlock(int maxCount, Int2ObjectArrayMap<Double> offsets, VoxelShape... shapes) {
+        this(Properties.of().noOcclusion().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.GLASS),
+                maxCount, offsets, shapes);
     }
 
     public boolean tryIncreaseCount(Level level, BlockPos pos, BlockState state, ItemStack stack) {
@@ -229,9 +235,9 @@ public class GlassDrinkBlock extends HorizontalDirectionalBlock implements Simpl
     public static Builder create() { return new Builder(); }
 
     public static class Builder {
-        private int maxCount;
-        private VoxelShape[] shapes;
-        private final Int2ObjectArrayMap<Double> offsets;
+        protected int maxCount;
+        protected VoxelShape[] shapes;
+        protected final Int2ObjectArrayMap<Double> offsets;
 
         public Builder() {
             offsets = new Int2ObjectArrayMap<>();
@@ -256,5 +262,14 @@ public class GlassDrinkBlock extends HorizontalDirectionalBlock implements Simpl
         public Supplier<? extends Block> build() {
             return () -> new GlassDrinkBlock(maxCount, offsets, shapes);
         }
+
+        public Supplier<? extends Block> build(Properties properties) {
+            return () -> new GlassDrinkBlock(properties, maxCount, offsets, shapes);
+        }
+    }
+
+    static {
+        defaultOffsetMap = new Int2ObjectArrayMap<>(new int[] {1, 2}, new Double[] {0.25D, 0.5D});
+        defaultOffsetMap.defaultReturnValue(0D);
     }
 }

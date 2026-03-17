@@ -60,6 +60,8 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.BLOODY_MARY.get());
                 output.accept(ModItems.DIPLOMAT_COFFEE.get());
                 output.accept(ModItems.DEVIL_MARGARITA.get());
+                output.accept(ModItems.PACK_OF_GUANG_S.get());
+                output.accept(ModItems.GUANG_S.get());
 
                 output.accept(ModItems.RAW_SAUSAGE_MACE_WEAPON.get());
                 output.accept(ModItems.SAUSAGE_MACE_WEAPON.get());
