@@ -3,8 +3,10 @@ package com.kazi_cat.papercraft_magic_decoration.init;
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.block.PaperCuttingTableBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.crop.CoffeePastinacaSativaCropBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.decoration.HorizontalDirectionalBushBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.DirtHoleBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.TrayBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.decoration.TwoByOneBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.BottleDrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.CopperBartenderBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.GlassDrinkBlock;
@@ -15,13 +17,15 @@ import com.kazi_cat.papercraft_magic_decoration.blockentity.food.AnimatedSmeltab
 import com.kazi_cat.papercraft_magic_decoration.blockentity.drink.GlassDrinkBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.PaperCuttingTableBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.food.SmeltableBlockEntity;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
@@ -259,24 +263,41 @@ public interface ModBlocks {
 
     // 作物方块
     RegistryObject<Block> COFFEE_PASTINACA_SATIVA = BLOCKS.register("coffee_pastinaca_sativa", CoffeePastinacaSativaCropBlock::new);
+
     RegistryObject<Block> COFFEE_PASTINACA_SATIVA_FRUITING_STEM = BLOCKS.register("coffee_pastinaca_sativa_fruiting_stem", () ->
-            new HorizontalDirectionalBlock(BlockBehaviour.Properties.of()
+            new HorizontalDirectionalBushBlock(BlockBehaviour.Properties.of()
                     .ignitedByLava()
                     .instabreak()
                     .sound(SoundType.LILY_PAD)
                     .noCollission()
                     .pushReaction(PushReaction.DESTROY)
-                    .replaceable()) {
+                    .replaceable()){
                 @Override
-                public @NotNull BlockState rotate(@NotNull BlockState state, @NotNull Rotation rotation) {
-                    return super.rotate(state, rotation);
-                }
+                public boolean canSurvive(@NotNull BlockState state, @NotNull LevelReader level, @NotNull BlockPos pos) {
+                    BlockPos belowPos = pos.below();
+                    BlockState belowState = level.getBlockState(belowPos);
 
-                @Override
-                protected void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> builder) {
-                    builder.add(FACING);
+                    return level.getBlockState(pos.below()).is(COFFEE_PASTINACA_SATIVA_RIM.get())
+                        || (belowState.isSolid() && belowState.isFaceSturdy(level, belowPos, Direction.UP));
                 }
             });
+
+    RegistryObject<Block> COFFEE_PASTINACA_SATIVA_CORE = BLOCKS.register("coffee_pastinaca_sativa_core", () ->
+            new Block(BlockBehaviour.Properties.of().ignitedByLava().strength(1f, 10f).forceSolidOn()));
+
+    RegistryObject<Block> COFFEE_PASTINACA_SATIVA_RIM = BLOCKS.register("coffee_pastinaca_sativa_rim", ()->
+            new TwoByOneBlock(BlockBehaviour.Properties.of().ignitedByLava().strength(1f, 10f),
+                    Block.box(0, 0, 0, 8, 16, 16),
+                    Block.box(0, 0, 0, 8, 16, 8)));
+
+    RegistryObject<Block> COFFEE_PASTINACA_SATIVA_FLOWERS = BLOCKS.register("coffee_pastinaca_sativa_flowers", () ->
+            new Block(BlockBehaviour.Properties.of()
+                    .ignitedByLava()
+                    .instabreak()
+                    .sound(SoundType.LILY_PAD)
+                    .noCollission()
+                    .pushReaction(PushReaction.DESTROY)
+                    .replaceable()));
 
     // 杯装酒方块实体
     RegistryObject<BlockEntityType<GlassDrinkBlockEntity>> GLASS_DRINK_BE = BLOCK_ENTITIES.register(

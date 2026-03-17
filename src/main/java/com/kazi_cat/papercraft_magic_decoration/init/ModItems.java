@@ -137,6 +137,20 @@ public interface ModItems {
     RegistryObject<Item> COFFEE_FRUIT = ITEMS.register("coffee_fruit", () -> new ItemNameBlockItem(ModBlocks.COFFEE_PASTINACA_SATIVA.get(),
             new Item.Properties()));
 
+    RegistryObject<Item> GOLDEN_COFFEE_FRUIT = ITEMS.register("golden_coffee_fruit", () -> new Item(new Item.Properties()));
+
+    RegistryObject<Item> COFFEE_PASTINACA_SATIVA_FRUITING_STEM = ITEMS.register("coffee_pastinaca_sativa_fruiting_stem", () ->
+            new BlockItem(ModBlocks.COFFEE_PASTINACA_SATIVA_FRUITING_STEM.get(), new Item.Properties()));
+
+    RegistryObject<Item> COFFEE_PASTINACA_SATIVA_CORE = ITEMS.register("coffee_pastinaca_sativa_core", () ->
+            new BlockItem(ModBlocks.COFFEE_PASTINACA_SATIVA_CORE.get(), new Item.Properties()));
+
+    RegistryObject<Item> COFFEE_PASTINACA_SATIVA_RIM = ITEMS.register("coffee_pastinaca_sativa_rim", () ->
+            new BlockItem(ModBlocks.COFFEE_PASTINACA_SATIVA_RIM.get(), new Item.Properties()));
+
+    RegistryObject<Item> COFFEE_PASTINACA_SATIVA_FLOWERS = ITEMS.register("coffee_pastinaca_sativa_flowers", () ->
+            new BlockItem(ModBlocks.COFFEE_PASTINACA_SATIVA_FLOWERS.get(), new Item.Properties()));
+
     // 剪纸台
     RegistryObject<Item> PAPER_CUTTING_TABLE = ITEMS.register("paper_cutting_table", () ->
             new GeoBlockItem(ModBlocks.PAPER_CUTTING_TABLE.get(), new Item.Properties(), "paper_cutting_table"));
