@@ -38,6 +38,7 @@ import java.util.List;
 @SuppressWarnings("deprecation")
 public class CopperBartenderBlock extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock, EntityBlock {
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+    public static final BooleanProperty TRIGGERED = BlockStateProperties.TRIGGERED;
     protected final EnumMap<Direction, VoxelShape> shapes;
 
     public CopperBartenderBlock(Properties properties) {
@@ -46,7 +47,8 @@ public class CopperBartenderBlock extends HorizontalDirectionalBlock implements 
 
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(FACING, Direction.NORTH)
-                .setValue(WATERLOGGED, false));
+                .setValue(WATERLOGGED, false)
+                .setValue(TRIGGERED, false));
     }
 
     public CopperBartenderBlock() {
@@ -57,11 +59,30 @@ public class CopperBartenderBlock extends HorizontalDirectionalBlock implements 
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player,
                                  InteractionHand hand, BlockHitResult hitResult) {
         if (!level.isClientSide() && level.getBlockEntity(pos) instanceof CopperBartenderBlockEntity bartender && !bartender.isShaking()) {
-            NetworkHooks.openScreen((ServerPlayer) player, bartender, pos);
+            if (player.isSecondaryUseActive()) {
+                bartender.tryShake(level);
+            } else {
+                NetworkHooks.openScreen((ServerPlayer) player, bartender, pos);
+            }
             return InteractionResult.SUCCESS;
         }
 
         return super.use(state, level, pos, player, hand, hitResult);
+    }
+
+    @Override
+    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos neighborPos, boolean flag) {
+        boolean signal = level.hasNeighborSignal(pos) || level.hasNeighborSignal(pos.above());
+        boolean triggered = state.getValue(TRIGGERED);
+        if (signal && !triggered) {
+            level.setBlock(pos, state.setValue(TRIGGERED, true), 4);
+            if (level.getBlockEntity(pos) instanceof CopperBartenderBlockEntity bartender) {
+                bartender.tryShake(level);
+            }
+        } else if (!signal && triggered) {
+            level.setBlock(pos, state.setValue(TRIGGERED, false), 4);
+        }
+
     }
 
     @Override
@@ -77,20 +98,27 @@ public class CopperBartenderBlock extends HorizontalDirectionalBlock implements 
     @Override
     @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        FluidState fluidState = context.getLevel().getFluidState(context.getClickedPos());
+        Level level = context.getLevel();
+        FluidState fluidState = level.getFluidState(context.getClickedPos());
         return this.defaultBlockState()
                 .setValue(FACING, context.getHorizontalDirection().getOpposite())
-                .setValue(WATERLOGGED, fluidState.getType() == Fluids.WATER);
+                .setValue(WATERLOGGED, fluidState.getType() == Fluids.WATER)
+                .setValue(TRIGGERED, level.hasNeighborSignal(context.getClickedPos()));
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING, WATERLOGGED);
+        builder.add(FACING, WATERLOGGED, TRIGGERED);
     }
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return shapes.get(state.getValue(FACING));
+    }
+
+    @Override
+    public boolean canConnectRedstone(BlockState state, BlockGetter level, BlockPos pos, @Nullable Direction direction) {
+        return true;
     }
 
     @Override

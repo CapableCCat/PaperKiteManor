@@ -7,18 +7,26 @@ import com.kazi_cat.papercraft_magic_decoration.init.ModRecipes;
 import com.kazi_cat.papercraft_magic_decoration.inventory.container.CopperBartenderContainer;
 import com.kazi_cat.papercraft_magic_decoration.utils.ItemUtils;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.Nullable;
@@ -48,7 +56,7 @@ public class CopperBartenderBlockEntity extends BaseBlockEntity implements GeoBl
 
     public boolean tryShake(Level level) {
         return !isShaking() && !isInputEmpty() && quickCheck.getRecipeFor(getContainer(), level).map(recipe -> {
-            shakingTick = 90;
+            shakingTick = 87;
             triggerShakeAnim(false);
             refresh();
             return true;
@@ -70,6 +78,8 @@ public class CopperBartenderBlockEntity extends BaseBlockEntity implements GeoBl
     public void onFinished(Level level) {
         quickCheck.getRecipeFor(getContainer(), level).ifPresent(recipe -> {
             ItemStack result = recipe.result().copy();
+            tryPlaceResult(level, result);
+            if (result.isEmpty()) return;
             ItemStack current = getResult();
             if (current.isEmpty()) {
                 setResult(result);
@@ -90,6 +100,36 @@ public class CopperBartenderBlockEntity extends BaseBlockEntity implements GeoBl
             this.items.extractItem(i, 1, false);
         }
         refresh();
+    }
+
+    public void tryPlaceResult(Level level, ItemStack result) {
+        if (result.getItem() instanceof BlockItem blockItem) {
+            //if (level.hasNeighborSignal(this.worldPosition)) return;
+            Direction direction = this.getBlockState().getValue(HorizontalDirectionalBlock.FACING);
+            BlockPos frontPos = this.worldPosition.relative(direction);
+            BlockState frontState = level.getBlockState(frontPos);
+            ItemStack toInsert = result.copyWithCount(1);
+            BlockPlaceContext context = new BlockPlaceContext(level, null, InteractionHand.MAIN_HAND, toInsert,
+                    new BlockHitResult(
+                            frontPos.getCenter().relative(Direction.DOWN, 0.5),
+                            Direction.UP,
+                            frontPos,
+                            false
+                    ));
+            if (frontState.canBeReplaced(context) && blockItem.place(context).consumesAction()) {
+                result.split(1);
+                if (level instanceof ServerLevel serverLevel) {
+                    Vec3 particlePos = frontPos.getCenter().relative(Direction.DOWN, 0.2);
+                    serverLevel.sendParticles(
+                            ParticleTypes.GLOW,
+                            particlePos.x(), particlePos.y(), particlePos.z(),
+                            10,
+                            0.2, 0.2, 0.2,
+                            0
+                    );
+                }
+            }
+        }
     }
 
     public void triggerShakeAnim(boolean isShort) {
