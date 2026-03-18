@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "papercraft_magic_decoration:item/a_glass_of_fly_whiskey"
+  }
+}

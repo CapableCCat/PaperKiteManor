@@ -1,6 +1,18 @@
 {
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "papercraft_magic_decoration:item/diplomat_coffee"
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "papercraft_magic_decoration:block/diplomat_coffee_1"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "papercraft_magic_decoration:item/diplomat_coffee_2d"
+    },
+    "ground": {
+      "parent": "papercraft_magic_decoration:item/diplomat_coffee_2d"
+    },
+    "fixed": {
+      "parent": "papercraft_magic_decoration:item/diplomat_coffee_2d"
+    }
   }
 }
