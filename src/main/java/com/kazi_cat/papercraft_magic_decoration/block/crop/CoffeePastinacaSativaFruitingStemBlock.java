@@ -1,4 +1,4 @@
-package com.kazi_cat.papercraft_magic_decoration.block.decoration;
+package com.kazi_cat.papercraft_magic_decoration.block.crop;
 
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.block.Block;

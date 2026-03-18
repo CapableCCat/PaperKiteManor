@@ -82,5 +82,7 @@ public interface ModCreativeTabs {
             .icon(ModItems.PAPER_CUTTING_TABLE.get()::getDefaultInstance)
             .displayItems((par, output) -> {
                 output.accept(ModItems.PAPER_CUTTING_TABLE.get());
+
+                output.accept(ModItems.LOUD_BUTTON.get());
             }).build());
 }

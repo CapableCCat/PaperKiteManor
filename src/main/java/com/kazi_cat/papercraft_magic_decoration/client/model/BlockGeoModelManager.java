@@ -11,6 +11,7 @@ import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import org.joml.Matrix4f;
 import software.bernie.geckolib.animatable.GeoBlockEntity;
 import software.bernie.geckolib.model.GeoModel;
 
@@ -20,6 +21,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
@@ -28,18 +30,24 @@ import java.util.stream.Collectors;
 public class BlockGeoModelManager {
     public static final String NAMESPACE = "papercraft_magic_decoration";
     public static final String PATH = "geckolib/blockstate_mappings";
-    private static final ConcurrentHashMap<ModelResourceLocation, GeoModel<?>> map;
+    private static final ConcurrentHashMap<ModelResourceLocation, GeoModel<?>> models;
+    private static final ConcurrentHashMap<ModelResourceLocation, Matrix4f> transformations;
 
     @Nullable
     public static <T extends BlockEntity & GeoBlockEntity> GeoModel<T> getModel(BlockState blockState) {
-        return (GeoModel<T>) map.getOrDefault(BlockModelShaper.stateToModelLocation(blockState), null);
+        return (GeoModel<T>) models.getOrDefault(BlockModelShaper.stateToModelLocation(blockState), null);
+    }
+
+    @Nullable
+    public static Matrix4f getTransformation(BlockState blockState) {
+        return transformations.getOrDefault(BlockModelShaper.stateToModelLocation(blockState), null);
     }
 
     /**
      * 加载BlockState -> GeoModel映射
      */
     public static void loadModelMappings() {
-        map.clear();
+        models.clear();
         ResourceManager resourceManager = Minecraft.getInstance().getResourceManager();
         Map<ResourceLocation, Resource> resources = resourceManager.listResources(
                 PATH,
@@ -56,6 +64,7 @@ public class BlockGeoModelManager {
                 JsonObject root = GsonHelper.parse(reader);
                 Map<ModelResourceLocation, String> variantToId = new HashMap<>();
                 Map<String, FixedGeoModel<?>> idToModel = new HashMap<>();
+                Map<String, Matrix4f> idToMatrix = new HashMap<>();
 
                 if (root.has("variants") && root.get("variants").isJsonObject()) {
                     JsonObject variantsObj = root.getAsJsonObject("variants");
@@ -88,6 +97,14 @@ public class BlockGeoModelManager {
                         if (modelLoc == null || textureLoc == null || animationLoc == null) continue;
 
                         idToModel.put(id, new FixedGeoModel<>(modelLoc, textureLoc, animationLoc));
+
+                        double[] translation = getArray3OrEmpty(modelObj, "translation");
+                        double[] rotation = getArray3OrEmpty(modelObj, "rotation");
+                        double[] scale = getArray3OrEmpty(modelObj, "scale");
+                        if (translation != null || rotation != null || scale != null) {
+                            Matrix4f matrix4f = getMatrix4(translation, rotation, scale);
+                            idToMatrix.put(id, matrix4f);
+                        }
                     }
                 } else {
                     throw new JsonParseException("JSON 缺少 'models' 字段或格式错误");
@@ -95,7 +112,10 @@ public class BlockGeoModelManager {
 
                 for (Map.Entry<ModelResourceLocation, String> entry : variantToId.entrySet()) {
                     if (idToModel.containsKey(entry.getValue())) {
-                        map.put(entry.getKey(), idToModel.get(entry.getValue()));
+                        models.put(entry.getKey(), idToModel.get(entry.getValue()));
+                    }
+                    if (idToMatrix.containsKey(entry.getValue())) {
+                        transformations.put(entry.getKey(), idToMatrix.get(entry.getValue()));
                     }
                 }
                 jsonLoaded++;
@@ -106,7 +126,7 @@ public class BlockGeoModelManager {
             }
         }
 
-        PaperKiteManor.LOGGER.info("已加载完成BlockState -> GeoModel映射, 共成功加载 {} / {} 个 JSON 文件, {} 条映射", jsonLoaded, resources.size(), map.size());
+        PaperKiteManor.LOGGER.info("已加载完成BlockState -> GeoModel映射, 共成功加载 {} / {} 个 JSON 文件, {} 条映射", jsonLoaded, resources.size(), models.size());
     }
 
     /**
@@ -149,7 +169,41 @@ public class BlockGeoModelManager {
         return obj.has(key) ? obj.get(key).getAsString() : "";
     }
 
+    @Nullable
+    private static double[] getArray3OrEmpty(JsonObject obj, String key) {
+        if (obj.has(key)) {
+            try {
+                List<Double> values = obj.getAsJsonArray(key).asList().stream().map(JsonElement::getAsDouble).toList();
+                double[] array = new double[3];
+                for (int i = 0; i < Math.min(3, values.size()); i++) {
+                    array[i] = values.get(i);
+                }
+                return array;
+            } catch (RuntimeException e) {
+                throw new JsonParseException("JSON 格式错误");
+            }
+        }
+        return null;
+    }
+
+    private static Matrix4f getMatrix4(@Nullable double[] translation, @Nullable double[] rotation, @Nullable double[] scale) {
+        Matrix4f matrix4f = new Matrix4f();
+        if (translation != null) {
+            matrix4f.translate((float) translation[0], (float) translation[1], (float) translation[2]);
+        }
+        if (rotation != null) {
+            matrix4f.rotateX((float) Math.toRadians(rotation[0]));
+            matrix4f.rotateY((float) Math.toRadians(rotation[1]));
+            matrix4f.rotateZ((float) Math.toRadians(rotation[2]));
+        }
+        if (scale != null) {
+            matrix4f.scale((float) scale[0], (float) scale[1], (float) scale[2]);
+        }
+        return matrix4f;
+    }
+
     static {
-        map = new ConcurrentHashMap<>();
+        models = new ConcurrentHashMap<>();
+        transformations = new ConcurrentHashMap<>();
     }
 }

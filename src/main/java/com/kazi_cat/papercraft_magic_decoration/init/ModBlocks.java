@@ -3,15 +3,17 @@ package com.kazi_cat.papercraft_magic_decoration.init;
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.block.PaperCuttingTableBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.crop.CoffeePastinacaSativaCropBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.decoration.CoffeePastinacaSativaFruitingStemBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.crop.CoffeePastinacaSativaFruitingStemBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.DirtHoleBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.decoration.LoudButtonBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.TrayBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.decoration.TwoByOneBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.TwoByOneBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.BottleDrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.GuangSBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.CopperBartenderBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.GlassDrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.food.*;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.AnimatedBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.decoration.DirtHoleBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.drink.CopperBartenderBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.food.AnimatedSmeltableBlockEntity;
@@ -298,6 +300,9 @@ public interface ModBlocks {
                     .pushReaction(PushReaction.DESTROY)
                     .replaceable()));
 
+    // 装饰方块
+    RegistryObject<Block> LOUD_BUTTON = BLOCKS.register("loud_button", LoudButtonBlock::new);
+
     // 杯装酒方块实体
     RegistryObject<BlockEntityType<GlassDrinkBlockEntity>> GLASS_DRINK_BE = BLOCK_ENTITIES.register(
             "glass_drink", () -> BlockEntityType.Builder
@@ -355,6 +360,14 @@ public interface ModBlocks {
             "dirt_hole", () -> BlockEntityType.Builder
                     .of(DirtHoleBlockEntity::new,
                             DIRT_HOLE.get()
+                    ).build(null)
+    );
+
+    // 使用geckolib动画的通用方块实体
+    RegistryObject<BlockEntityType<AnimatedBlockEntity>> ANIMATED_BE = BLOCK_ENTITIES.register(
+            "animated", () -> BlockEntityType.Builder
+                    .of(AnimatedBlockEntity::new,
+                        LOUD_BUTTON.get()
                     ).build(null)
     );
 }
