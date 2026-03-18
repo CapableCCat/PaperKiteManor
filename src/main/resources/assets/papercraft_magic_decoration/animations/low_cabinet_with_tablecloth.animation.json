@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.lowcabinet with tablecloth.1": {
+		"0": {
 			"loop": true,
 			"animation_length": 1.5,
 			"bones": {
@@ -82,7 +82,8 @@
 					}
 				}
 			}
-		}
+		},
+		"1": {}
 	},
 	"geckolib_format_version": 2
 }

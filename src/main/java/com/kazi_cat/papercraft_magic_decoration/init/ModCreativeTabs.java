@@ -84,5 +84,6 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.PAPER_CUTTING_TABLE.get());
 
                 output.accept(ModItems.LOUD_BUTTON.get());
+                output.accept(ModItems.LOW_CABINET_WITH_TABLECLOTH.get());
             }).build());
 }

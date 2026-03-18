@@ -1,0 +1,6 @@
+{
+  "parent": "papercraft_magic_decoration:displaysettings/low_cabinet_with_tablecloth",
+  "textures": {
+    "layer0": "papercraft_magic_decoration:block/low_cabinet_with_tablecloth"
+  }
+}

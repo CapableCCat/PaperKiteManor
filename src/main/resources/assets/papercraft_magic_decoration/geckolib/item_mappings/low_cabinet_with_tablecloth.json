@@ -1,0 +1,5 @@
+{
+  "model": "papercraft_magic_decoration:geo/low_cabinet_with_tablecloth.geo.json",
+  "texture": "papercraft_magic_decoration:textures/block/low_cabinet_with_tablecloth.png",
+  "animation": "papercraft_magic_decoration:animations/low_cabinet_with_tablecloth.animation.json"
+}
