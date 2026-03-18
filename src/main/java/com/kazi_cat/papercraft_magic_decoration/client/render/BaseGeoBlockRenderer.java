@@ -32,12 +32,14 @@ public class BaseGeoBlockRenderer<T extends BlockEntity & GeoBlockEntity> extend
 
     @Override
     public void actuallyRender(PoseStack poseStack, T animatable, BakedGeoModel model, RenderType renderType, MultiBufferSource bufferSource, VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
-        poseStack.pushPose();
         Matrix4f matrix4f = BlockGeoModelManager.getTransformation(animatable.getBlockState());
         if (matrix4f != null) {
+            poseStack.pushPose();
             poseStack.mulPoseMatrix(matrix4f);
+            super.actuallyRender(poseStack, animatable, model, renderType, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, red, green, blue, alpha);
+            poseStack.popPose();
+        } else {
+            super.actuallyRender(poseStack, animatable, model, renderType, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, red, green, blue, alpha);
         }
-        super.actuallyRender(poseStack, animatable, model, renderType, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, red, green, blue, alpha);
-        poseStack.popPose();
     }
 }
