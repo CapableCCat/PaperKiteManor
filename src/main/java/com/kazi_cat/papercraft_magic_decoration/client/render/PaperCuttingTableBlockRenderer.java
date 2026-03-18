@@ -42,7 +42,7 @@ public class PaperCuttingTableBlockRenderer extends BaseGeoBlockRenderer<PaperCu
 
         itemRenderer.renderStatic(
                 content,
-                ItemDisplayContext.FIXED,
+                ItemDisplayContext.GUI,
                 packedLight,
                 OverlayTexture.NO_OVERLAY,
                 poseStack,

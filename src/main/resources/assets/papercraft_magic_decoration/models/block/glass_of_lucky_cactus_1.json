@@ -159,16 +159,13 @@
       "translation": [0, 4.5, 0]
     },
     "gui": {
-      "rotation": [31, -180, 0],
-      "translation": [0, 4, 0],
-      "scale": [1.1, 1.1, 1.1]
+
     },
     "head": {
       "translation": [0, 15.25, 0]
     },
     "fixed": {
-      "rotation": [-90, 0, 0],
-      "translation": [0, 0, -7]
+
     }
   },
   "groups": [

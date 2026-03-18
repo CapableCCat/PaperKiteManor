@@ -85,5 +85,6 @@ public interface ModCreativeTabs {
 
                 output.accept(ModItems.LOUD_BUTTON.get());
                 output.accept(ModItems.LOW_CABINET_WITH_TABLECLOTH.get());
+                output.accept(ModItems.WOODEN_BARREL_BOOKSHELF.get());
             }).build());
 }
