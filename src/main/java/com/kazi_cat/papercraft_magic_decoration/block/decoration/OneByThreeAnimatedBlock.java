@@ -1,7 +1,7 @@
 package com.kazi_cat.papercraft_magic_decoration.block.decoration;
 
 import com.kazi_cat.papercraft_magic_decoration.api.blockentity.IRenderBoundingBoxProvider;
-import com.kazi_cat.papercraft_magic_decoration.blockentity.AnimatedBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.decoration.AnimatedBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.utils.AABBUtils;
 import com.kazi_cat.papercraft_magic_decoration.utils.VoxelShapeUtils;
 import net.minecraft.core.BlockPos;

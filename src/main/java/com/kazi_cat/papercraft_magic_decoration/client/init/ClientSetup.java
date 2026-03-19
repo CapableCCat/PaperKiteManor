@@ -2,6 +2,7 @@ package com.kazi_cat.papercraft_magic_decoration.client.init;
 
 import com.kazi_cat.papercraft_magic_decoration.client.gui.CopperBartenderScreen;
 import com.kazi_cat.papercraft_magic_decoration.client.gui.DirtHoleScreen;
+import com.kazi_cat.papercraft_magic_decoration.client.gui.KaziLuckyCatScreen;
 import com.kazi_cat.papercraft_magic_decoration.client.model.BlockGeoModelManager;
 import com.kazi_cat.papercraft_magic_decoration.client.model.ItemGeoModelManager;
 import com.kazi_cat.papercraft_magic_decoration.client.render.BaseGeoBlockRenderer;
@@ -10,6 +11,7 @@ import com.kazi_cat.papercraft_magic_decoration.client.render.PaperCuttingTableB
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import com.kazi_cat.papercraft_magic_decoration.inventory.container.CopperBartenderContainer;
 import com.kazi_cat.papercraft_magic_decoration.inventory.container.DirtHoleContainer;
+import com.kazi_cat.papercraft_magic_decoration.inventory.container.KaziLuckyCatContainer;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -25,6 +27,7 @@ public class ClientSetup {
         event.enqueueWork(ItemGeoModelManager::loadModelMappings);
         event.enqueueWork(() -> MenuScreens.register(CopperBartenderContainer.TYPE, CopperBartenderScreen::new));
         event.enqueueWork(() -> MenuScreens.register(DirtHoleContainer.TYPE, DirtHoleScreen::new));
+        event.enqueueWork(() -> MenuScreens.register(KaziLuckyCatContainer.TYPE, KaziLuckyCatScreen::new));
     }
 
     @SubscribeEvent
@@ -34,5 +37,6 @@ public class ClientSetup {
         event.registerBlockEntityRenderer(ModBlocks.PAPER_CUTTING_TABLE_BE.get(), context -> new PaperCuttingTableBlockRenderer());
         event.registerBlockEntityRenderer(ModBlocks.ANIMATED_SMELTABLE_BE.get(), context -> new BaseGeoBlockRenderer<>(ModBlocks.ANIMATED_SMELTABLE_BE.get()));
         event.registerBlockEntityRenderer(ModBlocks.COPPER_BARTENDER_BE.get(), context -> new BaseGeoBlockRenderer<>(ModBlocks.COPPER_BARTENDER_BE.get()));
+        event.registerBlockEntityRenderer(ModBlocks.KAZI_LUCKY_CAT_BE.get(), context -> new BaseGeoBlockRenderer<>(ModBlocks.KAZI_LUCKY_CAT_BE.get()));
     }
 }

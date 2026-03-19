@@ -227,4 +227,6 @@ public interface ModItems {
 
     RegistryObject<Item> RUSTIC_BLUE_WALLPAPER_WALL = ITEMS.register("rustic_blue_wallpaper_wall", () ->
             new BlockItem(ModBlocks.RUSTIC_BLUE_WALLPAPER_WALL.get(), new Item.Properties()));
+
+    RegistryObject<Item> KAZI_LUCKY_CAT = ITEMS.register("kazi_lucky_cat", () -> new GeoBlockItem(ModBlocks.KAZI_LUCKY_CAT.get(), new Item.Properties()));
 }

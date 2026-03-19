@@ -1,6 +1,6 @@
 package com.kazi_cat.papercraft_magic_decoration.client.render;
 
-import com.kazi_cat.papercraft_magic_decoration.blockentity.PaperCuttingTableBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.decoration.PaperCuttingTableBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;

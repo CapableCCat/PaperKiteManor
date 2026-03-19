@@ -1,6 +1,7 @@
-package com.kazi_cat.papercraft_magic_decoration.blockentity;
+package com.kazi_cat.papercraft_magic_decoration.blockentity.decoration;
 
 import com.kazi_cat.papercraft_magic_decoration.api.blockentity.IRenderBoundingBoxProvider;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.BaseBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntityType;

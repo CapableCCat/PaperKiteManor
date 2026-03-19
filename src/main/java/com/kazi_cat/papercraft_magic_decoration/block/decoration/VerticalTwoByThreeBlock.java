@@ -1,6 +1,6 @@
 package com.kazi_cat.papercraft_magic_decoration.block.decoration;
 
-import com.kazi_cat.papercraft_magic_decoration.blockentity.AnimatedBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.decoration.AnimatedBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;

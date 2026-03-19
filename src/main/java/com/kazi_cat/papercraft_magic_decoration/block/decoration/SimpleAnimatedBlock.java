@@ -1,6 +1,6 @@
 package com.kazi_cat.papercraft_magic_decoration.block.decoration;
 
-import com.kazi_cat.papercraft_magic_decoration.blockentity.AnimatedBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.decoration.AnimatedBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -25,7 +25,7 @@ public class SimpleAnimatedBlock extends SimpleDecorationBlock implements Entity
     @Override
     public InteractionResult use(BlockState blockstate, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         ItemStack itemInHand = player.getItemInHand(hand);
-        if (itemInHand.isEmpty() && level.getBlockEntity(pos) instanceof AnimatedBlockEntity animated) {
+        if (itemInHand.isEmpty() && !player.isSecondaryUseActive() && level.getBlockEntity(pos) instanceof AnimatedBlockEntity animated) {
             animated.triggerAnim();
             return InteractionResult.SUCCESS;
         }

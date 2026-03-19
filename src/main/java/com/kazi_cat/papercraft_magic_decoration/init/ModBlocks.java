@@ -1,22 +1,24 @@
 package com.kazi_cat.papercraft_magic_decoration.init;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
-import com.kazi_cat.papercraft_magic_decoration.block.PaperCuttingTableBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.decoration.KaziLuckyCatBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.decoration.PaperCuttingTableBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.crop.CoffeePastinacaSativaCropBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.crop.CoffeePastinacaSativaFruitingStemBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.*;
-import com.kazi_cat.papercraft_magic_decoration.block.TwoByOneBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.decoration.TwoByOneBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.BottleDrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.GuangSBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.CopperBartenderBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.GlassDrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.food.*;
-import com.kazi_cat.papercraft_magic_decoration.blockentity.AnimatedBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.decoration.AnimatedBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.decoration.DirtHoleBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.decoration.KaziLuckyCatBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.drink.CopperBartenderBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.food.AnimatedSmeltableBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.drink.GlassDrinkBlockEntity;
-import com.kazi_cat.papercraft_magic_decoration.blockentity.PaperCuttingTableBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.decoration.PaperCuttingTableBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.food.SmeltableBlockEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -347,6 +349,11 @@ public interface ModBlocks {
     RegistryObject<Block> RUSTIC_BLUE_WALLPAPER_WALL = BLOCKS.register("rustic_blue_wallpaper_wall", () -> new Block(BlockBehaviour.Properties.of()
             .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.COLOR_BLUE).sound(SoundType.WOOD).strength(2f, 3f)));
 
+    RegistryObject<Block> KAZI_LUCKY_CAT = BLOCKS.register("kazi_lucky_cat", () -> new KaziLuckyCatBlock(
+            Block.box(0, 0, 1, 16, 16, 15),
+            Block.box(0, 0, 1, 16, 16, 15)
+    ));
+
     // 杯装酒方块实体
     RegistryObject<BlockEntityType<GlassDrinkBlockEntity>> GLASS_DRINK_BE = BLOCK_ENTITIES.register(
             "glass_drink", () -> BlockEntityType.Builder
@@ -404,6 +411,13 @@ public interface ModBlocks {
             "dirt_hole", () -> BlockEntityType.Builder
                     .of(DirtHoleBlockEntity::new,
                             DIRT_HOLE.get()
+                    ).build(null)
+    );
+
+    RegistryObject<BlockEntityType<KaziLuckyCatBlockEntity>> KAZI_LUCKY_CAT_BE = BLOCK_ENTITIES.register(
+            "kazi_lucky_cat", () -> BlockEntityType.Builder
+                    .of(KaziLuckyCatBlockEntity::new,
+                            KAZI_LUCKY_CAT.get()
                     ).build(null)
     );
 

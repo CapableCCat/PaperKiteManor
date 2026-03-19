@@ -2,6 +2,7 @@
   "item_group.papercraft_magic_decoration.manor_main.name": "纸鸢庄园：主要",
   "item_group.papercraft_magic_decoration.manor_food.name": "纸鸢庄园：美食",
   "item_group.papercraft_magic_decoration.manor_decoration.name": "纸鸢庄园：装饰",
+
   "block.papercraft_magic_decoration.glass_of_blaze_whiskey": "燃-威士忌",
   "block.papercraft_magic_decoration.glass_of_ferry_whiskey": "舟-威士忌",
   "block.papercraft_magic_decoration.glass_of_fly_whiskey": "飞天-威士忌",
@@ -45,6 +46,8 @@
   "block.papercraft_magic_decoration.rustic_blue_wallpaper_wall": "田园蓝墙纸板",
   "block.papercraft_magic_decoration.black_and_white_checker_board_tile": "黑白拼地砖",
   "block.papercraft_magic_decoration.blue_and_white_checker_board_tile": "青白拼地砖",
+  "block.papercraft_magic_decoration.kazi_lucky_cat": "咔吱招财猫",
+
   "item.papercraft_magic_decoration.copper_bartender": "铜酒保",
   "item.papercraft_magic_decoration.paper_cutting_table": "剪纸台",
   "item.papercraft_magic_decoration.raw_manga_meat": "生的漫画肉",
@@ -78,5 +81,6 @@
   "item.papercraft_magic_decoration.wooden_barrel_bookshelf": "木桶书架",
   "item.papercraft_magic_decoration.woodworking_table": "木工台",
   "item.papercraft_magic_decoration.long_storage_table": "长矮柜",
-  "item.papercraft_magic_decoration.edged_chalkboard": "镶边黑板"
+  "item.papercraft_magic_decoration.edged_chalkboard": "镶边黑板",
+  "item.papercraft_magic_decoration.kazi_lucky_cat": "咔吱招财猫"
 }
