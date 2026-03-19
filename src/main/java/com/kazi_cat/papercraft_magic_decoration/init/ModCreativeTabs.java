@@ -97,5 +97,6 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.EDGED_CHALKBOARD.get());
                 output.accept(ModItems.KAZI_LUCKY_CAT.get());
                 output.accept(ModItems.CUPBOARD.get());
+                output.accept(ModItems.LARGE_DINING_TABLE.get());
             }).build());
 }
