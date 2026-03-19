@@ -1,0 +1,5 @@
+{
+  "model": "papercraft_magic_decoration:geo/edged_chalkboard.geo.json",
+  "texture": "papercraft_magic_decoration:textures/block/edged_chalkboard.png",
+  "animation": "papercraft_magic_decoration:animations/edged_chalkboard.animation.json"
+}

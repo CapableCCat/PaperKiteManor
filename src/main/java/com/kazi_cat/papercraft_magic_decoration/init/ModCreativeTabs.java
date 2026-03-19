@@ -88,5 +88,6 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.WOODEN_BARREL_BOOKSHELF.get());
                 output.accept(ModItems.WOODWORKING_TABLE.get());
                 output.accept(ModItems.LONG_STORAGE_TABLE.get());
+                output.accept(ModItems.EDGED_CHALKBOARD.get());
             }).build());
 }

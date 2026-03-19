@@ -324,6 +324,11 @@ public interface ModBlocks {
                     Block.box(0, 0, 0, 16, 15, 16),
                     Block.box(0, 0, 0, 15, 15, 16)));
 
+    RegistryObject<Block> EDGED_CHALKBOARD = BLOCKS.register("edged_chalkboard",
+            () -> new VerticalTwoByThreeAnimatedBlock(BlockBehaviour.Properties.of()
+                    .sound(SoundType.WOOD).strength(1f, 10f).noCollission().noOcclusion(),
+                    Block.box(0, 0, 13, 16, 16, 16)));
+
     // 杯装酒方块实体
     RegistryObject<BlockEntityType<GlassDrinkBlockEntity>> GLASS_DRINK_BE = BLOCK_ENTITIES.register(
             "glass_drink", () -> BlockEntityType.Builder
@@ -392,7 +397,8 @@ public interface ModBlocks {
                             LOW_CABINET_WITH_TABLECLOTH.get(),
                             WOODEN_BARREL_BOOKSHELF.get(),
                             WOODWORKING_TABLE.get(),
-                            LONG_STORAGE_TABLE.get()
+                            LONG_STORAGE_TABLE.get(),
+                            EDGED_CHALKBOARD.get()
                     ).build(null)
     );
 }
