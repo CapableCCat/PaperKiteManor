@@ -1,6 +1,8 @@
 package com.kazi_cat.papercraft_magic_decoration.block.decoration;
 
+import com.kazi_cat.papercraft_magic_decoration.api.blockentity.IRenderBoundingBoxProvider;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.AnimatedBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.utils.AABBUtils;
 import com.kazi_cat.papercraft_magic_decoration.utils.VoxelShapeUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -22,6 +24,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -32,7 +35,7 @@ import java.util.EnumMap;
 import java.util.List;
 
 @SuppressWarnings("deprecation")
-public class OneByThreeAnimatedBlock extends SimpleAnimatedBlock {
+public class OneByThreeAnimatedBlock extends SimpleAnimatedBlock implements IRenderBoundingBoxProvider {
     public static final IntegerProperty POSITION = IntegerProperty.create("position", 0, 2);
     public static final int LEFT = 0;
     public static final int CENTER = 1;
@@ -175,5 +178,13 @@ public class OneByThreeAnimatedBlock extends SimpleAnimatedBlock {
             case 2 -> shapes2.get(facing);
             default -> super.getShape(state, level, pos, context);
         };
+    }
+
+    @Override
+    public AABB getRenderBoundingBox(BlockState state, BlockPos pos) {
+        Direction facing = state.getValue(FACING);
+        BlockPos leftPos = pos.relative(facing.getClockWise());
+        BlockPos rightPos = pos.relative(facing.getCounterClockWise());
+        return AABBUtils.fromTo(leftPos, rightPos);
     }
 }

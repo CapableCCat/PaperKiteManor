@@ -1,7 +1,9 @@
 package com.kazi_cat.papercraft_magic_decoration.block.food;
 
+import com.kazi_cat.papercraft_magic_decoration.api.blockentity.IRenderBoundingBoxProvider;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.food.AnimatedSmeltableBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
+import com.kazi_cat.papercraft_magic_decoration.utils.AABBUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -10,13 +12,14 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Supplier;
 
 @SuppressWarnings("deprecation")
-public class AnimatedTwoByOneSmeltableBlock extends TwoByOneSmeltableBlock{
+public class AnimatedTwoByOneSmeltableBlock extends TwoByOneSmeltableBlock implements IRenderBoundingBoxProvider {
     public AnimatedTwoByOneSmeltableBlock(Properties properties, VoxelShape frontShape, VoxelShape behindShape, int cookingTime, int requiredFlips,
                                      int flipCooldown, Supplier<ItemStack> ingredient, Supplier<ItemStack> result) {
         super(properties, frontShape, behindShape, cookingTime, requiredFlips, flipCooldown, ingredient, result);
@@ -40,5 +43,11 @@ public class AnimatedTwoByOneSmeltableBlock extends TwoByOneSmeltableBlock{
     @Override
     public RenderShape getRenderShape(BlockState state) {
         return RenderShape.ENTITYBLOCK_ANIMATED;
+    }
+
+    @Override
+    public AABB getRenderBoundingBox(BlockState state, BlockPos pos) {
+        BlockPos behindPos = pos.relative(state.getValue(FACING).getOpposite());
+        return AABBUtils.fromTo(pos, behindPos);
     }
 }

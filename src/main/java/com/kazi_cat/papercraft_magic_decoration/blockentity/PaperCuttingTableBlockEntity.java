@@ -4,6 +4,7 @@ import com.kazi_cat.papercraft_magic_decoration.crafting.recipe.PaperCuttingReci
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import com.kazi_cat.papercraft_magic_decoration.init.ModRecipes;
 import com.kazi_cat.papercraft_magic_decoration.item.tool.ScissorsItem;
+import com.kazi_cat.papercraft_magic_decoration.utils.AABBUtils;
 import com.kazi_cat.papercraft_magic_decoration.utils.ItemUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ItemParticleOption;
@@ -21,6 +22,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.AABB;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoBlockEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -119,5 +121,10 @@ public class PaperCuttingTableBlockEntity extends BaseBlockEntity implements Geo
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return this.cache;
+    }
+
+    @Override
+    public AABB getRenderBoundingBox() {
+        return AABBUtils.fromTo(this.worldPosition, this.worldPosition.above());
     }
 }

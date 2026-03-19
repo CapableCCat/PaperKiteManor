@@ -1,9 +1,11 @@
 package com.kazi_cat.papercraft_magic_decoration.blockentity;
 
+import com.kazi_cat.papercraft_magic_decoration.api.blockentity.IRenderBoundingBoxProvider;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.AABB;
 import software.bernie.geckolib.animatable.GeoBlockEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
@@ -23,10 +25,14 @@ public class AnimatedBlockEntity extends BaseBlockEntity implements GeoBlockEnti
         super(ModBlocks.ANIMATED_BE.get(), pos, state);
     }
 
-//    @Override
-//    public AABB getRenderBoundingBox() {
-//
-//    }
+    @Override
+    public AABB getRenderBoundingBox() {
+        if (this.getBlockState().getBlock() instanceof IRenderBoundingBoxProvider provider) {
+            return provider.getRenderBoundingBox(this.getBlockState(), this.worldPosition);
+        }
+
+        return super.getRenderBoundingBox();
+    }
 
     public void triggerAnim() {
         triggerAnim("animate_controller", "animate");
