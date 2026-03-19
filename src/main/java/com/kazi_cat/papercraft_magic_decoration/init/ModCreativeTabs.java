@@ -81,8 +81,14 @@ public interface ModCreativeTabs {
             .title(Component.translatable("item_group.papercraft_magic_decoration.manor_decoration.name"))
             .icon(ModItems.PAPER_CUTTING_TABLE.get()::getDefaultInstance)
             .displayItems((par, output) -> {
-                output.accept(ModItems.PAPER_CUTTING_TABLE.get());
+                output.accept(ModItems.WINE_AROMA_RED_WALLPAPER_WALL.get());
+                output.accept(ModItems.WINE_AROMA_BLUE_WALLPAPER_WALL.get());
+                output.accept(ModItems.UNDERGROUND_WALLPAPER_WALL.get());
+                output.accept(ModItems.RUSTIC_BLUE_WALLPAPER_WALL.get());
+                output.accept(ModItems.BLACK_AND_WHITE_CHECKER_BOARD_TILE.get());
+                output.accept(ModItems.BLUE_AND_WHITE_CHECKER_BOARD_TILE.get());
 
+                output.accept(ModItems.PAPER_CUTTING_TABLE.get());
                 output.accept(ModItems.LOUD_BUTTON.get());
                 output.accept(ModItems.LOW_CABINET_WITH_TABLECLOTH.get());
                 output.accept(ModItems.WOODEN_BARREL_BOOKSHELF.get());
