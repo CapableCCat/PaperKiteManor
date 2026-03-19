@@ -314,8 +314,15 @@ public interface ModBlocks {
     RegistryObject<Block> WOODWORKING_TABLE = BLOCKS.register("woodworking_table",
             () -> new OneByTwoAnimatedBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD).strength(1f, 10f).noOcclusion(),
-                    Block.box(0, 0, 0, 15, 16, 16),
-                    Block.box(1, 0, 0, 16, 16, 16)));
+                    Block.box(1, 0, 0, 16, 16, 16),
+                    Block.box(0, 0, 0, 15, 16, 16)));
+
+    RegistryObject<Block> LONG_STORAGE_TABLE = BLOCKS.register("long_storage_table",
+            () -> new OneByThreeAnimatedBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD).strength(1f, 10f).noOcclusion(),
+                    Block.box(1, 0, 0, 16, 15, 16),
+                    Block.box(0, 0, 0, 16, 15, 16),
+                    Block.box(0, 0, 0, 15, 15, 16)));
 
     // 杯装酒方块实体
     RegistryObject<BlockEntityType<GlassDrinkBlockEntity>> GLASS_DRINK_BE = BLOCK_ENTITIES.register(
@@ -384,7 +391,8 @@ public interface ModBlocks {
                             LOUD_BUTTON.get(),
                             LOW_CABINET_WITH_TABLECLOTH.get(),
                             WOODEN_BARREL_BOOKSHELF.get(),
-                            WOODWORKING_TABLE.get()
+                            WOODWORKING_TABLE.get(),
+                            LONG_STORAGE_TABLE.get()
                     ).build(null)
     );
 }

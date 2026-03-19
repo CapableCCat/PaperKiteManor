@@ -32,23 +32,26 @@ import java.util.EnumMap;
 import java.util.List;
 
 @SuppressWarnings("deprecation")
-public class OneByTwoAnimatedBlock extends SimpleAnimatedBlock {
-    public static final IntegerProperty POSITION = IntegerProperty.create("position", 0, 1);
+public class OneByThreeAnimatedBlock extends SimpleAnimatedBlock {
+    public static final IntegerProperty POSITION = IntegerProperty.create("position", 0, 2);
     public static final int LEFT = 0;
-    public static final int RIGHT = 1;
+    public static final int CENTER = 1;
+    public static final int RIGHT = 2;
     protected final EnumMap<Direction, VoxelShape> shapes1;
+    protected final EnumMap<Direction, VoxelShape> shapes2;
 
-    public OneByTwoAnimatedBlock(Properties properties, VoxelShape leftShape, VoxelShape rightShape) {
+    public OneByThreeAnimatedBlock(Properties properties, VoxelShape leftShape, VoxelShape centerShape, VoxelShape rightShape) {
         super(properties, leftShape);
 
-        this.shapes1 = VoxelShapeUtils.horizontalShapes(rightShape);
+        this.shapes1 = VoxelShapeUtils.horizontalShapes(centerShape);
+        this.shapes2 = VoxelShapeUtils.horizontalShapes(rightShape);
 
         StateDefinition.Builder<Block, BlockState> builder = new StateDefinition.Builder<>(this);
         this.createPositionBlockStateDefinition(builder);
         this.stateDefinition = builder.create(Block::defaultBlockState, BlockState::new);
 
         this.registerDefaultState(this.stateDefinition.any()
-                .setValue(POSITION, LEFT)
+                .setValue(POSITION, CENTER)
                 .setValue(FACING, Direction.NORTH)
                 .setValue(WATERLOGGED, false));
     }
@@ -60,11 +63,16 @@ public class OneByTwoAnimatedBlock extends SimpleAnimatedBlock {
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player,
                                  InteractionHand hand, BlockHitResult hitResult) {
-        if (player.getItemInHand(hand).isEmpty() && state.getValue(POSITION) == RIGHT) {
-            BlockPos leftPos = pos.relative(state.getValue(FACING).getClockWise());
-            BlockState leftState = level.getBlockState(leftPos);
-            if (leftState.is(state.getBlock()) && leftState.getValue(POSITION) == LEFT) {
-                if (level.getBlockEntity(leftPos) instanceof AnimatedBlockEntity animated) {
+        if (player.getItemInHand(hand).isEmpty() && state.getValue(POSITION) != CENTER) {
+            BlockPos centerPos;
+            if (state.getValue(POSITION) == RIGHT) {
+                centerPos = pos.relative(state.getValue(FACING).getClockWise());
+            } else {
+                centerPos = pos.relative(state.getValue(FACING).getCounterClockWise());
+            }
+            BlockState centerState = level.getBlockState(centerPos);
+            if (centerState.is(state.getBlock()) && centerState.getValue(POSITION) == CENTER) {
+                if (level.getBlockEntity(centerPos) instanceof AnimatedBlockEntity animated) {
                     animated.triggerAnim();
                     return InteractionResult.SUCCESS;
                 }
@@ -81,7 +89,8 @@ public class OneByTwoAnimatedBlock extends SimpleAnimatedBlock {
         Direction facing = state.getValue(FACING);
 
         if ((position == LEFT && direction == facing.getCounterClockWise())
-                || (position == RIGHT && direction == facing.getClockWise())) {
+                || (position == RIGHT && direction == facing.getClockWise())
+                || (position == CENTER && (direction == facing.getClockWise() || direction == facing.getCounterClockWise()))) {
             if (!neighborState.is(this) || neighborState.getValue(FACING) != facing || neighborState.getValue(POSITION) == position) {
                 return Blocks.AIR.defaultBlockState();
             }
@@ -92,13 +101,25 @@ public class OneByTwoAnimatedBlock extends SimpleAnimatedBlock {
 
     @Override
     public void playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
-        if (!level.isClientSide && player.isCreative() && state.getValue(POSITION) == RIGHT) {
-            BlockPos leftPos = pos.relative(state.getValue(FACING).getClockWise());
-            BlockState leftState = level.getBlockState(leftPos);
-            if (leftState.is(state.getBlock()) && leftState.getValue(POSITION) == LEFT) {
-                BlockState airBlockState = leftState.getFluidState().is(Fluids.WATER) ? Blocks.WATER.defaultBlockState() : Blocks.AIR.defaultBlockState();
-                level.setBlock(leftPos, airBlockState, Block.UPDATE_SUPPRESS_DROPS | Block.UPDATE_ALL);
-                level.levelEvent(player, LevelEvent.PARTICLES_DESTROY_BLOCK, leftPos, Block.getId(leftState));
+        if (!level.isClientSide && player.isCreative()) {
+            if (state.getValue(POSITION) == RIGHT) {
+                Direction direction = state.getValue(FACING).getClockWise();
+                BlockPos centerPos = pos.relative(direction);
+                BlockState centerState = level.getBlockState(centerPos);
+                if (centerState.is(state.getBlock()) && centerState.getValue(POSITION) == CENTER) {
+                    BlockState airBlockState = centerState.getFluidState().is(Fluids.WATER) ? Blocks.WATER.defaultBlockState() : Blocks.AIR.defaultBlockState();
+                    level.setBlock(centerPos, airBlockState, Block.UPDATE_SUPPRESS_DROPS | Block.UPDATE_ALL);
+                    level.levelEvent(player, LevelEvent.PARTICLES_DESTROY_BLOCK, centerPos, Block.getId(centerState));
+                }
+            } else if (state.getValue(POSITION) == LEFT) {
+                Direction direction = state.getValue(FACING).getCounterClockWise();
+                BlockPos centerPos = pos.relative(direction);
+                BlockState centerState = level.getBlockState(centerPos);
+                if (centerState.is(state.getBlock()) && centerState.getValue(POSITION) == CENTER) {
+                    BlockState airBlockState = centerState.getFluidState().is(Fluids.WATER) ? Blocks.WATER.defaultBlockState() : Blocks.AIR.defaultBlockState();
+                    level.setBlock(centerPos, airBlockState, Block.UPDATE_SUPPRESS_DROPS | Block.UPDATE_ALL);
+                    level.levelEvent(player, LevelEvent.PARTICLES_DESTROY_BLOCK, centerPos, Block.getId(centerState));
+                }
             }
         }
         super.playerWillDestroy(level, pos, state, player);
@@ -107,11 +128,12 @@ public class OneByTwoAnimatedBlock extends SimpleAnimatedBlock {
     @Nullable
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        BlockPos leftPos = context.getClickedPos();
+        BlockPos centerPos = context.getClickedPos();
         Direction facing = context.getHorizontalDirection();
         Level level = context.getLevel();
-        BlockPos rightPos = leftPos.relative(facing.getOpposite().getCounterClockWise());
-        if (level.getBlockState(rightPos).canBeReplaced(context)) {
+        BlockPos leftPos = centerPos.relative(facing.getOpposite().getClockWise());
+        BlockPos rightPos = centerPos.relative(facing.getOpposite().getCounterClockWise());
+        if (level.getBlockState(rightPos).canBeReplaced(context) && level.getBlockState(leftPos).canBeReplaced(context)) {
             return super.getStateForPlacement(context);
         }
         return null;
@@ -120,20 +142,25 @@ public class OneByTwoAnimatedBlock extends SimpleAnimatedBlock {
     @Override
     public void setPlacedBy(Level pLevel, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
         Direction facing = state.getValue(FACING);
+
         BlockPos rightPos = pos.relative(facing.getCounterClockWise());
         BlockState rightState = state.setValue(POSITION, RIGHT);
         pLevel.setBlock(rightPos, rightState, Block.UPDATE_ALL);
+
+        BlockPos leftPos = pos.relative(facing.getClockWise());
+        BlockState leftState = state.setValue(POSITION, LEFT);
+        pLevel.setBlock(leftPos, leftState, Block.UPDATE_ALL);
     }
 
     @Override
     public @Nullable BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
-        if (blockState.getValue(POSITION) == RIGHT) return null;
+        if (blockState.getValue(POSITION) != CENTER) return null;
         return super.newBlockEntity(blockPos, blockState);
     }
 
     @Override
     public List<ItemStack> getDrops(BlockState state, LootParams.Builder params) {
-        if (state.getValue(POSITION) == RIGHT) {
+        if (state.getValue(POSITION) != CENTER) {
             return Collections.emptyList();
         }
         return super.getDrops(state, params);
@@ -141,6 +168,12 @@ public class OneByTwoAnimatedBlock extends SimpleAnimatedBlock {
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return state.getValue(POSITION) == LEFT ? shapes.get(state.getValue(FACING)) : shapes1.get(state.getValue(FACING));
+        Direction facing = state.getValue(FACING);
+        return switch (state.getValue(POSITION)) {
+            case 0 -> shapes.get(facing);
+            case 1 -> shapes1.get(facing);
+            case 2 -> shapes2.get(facing);
+            default -> super.getShape(state, level, pos, context);
+        };
     }
 }

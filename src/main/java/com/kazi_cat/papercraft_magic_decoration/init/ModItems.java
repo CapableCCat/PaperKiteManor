@@ -205,4 +205,6 @@ public interface ModItems {
     RegistryObject<Item> WOODEN_BARREL_BOOKSHELF = ITEMS.register("wooden_barrel_bookshelf", () -> new GeoBlockItem(ModBlocks.WOODEN_BARREL_BOOKSHELF.get(), new Item.Properties()));
 
     RegistryObject<Item> WOODWORKING_TABLE = ITEMS.register("woodworking_table", () -> new GeoBlockItem(ModBlocks.WOODWORKING_TABLE.get(), new Item.Properties()));
+
+    RegistryObject<Item> LONG_STORAGE_TABLE = ITEMS.register("long_storage_table", () -> new GeoBlockItem(ModBlocks.LONG_STORAGE_TABLE.get(), new Item.Properties()));
 }

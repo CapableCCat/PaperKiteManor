@@ -23,6 +23,11 @@ public class AnimatedBlockEntity extends BaseBlockEntity implements GeoBlockEnti
         super(ModBlocks.ANIMATED_BE.get(), pos, state);
     }
 
+//    @Override
+//    public AABB getRenderBoundingBox() {
+//
+//    }
+
     public void triggerAnim() {
         triggerAnim("animate_controller", "animate");
     }

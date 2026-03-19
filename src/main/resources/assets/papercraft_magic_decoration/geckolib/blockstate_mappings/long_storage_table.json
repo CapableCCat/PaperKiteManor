@@ -1,0 +1,19 @@
+{
+  "variants" : {
+    "facing=north,waterlogged=false,position=1": "0",
+    "facing=east,waterlogged=false,position=1": "0",
+    "facing=south,waterlogged=false,position=1": "0",
+    "facing=west,waterlogged=false,position=1": "0",
+    "facing=north,waterlogged=true,position=1": "0",
+    "facing=east,waterlogged=true,position=1": "0",
+    "facing=south,waterlogged=true,position=1": "0",
+    "facing=west,waterlogged=true,position=1": "0"
+  },
+  "models" : {
+    "0" : {
+      "model": "papercraft_magic_decoration:geo/long_storage_table.geo.json",
+      "texture": "papercraft_magic_decoration:textures/block/long_storage_table.png",
+      "animation": "papercraft_magic_decoration:animations/long_storage_table.animation.json"
+    }
+  }
+}
