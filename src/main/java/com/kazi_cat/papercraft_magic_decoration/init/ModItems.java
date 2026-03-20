@@ -271,4 +271,25 @@ public interface ModItems {
     RegistryObject<Item> ROUGH_PALM_TREE_TRUNK = ITEMS.register("rough_palm_tree_trunk", () -> new BlockItem(ModBlocks.ROUGH_PALM_TREE_TRUNK.get(), new Item.Properties()));
 
     RegistryObject<Item> UNDERGROUND_PANELLING = ITEMS.register("underground_panelling", () -> new BlockItem(ModBlocks.UNDERGROUND_PANELLING.get(), new Item.Properties()));
+
+    // 折纸
+    RegistryObject<Item> LOW_CABINET_WITH_TABLECLOTH_ORIGAMI = ITEMS.register("low_cabinet_with_tablecloth_origami", () -> new Item(new Item.Properties()));
+
+    RegistryObject<Item> WOODEN_BARREL_BOOKSHELF_ORIGAMI = ITEMS.register("wooden_barrel_bookshelf_origami", () -> new Item(new Item.Properties()));
+
+    RegistryObject<Item> WOODWORKING_TABLE_ORIGAMI = ITEMS.register("woodworking_table_origami", () -> new Item(new Item.Properties()));
+
+    RegistryObject<Item> LONG_STORAGE_TABLE_ORIGAMI = ITEMS.register("long_storage_table_origami", () -> new Item(new Item.Properties()));
+
+    RegistryObject<Item> EDGED_CHALKBOARD_ORIGAMI = ITEMS.register("edged_chalkboard_origami", () -> new Item(new Item.Properties()));
+
+    RegistryObject<Item> CUPBOARD_ORIGAMI = ITEMS.register("cupboard_origami", () -> new Item(new Item.Properties()));
+
+    RegistryObject<Item> FIREPLACE_DECORATION_ORIGAMI = ITEMS.register("fireplace_decoration_origami", () -> new Item(new Item.Properties()));
+
+    RegistryObject<Item> LARGE_DINING_TABLE_ORIGAMI = ITEMS.register("large_dining_table_origami", () -> new Item(new Item.Properties()));
+
+    RegistryObject<Item> RED_VELVET_CHAISE_LONGUE_ORIGAMI = ITEMS.register("red_velvet_chaise_longue_origami", () -> new Item(new Item.Properties()));
+
+    RegistryObject<Item> OLD_ORGAN_ORIGAMI = ITEMS.register("old_organ_origami", () -> new Item(new Item.Properties()));
 }

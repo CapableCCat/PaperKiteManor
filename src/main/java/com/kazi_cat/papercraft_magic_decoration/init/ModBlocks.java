@@ -465,10 +465,14 @@ public interface ModBlocks {
             .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.WOOD).sound(SoundType.WOOD).strength(0.5f, 10f).noOcclusion(),
             Block.box(2, 0, 2, 14, 16, 14)));
 
-    RegistryObject<Block> UNDERGROUND_PANELLING = BLOCKS.register("underground_panelling", () -> new VerticalTwoByOneBlock(BlockBehaviour.Properties.of()
-            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.WOOD).sound(SoundType.WOOD).strength(1f, 3f),
-            Block.box(0, 0, 0, 16, 16, 16),
-            Block.box(0, 0, 0, 16, 16, 4)));
+    RegistryObject<Block> UNDERGROUND_PANELLING = BLOCKS.register("underground_panelling", () -> new HorizontalDirectionalOnlyBlock(BlockBehaviour.Properties.of()
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.WOOD).sound(SoundType.WOOD).strength(1f, 3f).noOcclusion(),
+            Block.box(0, 0, 1, 16, 16, 16)){
+        @Override
+        public boolean propagatesSkylightDown(BlockState state, BlockGetter getter, BlockPos pos) {
+            return true;
+        }
+    });
 
     // 杯装酒方块实体
     RegistryObject<BlockEntityType<GlassDrinkBlockEntity>> GLASS_DRINK_BE = BLOCK_ENTITIES.register(

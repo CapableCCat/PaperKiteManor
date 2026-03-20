@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/air",
-  "textures": {
-    "particle": "papercraft_magic_decoration:block/underground_panelling"
-  }
-}

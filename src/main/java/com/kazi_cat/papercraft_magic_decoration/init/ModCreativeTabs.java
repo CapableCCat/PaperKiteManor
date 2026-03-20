@@ -33,6 +33,17 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.WHITE_PAPER.get());
                 output.accept(ModItems.YELLOW_PAPER.get());
 
+                output.accept(ModItems.LOW_CABINET_WITH_TABLECLOTH_ORIGAMI.get());
+                output.accept(ModItems.WOODEN_BARREL_BOOKSHELF_ORIGAMI.get());
+                output.accept(ModItems.WOODWORKING_TABLE_ORIGAMI.get());
+                output.accept(ModItems.LONG_STORAGE_TABLE_ORIGAMI.get());
+                output.accept(ModItems.EDGED_CHALKBOARD_ORIGAMI.get());
+                output.accept(ModItems.CUPBOARD_ORIGAMI.get());
+                output.accept(ModItems.FIREPLACE_DECORATION_ORIGAMI.get());
+                output.accept(ModItems.LARGE_DINING_TABLE_ORIGAMI.get());
+                output.accept(ModItems.RED_VELVET_CHAISE_LONGUE_ORIGAMI.get());
+                output.accept(ModItems.OLD_ORGAN_ORIGAMI.get());
+
                 output.accept(ModItems.COPPER_BARTENDER.get());
                 output.accept(ModItems.VITALITY_SPORES.get());
                 output.accept(ModItems.WHISKEY_RAW.get());
