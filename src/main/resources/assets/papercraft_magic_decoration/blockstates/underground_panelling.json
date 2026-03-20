@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "facing=north,waterlogged=false,position=0": {
+      "model": "papercraft_magic_decoration:block/underground_panelling_down"
+    },
+    "facing=east,waterlogged=false,position=0": {
+      "model": "papercraft_magic_decoration:block/underground_panelling_down",
+      "y": 90
+    },
+    "facing=south,waterlogged=false,position=0": {
+      "model": "papercraft_magic_decoration:block/underground_panelling_down",
+      "y": 180
+    },
+    "facing=west,waterlogged=false,position=0": {
+      "model": "papercraft_magic_decoration:block/underground_panelling_down",
+      "y": 270
+    },
+    "facing=north,waterlogged=true,position=0": {
+      "model": "papercraft_magic_decoration:block/underground_panelling_down"
+    },
+    "facing=east,waterlogged=true,position=0": {
+      "model": "papercraft_magic_decoration:block/underground_panelling_down",
+      "y": 90
+    },
+    "facing=south,waterlogged=true,position=0": {
+      "model": "papercraft_magic_decoration:block/underground_panelling_down",
+      "y": 180
+    },
+    "facing=west,waterlogged=true,position=0": {
+      "model": "papercraft_magic_decoration:block/underground_panelling_down",
+      "y": 270
+    },
+    "facing=north,waterlogged=false,position=1": {
+      "model": "papercraft_magic_decoration:block/underground_panelling_up"
+    },
+    "facing=east,waterlogged=false,position=1": {
+      "model": "papercraft_magic_decoration:block/underground_panelling_up",
+      "y": 90
+    },
+    "facing=south,waterlogged=false,position=1": {
+      "model": "papercraft_magic_decoration:block/underground_panelling_up",
+      "y": 180
+    },
+    "facing=west,waterlogged=false,position=1": {
+      "model": "papercraft_magic_decoration:block/underground_panelling_up",
+      "y": 270
+    },
+    "facing=north,waterlogged=true,position=1": {
+      "model": "papercraft_magic_decoration:block/underground_panelling_up"
+    },
+    "facing=east,waterlogged=true,position=1": {
+      "model": "papercraft_magic_decoration:block/underground_panelling_up",
+      "y": 90
+    },
+    "facing=south,waterlogged=true,position=1": {
+      "model": "papercraft_magic_decoration:block/underground_panelling_up",
+      "y": 180
+    },
+    "facing=west,waterlogged=true,position=1": {
+      "model": "papercraft_magic_decoration:block/underground_panelling_up",
+      "y": 270
+    }
+  }
+}
