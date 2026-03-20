@@ -20,6 +20,7 @@ import com.kazi_cat.papercraft_magic_decoration.blockentity.food.AnimatedSmeltab
 import com.kazi_cat.papercraft_magic_decoration.blockentity.drink.GlassDrinkBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.decoration.PaperCuttingTableBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.food.SmeltableBlockEntity;
+import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.*;
@@ -362,6 +363,8 @@ public interface ModBlocks {
             .ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.WOOD).strength(1f, 10f).noOcclusion(),
             Block.box(0, 0, 0, 16, 15, 16)));
 
+    RegistryObject<Block> CANOPY_TREE_LIMB = BLOCKS.register("canopy_tree_limb", () -> log(MapColor.COLOR_BROWN, MapColor.COLOR_BROWN));
+
     // 杯装酒方块实体
     RegistryObject<BlockEntityType<GlassDrinkBlockEntity>> GLASS_DRINK_BE = BLOCK_ENTITIES.register(
             "glass_drink", () -> BlockEntityType.Builder
@@ -441,4 +444,10 @@ public interface ModBlocks {
                             EDGED_CHALKBOARD.get()
                     ).build(null)
     );
+
+    private static RotatedPillarBlock log(MapColor topColor, MapColor sideColor) {
+        return new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(
+                (state) -> state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? topColor : sideColor)
+                .instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava());
+    }
 }
