@@ -45,7 +45,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.List;
 
-@SuppressWarnings("DataFlowIssue")
+@SuppressWarnings({"DataFlowIssue"})
 public interface ModBlocks {
     DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, PaperKiteManor.MOD_ID);
     DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, PaperKiteManor.MOD_ID);
@@ -444,6 +444,26 @@ public interface ModBlocks {
             builder.add(FACING, FACE);
         }
     });
+
+    RegistryObject<Block> PALM_TREE_CROWN = BLOCKS.register("palm_tree_crown", () -> new SimpleDecorationBlock(BlockBehaviour.Properties.of()
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.PLANT).sound(SoundType.AZALEA_LEAVES).strength(1f, 0.2f).noCollission().noOcclusion(),
+            Block.box(-16, -16, -16, 16, 32, 16)));
+
+    RegistryObject<Block> PALM_TREE_TOP = BLOCKS.register("palm_tree_top", () -> new WaterLoggedOnlyBlock(BlockBehaviour.Properties.of()
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.PLANT).sound(SoundType.WOOD).strength(0.5f, 10f).noOcclusion(),
+            Block.box(1, 0, 1, 15, 16, 15)));
+
+    RegistryObject<Block> PALM_TREE_TRUNK_TOP = BLOCKS.register("palm_tree_trunk_top", () -> new WaterLoggedOnlyBlock(BlockBehaviour.Properties.of()
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.WOOD).sound(SoundType.WOOD).strength(0.5f, 10f).noOcclusion(),
+            Block.box(1, 0, 1, 15, 16, 15)));
+
+    RegistryObject<Block> PALM_TREE_TRUNK = BLOCKS.register("palm_tree_trunk", () -> new WaterLoggedOnlyBlock(BlockBehaviour.Properties.of()
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.WOOD).sound(SoundType.WOOD).strength(0.5f, 10f).noOcclusion(),
+            Block.box(3, 0, 3, 13, 16, 13)));
+
+    RegistryObject<Block> ROUGH_PALM_TREE_TRUNK = BLOCKS.register("rough_palm_tree_trunk", () -> new WaterLoggedOnlyBlock(BlockBehaviour.Properties.of()
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.WOOD).sound(SoundType.WOOD).strength(0.5f, 10f).noOcclusion(),
+            Block.box(2, 0, 2, 14, 16, 14)));
 
     // 杯装酒方块实体
     RegistryObject<BlockEntityType<GlassDrinkBlockEntity>> GLASS_DRINK_BE = BLOCK_ENTITIES.register(

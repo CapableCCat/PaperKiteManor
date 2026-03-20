@@ -90,24 +90,32 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.RUSTIC_BLUE_WALLPAPER_WALL.get());
                 output.accept(ModItems.BLACK_AND_WHITE_CHECKER_BOARD_TILE.get());
                 output.accept(ModItems.BLUE_AND_WHITE_CHECKER_BOARD_TILE.get());
-                output.accept(ModItems.CANOPY_TREE_LIMB.get());
+
                 output.accept(ModItems.CANOPY_TREE_FOLIAGE.get());
                 output.accept(ModItems.CANOPY_TREE_FERN.get());
                 output.accept(ModItems.CANOPY_TREE_DROOPING_ROOT.get());
+                output.accept(ModItems.CANOPY_TREE_LIMB.get());
+
+                output.accept(ModItems.PALM_TREE_CROWN.get());
+                output.accept(ModItems.PALM_TREE_TOP.get());
+                output.accept(ModItems.PALM_TREE_TRUNK_TOP.get());
+                output.accept(ModItems.PALM_TREE_TRUNK.get());
+                output.accept(ModItems.ROUGH_PALM_TREE_TRUNK.get());
 
                 output.accept(ModItems.PAPER_CUTTING_TABLE.get());
-                output.accept(ModItems.LOUD_BUTTON.get());
                 output.accept(ModItems.LOW_CABINET_WITH_TABLECLOTH.get());
                 output.accept(ModItems.WOODEN_BARREL_BOOKSHELF.get());
                 output.accept(ModItems.WOODWORKING_TABLE.get());
                 output.accept(ModItems.LONG_STORAGE_TABLE.get());
                 output.accept(ModItems.EDGED_CHALKBOARD.get());
-                output.accept(ModItems.KAZI_LUCKY_CAT.get());
                 output.accept(ModItems.CUPBOARD.get());
-                output.accept(ModItems.LARGE_DINING_TABLE.get());
                 output.accept(ModItems.FIREPLACE_DECORATION.get());
+                output.accept(ModItems.LARGE_DINING_TABLE.get());
+                output.accept(ModItems.STAR_EMBELLISHED_CEILING.get());
+
                 output.accept(ModItems.GIFT_FROM_KAZI_MANOR.get());
                 output.accept(ModItems.KEY_UNDER_THE_LAKE.get());
-                output.accept(ModItems.STAR_EMBELLISHED_CEILING.get());
+                output.accept(ModItems.LOUD_BUTTON.get());
+                output.accept(ModItems.KAZI_LUCKY_CAT.get());
             }).build());
 }
