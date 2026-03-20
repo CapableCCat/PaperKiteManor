@@ -377,6 +377,24 @@ public interface ModBlocks {
             BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1f, 10f).noOcclusion(),
             Block.box(1, 0, 1, 15, 7, 15)));
 
+    RegistryObject<Block> FIREPLACE_DECORATION = BLOCKS.register("fireplace_decoration", () -> new VerticalTwoByThreeBlock(BlockBehaviour.Properties.of()
+            .instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.WOOD).strength(1f, 3f).noOcclusion(),
+            Block.box(0, 0, 9, 15, 16, 16),
+            Block.box(0, 0, 0, 0, 0, 0),
+            Block.box(1, 0, 9, 16, 16, 16),
+            Shapes.or(
+                    Block.box(0, 0, 9, 15, 16, 16),
+                    Block.box(0, 10, 2, 16, 16, 16)
+            ),
+            Shapes.or(
+                    Block.box(0, 0, 9, 16, 16, 16),
+                    Block.box(0, 10, 2, 16, 16, 16)
+            ),
+            Shapes.or(
+                    Block.box(1, 0, 9, 16, 16, 16),
+                    Block.box(0, 10, 2, 16, 16, 16)
+            )));
+
     // 杯装酒方块实体
     RegistryObject<BlockEntityType<GlassDrinkBlockEntity>> GLASS_DRINK_BE = BLOCK_ENTITIES.register(
             "glass_drink", () -> BlockEntityType.Builder

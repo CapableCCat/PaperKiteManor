@@ -249,4 +249,6 @@ public interface ModItems {
     RegistryObject<Item> GIFT_FROM_KAZI_MANOR = ITEMS.register("gift_from_kazi_manor", () -> new BlockItem(ModBlocks.GIFT_FROM_KAZI_MANOR.get(), new Item.Properties()));
 
     RegistryObject<Item> KEY_UNDER_THE_LAKE = ITEMS.register("key_under_the_lake", () -> new BlockItem(ModBlocks.KEY_UNDER_THE_LAKE.get(), new Item.Properties()));
+
+    RegistryObject<Item> FIREPLACE_DECORATION = ITEMS.register("fireplace_decoration", () -> new BlockItem(ModBlocks.FIREPLACE_DECORATION.get(), new Item.Properties()));
 }

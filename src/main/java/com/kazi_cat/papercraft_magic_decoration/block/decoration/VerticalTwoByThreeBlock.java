@@ -1,6 +1,8 @@
 package com.kazi_cat.papercraft_magic_decoration.block.decoration;
 
 import com.kazi_cat.papercraft_magic_decoration.blockentity.decoration.AnimatedBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.utils.VoxelShapeUtils;
+import it.unimi.dsi.fastutil.ints.Int2ObjectArrayMap;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
@@ -9,6 +11,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
@@ -20,11 +23,13 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.EnumMap;
 import java.util.List;
 
 @SuppressWarnings("deprecation")
@@ -36,9 +41,21 @@ public class VerticalTwoByThreeBlock extends SimpleDecorationBlock {
     public static final int LEFT_UP = 3;
     public static final int CENTER_UP = 4;
     public static final int RIGHT_UP = 5;
+    protected final Int2ObjectArrayMap<EnumMap<Direction, VoxelShape>> shapeMap;
 
-    public VerticalTwoByThreeBlock(Properties properties, VoxelShape northShape) {
-        super(properties, northShape);
+    public VerticalTwoByThreeBlock(Properties properties, VoxelShape... shapes) {
+        super(properties, shapes[0]);
+
+        shapeMap = new Int2ObjectArrayMap<>();
+        if (shapes.length == 1) {
+            for (int i = 0; i < 6; i++) {
+                shapeMap.put(i, VoxelShapeUtils.horizontalShapes(shapes[0]));
+            }
+        } else {
+            for (int i = 0; i < 6; i++) {
+                shapeMap.put(i, VoxelShapeUtils.horizontalShapes(shapes[i]));
+            }
+        }
 
         StateDefinition.Builder<Block, BlockState> builder = new StateDefinition.Builder<>(this);
         this.createPositionBlockStateDefinition(builder);
@@ -162,6 +179,11 @@ public class VerticalTwoByThreeBlock extends SimpleDecorationBlock {
             return Collections.emptyList();
         }
         return super.getDrops(state, params);
+    }
+
+    @Override
+    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return shapeMap.get(state.getValue(POSITION)).get(state.getValue(FACING));
     }
 
     public List<BlockPos> getOrderedPosList(BlockPos leftDown, Direction right) {

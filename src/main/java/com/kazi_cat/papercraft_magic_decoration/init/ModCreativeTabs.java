@@ -102,6 +102,7 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.KAZI_LUCKY_CAT.get());
                 output.accept(ModItems.CUPBOARD.get());
                 output.accept(ModItems.LARGE_DINING_TABLE.get());
+                output.accept(ModItems.FIREPLACE_DECORATION.get());
                 output.accept(ModItems.GIFT_FROM_KAZI_MANOR.get());
                 output.accept(ModItems.KEY_UNDER_THE_LAKE.get());
             }).build());
