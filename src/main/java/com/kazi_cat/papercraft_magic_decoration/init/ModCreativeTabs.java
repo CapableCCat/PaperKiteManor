@@ -108,5 +108,6 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.FIREPLACE_DECORATION.get());
                 output.accept(ModItems.GIFT_FROM_KAZI_MANOR.get());
                 output.accept(ModItems.KEY_UNDER_THE_LAKE.get());
+                output.accept(ModItems.STAR_EMBELLISHED_CEILING.get());
             }).build());
 }
