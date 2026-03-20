@@ -91,6 +91,9 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.BLACK_AND_WHITE_CHECKER_BOARD_TILE.get());
                 output.accept(ModItems.BLUE_AND_WHITE_CHECKER_BOARD_TILE.get());
                 output.accept(ModItems.CANOPY_TREE_LIMB.get());
+                output.accept(ModItems.CANOPY_TREE_FOLIAGE.get());
+                output.accept(ModItems.CANOPY_TREE_FERN.get());
+                output.accept(ModItems.CANOPY_TREE_DROOPING_ROOT.get());
 
                 output.accept(ModItems.PAPER_CUTTING_TABLE.get());
                 output.accept(ModItems.LOUD_BUTTON.get());

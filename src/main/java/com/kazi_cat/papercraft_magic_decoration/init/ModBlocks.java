@@ -20,16 +20,23 @@ import com.kazi_cat.papercraft_magic_decoration.blockentity.food.AnimatedSmeltab
 import com.kazi_cat.papercraft_magic_decoration.blockentity.drink.GlassDrinkBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.decoration.PaperCuttingTableBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.food.SmeltableBlockEntity;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraftforge.common.IPlantable;
+import net.minecraftforge.common.PlantType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -367,8 +374,6 @@ public interface ModBlocks {
             .ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.WOOD).strength(1f, 10f).noOcclusion(),
             Block.box(0, 0, 0, 16, 15, 16)));
 
-    RegistryObject<Block> CANOPY_TREE_LIMB = BLOCKS.register("canopy_tree_limb", () -> log(MapColor.COLOR_BROWN, MapColor.COLOR_BROWN));
-
     RegistryObject<Block> GIFT_FROM_KAZI_MANOR = BLOCKS.register("gift_from_kazi_manor", () -> new SimpleAnimatedBlock(
             BlockBehaviour.Properties.of().sound(SoundType.SNOW).strength(1f, 10f).noOcclusion(),
             Block.box(2, 0, 2, 14, 10, 14)));
@@ -394,6 +399,36 @@ public interface ModBlocks {
                     Block.box(1, 0, 9, 16, 16, 16),
                     Block.box(0, 10, 2, 16, 16, 16)
             )));
+
+    RegistryObject<Block> CANOPY_TREE_LIMB = BLOCKS.register("canopy_tree_limb", () -> log(MapColor.COLOR_BROWN, MapColor.COLOR_BROWN));
+
+    RegistryObject<Block> CANOPY_TREE_FOLIAGE = BLOCKS.register("canopy_tree_foliage", () -> leaves(SoundType.GRASS));
+
+    RegistryObject<Block> CANOPY_TREE_FERN = BLOCKS.register("canopy_tree_fern", () -> new MossBlock(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_GREEN).strength(0.1F).sound(SoundType.MOSS).pushReaction(PushReaction.DESTROY)){
+        @Override
+        public boolean canSustainPlant(BlockState state, BlockGetter level, BlockPos pos,
+                                       Direction facing, IPlantable plantable) {
+            PlantType plantType = plantable.getPlantType(level, pos.relative(facing));
+
+            if (plantType == null) {
+                return false;
+            }
+
+            if (plantType == PlantType.PLAINS || plantType == PlantType.CAVE) {
+                return true;
+            } else if (plantType == PlantType.BEACH) {
+                return level.getFluidState(pos.east()).getType() == Fluids.WATER
+                        || level.getFluidState(pos.west()).getType() == Fluids.WATER
+                        || level.getFluidState(pos.north()).getType() == Fluids.WATER
+                        || level.getFluidState(pos.south()).getType() == Fluids.WATER;
+            }
+            return false;
+        }
+    });
+
+    RegistryObject<Block> CANOPY_TREE_DROOPING_ROOT = BLOCKS.register("canopy_tree_drooping_root", () -> new Block(BlockBehaviour.Properties.of()
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.WOOD).sound(SoundType.WOOD).strength(0.5f, 10f)));
 
     // 杯装酒方块实体
     RegistryObject<BlockEntityType<GlassDrinkBlockEntity>> GLASS_DRINK_BE = BLOCK_ENTITIES.register(
@@ -481,5 +516,28 @@ public interface ModBlocks {
         return new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(
                 (state) -> state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? topColor : sideColor)
                 .instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava());
+    }
+
+    private static LeavesBlock leaves(SoundType soundType) {
+        return new LeavesBlock(BlockBehaviour.Properties.of()
+                .mapColor(MapColor.PLANT)
+                .strength(0.2F)
+                .randomTicks()
+                .sound(soundType)
+                .noOcclusion()
+                .isValidSpawn(ModBlocks::ocelotOrParrot)
+                .isSuffocating(ModBlocks::never)
+                .isViewBlocking(ModBlocks::never)
+                .ignitedByLava()
+                .pushReaction(PushReaction.DESTROY)
+                .isRedstoneConductor(ModBlocks::never));
+    }
+
+    private static boolean never(BlockState state, BlockGetter getter, BlockPos pos) {
+        return false;
+    }
+
+    private static Boolean ocelotOrParrot(BlockState state, BlockGetter getter, BlockPos pos, EntityType<?> entityType) {
+        return (entityType == EntityType.OCELOT || entityType == EntityType.PARROT);
     }
 }
