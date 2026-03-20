@@ -245,4 +245,8 @@ public interface ModItems {
     RegistryObject<Item> LARGE_DINING_TABLE = ITEMS.register("large_dining_table", () -> new BlockItem(ModBlocks.LARGE_DINING_TABLE.get(), new Item.Properties()));
 
     RegistryObject<Item> CANOPY_TREE_LIMB = ITEMS.register("canopy_tree_limb", () -> new BlockItem(ModBlocks.CANOPY_TREE_LIMB.get(), new Item.Properties()));
+
+    RegistryObject<Item> GIFT_FROM_KAZI_MANOR = ITEMS.register("gift_from_kazi_manor", () -> new BlockItem(ModBlocks.GIFT_FROM_KAZI_MANOR.get(), new Item.Properties()));
+
+    RegistryObject<Item> KEY_UNDER_THE_LAKE = ITEMS.register("key_under_the_lake", () -> new BlockItem(ModBlocks.KEY_UNDER_THE_LAKE.get(), new Item.Properties()));
 }

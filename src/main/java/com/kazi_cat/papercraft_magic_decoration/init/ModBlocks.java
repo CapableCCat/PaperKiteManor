@@ -369,6 +369,14 @@ public interface ModBlocks {
 
     RegistryObject<Block> CANOPY_TREE_LIMB = BLOCKS.register("canopy_tree_limb", () -> log(MapColor.COLOR_BROWN, MapColor.COLOR_BROWN));
 
+    RegistryObject<Block> GIFT_FROM_KAZI_MANOR = BLOCKS.register("gift_from_kazi_manor", () -> new SimpleAnimatedBlock(
+            BlockBehaviour.Properties.of().sound(SoundType.SNOW).strength(1f, 10f).noOcclusion(),
+            Block.box(2, 0, 2, 14, 10, 14)));
+
+    RegistryObject<Block> KEY_UNDER_THE_LAKE = BLOCKS.register("key_under_the_lake", () -> new SimpleAnimatedBlock(
+            BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1f, 10f).noOcclusion(),
+            Block.box(1, 0, 1, 15, 7, 15)));
+
     // 杯装酒方块实体
     RegistryObject<BlockEntityType<GlassDrinkBlockEntity>> GLASS_DRINK_BE = BLOCK_ENTITIES.register(
             "glass_drink", () -> BlockEntityType.Builder
@@ -445,7 +453,9 @@ public interface ModBlocks {
                             WOODEN_BARREL_BOOKSHELF.get(),
                             WOODWORKING_TABLE.get(),
                             LONG_STORAGE_TABLE.get(),
-                            EDGED_CHALKBOARD.get()
+                            EDGED_CHALKBOARD.get(),
+                            GIFT_FROM_KAZI_MANOR.get(),
+                            KEY_UNDER_THE_LAKE.get()
                     ).build(null)
     );
 
