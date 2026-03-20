@@ -269,6 +269,10 @@ public interface ModBlocks {
 
     RegistryObject<Block> TRAY_BLOCK = BLOCKS.register("tray", TrayBlock::new);
 
+    RegistryObject<Block> BUCKET_OF_FRIED_CHICKEN = BLOCKS.register("bucket_of_fried_chicken", () -> new BucketOfFriedChickenBlock(
+            BlockBehaviour.Properties.of().sound(SoundType.SNOW).strength(1f, 10f).noOcclusion(),
+            Block.box(2, 0, 2, 14, 14, 14)));
+
     // 土坑方块
     RegistryObject<Block> DIRT_HOLE = BLOCKS.register("dirt_hole", DirtHoleBlock::new);
 

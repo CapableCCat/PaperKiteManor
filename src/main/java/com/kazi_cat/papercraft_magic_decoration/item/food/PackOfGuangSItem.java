@@ -1,10 +1,11 @@
-package com.kazi_cat.papercraft_magic_decoration.item;
+package com.kazi_cat.papercraft_magic_decoration.item.food;
 
 import com.kazi_cat.papercraft_magic_decoration.block.ModBlockStateProperties;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.GuangSBlock;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.drink.GlassDrinkBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import com.kazi_cat.papercraft_magic_decoration.init.ModItems;
+import com.kazi_cat.papercraft_magic_decoration.item.StateBlockItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;

@@ -50,6 +50,7 @@
   "block.papercraft_magic_decoration.cupboard": "碗盘柜",
   "block.papercraft_magic_decoration.large_dining_table": "大晚宴餐桌",
   "block.papercraft_magic_decoration.canopy_tree_limb": "荫幕树枝干",
+  "block.papercraft_magic_decoration.bucket_of_fried_chicken": "炸鸡桶",
 
   "item.papercraft_magic_decoration.copper_bartender": "铜酒保",
   "item.papercraft_magic_decoration.paper_cutting_table": "剪纸台",
@@ -85,5 +86,8 @@
   "item.papercraft_magic_decoration.woodworking_table": "木工台",
   "item.papercraft_magic_decoration.long_storage_table": "长矮柜",
   "item.papercraft_magic_decoration.edged_chalkboard": "镶边黑板",
-  "item.papercraft_magic_decoration.kazi_lucky_cat": "咔吱招财猫"
+  "item.papercraft_magic_decoration.kazi_lucky_cat": "咔吱招财猫",
+  "item.papercraft_magic_decoration.breaded_raw_chicken": "生的裹粉鸡肉",
+  "item.papercraft_magic_decoration.bucket_of_fried_chicken": "炸鸡桶",
+  "item.papercraft_magic_decoration.fried_chicken_leg": "炸鸡腿"
 }

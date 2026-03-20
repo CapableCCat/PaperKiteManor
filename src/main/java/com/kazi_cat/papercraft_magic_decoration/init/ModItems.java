@@ -4,7 +4,10 @@ import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.block.food.ChunkySalmonBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.food.TwoByOneSmeltableBlock;
 import com.kazi_cat.papercraft_magic_decoration.item.*;
+import com.kazi_cat.papercraft_magic_decoration.item.food.BreadedRawChickenItem;
+import com.kazi_cat.papercraft_magic_decoration.item.food.GlassDrinkBlockItem;
 import com.kazi_cat.papercraft_magic_decoration.item.food.MultiEatGeoBlockItem;
+import com.kazi_cat.papercraft_magic_decoration.item.food.PackOfGuangSItem;
 import com.kazi_cat.papercraft_magic_decoration.item.tool.AmethystScissorsItem;
 import com.kazi_cat.papercraft_magic_decoration.item.tool.GardenTrowelItem;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -196,6 +199,13 @@ public interface ModItems {
             new Item.Properties().stacksTo(1)));
 
     RegistryObject<Item> LARGE_STEAK = ITEMS.register("large_steak", () -> new Item(new Item.Properties().food((new FoodProperties.Builder()).nutrition(12).saturationMod(0.7f).meat().build())));
+
+    RegistryObject<Item> BREADED_RAW_CHICKEN = ITEMS.register("breaded_raw_chicken", () -> new BreadedRawChickenItem(new Item.Properties()));
+
+    RegistryObject<Item> BUCKET_OF_FRIED_CHICKEN = ITEMS.register("bucket_of_fried_chicken", () -> new BlockItem(ModBlocks.BUCKET_OF_FRIED_CHICKEN.get(), new Item.Properties()));
+
+    RegistryObject<Item> FRIED_CHICKEN_LEG = ITEMS.register("fried_chicken_leg", () ->
+            new Item(new Item.Properties().food((new FoodProperties.Builder()).nutrition(8).saturationMod(0.6f).meat().build())));
 
     // 装饰方块
     RegistryObject<Item> LOUD_BUTTON = ITEMS.register("loud_button", () -> new GeoBlockItem(ModBlocks.LOUD_BUTTON.get(), new Item.Properties()));
