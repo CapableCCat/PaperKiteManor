@@ -4,6 +4,7 @@ import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import com.kazi_cat.papercraft_magic_decoration.inventory.container.KaziLuckyCatContainer;
 import com.kazi_cat.papercraft_magic_decoration.utils.AABBUtils;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
@@ -15,6 +16,7 @@ import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.Nullable;
 
 public class KaziLuckyCatBlockEntity extends AnimatedBlockEntity implements MenuProvider {
+    private static final String ITEMS = "items";
     protected ItemStackHandler items = new ItemStackHandler(11) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -40,6 +42,21 @@ public class KaziLuckyCatBlockEntity extends AnimatedBlockEntity implements Menu
     @Override
     public @Nullable AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
         return new KaziLuckyCatContainer(i, inventory, this);
+    }
+
+    @Override
+    public void load(CompoundTag tag) {
+        super.load(tag);
+        if (tag.contains(ITEMS)) {
+            items = new ItemStackHandler(11);
+            items.deserializeNBT(tag.getCompound(ITEMS));
+        }
+    }
+
+    @Override
+    protected void saveAdditional(CompoundTag tag) {
+        super.saveAdditional(tag);
+        tag.put(ITEMS, items.serializeNBT());
     }
 
     public ItemStackHandler getItems() { return this.items; }
