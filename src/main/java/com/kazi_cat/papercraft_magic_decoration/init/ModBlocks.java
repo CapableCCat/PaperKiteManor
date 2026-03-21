@@ -7,15 +7,13 @@ import com.kazi_cat.papercraft_magic_decoration.block.crop.CoffeePastinacaSativa
 import com.kazi_cat.papercraft_magic_decoration.block.crop.CoffeePastinacaSativaFruitingStemBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.*;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.TwoByOneBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.drink.BottleDrinkBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.drink.GuangSBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.drink.CopperBartenderBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.drink.GlassDrinkBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.drink.*;
 import com.kazi_cat.papercraft_magic_decoration.block.food.*;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.decoration.AnimatedBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.decoration.DirtHoleBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.decoration.KaziLuckyCatBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.drink.CopperBartenderBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.drink.DistillerBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.food.AnimatedSmeltableBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.drink.GlassDrinkBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.decoration.PaperCuttingTableBlockEntity;
@@ -203,6 +201,9 @@ public interface ModBlocks {
 
     // 铜酒保方块
     RegistryObject<Block> COPPER_BARTENDER = BLOCKS.register("copper_bartender", CopperBartenderBlock::new);
+
+    // 蒸馏器方块
+    RegistryObject<Block> COPPER_STILL = BLOCKS.register("copper_still", DistillerBlock::new);
 
     // 可烤制方块
     RegistryObject<Block> SAUSAGE_MACE_WEAPON_BLOCK = BLOCKS.register("sausage_mace_weapon", () ->
@@ -523,6 +524,14 @@ public interface ModBlocks {
             "copper_bartender_block", () -> BlockEntityType.Builder
                     .of(CopperBartenderBlockEntity::new,
                             COPPER_BARTENDER.get()
+                    ).build(null)
+    );
+
+    // 蒸馏器方块实体
+    RegistryObject<BlockEntityType<DistillerBlockEntity>> DISTILLER_BE = BLOCK_ENTITIES.register(
+            "distiller", () -> BlockEntityType.Builder
+                    .of(DistillerBlockEntity::new,
+                            COPPER_STILL.get()
                     ).build(null)
     );
 

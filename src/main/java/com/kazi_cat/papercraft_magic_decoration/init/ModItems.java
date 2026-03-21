@@ -159,6 +159,9 @@ public interface ModItems {
     RegistryObject<Item> COPPER_BARTENDER = ITEMS.register("copper_bartender", () ->
             new GeoBlockItem(ModBlocks.COPPER_BARTENDER.get(), new Item.Properties()));
 
+    // 蒸馏器
+    RegistryObject<Item> COPPER_STILL = ITEMS.register("copper_still", () -> new BlockItem(ModBlocks.COPPER_STILL.get(), new Item.Properties()));
+
     // 烤制食物
     RegistryObject<Item> RAW_SAUSAGE_MACE_WEAPON = ITEMS.register("raw_sausage_mace_weapon", () ->
             new GeoBlockItem(ModBlocks.SAUSAGE_MACE_WEAPON_BLOCK.get(), new Item.Properties()));

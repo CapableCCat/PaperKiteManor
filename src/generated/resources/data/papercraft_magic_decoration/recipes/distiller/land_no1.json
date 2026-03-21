@@ -1,0 +1,31 @@
+{
+  "type": "papercraft_magic_decoration:distiller",
+  "ingredients": [
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:apple"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "papercraft_magic_decoration:land_no1"
+  },
+  "time": 200,
+  "wineBase": {
+    "item": "papercraft_magic_decoration:whiskey_raw"
+  }
+}

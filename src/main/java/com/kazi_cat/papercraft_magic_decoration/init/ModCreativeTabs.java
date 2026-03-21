@@ -44,7 +44,6 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.RED_VELVET_CHAISE_LONGUE_ORIGAMI.get());
                 output.accept(ModItems.OLD_ORGAN_ORIGAMI.get());
 
-                output.accept(ModItems.COPPER_BARTENDER.get());
                 output.accept(ModItems.VITALITY_SPORES.get());
                 output.accept(ModItems.WHISKEY_RAW.get());
                 output.accept(ModItems.COFFEE_FRUIT.get());
@@ -55,6 +54,9 @@ public interface ModCreativeTabs {
             .title(Component.translatable("item_group.papercraft_magic_decoration.manor_food.name"))
             .icon(ModItems.GLASS_OF_LAND_NO1.get()::getDefaultInstance)
             .displayItems((par, output) -> {
+                output.accept(ModItems.COPPER_STILL.get());
+                output.accept(ModItems.COPPER_BARTENDER.get());
+
                 output.accept(ModItems.BLAZE_WHISKEY.get());
                 output.accept(ModItems.FERRY_WHISKEY.get());
                 output.accept(ModItems.FLY_WHISKEY.get());
