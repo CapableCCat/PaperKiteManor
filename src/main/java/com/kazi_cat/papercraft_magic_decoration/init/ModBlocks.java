@@ -1,6 +1,7 @@
 package com.kazi_cat.papercraft_magic_decoration.init;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
+import com.kazi_cat.papercraft_magic_decoration.block.SporesCollectionPlateBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.KaziLuckyCatBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.PaperCuttingTableBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.crop.CoffeePastinacaSativaCropBlock;
@@ -495,6 +496,8 @@ public interface ModBlocks {
             return getShape(state, blockGetter, pos, context);
         }
     });
+
+    RegistryObject<Block> SPORES_COLLECTION_PLATE = BLOCKS.register("spores_collection_plate", SporesCollectionPlateBlock::new);
 
     // 杯装酒方块实体
     RegistryObject<BlockEntityType<GlassDrinkBlockEntity>> GLASS_DRINK_BE = BLOCK_ENTITIES.register(

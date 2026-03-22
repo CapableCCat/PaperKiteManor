@@ -2,6 +2,7 @@
   "format_version": "1.9.0",
   "credit": "Made with Blockbench",
   "render_type": "cutout",
+  "ambientocclusion": false,
   "texture_size": [96, 96],
   "textures": {
     "0": "papercraft_magic_decoration:block/jumbo_smoked_salmon",
