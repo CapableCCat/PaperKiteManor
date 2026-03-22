@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "bab",
+    " c "
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:wheat"
+    },
+    "b": {
+      "item": "minecraft:porkchop"
+    },
+    "c": {
+      "item": "minecraft:bamboo"
+    }
+  },
+  "result": {
+    "item": "papercraft_magic_decoration:raw_sausage_mace_weapon",
+    "count": 1
+  }
+}

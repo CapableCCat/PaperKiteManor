@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "a a",
+    "bcb"
+  ],
+  "key": {
+    "a": {
+      "item": "papercraft_magic_decoration:blue_paper"
+    },
+    "b": {
+      "item": "papercraft_magic_decoration:white_paper"
+    },
+    "c": {
+      "item": "papercraft_magic_decoration:white_paper_block"
+    }
+  },
+  "result": {
+    "item": "papercraft_magic_decoration:fireplace_decoration_origami",
+    "count": 1
+  }
+}

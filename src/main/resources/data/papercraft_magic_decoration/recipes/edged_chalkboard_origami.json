@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " a ",
+    "bbb",
+    "bbb"
+  ],
+  "key": {
+    "a": {
+      "item": "papercraft_magic_decoration:white_paper"
+    },
+    "b": {
+      "item": "papercraft_magic_decoration:blue_paper"
+    }
+  },
+  "result": {
+    "item": "papercraft_magic_decoration:edged_chalkboard_origami",
+    "count": 1
+  }
+}

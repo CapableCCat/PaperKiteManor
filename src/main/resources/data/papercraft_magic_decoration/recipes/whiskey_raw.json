@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "cdc",
+    "cec"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:wheat_seeds"
+    },
+    "b": {
+      "item": "minecraft:water_bucket"
+    },
+    "c": {
+      "item": "minecraft:glass_bottle"
+    },
+    "d": {
+      "item": "minecraft:sugar"
+    },
+    "e": {
+      "item": "minecraft:wheat"
+    }
+  },
+  "result": {
+    "item": "papercraft_magic_decoration:whiskey_raw",
+    "count": 1
+  }
+}

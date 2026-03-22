@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a  ",
+    "aba",
+    "cdc"
+  ],
+  "key": {
+    "a": {
+      "item": "papercraft_magic_decoration:cotton_serge"
+    },
+    "b": {
+      "item": "papercraft_magic_decoration:cotton_serge_block"
+    },
+    "c": {
+      "item": "papercraft_magic_decoration:blue_paper"
+    },
+    "d": {
+      "item": "papercraft_magic_decoration:blue_paper_block"
+    }
+  },
+  "result": {
+    "item": "papercraft_magic_decoration:red_velvet_chaise_longue_origami",
+    "count": 1
+  }
+}

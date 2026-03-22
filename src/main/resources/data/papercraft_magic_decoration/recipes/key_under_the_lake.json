@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " a ",
+    "aba",
+    " a "
+  ],
+  "key": {
+    "a": {
+      "item": "papercraft_magic_decoration:black_paper"
+    },
+    "b": {
+      "item": "minecraft:amethyst_shard"
+    }
+  },
+  "result": {
+    "item": "papercraft_magic_decoration:key_under_the_lake",
+    "count": 4
+  }
+}

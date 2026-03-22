@@ -94,6 +94,7 @@ public class SporesCollectionPlateBlock extends Block implements SimpleWaterlogg
 
     @Override
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        if (!level.isAreaLoaded(pos, 1)) return;
         BlockPos above = pos.above();
         if (level.getBlockState(above).is(Blocks.SPORE_BLOSSOM)) {
             if (random.nextInt(5) == 0) {

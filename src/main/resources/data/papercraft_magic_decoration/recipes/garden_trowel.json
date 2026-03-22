@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "  a",
+    " b ",
+    "b  "
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:iron_ingot"
+    },
+    "b": {
+      "item": "minecraft:bamboo"
+    }
+  },
+  "result": {
+    "item": "papercraft_magic_decoration:garden_trowel",
+    "count": 1
+  }
+}

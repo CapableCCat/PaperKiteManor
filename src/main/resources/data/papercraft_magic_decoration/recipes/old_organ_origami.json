@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "bcb",
+    "d d"
+  ],
+  "key": {
+    "a": {
+      "item": "papercraft_magic_decoration:white_paper"
+    },
+    "b": {
+      "item": "papercraft_magic_decoration:blue_paper_block"
+    },
+    "c": {
+      "item": "papercraft_magic_decoration:white_paper_block"
+    },
+    "d": {
+      "item": "papercraft_magic_decoration:blue_paper"
+    }
+  },
+  "result": {
+    "item": "papercraft_magic_decoration:old_organ_origami",
+    "count": 1
+  }
+}

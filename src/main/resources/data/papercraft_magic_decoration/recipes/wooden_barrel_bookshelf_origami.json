@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa ",
+    "ab ",
+    " aa"
+  ],
+  "key": {
+    "a": {
+      "item": "papercraft_magic_decoration:blue_paper"
+    },
+    "b": {
+      "item": "papercraft_magic_decoration:cotton_serge"
+    }
+  },
+  "result": {
+    "item": "papercraft_magic_decoration:wooden_barrel_bookshelf_origami",
+    "count": 1
+  }
+}

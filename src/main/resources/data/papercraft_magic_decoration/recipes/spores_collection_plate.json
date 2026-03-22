@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a a",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:bamboo"
+    },
+    "b": {
+      "item": "minecraft:honey_bottle"
+    }
+  },
+  "result": {
+    "item": "papercraft_magic_decoration:spores_collection_plate",
+    "count": 1
+  }
+}
