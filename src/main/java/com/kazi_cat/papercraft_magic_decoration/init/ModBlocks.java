@@ -34,7 +34,9 @@ import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.PlantType;
 import net.minecraftforge.registries.DeferredRegister;
@@ -43,7 +45,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.List;
 
-@SuppressWarnings({"DataFlowIssue"})
+@SuppressWarnings({"deprecation","DataFlowIssue"})
 public interface ModBlocks {
     DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, PaperKiteManor.MOD_ID);
     DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, PaperKiteManor.MOD_ID);
@@ -430,6 +432,14 @@ public interface ModBlocks {
         }
     });
 
+    RegistryObject<Block> CANOPY_TREE_TRUNK = BLOCKS.register("canopy_tree_trunk", () -> new SimpleDecorationBlock(BlockBehaviour.Properties.of()
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
+            Block.box(0, 0, 4, 12, 16, 16)));
+
+    RegistryObject<Block> CANOPY_TREE_MUSHROOM = BLOCKS.register("canopy_tree_mushroom", () -> new WaterLoggedOnlyBlock(BlockBehaviour.Properties.of()
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.SHROOMLIGHT).strength(0.5f, 0.2f).lightLevel(s -> 5).noOcclusion(),
+            Shapes.or(Block.box(-4, 8, -4, 20, 16, 20), Block.box(-10, 0, -10, 26, 8, 26))));
+
     RegistryObject<Block> CANOPY_TREE_DROOPING_ROOT = BLOCKS.register("canopy_tree_drooping_root", () -> new Block(BlockBehaviour.Properties.of()
             .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.WOOD).sound(SoundType.WOOD).strength(0.5f, 10f)));
 
@@ -472,6 +482,17 @@ public interface ModBlocks {
         @Override
         public boolean propagatesSkylightDown(BlockState state, BlockGetter getter, BlockPos pos) {
             return true;
+        }
+    });
+
+    RegistryObject<Block> ROSES_IN_WATER_BOTTLE = BLOCKS.register("roses_in_water_bottle", () -> new VerticalTwoByOneBlock(BlockBehaviour.Properties.of()
+            .noOcclusion().pushReaction(PushReaction.DESTROY).sound(SoundType.GLASS),
+            Block.box(5.5, 0, 5.5, 10.5, 16, 10.5),
+            Block.box(0, 0, 0, 16, 8, 16)){
+        @Override
+        public VoxelShape getCollisionShape(BlockState state, BlockGetter blockGetter, BlockPos pos, CollisionContext context) {
+            if (state.getValue(POSITION) == 1) return Shapes.empty();
+            return getShape(state, blockGetter, pos, context);
         }
     });
 

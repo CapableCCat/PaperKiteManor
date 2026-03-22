@@ -110,6 +110,8 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.CANOPY_TREE_FERN.get());
                 output.accept(ModItems.CANOPY_TREE_DROOPING_ROOT.get());
                 output.accept(ModItems.CANOPY_TREE_LIMB.get());
+                output.accept(ModItems.CANOPY_TREE_TRUNK.get());
+                output.accept(ModItems.CANOPY_TREE_MUSHROOM.get());
 
                 output.accept(ModItems.PALM_TREE_CROWN.get());
                 output.accept(ModItems.PALM_TREE_TOP.get());
@@ -132,5 +134,6 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.KEY_UNDER_THE_LAKE.get());
                 output.accept(ModItems.LOUD_BUTTON.get());
                 output.accept(ModItems.KAZI_LUCKY_CAT.get());
+                output.accept(ModItems.ROSES_IN_WATER_BOTTLE.get());
             }).build());
 }

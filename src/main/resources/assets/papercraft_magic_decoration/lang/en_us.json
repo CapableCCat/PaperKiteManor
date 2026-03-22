@@ -56,6 +56,8 @@
   "block.papercraft_magic_decoration.canopy_tree_limb": "荫幕树枝干",
   "block.papercraft_magic_decoration.canopy_tree_foliage": "荫幕树树叶",
   "block.papercraft_magic_decoration.canopy_tree_fern": "荫幕树蕨藓块",
+  "block.papercraft_magic_decoration.canopy_tree_trunk": "荫幕树树干",
+  "block.papercraft_magic_decoration.canopy_tree_mushroom": "荫幕树侧生菌",
   "block.papercraft_magic_decoration.canopy_tree_drooping_root": "荫幕树垂根",
   "block.papercraft_magic_decoration.star_embellished_ceiling": "星缀天花饰板",
   "block.papercraft_magic_decoration.palm_tree_crown": "棕榈树叶",
@@ -64,6 +66,7 @@
   "block.papercraft_magic_decoration.palm_tree_trunk": "棕榈树干",
   "block.papercraft_magic_decoration.rough_palm_tree_trunk": "粗棕榈树干",
   "block.papercraft_magic_decoration.underground_panelling": "地下墙板",
+  "block.papercraft_magic_decoration.roses_in_water_bottle": "瓶栽玫瑰",
 
   "item.papercraft_magic_decoration.copper_bartender": "铜酒保",
   "item.papercraft_magic_decoration.paper_cutting_table": "剪纸台",

@@ -96,22 +96,22 @@ public interface ModItems {
 
     // 大瓶酒
     RegistryObject<Item> BLAZE_WHISKEY = ITEMS.register("blaze_whiskey",
-            () -> new BlockItem(ModBlocks.BLAZE_WHISKEY.get(), new Item.Properties().stacksTo(1)));
+            () -> new BlockItem(ModBlocks.BLAZE_WHISKEY.get(), new Item.Properties().stacksTo(16)));
 
     RegistryObject<Item> FERRY_WHISKEY = ITEMS.register("ferry_whiskey",
-            () -> new BlockItem(ModBlocks.FERRY_WHISKEY.get(), new Item.Properties().stacksTo(1)));
+            () -> new BlockItem(ModBlocks.FERRY_WHISKEY.get(), new Item.Properties().stacksTo(16)));
 
     RegistryObject<Item> FLY_WHISKEY = ITEMS.register("fly_whiskey",
-            () -> new BlockItem(ModBlocks.FLY_WHISKEY.get(), new Item.Properties().stacksTo(1)));
+            () -> new BlockItem(ModBlocks.FLY_WHISKEY.get(), new Item.Properties().stacksTo(16)));
 
     RegistryObject<Item> LAND_NO1 = ITEMS.register("land_no1",
-            () -> new BlockItem(ModBlocks.LAND_NO1.get(), new Item.Properties().stacksTo(1)));
+            () -> new BlockItem(ModBlocks.LAND_NO1.get(), new Item.Properties().stacksTo(16)));
 
     RegistryObject<Item> LUCKY_CACTUS = ITEMS.register("lucky_cactus",
-            () -> new BlockItem(ModBlocks.LUCKY_CACTUS.get(), new Item.Properties().stacksTo(1)));
+            () -> new BlockItem(ModBlocks.LUCKY_CACTUS.get(), new Item.Properties().stacksTo(16)));
 
     RegistryObject<Item> POISON_RUM = ITEMS.register("poison_rum",
-            () -> new BlockItem(ModBlocks.POISON_RUM.get(), new Item.Properties().stacksTo(1)));
+            () -> new BlockItem(ModBlocks.POISON_RUM.get(), new Item.Properties().stacksTo(16)));
 
     // 紫水晶剪刀
     RegistryObject<Item> AMETHYST_SCISSORS = ITEMS.register("amethyst_scissors", AmethystScissorsItem::new);
@@ -261,6 +261,10 @@ public interface ModItems {
 
     RegistryObject<Item> CANOPY_TREE_DROOPING_ROOT = ITEMS.register("canopy_tree_drooping_root", () -> new BlockItem(ModBlocks.CANOPY_TREE_DROOPING_ROOT.get(), new Item.Properties()));
 
+    RegistryObject<Item> CANOPY_TREE_TRUNK = ITEMS.register("canopy_tree_trunk", () -> new BlockItem(ModBlocks.CANOPY_TREE_TRUNK.get(), new Item.Properties()));
+
+    RegistryObject<Item> CANOPY_TREE_MUSHROOM = ITEMS.register("canopy_tree_mushroom", () -> new BlockItem(ModBlocks.CANOPY_TREE_MUSHROOM.get(), new Item.Properties()));
+
     RegistryObject<Item> STAR_EMBELLISHED_CEILING = ITEMS.register("star_embellished_ceiling", () -> new BlockItem(ModBlocks.STAR_EMBELLISHED_CEILING.get(), new Item.Properties()));
 
     RegistryObject<Item> PALM_TREE_CROWN = ITEMS.register("palm_tree_crown", () -> new BlockItem(ModBlocks.PALM_TREE_CROWN.get(), new Item.Properties()));
@@ -274,6 +278,8 @@ public interface ModItems {
     RegistryObject<Item> ROUGH_PALM_TREE_TRUNK = ITEMS.register("rough_palm_tree_trunk", () -> new BlockItem(ModBlocks.ROUGH_PALM_TREE_TRUNK.get(), new Item.Properties()));
 
     RegistryObject<Item> UNDERGROUND_PANELLING = ITEMS.register("underground_panelling", () -> new BlockItem(ModBlocks.UNDERGROUND_PANELLING.get(), new Item.Properties()));
+
+    RegistryObject<Item> ROSES_IN_WATER_BOTTLE = ITEMS.register("roses_in_water_bottle", () -> new BlockItem(ModBlocks.ROSES_IN_WATER_BOTTLE.get(), new Item.Properties()));
 
     // 折纸
     RegistryObject<Item> LOW_CABINET_WITH_TABLECLOTH_ORIGAMI = ITEMS.register("low_cabinet_with_tablecloth_origami", () -> new Item(new Item.Properties()));

@@ -33,7 +33,6 @@ public class GlassDrinkBlockItem extends BlockItem {
 
     public GlassDrinkBlockItem(Block block, FoodProperties food) {
         this(block, new Properties()
-                .stacksTo(16)
                 .craftRemainder(Items.GLASS_BOTTLE)
                 .food(food));
     }

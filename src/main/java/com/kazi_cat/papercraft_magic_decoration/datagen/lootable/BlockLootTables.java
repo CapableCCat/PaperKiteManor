@@ -52,6 +52,7 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.KAZI_LUCKY_CAT.get());
         dropSelf(ModBlocks.GIFT_FROM_KAZI_MANOR.get());
         dropSelf(ModBlocks.KEY_UNDER_THE_LAKE.get());
+        dropSelf(ModBlocks.ROSES_IN_WATER_BOTTLE.get());
 
         dropSelf(ModBlocks.WINE_AROMA_RED_WALLPAPER_WALL.get());
         dropSelf(ModBlocks.WINE_AROMA_BLUE_WALLPAPER_WALL.get());
@@ -63,6 +64,8 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.CANOPY_TREE_LIMB.get());
         dropSelf(ModBlocks.CANOPY_TREE_FERN.get());
         dropSelf(ModBlocks.CANOPY_TREE_DROOPING_ROOT.get());
+        dropSelf(ModBlocks.CANOPY_TREE_TRUNK.get());
+        dropSelf(ModBlocks.CANOPY_TREE_MUSHROOM.get());
     }
 
     @Override
