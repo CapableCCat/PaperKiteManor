@@ -38,7 +38,7 @@ public class PaperCuttingTableBlock extends HorizontalDirectionalBlock implement
     public PaperCuttingTableBlock() {
         super(BlockBehaviour.Properties.of()
                 .sound(SoundType.WOOD)
-                .strength(5f, 10f)
+                .strength(2f, 10f)
                 .noOcclusion());
 
         shapes = VoxelShapeUtils.horizontalShapes(Block.box(0, 0, 0, 16, 15, 16));

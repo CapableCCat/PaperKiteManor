@@ -208,7 +208,7 @@ public interface ModBlocks {
     // 可烤制方块
     RegistryObject<Block> SAUSAGE_MACE_WEAPON_BLOCK = BLOCKS.register("sausage_mace_weapon", () ->
             new AnimatedTwoByOneSmeltableBlock(
-                    BlockBehaviour.Properties.of().sound(SoundType.SHROOMLIGHT).strength(1f, 10f).noOcclusion(),
+                    BlockBehaviour.Properties.of().sound(SoundType.SHROOMLIGHT).strength(1f, 4f).noOcclusion(),
                     Shapes.or(
                             Block.box(1, 1, 1, 15, 15, 15),
                             Block.box(6, 6, -16, 10, 10, 0)
@@ -223,7 +223,7 @@ public interface ModBlocks {
 
     RegistryObject<Block> CHUNKY_SALMON = BLOCKS.register("chunky_salmon", () ->
             new ChunkySalmonBlock(
-                    BlockBehaviour.Properties.of().sound(SoundType.SHROOMLIGHT).strength(1f, 10f).noOcclusion(),
+                    BlockBehaviour.Properties.of().sound(SoundType.SHROOMLIGHT).strength(1f, 4f).noOcclusion(),
                     Block.box(0, 0, 0, 16, 10, 16),
                     100,
                     0,
@@ -234,7 +234,7 @@ public interface ModBlocks {
 
     RegistryObject<Block> SALMON_HEAD = BLOCKS.register("salmon_head", () ->
             new TwoByOneSmeltableBlock(
-                    BlockBehaviour.Properties.of().sound(SoundType.SHROOMLIGHT).strength(1f, 10f).noOcclusion(),
+                    BlockBehaviour.Properties.of().sound(SoundType.SHROOMLIGHT).strength(1f, 4f).noOcclusion(),
                     Block.box(0, 0, 0, 16, 20, 16),
                     Block.box(0, 0, 0, 16, 20, 16),
                     100,
@@ -246,7 +246,7 @@ public interface ModBlocks {
 
     RegistryObject<Block> MANGA_MEAT = BLOCKS.register("manga_meat", () ->
             new MangaMeatBlock(
-                    BlockBehaviour.Properties.of().sound(SoundType.SHROOMLIGHT).strength(1f, 10f).noOcclusion(),
+                    BlockBehaviour.Properties.of().sound(SoundType.SHROOMLIGHT).strength(1f, 4f).noOcclusion(),
                     Block.box(1, 0, 0, 15, 15, 16),
                     200,
                     4,
@@ -256,11 +256,11 @@ public interface ModBlocks {
             ));
 
     RegistryObject<Block> LARGE_STEAK = BLOCKS.register("large_steak", () ->
-            new LargeSteakBlock(BlockBehaviour.Properties.of().sound(SoundType.SHROOMLIGHT).strength(1f, 10f).noOcclusion()));
+            new LargeSteakBlock(BlockBehaviour.Properties.of().sound(SoundType.SHROOMLIGHT).strength(1f, 4f).noOcclusion()));
 
     RegistryObject<Block> MONSTER_STEAK = BLOCKS.register("monster_steak", () ->
             new TwoByThreeSmeltableBlock(
-                    BlockBehaviour.Properties.of().sound(SoundType.SHROOMLIGHT).strength(1f, 10f).noOcclusion(),
+                    BlockBehaviour.Properties.of().sound(SoundType.SHROOMLIGHT).strength(1f, 4f).noOcclusion(),
                     Block.box(0, 0, 0, 16, 12, 16),
                     100,
                     0,
@@ -280,7 +280,7 @@ public interface ModBlocks {
     RegistryObject<Block> TRAY_BLOCK = BLOCKS.register("tray", TrayBlock::new);
 
     RegistryObject<Block> BUCKET_OF_FRIED_CHICKEN = BLOCKS.register("bucket_of_fried_chicken", () -> new BucketOfFriedChickenBlock(
-            BlockBehaviour.Properties.of().sound(SoundType.SNOW).strength(1f, 10f).noOcclusion(),
+            BlockBehaviour.Properties.of().sound(SoundType.SNOW).strength(1f, 4f).noOcclusion(),
             Block.box(2, 0, 2, 14, 14, 14)));
 
     // 土坑方块
@@ -299,10 +299,10 @@ public interface ModBlocks {
                     .replaceable()));
 
     RegistryObject<Block> COFFEE_PASTINACA_SATIVA_CORE = BLOCKS.register("coffee_pastinaca_sativa_core", () ->
-            new Block(BlockBehaviour.Properties.of().ignitedByLava().strength(1f, 10f).forceSolidOn()));
+            new Block(BlockBehaviour.Properties.of().ignitedByLava().strength(2f, 10f).forceSolidOn()));
 
     RegistryObject<Block> COFFEE_PASTINACA_SATIVA_RIM = BLOCKS.register("coffee_pastinaca_sativa_rim", ()->
-            new TwoByOneBlock(BlockBehaviour.Properties.of().ignitedByLava().strength(1f, 10f),
+            new TwoByOneBlock(BlockBehaviour.Properties.of().ignitedByLava().strength(2f, 10f),
                     Block.box(0, 0, 0, 8, 16, 16),
                     Block.box(0, 0, 0, 8, 16, 8)));
 
@@ -320,43 +320,43 @@ public interface ModBlocks {
 
     RegistryObject<Block> LOW_CABINET_WITH_TABLECLOTH = BLOCKS.register("low_cabinet_with_tablecloth",
             () -> new SimpleAnimatedBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_RED).sound(SoundType.WOOD).strength(1f, 10f).noOcclusion(),
+                    .mapColor(MapColor.COLOR_RED).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
                     Block.box(0, 0, 0, 16, 15, 16)));
 
     RegistryObject<Block> WOODEN_BARREL_BOOKSHELF = BLOCKS.register("wooden_barrel_bookshelf",
             () -> new SimpleAnimatedBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD).strength(1f, 10f).noOcclusion(),
+                    .mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
                     Block.box(0, 0, 0, 14, 16, 16)));
 
     RegistryObject<Block> WOODWORKING_TABLE = BLOCKS.register("woodworking_table",
             () -> new OneByTwoAnimatedBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD).strength(1f, 10f).noOcclusion(),
+                    .mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
                     Block.box(1, 0, 0, 16, 16, 16),
                     Block.box(0, 0, 0, 15, 16, 16)));
 
     RegistryObject<Block> LONG_STORAGE_TABLE = BLOCKS.register("long_storage_table",
             () -> new OneByThreeAnimatedBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD).strength(1f, 10f).noOcclusion(),
+                    .mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
                     Block.box(1, 0, 0, 16, 15, 16),
                     Block.box(0, 0, 0, 16, 15, 16),
                     Block.box(0, 0, 0, 15, 15, 16)));
 
     RegistryObject<Block> EDGED_CHALKBOARD = BLOCKS.register("edged_chalkboard",
             () -> new VerticalTwoByThreeAnimatedBlock(BlockBehaviour.Properties.of()
-                    .sound(SoundType.WOOD).strength(1f, 10f).noCollission().noOcclusion(),
+                    .sound(SoundType.WOOD).strength(2f, 10f).noCollission().noOcclusion(),
                     Block.box(0, 0, 13, 16, 16, 16)));
 
     RegistryObject<Block> WINE_AROMA_RED_WALLPAPER_WALL = BLOCKS.register("wine_aroma_red_wallpaper_wall", () -> new Block(BlockBehaviour.Properties.of()
-            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.COLOR_RED).sound(SoundType.WOOD).strength(2f, 3f)));
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.COLOR_RED).sound(SoundType.WOOD).strength(2f, 6f)));
 
     RegistryObject<Block> WINE_AROMA_BLUE_WALLPAPER_WALL = BLOCKS.register("wine_aroma_blue_wallpaper_wall", () -> new Block(BlockBehaviour.Properties.of()
-            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.COLOR_BLUE).sound(SoundType.WOOD).strength(2f, 3f)));
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.COLOR_BLUE).sound(SoundType.WOOD).strength(2f, 6f)));
 
     RegistryObject<Block> BLACK_AND_WHITE_CHECKER_BOARD_TILE = BLOCKS.register("black_and_white_checker_board_tile", () -> new Block(BlockBehaviour.Properties.of()
-            .instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.COLOR_BLACK).sound(SoundType.STONE).strength(1.5f, 10f)));
+            .instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.COLOR_BLACK).sound(SoundType.STONE).strength(3f, 15f).requiresCorrectToolForDrops()));
 
     RegistryObject<Block> BLUE_AND_WHITE_CHECKER_BOARD_TILE = BLOCKS.register("blue_and_white_checker_board_tile", () -> new Block(BlockBehaviour.Properties.of()
-            .instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.TERRACOTTA_WHITE).sound(SoundType.STONE).strength(1.5f, 10f)));
+            .instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.TERRACOTTA_WHITE).sound(SoundType.STONE).strength(3f, 15f).requiresCorrectToolForDrops()));
 
     RegistryObject<Block> UNDERGROUND_WALLPAPER_WALL = BLOCKS.register("underground_wallpaper_wall", () -> new Block(BlockBehaviour.Properties.of()
             .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.COLOR_GREEN).sound(SoundType.WOOD).strength(2f, 3f)));
@@ -370,23 +370,23 @@ public interface ModBlocks {
     ));
 
     RegistryObject<Block> CUPBOARD = BLOCKS.register("cupboard", () -> new VerticalTwoByThreeBlock(BlockBehaviour.Properties.of()
-            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD).strength(1f, 10f).noOcclusion(),
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
             Block.box(0, 0, 12, 16, 16, 16)));
 
     RegistryObject<Block> LARGE_DINING_TABLE = BLOCKS.register("large_dining_table", () -> new ThreeByThreeBlock(BlockBehaviour.Properties.of()
-            .ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.WOOD).strength(1f, 10f).noOcclusion(),
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
             Block.box(0, 0, 0, 16, 15, 16)));
 
     RegistryObject<Block> GIFT_FROM_KAZI_MANOR = BLOCKS.register("gift_from_kazi_manor", () -> new SimpleAnimatedBlock(
-            BlockBehaviour.Properties.of().sound(SoundType.SNOW).strength(1f, 10f).noOcclusion(),
+            BlockBehaviour.Properties.of().sound(SoundType.SNOW).strength(1f, 5f).noOcclusion(),
             Block.box(2, 0, 2, 14, 10, 14)));
 
     RegistryObject<Block> KEY_UNDER_THE_LAKE = BLOCKS.register("key_under_the_lake", () -> new SimpleAnimatedBlock(
-            BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1f, 10f).noOcclusion(),
+            BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1f, 5f).noOcclusion(),
             Block.box(1, 0, 1, 15, 7, 15)));
 
     RegistryObject<Block> FIREPLACE_DECORATION = BLOCKS.register("fireplace_decoration", () -> new VerticalTwoByThreeBlock(BlockBehaviour.Properties.of()
-            .instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.WOOD).strength(1f, 3f).noOcclusion(),
+            .instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.WOOD).strength(3f, 15f).noOcclusion(),
             Block.box(0, 0, 9, 15, 16, 16),
             Block.box(0, 0, 0, 0, 0, 0),
             Block.box(1, 0, 9, 16, 16, 16),
@@ -434,7 +434,7 @@ public interface ModBlocks {
             .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.WOOD).sound(SoundType.WOOD).strength(0.5f, 10f)));
 
     RegistryObject<Block> STAR_EMBELLISHED_CEILING = BLOCKS.register("star_embellished_ceiling", () -> new FaceAttachedHorizontalDirectionalBlock(
-            BlockBehaviour.Properties.of().ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.WOOD).strength(1f, 3f).noOcclusion()){
+            BlockBehaviour.Properties.of().ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion()){
         @Override
         public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
             return true;
@@ -447,27 +447,27 @@ public interface ModBlocks {
     });
 
     RegistryObject<Block> PALM_TREE_CROWN = BLOCKS.register("palm_tree_crown", () -> new SimpleDecorationBlock(BlockBehaviour.Properties.of()
-            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.PLANT).sound(SoundType.AZALEA_LEAVES).strength(1f, 0.2f).noCollission().noOcclusion(),
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.PLANT).sound(SoundType.AZALEA_LEAVES).instabreak().noCollission().noOcclusion(),
             Block.box(-16, -16, -16, 16, 32, 16)));
 
     RegistryObject<Block> PALM_TREE_TOP = BLOCKS.register("palm_tree_top", () -> new WaterLoggedOnlyBlock(BlockBehaviour.Properties.of()
-            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.PLANT).sound(SoundType.WOOD).strength(0.5f, 10f).noOcclusion(),
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.PLANT).sound(SoundType.WOOD).instabreak().noOcclusion(),
             Block.box(1, 0, 1, 15, 16, 15)));
 
     RegistryObject<Block> PALM_TREE_TRUNK_TOP = BLOCKS.register("palm_tree_trunk_top", () -> new WaterLoggedOnlyBlock(BlockBehaviour.Properties.of()
-            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.WOOD).sound(SoundType.WOOD).strength(0.5f, 10f).noOcclusion(),
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.WOOD).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
             Block.box(1, 0, 1, 15, 16, 15)));
 
     RegistryObject<Block> PALM_TREE_TRUNK = BLOCKS.register("palm_tree_trunk", () -> new WaterLoggedOnlyBlock(BlockBehaviour.Properties.of()
-            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.WOOD).sound(SoundType.WOOD).strength(0.5f, 10f).noOcclusion(),
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.WOOD).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
             Block.box(3, 0, 3, 13, 16, 13)));
 
     RegistryObject<Block> ROUGH_PALM_TREE_TRUNK = BLOCKS.register("rough_palm_tree_trunk", () -> new WaterLoggedOnlyBlock(BlockBehaviour.Properties.of()
-            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.WOOD).sound(SoundType.WOOD).strength(0.5f, 10f).noOcclusion(),
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.WOOD).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
             Block.box(2, 0, 2, 14, 16, 14)));
 
     RegistryObject<Block> UNDERGROUND_PANELLING = BLOCKS.register("underground_panelling", () -> new HorizontalDirectionalOnlyBlock(BlockBehaviour.Properties.of()
-            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.WOOD).sound(SoundType.WOOD).strength(1f, 3f).noOcclusion(),
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.WOOD).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
             Block.box(0, 0, 1, 16, 16, 16)){
         @Override
         public boolean propagatesSkylightDown(BlockState state, BlockGetter getter, BlockPos pos) {

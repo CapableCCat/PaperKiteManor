@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:dirt"
+          "name": "papercraft_magic_decoration:black_and_white_checker_board_tile"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "papercraft_magic_decoration:blocks/dirt_hole"
+  "random_sequence": "papercraft_magic_decoration:blocks/black_and_white_checker_board_tile"
 }

@@ -26,6 +26,7 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -68,7 +69,7 @@ public class DistillerBlock extends HorizontalDirectionalBlock implements Entity
     }
 
     public DistillerBlock() {
-        this(Properties.of().noOcclusion());
+        this(Properties.of().noOcclusion().sound(SoundType.LANTERN).strength(4f, 20f).requiresCorrectToolForDrops());
     }
 
     @Override
@@ -249,7 +250,12 @@ public class DistillerBlock extends HorizontalDirectionalBlock implements Entity
         if (state.getValue(PART) != LEFT_DOWN) {
             return Collections.emptyList();
         }
-        return super.getDrops(state, params);
+        List<ItemStack> stacks = super.getDrops(state, params);
+        BlockEntity parameter = params.getParameter(LootContextParams.BLOCK_ENTITY);
+        if (parameter instanceof DistillerBlockEntity distiller) {
+            stacks.addAll(distiller.getDrops());
+        }
+        return stacks;
     }
 
     @Override

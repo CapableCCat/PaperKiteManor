@@ -51,23 +51,6 @@ public class DistillerBlockEntity extends BaseBlockEntity {
             this.currentTick--;
 
             if (this.currentTick % 10 == 0 && level instanceof ServerLevel serverLevel) {
-//                for (int i = 0; i < 10; i++) {
-//                    double xOffset = (random.nextDouble() - 0.5) * 0.1;
-//                    double zOffset = (random.nextDouble() - 0.5) * 0.1;
-//                    double yOffset = random.nextDouble() * 0.05;
-//
-//                    double vx = (random.nextDouble() - 0.5) * 0.02;
-//                    double vz = (random.nextDouble() - 0.5) * 0.02;
-//                    double vy = 0.05 + random.nextDouble() * 0.03;
-//
-//                    serverLevel.sendParticles(
-//                            ParticleTypes.CAMPFIRE_COSY_SMOKE,
-//                            worldPosition.getX() + 0.5 + xOffset,
-//                            worldPosition.getY() + 1.2 + yOffset,
-//                            worldPosition.getZ() + 0.5 + zOffset,
-//                            1, 0, 0, 0,
-//                            vy
-//                    );
                 serverLevel.sendParticles(ParticleTypes.CLOUD,
                         worldPosition.getX() + 0.5,
                         worldPosition.getY() + 1.25,
@@ -137,7 +120,7 @@ public class DistillerBlockEntity extends BaseBlockEntity {
 
         for (int i = this.items.getSlots() - 1; i >= 1; i--) {
             ItemStack stack = this.items.getStackInSlot(i);
-            if (stack.isEmpty()) continue;;
+            if (stack.isEmpty()) continue;
 
             this.items.setStackInSlot(i, ItemStack.EMPTY);
             ItemUtils.getItemToLivingEntity(user, stack);
@@ -199,6 +182,26 @@ public class DistillerBlockEntity extends BaseBlockEntity {
         }
 
         return new DistillerContainer(ingredients, items.getStackInSlot(0));
+    }
+
+    public List<ItemStack> getDrops() {
+        List<ItemStack> ans = Lists.newArrayList();
+        if (getStatus() != 2) {
+            for (int i = 0; i < items.getSlots(); i++) {
+                ItemStack stack = items.getStackInSlot(i);
+                if (!stack.isEmpty()) {
+                    ans.add(stack);
+                }
+            }
+        }
+
+        if (getStatus() == 3) {
+            if (!result.isEmpty()) {
+                ans.add(result);
+            }
+        }
+
+        return ans;
     }
 
     @Override
