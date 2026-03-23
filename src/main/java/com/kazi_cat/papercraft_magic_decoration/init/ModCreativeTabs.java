@@ -57,6 +57,7 @@ public interface ModCreativeTabs {
             .displayItems((par, output) -> {
                 output.accept(ModItems.COPPER_STILL.get());
                 output.accept(ModItems.COPPER_BARTENDER.get());
+                output.accept(ModItems.MOCHA_POT.get());
 
                 output.accept(ModItems.BLAZE_WHISKEY.get());
                 output.accept(ModItems.FERRY_WHISKEY.get());

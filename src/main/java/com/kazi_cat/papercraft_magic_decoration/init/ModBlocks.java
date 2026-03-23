@@ -15,6 +15,7 @@ import com.kazi_cat.papercraft_magic_decoration.blockentity.decoration.DirtHoleB
 import com.kazi_cat.papercraft_magic_decoration.blockentity.decoration.KaziLuckyCatBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.drink.CopperBartenderBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.drink.DistillerBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.drink.MochaPotBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.food.AnimatedSmeltableBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.drink.GlassDrinkBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.decoration.PaperCuttingTableBlockEntity;
@@ -207,6 +208,9 @@ public interface ModBlocks {
 
     // 蒸馏器方块
     RegistryObject<Block> COPPER_STILL = BLOCKS.register("copper_still", DistillerBlock::new);
+
+    // 摩卡壶方块
+    RegistryObject<Block> MOCHA_POT = BLOCKS.register("mocha_pot", MochaPotBlock::new);
 
     // 可烤制方块
     RegistryObject<Block> SAUSAGE_MACE_WEAPON_BLOCK = BLOCKS.register("sausage_mace_weapon", () ->
@@ -556,6 +560,14 @@ public interface ModBlocks {
             "distiller", () -> BlockEntityType.Builder
                     .of(DistillerBlockEntity::new,
                             COPPER_STILL.get()
+                    ).build(null)
+    );
+
+    // 摩卡壶方块实体
+    RegistryObject<BlockEntityType<MochaPotBlockEntity>> MOCHA_POT_BE = BLOCK_ENTITIES.register(
+            "mocha_pot", () -> BlockEntityType.Builder
+                    .of(MochaPotBlockEntity::new,
+                            MOCHA_POT.get()
                     ).build(null)
     );
 

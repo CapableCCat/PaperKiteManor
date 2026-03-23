@@ -162,6 +162,9 @@ public interface ModItems {
     // 蒸馏器
     RegistryObject<Item> COPPER_STILL = ITEMS.register("copper_still", () -> new BlockItem(ModBlocks.COPPER_STILL.get(), new Item.Properties()));
 
+    // 摩卡壶
+    RegistryObject<Item> MOCHA_POT = ITEMS.register("mocha_pot", MochaPotItem::new);
+
     // 烤制食物
     RegistryObject<Item> RAW_SAUSAGE_MACE_WEAPON = ITEMS.register("raw_sausage_mace_weapon", () ->
             new GeoBlockItem(ModBlocks.SAUSAGE_MACE_WEAPON_BLOCK.get(), new Item.Properties()));
