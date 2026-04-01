@@ -1,0 +1,26 @@
+{
+  "type": "papercraft_magic_decoration:mocha_pot",
+  "carrier": {
+    "count": 2,
+    "item": "minecraft:glass_bottle"
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:milk_bucket"
+    },
+    {
+      "item": "papercraft_magic_decoration:coffee_fruit"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "papercraft_magic_decoration:nocturnal_cat_coffee"
+  },
+  "time": 120
+}

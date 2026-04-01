@@ -107,6 +107,16 @@ public interface ModBlocks {
             BlockBehaviour.Properties.of().noOcclusion().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.LANTERN)
     ));
 
+    RegistryObject<Block> NOCTURNAL_CAT_COFFEE = BLOCKS.register("nocturnal_cat_coffee", GlassDrinkBlock.create().maxCount(1).shapes(
+            Block.box(4, 0, 4, 12, 6, 12)
+    ).offset(1, 0.25).offset(2, 0.5).build(BlockBehaviour.Properties.of()
+            .noOcclusion().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.WOOD)));
+
+    RegistryObject<Block> GOLD_MEDAL_COFFEE = BLOCKS.register("gold_medal_coffee", GlassDrinkBlock.create().maxCount(1).shapes(
+            Block.box(4, 0, 4, 12, 6, 12)
+    ).offset(1, 0.25).offset(2, 0.5).build(BlockBehaviour.Properties.of()
+            .noOcclusion().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.WOOD)));
+
     // 大瓶酒方块
     RegistryObject<Block> BLAZE_WHISKEY = BLOCKS.register("blaze_whiskey", () -> new BottleDrinkBlock(
             Block.box(2, 0, 2, 14, 22, 14),
@@ -516,7 +526,9 @@ public interface ModBlocks {
                             BLOODY_MARY.get(),
                             DIPLOMAT_COFFEE.get(),
                             DEVIL_MARGARITA.get(),
-                            GUANG_S.get()
+                            GUANG_S.get(),
+                            NOCTURNAL_CAT_COFFEE.get(),
+                            GOLD_MEDAL_COFFEE.get()
                     ).build(null)
     );
 

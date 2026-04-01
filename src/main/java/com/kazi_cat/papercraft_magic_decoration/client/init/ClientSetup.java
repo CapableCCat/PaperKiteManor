@@ -3,6 +3,7 @@ package com.kazi_cat.papercraft_magic_decoration.client.init;
 import com.kazi_cat.papercraft_magic_decoration.client.gui.CopperBartenderScreen;
 import com.kazi_cat.papercraft_magic_decoration.client.gui.DirtHoleScreen;
 import com.kazi_cat.papercraft_magic_decoration.client.gui.KaziLuckyCatScreen;
+import com.kazi_cat.papercraft_magic_decoration.client.gui.MochaPotScreen;
 import com.kazi_cat.papercraft_magic_decoration.client.model.BlockGeoModelManager;
 import com.kazi_cat.papercraft_magic_decoration.client.model.ItemGeoModelManager;
 import com.kazi_cat.papercraft_magic_decoration.client.render.BaseGeoBlockRenderer;
@@ -13,6 +14,7 @@ import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import com.kazi_cat.papercraft_magic_decoration.inventory.container.CopperBartenderContainer;
 import com.kazi_cat.papercraft_magic_decoration.inventory.container.DirtHoleContainer;
 import com.kazi_cat.papercraft_magic_decoration.inventory.container.KaziLuckyCatContainer;
+import com.kazi_cat.papercraft_magic_decoration.inventory.container.MochaPotContainer;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -29,6 +31,7 @@ public class ClientSetup {
         event.enqueueWork(() -> MenuScreens.register(CopperBartenderContainer.TYPE, CopperBartenderScreen::new));
         event.enqueueWork(() -> MenuScreens.register(DirtHoleContainer.TYPE, DirtHoleScreen::new));
         event.enqueueWork(() -> MenuScreens.register(KaziLuckyCatContainer.TYPE, KaziLuckyCatScreen::new));
+        event.enqueueWork(() -> MenuScreens.register(MochaPotContainer.TYPE, MochaPotScreen::new));
     }
 
     @SubscribeEvent

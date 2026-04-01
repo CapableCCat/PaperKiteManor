@@ -94,6 +94,12 @@ public interface ModItems {
 
     RegistryObject<Item> PACK_OF_GUANG_S = ITEMS.register("pack_of_guang_s", () -> new PackOfGuangSItem(new Item.Properties()));
 
+    RegistryObject<Item> NOCTURNAL_CAT_COFFEE = ITEMS.register("nocturnal_cat_coffee",
+            () -> new GlassDrinkBlockItem(ModBlocks.NOCTURNAL_CAT_COFFEE.get(), GlassDrinkBlockItem.defaultFood.get().build()));
+
+    RegistryObject<Item> GOLD_MEDAL_COFFEE = ITEMS.register("gold_medal_coffee",
+            () -> new GlassDrinkBlockItem(ModBlocks.GOLD_MEDAL_COFFEE.get(), GlassDrinkBlockItem.defaultFood.get().build()));
+
     // 大瓶酒
     RegistryObject<Item> BLAZE_WHISKEY = ITEMS.register("blaze_whiskey",
             () -> new BlockItem(ModBlocks.BLAZE_WHISKEY.get(), new Item.Properties().stacksTo(16)));

@@ -4,6 +4,7 @@ import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.inventory.container.CopperBartenderContainer;
 import com.kazi_cat.papercraft_magic_decoration.inventory.container.DirtHoleContainer;
 import com.kazi_cat.papercraft_magic_decoration.inventory.container.KaziLuckyCatContainer;
+import com.kazi_cat.papercraft_magic_decoration.inventory.container.MochaPotContainer;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -15,4 +16,5 @@ public interface ModContainers {
     RegistryObject<MenuType<CopperBartenderContainer>> COPPER_BARTENDER_CONTAINER = CONTAINER_TYPES.register("copper_bartender_container", () -> CopperBartenderContainer.TYPE);
     RegistryObject<MenuType<DirtHoleContainer>> DIRT_HOLE_CONTAINER = CONTAINER_TYPES.register("dirt_hole_container", () -> DirtHoleContainer.TYPE);
     RegistryObject<MenuType<KaziLuckyCatContainer>> KAZI_LUCKY_CAT_CONTAINER = CONTAINER_TYPES.register("kazi_lucky_cat_container", () -> KaziLuckyCatContainer.TYPE);
+    RegistryObject<MenuType<MochaPotContainer>> MOCHA_POT_CONTAINER = CONTAINER_TYPES.register("mocha_pot_container", () -> MochaPotContainer.TYPE);
 }

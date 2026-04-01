@@ -28,7 +28,7 @@ public class SporesCollectionPlateBlockDispenseBehavior extends OptionalDispense
         if (stack.is(Items.GLASS_BOTTLE)) {
             ServerLevel level = source.getLevel();
             Direction facing = source.getBlockState().getValue(DispenserBlock.FACING);
-            BlockPos pos = source.getPos().relative(facing);
+            BlockPos pos = source.getPos().relative(facing, 2);
             BlockState plateState = level.getBlockState(pos);
             if (plateState.getBlock() instanceof SporesCollectionPlateBlock && plateState.getValue(SporesCollectionPlateBlock.FILLED)) {
                 stack.shrink(1);

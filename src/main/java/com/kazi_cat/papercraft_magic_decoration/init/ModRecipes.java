@@ -1,14 +1,8 @@
 package com.kazi_cat.papercraft_magic_decoration.init;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
-import com.kazi_cat.papercraft_magic_decoration.crafting.recipe.DistillerRecipe;
-import com.kazi_cat.papercraft_magic_decoration.crafting.recipe.MixologyRecipe;
-import com.kazi_cat.papercraft_magic_decoration.crafting.recipe.PaperCuttingRecipe;
-import com.kazi_cat.papercraft_magic_decoration.crafting.recipe.PaperMakingRecipe;
-import com.kazi_cat.papercraft_magic_decoration.crafting.serializer.DistillerRecipeSerializer;
-import com.kazi_cat.papercraft_magic_decoration.crafting.serializer.MixologyRecipeSerializer;
-import com.kazi_cat.papercraft_magic_decoration.crafting.serializer.PaperCuttingRecipeSerializer;
-import com.kazi_cat.papercraft_magic_decoration.crafting.serializer.PaperMakingRecipeSerializer;
+import com.kazi_cat.papercraft_magic_decoration.crafting.recipe.*;
+import com.kazi_cat.papercraft_magic_decoration.crafting.serializer.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
@@ -27,11 +21,13 @@ public class ModRecipes {
     public static RegistryObject<RecipeSerializer<?>> PAPERCUTTING_SERIALIZER = RECIPE_SERIALIZERS.register("papercutting", PaperCuttingRecipeSerializer::new);
     public static RegistryObject<RecipeSerializer<?>> MIXOLOGY_SERIALIZER = RECIPE_SERIALIZERS.register("mixology", MixologyRecipeSerializer::new);
     public static RegistryObject<RecipeSerializer<?>> DISTILLER_SERIALIZER = RECIPE_SERIALIZERS.register("distiller", DistillerRecipeSerializer::new);
+    public static RegistryObject<RecipeSerializer<?>> MOCHA_POT_SERIALIZER = RECIPE_SERIALIZERS.register("mocha_pot", MochaPotRecipeSerializer::new);
 
     public static RecipeType<PaperMakingRecipe> PAPERMAKING_RECIPE;
     public static RecipeType<PaperCuttingRecipe> PAPERCUTTING_RECIPE;
     public static RecipeType<MixologyRecipe> MIXOLOGY_RECIPE;
     public static RecipeType<DistillerRecipe> DISTILLER_RECIPE;
+    public static RecipeType<MochaPotRecipe> MOCHA_POT_RECIPE;
 
     @SubscribeEvent
     public static void register(RegisterEvent evt) {
@@ -40,6 +36,7 @@ public class ModRecipes {
             PAPERMAKING_RECIPE = RecipeType.simple(PaperKiteManor.resourceLocation("papermaking"));
             PAPERCUTTING_RECIPE = RecipeType.simple(PaperKiteManor.resourceLocation("papercutting"));
             DISTILLER_RECIPE = RecipeType.simple(PaperKiteManor.resourceLocation("distiller"));
+            MOCHA_POT_RECIPE = RecipeType.simple(PaperKiteManor.resourceLocation("mocha_pot"));
         }
     }
 }

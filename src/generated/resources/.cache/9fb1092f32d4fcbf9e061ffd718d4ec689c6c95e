@@ -1,7 +1,9 @@
-// 1.20.1	2026-03-21T18:48:31.6915277	Recipes
+// 1.20.1	2026-04-01T13:30:13.7725204	Recipes
 4504ca70d7ceb95d6deea537051bd1dcd5ec848d data/papercraft_magic_decoration/recipes/distiller/land_no1.json
 67fb7d61c7daaa680148d5cb81183092c78fd459 data/papercraft_magic_decoration/recipes/mixology/bloody_mary.json
 cddf5b5590b4679cfd7d55d6dcf979d544dd69cd data/papercraft_magic_decoration/recipes/mixology/devil_margarita.json
+cc9b62b6587a9317e5d8d1fe12506b4b0372ce76 data/papercraft_magic_decoration/recipes/mocha_pot/gold_medal_coffee.json
+1216b3dd682d910c99abb873c7afc60a9d670b35 data/papercraft_magic_decoration/recipes/mocha_pot/nocturnal_cat_coffee.json
 0fcfa02cea9a550b5fc2d7bcec5c71239280945b data/papercraft_magic_decoration/recipes/papercutting/black_paper.json
 7d8508a528dee107f79bd845e3ba6aa420a0c895 data/papercraft_magic_decoration/recipes/papercutting/blue_paper.json
 cd3d5015b62a0c182205a8f3e6841781deb60336 data/papercraft_magic_decoration/recipes/papercutting/cotton_serge.json
