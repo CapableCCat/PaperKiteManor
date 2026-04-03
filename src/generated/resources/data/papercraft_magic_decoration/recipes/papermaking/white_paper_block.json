@@ -1,0 +1,9 @@
+{
+  "type": "papercraft_magic_decoration:papermaking",
+  "ingredient": {
+    "tag": "forge:ores/copper"
+  },
+  "result": {
+    "item": "papercraft_magic_decoration:white_paper_block"
+  }
+}

@@ -12,8 +12,10 @@ public interface ModCreativeTabs {
 
     RegistryObject<CreativeModeTab> MANOR_MAIN_TAB = TABS.register("manor_main", () -> CreativeModeTab.builder()
             .title(Component.translatable("item_group.papercraft_magic_decoration.manor_main.name"))
-            .icon(ModItems.DEWY_MEMBRANE.get()::getDefaultInstance)
+            .icon(ModItems.AMETHYST_SCISSORS.get()::getDefaultInstance)
             .displayItems((par, output) -> {
+                output.accept(ModItems.AMETHYST_SCISSORS.get());
+
                 output.accept(ModItems.BLACK_PAPER_BLOCK.get());
                 output.accept(ModItems.BLUE_PAPER_BLOCK.get());
                 output.accept(ModItems.COTTON_SERGE_BLOCK.get());

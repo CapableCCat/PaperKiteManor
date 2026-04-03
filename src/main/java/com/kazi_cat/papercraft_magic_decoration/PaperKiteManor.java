@@ -3,6 +3,7 @@ package com.kazi_cat.papercraft_magic_decoration;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import com.kazi_cat.papercraft_magic_decoration.init.ModCreativeTabs;
 import com.kazi_cat.papercraft_magic_decoration.init.ModItems;
+import com.kazi_cat.papercraft_magic_decoration.init.ModRecipes;
 import com.mojang.logging.LogUtils;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -25,5 +26,6 @@ public class PaperKiteManor {
         ModBlocks.BLOCK_ENTITIES.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);
         ModCreativeTabs.TABS.register(modEventBus);
+        ModRecipes.RECIPE_SERIALIZERS.register(modEventBus);
     }
 }

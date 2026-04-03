@@ -1,6 +1,7 @@
 package com.kazi_cat.papercraft_magic_decoration.init;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
+import com.kazi_cat.papercraft_magic_decoration.item.AmethystScissorsItem;
 import com.kazi_cat.papercraft_magic_decoration.item.DrinkBlockItem;
 import com.kazi_cat.papercraft_magic_decoration.item.PackOfGuangSItem;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -105,6 +106,9 @@ public interface ModItems {
 
     RegistryObject<Item> BOTTLE_OF_POISON_RUM = ITEMS.register("bottle_of_poison_rum",
             () -> new BlockItem(ModBlocks.BOTTLE_OF_POISON_RUM.get(), new Item.Properties().stacksTo(16)));
+
+    // 紫水晶剪刀
+    RegistryObject<Item> AMETHYST_SCISSORS = ITEMS.register("amethyst_scissors", AmethystScissorsItem::new);
 
     // 纸块
     RegistryObject<Item> WHITE_PAPER_BLOCK = ITEMS.register("white_paper_block", () -> new BlockItem(ModBlocks.WHITE_PAPER_BLOCK.get(), new Item.Properties()));
