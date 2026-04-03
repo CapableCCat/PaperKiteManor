@@ -42,8 +42,22 @@ public class ItemModelGenerator extends ItemModelProvider {
         basicItem(ModItems.BOTTLE_OF_LAND_NO1.get());
         basicItem(ModItems.BOTTLE_OF_LUCKY_CACTUS.get());
         basicItem(ModItems.BOTTLE_OF_POISON_RUM.get());
+        basicItem(ModItems.WHITE_PAPER.get());
+        basicItem(ModItems.BLUE_PAPER.get());
+        basicItem(ModItems.BLACK_PAPER.get());
+        basicItem(ModItems.RED_PAPER.get());
+        basicItem(ModItems.YELLOW_PAPER.get());
+        basicItem(ModItems.DEWY_MEMBRANE.get());
+        basicItem(ModItems.COTTON_SERGE.get());
 
         withExistingParent("pack_of_guang_s", modLoc("block/drink/guang_s/count4_boxed"));
+        withExistingParent("white_paper_block", modLoc("block/white_paper_block"));
+        withExistingParent("blue_paper_block", modLoc("block/blue_paper_block"));
+        withExistingParent("black_paper_block", modLoc("block/black_paper_block"));
+        withExistingParent("red_paper_block", modLoc("block/red_paper_block"));
+        withExistingParent("yellow_paper_block", modLoc("block/yellow_paper_block"));
+        withExistingParent("dewy_membrane_block", modLoc("block/dewy_membrane_block"));
+        withExistingParent("cotton_serge_block", modLoc("block/cotton_serge_block"));
     }
 
     public ItemModelBuilder handheldItem(Item item) {

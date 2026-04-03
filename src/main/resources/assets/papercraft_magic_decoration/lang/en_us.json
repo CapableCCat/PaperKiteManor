@@ -21,6 +21,20 @@
   "block.papercraft_magic_decoration.bottle_of_land_no1": "瓶装 壹号天地",
   "block.papercraft_magic_decoration.bottle_of_lucky_cactus": "瓶装 幸运仙人掌",
   "block.papercraft_magic_decoration.bottle_of_poison_rum": "瓶装 丧钟-黑朗姆",
+  "block.papercraft_magic_decoration.yellow_paper_block": "生黄纸块",
+  "block.papercraft_magic_decoration.red_paper_block": "明红纸块",
+  "block.papercraft_magic_decoration.white_paper_block": "金白纸块",
+  "block.papercraft_magic_decoration.blue_paper_block": "木青纸块",
+  "block.papercraft_magic_decoration.black_paper_block": "水黑纸块",
+  "block.papercraft_magic_decoration.dewy_membrane_block": "竹露络块",
+  "block.papercraft_magic_decoration.cotton_serge_block": "棉绢纸块",
 
-  "item.papercraft_magic_decoration.pack_of_guang_s": "一打廣式"
+  "item.papercraft_magic_decoration.pack_of_guang_s": "一打廣式",
+  "item.papercraft_magic_decoration.yellow_paper": "生黄纸",
+  "item.papercraft_magic_decoration.red_paper": "明红纸",
+  "item.papercraft_magic_decoration.white_paper": "金白纸",
+  "item.papercraft_magic_decoration.blue_paper": "木青纸",
+  "item.papercraft_magic_decoration.black_paper": "水黑纸",
+  "item.papercraft_magic_decoration.dewy_membrane": "竹露络",
+  "item.papercraft_magic_decoration.cotton_serge": "棉绢纸"
 }

@@ -10,6 +10,27 @@ import net.minecraftforge.registries.RegistryObject;
 public interface ModCreativeTabs {
     DeferredRegister<CreativeModeTab> TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, PaperKiteManor.MOD_ID);
 
+    RegistryObject<CreativeModeTab> MANOR_MAIN_TAB = TABS.register("manor_main", () -> CreativeModeTab.builder()
+            .title(Component.translatable("item_group.papercraft_magic_decoration.manor_main.name"))
+            .icon(ModItems.DEWY_MEMBRANE.get()::getDefaultInstance)
+            .displayItems((par, output) -> {
+                output.accept(ModItems.BLACK_PAPER_BLOCK.get());
+                output.accept(ModItems.BLUE_PAPER_BLOCK.get());
+                output.accept(ModItems.COTTON_SERGE_BLOCK.get());
+                output.accept(ModItems.DEWY_MEMBRANE_BLOCK.get());
+                output.accept(ModItems.RED_PAPER_BLOCK.get());
+                output.accept(ModItems.WHITE_PAPER_BLOCK.get());
+                output.accept(ModItems.YELLOW_PAPER_BLOCK.get());
+
+                output.accept(ModItems.BLACK_PAPER.get());
+                output.accept(ModItems.BLUE_PAPER.get());
+                output.accept(ModItems.COTTON_SERGE.get());
+                output.accept(ModItems.DEWY_MEMBRANE.get());
+                output.accept(ModItems.RED_PAPER.get());
+                output.accept(ModItems.WHITE_PAPER.get());
+                output.accept(ModItems.YELLOW_PAPER.get());
+            }).build());
+
     RegistryObject<CreativeModeTab> MANOR_FOOD_TAB = TABS.register("manor_food", () -> CreativeModeTab.builder()
             .title(Component.translatable("item_group.papercraft_magic_decoration.manor_food.name"))
             .icon(ModItems.LAND_NO1.get()::getDefaultInstance)

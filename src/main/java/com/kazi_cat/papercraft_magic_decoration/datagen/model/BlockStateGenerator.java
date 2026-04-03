@@ -38,6 +38,14 @@ public class BlockStateGenerator extends BlockStateProvider {
         horizontalBlock(ModBlocks.BOTTLE_OF_LAND_NO1.get(), new ModelFile.UncheckedModelFile(modLoc("block/bottle_of_land_no1")));
         horizontalBlock(ModBlocks.BOTTLE_OF_LUCKY_CACTUS.get(), new ModelFile.UncheckedModelFile(modLoc("block/bottle_of_lucky_cactus")));
         horizontalBlock(ModBlocks.BOTTLE_OF_POISON_RUM.get(), new ModelFile.UncheckedModelFile(modLoc("block/bottle_of_poison_rum")));
+
+        simpleBlock(ModBlocks.WHITE_PAPER_BLOCK.get());
+        simpleBlock(ModBlocks.BLUE_PAPER_BLOCK.get());
+        simpleBlock(ModBlocks.BLACK_PAPER_BLOCK.get());
+        simpleBlock(ModBlocks.RED_PAPER_BLOCK.get());
+        simpleBlock(ModBlocks.YELLOW_PAPER_BLOCK.get());
+        simpleBlock(ModBlocks.DEWY_MEMBRANE_BLOCK.get());
+        simpleBlock(ModBlocks.COTTON_SERGE_BLOCK.get());
     }
 
     public void drink(Block block, String name) {
