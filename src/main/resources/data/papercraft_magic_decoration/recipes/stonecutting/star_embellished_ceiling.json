@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 4,
-  "ingredient": {
-    "item": "papercraft_magic_decoration:key_under_the_lake"
-  },
-  "result": "papercraft_magic_decoration:star_embellished_ceiling"
-}

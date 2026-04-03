@@ -1,21 +1,9 @@
 package com.kazi_cat.papercraft_magic_decoration.client.init;
 
-import com.kazi_cat.papercraft_magic_decoration.client.gui.CopperBartenderScreen;
-import com.kazi_cat.papercraft_magic_decoration.client.gui.DirtHoleScreen;
-import com.kazi_cat.papercraft_magic_decoration.client.gui.KaziLuckyCatScreen;
-import com.kazi_cat.papercraft_magic_decoration.client.gui.MochaPotScreen;
 import com.kazi_cat.papercraft_magic_decoration.client.model.BlockGeoModelManager;
 import com.kazi_cat.papercraft_magic_decoration.client.model.ItemGeoModelManager;
-import com.kazi_cat.papercraft_magic_decoration.client.render.BaseGeoBlockRenderer;
-import com.kazi_cat.papercraft_magic_decoration.client.render.DistillerBlockRenderer;
-import com.kazi_cat.papercraft_magic_decoration.client.render.GlassDrinkBlockRenderer;
-import com.kazi_cat.papercraft_magic_decoration.client.render.PaperCuttingTableBlockRenderer;
+import com.kazi_cat.papercraft_magic_decoration.client.render.DrinkBlockRenderer;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
-import com.kazi_cat.papercraft_magic_decoration.inventory.container.CopperBartenderContainer;
-import com.kazi_cat.papercraft_magic_decoration.inventory.container.DirtHoleContainer;
-import com.kazi_cat.papercraft_magic_decoration.inventory.container.KaziLuckyCatContainer;
-import com.kazi_cat.papercraft_magic_decoration.inventory.container.MochaPotContainer;
-import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -28,20 +16,10 @@ public class ClientSetup {
     public static void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(BlockGeoModelManager::loadModelMappings);
         event.enqueueWork(ItemGeoModelManager::loadModelMappings);
-        event.enqueueWork(() -> MenuScreens.register(CopperBartenderContainer.TYPE, CopperBartenderScreen::new));
-        event.enqueueWork(() -> MenuScreens.register(DirtHoleContainer.TYPE, DirtHoleScreen::new));
-        event.enqueueWork(() -> MenuScreens.register(KaziLuckyCatContainer.TYPE, KaziLuckyCatScreen::new));
-        event.enqueueWork(() -> MenuScreens.register(MochaPotContainer.TYPE, MochaPotScreen::new));
     }
 
     @SubscribeEvent
     public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerBlockEntityRenderer(ModBlocks.GLASS_DRINK_BE.get(), GlassDrinkBlockRenderer::new);
-        event.registerBlockEntityRenderer(ModBlocks.DISTILLER_BE.get(), DistillerBlockRenderer::new);
-        event.registerBlockEntityRenderer(ModBlocks.ANIMATED_BE.get(), context -> new BaseGeoBlockRenderer<>(ModBlocks.ANIMATED_BE.get()));
-        event.registerBlockEntityRenderer(ModBlocks.PAPER_CUTTING_TABLE_BE.get(), context -> new PaperCuttingTableBlockRenderer());
-        event.registerBlockEntityRenderer(ModBlocks.ANIMATED_SMELTABLE_BE.get(), context -> new BaseGeoBlockRenderer<>(ModBlocks.ANIMATED_SMELTABLE_BE.get()));
-        event.registerBlockEntityRenderer(ModBlocks.COPPER_BARTENDER_BE.get(), context -> new BaseGeoBlockRenderer<>(ModBlocks.COPPER_BARTENDER_BE.get()));
-        event.registerBlockEntityRenderer(ModBlocks.KAZI_LUCKY_CAT_BE.get(), context -> new BaseGeoBlockRenderer<>(ModBlocks.KAZI_LUCKY_CAT_BE.get()));
+        event.registerBlockEntityRenderer(ModBlocks.DRINK_BE.get(), DrinkBlockRenderer::new);
     }
 }

@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "papercraft_magic_decoration:item/fireplace_decoration_origami"
-  }
-}

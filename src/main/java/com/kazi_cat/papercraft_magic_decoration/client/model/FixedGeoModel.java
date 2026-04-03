@@ -30,3 +30,4 @@ public class FixedGeoModel<T extends GeoAnimatable> extends GeoModel<T> {
         return animation;
     }
 }
+

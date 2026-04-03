@@ -1,0 +1,27 @@
+{
+  "base": {
+    "parent": "papercraft_magic_decoration:block/drink/land_no1/handheld"
+  },
+  "gui_light": "front",
+  "loader": "forge:separate_transforms",
+  "perspectives": {
+    "fixed": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "papercraft_magic_decoration:item/land_no1"
+      }
+    },
+    "ground": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "papercraft_magic_decoration:item/land_no1"
+      }
+    },
+    "gui": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "papercraft_magic_decoration:item/land_no1"
+      }
+    }
+  }
+}

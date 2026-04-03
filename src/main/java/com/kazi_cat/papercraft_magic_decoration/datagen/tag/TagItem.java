@@ -17,7 +17,6 @@ public class TagItem extends ItemTagsProvider {
     }
 
     @Override
-    @SuppressWarnings("all")
     protected void addTags(HolderLookup.Provider provider) {
 
     }

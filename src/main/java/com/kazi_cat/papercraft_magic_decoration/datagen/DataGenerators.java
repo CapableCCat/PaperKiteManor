@@ -1,13 +1,18 @@
 package com.kazi_cat.papercraft_magic_decoration.datagen;
 
+import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.datagen.lootable.LootTableGenerator;
+import com.kazi_cat.papercraft_magic_decoration.datagen.model.BlockModelGenerator;
+import com.kazi_cat.papercraft_magic_decoration.datagen.model.BlockStateGenerator;
+import com.kazi_cat.papercraft_magic_decoration.datagen.model.ItemModelGenerator;
 import com.kazi_cat.papercraft_magic_decoration.datagen.recipe.ModRecipeGenerator;
 import com.kazi_cat.papercraft_magic_decoration.datagen.tag.TagBlock;
+import com.kazi_cat.papercraft_magic_decoration.datagen.tag.TagItem;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = PaperKiteManor.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DataGenerators {
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
@@ -18,8 +23,12 @@ public class DataGenerators {
         var pack = generator.getPackOutput();
 
         var block = vanillaPack.addProvider(packOutput -> new TagBlock(packOutput, registries, helper));
+        vanillaPack.addProvider(packOutput -> new TagItem(packOutput, registries, block.contentsGetter(), helper));
 
-        generator.addProvider(event.includeServer(), new ModRecipeGenerator(pack));
         generator.addProvider(event.includeServer(), new LootTableGenerator(pack));
+        generator.addProvider(event.includeServer(), new ModRecipeGenerator(pack));
+        generator.addProvider(event.includeClient(), new BlockModelGenerator(pack, helper));
+        generator.addProvider(event.includeClient(), new BlockStateGenerator(pack, helper));
+        generator.addProvider(event.includeClient(), new ItemModelGenerator(pack, helper));
     }
 }

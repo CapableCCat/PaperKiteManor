@@ -1,9 +1,0 @@
-{
-  "type": "papercraft_magic_decoration:papermaking",
-  "ingredient": {
-    "item": "minecraft:bamboo_block"
-  },
-  "result": {
-    "item": "papercraft_magic_decoration:dewy_membrane_block"
-  }
-}

@@ -1,27 +1,26 @@
-modLoader="javafml"
-loaderVersion="[47,)"
-license="Academic Free License v3.0"
+modLoader = "javafml"
+loaderVersion = "${loader_version_range}"
+license = "${mod_license}"
 
 [[mods]]
-modId="papercraft_magic_decoration"
-version="0.0.5a"
-displayName="Paper Kite Manor"
-logoFile="logo.png"
-authors="KaziCat咔吱猫, MasterMarisa"
+modId = "${mod_id}"
+version = "${mod_version}"
+displayName = "${mod_name}"
+authors = "${mod_authors}"
+description = '''${mod_description}'''
 
-description='''${mod_description}'''
+[[dependencies."${mod_id}"]]
+modId = "forge"
+mandatory = true
+versionRange = "${forge_version_range}"
+ordering = "NONE"
+side = "BOTH"
 
-[[dependencies."papercraft_magic_decoration"]]
-    modId = "forge"
-    mandatory = true
-    versionRange = "${forge_version_range}"
-    ordering = "NONE"
-    side = "BOTH"
+[[dependencies."${mod_id}"]]
+modId = "minecraft"
+mandatory = true
+versionRange = "${minecraft_version_range}"
+ordering = "NONE"
+side = "BOTH"
 
-[[dependencies."papercraft_magic_decoration"]]
-    modId="minecraft"
-    mandatory=true
-    versionRange="[1.20.1]"
-    ordering="NONE"
-    side="BOTH"
 

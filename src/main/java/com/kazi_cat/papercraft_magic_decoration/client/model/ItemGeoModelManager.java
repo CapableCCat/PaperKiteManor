@@ -24,7 +24,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @SuppressWarnings("unchecked")
 public class ItemGeoModelManager {
     public static final String NAMESPACE = "papercraft_magic_decoration";
-    public static final String PATH = "geckolib/item_mappings";
+    public static final String PATH = "geomodel/item_mappings";
     private static final ConcurrentHashMap<ResourceLocation, GeoModel<?>> map;
 
     @Nullable

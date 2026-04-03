@@ -2,15 +2,6 @@
   "item_group.papercraft_magic_decoration.manor_main.name": "纸鸢庄园：主要",
   "item_group.papercraft_magic_decoration.manor_food.name": "纸鸢庄园：美食",
   "item_group.papercraft_magic_decoration.manor_decoration.name": "纸鸢庄园：装饰",
-  "block.papercraft_magic_decoration.glass_of_blaze_whiskey": "燃-威士忌",
-  "block.papercraft_magic_decoration.glass_of_ferry_whiskey": "舟-威士忌",
-  "block.papercraft_magic_decoration.glass_of_fly_whiskey": "飞天-威士忌",
-  "block.papercraft_magic_decoration.glass_of_land_no1": "壹号天地",
-  "block.papercraft_magic_decoration.glass_of_lucky_cactus": "幸运仙人掌",
-  "block.papercraft_magic_decoration.glass_of_poison_rum": "丧钟-黑朗姆",
-  "block.papercraft_magic_decoration.bloody_mary": "血腥玛丽",
-  "block.papercraft_magic_decoration.diplomat_coffee": "外交官咖啡",
-  "block.papercraft_magic_decoration.devil_margarita": "恶魔玛格丽特",
-  "block.papercraft_magic_decoration.copper_bartender": "铜酒保",
-  "item.papercraft_magic_decoration.copper_bartender": "铜酒保"
+
+  "block.papercraft_magic_decoration.land_no1": "壹号天地"
 }

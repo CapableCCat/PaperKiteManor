@@ -1,6 +1,0 @@
-{
-  "parent": "papercraft_magic_decoration:displaysettings/loud_button",
-  "textures": {
-    "layer0": "papercraft_magic_decoration:block/loud_button"
-  }
-}

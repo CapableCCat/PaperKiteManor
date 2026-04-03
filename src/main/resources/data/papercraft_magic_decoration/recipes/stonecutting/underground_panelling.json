@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 8,
-  "ingredient": {
-    "item": "papercraft_magic_decoration:key_under_the_lake"
-  },
-  "result": "papercraft_magic_decoration:underground_panelling"
-}

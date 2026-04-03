@@ -1,6 +1,8 @@
 package com.kazi_cat.papercraft_magic_decoration.client.model;
 
-import com.google.gson.*;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.BlockModelShaper;
@@ -29,7 +31,7 @@ import java.util.stream.Collectors;
 @SuppressWarnings("unchecked")
 public class BlockGeoModelManager {
     public static final String NAMESPACE = "papercraft_magic_decoration";
-    public static final String PATH = "geckolib/blockstate_mappings";
+    public static final String PATH = "geomodel/blockstate_mappings";
     private static final ConcurrentHashMap<ModelResourceLocation, GeoModel<?>> models;
     private static final ConcurrentHashMap<ModelResourceLocation, Matrix4f> transformations;
 

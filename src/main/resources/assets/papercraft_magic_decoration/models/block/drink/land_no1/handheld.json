@@ -1,0 +1,132 @@
+{
+  "format_version": "1.21.6",
+  "credit": "Made with Blockbench",
+  "render_type": "cutout",
+  "texture_size": [32, 32],
+  "textures": {
+    "0": "papercraft_magic_decoration:block/land_no1",
+    "particle": "papercraft_magic_decoration:block/land_no1"
+  },
+  "elements": [
+    {
+      "from": [6, 0, 5.675],
+      "to": [10, 1, 9.675],
+      "rotation": {"angle": -22.5, "axis": "y", "origin": [8, 0, 7.675]},
+      "faces": {
+        "north": {"uv": [2, 12, 0, 12.5], "texture": "#0"},
+        "east": {"uv": [2, 10.5, 0, 11], "texture": "#0"},
+        "south": {"uv": [2, 12, 0, 12.5], "texture": "#0"},
+        "west": {"uv": [2, 10.5, 0, 11], "texture": "#0"},
+        "up": {"uv": [0, 12.5, 2, 10.5], "texture": "#0"},
+        "down": {"uv": [0, 10.5, 2, 12.5], "texture": "#0"}
+      }
+    },
+    {
+      "from": [7.5, 1, 7.175],
+      "to": [8.5, 6, 8.175],
+      "rotation": {"angle": -22.5, "axis": "y", "origin": [8, 1, 7.675]},
+      "faces": {
+        "north": {"uv": [0, 8, 0.5, 10.5], "texture": "#0"},
+        "east": {"uv": [0, 8, 0.5, 10.5], "texture": "#0"},
+        "south": {"uv": [0, 8, 0.5, 10.5], "texture": "#0"},
+        "west": {"uv": [0, 8, 0.5, 10.5], "texture": "#0"}
+      }
+    },
+    {
+      "from": [10.5, 15.975, 10.175],
+      "to": [5.5, 7, 5.175],
+      "rotation": {"angle": -22.5, "axis": "y", "origin": [8, 6, 7.675]},
+      "faces": {
+        "north": {"uv": [7, 7, 9.5, 2.5], "texture": "#0"},
+        "east": {"uv": [7, 7, 9.5, 2.5], "texture": "#0"},
+        "south": {"uv": [7, 7, 9.5, 2.5], "texture": "#0"},
+        "west": {"uv": [7, 7, 9.5, 2.5], "texture": "#0"}
+      }
+    },
+    {
+      "from": [5.5, 15.975, 5.175],
+      "to": [10.5, 15.975, 10.175],
+      "rotation": {"angle": -22.5, "axis": "y", "origin": [8, 16, 7.675]},
+      "faces": {
+        "up": {"uv": [9.5, 2.5, 7, 0], "texture": "#0"},
+        "down": {"uv": [9.5, 0, 7, 2.5], "texture": "#0"}
+      }
+    },
+    {
+      "from": [5.5, 7, 5.175],
+      "to": [10.5, 7, 10.175],
+      "rotation": {"angle": -22.5, "axis": "y", "origin": [8, 7, 7.675]},
+      "faces": {
+        "up": {"uv": [7, 5, 2, 0], "texture": "#0"},
+        "down": {"uv": [7, 0, 2, 5], "texture": "#0"}
+      }
+    },
+    {
+      "from": [10, 14, 9.675],
+      "to": [6, 6, 5.675],
+      "rotation": {"angle": -22.5, "axis": "y", "origin": [8, 6, 7.675]},
+      "faces": {
+        "north": {"uv": [2, 6, 0, 2], "texture": "#0"},
+        "east": {"uv": [2, 6, 0, 2], "texture": "#0"},
+        "south": {"uv": [2, 6, 0, 2], "texture": "#0"},
+        "west": {"uv": [2, 6, 0, 2], "texture": "#0"},
+        "up": {"uv": [0, 8, 2, 6], "texture": "#0"}
+      }
+    },
+    {
+      "from": [6, 14, 5.675],
+      "to": [10, 14, 9.675],
+      "rotation": {"angle": -22.5, "axis": "y", "origin": [8, 14, 7.675]},
+      "faces": {
+        "up": {"uv": [2, 2, 0, 0], "texture": "#0"},
+        "down": {"uv": [2, 0, 0, 2], "texture": "#0"}
+      }
+    }
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [55, 0, 0],
+      "translation": [0, 2, 3],
+      "scale": [0.6, 0.6, 0.6]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [55, 0, 0],
+      "translation": [0, 2, 3],
+      "scale": [0.6, 0.6, 0.6]
+    },
+    "firstperson_righthand": {
+      "rotation": [5, 0, 0],
+      "translation": [1, 4.5, 2],
+      "scale": [0.5, 0.6, 0.5]
+    },
+    "firstperson_lefthand": {
+      "rotation": [5, 0, 0],
+      "translation": [1, 4.5, 2],
+      "scale": [0.5, 0.6, 0.5]
+    },
+    "ground": {
+      "translation": [0, 2.25, 0],
+      "scale": [0.5, 0.5, 0.5]
+    },
+    "gui": {
+      "rotation": [16, 0, 0],
+      "translation": [0, -0.25, 0],
+      "scale": [0.9, 0.9, 0.9]
+    },
+    "head": {
+      "translation": [0, 14.5, 0]
+    },
+    "fixed": {
+      "rotation": [-90, 0, 0],
+      "translation": [0, 0, -7]
+    }
+  },
+  "groups": [
+    {
+      "name": "a_glass_of_land_no.1",
+      "origin": [6, 10, 5],
+      "color": 0,
+      "children": [0, 1, 2, 3, 4, 5, 6]
+    }
+  ]
+}

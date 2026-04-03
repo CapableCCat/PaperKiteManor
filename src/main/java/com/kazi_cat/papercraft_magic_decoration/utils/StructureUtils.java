@@ -22,11 +22,12 @@ public class StructureUtils {
      * @param pos           结构的中心
      * @param rotation      旋转角度
      * @param mirror        是否镜像
-     * @param ignoreAir  是否忽略结构中的空气
+     * @param ignoreAir     是否忽略结构中的空气
+     * @param centered      是否以传入的位置为放置结构的中心位置
      * @return              如果放置成功返回true，否则返回false
      */
     public static boolean placeStructure(ServerLevel level, ResourceLocation structureId, BlockPos pos,
-                                         Rotation rotation, Mirror mirror, boolean ignoreAir) {
+                                         Rotation rotation, Mirror mirror, boolean ignoreAir, boolean centered) {
         StructureTemplateManager manager = level.getStructureManager();
 
         Optional<StructureTemplate> templateOptional = manager.get(structureId);
@@ -46,16 +47,17 @@ public class StructureUtils {
             settings.addProcessor(BlockIgnoreProcessor.AIR);
         }
 
-         BlockPos offset = new BlockPos(-template.getSize().getX() / 2, 0, -template.getSize().getZ() / 2);
-         pos = pos.offset(offset);
+        if (centered) {
+            pos = pos.offset(-template.getSize().getX() / 2, 0, -template.getSize().getZ() / 2);
+        }
 
         template.placeInWorld(level, pos, pos, settings, level.getRandom(), 3);
 
         return true;
     }
 
-    public static boolean placeStructure(ServerLevel level, ResourceLocation structureId, BlockPos pos) {
-        return placeStructure(level, structureId, pos, Rotation.NONE, Mirror.NONE, true);
+    public static boolean placeStructure(ServerLevel level, ResourceLocation structureId, BlockPos pos, boolean centered) {
+        return placeStructure(level, structureId, pos, Rotation.NONE, Mirror.NONE, true, centered);
     }
 }
 
