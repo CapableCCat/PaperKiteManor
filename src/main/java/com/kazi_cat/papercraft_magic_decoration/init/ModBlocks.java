@@ -3,21 +3,26 @@ package com.kazi_cat.papercraft_magic_decoration.init;
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.block.*;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.*;
+import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-@SuppressWarnings({"DataFlowIssue"})
+@SuppressWarnings({"DataFlowIssue","deprecation"})
 public interface ModBlocks {
     DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, PaperKiteManor.MOD_ID);
     DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, PaperKiteManor.MOD_ID);
@@ -186,6 +191,9 @@ public interface ModBlocks {
     RegistryObject<BlockEntityType<DirtHoleBlockEntity>> DIRT_HOLE_BE = BLOCK_ENTITIES.register("dirt_hole",
             () -> BlockEntityType.Builder.of(DirtHoleBlockEntity::new, DIRT_HOLE.get()).build(null));
 
+    // 孢子收集盆
+    RegistryObject<Block> SPORES_COLLECTION_PLATE = BLOCKS.register("spores_collection_plate", SporesCollectionPlateBlock::new);
+
     // 咖啡欧防风
     RegistryObject<Block> COFFEE_PASTINACA_SATIVA = BLOCKS.register("coffee_pastinaca_sativa", CoffeePastinacaSativaCropBlock::new);
 
@@ -224,4 +232,20 @@ public interface ModBlocks {
     RegistryObject<Block> ROUGH_PALM_TREE_TRUNK = BLOCKS.register("rough_palm_tree_trunk", () -> new DecorationBlock.Waterlogged(BlockBehaviour.Properties.of()
             .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.WOOD).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
             Block.box(2, 0, 2, 14, 16, 14)));
+
+    // 装饰方块
+    RegistryObject<Block> UNDERGROUND_PANELLING = BLOCKS.register("underground_panelling", () -> new DecorationBlock.HorizontalDirectional(BlockBehaviour.Properties.of()
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.WOOD).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
+            Block.box(0, 0, 1, 16, 16, 16)));
+
+    RegistryObject<Block> ROSES_IN_WATER_BOTTLE = BLOCKS.register("roses_in_water_bottle", () -> new TwoByOneVerticalBlock.Waterlogged(BlockBehaviour.Properties.of()
+            .noOcclusion().pushReaction(PushReaction.DESTROY).sound(SoundType.GLASS),
+            Block.box(5.5, 0, 5.5, 10.5, 16, 10.5),
+            Block.box(0, 0, 0, 16, 8, 16)){
+        @Override
+        public VoxelShape getCollisionShape(BlockState state, BlockGetter blockGetter, BlockPos pos, CollisionContext context) {
+            if (state.getValue(PART) == 1) return Shapes.empty();
+            return getShape(state, blockGetter, pos, context);
+        }
+    });
 }

@@ -17,6 +17,11 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.AMETHYST_SCISSORS.get());
                 output.accept(ModItems.GARDEN_TROWEL.get());
 
+                output.accept(ModItems.COPPER_STILL.get());
+                output.accept(ModItems.COPPER_BARTENDER.get());
+                output.accept(ModItems.SPORES_COLLECTION_PLATE.get());
+                output.accept(ModItems.PAPER_CUTTING_TABLE.get());
+
                 output.accept(ModItems.BLACK_PAPER_BLOCK.get());
                 output.accept(ModItems.BLUE_PAPER_BLOCK.get());
                 output.accept(ModItems.COTTON_SERGE_BLOCK.get());
@@ -43,9 +48,6 @@ public interface ModCreativeTabs {
             .title(Component.translatable("item_group.papercraft_magic_decoration.manor_food.name"))
             .icon(ModItems.LAND_NO1.get()::getDefaultInstance)
             .displayItems((par, output) -> {
-                output.accept(ModItems.COPPER_STILL.get());
-                output.accept(ModItems.COPPER_BARTENDER.get());
-
                 output.accept(ModItems.BLAZE_WHISKEY.get());
                 output.accept(ModItems.FERRY_WHISKEY.get());
                 output.accept(ModItems.FLY_WHISKEY.get());
@@ -72,14 +74,16 @@ public interface ModCreativeTabs {
 
     RegistryObject<CreativeModeTab> MANOR_DECORATION_TAB = TABS.register("manor_decoration", () -> CreativeModeTab.builder()
             .title(Component.translatable("item_group.papercraft_magic_decoration.manor_decoration.name"))
-            .icon(ModItems.PAPER_CUTTING_TABLE.get()::getDefaultInstance)
+            .icon(ModItems.ROSES_IN_WATER_BOTTLE.get()::getDefaultInstance)
             .displayItems((par, output) -> {
-                output.accept(ModItems.PAPER_CUTTING_TABLE.get());
-
                 output.accept(ModItems.PALM_TREE_CROWN.get());
                 output.accept(ModItems.PALM_TREE_TOP.get());
                 output.accept(ModItems.PALM_TREE_TRUNK_TOP.get());
                 output.accept(ModItems.PALM_TREE_TRUNK.get());
                 output.accept(ModItems.ROUGH_PALM_TREE_TRUNK.get());
+
+                output.accept(ModItems.UNDERGROUND_PANELLING.get());
+
+                output.accept(ModItems.ROSES_IN_WATER_BOTTLE.get());
             }).build());
 }

@@ -31,6 +31,7 @@
   "block.papercraft_magic_decoration.paper_cutting_table": "剪纸台",
   "block.papercraft_magic_decoration.copper_bartender": "铜酒保",
   "block.papercraft_magic_decoration.copper_still": "蒸馏器",
+  "block.papercraft_magic_decoration.spores_collection_plate": "孢子收集盆",
   "block.papercraft_magic_decoration.coffee_pastinaca_sativa_core": "咖啡欧防风茎块芯",
   "block.papercraft_magic_decoration.coffee_pastinaca_sativa_flowers": "咖啡欧防风花伞",
   "block.papercraft_magic_decoration.coffee_pastinaca_sativa_fruiting_stem": "咖啡欧防风结果叶片",
@@ -40,6 +41,8 @@
   "block.papercraft_magic_decoration.palm_tree_trunk_top": "棕榈树干顶",
   "block.papercraft_magic_decoration.palm_tree_trunk": "棕榈树干",
   "block.papercraft_magic_decoration.rough_palm_tree_trunk": "粗棕榈树干",
+  "block.papercraft_magic_decoration.underground_panelling": "地下墙板",
+  "block.papercraft_magic_decoration.roses_in_water_bottle": "瓶栽玫瑰",
 
   "item.papercraft_magic_decoration.pack_of_guang_s": "一打廣式",
   "item.papercraft_magic_decoration.amethyst_scissors": "紫水晶剪刀",

@@ -38,6 +38,10 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.PAPER_CUTTING_TABLE.get());
         dropSelf(ModBlocks.COPPER_BARTENDER.get());
         dropSelf(ModBlocks.COPPER_STILL.get());
+        dropSelf(ModBlocks.SPORES_COLLECTION_PLATE.get());
+
+        dropSelf(ModBlocks.UNDERGROUND_PANELLING.get());
+        dropSelf(ModBlocks.ROSES_IN_WATER_BOTTLE.get());
 
         dropOther(ModBlocks.DIRT_HOLE.get(), Items.DIRT);
         dropOther(ModBlocks.COFFEE_PASTINACA_SATIVA.get(), ModItems.COFFEE_FRUIT.get());

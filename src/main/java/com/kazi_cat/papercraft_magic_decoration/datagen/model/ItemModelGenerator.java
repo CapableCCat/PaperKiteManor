@@ -74,6 +74,9 @@ public class ItemModelGenerator extends ItemModelProvider {
         withExistingParent("palm_tree_trunk", modLoc("block/palm_tree_trunk"));
         withExistingParent("palm_tree_trunk_top", modLoc("block/palm_tree_trunk_top"));
         withExistingParent("rough_palm_tree_trunk", modLoc("block/rough_palm_tree_trunk"));
+        withExistingParent("underground_panelling", modLoc("block/underground_panelling"));
+        withExistingParent("roses_in_water_bottle", modLoc("block/roses_in_water_bottle"));
+        withExistingParent("spores_collection_plate", modLoc("block/spores_collection_plate"));
     }
 
     public ItemModelBuilder handheldItem(Item item) {

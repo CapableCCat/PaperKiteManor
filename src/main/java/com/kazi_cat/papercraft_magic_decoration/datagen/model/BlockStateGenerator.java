@@ -1,10 +1,7 @@
 package com.kazi_cat.papercraft_magic_decoration.datagen.model;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
-import com.kazi_cat.papercraft_magic_decoration.block.BoxedDrinkBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.DistillerBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.DrinkBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.TwoByOneBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.*;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -46,12 +43,8 @@ public class BlockStateGenerator extends BlockStateProvider {
         horizontalBlock(ModBlocks.PAPER_CUTTING_TABLE.get(), new ModelFile.UncheckedModelFile(modLoc("block/paper_cutting_table")));
         horizontalBlock(ModBlocks.COPPER_BARTENDER.get(), new ModelFile.UncheckedModelFile(modLoc("block/copper_bartender")));
         horizontalBlock(ModBlocks.COFFEE_PASTINACA_SATIVA_FRUITING_STEM.get(), new ModelFile.UncheckedModelFile(modLoc("block/coffee_pastinaca_sativa_fruiting_stem")));
-        horizontalBlock(ModBlocks.COFFEE_PASTINACA_SATIVA_RIM.get(), blockState -> {
-            int part = blockState.getValue(TwoByOneBlock.PART);
-            ResourceLocation file = modLoc("block/coffee_pastinaca_sativa_rim%d".formatted(part));
-            return new ModelFile.UncheckedModelFile(file);
-        });
         horizontalBlock(ModBlocks.PALM_TREE_CROWN.get(), new ModelFile.UncheckedModelFile(modLoc("block/palm_tree_crown")));
+        horizontalBlock(ModBlocks.UNDERGROUND_PANELLING.get(), new ModelFile.UncheckedModelFile(modLoc("block/underground_panelling")));
 
         simpleBlock(ModBlocks.WHITE_PAPER_BLOCK.get());
         simpleBlock(ModBlocks.BLUE_PAPER_BLOCK.get());
@@ -71,6 +64,17 @@ public class BlockStateGenerator extends BlockStateProvider {
         distiller(ModBlocks.COPPER_STILL.get(), "copper_still");
 
         crop(ModBlocks.COFFEE_PASTINACA_SATIVA, "coffee_pastinaca_sativa");
+
+        twoPart(ModBlocks.COFFEE_PASTINACA_SATIVA_RIM.get(), "coffee_pastinaca_sativa_rim");
+        twoPart(ModBlocks.ROSES_IN_WATER_BOTTLE.get(), "roses_in_water_bottle");
+
+        getVariantBuilder(ModBlocks.SPORES_COLLECTION_PLATE.get()).forAllStates(state -> {
+            boolean filled = state.getValue(SporesCollectionPlateBlock.FILLED);
+            ResourceLocation file = modLoc("block/spores_collection_plate%s".formatted(filled ? "_filled" : ""));
+            return ConfiguredModel.builder()
+                    .modelFile(new ModelFile.UncheckedModelFile(file))
+                    .build();
+        });
     }
 
     public void drink(Block block, String name) {
@@ -112,6 +116,14 @@ public class BlockStateGenerator extends BlockStateProvider {
             return ConfiguredModel.builder()
                     .modelFile(new ModelFile.UncheckedModelFile(file))
                     .build();
+        });
+    }
+
+    public void twoPart(Block block, String name) {
+        horizontalBlock(block, blockState -> {
+            int part = blockState.getValue(TwoByOneBlock.PART);
+            ResourceLocation file = modLoc("block/%s%d".formatted(name, part));
+            return new ModelFile.UncheckedModelFile(file);
         });
     }
 }
