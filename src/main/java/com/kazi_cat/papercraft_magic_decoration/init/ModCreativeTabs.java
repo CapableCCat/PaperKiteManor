@@ -37,6 +37,8 @@ public interface ModCreativeTabs {
             .title(Component.translatable("item_group.papercraft_magic_decoration.manor_food.name"))
             .icon(ModItems.LAND_NO1.get()::getDefaultInstance)
             .displayItems((par, output) -> {
+                output.accept(ModItems.COPPER_BARTENDER.get());
+
                 output.accept(ModItems.BLAZE_WHISKEY.get());
                 output.accept(ModItems.FERRY_WHISKEY.get());
                 output.accept(ModItems.FLY_WHISKEY.get());

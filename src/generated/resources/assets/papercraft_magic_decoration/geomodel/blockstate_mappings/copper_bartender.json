@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=east,triggered=false,waterlogged=false": "0",
+    "facing=east,triggered=false,waterlogged=true": "0",
+    "facing=east,triggered=true,waterlogged=false": "0",
+    "facing=east,triggered=true,waterlogged=true": "0",
+    "facing=north,triggered=false,waterlogged=false": "0",
+    "facing=north,triggered=false,waterlogged=true": "0",
+    "facing=north,triggered=true,waterlogged=false": "0",
+    "facing=north,triggered=true,waterlogged=true": "0",
+    "facing=south,triggered=false,waterlogged=false": "0",
+    "facing=south,triggered=false,waterlogged=true": "0",
+    "facing=south,triggered=true,waterlogged=false": "0",
+    "facing=south,triggered=true,waterlogged=true": "0",
+    "facing=west,triggered=false,waterlogged=false": "0",
+    "facing=west,triggered=false,waterlogged=true": "0",
+    "facing=west,triggered=true,waterlogged=false": "0",
+    "facing=west,triggered=true,waterlogged=true": "0"
+  },
+  "models": {
+    "0": {
+      "model": "papercraft_magic_decoration:geo/copper_bartender.geo.json",
+      "texture": "papercraft_magic_decoration:textures/block/copper_bartender.png",
+      "animation": "papercraft_magic_decoration:animations/copper_bartender.animation.json"
+    }
+  }
+}

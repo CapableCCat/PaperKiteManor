@@ -60,6 +60,7 @@ public class ItemModelGenerator extends ItemModelProvider {
         withExistingParent("dewy_membrane_block", modLoc("block/dewy_membrane_block"));
         withExistingParent("cotton_serge_block", modLoc("block/cotton_serge_block"));
         withExistingParent("paper_cutting_table", modLoc("displaysettings/paper_cutting_table"));
+        withExistingParent("copper_bartender", modLoc("displaysettings/copper_bartender"));
     }
 
     public ItemModelBuilder handheldItem(Item item) {

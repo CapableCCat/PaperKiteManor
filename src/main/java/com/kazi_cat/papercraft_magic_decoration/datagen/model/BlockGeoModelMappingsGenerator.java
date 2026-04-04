@@ -10,7 +10,6 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonWriter;
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
-import com.kazi_cat.papercraft_magic_decoration.client.model.FixedGeoModel;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import net.minecraft.Util;
@@ -20,8 +19,6 @@ import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -54,6 +51,7 @@ public class BlockGeoModelMappingsGenerator implements DataProvider {
 
     private void addMappings() {
         simple(ModBlocks.PAPER_CUTTING_TABLE);
+        simple(ModBlocks.COPPER_BARTENDER);
     }
 
     public void simple(RegistryObject<Block> block) {

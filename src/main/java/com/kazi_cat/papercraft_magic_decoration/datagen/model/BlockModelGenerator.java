@@ -20,5 +20,6 @@ public class BlockModelGenerator extends BlockModelProvider {
         cubeAll("dewy_membrane_block", modLoc("block/dewy_membrane_block"));
         cubeAll("cotton_serge_block", modLoc("block/cotton_serge_block"));
         cubeAll("paper_cutting_table", modLoc("block/paper_cutting_table"));
+        cubeAll("copper_bartender", modLoc("block/copper_bartender"));
     }
 }

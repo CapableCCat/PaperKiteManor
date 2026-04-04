@@ -1,10 +1,8 @@
 package com.kazi_cat.papercraft_magic_decoration.init;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
-import com.kazi_cat.papercraft_magic_decoration.block.BottleDrinkBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.DrinkBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.BoxedDrinkBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.PaperCuttingTableBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.*;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.CopperBartenderBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.DrinkBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.PaperCuttingTableBlockEntity;
 import net.minecraft.world.item.Item;
@@ -168,4 +166,11 @@ public interface ModBlocks {
     // 剪纸台方块实体
     RegistryObject<BlockEntityType<PaperCuttingTableBlockEntity>> PAPER_CUTTING_TABLE_BE = BLOCK_ENTITIES.register("paper_cutting_table",
             () -> BlockEntityType.Builder.of(PaperCuttingTableBlockEntity::new, PAPER_CUTTING_TABLE.get()).build(null));
+
+    // 铜酒保方块
+    RegistryObject<Block> COPPER_BARTENDER = BLOCKS.register("copper_bartender", CopperBartenderBlock::new);
+
+    // 铜酒保方块实体
+    RegistryObject<BlockEntityType<CopperBartenderBlockEntity>> COPPER_BARTENDER_BE = BLOCK_ENTITIES.register("copper_bartender_block",
+            () -> BlockEntityType.Builder.of(CopperBartenderBlockEntity::new, COPPER_BARTENDER.get()).build(null));
 }
