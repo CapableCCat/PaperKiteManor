@@ -15,6 +15,7 @@ public interface ModCreativeTabs {
             .icon(ModItems.AMETHYST_SCISSORS.get()::getDefaultInstance)
             .displayItems((par, output) -> {
                 output.accept(ModItems.AMETHYST_SCISSORS.get());
+                output.accept(ModItems.GARDEN_TROWEL.get());
 
                 output.accept(ModItems.BLACK_PAPER_BLOCK.get());
                 output.accept(ModItems.BLUE_PAPER_BLOCK.get());
@@ -34,6 +35,7 @@ public interface ModCreativeTabs {
 
                 output.accept(ModItems.VITALITY_SPORES.get());
                 output.accept(ModItems.WHISKEY_RAW.get());
+                output.accept(ModItems.COFFEE_FRUIT.get());
                 output.accept(ModItems.GOLDEN_COFFEE_FRUIT.get());
             }).build());
 

@@ -1,6 +1,7 @@
 package com.kazi_cat.papercraft_magic_decoration.client.init;
 
 import com.kazi_cat.papercraft_magic_decoration.client.gui.CopperBartenderScreen;
+import com.kazi_cat.papercraft_magic_decoration.client.gui.DirtHoleScreen;
 import com.kazi_cat.papercraft_magic_decoration.client.model.BlockGeoModelManager;
 import com.kazi_cat.papercraft_magic_decoration.client.model.ItemGeoModelManager;
 import com.kazi_cat.papercraft_magic_decoration.client.render.block.BaseGeoBlockRenderer;
@@ -9,6 +10,7 @@ import com.kazi_cat.papercraft_magic_decoration.client.render.block.DrinkBlockRe
 import com.kazi_cat.papercraft_magic_decoration.client.render.block.PaperCuttingTableBlockRenderer;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import com.kazi_cat.papercraft_magic_decoration.inventory.container.CopperBartenderContainer;
+import com.kazi_cat.papercraft_magic_decoration.inventory.container.DirtHoleContainer;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -23,6 +25,7 @@ public class ClientSetup {
         event.enqueueWork(BlockGeoModelManager::loadModelMappings);
         event.enqueueWork(ItemGeoModelManager::loadModelMappings);
         event.enqueueWork(() -> MenuScreens.register(CopperBartenderContainer.TYPE, CopperBartenderScreen::new));
+        event.enqueueWork(() -> MenuScreens.register(DirtHoleContainer.TYPE, DirtHoleScreen::new));
     }
 
     @SubscribeEvent

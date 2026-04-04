@@ -2,10 +2,7 @@ package com.kazi_cat.papercraft_magic_decoration.init;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.block.*;
-import com.kazi_cat.papercraft_magic_decoration.blockentity.CopperBartenderBlockEntity;
-import com.kazi_cat.papercraft_magic_decoration.blockentity.DistillerBlockEntity;
-import com.kazi_cat.papercraft_magic_decoration.blockentity.DrinkBlockEntity;
-import com.kazi_cat.papercraft_magic_decoration.blockentity.PaperCuttingTableBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.*;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
@@ -181,4 +178,14 @@ public interface ModBlocks {
     // 蒸馏器方块实体
     RegistryObject<BlockEntityType<DistillerBlockEntity>> DISTILLER_BE = BLOCK_ENTITIES.register("distiller",
             () -> BlockEntityType.Builder.of(DistillerBlockEntity::new, COPPER_STILL.get()).build(null));
+
+    // 土坑方块
+    RegistryObject<Block> DIRT_HOLE = BLOCKS.register("dirt_hole", DirtHoleBlock::new);
+
+    // 土坑方块实体
+    RegistryObject<BlockEntityType<DirtHoleBlockEntity>> DIRT_HOLE_BE = BLOCK_ENTITIES.register("dirt_hole",
+            () -> BlockEntityType.Builder.of(DirtHoleBlockEntity::new, DIRT_HOLE.get()).build(null));
+
+    // 咖啡欧防风
+    RegistryObject<Block> COFFEE_PASTINACA_SATIVA = BLOCKS.register("coffee_pastinaca_sativa", CoffeePastinacaSativaCropBlock::new);
 }

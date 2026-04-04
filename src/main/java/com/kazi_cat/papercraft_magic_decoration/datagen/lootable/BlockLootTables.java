@@ -1,8 +1,10 @@
 package com.kazi_cat.papercraft_magic_decoration.datagen.lootable;
 
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
+import com.kazi_cat.papercraft_magic_decoration.init.ModItems;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootTable;
 
@@ -32,6 +34,13 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.YELLOW_PAPER_BLOCK.get());
         dropSelf(ModBlocks.DEWY_MEMBRANE_BLOCK.get());
         dropSelf(ModBlocks.COTTON_SERGE_BLOCK.get());
+
+        dropSelf(ModBlocks.PAPER_CUTTING_TABLE.get());
+        dropSelf(ModBlocks.COPPER_BARTENDER.get());
+        dropSelf(ModBlocks.COPPER_STILL.get());
+
+        dropOther(ModBlocks.DIRT_HOLE.get(), Items.DIRT);
+        dropOther(ModBlocks.COFFEE_PASTINACA_SATIVA.get(), ModItems.COFFEE_FRUIT.get());
     }
 
     @Override

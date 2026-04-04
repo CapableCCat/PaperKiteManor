@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "papercraft_magic_decoration:coffee_fruit"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_vitality_spores": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "papercraft_magic_decoration:vitality_spores"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_vitality_spores",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "papercraft_magic_decoration:coffee_fruit"
+    ]
+  },
+  "sends_telemetry_event": false
+}

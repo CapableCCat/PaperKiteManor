@@ -8,9 +8,12 @@ import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CropBlock;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.RegistryObject;
 
 public class BlockStateGenerator extends BlockStateProvider {
     public BlockStateGenerator(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -49,8 +52,11 @@ public class BlockStateGenerator extends BlockStateProvider {
         simpleBlock(ModBlocks.YELLOW_PAPER_BLOCK.get());
         simpleBlock(ModBlocks.DEWY_MEMBRANE_BLOCK.get());
         simpleBlock(ModBlocks.COTTON_SERGE_BLOCK.get());
+        simpleBlock(ModBlocks.DIRT_HOLE.get(), new ModelFile.UncheckedModelFile(modLoc("block/dirt_hole")));
 
         distiller(ModBlocks.COPPER_STILL.get(), "copper_still");
+
+        crop(ModBlocks.COFFEE_PASTINACA_SATIVA, "coffee_pastinaca_sativa");
     }
 
     public void drink(Block block, String name) {
@@ -83,5 +89,15 @@ public class BlockStateGenerator extends BlockStateProvider {
                 return new ModelFile.UncheckedModelFile(file);
             });
         }
+    }
+
+    public void crop(RegistryObject<Block> block, String name) {
+        getVariantBuilder(block.get()).forAllStates(state -> {
+            int age = state.getValue(CropBlock.AGE);
+            ResourceLocation file = modLoc("block/crop/%s/stage%d".formatted(name, age));
+            return ConfiguredModel.builder()
+                    .modelFile(new ModelFile.UncheckedModelFile(file))
+                    .build();
+        });
     }
 }
