@@ -82,7 +82,15 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.PALM_TREE_TRUNK.get());
                 output.accept(ModItems.ROUGH_PALM_TREE_TRUNK.get());
 
+                output.accept(ModItems.CANOPY_TREE_FOLIAGE.get());
+                output.accept(ModItems.CANOPY_TREE_FERN.get());
+                output.accept(ModItems.CANOPY_TREE_DROOPING_ROOT.get());
+                output.accept(ModItems.CANOPY_TREE_LIMB.get());
+                output.accept(ModItems.CANOPY_TREE_TRUNK.get());
+                output.accept(ModItems.CANOPY_TREE_MUSHROOM.get());
+
                 output.accept(ModItems.UNDERGROUND_PANELLING.get());
+                output.accept(ModItems.STAR_EMBELLISHED_CEILING.get());
 
                 output.accept(ModItems.ROSES_IN_WATER_BOTTLE.get());
             }).build());

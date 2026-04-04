@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "papercraft_magic_decoration:block/canopy_tree_limb_top",
+    "side": "papercraft_magic_decoration:block/canopy_tree_limb_side"
+  }
+}

@@ -4,20 +4,26 @@ import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.block.*;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.*;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.common.IPlantable;
+import net.minecraftforge.common.PlantType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -233,6 +239,45 @@ public interface ModBlocks {
             .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.WOOD).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
             Block.box(2, 0, 2, 14, 16, 14)));
 
+    // 荫幕树
+    RegistryObject<Block> CANOPY_TREE_LIMB = BLOCKS.register("canopy_tree_limb", () -> log(MapColor.COLOR_BROWN, MapColor.COLOR_BROWN));
+
+    RegistryObject<Block> CANOPY_TREE_FOLIAGE = BLOCKS.register("canopy_tree_foliage", () -> leaves(SoundType.GRASS));
+
+    RegistryObject<Block> CANOPY_TREE_FERN = BLOCKS.register("canopy_tree_fern", () -> new MossBlock(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_GREEN).strength(0.1F).sound(SoundType.MOSS).pushReaction(PushReaction.DESTROY)){
+        @Override
+        public boolean canSustainPlant(BlockState state, BlockGetter level, BlockPos pos,
+                                       Direction facing, IPlantable plantable) {
+            PlantType plantType = plantable.getPlantType(level, pos.relative(facing));
+
+            if (plantType == null) {
+                return false;
+            }
+
+            if (plantType == PlantType.PLAINS || plantType == PlantType.CAVE) {
+                return true;
+            } else if (plantType == PlantType.BEACH) {
+                return level.getFluidState(pos.east()).getType() == Fluids.WATER
+                        || level.getFluidState(pos.west()).getType() == Fluids.WATER
+                        || level.getFluidState(pos.north()).getType() == Fluids.WATER
+                        || level.getFluidState(pos.south()).getType() == Fluids.WATER;
+            }
+            return false;
+        }
+    });
+
+    RegistryObject<Block> CANOPY_TREE_TRUNK = BLOCKS.register("canopy_tree_trunk", () -> new DecorationBlock.HorizontalDirectional.Waterlogged(BlockBehaviour.Properties.of()
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
+            Block.box(0, 0, 4, 12, 16, 16)));
+
+    RegistryObject<Block> CANOPY_TREE_MUSHROOM = BLOCKS.register("canopy_tree_mushroom", () -> new DecorationBlock.Waterlogged(BlockBehaviour.Properties.of()
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.SHROOMLIGHT).strength(0.5f, 0.2f).lightLevel(s -> 5).noOcclusion(),
+            Shapes.or(Block.box(-4, 8, -4, 20, 16, 20), Block.box(-10, 0, -10, 26, 8, 26))));
+
+    RegistryObject<Block> CANOPY_TREE_DROOPING_ROOT = BLOCKS.register("canopy_tree_drooping_root", () -> new Block(BlockBehaviour.Properties.of()
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.WOOD).sound(SoundType.WOOD).strength(0.5f, 10f)));
+
     // 装饰方块
     RegistryObject<Block> UNDERGROUND_PANELLING = BLOCKS.register("underground_panelling", () -> new DecorationBlock.HorizontalDirectional(BlockBehaviour.Properties.of()
             .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.WOOD).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
@@ -248,4 +293,48 @@ public interface ModBlocks {
             return getShape(state, blockGetter, pos, context);
         }
     });
+
+    RegistryObject<Block> STAR_EMBELLISHED_CEILING = BLOCKS.register("star_embellished_ceiling", () -> new FaceAttachedHorizontalDirectionalBlock(
+            BlockBehaviour.Properties.of().ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion()){
+        @Override
+        public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+            return true;
+        }
+
+        @Override
+        protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+            builder.add(FACING, FACE);
+        }
+    });
+
+    @SuppressWarnings("all")
+    private static RotatedPillarBlock log(MapColor topColor, MapColor sideColor) {
+        return new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(
+                        (state) -> state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? topColor : sideColor)
+                .instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava());
+    }
+
+    @SuppressWarnings("all")
+    private static LeavesBlock leaves(SoundType soundType) {
+        return new LeavesBlock(BlockBehaviour.Properties.of()
+                .mapColor(MapColor.PLANT)
+                .strength(0.2F)
+                .randomTicks()
+                .sound(soundType)
+                .noOcclusion()
+                .isValidSpawn(ModBlocks::ocelotOrParrot)
+                .isSuffocating(ModBlocks::never)
+                .isViewBlocking(ModBlocks::never)
+                .ignitedByLava()
+                .pushReaction(PushReaction.DESTROY)
+                .isRedstoneConductor(ModBlocks::never));
+    }
+
+    private static boolean never(BlockState state, BlockGetter getter, BlockPos pos) {
+        return false;
+    }
+
+    private static Boolean ocelotOrParrot(BlockState state, BlockGetter getter, BlockPos pos, EntityType<?> entityType) {
+        return (entityType == EntityType.OCELOT || entityType == EntityType.PARROT);
+    }
 }

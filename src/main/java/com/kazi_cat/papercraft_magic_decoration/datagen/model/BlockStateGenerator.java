@@ -7,6 +7,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -45,6 +46,7 @@ public class BlockStateGenerator extends BlockStateProvider {
         horizontalBlock(ModBlocks.COFFEE_PASTINACA_SATIVA_FRUITING_STEM.get(), new ModelFile.UncheckedModelFile(modLoc("block/coffee_pastinaca_sativa_fruiting_stem")));
         horizontalBlock(ModBlocks.PALM_TREE_CROWN.get(), new ModelFile.UncheckedModelFile(modLoc("block/palm_tree_crown")));
         horizontalBlock(ModBlocks.UNDERGROUND_PANELLING.get(), new ModelFile.UncheckedModelFile(modLoc("block/underground_panelling")));
+        horizontalBlock(ModBlocks.CANOPY_TREE_TRUNK.get(), new ModelFile.UncheckedModelFile(modLoc("block/canopy_tree_trunk")));
 
         simpleBlock(ModBlocks.WHITE_PAPER_BLOCK.get());
         simpleBlock(ModBlocks.BLUE_PAPER_BLOCK.get());
@@ -60,6 +62,10 @@ public class BlockStateGenerator extends BlockStateProvider {
         simpleBlock(ModBlocks.PALM_TREE_TRUNK_TOP.get(), new ModelFile.UncheckedModelFile(modLoc("block/palm_tree_trunk_top")));
         simpleBlock(ModBlocks.PALM_TREE_TRUNK.get(), new ModelFile.UncheckedModelFile(modLoc("block/palm_tree_trunk")));
         simpleBlock(ModBlocks.ROUGH_PALM_TREE_TRUNK.get(), new ModelFile.UncheckedModelFile(modLoc("block/rough_palm_tree_trunk")));
+        simpleBlock(ModBlocks.CANOPY_TREE_DROOPING_ROOT.get(), new ModelFile.UncheckedModelFile(modLoc("block/canopy_tree_drooping_root")));
+        simpleBlock(ModBlocks.CANOPY_TREE_FERN.get(), new ModelFile.UncheckedModelFile(modLoc("block/canopy_tree_fern")));
+        simpleBlock(ModBlocks.CANOPY_TREE_FOLIAGE.get(), new ModelFile.UncheckedModelFile(modLoc("block/canopy_tree_foliage")));
+        simpleBlock(ModBlocks.CANOPY_TREE_MUSHROOM.get(), new ModelFile.UncheckedModelFile(modLoc("block/canopy_tree_mushroom")));
 
         distiller(ModBlocks.COPPER_STILL.get(), "copper_still");
 
@@ -75,6 +81,10 @@ public class BlockStateGenerator extends BlockStateProvider {
                     .modelFile(new ModelFile.UncheckedModelFile(file))
                     .build();
         });
+
+        axisBlock((RotatedPillarBlock) ModBlocks.CANOPY_TREE_LIMB.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/canopy_tree_limb")),
+                new ModelFile.UncheckedModelFile(modLoc("block/canopy_tree_limb_horizontal")));
     }
 
     public void drink(Block block, String name) {

@@ -160,7 +160,16 @@ public interface ModItems {
     RegistryObject<Item> PALM_TREE_TRUNK = ITEMS.register("palm_tree_trunk", () -> new BlockItem(ModBlocks.PALM_TREE_TRUNK.get(), new Item.Properties()));
     RegistryObject<Item> ROUGH_PALM_TREE_TRUNK = ITEMS.register("rough_palm_tree_trunk", () -> new BlockItem(ModBlocks.ROUGH_PALM_TREE_TRUNK.get(), new Item.Properties()));
 
+    // 荫幕树
+    RegistryObject<Item> CANOPY_TREE_LIMB = ITEMS.register("canopy_tree_limb", () -> new BlockItem(ModBlocks.CANOPY_TREE_LIMB.get(), new Item.Properties()));
+    RegistryObject<Item> CANOPY_TREE_FOLIAGE = ITEMS.register("canopy_tree_foliage", () -> new BlockItem(ModBlocks.CANOPY_TREE_FOLIAGE.get(), new Item.Properties()));
+    RegistryObject<Item> CANOPY_TREE_FERN = ITEMS.register("canopy_tree_fern", () -> new BlockItem(ModBlocks.CANOPY_TREE_FERN.get(), new Item.Properties()));
+    RegistryObject<Item> CANOPY_TREE_DROOPING_ROOT = ITEMS.register("canopy_tree_drooping_root", () -> new BlockItem(ModBlocks.CANOPY_TREE_DROOPING_ROOT.get(), new Item.Properties()));
+    RegistryObject<Item> CANOPY_TREE_TRUNK = ITEMS.register("canopy_tree_trunk", () -> new BlockItem(ModBlocks.CANOPY_TREE_TRUNK.get(), new Item.Properties()));
+    RegistryObject<Item> CANOPY_TREE_MUSHROOM = ITEMS.register("canopy_tree_mushroom", () -> new BlockItem(ModBlocks.CANOPY_TREE_MUSHROOM.get(), new Item.Properties()));
+
     // 装饰方块
     RegistryObject<Item> UNDERGROUND_PANELLING = ITEMS.register("underground_panelling", () -> new BlockItem(ModBlocks.UNDERGROUND_PANELLING.get(), new Item.Properties()));
     RegistryObject<Item> ROSES_IN_WATER_BOTTLE = ITEMS.register("roses_in_water_bottle", () -> new BlockItem(ModBlocks.ROSES_IN_WATER_BOTTLE.get(), new Item.Properties()));
+    RegistryObject<Item> STAR_EMBELLISHED_CEILING = ITEMS.register("star_embellished_ceiling", () -> new BlockItem(ModBlocks.STAR_EMBELLISHED_CEILING.get(), new Item.Properties()));
 }

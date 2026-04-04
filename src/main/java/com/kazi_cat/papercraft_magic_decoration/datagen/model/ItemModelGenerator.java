@@ -77,6 +77,13 @@ public class ItemModelGenerator extends ItemModelProvider {
         withExistingParent("underground_panelling", modLoc("block/underground_panelling"));
         withExistingParent("roses_in_water_bottle", modLoc("block/roses_in_water_bottle"));
         withExistingParent("spores_collection_plate", modLoc("block/spores_collection_plate"));
+        withExistingParent("canopy_tree_drooping_root", modLoc("block/canopy_tree_drooping_root"));
+        withExistingParent("canopy_tree_fern", modLoc("block/canopy_tree_fern"));
+        withExistingParent("canopy_tree_foliage", modLoc("block/canopy_tree_foliage"));
+        withExistingParent("canopy_tree_mushroom", modLoc("block/canopy_tree_mushroom"));
+        withExistingParent("canopy_tree_trunk", modLoc("block/canopy_tree_trunk"));
+        withExistingParent("canopy_tree_limb", modLoc("block/canopy_tree_limb"));
+        withExistingParent("star_embellished_ceiling", modLoc("block/star_embellished_ceiling"));
     }
 
     public ItemModelBuilder handheldItem(Item item) {
