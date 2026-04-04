@@ -7,8 +7,10 @@ import com.kazi_cat.papercraft_magic_decoration.item.GeoBlockItem;
 import com.kazi_cat.papercraft_magic_decoration.item.PackOfGuangSItem;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -129,9 +131,19 @@ public interface ModItems {
     RegistryObject<Item> DEWY_MEMBRANE = ITEMS.register("dewy_membrane", () -> new Item(new Item.Properties()));
     RegistryObject<Item> COTTON_SERGE = ITEMS.register("cotton_serge", () -> new Item(new Item.Properties()));
 
+    // 基础材料
+    RegistryObject<Item> GOLDEN_COFFEE_FRUIT = ITEMS.register("golden_coffee_fruit", () -> new Item(new Item.Properties()));
+    RegistryObject<Item> COFFEE_PASTINACA_SATIVA_TUBER = ITEMS.register("coffee_pastinaca_sativa_tuber", () -> new Item(new Item.Properties()
+            .food(new FoodProperties.Builder().nutrition(6).saturationMod(0.3f).build())));
+    RegistryObject<Item> VITALITY_SPORES = ITEMS.register("vitality_spores", () -> new Item(new Item.Properties()));
+    RegistryObject<Item> WHISKEY_RAW = ITEMS.register("whiskey_raw", () -> new Item(new Item.Properties()));
+
     // 剪纸台
     RegistryObject<Item> PAPER_CUTTING_TABLE = ITEMS.register("paper_cutting_table", () -> new GeoBlockItem(ModBlocks.PAPER_CUTTING_TABLE.get(), new Item.Properties()));
 
     // 铜酒保
     RegistryObject<Item> COPPER_BARTENDER = ITEMS.register("copper_bartender", () -> new GeoBlockItem(ModBlocks.COPPER_BARTENDER.get(), new Item.Properties()));
+
+    // 蒸馏器
+    RegistryObject<Item> COPPER_STILL = ITEMS.register("copper_still", () -> new BlockItem(ModBlocks.COPPER_STILL.get(), new Item.Properties()));
 }

@@ -3,6 +3,7 @@ package com.kazi_cat.papercraft_magic_decoration.init;
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.block.*;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.CopperBartenderBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.DistillerBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.DrinkBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.PaperCuttingTableBlockEntity;
 import net.minecraft.world.item.Item;
@@ -173,4 +174,11 @@ public interface ModBlocks {
     // 铜酒保方块实体
     RegistryObject<BlockEntityType<CopperBartenderBlockEntity>> COPPER_BARTENDER_BE = BLOCK_ENTITIES.register("copper_bartender_block",
             () -> BlockEntityType.Builder.of(CopperBartenderBlockEntity::new, COPPER_BARTENDER.get()).build(null));
+
+    // 蒸馏器方块
+    RegistryObject<Block> COPPER_STILL = BLOCKS.register("copper_still", DistillerBlock::new);
+
+    // 蒸馏器方块实体
+    RegistryObject<BlockEntityType<DistillerBlockEntity>> DISTILLER_BE = BLOCK_ENTITIES.register("distiller",
+            () -> BlockEntityType.Builder.of(DistillerBlockEntity::new, COPPER_STILL.get()).build(null));
 }

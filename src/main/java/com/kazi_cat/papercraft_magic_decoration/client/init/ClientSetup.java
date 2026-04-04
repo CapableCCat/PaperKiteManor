@@ -4,6 +4,7 @@ import com.kazi_cat.papercraft_magic_decoration.client.gui.CopperBartenderScreen
 import com.kazi_cat.papercraft_magic_decoration.client.model.BlockGeoModelManager;
 import com.kazi_cat.papercraft_magic_decoration.client.model.ItemGeoModelManager;
 import com.kazi_cat.papercraft_magic_decoration.client.render.block.BaseGeoBlockRenderer;
+import com.kazi_cat.papercraft_magic_decoration.client.render.block.DistillerBlockRenderer;
 import com.kazi_cat.papercraft_magic_decoration.client.render.block.DrinkBlockRenderer;
 import com.kazi_cat.papercraft_magic_decoration.client.render.block.PaperCuttingTableBlockRenderer;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
@@ -27,6 +28,7 @@ public class ClientSetup {
     @SubscribeEvent
     public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(ModBlocks.DRINK_BE.get(), DrinkBlockRenderer::new);
+        event.registerBlockEntityRenderer(ModBlocks.DISTILLER_BE.get(), DistillerBlockRenderer::new);
         event.registerBlockEntityRenderer(ModBlocks.PAPER_CUTTING_TABLE_BE.get(), context -> new PaperCuttingTableBlockRenderer());
         event.registerBlockEntityRenderer(ModBlocks.COPPER_BARTENDER_BE.get(), context -> new BaseGeoBlockRenderer<>(ModBlocks.COPPER_BARTENDER_BE.get()));
     }

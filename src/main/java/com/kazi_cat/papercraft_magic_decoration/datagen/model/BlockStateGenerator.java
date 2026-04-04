@@ -2,6 +2,7 @@ package com.kazi_cat.papercraft_magic_decoration.datagen.model;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.block.BoxedDrinkBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.DistillerBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.DrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import net.minecraft.data.PackOutput;
@@ -48,6 +49,8 @@ public class BlockStateGenerator extends BlockStateProvider {
         simpleBlock(ModBlocks.YELLOW_PAPER_BLOCK.get());
         simpleBlock(ModBlocks.DEWY_MEMBRANE_BLOCK.get());
         simpleBlock(ModBlocks.COTTON_SERGE_BLOCK.get());
+
+        distiller(ModBlocks.COPPER_STILL.get(), "copper_still");
     }
 
     public void drink(Block block, String name) {
@@ -66,6 +69,17 @@ public class BlockStateGenerator extends BlockStateProvider {
                 int count = blockState.getValue(drink.getCountProperty());
                 boolean boxed = blockState.getValue(BoxedDrinkBlock.BOXED);
                 ResourceLocation file = modLoc("block/drink/%s/count%d%s".formatted(name, count, boxed ? "_boxed" : ""));
+                return new ModelFile.UncheckedModelFile(file);
+            });
+        }
+    }
+
+    public void distiller(Block block, String name) {
+        if (block instanceof DistillerBlock) {
+            horizontalBlock(block, blockState -> {
+                int part = blockState.getValue(DistillerBlock.PART);
+                int status = blockState.getValue(DistillerBlock.STATUS);
+                ResourceLocation file = modLoc("block/distiller/%s/part%d_status%d".formatted(name, part, status));
                 return new ModelFile.UncheckedModelFile(file);
             });
         }

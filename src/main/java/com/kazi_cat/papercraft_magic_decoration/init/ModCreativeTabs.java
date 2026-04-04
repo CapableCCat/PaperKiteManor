@@ -31,12 +31,17 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.RED_PAPER.get());
                 output.accept(ModItems.WHITE_PAPER.get());
                 output.accept(ModItems.YELLOW_PAPER.get());
+
+                output.accept(ModItems.VITALITY_SPORES.get());
+                output.accept(ModItems.WHISKEY_RAW.get());
+                output.accept(ModItems.GOLDEN_COFFEE_FRUIT.get());
             }).build());
 
     RegistryObject<CreativeModeTab> MANOR_FOOD_TAB = TABS.register("manor_food", () -> CreativeModeTab.builder()
             .title(Component.translatable("item_group.papercraft_magic_decoration.manor_food.name"))
             .icon(ModItems.LAND_NO1.get()::getDefaultInstance)
             .displayItems((par, output) -> {
+                output.accept(ModItems.COPPER_STILL.get());
                 output.accept(ModItems.COPPER_BARTENDER.get());
 
                 output.accept(ModItems.BLAZE_WHISKEY.get());
@@ -59,6 +64,8 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.BOTTLE_OF_LUCKY_CACTUS.get());
                 output.accept(ModItems.BOTTLE_OF_POISON_RUM.get());
                 output.accept(ModItems.PACK_OF_GUANG_S.get());
+
+                output.accept(ModItems.COFFEE_PASTINACA_SATIVA_TUBER.get());
             }).build());
 
     RegistryObject<CreativeModeTab> MANOR_DECORATION_TAB = TABS.register("manor_decoration", () -> CreativeModeTab.builder()

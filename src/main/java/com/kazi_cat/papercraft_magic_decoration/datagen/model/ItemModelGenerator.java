@@ -50,6 +50,11 @@ public class ItemModelGenerator extends ItemModelProvider {
         basicItem(ModItems.DEWY_MEMBRANE.get());
         basicItem(ModItems.COTTON_SERGE.get());
         basicItem(ModItems.AMETHYST_SCISSORS.get());
+        basicItem(ModItems.GOLDEN_COFFEE_FRUIT.get());
+        basicItem(ModItems.COFFEE_PASTINACA_SATIVA_TUBER.get());
+        basicItem(ModItems.VITALITY_SPORES.get());
+        basicItem(ModItems.WHISKEY_RAW.get());
+        basicItem(ModItems.COPPER_STILL.get());
 
         withExistingParent("pack_of_guang_s", modLoc("block/drink/guang_s/count4_boxed"));
         withExistingParent("white_paper_block", modLoc("block/white_paper_block"));

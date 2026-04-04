@@ -22,5 +22,21 @@ public class MixologyRecipeProvider extends ModRecipeProvider {
                 .addIngredient(ModItems.LAND_NO1.get())
                 .setResult(ModItems.DEVIL_MARGARITA.get())
                 .save(consumer);
+
+        MixologyBuilder.builder()
+                .addIngredient(ModItems.VITALITY_SPORES.get())
+                .addIngredient(Items.BEETROOT)
+                .addIngredient(Items.SWEET_BERRIES)
+                .addIngredient(ModItems.WHISKEY_RAW.get())
+                .setResult(ModItems.BLOODY_MARY.get())
+                .save(consumer);
+
+        MixologyBuilder.builder()
+                .addIngredient(ModItems.POISON_RUM.get())
+                .addIngredient(ModItems.NOCTURNAL_CAT_COFFEE.get())
+                .addIngredient(Items.SUGAR)
+                .addIngredient(Items.COCOA_BEANS)
+                .setResult(ModItems.DIPLOMATICO_COFFEE.get())
+                .save(consumer);
     }
 }

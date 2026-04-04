@@ -46,5 +46,28 @@ public class ShapedRecipeProvider extends ModRecipeProvider {
                 .define('C', ItemTags.WOODEN_SLABS)
                 .unlockedBy("has_paper", has(Items.PAPER))
                 .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.COPPER_STILL.get())
+                .pattern("ABB")
+                .pattern("C B")
+                .pattern("DDD")
+                .define('A', Items.COPPER_BLOCK)
+                .define('B', Items.COPPER_INGOT)
+                .define('C', Items.BLAZE_ROD)
+                .define('D', Items.IRON_INGOT)
+                .unlockedBy("has_blaze_rod", has(Items.BLAZE_ROD))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.WHISKEY_RAW.get())
+                .pattern("ABA")
+                .pattern("CDC")
+                .pattern("CEC")
+                .define('A', Items.WHEAT_SEEDS)
+                .define('B', Items.WATER_BUCKET)
+                .define('C', Items.GLASS_BOTTLE)
+                .define('D', Items.SUGAR)
+                .define('E', Items.WHEAT)
+                .unlockedBy("hsa_wheat", has(Items.WHEAT))
+                .save(consumer);
     }
 }
