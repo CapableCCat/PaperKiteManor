@@ -41,6 +41,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 
         dropOther(ModBlocks.DIRT_HOLE.get(), Items.DIRT);
         dropOther(ModBlocks.COFFEE_PASTINACA_SATIVA.get(), ModItems.COFFEE_FRUIT.get());
+        dropOther(ModBlocks.COFFEE_PASTINACA_SATIVA_CORE.get(), ModItems.COFFEE_PASTINACA_SATIVA_TUBER.get());
+        dropOther(ModBlocks.COFFEE_PASTINACA_SATIVA_RIM.get(), ModItems.COFFEE_PASTINACA_SATIVA_TUBER.get());
     }
 
     @Override

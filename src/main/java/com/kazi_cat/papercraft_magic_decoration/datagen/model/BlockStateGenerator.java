@@ -4,6 +4,7 @@ import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.block.BoxedDrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.DistillerBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.DrinkBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.TwoByOneBlock;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -44,6 +45,12 @@ public class BlockStateGenerator extends BlockStateProvider {
         horizontalBlock(ModBlocks.BOTTLE_OF_POISON_RUM.get(), new ModelFile.UncheckedModelFile(modLoc("block/bottle_of_poison_rum")));
         horizontalBlock(ModBlocks.PAPER_CUTTING_TABLE.get(), new ModelFile.UncheckedModelFile(modLoc("block/paper_cutting_table")));
         horizontalBlock(ModBlocks.COPPER_BARTENDER.get(), new ModelFile.UncheckedModelFile(modLoc("block/copper_bartender")));
+        horizontalBlock(ModBlocks.COFFEE_PASTINACA_SATIVA_FRUITING_STEM.get(), new ModelFile.UncheckedModelFile(modLoc("block/coffee_pastinaca_sativa/fruiting_stem")));
+        horizontalBlock(ModBlocks.COFFEE_PASTINACA_SATIVA_RIM.get(), blockState -> {
+            int part = blockState.getValue(TwoByOneBlock.PART);
+            ResourceLocation file = modLoc("block/coffee_pastinaca_sativa/rim%d".formatted(part));
+            return new ModelFile.UncheckedModelFile(file);
+        });
 
         simpleBlock(ModBlocks.WHITE_PAPER_BLOCK.get());
         simpleBlock(ModBlocks.BLUE_PAPER_BLOCK.get());
@@ -53,6 +60,8 @@ public class BlockStateGenerator extends BlockStateProvider {
         simpleBlock(ModBlocks.DEWY_MEMBRANE_BLOCK.get());
         simpleBlock(ModBlocks.COTTON_SERGE_BLOCK.get());
         simpleBlock(ModBlocks.DIRT_HOLE.get(), new ModelFile.UncheckedModelFile(modLoc("block/dirt_hole")));
+        simpleBlock(ModBlocks.COFFEE_PASTINACA_SATIVA_CORE.get(), new ModelFile.UncheckedModelFile(modLoc("block/coffee_pastinaca_sativa/core")));
+        simpleBlock(ModBlocks.COFFEE_PASTINACA_SATIVA_FLOWERS.get(), new ModelFile.UncheckedModelFile(modLoc("block/coffee_pastinaca_sativa/flowers")));
 
         distiller(ModBlocks.COPPER_STILL.get(), "copper_still");
 

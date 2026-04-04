@@ -188,4 +188,19 @@ public interface ModBlocks {
 
     // 咖啡欧防风
     RegistryObject<Block> COFFEE_PASTINACA_SATIVA = BLOCKS.register("coffee_pastinaca_sativa", CoffeePastinacaSativaCropBlock::new);
+
+    RegistryObject<Block> COFFEE_PASTINACA_SATIVA_FRUITING_STEM = BLOCKS.register("coffee_pastinaca_sativa_fruiting_stem", () -> new DecorationBlock.HorizontalDirectional.Waterlogged(
+            BlockBehaviour.Properties.of().ignitedByLava().instabreak().sound(SoundType.LILY_PAD).noCollission().pushReaction(PushReaction.DESTROY).replaceable(),
+            Block.box(0, 0, 0, 16, 16, 16)));
+
+    RegistryObject<Block> COFFEE_PASTINACA_SATIVA_CORE = BLOCKS.register("coffee_pastinaca_sativa_core", () -> new Block(
+            BlockBehaviour.Properties.of().ignitedByLava().strength(2f, 10f).forceSolidOn()));
+
+    RegistryObject<Block> COFFEE_PASTINACA_SATIVA_RIM = BLOCKS.register("coffee_pastinaca_sativa_rim", ()->
+            new TwoByOneBlock.Waterlogged(BlockBehaviour.Properties.of().ignitedByLava().strength(2f, 10f),
+                    Block.box(0, 0, 0, 8, 16, 16),
+                    Block.box(0, 0, 0, 8, 16, 8)));
+
+    RegistryObject<Block> COFFEE_PASTINACA_SATIVA_FLOWERS = BLOCKS.register("coffee_pastinaca_sativa_flowers", () -> new DecorationBlock.Waterlogged(
+            BlockBehaviour.Properties.of().ignitedByLava().instabreak().sound(SoundType.LILY_PAD).noCollission().pushReaction(PushReaction.DESTROY).replaceable()));
 }

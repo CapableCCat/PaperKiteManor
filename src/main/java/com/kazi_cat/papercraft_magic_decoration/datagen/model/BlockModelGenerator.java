@@ -21,5 +21,10 @@ public class BlockModelGenerator extends BlockModelProvider {
         cubeAll("cotton_serge_block", modLoc("block/cotton_serge_block"));
         cubeAll("paper_cutting_table", modLoc("block/paper_cutting_table"));
         cubeAll("copper_bartender", modLoc("block/copper_bartender"));
+
+        cubeBottomTop("coffee_pastinaca_sativa_core",
+                modLoc("block/coffee_pastinaca_sativa_side"),
+                modLoc("block/coffee_pastinaca_sativa_bottom"),
+                modLoc("block/coffee_pastinaca_sativa_top"));
     }
 }
