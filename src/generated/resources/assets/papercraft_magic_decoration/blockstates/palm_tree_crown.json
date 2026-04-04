@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/palm_tree_crown",
+      "y": 90
+    },
+    "facing=east,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/palm_tree_crown",
+      "y": 90
+    },
+    "facing=north,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/palm_tree_crown"
+    },
+    "facing=north,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/palm_tree_crown"
+    },
+    "facing=south,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/palm_tree_crown",
+      "y": 180
+    },
+    "facing=south,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/palm_tree_crown",
+      "y": 180
+    },
+    "facing=west,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/palm_tree_crown",
+      "y": 270
+    },
+    "facing=west,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/palm_tree_crown",
+      "y": 270
+    }
+  }
+}

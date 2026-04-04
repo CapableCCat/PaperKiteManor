@@ -69,6 +69,11 @@ public class ItemModelGenerator extends ItemModelProvider {
         withExistingParent("cotton_serge_block", modLoc("block/cotton_serge_block"));
         withExistingParent("paper_cutting_table", modLoc("displaysettings/paper_cutting_table"));
         withExistingParent("copper_bartender", modLoc("displaysettings/copper_bartender"));
+        withExistingParent("palm_tree_crown", modLoc("block/palm_tree_crown"));
+        withExistingParent("palm_tree_top", modLoc("block/palm_tree_top"));
+        withExistingParent("palm_tree_trunk", modLoc("block/palm_tree_trunk"));
+        withExistingParent("palm_tree_trunk_top", modLoc("block/palm_tree_trunk_top"));
+        withExistingParent("rough_palm_tree_trunk", modLoc("block/rough_palm_tree_trunk"));
     }
 
     public ItemModelBuilder handheldItem(Item item) {

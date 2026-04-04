@@ -149,4 +149,11 @@ public interface ModItems {
 
     // 蒸馏器
     RegistryObject<Item> COPPER_STILL = ITEMS.register("copper_still", () -> new BlockItem(ModBlocks.COPPER_STILL.get(), new Item.Properties()));
+
+    // 棕榈树
+    RegistryObject<Item> PALM_TREE_CROWN = ITEMS.register("palm_tree_crown", () -> new BlockItem(ModBlocks.PALM_TREE_CROWN.get(), new Item.Properties()));
+    RegistryObject<Item> PALM_TREE_TOP = ITEMS.register("palm_tree_top", () -> new BlockItem(ModBlocks.PALM_TREE_TOP.get(), new Item.Properties()));
+    RegistryObject<Item> PALM_TREE_TRUNK_TOP = ITEMS.register("palm_tree_trunk_top", () -> new BlockItem(ModBlocks.PALM_TREE_TRUNK_TOP.get(), new Item.Properties()));
+    RegistryObject<Item> PALM_TREE_TRUNK = ITEMS.register("palm_tree_trunk", () -> new BlockItem(ModBlocks.PALM_TREE_TRUNK.get(), new Item.Properties()));
+    RegistryObject<Item> ROUGH_PALM_TREE_TRUNK = ITEMS.register("rough_palm_tree_trunk", () -> new BlockItem(ModBlocks.ROUGH_PALM_TREE_TRUNK.get(), new Item.Properties()));
 }

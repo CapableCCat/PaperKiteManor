@@ -45,12 +45,13 @@ public class BlockStateGenerator extends BlockStateProvider {
         horizontalBlock(ModBlocks.BOTTLE_OF_POISON_RUM.get(), new ModelFile.UncheckedModelFile(modLoc("block/bottle_of_poison_rum")));
         horizontalBlock(ModBlocks.PAPER_CUTTING_TABLE.get(), new ModelFile.UncheckedModelFile(modLoc("block/paper_cutting_table")));
         horizontalBlock(ModBlocks.COPPER_BARTENDER.get(), new ModelFile.UncheckedModelFile(modLoc("block/copper_bartender")));
-        horizontalBlock(ModBlocks.COFFEE_PASTINACA_SATIVA_FRUITING_STEM.get(), new ModelFile.UncheckedModelFile(modLoc("block/coffee_pastinaca_sativa/fruiting_stem")));
+        horizontalBlock(ModBlocks.COFFEE_PASTINACA_SATIVA_FRUITING_STEM.get(), new ModelFile.UncheckedModelFile(modLoc("block/coffee_pastinaca_sativa_fruiting_stem")));
         horizontalBlock(ModBlocks.COFFEE_PASTINACA_SATIVA_RIM.get(), blockState -> {
             int part = blockState.getValue(TwoByOneBlock.PART);
-            ResourceLocation file = modLoc("block/coffee_pastinaca_sativa/rim%d".formatted(part));
+            ResourceLocation file = modLoc("block/coffee_pastinaca_sativa_rim%d".formatted(part));
             return new ModelFile.UncheckedModelFile(file);
         });
+        horizontalBlock(ModBlocks.PALM_TREE_CROWN.get(), new ModelFile.UncheckedModelFile(modLoc("block/palm_tree_crown")));
 
         simpleBlock(ModBlocks.WHITE_PAPER_BLOCK.get());
         simpleBlock(ModBlocks.BLUE_PAPER_BLOCK.get());
@@ -60,8 +61,12 @@ public class BlockStateGenerator extends BlockStateProvider {
         simpleBlock(ModBlocks.DEWY_MEMBRANE_BLOCK.get());
         simpleBlock(ModBlocks.COTTON_SERGE_BLOCK.get());
         simpleBlock(ModBlocks.DIRT_HOLE.get(), new ModelFile.UncheckedModelFile(modLoc("block/dirt_hole")));
-        simpleBlock(ModBlocks.COFFEE_PASTINACA_SATIVA_CORE.get(), new ModelFile.UncheckedModelFile(modLoc("block/coffee_pastinaca_sativa/core")));
-        simpleBlock(ModBlocks.COFFEE_PASTINACA_SATIVA_FLOWERS.get(), new ModelFile.UncheckedModelFile(modLoc("block/coffee_pastinaca_sativa/flowers")));
+        simpleBlock(ModBlocks.COFFEE_PASTINACA_SATIVA_CORE.get(), new ModelFile.UncheckedModelFile(modLoc("block/coffee_pastinaca_sativa_core")));
+        simpleBlock(ModBlocks.COFFEE_PASTINACA_SATIVA_FLOWERS.get(), new ModelFile.UncheckedModelFile(modLoc("block/coffee_pastinaca_sativa_flowers")));
+        simpleBlock(ModBlocks.PALM_TREE_TOP.get(), new ModelFile.UncheckedModelFile(modLoc("block/palm_tree_top")));
+        simpleBlock(ModBlocks.PALM_TREE_TRUNK_TOP.get(), new ModelFile.UncheckedModelFile(modLoc("block/palm_tree_trunk_top")));
+        simpleBlock(ModBlocks.PALM_TREE_TRUNK.get(), new ModelFile.UncheckedModelFile(modLoc("block/palm_tree_trunk")));
+        simpleBlock(ModBlocks.ROUGH_PALM_TREE_TRUNK.get(), new ModelFile.UncheckedModelFile(modLoc("block/rough_palm_tree_trunk")));
 
         distiller(ModBlocks.COPPER_STILL.get(), "copper_still");
 

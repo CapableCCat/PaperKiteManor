@@ -203,4 +203,25 @@ public interface ModBlocks {
 
     RegistryObject<Block> COFFEE_PASTINACA_SATIVA_FLOWERS = BLOCKS.register("coffee_pastinaca_sativa_flowers", () -> new DecorationBlock.Waterlogged(
             BlockBehaviour.Properties.of().ignitedByLava().instabreak().sound(SoundType.LILY_PAD).noCollission().pushReaction(PushReaction.DESTROY).replaceable()));
+
+    // 棕榈树
+    RegistryObject<Block> PALM_TREE_CROWN = BLOCKS.register("palm_tree_crown", () -> new DecorationBlock.HorizontalDirectional.Waterlogged(BlockBehaviour.Properties.of()
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.PLANT).sound(SoundType.AZALEA_LEAVES).instabreak().noCollission().noOcclusion(),
+            Block.box(-16, -16, -16, 16, 32, 16)));
+
+    RegistryObject<Block> PALM_TREE_TOP = BLOCKS.register("palm_tree_top", () -> new DecorationBlock.Waterlogged(BlockBehaviour.Properties.of()
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.PLANT).sound(SoundType.WOOD).instabreak().noOcclusion(),
+            Block.box(1, 0, 1, 15, 16, 15)));
+
+    RegistryObject<Block> PALM_TREE_TRUNK_TOP = BLOCKS.register("palm_tree_trunk_top", () -> new DecorationBlock.Waterlogged(BlockBehaviour.Properties.of()
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.WOOD).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
+            Block.box(1, 0, 1, 15, 16, 15)));
+
+    RegistryObject<Block> PALM_TREE_TRUNK = BLOCKS.register("palm_tree_trunk", () -> new DecorationBlock.Waterlogged(BlockBehaviour.Properties.of()
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.WOOD).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
+            Block.box(3, 0, 3, 13, 16, 13)));
+
+    RegistryObject<Block> ROUGH_PALM_TREE_TRUNK = BLOCKS.register("rough_palm_tree_trunk", () -> new DecorationBlock.Waterlogged(BlockBehaviour.Properties.of()
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.WOOD).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
+            Block.box(2, 0, 2, 14, 16, 14)));
 }
