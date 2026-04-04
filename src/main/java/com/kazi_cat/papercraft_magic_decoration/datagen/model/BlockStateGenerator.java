@@ -55,6 +55,10 @@ public class BlockStateGenerator extends BlockStateProvider {
         simpleBlock(ModBlocks.YELLOW_PAPER_BLOCK.get());
         simpleBlock(ModBlocks.DEWY_MEMBRANE_BLOCK.get());
         simpleBlock(ModBlocks.COTTON_SERGE_BLOCK.get());
+        simpleBlock(ModBlocks.WINE_AROMA_RED_WALLPAPER_WALL.get());
+        simpleBlock(ModBlocks.WINE_AROMA_BLUE_WALLPAPER_WALL.get());
+        simpleBlock(ModBlocks.UNDERGROUND_WALLPAPER_WALL.get());
+        simpleBlock(ModBlocks.RUSTIC_BLUE_WALLPAPER_WALL.get());
         simpleBlock(ModBlocks.DIRT_HOLE.get(), new ModelFile.UncheckedModelFile(modLoc("block/dirt_hole")));
         simpleBlock(ModBlocks.COFFEE_PASTINACA_SATIVA_CORE.get(), new ModelFile.UncheckedModelFile(modLoc("block/coffee_pastinaca_sativa_core")));
         simpleBlock(ModBlocks.COFFEE_PASTINACA_SATIVA_FLOWERS.get(), new ModelFile.UncheckedModelFile(modLoc("block/coffee_pastinaca_sativa_flowers")));
@@ -66,6 +70,8 @@ public class BlockStateGenerator extends BlockStateProvider {
         simpleBlock(ModBlocks.CANOPY_TREE_FERN.get(), new ModelFile.UncheckedModelFile(modLoc("block/canopy_tree_fern")));
         simpleBlock(ModBlocks.CANOPY_TREE_FOLIAGE.get(), new ModelFile.UncheckedModelFile(modLoc("block/canopy_tree_foliage")));
         simpleBlock(ModBlocks.CANOPY_TREE_MUSHROOM.get(), new ModelFile.UncheckedModelFile(modLoc("block/canopy_tree_mushroom")));
+        simpleBlock(ModBlocks.BLACK_AND_WHITE_CHECKER_BOARD_TILE.get(), new ModelFile.UncheckedModelFile(modLoc("block/black_and_white_checker_board_tile")));
+        simpleBlock(ModBlocks.BLUE_AND_WHITE_CHECKER_BOARD_TILE.get(), new ModelFile.UncheckedModelFile(modLoc("block/blue_and_white_checker_board_tile")));
 
         distiller(ModBlocks.COPPER_STILL.get(), "copper_still");
 

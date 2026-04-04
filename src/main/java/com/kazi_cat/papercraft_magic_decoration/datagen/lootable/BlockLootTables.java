@@ -51,6 +51,13 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.CANOPY_TREE_TRUNK.get());
         dropSelf(ModBlocks.CANOPY_TREE_LIMB.get());
 
+        dropSelf(ModBlocks.WINE_AROMA_RED_WALLPAPER_WALL.get());
+        dropSelf(ModBlocks.WINE_AROMA_BLUE_WALLPAPER_WALL.get());
+        dropSelf(ModBlocks.UNDERGROUND_WALLPAPER_WALL.get());
+        dropSelf(ModBlocks.RUSTIC_BLUE_WALLPAPER_WALL.get());
+        dropSelf(ModBlocks.BLACK_AND_WHITE_CHECKER_BOARD_TILE.get());
+        dropSelf(ModBlocks.BLUE_AND_WHITE_CHECKER_BOARD_TILE.get());
+
         dropOther(ModBlocks.DIRT_HOLE.get(), Items.DIRT);
         dropOther(ModBlocks.COFFEE_PASTINACA_SATIVA.get(), ModItems.COFFEE_FRUIT.get());
         dropOther(ModBlocks.COFFEE_PASTINACA_SATIVA_CORE.get(), ModItems.COFFEE_PASTINACA_SATIVA_TUBER.get());

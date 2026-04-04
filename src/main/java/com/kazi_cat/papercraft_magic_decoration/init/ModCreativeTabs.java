@@ -76,6 +76,17 @@ public interface ModCreativeTabs {
             .title(Component.translatable("item_group.papercraft_magic_decoration.manor_decoration.name"))
             .icon(ModItems.ROSES_IN_WATER_BOTTLE.get()::getDefaultInstance)
             .displayItems((par, output) -> {
+                output.accept(ModItems.WINE_AROMA_RED_WALLPAPER_WALL.get());
+                output.accept(ModItems.WINE_AROMA_BLUE_WALLPAPER_WALL.get());
+                output.accept(ModItems.UNDERGROUND_WALLPAPER_WALL.get());
+                output.accept(ModItems.RUSTIC_BLUE_WALLPAPER_WALL.get());
+                output.accept(ModItems.BLACK_AND_WHITE_CHECKER_BOARD_TILE.get());
+                output.accept(ModItems.BLUE_AND_WHITE_CHECKER_BOARD_TILE.get());
+
+                output.accept(ModItems.UNDERGROUND_PANELLING.get());
+                output.accept(ModItems.STAR_EMBELLISHED_CEILING.get());
+                output.accept(ModItems.ROSES_IN_WATER_BOTTLE.get());
+
                 output.accept(ModItems.PALM_TREE_CROWN.get());
                 output.accept(ModItems.PALM_TREE_TOP.get());
                 output.accept(ModItems.PALM_TREE_TRUNK_TOP.get());
@@ -88,10 +99,5 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.CANOPY_TREE_LIMB.get());
                 output.accept(ModItems.CANOPY_TREE_TRUNK.get());
                 output.accept(ModItems.CANOPY_TREE_MUSHROOM.get());
-
-                output.accept(ModItems.UNDERGROUND_PANELLING.get());
-                output.accept(ModItems.STAR_EMBELLISHED_CEILING.get());
-
-                output.accept(ModItems.ROSES_IN_WATER_BOTTLE.get());
             }).build());
 }

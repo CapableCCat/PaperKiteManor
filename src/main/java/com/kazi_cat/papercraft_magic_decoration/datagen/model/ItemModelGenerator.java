@@ -84,6 +84,12 @@ public class ItemModelGenerator extends ItemModelProvider {
         withExistingParent("canopy_tree_trunk", modLoc("block/canopy_tree_trunk"));
         withExistingParent("canopy_tree_limb", modLoc("block/canopy_tree_limb"));
         withExistingParent("star_embellished_ceiling", modLoc("block/star_embellished_ceiling"));
+        withExistingParent("wine_aroma_red_wallpaper_wall", modLoc("block/wine_aroma_red_wallpaper_wall"));
+        withExistingParent("wine_aroma_blue_wallpaper_wall", modLoc("block/wine_aroma_blue_wallpaper_wall"));
+        withExistingParent("underground_wallpaper_wall", modLoc("block/underground_wallpaper_wall"));
+        withExistingParent("rustic_blue_wallpaper_wall", modLoc("block/rustic_blue_wallpaper_wall"));
+        withExistingParent("black_and_white_checker_board_tile", modLoc("block/black_and_white_checker_board_tile"));
+        withExistingParent("blue_and_white_checker_board_tile", modLoc("block/blue_and_white_checker_board_tile"));
     }
 
     public ItemModelBuilder handheldItem(Item item) {
