@@ -1,4 +1,4 @@
-package com.kazi_cat.papercraft_magic_decoration.client.render;
+package com.kazi_cat.papercraft_magic_decoration.client.render.block;
 
 import com.kazi_cat.papercraft_magic_decoration.block.DrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.DrinkBlockEntity;

@@ -49,8 +49,7 @@ public class ItemModelGenerator extends ItemModelProvider {
         basicItem(ModItems.YELLOW_PAPER.get());
         basicItem(ModItems.DEWY_MEMBRANE.get());
         basicItem(ModItems.COTTON_SERGE.get());
-
-        handheldItem(ModItems.AMETHYST_SCISSORS.get());
+        basicItem(ModItems.AMETHYST_SCISSORS.get());
 
         withExistingParent("pack_of_guang_s", modLoc("block/drink/guang_s/count4_boxed"));
         withExistingParent("white_paper_block", modLoc("block/white_paper_block"));
@@ -60,6 +59,7 @@ public class ItemModelGenerator extends ItemModelProvider {
         withExistingParent("yellow_paper_block", modLoc("block/yellow_paper_block"));
         withExistingParent("dewy_membrane_block", modLoc("block/dewy_membrane_block"));
         withExistingParent("cotton_serge_block", modLoc("block/cotton_serge_block"));
+        withExistingParent("paper_cutting_table", modLoc("displaysettings/paper_cutting_table"));
     }
 
     public ItemModelBuilder handheldItem(Item item) {

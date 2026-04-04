@@ -4,7 +4,9 @@ import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.block.BottleDrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.DrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.BoxedDrinkBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.PaperCuttingTableBlock;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.DrinkBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.PaperCuttingTableBlockEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
@@ -159,4 +161,11 @@ public interface ModBlocks {
 
     RegistryObject<Block> COTTON_SERGE_BLOCK = BLOCKS.register("cotton_serge_block", () -> new Block(BlockBehaviour.Properties.of()
             .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.SNOW).sound(SoundType.SNOW).instabreak()));
+
+    // 剪纸台方块
+    RegistryObject<Block> PAPER_CUTTING_TABLE = BLOCKS.register("paper_cutting_table", PaperCuttingTableBlock::new);
+
+    // 剪纸台方块实体
+    RegistryObject<BlockEntityType<PaperCuttingTableBlockEntity>> PAPER_CUTTING_TABLE_BE = BLOCK_ENTITIES.register("paper_cutting_table",
+            () -> BlockEntityType.Builder.of(PaperCuttingTableBlockEntity::new, PAPER_CUTTING_TABLE.get()).build(null));
 }

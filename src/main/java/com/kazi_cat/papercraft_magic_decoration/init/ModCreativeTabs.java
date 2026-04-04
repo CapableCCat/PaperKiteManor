@@ -58,4 +58,11 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.BOTTLE_OF_POISON_RUM.get());
                 output.accept(ModItems.PACK_OF_GUANG_S.get());
             }).build());
+
+    RegistryObject<CreativeModeTab> MANOR_DECORATION_TAB = TABS.register("manor_decoration", () -> CreativeModeTab.builder()
+            .title(Component.translatable("item_group.papercraft_magic_decoration.manor_decoration.name"))
+            .icon(ModItems.PAPER_CUTTING_TABLE.get()::getDefaultInstance)
+            .displayItems((par, output) -> {
+                output.accept(ModItems.PAPER_CUTTING_TABLE.get());
+            }).build());
 }

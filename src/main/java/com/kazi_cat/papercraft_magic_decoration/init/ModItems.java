@@ -3,6 +3,7 @@ package com.kazi_cat.papercraft_magic_decoration.init;
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.item.AmethystScissorsItem;
 import com.kazi_cat.papercraft_magic_decoration.item.DrinkBlockItem;
+import com.kazi_cat.papercraft_magic_decoration.item.GeoBlockItem;
 import com.kazi_cat.papercraft_magic_decoration.item.PackOfGuangSItem;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -127,4 +128,7 @@ public interface ModItems {
     RegistryObject<Item> YELLOW_PAPER = ITEMS.register("yellow_paper", () -> new Item(new Item.Properties()));
     RegistryObject<Item> DEWY_MEMBRANE = ITEMS.register("dewy_membrane", () -> new Item(new Item.Properties()));
     RegistryObject<Item> COTTON_SERGE = ITEMS.register("cotton_serge", () -> new Item(new Item.Properties()));
+
+    // 剪纸台
+    RegistryObject<Item> PAPER_CUTTING_TABLE = ITEMS.register("paper_cutting_table", () -> new GeoBlockItem(ModBlocks.PAPER_CUTTING_TABLE.get(), new Item.Properties()));
 }

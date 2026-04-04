@@ -2,7 +2,8 @@ package com.kazi_cat.papercraft_magic_decoration.client.init;
 
 import com.kazi_cat.papercraft_magic_decoration.client.model.BlockGeoModelManager;
 import com.kazi_cat.papercraft_magic_decoration.client.model.ItemGeoModelManager;
-import com.kazi_cat.papercraft_magic_decoration.client.render.DrinkBlockRenderer;
+import com.kazi_cat.papercraft_magic_decoration.client.render.block.DrinkBlockRenderer;
+import com.kazi_cat.papercraft_magic_decoration.client.render.block.PaperCuttingTableBlockRenderer;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -21,5 +22,6 @@ public class ClientSetup {
     @SubscribeEvent
     public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(ModBlocks.DRINK_BE.get(), DrinkBlockRenderer::new);
+        event.registerBlockEntityRenderer(ModBlocks.PAPER_CUTTING_TABLE_BE.get(), context -> new PaperCuttingTableBlockRenderer());
     }
 }

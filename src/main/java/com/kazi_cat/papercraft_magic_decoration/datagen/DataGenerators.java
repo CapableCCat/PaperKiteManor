@@ -2,9 +2,7 @@ package com.kazi_cat.papercraft_magic_decoration.datagen;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.datagen.lootable.LootTableGenerator;
-import com.kazi_cat.papercraft_magic_decoration.datagen.model.BlockModelGenerator;
-import com.kazi_cat.papercraft_magic_decoration.datagen.model.BlockStateGenerator;
-import com.kazi_cat.papercraft_magic_decoration.datagen.model.ItemModelGenerator;
+import com.kazi_cat.papercraft_magic_decoration.datagen.model.*;
 import com.kazi_cat.papercraft_magic_decoration.datagen.recipe.ModRecipeGenerator;
 import com.kazi_cat.papercraft_magic_decoration.datagen.tag.TagBlock;
 import com.kazi_cat.papercraft_magic_decoration.datagen.tag.TagItem;
@@ -30,5 +28,7 @@ public class DataGenerators {
         generator.addProvider(event.includeClient(), new BlockModelGenerator(pack, helper));
         generator.addProvider(event.includeClient(), new BlockStateGenerator(pack, helper));
         generator.addProvider(event.includeClient(), new ItemModelGenerator(pack, helper));
+        generator.addProvider(event.includeClient(), new BlockGeoModelMappingsGenerator(pack));
+        generator.addProvider(event.includeClient(), new ItemGeoModelMappingsGenerator(pack));
     }
 }
