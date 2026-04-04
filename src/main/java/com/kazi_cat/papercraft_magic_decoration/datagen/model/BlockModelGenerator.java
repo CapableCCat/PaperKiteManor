@@ -25,6 +25,7 @@ public class BlockModelGenerator extends BlockModelProvider {
         cubeAll("wine_aroma_blue_wallpaper_wall", modLoc("block/wine_aroma_blue_wallpaper_wall"));
         cubeAll("underground_wallpaper_wall", modLoc("block/underground_wallpaper_wall"));
         cubeAll("rustic_blue_wallpaper_wall", modLoc("block/rustic_blue_wallpaper_wall"));
+        cubeAll("edged_chalkboard", modLoc("block/edged_chalkboard"));
 
         cubeBottomTop("coffee_pastinaca_sativa_core",
                 modLoc("block/coffee_pastinaca_sativa_side"),

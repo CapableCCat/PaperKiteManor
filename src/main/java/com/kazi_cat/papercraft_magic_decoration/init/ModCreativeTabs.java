@@ -86,6 +86,7 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.UNDERGROUND_PANELLING.get());
                 output.accept(ModItems.STAR_EMBELLISHED_CEILING.get());
                 output.accept(ModItems.ROSES_IN_WATER_BOTTLE.get());
+                output.accept(ModItems.EDGED_CHALKBOARD.get());
 
                 output.accept(ModItems.PALM_TREE_CROWN.get());
                 output.accept(ModItems.PALM_TREE_TOP.get());

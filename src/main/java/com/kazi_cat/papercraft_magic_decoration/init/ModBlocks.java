@@ -325,6 +325,18 @@ public interface ModBlocks {
         }
     });
 
+    RegistryObject<Block> EDGED_CHALKBOARD = BLOCKS.register("edged_chalkboard", () -> new VerticalTwoByThreeBlock.Animated.Waterlogged(
+            BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
+                    Block.box(0, 0, 13, 16, 16, 16)));
+
+    // 使用简单geckolib动画的通用方块实体
+    RegistryObject<BlockEntityType<AnimatedBlockEntity>> ANIMATED_BE = BLOCK_ENTITIES.register(
+            "animated", () -> BlockEntityType.Builder
+                    .of(AnimatedBlockEntity::new,
+                            EDGED_CHALKBOARD.get()
+                    ).build(null)
+    );
+
     @SuppressWarnings("all")
     private static RotatedPillarBlock log(MapColor topColor, MapColor sideColor) {
         return new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(

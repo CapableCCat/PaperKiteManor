@@ -34,5 +34,6 @@ public class ClientSetup {
         event.registerBlockEntityRenderer(ModBlocks.DISTILLER_BE.get(), DistillerBlockRenderer::new);
         event.registerBlockEntityRenderer(ModBlocks.PAPER_CUTTING_TABLE_BE.get(), context -> new PaperCuttingTableBlockRenderer());
         event.registerBlockEntityRenderer(ModBlocks.COPPER_BARTENDER_BE.get(), context -> new BaseGeoBlockRenderer<>(ModBlocks.COPPER_BARTENDER_BE.get()));
+        event.registerBlockEntityRenderer(ModBlocks.ANIMATED_BE.get(), context -> new BaseGeoBlockRenderer<>(ModBlocks.ANIMATED_BE.get()));
     }
 }

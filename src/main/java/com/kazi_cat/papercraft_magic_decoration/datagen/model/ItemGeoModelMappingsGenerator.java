@@ -39,6 +39,7 @@ public class ItemGeoModelMappingsGenerator implements DataProvider {
     private void addMappings() {
         simple(ModItems.PAPER_CUTTING_TABLE);
         simple(ModItems.COPPER_BARTENDER);
+        simple(ModItems.EDGED_CHALKBOARD);
     }
 
     public void simple(RegistryObject<Item> key) {

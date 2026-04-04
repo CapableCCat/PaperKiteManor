@@ -1,0 +1,57 @@
+{
+  "variants": {
+    "face=floor,facing=east": {
+      "model": "papercraft_magic_decoration:block/star_embellished_ceiling",
+      "x": 180,
+      "y": 270
+    },
+    "face=floor,facing=north": {
+      "model": "papercraft_magic_decoration:block/star_embellished_ceiling",
+      "x": 180,
+      "y": 180
+    },
+    "face=floor,facing=south": {
+      "model": "papercraft_magic_decoration:block/star_embellished_ceiling",
+      "x": 180
+    },
+    "face=floor,facing=west": {
+      "model": "papercraft_magic_decoration:block/star_embellished_ceiling",
+      "x": 180,
+      "y": 90
+    },
+    "face=ceiling,facing=east": {
+      "model": "papercraft_magic_decoration:block/star_embellished_ceiling",
+      "y": 90
+    },
+    "face=ceiling,facing=north": {
+      "model": "papercraft_magic_decoration:block/star_embellished_ceiling"
+    },
+    "face=ceiling,facing=south": {
+      "model": "papercraft_magic_decoration:block/star_embellished_ceiling",
+      "y": 180
+    },
+    "face=ceiling,facing=west": {
+      "model": "papercraft_magic_decoration:block/star_embellished_ceiling",
+      "y": 270
+    },
+    "face=wall,facing=west": {
+      "model": "papercraft_magic_decoration:block/star_embellished_ceiling",
+      "x": 90,
+      "y": 90
+    },
+    "face=wall,facing=south": {
+      "model": "papercraft_magic_decoration:block/star_embellished_ceiling",
+      "x": 90
+    },
+    "face=wall,facing=north": {
+      "model": "papercraft_magic_decoration:block/star_embellished_ceiling",
+      "x": 90,
+      "y": 180
+    },
+    "face=wall,facing=east": {
+      "model": "papercraft_magic_decoration:block/star_embellished_ceiling",
+      "x": 90,
+      "y": 270
+    }
+  }
+}
