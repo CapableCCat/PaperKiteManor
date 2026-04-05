@@ -60,6 +60,7 @@ public class BlockGeoModelMappingsGenerator implements DataProvider {
         simple(ModBlocks.EDGED_CHALKBOARD);
         simple(ModBlocks.GIFT_FROM_KAZI_MANOR);
         simple(ModBlocks.KEY_UNDER_THE_LAKE);
+        simple(ModBlocks.KAZI_LUCKY_CAT);
 
         GeoModelData SAUSAGE_MACE_WEAPON = GeoModelData.simple("0", "sausage_mace_weapon");
         GeoModelData RAW_SAUSAGE_MACE_WEAPON = GeoModelData.simple("1", "sausage_mace_weapon");

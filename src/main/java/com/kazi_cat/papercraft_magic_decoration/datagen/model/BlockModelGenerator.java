@@ -38,6 +38,7 @@ public class BlockModelGenerator extends BlockModelProvider {
         cubeAll("manga_meat", modLoc("block/manga_meat_grill"))
                 .texture("particle", modLoc("block/manga_meat_particle"));
         cubeAll("raw_manga_meat", modLoc("block/raw_manga_meat_grill"));
+        cubeAll("kazi_lucky_cat", modLoc("block/kazi_lucky_cat"));
 
         cubeBottomTop("coffee_pastinaca_sativa_core",
                 modLoc("block/coffee_pastinaca_sativa_side"),

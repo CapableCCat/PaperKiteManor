@@ -46,6 +46,7 @@ public class ItemGeoModelMappingsGenerator implements DataProvider {
         simple(ModItems.LONG_STORAGE_TABLE);
         simple(ModItems.EDGED_CHALKBOARD);
         simple(ModItems.SAUSAGE_MACE_WEAPON);
+        simple(ModItems.KAZI_LUCKY_CAT);
 
         GeoModelData RAW_SAUSAGE_MACE_WEAPON = new GeoModelData(
                 new ResourceLocation("papercraft_magic_decoration:geo/sausage_mace_weapon.geo.json"),

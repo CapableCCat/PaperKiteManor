@@ -129,6 +129,7 @@ public class ItemModelGenerator extends ItemModelProvider {
                 .texture("layer0", "papercraft_magic_decoration:block/manga_meat_grill");
         withExistingParent("raw_manga_meat", modLoc("displaysettings/manga_meat"))
                 .texture("layer0", "papercraft_magic_decoration:block/raw_manga_meat_grill");
+        withExistingParent("kazi_lucky_cat", modLoc("displaysettings/kazi_lucky_cat"));
     }
 
     public ItemModelBuilder handheldItem(Item item) {

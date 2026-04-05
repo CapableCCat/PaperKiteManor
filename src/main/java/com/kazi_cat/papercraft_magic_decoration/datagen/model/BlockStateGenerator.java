@@ -92,6 +92,7 @@ public class BlockStateGenerator extends BlockStateProvider {
             ResourceLocation file = modLoc("block/tray%d".formatted(variant));
             return new ModelFile.UncheckedModelFile(file);
         });
+        horizontalBlock(ModBlocks.KAZI_LUCKY_CAT.get(), new ModelFile.UncheckedModelFile(modLoc("block/kazi_lucky_cat")));
 
         simpleBlock(ModBlocks.WHITE_PAPER_BLOCK.get());
         simpleBlock(ModBlocks.BLUE_PAPER_BLOCK.get());

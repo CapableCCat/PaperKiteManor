@@ -511,6 +511,14 @@ public interface ModBlocks {
                     ).build(null)
     );
 
+    RegistryObject<Block> KAZI_LUCKY_CAT = BLOCKS.register("kazi_lucky_cat", () -> new KaziLuckyCatBlock(
+            Block.box(0, 0, 1, 16, 16, 15),
+            Block.box(0, 0, 1, 16, 16, 15)
+    ));
+
+    RegistryObject<BlockEntityType<KaziLuckyCatBlockEntity>> KAZI_LUCKY_CAT_BE = BLOCK_ENTITIES.register("kazi_lucky_cat",
+            () -> BlockEntityType.Builder.of(KaziLuckyCatBlockEntity::new, KAZI_LUCKY_CAT.get()).build(null));
+
     @SuppressWarnings("all")
     private static RotatedPillarBlock log(MapColor topColor, MapColor sideColor) {
         return new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(

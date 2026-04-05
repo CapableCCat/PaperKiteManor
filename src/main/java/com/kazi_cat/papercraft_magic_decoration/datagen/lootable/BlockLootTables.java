@@ -68,6 +68,7 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.RUSTIC_BLUE_WALLPAPER_WALL.get());
         dropSelf(ModBlocks.BLACK_AND_WHITE_CHECKER_BOARD_TILE.get());
         dropSelf(ModBlocks.BLUE_AND_WHITE_CHECKER_BOARD_TILE.get());
+        dropSelf(ModBlocks.KAZI_LUCKY_CAT.get());
 
         dropSelf(ModBlocks.BUCKET_OF_FRIED_CHICKEN.get());
 
