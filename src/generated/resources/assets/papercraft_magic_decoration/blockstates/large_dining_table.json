@@ -1,0 +1,58 @@
+{
+  "variants": {
+    "part=center,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/large_dining_table4"
+    },
+    "part=center,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/large_dining_table4"
+    },
+    "part=down,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/large_dining_table1"
+    },
+    "part=down,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/large_dining_table1"
+    },
+    "part=left_center,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/large_dining_table5"
+    },
+    "part=left_center,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/large_dining_table5"
+    },
+    "part=left_down,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/large_dining_table2"
+    },
+    "part=left_down,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/large_dining_table2"
+    },
+    "part=left_up,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/large_dining_table8"
+    },
+    "part=left_up,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/large_dining_table8"
+    },
+    "part=right_center,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/large_dining_table3"
+    },
+    "part=right_center,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/large_dining_table3"
+    },
+    "part=right_down,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/large_dining_table0"
+    },
+    "part=right_down,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/large_dining_table0"
+    },
+    "part=right_up,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/large_dining_table6"
+    },
+    "part=right_up,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/large_dining_table6"
+    },
+    "part=up,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/large_dining_table7"
+    },
+    "part=up,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/large_dining_table7"
+    }
+  }
+}

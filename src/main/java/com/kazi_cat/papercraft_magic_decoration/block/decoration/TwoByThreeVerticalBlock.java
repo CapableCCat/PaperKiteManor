@@ -205,6 +205,20 @@ public class TwoByThreeVerticalBlock extends HorizontalDirectionalBlock {
         public FluidState getFluidState(BlockState state) {
             return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
         }
+
+        @Override
+        public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
+            Direction facing = state.getValue(FACING);
+            BlockPos leftDown = pos.relative(facing.getClockWise());
+            List<BlockPos> posList = getOrderedPosList(leftDown, facing.getCounterClockWise());
+            for (int i = 0; i < 6; i++) {
+                if (i == CENTER_DOWN) continue;
+                FluidState fluidState = level.getFluidState(posList.get(i));
+                level.setBlockAndUpdate(posList.get(i), state
+                        .setValue(PART, i)
+                        .setValue(WATERLOGGED, fluidState.getType() == Fluids.WATER));
+            }
+        }
     }
 
 
@@ -297,6 +311,20 @@ public class TwoByThreeVerticalBlock extends HorizontalDirectionalBlock {
             @Override
             public FluidState getFluidState(BlockState state) {
                 return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
+            }
+
+            @Override
+            public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
+                Direction facing = state.getValue(FACING);
+                BlockPos leftDown = pos.relative(facing.getClockWise());
+                List<BlockPos> posList = getOrderedPosList(leftDown, facing.getCounterClockWise());
+                for (int i = 0; i < 6; i++) {
+                    if (i == CENTER_DOWN) continue;
+                    FluidState fluidState = level.getFluidState(posList.get(i));
+                    level.setBlockAndUpdate(posList.get(i), state
+                            .setValue(PART, i)
+                            .setValue(WATERLOGGED, fluidState.getType() == Fluids.WATER));
+                }
             }
         }
     }

@@ -2,6 +2,8 @@ package com.kazi_cat.papercraft_magic_decoration.datagen.model;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.block.*;
+import com.kazi_cat.papercraft_magic_decoration.block.decoration.NinePart;
+import com.kazi_cat.papercraft_magic_decoration.block.decoration.ThreeByThreeBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.TwoByOneBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.TwoByThreeVerticalBlock;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
@@ -108,6 +110,8 @@ public class BlockStateGenerator extends BlockStateProvider {
         buttonBlock((ButtonBlock) ModBlocks.LOUD_BUTTON.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/loud_button")),
                 new ModelFile.UncheckedModelFile(modLoc("block/loud_button")));
+
+        ninePart(ModBlocks.LARGE_DINING_TABLE.get(), "large_dining_table");
     }
 
     public void drink(Block block, String name) {
@@ -165,6 +169,27 @@ public class BlockStateGenerator extends BlockStateProvider {
             int part = blockState.getValue(TwoByThreeVerticalBlock.PART);
             ResourceLocation file = modLoc("block/%s%d".formatted(name, part));
             return new ModelFile.UncheckedModelFile(file);
+        });
+    }
+
+    public void ninePart(Block block, String name) {
+        getVariantBuilder(block).forAllStates(state -> {
+            int part = switch (state.getValue(ThreeByThreeBlock.PART)) {
+                case RIGHT_DOWN -> 0;
+                case DOWN -> 1;
+                case LEFT_DOWN -> 2;
+                case RIGHT_CENTER -> 3;
+                case CENTER -> 4;
+                case LEFT_CENTER -> 5;
+                case RIGHT_UP -> 6;
+                case UP -> 7;
+                case LEFT_UP -> 8;
+            };
+
+            ResourceLocation file = modLoc("block/%s%d".formatted(name, part));
+            return ConfiguredModel.builder()
+                    .modelFile(new ModelFile.UncheckedModelFile(file))
+                    .build();
         });
     }
 }

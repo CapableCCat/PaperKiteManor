@@ -100,6 +100,7 @@ public class ItemModelGenerator extends ItemModelProvider {
         withExistingParent("edged_chalkboard", modLoc("displaysettings/edged_chalkboard"));
         withExistingParent("cupboard", modLoc("block/cupboard"));
         withExistingParent("fireplace_decoration", modLoc("block/fireplace_decoration"));
+        withExistingParent("large_dining_table", modLoc("block/large_dining_table"));
     }
 
     public ItemModelBuilder handheldItem(Item item) {

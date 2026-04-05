@@ -186,6 +186,7 @@ public interface ModItems {
     RegistryObject<Item> EDGED_CHALKBOARD = ITEMS.register("edged_chalkboard", () -> new GeoBlockItem(ModBlocks.EDGED_CHALKBOARD.get(), new Item.Properties()));
     RegistryObject<Item> CUPBOARD = ITEMS.register("cupboard", () -> new BlockItem(ModBlocks.CUPBOARD.get(), new Item.Properties()));
     RegistryObject<Item> FIREPLACE_DECORATION = ITEMS.register("fireplace_decoration", () -> new BlockItem(ModBlocks.FIREPLACE_DECORATION.get(), new Item.Properties()));
+    RegistryObject<Item> LARGE_DINING_TABLE = ITEMS.register("large_dining_table", () -> new BlockItem(ModBlocks.LARGE_DINING_TABLE.get(), new Item.Properties()));
 
     RegistryObject<Item> LOUD_BUTTON = ITEMS.register("loud_button", () -> new GeoBlockItem(ModBlocks.LOUD_BUTTON.get(), new Item.Properties()));
     RegistryObject<Item> GIFT_FROM_KAZI_MANOR = ITEMS.register("gift_from_kazi_manor", () -> new BlockItem(ModBlocks.GIFT_FROM_KAZI_MANOR.get(), new Item.Properties()));

@@ -386,6 +386,10 @@ public interface ModBlocks {
             )
     ));
 
+    RegistryObject<Block> LARGE_DINING_TABLE = BLOCKS.register("large_dining_table", () -> new ThreeByThreeBlock.Waterlogged(
+            BlockBehaviour.Properties.of().ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
+            Block.box(0, 0, 0, 16, 15, 16)));
+
     // 使用简单geckolib动画的通用方块实体
     RegistryObject<BlockEntityType<AnimatedBlockEntity>> ANIMATED_BE = BLOCK_ENTITIES.register(
             "animated", () -> BlockEntityType.Builder

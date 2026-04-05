@@ -142,5 +142,13 @@ public class TwoByOneVerticalBlock extends HorizontalDirectionalBlock {
         public FluidState getFluidState(BlockState state) {
             return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
         }
+
+        @Override
+        public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
+            BlockPos abovePos = pos.relative(Direction.UP);
+            FluidState fluidState = level.getFluidState(abovePos);
+            BlockState aboveState = state.setValue(PART, UP).setValue(WATERLOGGED, fluidState.getType() == Fluids.WATER);
+            level.setBlock(abovePos, aboveState, Block.UPDATE_ALL);
+        }
     }
 }
