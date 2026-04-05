@@ -70,6 +70,10 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.PACK_OF_GUANG_S.get());
 
                 output.accept(ModItems.COFFEE_PASTINACA_SATIVA_TUBER.get());
+
+                output.accept(ModItems.BREADED_RAW_CHICKEN.get());
+                output.accept(ModItems.BUCKET_OF_FRIED_CHICKEN.get());
+                output.accept(ModItems.FRIED_CHICKEN_LEG.get());
             }).build());
 
     RegistryObject<CreativeModeTab> MANOR_DECORATION_TAB = TABS.register("manor_decoration", () -> CreativeModeTab.builder()

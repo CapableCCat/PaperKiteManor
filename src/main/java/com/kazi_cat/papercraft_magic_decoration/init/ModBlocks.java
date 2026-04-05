@@ -6,10 +6,14 @@ import com.kazi_cat.papercraft_magic_decoration.block.decoration.*;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -20,11 +24,13 @@ import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.PlantType;
+import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -404,6 +410,21 @@ public interface ModBlocks {
                             EDGED_CHALKBOARD.get()
                     ).build(null)
     );
+
+    // 食物部分
+    RegistryObject<Block> BUCKET_OF_FRIED_CHICKEN = BLOCKS.register("bucket_of_fried_chicken", () -> new DecorationBlock.HorizontalDirectional.Waterlogged(
+            BlockBehaviour.Properties.of().sound(SoundType.SNOW).strength(1f, 4f).noOcclusion(),
+            Block.box(2, 0, 2, 14, 14, 14)) {
+        @Override
+        public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
+            if (!level.isClientSide() && !player.isSecondaryUseActive() && player.getMainHandItem().isEmpty()) {
+                ItemHandlerHelper.giveItemToPlayer(player, new ItemStack(ModItems.FRIED_CHICKEN_LEG.get(), 4));
+                level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
+                return InteractionResult.SUCCESS;
+            }
+            return super.use(state, level, pos, player, hand, hitResult);
+        }
+    });
 
     @SuppressWarnings("all")
     private static RotatedPillarBlock log(MapColor topColor, MapColor sideColor) {

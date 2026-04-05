@@ -69,6 +69,8 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.BLACK_AND_WHITE_CHECKER_BOARD_TILE.get());
         dropSelf(ModBlocks.BLUE_AND_WHITE_CHECKER_BOARD_TILE.get());
 
+        dropSelf(ModBlocks.BUCKET_OF_FRIED_CHICKEN.get());
+
         dropOther(ModBlocks.DIRT_HOLE.get(), Items.DIRT);
         dropOther(ModBlocks.COFFEE_PASTINACA_SATIVA.get(), ModItems.COFFEE_FRUIT.get());
         dropOther(ModBlocks.COFFEE_PASTINACA_SATIVA_CORE.get(), ModItems.COFFEE_PASTINACA_SATIVA_TUBER.get());

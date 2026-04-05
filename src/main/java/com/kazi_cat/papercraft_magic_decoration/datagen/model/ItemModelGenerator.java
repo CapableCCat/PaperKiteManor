@@ -58,6 +58,8 @@ public class ItemModelGenerator extends ItemModelProvider {
         basicItem(ModItems.COPPER_STILL.get());
         basicItem(ModItems.GIFT_FROM_KAZI_MANOR.get());
         basicItem(ModItems.KEY_UNDER_THE_LAKE.get());
+        basicItem(ModItems.BREADED_RAW_CHICKEN.get());
+        basicItem(ModItems.FRIED_CHICKEN_LEG.get());
 
         handheldItem(ModItems.GARDEN_TROWEL.get());
 
@@ -101,6 +103,7 @@ public class ItemModelGenerator extends ItemModelProvider {
         withExistingParent("cupboard", modLoc("block/cupboard"));
         withExistingParent("fireplace_decoration", modLoc("block/fireplace_decoration"));
         withExistingParent("large_dining_table", modLoc("block/large_dining_table"));
+        withExistingParent("bucket_of_fried_chicken", modLoc("block/bucket_of_fried_chicken"));
     }
 
     public ItemModelBuilder handheldItem(Item item) {
