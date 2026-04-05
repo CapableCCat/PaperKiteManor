@@ -85,6 +85,18 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.BREADED_RAW_CHICKEN.get());
                 output.accept(ModItems.BUCKET_OF_FRIED_CHICKEN.get());
                 output.accept(ModItems.FRIED_CHICKEN_LEG.get());
+
+                output.accept(ModItems.RAW_SAUSAGE_MACE_WEAPON.get());
+                output.accept(ModItems.SAUSAGE_MACE_WEAPON.get());
+                output.accept(ModItems.CUBED_SAUSAGE.get());
+                output.accept(ModItems.JUMBO_SALMON.get());
+                output.accept(ModItems.CHUNKY_SALMON.get());
+                output.accept(ModItems.CHUNKY_SMOKED_SALMON.get());
+                output.accept(ModItems.SMOKED_SALMON_HEAD.get());
+                output.accept(ModItems.RAW_MANGA_MEAT.get());
+                output.accept(ModItems.MANGA_MEAT.get());
+                output.accept(ModItems.MONSTER_STEAK.get());
+                output.accept(ModItems.LARGE_STEAK.get());
             }).build());
 
     RegistryObject<CreativeModeTab> MANOR_DECORATION_TAB = TABS.register("manor_decoration", () -> CreativeModeTab.builder()

@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "cooked=false,facing=east,part=0": {
+      "model": "papercraft_magic_decoration:block/salmon_head0",
+      "y": 90
+    },
+    "cooked=false,facing=east,part=1": {
+      "model": "papercraft_magic_decoration:block/salmon_head1",
+      "y": 90
+    },
+    "cooked=false,facing=north,part=0": {
+      "model": "papercraft_magic_decoration:block/salmon_head0"
+    },
+    "cooked=false,facing=north,part=1": {
+      "model": "papercraft_magic_decoration:block/salmon_head1"
+    },
+    "cooked=false,facing=south,part=0": {
+      "model": "papercraft_magic_decoration:block/salmon_head0",
+      "y": 180
+    },
+    "cooked=false,facing=south,part=1": {
+      "model": "papercraft_magic_decoration:block/salmon_head1",
+      "y": 180
+    },
+    "cooked=false,facing=west,part=0": {
+      "model": "papercraft_magic_decoration:block/salmon_head0",
+      "y": 270
+    },
+    "cooked=false,facing=west,part=1": {
+      "model": "papercraft_magic_decoration:block/salmon_head1",
+      "y": 270
+    },
+    "cooked=true,facing=east,part=0": {
+      "model": "papercraft_magic_decoration:block/smoked_salmon_head0",
+      "y": 90
+    },
+    "cooked=true,facing=east,part=1": {
+      "model": "papercraft_magic_decoration:block/smoked_salmon_head1",
+      "y": 90
+    },
+    "cooked=true,facing=north,part=0": {
+      "model": "papercraft_magic_decoration:block/smoked_salmon_head0"
+    },
+    "cooked=true,facing=north,part=1": {
+      "model": "papercraft_magic_decoration:block/smoked_salmon_head1"
+    },
+    "cooked=true,facing=south,part=0": {
+      "model": "papercraft_magic_decoration:block/smoked_salmon_head0",
+      "y": 180
+    },
+    "cooked=true,facing=south,part=1": {
+      "model": "papercraft_magic_decoration:block/smoked_salmon_head1",
+      "y": 180
+    },
+    "cooked=true,facing=west,part=0": {
+      "model": "papercraft_magic_decoration:block/smoked_salmon_head0",
+      "y": 270
+    },
+    "cooked=true,facing=west,part=1": {
+      "model": "papercraft_magic_decoration:block/smoked_salmon_head1",
+      "y": 270
+    }
+  }
+}

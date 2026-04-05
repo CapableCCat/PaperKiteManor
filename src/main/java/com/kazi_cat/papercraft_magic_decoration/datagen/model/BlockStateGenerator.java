@@ -1,10 +1,16 @@
 package com.kazi_cat.papercraft_magic_decoration.datagen.model;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
+import com.kazi_cat.papercraft_magic_decoration.api.block.ISmeltableBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.*;
+import com.kazi_cat.papercraft_magic_decoration.block.decoration.DecorationBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.ThreeByThreeBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.TwoByOneBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.TwoByThreeVerticalBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.food.ChunkySalmonBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.food.MonsterSteakBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.food.SmeltableBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.food.TwoByOneSmeltableBlock;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -59,6 +65,33 @@ public class BlockStateGenerator extends BlockStateProvider {
         horizontalBlock(ModBlocks.GIFT_FROM_KAZI_MANOR.get(), new ModelFile.UncheckedModelFile(modLoc("block/gift_from_kazi_manor")));
         horizontalBlock(ModBlocks.KEY_UNDER_THE_LAKE.get(), new ModelFile.UncheckedModelFile(modLoc("block/key_under_the_lake")));
         horizontalBlock(ModBlocks.BUCKET_OF_FRIED_CHICKEN.get(), new ModelFile.UncheckedModelFile(modLoc("block/bucket_of_fried_chicken")));
+        horizontalBlock(ModBlocks.CHUNKY_SALMON.get(), state -> {
+            boolean cooked = state.getValue(ISmeltableBlock.COOKED);
+            int variant = state.getValue(ChunkySalmonBlock.VARIANT);
+            ResourceLocation file = modLoc("block/chunky%s_salmon%d".formatted(cooked ? "_smoked" : "", variant));
+            return new ModelFile.UncheckedModelFile(file);
+        });
+        horizontalBlock(ModBlocks.SALMON_HEAD.get(), state -> {
+            boolean cooked = state.getValue(ISmeltableBlock.COOKED);
+            int part = state.getValue(TwoByOneSmeltableBlock.PART);
+            ResourceLocation file = modLoc("block/%ssalmon_head%d".formatted(cooked ? "smoked_" : "", part));
+            return new ModelFile.UncheckedModelFile(file);
+        });
+        horizontalBlock(ModBlocks.MONSTER_STEAK.get(), state -> {
+            int variant = state.getValue(MonsterSteakBlock.PART);
+            ResourceLocation file = modLoc("block/raw_monster_steak%d".formatted(variant));
+            return new ModelFile.UncheckedModelFile(file);
+        });
+        horizontalBlock(ModBlocks.LARGE_STEAK.get(), state -> {
+            int variant = state.getValue(((DecorationBlock.HorizontalDirectional.Variant) ModBlocks.LARGE_STEAK.get()).getVariantProperty());
+            ResourceLocation file = modLoc("block/monster_steak%d".formatted(variant));
+            return new ModelFile.UncheckedModelFile(file);
+        });
+        horizontalBlock(ModBlocks.TRAY_BLOCK.get(), state -> {
+            int variant = state.getValue(((DecorationBlock.HorizontalDirectional.Variant.Waterlogged) ModBlocks.TRAY_BLOCK.get()).getVariantProperty());
+            ResourceLocation file = modLoc("block/tray%d".formatted(variant));
+            return new ModelFile.UncheckedModelFile(file);
+        });
 
         simpleBlock(ModBlocks.WHITE_PAPER_BLOCK.get());
         simpleBlock(ModBlocks.BLUE_PAPER_BLOCK.get());
@@ -112,6 +145,9 @@ public class BlockStateGenerator extends BlockStateProvider {
                 new ModelFile.UncheckedModelFile(modLoc("block/loud_button")));
 
         ninePart(ModBlocks.LARGE_DINING_TABLE.get(), "large_dining_table");
+
+        smeltable(ModBlocks.SAUSAGE_MACE_WEAPON_BLOCK.get(), "sausage_mace_weapon");
+        smeltable(ModBlocks.MANGA_MEAT.get(), "manga_meat");
     }
 
     public void drink(Block block, String name) {
@@ -190,6 +226,14 @@ public class BlockStateGenerator extends BlockStateProvider {
             return ConfiguredModel.builder()
                     .modelFile(new ModelFile.UncheckedModelFile(file))
                     .build();
+        });
+    }
+
+    public void smeltable(Block block, String name) {
+        horizontalBlock(block, state -> {
+            boolean cooked = state.getValue(ISmeltableBlock.COOKED);
+            ResourceLocation file = modLoc("block/%s%s".formatted(cooked ? "" : "raw_", name));
+            return new ModelFile.UncheckedModelFile(file);
         });
     }
 }

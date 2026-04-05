@@ -1,0 +1,5 @@
+{
+  "model": "papercraft_magic_decoration:geo/manga_meat.geo.json",
+  "texture": "papercraft_magic_decoration:textures/block/raw_manga_meat_grill.png",
+  "animation": "papercraft_magic_decoration:animations/manga_meat.animation.json"
+}

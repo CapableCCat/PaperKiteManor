@@ -1,0 +1,124 @@
+{
+  "variants": {
+    "cooked=false,facing=east,variant=0": {
+      "model": "papercraft_magic_decoration:block/chunky_salmon0",
+      "y": 90
+    },
+    "cooked=false,facing=east,variant=1": {
+      "model": "papercraft_magic_decoration:block/chunky_salmon1",
+      "y": 90
+    },
+    "cooked=false,facing=east,variant=2": {
+      "model": "papercraft_magic_decoration:block/chunky_salmon2",
+      "y": 90
+    },
+    "cooked=false,facing=east,variant=3": {
+      "model": "papercraft_magic_decoration:block/chunky_salmon3",
+      "y": 90
+    },
+    "cooked=false,facing=north,variant=0": {
+      "model": "papercraft_magic_decoration:block/chunky_salmon0"
+    },
+    "cooked=false,facing=north,variant=1": {
+      "model": "papercraft_magic_decoration:block/chunky_salmon1"
+    },
+    "cooked=false,facing=north,variant=2": {
+      "model": "papercraft_magic_decoration:block/chunky_salmon2"
+    },
+    "cooked=false,facing=north,variant=3": {
+      "model": "papercraft_magic_decoration:block/chunky_salmon3"
+    },
+    "cooked=false,facing=south,variant=0": {
+      "model": "papercraft_magic_decoration:block/chunky_salmon0",
+      "y": 180
+    },
+    "cooked=false,facing=south,variant=1": {
+      "model": "papercraft_magic_decoration:block/chunky_salmon1",
+      "y": 180
+    },
+    "cooked=false,facing=south,variant=2": {
+      "model": "papercraft_magic_decoration:block/chunky_salmon2",
+      "y": 180
+    },
+    "cooked=false,facing=south,variant=3": {
+      "model": "papercraft_magic_decoration:block/chunky_salmon3",
+      "y": 180
+    },
+    "cooked=false,facing=west,variant=0": {
+      "model": "papercraft_magic_decoration:block/chunky_salmon0",
+      "y": 270
+    },
+    "cooked=false,facing=west,variant=1": {
+      "model": "papercraft_magic_decoration:block/chunky_salmon1",
+      "y": 270
+    },
+    "cooked=false,facing=west,variant=2": {
+      "model": "papercraft_magic_decoration:block/chunky_salmon2",
+      "y": 270
+    },
+    "cooked=false,facing=west,variant=3": {
+      "model": "papercraft_magic_decoration:block/chunky_salmon3",
+      "y": 270
+    },
+    "cooked=true,facing=east,variant=0": {
+      "model": "papercraft_magic_decoration:block/chunky_smoked_salmon0",
+      "y": 90
+    },
+    "cooked=true,facing=east,variant=1": {
+      "model": "papercraft_magic_decoration:block/chunky_smoked_salmon1",
+      "y": 90
+    },
+    "cooked=true,facing=east,variant=2": {
+      "model": "papercraft_magic_decoration:block/chunky_smoked_salmon2",
+      "y": 90
+    },
+    "cooked=true,facing=east,variant=3": {
+      "model": "papercraft_magic_decoration:block/chunky_smoked_salmon3",
+      "y": 90
+    },
+    "cooked=true,facing=north,variant=0": {
+      "model": "papercraft_magic_decoration:block/chunky_smoked_salmon0"
+    },
+    "cooked=true,facing=north,variant=1": {
+      "model": "papercraft_magic_decoration:block/chunky_smoked_salmon1"
+    },
+    "cooked=true,facing=north,variant=2": {
+      "model": "papercraft_magic_decoration:block/chunky_smoked_salmon2"
+    },
+    "cooked=true,facing=north,variant=3": {
+      "model": "papercraft_magic_decoration:block/chunky_smoked_salmon3"
+    },
+    "cooked=true,facing=south,variant=0": {
+      "model": "papercraft_magic_decoration:block/chunky_smoked_salmon0",
+      "y": 180
+    },
+    "cooked=true,facing=south,variant=1": {
+      "model": "papercraft_magic_decoration:block/chunky_smoked_salmon1",
+      "y": 180
+    },
+    "cooked=true,facing=south,variant=2": {
+      "model": "papercraft_magic_decoration:block/chunky_smoked_salmon2",
+      "y": 180
+    },
+    "cooked=true,facing=south,variant=3": {
+      "model": "papercraft_magic_decoration:block/chunky_smoked_salmon3",
+      "y": 180
+    },
+    "cooked=true,facing=west,variant=0": {
+      "model": "papercraft_magic_decoration:block/chunky_smoked_salmon0",
+      "y": 270
+    },
+    "cooked=true,facing=west,variant=1": {
+      "model": "papercraft_magic_decoration:block/chunky_smoked_salmon1",
+      "y": 270
+    },
+    "cooked=true,facing=west,variant=2": {
+      "model": "papercraft_magic_decoration:block/chunky_smoked_salmon2",
+      "y": 270
+    },
+    "cooked=true,facing=west,variant=3": {
+      "model": "papercraft_magic_decoration:block/chunky_smoked_salmon3",
+      "y": 270
+    }
+  }
+}

@@ -70,6 +70,13 @@ public class ItemModelGenerator extends ItemModelProvider {
         basicItem(ModItems.LARGE_DINING_TABLE_ORIGAMI.get());
         basicItem(ModItems.RED_VELVET_CHAISE_LONGUE_ORIGAMI.get());
         basicItem(ModItems.OLD_ORGAN_ORIGAMI.get());
+        basicItem(ModItems.CUBED_SAUSAGE.get());
+        basicItem(ModItems.CHUNKY_SALMON.get());
+        basicItem(ModItems.CHUNKY_SMOKED_SALMON.get());
+        basicItem(ModItems.SMOKED_SALMON_HEAD.get());
+        basicItem(ModItems.MONSTER_STEAK.get());
+        basicItem(ModItems.LARGE_STEAK.get());
+        basicItem(ModItems.JUMBO_SALMON.get());
 
         handheldItem(ModItems.GARDEN_TROWEL.get());
 
@@ -114,6 +121,14 @@ public class ItemModelGenerator extends ItemModelProvider {
         withExistingParent("fireplace_decoration", modLoc("block/fireplace_decoration"));
         withExistingParent("large_dining_table", modLoc("block/large_dining_table"));
         withExistingParent("bucket_of_fried_chicken", modLoc("block/bucket_of_fried_chicken"));
+        withExistingParent("sausage_mace_weapon", modLoc("displaysettings/sausage_mace_weapon"))
+                .texture("layer0", "papercraft_magic_decoration:block/sausage_mace_weapon");
+        withExistingParent("raw_sausage_mace_weapon", modLoc("displaysettings/sausage_mace_weapon"))
+                .texture("layer0", "papercraft_magic_decoration:block/raw_sausage_mace_weapon");
+        withExistingParent("manga_meat", modLoc("displaysettings/manga_meat"))
+                .texture("layer0", "papercraft_magic_decoration:block/manga_meat_grill");
+        withExistingParent("raw_manga_meat", modLoc("displaysettings/manga_meat"))
+                .texture("layer0", "papercraft_magic_decoration:block/raw_manga_meat_grill");
     }
 
     public ItemModelBuilder handheldItem(Item item) {

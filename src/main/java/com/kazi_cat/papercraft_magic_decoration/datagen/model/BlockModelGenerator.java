@@ -33,6 +33,11 @@ public class BlockModelGenerator extends BlockModelProvider {
         cubeAll("edged_chalkboard", modLoc("block/edged_chalkboard"));
         cubeAll("gift_from_kazi_manor", modLoc("block/gift_from_kazi_manor"));
         cubeAll("key_under_the_lake", modLoc("block/key_under_the_lake"));
+        cubeAll("sausage_mace_weapon", modLoc("block/sausage_mace_weapon"));
+        cubeAll("raw_sausage_mace_weapon", modLoc("block/raw_sausage_mace_weapon"));
+        cubeAll("manga_meat", modLoc("block/manga_meat_grill"))
+                .texture("particle", modLoc("block/manga_meat_particle"));
+        cubeAll("raw_manga_meat", modLoc("block/raw_manga_meat_grill"));
 
         cubeBottomTop("coffee_pastinaca_sativa_core",
                 modLoc("block/coffee_pastinaca_sativa_side"),

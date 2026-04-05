@@ -18,6 +18,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
@@ -135,6 +136,81 @@ public final class DecorationBlock {
             @Override
             public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
                 return shapes.get(state.getValue(FACING));
+            }
+        }
+
+
+        public static class Variant extends HorizontalDirectionalBlock {
+            protected final IntegerProperty variantProperty;
+            protected final EnumMap<Direction, VoxelShape> shapes;
+
+            public Variant(Properties properties, VoxelShape northShape, int variantCount) {
+                super(properties);
+                this.shapes = VoxelShapeUtils.horizontalShapes(northShape);
+                this.variantProperty = IntegerProperty.create("variant", 0, variantCount - 1);
+
+                StateDefinition.Builder<Block, BlockState> builder = new StateDefinition.Builder<>(this);
+                this.overrideBlockStateDefinition(builder);
+                this.stateDefinition = builder.create(Block::defaultBlockState, BlockState::new);
+
+                this.registerDefaultState(this.stateDefinition.any()
+                        .setValue(FACING, Direction.NORTH)
+                        .setValue(variantProperty, 0));
+            }
+
+            @Override
+            @Nullable
+            public BlockState getStateForPlacement(BlockPlaceContext context) {
+                return this.defaultBlockState()
+                        .setValue(FACING, context.getHorizontalDirection().getOpposite());
+            }
+
+            protected void overrideBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+                builder.add(FACING, variantProperty);
+            }
+
+            @Override
+            public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+                return shapes.get(state.getValue(FACING));
+            }
+
+            public IntegerProperty getVariantProperty() {
+                return variantProperty;
+            }
+
+
+            public static class Waterlogged extends Variant implements SimpleWaterloggedBlock {
+                public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+
+                public Waterlogged(Properties properties, VoxelShape northShape, int variantCount) {
+                    super(properties, northShape, variantCount);
+
+                    StateDefinition.Builder<Block, BlockState> builder = new StateDefinition.Builder<>(this);
+                    this.overrideBlockStateDefinition(builder);
+                    this.stateDefinition = builder.create(Block::defaultBlockState, BlockState::new);
+
+                    this.registerDefaultState(this.stateDefinition.any()
+                            .setValue(variantProperty, 0)
+                            .setValue(FACING, Direction.NORTH)
+                            .setValue(WATERLOGGED, false));
+                }
+
+                @Nullable
+                @Override
+                public BlockState getStateForPlacement(BlockPlaceContext context) {
+                    BlockState state = super.getStateForPlacement(context);
+                    FluidState fluidState = context.getLevel().getFluidState(context.getClickedPos());
+                    return state == null ? null : state.setValue(WATERLOGGED, fluidState.getType() == Fluids.WATER);
+                }
+
+                protected void overrideBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+                    builder.add(FACING, variantProperty, WATERLOGGED);
+                }
+
+                @Override
+                public FluidState getFluidState(BlockState state) {
+                    return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
+                }
             }
         }
 

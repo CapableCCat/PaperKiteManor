@@ -1,6 +1,8 @@
 package com.kazi_cat.papercraft_magic_decoration.init;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
+import com.kazi_cat.papercraft_magic_decoration.block.food.ChunkySalmonBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.food.TwoByOneSmeltableBlock;
 import com.kazi_cat.papercraft_magic_decoration.item.*;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -12,6 +14,8 @@ import net.minecraft.world.item.Tiers;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.List;
 
 public interface ModItems {
     DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, PaperKiteManor.MOD_ID);
@@ -199,6 +203,42 @@ public interface ModItems {
 
     RegistryObject<Item> FRIED_CHICKEN_LEG = ITEMS.register("fried_chicken_leg", () -> new Item(new Item.Properties()
             .food((new FoodProperties.Builder()).nutrition(8).saturationMod(0.6f).meat().build())));
+
+    RegistryObject<Item> RAW_SAUSAGE_MACE_WEAPON = ITEMS.register("raw_sausage_mace_weapon", () ->
+            new ItemNameGeoBlockItem(ModBlocks.SAUSAGE_MACE_WEAPON_BLOCK.get(), new Item.Properties()));
+
+    RegistryObject<Item> SAUSAGE_MACE_WEAPON = ITEMS.register("sausage_mace_weapon", () ->
+            new ItemNameGeoBlockItem(ModBlocks.SAUSAGE_MACE_WEAPON_BLOCK.get(), new Item.Properties()));
+
+    RegistryObject<Item> CUBED_SAUSAGE = ITEMS.register("cubed_sausage", () ->
+            new Item(new Item.Properties().food((new FoodProperties.Builder()).nutrition(14).saturationMod(0.7f).build())));
+
+    RegistryObject<Item> JUMBO_SALMON = ITEMS.register("jumbo_salmon", () -> new TwoByThreeStructureBlockItem(new Item.Properties(), () -> List.of(
+            ModBlocks.SALMON_HEAD.get().defaultBlockState().setValue(TwoByOneSmeltableBlock.PART, 0),
+            ModBlocks.CHUNKY_SALMON.get().defaultBlockState().setValue(ChunkySalmonBlock.VARIANT, 0),
+            ModBlocks.CHUNKY_SALMON.get().defaultBlockState().setValue(ChunkySalmonBlock.VARIANT, 1),
+            ModBlocks.SALMON_HEAD.get().defaultBlockState().setValue(TwoByOneSmeltableBlock.PART, 1),
+            ModBlocks.CHUNKY_SALMON.get().defaultBlockState().setValue(ChunkySalmonBlock.VARIANT, 2),
+            ModBlocks.CHUNKY_SALMON.get().defaultBlockState().setValue(ChunkySalmonBlock.VARIANT, 3)
+    )));
+
+    RegistryObject<Item> CHUNKY_SALMON = ITEMS.register("chunky_salmon", () -> new ItemNameBlockItem(ModBlocks.CHUNKY_SALMON.get(),
+            new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.3f).meat().build())));
+
+    RegistryObject<Item> CHUNKY_SMOKED_SALMON = ITEMS.register("chunky_smoked_salmon", () -> new ItemNameBlockItem(ModBlocks.CHUNKY_SALMON.get(),
+            new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(0.6f).meat().build())));
+
+    RegistryObject<Item> SMOKED_SALMON_HEAD = ITEMS.register("smoked_salmon_head", () -> new ItemNameBlockItem(ModBlocks.SALMON_HEAD.get(),
+            new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.3f).meat().build())));
+
+    RegistryObject<Item> MANGA_MEAT = ITEMS.register("manga_meat", () -> new MultiEatGeoBlockItem(ModBlocks.MANGA_MEAT.get(), new Item.Properties()
+            .food(new FoodProperties.Builder().nutrition(15).saturationMod(0.6F).meat().build()).durability(2).fireResistant(), 100));
+
+    RegistryObject<Item> RAW_MANGA_MEAT = ITEMS.register("raw_manga_meat", () -> new ItemNameGeoBlockItem(ModBlocks.MANGA_MEAT.get(), new Item.Properties()));
+
+    RegistryObject<Item> MONSTER_STEAK = ITEMS.register("monster_steak", () -> new ItemNameBlockItem(ModBlocks.MONSTER_STEAK.get(), new Item.Properties().stacksTo(1)));
+
+    RegistryObject<Item> LARGE_STEAK = ITEMS.register("large_steak", () -> new Item(new Item.Properties().food((new FoodProperties.Builder()).nutrition(12).saturationMod(0.7f).meat().build())));
 
     // 折纸
     RegistryObject<Item> LOW_CABINET_WITH_TABLECLOTH_ORIGAMI = ITEMS.register("low_cabinet_with_tablecloth_origami", () -> new Item(new Item.Properties()));

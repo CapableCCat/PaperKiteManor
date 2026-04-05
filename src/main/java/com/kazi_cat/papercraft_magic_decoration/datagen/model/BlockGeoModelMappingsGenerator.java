@@ -10,6 +10,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonWriter;
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
+import com.kazi_cat.papercraft_magic_decoration.api.block.ISmeltableBlock;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import net.minecraft.Util;
@@ -59,6 +60,11 @@ public class BlockGeoModelMappingsGenerator implements DataProvider {
         simple(ModBlocks.EDGED_CHALKBOARD);
         simple(ModBlocks.GIFT_FROM_KAZI_MANOR);
         simple(ModBlocks.KEY_UNDER_THE_LAKE);
+
+        GeoModelData SAUSAGE_MACE_WEAPON = GeoModelData.simple("0", "sausage_mace_weapon");
+        GeoModelData RAW_SAUSAGE_MACE_WEAPON = GeoModelData.simple("1", "sausage_mace_weapon");
+        RAW_SAUSAGE_MACE_WEAPON.texture = new ResourceLocation("papercraft_magic_decoration:textures/block/raw_sausage_mace_weapon.png");
+        smeltable(ModBlocks.SAUSAGE_MACE_WEAPON_BLOCK, RAW_SAUSAGE_MACE_WEAPON, SAUSAGE_MACE_WEAPON);
     }
 
     public void simple(RegistryObject<Block> block) {
@@ -67,6 +73,15 @@ public class BlockGeoModelMappingsGenerator implements DataProvider {
             throw new IllegalArgumentException("Block not registered: " + block.getId());
         }
         MappingBuilder builder = MappingBuilder.simple(block.get(), GeoModelData.simple("0", blockKey.getPath()));
+        this.add(blockKey.getPath(), builder);
+    }
+
+    public void smeltable(RegistryObject<Block> block, GeoModelData raw, GeoModelData cooked) {
+        var blockKey = ForgeRegistries.BLOCKS.getKey(block.get());
+        if (blockKey == null) {
+            throw new IllegalArgumentException("Block not registered: " + block.getId());
+        }
+        MappingBuilder builder = new MappingBuilder(block.get()).forAllStates(state -> state.getValue(ISmeltableBlock.COOKED) ? cooked : raw);
         this.add(blockKey.getPath(), builder);
     }
 
@@ -195,10 +210,10 @@ public class BlockGeoModelMappingsGenerator implements DataProvider {
     }
 
     public static class GeoModelData {
-        public final String name;
-        public final ResourceLocation model;
-        public final ResourceLocation texture;
-        public final ResourceLocation animation;
+        public String name;
+        public ResourceLocation model;
+        public ResourceLocation texture;
+        public ResourceLocation animation;
         public Vector3d translation;
         public Vector3d rotation;
         public Vector3d scale;

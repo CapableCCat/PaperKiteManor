@@ -45,6 +45,28 @@ public class ItemGeoModelMappingsGenerator implements DataProvider {
         simple(ModItems.WOODWORKING_TABLE);
         simple(ModItems.LONG_STORAGE_TABLE);
         simple(ModItems.EDGED_CHALKBOARD);
+        simple(ModItems.SAUSAGE_MACE_WEAPON);
+
+        GeoModelData RAW_SAUSAGE_MACE_WEAPON = new GeoModelData(
+                new ResourceLocation("papercraft_magic_decoration:geo/sausage_mace_weapon.geo.json"),
+                new ResourceLocation("papercraft_magic_decoration:textures/block/raw_sausage_mace_weapon.png"),
+                new ResourceLocation("papercraft_magic_decoration:animations/sausage_mace_weapon.animation.json")
+        );
+        this.add("raw_sausage_mace_weapon", RAW_SAUSAGE_MACE_WEAPON);
+
+        GeoModelData MANGA_MEAT = new GeoModelData(
+                new ResourceLocation("papercraft_magic_decoration:geo/manga_meat.geo.json"),
+                new ResourceLocation("papercraft_magic_decoration:textures/block/manga_meat_grill.png"),
+                new ResourceLocation("papercraft_magic_decoration:animations/manga_meat.animation.json")
+        );
+        this.add("manga_meat", MANGA_MEAT);
+
+        GeoModelData RAW_MANGA_MEAT = new GeoModelData(
+                new ResourceLocation("papercraft_magic_decoration:geo/manga_meat.geo.json"),
+                new ResourceLocation("papercraft_magic_decoration:textures/block/raw_manga_meat_grill.png"),
+                new ResourceLocation("papercraft_magic_decoration:animations/manga_meat.animation.json")
+        );
+        this.add("raw_manga_meat", RAW_MANGA_MEAT);
     }
 
     public void simple(RegistryObject<Item> key) {

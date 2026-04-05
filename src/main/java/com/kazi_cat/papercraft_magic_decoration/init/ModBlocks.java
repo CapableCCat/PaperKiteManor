@@ -3,6 +3,10 @@ package com.kazi_cat.papercraft_magic_decoration.init;
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.block.*;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.*;
+import com.kazi_cat.papercraft_magic_decoration.block.food.ChunkySalmonBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.food.MangaMeatBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.food.MonsterSteakBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.food.TwoByOneSmeltableBlock;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -12,6 +16,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
@@ -34,6 +39,8 @@ import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.List;
 
 @SuppressWarnings({"DataFlowIssue","deprecation"})
 public interface ModBlocks {
@@ -425,6 +432,84 @@ public interface ModBlocks {
             return super.use(state, level, pos, player, hand, hitResult);
         }
     });
+
+    RegistryObject<Block> SAUSAGE_MACE_WEAPON_BLOCK = BLOCKS.register("sausage_mace_weapon", () ->
+            new TwoByOneSmeltableBlock.Animated(
+                    BlockBehaviour.Properties.of().sound(SoundType.SHROOMLIGHT).strength(1f, 4f).noOcclusion(),
+                    Shapes.or(
+                            Block.box(1, 1, 1, 15, 15, 15),
+                            Block.box(6, 6, -16, 10, 10, 0)
+                    ),
+                    Block.box(1, 1, 0, 15, 15, 15),
+                    100, 2, 21,
+                    () -> ModItems.RAW_SAUSAGE_MACE_WEAPON.get().getDefaultInstance(),
+                    () -> ModItems.SAUSAGE_MACE_WEAPON.get().getDefaultInstance()
+            ));
+
+    RegistryObject<Block> CHUNKY_SALMON = BLOCKS.register("chunky_salmon", () ->
+            new ChunkySalmonBlock(
+                    BlockBehaviour.Properties.of().sound(SoundType.SHROOMLIGHT).strength(1f, 4f).noOcclusion(),
+                    Block.box(0, 0, 0, 16, 10, 16),
+                    100, 0, 0,
+                    () -> ModItems.CHUNKY_SALMON.get().getDefaultInstance(),
+                    () -> ModItems.CHUNKY_SMOKED_SALMON.get().getDefaultInstance()
+            ));
+
+    RegistryObject<Block> SALMON_HEAD = BLOCKS.register("salmon_head", () ->
+            new TwoByOneSmeltableBlock(
+                    BlockBehaviour.Properties.of().sound(SoundType.SHROOMLIGHT).strength(1f, 4f).noOcclusion(),
+                    Block.box(0, 0, 0, 16, 20, 16),
+                    Block.box(0, 0, 0, 16, 20, 16),
+                    100, 0, 0,
+                    Items.SALMON::getDefaultInstance,
+                    () -> ModItems.SMOKED_SALMON_HEAD.get().getDefaultInstance()
+            ));
+
+    RegistryObject<Block> MANGA_MEAT = BLOCKS.register("manga_meat", () ->
+            new MangaMeatBlock(
+                    BlockBehaviour.Properties.of().sound(SoundType.SHROOMLIGHT).strength(1f, 4f).noOcclusion(),
+                    Block.box(1, 0, 0, 15, 15, 16),
+                    200, 4, 16,
+                    () -> new ItemStack(ModItems.RAW_MANGA_MEAT.get()),
+                    () -> new ItemStack(ModItems.MANGA_MEAT.get())
+            ));
+
+    RegistryObject<Block> MONSTER_STEAK = BLOCKS.register("monster_steak", () ->
+            new MonsterSteakBlock(
+                    BlockBehaviour.Properties.of().sound(SoundType.SHROOMLIGHT).strength(1f, 4f).noOcclusion(),
+                    Block.box(0, 0, 0, 16, 12, 16),
+                    100, 0, 0,
+                    () -> new ItemStack(ModItems.MONSTER_STEAK.get()),
+                    () -> ItemStack.EMPTY
+            ));
+
+    RegistryObject<Block> LARGE_STEAK = BLOCKS.register("large_steak", () -> new DecorationBlock.HorizontalDirectional.Variant(
+            BlockBehaviour.Properties.of().sound(SoundType.SHROOMLIGHT).strength(1f, 4f).noOcclusion(),
+            Block.box(0, 0, 0, 16, 12, 16), 6));
+
+    RegistryObject<Block> TRAY_BLOCK = BLOCKS.register("tray", () -> new DecorationBlock.HorizontalDirectional.Variant.Waterlogged(
+            BlockBehaviour.Properties.of().strength(0.5f, 10f).noOcclusion().noLootTable(),
+            Block.box(0, 0, 0, 16, 2, 16), 2
+    ));
+
+    // 可烤制方块实体
+    RegistryObject<BlockEntityType<SmeltableBlockEntity>> SMELTABLE_BE = BLOCK_ENTITIES.register(
+            "smeltable_block", () -> BlockEntityType.Builder
+                    .of(SmeltableBlockEntity::new,
+                            CHUNKY_SALMON.get(),
+                            SALMON_HEAD.get(),
+                            MONSTER_STEAK.get()
+                    ).build(null)
+    );
+
+    // 使用 GeckoLib 模型的可烤制方块
+    RegistryObject<BlockEntityType<SmeltableBlockEntity.Animated>> ANIMATED_SMELTABLE_BE = BLOCK_ENTITIES.register(
+            "geo_smeltable_block", () -> BlockEntityType.Builder
+                    .of(SmeltableBlockEntity.Animated::new,
+                            SAUSAGE_MACE_WEAPON_BLOCK.get(),
+                            MANGA_MEAT.get()
+                    ).build(null)
+    );
 
     @SuppressWarnings("all")
     private static RotatedPillarBlock log(MapColor topColor, MapColor sideColor) {
