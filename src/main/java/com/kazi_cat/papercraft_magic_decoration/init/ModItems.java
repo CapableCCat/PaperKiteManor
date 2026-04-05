@@ -199,4 +199,16 @@ public interface ModItems {
 
     RegistryObject<Item> FRIED_CHICKEN_LEG = ITEMS.register("fried_chicken_leg", () -> new Item(new Item.Properties()
             .food((new FoodProperties.Builder()).nutrition(8).saturationMod(0.6f).meat().build())));
+
+    // 折纸
+    RegistryObject<Item> LOW_CABINET_WITH_TABLECLOTH_ORIGAMI = ITEMS.register("low_cabinet_with_tablecloth_origami", () -> new Item(new Item.Properties()));
+    RegistryObject<Item> WOODEN_BARREL_BOOKSHELF_ORIGAMI = ITEMS.register("wooden_barrel_bookshelf_origami", () -> new Item(new Item.Properties()));
+    RegistryObject<Item> WOODWORKING_TABLE_ORIGAMI = ITEMS.register("woodworking_table_origami", () -> new Item(new Item.Properties()));
+    RegistryObject<Item> LONG_STORAGE_TABLE_ORIGAMI = ITEMS.register("long_storage_table_origami", () -> new Item(new Item.Properties()));
+    RegistryObject<Item> EDGED_CHALKBOARD_ORIGAMI = ITEMS.register("edged_chalkboard_origami", () -> new Item(new Item.Properties()));
+    RegistryObject<Item> CUPBOARD_ORIGAMI = ITEMS.register("cupboard_origami", () -> new Item(new Item.Properties()));
+    RegistryObject<Item> FIREPLACE_DECORATION_ORIGAMI = ITEMS.register("fireplace_decoration_origami", () -> new Item(new Item.Properties()));
+    RegistryObject<Item> LARGE_DINING_TABLE_ORIGAMI = ITEMS.register("large_dining_table_origami", () -> new Item(new Item.Properties()));
+    RegistryObject<Item> RED_VELVET_CHAISE_LONGUE_ORIGAMI = ITEMS.register("red_velvet_chaise_longue_origami", () -> new Item(new Item.Properties()));
+    RegistryObject<Item> OLD_ORGAN_ORIGAMI = ITEMS.register("old_organ_origami", () -> new Item(new Item.Properties()));
 }

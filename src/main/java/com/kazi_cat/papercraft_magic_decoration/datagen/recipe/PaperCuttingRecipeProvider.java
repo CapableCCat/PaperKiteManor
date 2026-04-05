@@ -49,5 +49,45 @@ public class PaperCuttingRecipeProvider extends ModRecipeProvider {
                 .setIngredient(ModItems.YELLOW_PAPER_BLOCK.get())
                 .setResult(new ItemStack(ModItems.YELLOW_PAPER.get(), 8))
                 .save(consumer);
+
+        PaperCuttingBuilder.builder()
+                .setIngredient(ModItems.LOW_CABINET_WITH_TABLECLOTH_ORIGAMI.get())
+                .setResult(ModItems.LOW_CABINET_WITH_TABLECLOTH.get())
+                .save(consumer);
+
+        PaperCuttingBuilder.builder()
+                .setIngredient(ModItems.WOODEN_BARREL_BOOKSHELF_ORIGAMI.get())
+                .setResult(ModItems.WOODEN_BARREL_BOOKSHELF.get())
+                .save(consumer);
+
+        PaperCuttingBuilder.builder()
+                .setIngredient(ModItems.WOODWORKING_TABLE_ORIGAMI.get())
+                .setResult(ModItems.WOODWORKING_TABLE.get())
+                .save(consumer);
+
+        PaperCuttingBuilder.builder()
+                .setIngredient(ModItems.LONG_STORAGE_TABLE_ORIGAMI.get())
+                .setResult(ModItems.LONG_STORAGE_TABLE.get())
+                .save(consumer);
+
+        PaperCuttingBuilder.builder()
+                .setIngredient(ModItems.EDGED_CHALKBOARD_ORIGAMI.get())
+                .setResult(ModItems.EDGED_CHALKBOARD.get())
+                .save(consumer);
+
+        PaperCuttingBuilder.builder()
+                .setIngredient(ModItems.CUPBOARD_ORIGAMI.get())
+                .setResult(ModItems.CUPBOARD.get())
+                .save(consumer);
+
+        PaperCuttingBuilder.builder()
+                .setIngredient(ModItems.FIREPLACE_DECORATION_ORIGAMI.get())
+                .setResult(ModItems.FIREPLACE_DECORATION.get())
+                .save(consumer);
+
+        PaperCuttingBuilder.builder()
+                .setIngredient(ModItems.LARGE_DINING_TABLE_ORIGAMI.get())
+                .setResult(ModItems.LARGE_DINING_TABLE.get())
+                .save(consumer);
     }
 }

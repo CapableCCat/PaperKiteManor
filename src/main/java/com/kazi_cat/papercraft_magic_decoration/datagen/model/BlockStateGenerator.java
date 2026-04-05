@@ -2,7 +2,6 @@ package com.kazi_cat.papercraft_magic_decoration.datagen.model;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.block.*;
-import com.kazi_cat.papercraft_magic_decoration.block.decoration.NinePart;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.ThreeByThreeBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.TwoByOneBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.TwoByThreeVerticalBlock;

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "papercraft_magic_decoration:blue_paper"
+    },
+    "B": {
+      "item": "papercraft_magic_decoration:white_paper"
+    }
+  },
+  "pattern": [
+    "ABA",
+    "BAB",
+    "ABA"
+  ],
+  "result": {
+    "item": "papercraft_magic_decoration:cupboard_origami"
+  },
+  "show_notification": true
+}

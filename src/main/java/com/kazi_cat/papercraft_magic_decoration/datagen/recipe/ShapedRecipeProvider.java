@@ -67,7 +67,104 @@ public class ShapedRecipeProvider extends ModRecipeProvider {
                 .define('C', Items.GLASS_BOTTLE)
                 .define('D', Items.SUGAR)
                 .define('E', Items.WHEAT)
-                .unlockedBy("hsa_wheat", has(Items.WHEAT))
+                .unlockedBy("has_wheat", has(Items.WHEAT))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.CUPBOARD_ORIGAMI.get())
+                .pattern("ABA")
+                .pattern("BAB")
+                .pattern("ABA")
+                .define('A', ModItems.BLUE_PAPER.get())
+                .define('B', ModItems.WHITE_PAPER.get())
+                .unlockedBy("has_amethyst_scissors", has(ModItems.AMETHYST_SCISSORS.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.EDGED_CHALKBOARD_ORIGAMI.get())
+                .pattern(" A ")
+                .pattern("BBB")
+                .pattern("BBB")
+                .define('A', ModItems.WHITE_PAPER.get())
+                .define('B', ModItems.BLUE_PAPER.get())
+                .unlockedBy("has_amethyst_scissors", has(ModItems.AMETHYST_SCISSORS.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.FIREPLACE_DECORATION_ORIGAMI.get())
+                .pattern("AAA")
+                .pattern("A A")
+                .pattern("BCB")
+                .define('A', ModItems.BLUE_PAPER.get())
+                .define('B', ModItems.WHITE_PAPER.get())
+                .define('C', ModItems.WHITE_PAPER_BLOCK.get())
+                .unlockedBy("has_amethyst_scissors", has(ModItems.AMETHYST_SCISSORS.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.LARGE_DINING_TABLE_ORIGAMI.get())
+                .pattern("AAA")
+                .pattern("AAA")
+                .pattern("BCB")
+                .define('A', ModItems.COTTON_SERGE.get())
+                .define('B', ModItems.BLUE_PAPER.get())
+                .define('C', ModItems.BLUE_PAPER_BLOCK.get())
+                .unlockedBy("has_amethyst_scissors", has(ModItems.AMETHYST_SCISSORS.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.LONG_STORAGE_TABLE_ORIGAMI.get())
+                .pattern("ABA")
+                .pattern("CCC")
+                .define('A', ModItems.BLUE_PAPER_BLOCK.get())
+                .define('B', ModItems.COTTON_SERGE.get())
+                .define('C', ModItems.BLUE_PAPER.get())
+                .unlockedBy("has_amethyst_scissors", has(ModItems.AMETHYST_SCISSORS.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.LOW_CABINET_WITH_TABLECLOTH_ORIGAMI.get())
+                .pattern("A")
+                .pattern("B")
+                .pattern("C")
+                .define('A', ModItems.COTTON_SERGE.get())
+                .define('B', ModItems.BLUE_PAPER_BLOCK.get())
+                .define('C', ModItems.BLUE_PAPER.get())
+                .unlockedBy("has_amethyst_scissors", has(ModItems.AMETHYST_SCISSORS.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.OLD_ORGAN_ORIGAMI.get())
+                .pattern("AAA")
+                .pattern("BCB")
+                .pattern("D D")
+                .define('A', ModItems.WHITE_PAPER.get())
+                .define('B', ModItems.BLUE_PAPER_BLOCK.get())
+                .define('C', ModItems.WHITE_PAPER_BLOCK.get())
+                .define('D', ModItems.BLUE_PAPER.get())
+                .unlockedBy("has_amethyst_scissors", has(ModItems.AMETHYST_SCISSORS.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.RED_VELVET_CHAISE_LONGUE_ORIGAMI.get())
+                .pattern("A  ")
+                .pattern("ABA")
+                .pattern("CDC")
+                .define('A', ModItems.COTTON_SERGE.get())
+                .define('B', ModItems.COTTON_SERGE_BLOCK.get())
+                .define('C', ModItems.BLUE_PAPER.get())
+                .define('D', ModItems.BLUE_PAPER_BLOCK.get())
+                .unlockedBy("has_amethyst_scissors", has(ModItems.AMETHYST_SCISSORS.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.WOODEN_BARREL_BOOKSHELF_ORIGAMI.get())
+                .pattern("AA ")
+                .pattern("AB ")
+                .pattern(" AA")
+                .define('A', ModItems.BLUE_PAPER.get())
+                .define('B', ModItems.COTTON_SERGE.get())
+                .unlockedBy("has_amethyst_scissors", has(ModItems.AMETHYST_SCISSORS.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.WOODWORKING_TABLE_ORIGAMI.get())
+                .pattern("AAA")
+                .pattern("ABA")
+                .pattern("AAA")
+                .define('A', ModItems.BLUE_PAPER.get())
+                .define('B', ModItems.BLUE_PAPER_BLOCK.get())
+                .unlockedBy("has_amethyst_scissors", has(ModItems.AMETHYST_SCISSORS.get()))
                 .save(consumer);
     }
 }

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "papercraft_magic_decoration:cotton_serge"
+    },
+    "B": {
+      "item": "papercraft_magic_decoration:blue_paper_block"
+    },
+    "C": {
+      "item": "papercraft_magic_decoration:blue_paper"
+    }
+  },
+  "pattern": [
+    "A",
+    "B",
+    "C"
+  ],
+  "result": {
+    "item": "papercraft_magic_decoration:low_cabinet_with_tablecloth_origami"
+  },
+  "show_notification": true
+}
