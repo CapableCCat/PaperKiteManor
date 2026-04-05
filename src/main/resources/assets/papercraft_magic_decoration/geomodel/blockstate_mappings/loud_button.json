@@ -1,0 +1,70 @@
+{
+  "variants" : {
+    "face=ceiling,facing=east,powered=false": "Ceiling",
+    "face=ceiling,facing=east,powered=true": "Ceiling",
+    "face=ceiling,facing=north,powered=false": "Ceiling",
+    "face=ceiling,facing=north,powered=true": "Ceiling",
+    "face=ceiling,facing=south,powered=false": "Ceiling",
+    "face=ceiling,facing=south,powered=true": "Ceiling",
+    "face=ceiling,facing=west,powered=false": "Ceiling",
+    "face=ceiling,facing=west,powered=true": "Ceiling",
+    "face=floor,facing=east,powered=false": "Floor",
+    "face=floor,facing=east,powered=true": "Floor",
+    "face=floor,facing=north,powered=false": "Floor",
+    "face=floor,facing=north,powered=true": "Floor",
+    "face=floor,facing=south,powered=false": "Floor",
+    "face=floor,facing=south,powered=true": "Floor",
+    "face=floor,facing=west,powered=false": "Floor",
+    "face=floor,facing=west,powered=true": "Floor",
+    "face=wall,facing=east,powered=false": "East",
+    "face=wall,facing=east,powered=true": "East",
+    "face=wall,facing=north,powered=false": "North",
+    "face=wall,facing=north,powered=true": "North",
+    "face=wall,facing=south,powered=false": "South",
+    "face=wall,facing=south,powered=true": "South",
+    "face=wall,facing=west,powered=false": "West",
+    "face=wall,facing=west,powered=true": "West"
+  },
+  "models" : {
+    "Floor" : {
+      "model": "papercraft_magic_decoration:geo/loud_button.geo.json",
+      "texture": "papercraft_magic_decoration:textures/block/loud_button.png",
+      "animation": "papercraft_magic_decoration:animations/loud_button.animation.json"
+    },
+    "Ceiling" : {
+      "model": "papercraft_magic_decoration:geo/loud_button.geo.json",
+      "texture": "papercraft_magic_decoration:textures/block/loud_button.png",
+      "animation": "papercraft_magic_decoration:animations/loud_button.animation.json",
+      "translation": [1, 1, 0],
+      "rotation" : [0, 0, 180]
+    },
+    "North" : {
+      "model": "papercraft_magic_decoration:geo/loud_button.geo.json",
+      "texture": "papercraft_magic_decoration:textures/block/loud_button.png",
+      "animation": "papercraft_magic_decoration:animations/loud_button.animation.json",
+      "translation": [0, 0, 1],
+      "rotation" : [-90, 0, 0]
+    },
+    "South" : {
+      "model": "papercraft_magic_decoration:geo/loud_button.geo.json",
+      "texture": "papercraft_magic_decoration:textures/block/loud_button.png",
+      "animation": "papercraft_magic_decoration:animations/loud_button.animation.json",
+      "translation": [0, 1, 0],
+      "rotation" : [90, 0, 0]
+    },
+    "East" : {
+      "model": "papercraft_magic_decoration:geo/loud_button.geo.json",
+      "texture": "papercraft_magic_decoration:textures/block/loud_button.png",
+      "animation": "papercraft_magic_decoration:animations/loud_button.animation.json",
+      "translation": [0, 1, 0],
+      "rotation" : [0, 0, -90]
+    },
+    "West" : {
+      "model": "papercraft_magic_decoration:geo/loud_button.geo.json",
+      "texture": "papercraft_magic_decoration:textures/block/loud_button.png",
+      "animation": "papercraft_magic_decoration:animations/loud_button.animation.json",
+      "translation": [1, 0, 0],
+      "rotation" : [0, 0, 90]
+    }
+  }
+}

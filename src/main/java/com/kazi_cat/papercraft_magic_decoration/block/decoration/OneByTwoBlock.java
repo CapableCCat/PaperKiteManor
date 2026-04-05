@@ -165,8 +165,8 @@ public class OneByTwoBlock extends HorizontalDirectionalBlock {
         @Override
         public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player,
                                      InteractionHand hand, BlockHitResult hitResult) {
-            if (player.getItemInHand(hand).isEmpty() && state.getValue(PART) == RIGHT) {
-                BlockPos leftPos = pos.relative(state.getValue(FACING).getClockWise());
+            if (player.getItemInHand(hand).isEmpty()) {
+                BlockPos leftPos = state.getValue(PART) == RIGHT ? pos.relative(state.getValue(FACING).getClockWise()) : pos;
                 BlockState leftState = level.getBlockState(leftPos);
                 if (leftState.is(state.getBlock()) && leftState.getValue(PART) == LEFT) {
                     if (level.getBlockEntity(leftPos) instanceof AnimatedBlockEntity animated) {

@@ -90,8 +90,11 @@ public class ItemModelGenerator extends ItemModelProvider {
         withExistingParent("rustic_blue_wallpaper_wall", modLoc("block/rustic_blue_wallpaper_wall"));
         withExistingParent("black_and_white_checker_board_tile", modLoc("block/black_and_white_checker_board_tile"));
         withExistingParent("blue_and_white_checker_board_tile", modLoc("block/blue_and_white_checker_board_tile"));
+        withExistingParent("loud_button", modLoc("displaysettings/loud_button"));
         withExistingParent("low_cabinet_with_tablecloth", modLoc("displaysettings/low_cabinet_with_tablecloth"));
         withExistingParent("wooden_barrel_bookshelf", modLoc("displaysettings/wooden_barrel_bookshelf"));
+        withExistingParent("woodworking_table", modLoc("displaysettings/woodworking_table"));
+        withExistingParent("long_storage_table", modLoc("displaysettings/long_storage_table"));
         withExistingParent("edged_chalkboard", modLoc("displaysettings/edged_chalkboard"));
     }
 

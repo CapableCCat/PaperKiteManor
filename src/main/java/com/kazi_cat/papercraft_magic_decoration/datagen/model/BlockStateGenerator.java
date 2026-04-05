@@ -7,6 +7,7 @@ import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
@@ -50,6 +51,8 @@ public class BlockStateGenerator extends BlockStateProvider {
         horizontalBlock(ModBlocks.CANOPY_TREE_TRUNK.get(), new ModelFile.UncheckedModelFile(modLoc("block/canopy_tree_trunk")));
         horizontalBlock(ModBlocks.LOW_CABINET_WITH_TABLECLOTH.get(), new ModelFile.UncheckedModelFile(modLoc("block/low_cabinet_with_tablecloth")));
         horizontalBlock(ModBlocks.WOODEN_BARREL_BOOKSHELF.get(), new ModelFile.UncheckedModelFile(modLoc("block/wooden_barrel_bookshelf")));
+        horizontalBlock(ModBlocks.WOODWORKING_TABLE.get(), new ModelFile.UncheckedModelFile(modLoc("block/woodworking_table")));
+        horizontalBlock(ModBlocks.LONG_STORAGE_TABLE.get(), new ModelFile.UncheckedModelFile(modLoc("block/long_storage_table")));
         horizontalBlock(ModBlocks.EDGED_CHALKBOARD.get(), new ModelFile.UncheckedModelFile(modLoc("block/edged_chalkboard")));
 
         simpleBlock(ModBlocks.WHITE_PAPER_BLOCK.get());
@@ -95,6 +98,10 @@ public class BlockStateGenerator extends BlockStateProvider {
         axisBlock((RotatedPillarBlock) ModBlocks.CANOPY_TREE_LIMB.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/canopy_tree_limb")),
                 new ModelFile.UncheckedModelFile(modLoc("block/canopy_tree_limb_horizontal")));
+
+        buttonBlock((ButtonBlock) ModBlocks.LOUD_BUTTON.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/loud_button")),
+                new ModelFile.UncheckedModelFile(modLoc("block/loud_button")));
     }
 
     public void drink(Block block, String name) {

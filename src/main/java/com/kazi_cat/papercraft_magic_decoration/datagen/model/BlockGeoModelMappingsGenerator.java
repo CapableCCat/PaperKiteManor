@@ -54,6 +54,8 @@ public class BlockGeoModelMappingsGenerator implements DataProvider {
         simple(ModBlocks.COPPER_BARTENDER);
         simple(ModBlocks.LOW_CABINET_WITH_TABLECLOTH);
         simple(ModBlocks.WOODEN_BARREL_BOOKSHELF);
+        simple(ModBlocks.WOODWORKING_TABLE);
+        simple(ModBlocks.LONG_STORAGE_TABLE);
         simple(ModBlocks.EDGED_CHALKBOARD);
     }
 

@@ -2,10 +2,7 @@ package com.kazi_cat.papercraft_magic_decoration.init;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.block.*;
-import com.kazi_cat.papercraft_magic_decoration.block.decoration.DecorationBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.decoration.TwoByOneBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.decoration.TwoByOneVerticalBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.decoration.TwoByThreeVerticalBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.decoration.*;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -329,6 +326,8 @@ public interface ModBlocks {
         }
     });
 
+    RegistryObject<Block> LOUD_BUTTON = BLOCKS.register("loud_button", LoudButtonBlock::new);
+
     RegistryObject<Block> LOW_CABINET_WITH_TABLECLOTH = BLOCKS.register("low_cabinet_with_tablecloth",
             () -> new DecorationBlock.HorizontalDirectional.Animated.Waterlogged(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_RED).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
@@ -339,6 +338,19 @@ public interface ModBlocks {
                     .mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
                     Block.box(0, 0, 0, 14, 16, 16)));
 
+    RegistryObject<Block> WOODWORKING_TABLE = BLOCKS.register("woodworking_table",
+            () -> new OneByTwoBlock.Animated.Waterlogged(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
+                    Block.box(1, 0, 0, 16, 16, 16),
+                    Block.box(0, 0, 0, 15, 16, 16)));
+
+    RegistryObject<Block> LONG_STORAGE_TABLE = BLOCKS.register("long_storage_table",
+            () -> new OneByThreeBlock.Animated.Waterlogged(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
+                    Block.box(1, 0, 0, 16, 15, 16),
+                    Block.box(0, 0, 0, 16, 15, 16),
+                    Block.box(0, 0, 0, 15, 15, 16)));
+
     RegistryObject<Block> EDGED_CHALKBOARD = BLOCKS.register("edged_chalkboard", () -> new TwoByThreeVerticalBlock.Animated.Waterlogged(
             BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
                     Block.box(0, 0, 13, 16, 16, 16)));
@@ -347,8 +359,11 @@ public interface ModBlocks {
     RegistryObject<BlockEntityType<AnimatedBlockEntity>> ANIMATED_BE = BLOCK_ENTITIES.register(
             "animated", () -> BlockEntityType.Builder
                     .of(AnimatedBlockEntity::new,
+                            LOUD_BUTTON.get(),
                             LOW_CABINET_WITH_TABLECLOTH.get(),
                             WOODEN_BARREL_BOOKSHELF.get(),
+                            WOODWORKING_TABLE.get(),
+                            LONG_STORAGE_TABLE.get(),
                             EDGED_CHALKBOARD.get()
                     ).build(null)
     );
