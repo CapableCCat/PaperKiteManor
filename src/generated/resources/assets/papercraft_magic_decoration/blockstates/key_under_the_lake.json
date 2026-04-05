@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/key_under_the_lake",
+      "y": 90
+    },
+    "facing=east,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/key_under_the_lake",
+      "y": 90
+    },
+    "facing=north,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/key_under_the_lake"
+    },
+    "facing=north,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/key_under_the_lake"
+    },
+    "facing=south,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/key_under_the_lake",
+      "y": 180
+    },
+    "facing=south,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/key_under_the_lake",
+      "y": 180
+    },
+    "facing=west,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/key_under_the_lake",
+      "y": 270
+    },
+    "facing=west,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/key_under_the_lake",
+      "y": 270
+    }
+  }
+}

@@ -31,6 +31,8 @@ public class BlockModelGenerator extends BlockModelProvider {
         cubeAll("woodworking_table", modLoc("block/woodworking_table"));
         cubeAll("long_storage_table", modLoc("block/long_storage_table"));
         cubeAll("edged_chalkboard", modLoc("block/edged_chalkboard"));
+        cubeAll("gift_from_kazi_manor", modLoc("block/gift_from_kazi_manor"));
+        cubeAll("key_under_the_lake", modLoc("block/key_under_the_lake"));
 
         cubeBottomTop("coffee_pastinaca_sativa_core",
                 modLoc("block/coffee_pastinaca_sativa_side"),

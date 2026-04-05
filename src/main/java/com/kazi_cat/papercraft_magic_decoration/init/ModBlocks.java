@@ -302,17 +302,6 @@ public interface ModBlocks {
             .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.WOOD).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
             Block.box(0, 0, 1, 16, 16, 16)));
 
-    RegistryObject<Block> ROSES_IN_WATER_BOTTLE = BLOCKS.register("roses_in_water_bottle", () -> new TwoByOneVerticalBlock.Waterlogged(BlockBehaviour.Properties.of()
-            .noOcclusion().pushReaction(PushReaction.DESTROY).sound(SoundType.GLASS),
-            Block.box(5.5, 0, 5.5, 10.5, 16, 10.5),
-            Block.box(0, 0, 0, 16, 8, 16)){
-        @Override
-        public VoxelShape getCollisionShape(BlockState state, BlockGetter blockGetter, BlockPos pos, CollisionContext context) {
-            if (state.getValue(PART) == 1) return Shapes.empty();
-            return getShape(state, blockGetter, pos, context);
-        }
-    });
-
     RegistryObject<Block> STAR_EMBELLISHED_CEILING = BLOCKS.register("star_embellished_ceiling", () -> new FaceAttachedHorizontalDirectionalBlock(
             BlockBehaviour.Properties.of().ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion()){
         @Override
@@ -325,6 +314,25 @@ public interface ModBlocks {
             builder.add(FACING, FACE);
         }
     });
+
+    RegistryObject<Block> ROSES_IN_WATER_BOTTLE = BLOCKS.register("roses_in_water_bottle", () -> new TwoByOneVerticalBlock.Waterlogged(BlockBehaviour.Properties.of()
+            .noOcclusion().pushReaction(PushReaction.DESTROY).sound(SoundType.GLASS),
+            Block.box(5.5, 0, 5.5, 10.5, 16, 10.5),
+            Block.box(0, 0, 0, 16, 8, 16)){
+        @Override
+        public VoxelShape getCollisionShape(BlockState state, BlockGetter blockGetter, BlockPos pos, CollisionContext context) {
+            if (state.getValue(PART) == 1) return Shapes.empty();
+            return getShape(state, blockGetter, pos, context);
+        }
+    });
+
+    RegistryObject<Block> GIFT_FROM_KAZI_MANOR = BLOCKS.register("gift_from_kazi_manor", () -> new DecorationBlock.HorizontalDirectional.Animated.Waterlogged(
+            BlockBehaviour.Properties.of().sound(SoundType.SNOW).strength(1f, 5f).noOcclusion(),
+            Block.box(2, 0, 2, 14, 10, 14)));
+
+    RegistryObject<Block> KEY_UNDER_THE_LAKE = BLOCKS.register("key_under_the_lake", () -> new DecorationBlock.HorizontalDirectional.Animated.Waterlogged(
+            BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1f, 5f).noOcclusion(),
+            Block.box(1, 0, 1, 15, 7, 15)));
 
     RegistryObject<Block> LOUD_BUTTON = BLOCKS.register("loud_button", LoudButtonBlock::new);
 
@@ -383,6 +391,8 @@ public interface ModBlocks {
             "animated", () -> BlockEntityType.Builder
                     .of(AnimatedBlockEntity::new,
                             LOUD_BUTTON.get(),
+                            GIFT_FROM_KAZI_MANOR.get(),
+                            KEY_UNDER_THE_LAKE.get(),
                             LOW_CABINET_WITH_TABLECLOTH.get(),
                             WOODEN_BARREL_BOOKSHELF.get(),
                             WOODWORKING_TABLE.get(),

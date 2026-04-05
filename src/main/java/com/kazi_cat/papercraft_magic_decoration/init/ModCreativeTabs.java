@@ -86,7 +86,6 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.UNDERGROUND_PANELLING.get());
                 output.accept(ModItems.STAR_EMBELLISHED_CEILING.get());
                 output.accept(ModItems.ROSES_IN_WATER_BOTTLE.get());
-                output.accept(ModItems.LOUD_BUTTON.get());
                 output.accept(ModItems.LOW_CABINET_WITH_TABLECLOTH.get());
                 output.accept(ModItems.WOODEN_BARREL_BOOKSHELF.get());
                 output.accept(ModItems.WOODWORKING_TABLE.get());
@@ -94,6 +93,10 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.EDGED_CHALKBOARD.get());
                 output.accept(ModItems.CUPBOARD.get());
                 output.accept(ModItems.FIREPLACE_DECORATION.get());
+
+                output.accept(ModItems.LOUD_BUTTON.get());
+                output.accept(ModItems.GIFT_FROM_KAZI_MANOR.get());
+                output.accept(ModItems.KEY_UNDER_THE_LAKE.get());
 
                 output.accept(ModItems.PALM_TREE_CROWN.get());
                 output.accept(ModItems.PALM_TREE_TOP.get());

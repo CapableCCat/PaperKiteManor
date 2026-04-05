@@ -51,6 +51,8 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.EDGED_CHALKBOARD.get());
         dropSelf(ModBlocks.CUPBOARD.get());
         dropSelf(ModBlocks.FIREPLACE_DECORATION.get());
+        dropSelf(ModBlocks.GIFT_FROM_KAZI_MANOR.get());
+        dropSelf(ModBlocks.KEY_UNDER_THE_LAKE.get());
 
         dropSelf(ModBlocks.CANOPY_TREE_DROOPING_ROOT.get());
         dropSelf(ModBlocks.CANOPY_TREE_FERN.get());

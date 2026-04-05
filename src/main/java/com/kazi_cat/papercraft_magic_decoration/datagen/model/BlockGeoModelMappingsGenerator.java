@@ -57,6 +57,8 @@ public class BlockGeoModelMappingsGenerator implements DataProvider {
         simple(ModBlocks.WOODWORKING_TABLE);
         simple(ModBlocks.LONG_STORAGE_TABLE);
         simple(ModBlocks.EDGED_CHALKBOARD);
+        simple(ModBlocks.GIFT_FROM_KAZI_MANOR);
+        simple(ModBlocks.KEY_UNDER_THE_LAKE);
     }
 
     public void simple(RegistryObject<Block> block) {

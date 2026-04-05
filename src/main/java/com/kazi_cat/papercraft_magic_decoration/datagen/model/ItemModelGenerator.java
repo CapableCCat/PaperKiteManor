@@ -56,6 +56,8 @@ public class ItemModelGenerator extends ItemModelProvider {
         basicItem(ModItems.VITALITY_SPORES.get());
         basicItem(ModItems.WHISKEY_RAW.get());
         basicItem(ModItems.COPPER_STILL.get());
+        basicItem(ModItems.GIFT_FROM_KAZI_MANOR.get());
+        basicItem(ModItems.KEY_UNDER_THE_LAKE.get());
 
         handheldItem(ModItems.GARDEN_TROWEL.get());
 
