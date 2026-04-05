@@ -3,6 +3,7 @@ package com.kazi_cat.papercraft_magic_decoration.datagen.model;
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.block.*;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.TwoByOneBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.decoration.TwoByThreeVerticalBlock;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -87,6 +88,9 @@ public class BlockStateGenerator extends BlockStateProvider {
         twoPart(ModBlocks.COFFEE_PASTINACA_SATIVA_RIM.get(), "coffee_pastinaca_sativa_rim");
         twoPart(ModBlocks.ROSES_IN_WATER_BOTTLE.get(), "roses_in_water_bottle");
 
+        sixPart(ModBlocks.CUPBOARD.get(), "cupboard");
+        sixPart(ModBlocks.FIREPLACE_DECORATION.get(), "fireplace_decoration");
+
         getVariantBuilder(ModBlocks.SPORES_COLLECTION_PLATE.get()).forAllStates(state -> {
             boolean filled = state.getValue(SporesCollectionPlateBlock.FILLED);
             ResourceLocation file = modLoc("block/spores_collection_plate%s".formatted(filled ? "_filled" : ""));
@@ -149,6 +153,14 @@ public class BlockStateGenerator extends BlockStateProvider {
     public void twoPart(Block block, String name) {
         horizontalBlock(block, blockState -> {
             int part = blockState.getValue(TwoByOneBlock.PART);
+            ResourceLocation file = modLoc("block/%s%d".formatted(name, part));
+            return new ModelFile.UncheckedModelFile(file);
+        });
+    }
+
+    public void sixPart(Block block, String name) {
+        horizontalBlock(block, blockState -> {
+            int part = blockState.getValue(TwoByThreeVerticalBlock.PART);
             ResourceLocation file = modLoc("block/%s%d".formatted(name, part));
             return new ModelFile.UncheckedModelFile(file);
         });

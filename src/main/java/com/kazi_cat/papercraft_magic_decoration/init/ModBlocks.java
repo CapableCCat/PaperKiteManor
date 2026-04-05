@@ -355,6 +355,29 @@ public interface ModBlocks {
             BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
                     Block.box(0, 0, 13, 16, 16, 16)));
 
+    RegistryObject<Block> CUPBOARD = BLOCKS.register("cupboard", () -> new TwoByThreeVerticalBlock.Waterlogged(BlockBehaviour.Properties.of()
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
+            Block.box(0, 0, 12, 16, 16, 16)));
+
+    RegistryObject<Block> FIREPLACE_DECORATION = BLOCKS.register("fireplace_decoration", () -> new TwoByThreeVerticalBlock.Waterlogged(BlockBehaviour.Properties.of()
+            .instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.WOOD).strength(3f, 15f).noOcclusion(),
+            Block.box(0, 0, 9, 15, 16, 16),
+            Block.box(0, 0, 0, 0, 0, 0),
+            Block.box(1, 0, 9, 16, 16, 16),
+            Shapes.or(
+                    Block.box(0, 0, 9, 15, 16, 16),
+                    Block.box(0, 10, 2, 16, 16, 16)
+            ),
+            Shapes.or(
+                    Block.box(0, 0, 9, 16, 16, 16),
+                    Block.box(0, 10, 2, 16, 16, 16)
+            ),
+            Shapes.or(
+                    Block.box(1, 0, 9, 16, 16, 16),
+                    Block.box(0, 10, 2, 16, 16, 16)
+            )
+    ));
+
     // 使用简单geckolib动画的通用方块实体
     RegistryObject<BlockEntityType<AnimatedBlockEntity>> ANIMATED_BE = BLOCK_ENTITIES.register(
             "animated", () -> BlockEntityType.Builder

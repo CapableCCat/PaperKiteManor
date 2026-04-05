@@ -176,8 +176,8 @@ public class TwoByThreeVerticalBlock extends HorizontalDirectionalBlock {
     public static class Waterlogged extends TwoByThreeVerticalBlock implements SimpleWaterloggedBlock {
         public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
-        public Waterlogged(Properties properties, VoxelShape below, VoxelShape above) {
-            super(properties, below, above);
+        public Waterlogged(BlockBehaviour.Properties properties, VoxelShape... shapes) {
+            super(properties, shapes);
 
             StateDefinition.Builder<Block, BlockState> builder = new StateDefinition.Builder<>(this);
             this.overrideBlockStateDefinition(builder);
