@@ -1,14 +1,8 @@
 package com.kazi_cat.papercraft_magic_decoration.init;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
-import com.kazi_cat.papercraft_magic_decoration.crafting.recipe.DistillerRecipe;
-import com.kazi_cat.papercraft_magic_decoration.crafting.recipe.MixologyRecipe;
-import com.kazi_cat.papercraft_magic_decoration.crafting.recipe.PaperCuttingRecipe;
-import com.kazi_cat.papercraft_magic_decoration.crafting.recipe.PaperMakingRecipe;
-import com.kazi_cat.papercraft_magic_decoration.crafting.serializer.DistillerRecipeSerializer;
-import com.kazi_cat.papercraft_magic_decoration.crafting.serializer.MixologyRecipeSerializer;
-import com.kazi_cat.papercraft_magic_decoration.crafting.serializer.PaperCuttingRecipeSerializer;
-import com.kazi_cat.papercraft_magic_decoration.crafting.serializer.PaperMakingRecipeSerializer;
+import com.kazi_cat.papercraft_magic_decoration.crafting.recipe.*;
+import com.kazi_cat.papercraft_magic_decoration.crafting.serializer.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;

@@ -32,6 +32,8 @@ public class ItemModelGenerator extends ItemModelProvider {
         handheld3DDrinkItem("bloody_mary");
         handheld3DDrinkItem("diplomatico_coffee");
         handheld3DDrinkItem("devil_margarita");
+        handheld3DDrinkItem("dionysus");
+        handheld3DDrinkItem("kaleidoscope_whiskey_sour");
         handheld3DDrinkItem("guang_s");
 
         basicItem(ModItems.NOCTURNAL_CAT_COFFEE.get());

@@ -68,6 +68,8 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.BLOODY_MARY.get());
                 output.accept(ModItems.DEVIL_MARGARITA.get());
                 output.accept(ModItems.DIPLOMATICO_COFFEE.get());
+                output.accept(ModItems.DIONYSUS.get());
+                output.accept(ModItems.KALEIDOSCOPE_WHISKEY_SOUR.get());
                 output.accept(ModItems.NOCTURNAL_CAT_COFFEE.get());
                 output.accept(ModItems.GOLD_MEDAL_COFFEE.get());
                 output.accept(ModItems.GUANG_S.get());

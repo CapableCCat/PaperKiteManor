@@ -9,7 +9,6 @@ import com.kazi_cat.papercraft_magic_decoration.block.decoration.TwoByOneBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.TwoByThreeVerticalBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.food.ChunkySalmonBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.food.MonsterSteakBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.food.SmeltableBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.food.TwoByOneSmeltableBlock;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import net.minecraft.data.PackOutput;
@@ -40,6 +39,8 @@ public class BlockStateGenerator extends BlockStateProvider {
         drink(ModBlocks.BLOODY_MARY.get(), "bloody_mary");
         drink(ModBlocks.DEVIL_MARGARITA.get(), "devil_margarita");
         drink(ModBlocks.DIPLOMATICO_COFFEE.get(), "diplomatico_coffee");
+        drink(ModBlocks.DIONYSUS.get(), "dionysus");
+        drink(ModBlocks.KALEIDOSCOPE_WHISKEY_SOUR.get(), "kaleidoscope_whiskey_sour");
         drink(ModBlocks.NOCTURNAL_CAT_COFFEE.get(), "nocturnal_cat_coffee");
         drink(ModBlocks.GOLD_MEDAL_COFFEE.get(), "gold_medal_coffee");
 

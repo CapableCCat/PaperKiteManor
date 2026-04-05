@@ -40,16 +40,25 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.List;
-
 @SuppressWarnings({"DataFlowIssue","deprecation"})
 public interface ModBlocks {
     DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, PaperKiteManor.MOD_ID);
     DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, PaperKiteManor.MOD_ID);
 
     // 饮品方块
-    RegistryObject<Block> BLAZE_WHISKEY = BLOCKS.register("blaze_whiskey", DrinkBlock.create().maxCount(1).shapes(
-            Block.box(4, 0, 4, 12, 9, 12)
+    RegistryObject<Block> BLAZE_WHISKEY = BLOCKS.register("blaze_whiskey", DrinkBlock.create().maxCount(3).shapes(
+            Block.box(4, 0, 4, 12, 9, 12),
+            Shapes.or(
+                    Block.box(1, 0, 1, 15, 1, 15),
+                    Block.box(2, 1, 2, 9, 10, 9),
+                    Block.box(8.5, 1, 8.5, 13.5, 10, 13.5)
+            ),
+            Shapes.or(
+                    Block.box(1, 0, 1, 15, 1, 15),
+                    Block.box(5, 1, 1.5, 11.5, 10, 8),
+                    Block.box(1.5, 1, 8, 8, 10, 14),
+                    Block.box(9, 1, 9, 14, 10, 14)
+            )
     ).build());
 
     RegistryObject<Block> FERRY_WHISKEY = BLOCKS.register("ferry_whiskey", DrinkBlock.create().maxCount(1).shapes(
@@ -90,6 +99,14 @@ public interface ModBlocks {
             Block.box(4, 0, 4, 12, 10, 12)
     ).build());
 
+    RegistryObject<Block> DIONYSUS = BLOCKS.register("dionysus", DrinkBlock.create().maxCount(1).shapes(
+            Block.box(4, 0, 4, 12, 10, 12)
+    ).build());
+
+    RegistryObject<Block> KALEIDOSCOPE_WHISKEY_SOUR = BLOCKS.register("kaleidoscope_whiskey_sour", DrinkBlock.create().maxCount(1).shapes(
+            Block.box(4, 0, 4, 12, 8.5, 12)
+    ).build());
+
     RegistryObject<Block> NOCTURNAL_CAT_COFFEE = BLOCKS.register("nocturnal_cat_coffee", DrinkBlock.create().maxCount(1).shapes(
             Block.box(4, 0, 4, 12, 6, 12)
     ).build(BlockBehaviour.Properties.of().noOcclusion().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.WOOD)));
@@ -124,6 +141,8 @@ public interface ModBlocks {
                             BLOODY_MARY.get(),
                             DIPLOMATICO_COFFEE.get(),
                             DEVIL_MARGARITA.get(),
+                            DIONYSUS.get(),
+                            KALEIDOSCOPE_WHISKEY_SOUR.get(),
                             NOCTURNAL_CAT_COFFEE.get(),
                             GOLD_MEDAL_COFFEE.get(),
                             GUANG_S.get()

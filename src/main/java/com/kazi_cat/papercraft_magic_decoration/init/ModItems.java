@@ -82,6 +82,12 @@ public interface ModItems {
     RegistryObject<Item> DEVIL_MARGARITA = ITEMS.register("devil_margarita",
             () -> new DrinkBlockItem(ModBlocks.DEVIL_MARGARITA.get(), DrinkBlockItem.defaultFood.get().build()));
 
+    RegistryObject<Item> DIONYSUS = ITEMS.register("dionysus",
+            () -> new DrinkBlockItem(ModBlocks.DIONYSUS.get(), DrinkBlockItem.defaultFood.get().build()));
+
+    RegistryObject<Item> KALEIDOSCOPE_WHISKEY_SOUR = ITEMS.register("kaleidoscope_whiskey_sour",
+            () -> new DrinkBlockItem(ModBlocks.KALEIDOSCOPE_WHISKEY_SOUR.get(), DrinkBlockItem.defaultFood.get().build()));
+
     RegistryObject<Item> NOCTURNAL_CAT_COFFEE = ITEMS.register("nocturnal_cat_coffee",
             () -> new DrinkBlockItem(ModBlocks.NOCTURNAL_CAT_COFFEE.get(), DrinkBlockItem.defaultFood.get().build()));
 
