@@ -52,6 +52,8 @@ public class BlockGeoModelMappingsGenerator implements DataProvider {
     private void addMappings() {
         simple(ModBlocks.PAPER_CUTTING_TABLE);
         simple(ModBlocks.COPPER_BARTENDER);
+        simple(ModBlocks.LOW_CABINET_WITH_TABLECLOTH);
+        simple(ModBlocks.WOODEN_BARREL_BOOKSHELF);
         simple(ModBlocks.EDGED_CHALKBOARD);
     }
 

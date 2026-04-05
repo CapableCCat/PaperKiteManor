@@ -1,4 +1,4 @@
-package com.kazi_cat.papercraft_magic_decoration.block;
+package com.kazi_cat.papercraft_magic_decoration.block.decoration;
 
 
 import com.kazi_cat.papercraft_magic_decoration.api.block.IRenderBoundingBoxProvider;
@@ -40,7 +40,7 @@ import java.util.EnumMap;
 import java.util.List;
 
 @SuppressWarnings("deprecation")
-public class VerticalTwoByThreeBlock extends HorizontalDirectionalBlock {
+public class TwoByThreeVerticalBlock extends HorizontalDirectionalBlock {
     public static final IntegerProperty PART = IntegerProperty.create("part", 0, 5);
     public static final int LEFT_DOWN = 0;
     public static final int CENTER_DOWN = 1;
@@ -50,7 +50,7 @@ public class VerticalTwoByThreeBlock extends HorizontalDirectionalBlock {
     public static final int RIGHT_UP = 5;
     protected final Int2ObjectArrayMap<EnumMap<Direction, VoxelShape>> shapeMap;
 
-    public VerticalTwoByThreeBlock(BlockBehaviour.Properties properties, VoxelShape... shapes) {
+    public TwoByThreeVerticalBlock(BlockBehaviour.Properties properties, VoxelShape... shapes) {
         super(properties);
 
         shapeMap = new Int2ObjectArrayMap<>();
@@ -173,7 +173,7 @@ public class VerticalTwoByThreeBlock extends HorizontalDirectionalBlock {
     }
 
 
-    public static class Waterlogged extends VerticalTwoByThreeBlock implements SimpleWaterloggedBlock {
+    public static class Waterlogged extends TwoByThreeVerticalBlock implements SimpleWaterloggedBlock {
         public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
         public Waterlogged(Properties properties, VoxelShape below, VoxelShape above) {
@@ -208,7 +208,7 @@ public class VerticalTwoByThreeBlock extends HorizontalDirectionalBlock {
     }
 
 
-    public static class Animated extends VerticalTwoByThreeBlock implements EntityBlock, IRenderBoundingBoxProvider {
+    public static class Animated extends TwoByThreeVerticalBlock implements EntityBlock, IRenderBoundingBoxProvider {
         public Animated(BlockBehaviour.Properties properties, VoxelShape... shapes) {
             super(properties, shapes);
         }
