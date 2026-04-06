@@ -2,21 +2,21 @@
   "type": "papercraft_magic_decoration:distiller",
   "ingredients": [
     {
-      "item": "minecraft:apple"
+      "item": "minecraft:torchflower"
     },
     {
-      "item": "minecraft:apple"
+      "item": "minecraft:torchflower"
     },
     {
-      "item": "minecraft:apple"
+      "item": "minecraft:torchflower"
     },
     {
-      "item": "minecraft:apple"
+      "item": "minecraft:torchflower"
     }
   ],
   "result": {
     "count": 1,
-    "item": "papercraft_magic_decoration:bottle_of_land_no1"
+    "item": "papercraft_magic_decoration:pack_of_guang_s"
   },
   "time": 1200,
   "wineBase": {

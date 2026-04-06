@@ -39,7 +39,7 @@ public interface ModItems {
             () -> new DrinkBlockItem(ModBlocks.FLY_WHISKEY.get(), DrinkBlockItem.defaultFood.get()
                     .effect(() -> new MobEffectInstance(MobEffects.SLOW_FALLING, 2400, 1), 1)
                     .effect(() -> new MobEffectInstance(MobEffects.LEVITATION, 1200, 1), 1)
-                    .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 1400, 1), 1)
+                    .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 400, 1), 1)
                     .build()));
 
     RegistryObject<Item> LAND_NO1 = ITEMS.register("land_no1",
@@ -80,22 +80,41 @@ public interface ModItems {
                     .build()));
 
     RegistryObject<Item> DEVIL_MARGARITA = ITEMS.register("devil_margarita",
-            () -> new DrinkBlockItem(ModBlocks.DEVIL_MARGARITA.get(), DrinkBlockItem.defaultFood.get().build()));
+            () -> new DrinkBlockItem(ModBlocks.DEVIL_MARGARITA.get(), DrinkBlockItem.defaultFood.get()
+                    .effect(() -> new MobEffectInstance(ModEffects.BLOODTHIRSTY_DEVIL.get(), 1200, 0), 1)
+                    .build()));
 
     RegistryObject<Item> DIONYSUS = ITEMS.register("dionysus",
-            () -> new DrinkBlockItem(ModBlocks.DIONYSUS.get(), DrinkBlockItem.defaultFood.get().build()));
+            () -> new DrinkBlockItem(ModBlocks.DIONYSUS.get(), DrinkBlockItem.defaultFood.get()
+                    .effect(() -> new MobEffectInstance(ModEffects.WINES_AROMA.get(), 2400, 0), 1)
+                    .build()));
 
     RegistryObject<Item> KALEIDOSCOPE_WHISKEY_SOUR = ITEMS.register("kaleidoscope_whiskey_sour",
-            () -> new DrinkBlockItem(ModBlocks.KALEIDOSCOPE_WHISKEY_SOUR.get(), DrinkBlockItem.defaultFood.get().build()));
+            () -> new DrinkBlockItem(ModBlocks.KALEIDOSCOPE_WHISKEY_SOUR.get(), DrinkBlockItem.defaultFood.get()
+                    .effect(() -> new MobEffectInstance(ModEffects.ACID_JAZZ.get(), 2400, 0), 1)
+                    .build()));
 
     RegistryObject<Item> NOCTURNAL_CAT_COFFEE = ITEMS.register("nocturnal_cat_coffee",
-            () -> new DrinkBlockItem(ModBlocks.NOCTURNAL_CAT_COFFEE.get(), DrinkBlockItem.defaultFood.get().build()));
+            () -> new DrinkBlockItem(ModBlocks.NOCTURNAL_CAT_COFFEE.get(), DrinkBlockItem.defaultFood.get()
+                    .effect(() -> new MobEffectInstance(ModEffects.CAT_EYE.get(), 6000, 0), 1)
+                    .effect(() -> new MobEffectInstance(MobEffects.NIGHT_VISION, 6000, 0), 1)
+                    .build()));
 
     RegistryObject<Item> GOLD_MEDAL_COFFEE = ITEMS.register("gold_medal_coffee",
-            () -> new DrinkBlockItem(ModBlocks.GOLD_MEDAL_COFFEE.get(), DrinkBlockItem.defaultFood.get().build()));
+            () -> new DrinkBlockItem(ModBlocks.GOLD_MEDAL_COFFEE.get(), DrinkBlockItem.defaultFood.get()
+                    .effect(() -> new MobEffectInstance(ModEffects.CAT_EYE.get(), 6000, 0), 1)
+                    .effect(() -> new MobEffectInstance(MobEffects.NIGHT_VISION, 6000, 0), 1)
+                    .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 400, 1), 1)
+                    .effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 6000, 0), 1)
+                    .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 6000, 3), 1)
+                    .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, 2400, 3), 1)
+                    .build()));
 
     RegistryObject<Item> GUANG_S = ITEMS.register("guang_s",
-            () -> new DrinkBlockItem(ModBlocks.GUANG_S.get(), DrinkBlockItem.defaultFood.get().build()));
+            () -> new DrinkBlockItem(ModBlocks.GUANG_S.get(), DrinkBlockItem.defaultFood.get()
+                    .effect(() -> new MobEffectInstance(MobEffects.SATURATION, 120, 0), 1)
+                    .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 6000, 1), 1)
+                    .build()));
 
     RegistryObject<Item> PACK_OF_GUANG_S = ITEMS.register("pack_of_guang_s", PackOfGuangSItem::new);
 
