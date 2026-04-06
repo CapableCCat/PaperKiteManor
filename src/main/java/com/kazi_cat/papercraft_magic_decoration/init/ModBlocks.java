@@ -223,6 +223,13 @@ public interface ModBlocks {
     RegistryObject<BlockEntityType<DistillerBlockEntity>> DISTILLER_BE = BLOCK_ENTITIES.register("distiller",
             () -> BlockEntityType.Builder.of(DistillerBlockEntity::new, COPPER_STILL.get()).build(null));
 
+    // 摩卡壶方块
+    RegistryObject<Block> MOCHA_POT = BLOCKS.register("mocha_pot", MochaPotBlock::new);
+
+    // 摩卡壶方块实体
+    RegistryObject<BlockEntityType<MochaPotBlockEntity>> MOCHA_POT_BE = BLOCK_ENTITIES.register("mocha_pot",
+            () -> BlockEntityType.Builder.of(MochaPotBlockEntity::new, MOCHA_POT.get()).build(null));
+
     // 土坑方块
     RegistryObject<Block> DIRT_HOLE = BLOCKS.register("dirt_hole", DirtHoleBlock::new);
 
@@ -330,9 +337,20 @@ public interface ModBlocks {
     RegistryObject<Block> RUSTIC_BLUE_WALLPAPER_WALL = BLOCKS.register("rustic_blue_wallpaper_wall", () -> new Block(BlockBehaviour.Properties.of()
             .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.COLOR_BLUE).sound(SoundType.WOOD).strength(2f, 3f)));
 
+    RegistryObject<Block> EMERALD_BLUE_EARTH_TILE = BLOCKS.register("emerald_blue_earth_tile", () -> new Block(BlockBehaviour.Properties.of()
+            .instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.TERRACOTTA_WHITE).sound(SoundType.STONE).strength(1.5f, 10f).requiresCorrectToolForDrops()));
+
     RegistryObject<Block> UNDERGROUND_PANELLING = BLOCKS.register("underground_panelling", () -> new DecorationBlock.HorizontalDirectional(BlockBehaviour.Properties.of()
             .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.WOOD).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
             Block.box(0, 0, 1, 16, 16, 16)));
+
+    RegistryObject<Block> RUSTIC_PANELLING = BLOCKS.register("rustic_panelling", () -> new DecorationBlock.HorizontalDirectional(BlockBehaviour.Properties.of()
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.WOOD).strength(1f, 3f),
+            Block.box(0, 0, 1, 16, 16, 16)));
+
+    RegistryObject<Block> UNDERGROUND_DOOR_FRAMES = BLOCKS.register("underground_door_frames", () -> new DecorationBlock.HorizontalDirectional.Waterlogged(BlockBehaviour.Properties.of()
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.WOOD).sound(SoundType.WOOD).strength(1f, 3f).noCollission().noOcclusion(),
+            Block.box(-7, 8, 12, 23, 32, 16)));
 
     RegistryObject<Block> STAR_EMBELLISHED_CEILING = BLOCKS.register("star_embellished_ceiling", () -> new FaceAttachedHorizontalDirectionalBlock(
             BlockBehaviour.Properties.of().ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion()){

@@ -19,6 +19,7 @@ public interface ModCreativeTabs {
 
                 output.accept(ModItems.COPPER_STILL.get());
                 output.accept(ModItems.COPPER_BARTENDER.get());
+                output.accept(ModItems.MOCHA_POT.get());
                 output.accept(ModItems.SPORES_COLLECTION_PLATE.get());
                 output.accept(ModItems.PAPER_CUTTING_TABLE.get());
 
@@ -113,6 +114,9 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.BLUE_AND_WHITE_CHECKER_BOARD_TILE.get());
 
                 output.accept(ModItems.UNDERGROUND_PANELLING.get());
+                output.accept(ModItems.RUSTIC_PANELLING.get());
+                output.accept(ModItems.UNDERGROUND_DOOR_FRAMES.get());
+                output.accept(ModItems.EMERALD_BLUE_EARTH_TILE.get());
                 output.accept(ModItems.STAR_EMBELLISHED_CEILING.get());
                 output.accept(ModItems.ROSES_IN_WATER_BOTTLE.get());
                 output.accept(ModItems.LOW_CABINET_WITH_TABLECLOTH.get());

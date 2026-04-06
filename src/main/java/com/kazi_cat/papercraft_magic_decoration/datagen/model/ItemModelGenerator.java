@@ -132,6 +132,10 @@ public class ItemModelGenerator extends ItemModelProvider {
         withExistingParent("raw_manga_meat", modLoc("displaysettings/manga_meat"))
                 .texture("layer0", "papercraft_magic_decoration:block/raw_manga_meat_grill");
         withExistingParent("kazi_lucky_cat", modLoc("displaysettings/kazi_lucky_cat"));
+        withExistingParent("mocha_pot", modLoc("block/mocha_pot"));
+        withExistingParent("emerald_blue_earth_tile", modLoc("block/emerald_blue_earth_tile"));
+        withExistingParent("rustic_panelling", modLoc("block/rustic_panelling"));
+        withExistingParent("underground_door_frames", modLoc("block/underground_door_frames"));
     }
 
     public ItemModelBuilder handheldItem(Item item) {

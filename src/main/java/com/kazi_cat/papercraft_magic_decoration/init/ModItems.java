@@ -179,6 +179,9 @@ public interface ModItems {
     // 蒸馏器
     RegistryObject<Item> COPPER_STILL = ITEMS.register("copper_still", () -> new BlockItem(ModBlocks.COPPER_STILL.get(), new Item.Properties()));
 
+    // 摩卡壶
+    RegistryObject<Item> MOCHA_POT = ITEMS.register("mocha_pot", MochaPotItem::new);
+
     // 孢子收集盆
     RegistryObject<Item> SPORES_COLLECTION_PLATE = ITEMS.register("spores_collection_plate", () -> new BlockItem(ModBlocks.SPORES_COLLECTION_PLATE.get(), new Item.Properties()));
 
@@ -204,7 +207,10 @@ public interface ModItems {
     RegistryObject<Item> BLUE_AND_WHITE_CHECKER_BOARD_TILE = ITEMS.register("blue_and_white_checker_board_tile", () -> new BlockItem(ModBlocks.BLUE_AND_WHITE_CHECKER_BOARD_TILE.get(), new Item.Properties()));
     RegistryObject<Item> UNDERGROUND_WALLPAPER_WALL = ITEMS.register("underground_wallpaper_wall", () -> new BlockItem(ModBlocks.UNDERGROUND_WALLPAPER_WALL.get(), new Item.Properties()));
     RegistryObject<Item> RUSTIC_BLUE_WALLPAPER_WALL = ITEMS.register("rustic_blue_wallpaper_wall", () -> new BlockItem(ModBlocks.RUSTIC_BLUE_WALLPAPER_WALL.get(), new Item.Properties()));
+    RegistryObject<Item> EMERALD_BLUE_EARTH_TILE = ITEMS.register("emerald_blue_earth_tile", () -> new BlockItem(ModBlocks.EMERALD_BLUE_EARTH_TILE.get(), new Item.Properties()));
     RegistryObject<Item> UNDERGROUND_PANELLING = ITEMS.register("underground_panelling", () -> new BlockItem(ModBlocks.UNDERGROUND_PANELLING.get(), new Item.Properties()));
+    RegistryObject<Item> RUSTIC_PANELLING = ITEMS.register("rustic_panelling", () -> new BlockItem(ModBlocks.RUSTIC_PANELLING.get(), new Item.Properties()));
+    RegistryObject<Item> UNDERGROUND_DOOR_FRAMES = ITEMS.register("underground_door_frames", () -> new BlockItem(ModBlocks.UNDERGROUND_DOOR_FRAMES.get(), new Item.Properties()));
     RegistryObject<Item> ROSES_IN_WATER_BOTTLE = ITEMS.register("roses_in_water_bottle", () -> new BlockItem(ModBlocks.ROSES_IN_WATER_BOTTLE.get(), new Item.Properties()));
     RegistryObject<Item> STAR_EMBELLISHED_CEILING = ITEMS.register("star_embellished_ceiling", () -> new BlockItem(ModBlocks.STAR_EMBELLISHED_CEILING.get(), new Item.Properties()));
 

@@ -94,6 +94,13 @@ public class BlockStateGenerator extends BlockStateProvider {
             return new ModelFile.UncheckedModelFile(file);
         });
         horizontalBlock(ModBlocks.KAZI_LUCKY_CAT.get(), new ModelFile.UncheckedModelFile(modLoc("block/kazi_lucky_cat")));
+        horizontalBlock(ModBlocks.MOCHA_POT.get(), state -> {
+            boolean boiled = state.getValue(MochaPotBlock.BOILED);
+            ResourceLocation file = modLoc("block/mocha_pot%s".formatted(boiled ? "_boiled" : ""));
+            return new ModelFile.UncheckedModelFile(file);
+        });
+        horizontalBlock(ModBlocks.UNDERGROUND_DOOR_FRAMES.get(), new ModelFile.UncheckedModelFile(modLoc("block/underground_door_frames")));
+        horizontalBlock(ModBlocks.RUSTIC_PANELLING.get(), new ModelFile.UncheckedModelFile(modLoc("block/rustic_panelling")));
 
         simpleBlock(ModBlocks.WHITE_PAPER_BLOCK.get());
         simpleBlock(ModBlocks.BLUE_PAPER_BLOCK.get());
@@ -119,6 +126,7 @@ public class BlockStateGenerator extends BlockStateProvider {
         simpleBlock(ModBlocks.CANOPY_TREE_MUSHROOM.get(), new ModelFile.UncheckedModelFile(modLoc("block/canopy_tree_mushroom")));
         simpleBlock(ModBlocks.BLACK_AND_WHITE_CHECKER_BOARD_TILE.get(), new ModelFile.UncheckedModelFile(modLoc("block/black_and_white_checker_board_tile")));
         simpleBlock(ModBlocks.BLUE_AND_WHITE_CHECKER_BOARD_TILE.get(), new ModelFile.UncheckedModelFile(modLoc("block/blue_and_white_checker_board_tile")));
+        simpleBlock(ModBlocks.EMERALD_BLUE_EARTH_TILE.get(), new ModelFile.UncheckedModelFile(modLoc("block/emerald_blue_earth_tile")));
 
         distiller(ModBlocks.COPPER_STILL.get(), "copper_still");
 
