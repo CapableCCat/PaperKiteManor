@@ -133,6 +133,7 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.GIFT_FROM_KAZI_MANOR.get());
                 output.accept(ModItems.KEY_UNDER_THE_LAKE.get());
 
+                output.accept(ModItems.MINI_PALM_TREE.get());
                 output.accept(ModItems.PALM_TREE_CROWN.get());
                 output.accept(ModItems.PALM_TREE_TOP.get());
                 output.accept(ModItems.PALM_TREE_TRUNK_TOP.get());

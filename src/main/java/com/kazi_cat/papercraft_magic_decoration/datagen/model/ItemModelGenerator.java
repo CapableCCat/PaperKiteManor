@@ -136,6 +136,7 @@ public class ItemModelGenerator extends ItemModelProvider {
         withExistingParent("emerald_blue_earth_tile", modLoc("block/emerald_blue_earth_tile"));
         withExistingParent("rustic_panelling", modLoc("block/rustic_panelling"));
         withExistingParent("underground_door_frames", modLoc("block/underground_door_frames"));
+        withExistingParent("mini_palm_tree", modLoc("block/mini_palm_tree"));
     }
 
     public ItemModelBuilder handheldItem(Item item) {

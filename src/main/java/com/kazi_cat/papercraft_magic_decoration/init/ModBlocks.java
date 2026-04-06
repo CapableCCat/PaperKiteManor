@@ -10,6 +10,7 @@ import com.kazi_cat.papercraft_magic_decoration.block.food.TwoByOneSmeltableBloc
 import com.kazi_cat.papercraft_magic_decoration.blockentity.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntityType;
@@ -259,6 +260,17 @@ public interface ModBlocks {
             BlockBehaviour.Properties.of().ignitedByLava().instabreak().sound(SoundType.LILY_PAD).noCollission().pushReaction(PushReaction.DESTROY).replaceable()));
 
     // 棕榈树
+    RegistryObject<Block> MINI_PALM_TREE = BLOCKS.register("mini_palm_tree", () -> new TemplateSaplingBlock(BlockBehaviour.Properties.of()
+                    .randomTicks().ignitedByLava().mapColor(MapColor.COLOR_GREEN).sound(SoundType.GRASS).strength(0.5f, 10f).noCollission().noOcclusion().dynamicShape().offsetType(Block.OffsetType.XZ),
+            new ResourceLocation[] {
+                    PaperKiteManor.resourceLocation("palm_tree_a"),
+                    PaperKiteManor.resourceLocation("palm_tree_b"),
+                    PaperKiteManor.resourceLocation("palm_tree_c"),
+                    PaperKiteManor.resourceLocation("palm_tree_d"),
+                    PaperKiteManor.resourceLocation("palm_tree_e"),
+                    PaperKiteManor.resourceLocation("palm_tree_f")
+            }));
+
     RegistryObject<Block> PALM_TREE_CROWN = BLOCKS.register("palm_tree_crown", () -> new DecorationBlock.HorizontalDirectional.Waterlogged(BlockBehaviour.Properties.of()
             .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.PLANT).sound(SoundType.AZALEA_LEAVES).instabreak().noCollission().noOcclusion(),
             Block.box(-16, -16, -16, 16, 32, 16)));
