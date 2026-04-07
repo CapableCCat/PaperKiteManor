@@ -9,8 +9,8 @@ import net.minecraft.world.phys.AABB;
 
 import java.util.List;
 
-public class CatEye extends BaseEffect {
-    public CatEye(int color) { super(color); }
+public class CatEyeEffect extends BaseEffect {
+    public CatEyeEffect(int color) { super(color); }
 
     @Override
     public boolean isDurationEffectTick(int duration, int amplifier) {

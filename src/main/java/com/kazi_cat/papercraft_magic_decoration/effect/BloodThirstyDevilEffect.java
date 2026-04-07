@@ -9,8 +9,8 @@ import net.minecraft.world.phys.AABB;
 
 import java.util.List;
 
-public class BloodThirstyDevil extends BaseEffect {
-    public BloodThirstyDevil(int color) { super(color); }
+public class BloodThirstyDevilEffect extends BaseEffect {
+    public BloodThirstyDevilEffect(int color) { super(color); }
 
     @Override
     public boolean isDurationEffectTick(int duration, int amplifier) {

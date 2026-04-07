@@ -195,7 +195,9 @@ public interface ModItems {
 
     // 荫幕树
     RegistryObject<Item> GLOW_CASHEWS = ITEMS.register("glow_cashews", () -> new ItemNameBlockItem(ModBlocks.UMBRELLA_CASHEW.get(), new Item.Properties()
-            .food((new FoodProperties.Builder()).nutrition(2).saturationMod(0.2f).build())));
+            .food((new FoodProperties.Builder()).nutrition(2).saturationMod(0.2f)
+                    .effect(() -> new MobEffectInstance(ModEffects.SKY_TRACTION.get(), 2400, 0), 1)
+                    .build())));
     RegistryObject<Item> MINI_CANOPY_TREE = ITEMS.register("mini_canopy_tree", () -> new BlockItem(ModBlocks.MINI_CANOPY_TREE.get(), new Item.Properties()));
     RegistryObject<Item> CANOPY_TREE_LIMB = ITEMS.register("canopy_tree_limb", () -> new BlockItem(ModBlocks.CANOPY_TREE_LIMB.get(), new Item.Properties()));
     RegistryObject<Item> CANOPY_TREE_FOLIAGE = ITEMS.register("canopy_tree_foliage", () -> new BlockItem(ModBlocks.CANOPY_TREE_FOLIAGE.get(), new Item.Properties()));
