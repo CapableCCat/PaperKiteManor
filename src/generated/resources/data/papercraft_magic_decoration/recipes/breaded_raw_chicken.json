@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:chicken"
+    },
+    "B": {
+      "item": "minecraft:wheat"
+    },
+    "C": {
+      "item": "minecraft:paper"
+    }
+  },
+  "pattern": [
+    "ABA",
+    "BAB",
+    "CCC"
+  ],
+  "result": {
+    "item": "papercraft_magic_decoration:breaded_raw_chicken"
+  },
+  "show_notification": true
+}

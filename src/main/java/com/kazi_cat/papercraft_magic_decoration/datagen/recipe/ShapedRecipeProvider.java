@@ -166,5 +166,87 @@ public class ShapedRecipeProvider extends ModRecipeProvider {
                 .define('B', ModItems.BLUE_PAPER_BLOCK.get())
                 .unlockedBy("has_amethyst_scissors", has(ModItems.AMETHYST_SCISSORS.get()))
                 .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.KEY_UNDER_THE_LAKE.get(), 4)
+                .pattern(" A ")
+                .pattern("ABA")
+                .pattern(" A ")
+                .define('A', ModItems.BLACK_PAPER.get())
+                .define('B', Items.AMETHYST_SHARD)
+                .unlockedBy("has_amethyst_shard", has(Items.AMETHYST_SHARD))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.BREADED_RAW_CHICKEN.get())
+                .pattern("ABA")
+                .pattern("BAB")
+                .pattern("CCC")
+                .define('A', Items.CHICKEN)
+                .define('B', Items.WHEAT)
+                .define('C', Items.PAPER)
+                .unlockedBy("has_chicken", has(Items.CHICKEN))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.GARDEN_TROWEL.get())
+                .pattern("  A")
+                .pattern(" B ")
+                .pattern("B  ")
+                .define('A', Items.IRON_INGOT)
+                .define('B', Items.BAMBOO)
+                .unlockedBy("has_iron_ingot", has(Items.IRON_INGOT))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.JUMBO_SALMON.get())
+                .pattern("AAA")
+                .pattern("AAA")
+                .pattern("BBB")
+                .define('A', Items.SALMON)
+                .define('B', Items.BAMBOO_TRAPDOOR)
+                .unlockedBy("has_salmon", has(Items.SALMON))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.RAW_MANGA_MEAT.get())
+                .pattern(" A ")
+                .pattern("BAB")
+                .pattern(" A ")
+                .define('A', Items.BEEF)
+                .define('B', Items.BAMBOO)
+                .unlockedBy("has_beef", has(Items.BEEF))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.MONSTER_STEAK.get())
+                .pattern("AAA")
+                .pattern("AAA")
+                .pattern("BBB")
+                .define('A', Items.BEEF)
+                .define('B', Items.BAMBOO_TRAPDOOR)
+                .unlockedBy("has_beef", has(Items.BEEF))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.RAW_SAUSAGE_MACE_WEAPON.get())
+                .pattern("ABA")
+                .pattern("BAB")
+                .pattern(" C ")
+                .define('A', Items.WHEAT)
+                .define('B', Items.PORKCHOP)
+                .define('C', Items.BAMBOO)
+                .unlockedBy("has_porkchop", has(Items.PORKCHOP))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModItems.SPORES_COLLECTION_PLATE.get())
+                .pattern("A A")
+                .pattern("ABA")
+                .define('A', Items.BAMBOO)
+                .define('B', Items.HONEY_BOTTLE)
+                .unlockedBy("has_honey_bottle", has(Items.HONEY_BOTTLE))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.MOCHA_POT.get())
+                .pattern(" A ")
+                .pattern("A A")
+                .pattern(" B ")
+                .define('A', Items.IRON_INGOT)
+                .define('B', Items.BUCKET)
+                .unlockedBy("has_iron_ingot", has(Items.IRON_INGOT))
+                .save(consumer);
     }
 }
