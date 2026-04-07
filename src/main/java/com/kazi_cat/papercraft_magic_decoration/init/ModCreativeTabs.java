@@ -84,6 +84,7 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.PACK_OF_GUANG_S.get());
 
                 output.accept(ModItems.COFFEE_PASTINACA_SATIVA_TUBER.get());
+                output.accept(ModItems.GLOW_CASHEWS.get());
 
                 output.accept(ModItems.BREADED_RAW_CHICKEN.get());
                 output.accept(ModItems.BUCKET_OF_FRIED_CHICKEN.get());
@@ -140,6 +141,7 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.PALM_TREE_TRUNK.get());
                 output.accept(ModItems.ROUGH_PALM_TREE_TRUNK.get());
 
+                output.accept(ModItems.MINI_CANOPY_TREE.get());
                 output.accept(ModItems.CANOPY_TREE_FOLIAGE.get());
                 output.accept(ModItems.CANOPY_TREE_FERN.get());
                 output.accept(ModItems.CANOPY_TREE_DROOPING_ROOT.get());

@@ -79,6 +79,7 @@ public class ItemModelGenerator extends ItemModelProvider {
         basicItem(ModItems.MONSTER_STEAK.get());
         basicItem(ModItems.LARGE_STEAK.get());
         basicItem(ModItems.JUMBO_SALMON.get());
+        basicItem(ModItems.GLOW_CASHEWS.get());
 
         handheldItem(ModItems.GARDEN_TROWEL.get());
 
@@ -137,6 +138,7 @@ public class ItemModelGenerator extends ItemModelProvider {
         withExistingParent("rustic_panelling", modLoc("block/rustic_panelling"));
         withExistingParent("underground_door_frames", modLoc("block/underground_door_frames"));
         withExistingParent("mini_palm_tree", modLoc("block/mini_palm_tree"));
+        withExistingParent("mini_canopy_tree", modLoc("block/mini_canopy_tree"));
     }
 
     public ItemModelBuilder handheldItem(Item item) {

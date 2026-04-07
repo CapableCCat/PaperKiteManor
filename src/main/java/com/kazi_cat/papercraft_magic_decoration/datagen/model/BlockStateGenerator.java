@@ -3,6 +3,7 @@ package com.kazi_cat.papercraft_magic_decoration.datagen.model;
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.api.block.ISmeltableBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.*;
+import com.kazi_cat.papercraft_magic_decoration.block.crop.UmbrellaCashewBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.DecorationBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.ThreeByThreeBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.TwoByOneBlock;
@@ -101,6 +102,11 @@ public class BlockStateGenerator extends BlockStateProvider {
         });
         horizontalBlock(ModBlocks.UNDERGROUND_DOOR_FRAMES.get(), new ModelFile.UncheckedModelFile(modLoc("block/underground_door_frames")));
         horizontalBlock(ModBlocks.RUSTIC_PANELLING.get(), new ModelFile.UncheckedModelFile(modLoc("block/rustic_panelling")));
+        horizontalBlock(ModBlocks.UMBRELLA_CASHEW.get(), state -> {
+            boolean mature = state.getValue(UmbrellaCashewBlock.MATURE);
+            ResourceLocation file = modLoc("block/umbrella_cashew%s".formatted(mature ? "_mature" : ""));
+            return new ModelFile.UncheckedModelFile(file);
+        });
 
         simpleBlock(ModBlocks.WHITE_PAPER_BLOCK.get());
         simpleBlock(ModBlocks.BLUE_PAPER_BLOCK.get());
@@ -128,6 +134,7 @@ public class BlockStateGenerator extends BlockStateProvider {
         simpleBlock(ModBlocks.BLUE_AND_WHITE_CHECKER_BOARD_TILE.get(), new ModelFile.UncheckedModelFile(modLoc("block/blue_and_white_checker_board_tile")));
         simpleBlock(ModBlocks.EMERALD_BLUE_EARTH_TILE.get(), new ModelFile.UncheckedModelFile(modLoc("block/emerald_blue_earth_tile")));
         simpleBlock(ModBlocks.MINI_PALM_TREE.get(), new ModelFile.UncheckedModelFile(modLoc("block/mini_palm_tree")));
+        simpleBlock(ModBlocks.MINI_CANOPY_TREE.get(), new ModelFile.UncheckedModelFile(modLoc("block/mini_canopy_tree")));
 
         distiller(ModBlocks.COPPER_STILL.get(), "copper_still");
 

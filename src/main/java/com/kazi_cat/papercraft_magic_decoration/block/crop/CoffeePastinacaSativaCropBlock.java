@@ -1,4 +1,4 @@
-package com.kazi_cat.papercraft_magic_decoration.block;
+package com.kazi_cat.papercraft_magic_decoration.block.crop;
 
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
@@ -65,6 +65,7 @@ public class CoffeePastinacaSativaCropBlock extends CropBlock {
 
     @Override
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        if (!level.isAreaLoaded(pos, 2)) return;
         if (random.nextFloat() < 0.5) {
             if (getAge(state) < MAX_AGE) {
                 super.randomTick(state, level, pos, random);

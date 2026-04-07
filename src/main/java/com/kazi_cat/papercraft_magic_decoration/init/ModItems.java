@@ -194,6 +194,9 @@ public interface ModItems {
     RegistryObject<Item> ROUGH_PALM_TREE_TRUNK = ITEMS.register("rough_palm_tree_trunk", () -> new BlockItem(ModBlocks.ROUGH_PALM_TREE_TRUNK.get(), new Item.Properties()));
 
     // 荫幕树
+    RegistryObject<Item> GLOW_CASHEWS = ITEMS.register("glow_cashews", () -> new ItemNameBlockItem(ModBlocks.UMBRELLA_CASHEW.get(), new Item.Properties()
+            .food((new FoodProperties.Builder()).nutrition(2).saturationMod(0.2f).build())));
+    RegistryObject<Item> MINI_CANOPY_TREE = ITEMS.register("mini_canopy_tree", () -> new BlockItem(ModBlocks.MINI_CANOPY_TREE.get(), new Item.Properties()));
     RegistryObject<Item> CANOPY_TREE_LIMB = ITEMS.register("canopy_tree_limb", () -> new BlockItem(ModBlocks.CANOPY_TREE_LIMB.get(), new Item.Properties()));
     RegistryObject<Item> CANOPY_TREE_FOLIAGE = ITEMS.register("canopy_tree_foliage", () -> new BlockItem(ModBlocks.CANOPY_TREE_FOLIAGE.get(), new Item.Properties()));
     RegistryObject<Item> CANOPY_TREE_FERN = ITEMS.register("canopy_tree_fern", () -> new BlockItem(ModBlocks.CANOPY_TREE_FERN.get(), new Item.Properties()));

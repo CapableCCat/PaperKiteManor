@@ -2,6 +2,8 @@ package com.kazi_cat.papercraft_magic_decoration.init;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.block.*;
+import com.kazi_cat.papercraft_magic_decoration.block.crop.CoffeePastinacaSativaCropBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.crop.UmbrellaCashewBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.*;
 import com.kazi_cat.papercraft_magic_decoration.block.food.ChunkySalmonBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.food.MangaMeatBlock;
@@ -261,7 +263,7 @@ public interface ModBlocks {
 
     // 棕榈树
     RegistryObject<Block> MINI_PALM_TREE = BLOCKS.register("mini_palm_tree", () -> new TemplateSaplingBlock(BlockBehaviour.Properties.of()
-                    .randomTicks().ignitedByLava().mapColor(MapColor.COLOR_GREEN).sound(SoundType.GRASS).strength(0.5f, 10f).noCollission().noOcclusion().dynamicShape().offsetType(Block.OffsetType.XZ),
+                    .randomTicks().ignitedByLava().mapColor(MapColor.COLOR_GREEN).sound(SoundType.GRASS).strength(0.5f, 10f).noCollission().noOcclusion(),
             new ResourceLocation[] {
                     PaperKiteManor.resourceLocation("palm_tree_a"),
                     PaperKiteManor.resourceLocation("palm_tree_b"),
@@ -292,9 +294,28 @@ public interface ModBlocks {
             Block.box(2, 0, 2, 14, 16, 14)));
 
     // 荫幕树
+    RegistryObject<Block> UMBRELLA_CASHEW = BLOCKS.register("umbrella_cashew", () -> new UmbrellaCashewBlock(BlockBehaviour.Properties.of()
+            .ignitedByLava().sound(SoundType.CAVE_VINES).strength(0.2f, 3f).noOcclusion(),
+            Block.box(5, 11, 5, 11, 16, 11),
+            Block.box(3, 0, 3, 13, 16, 13)));
+
+    RegistryObject<Block> MINI_CANOPY_TREE = BLOCKS.register("mini_canopy_tree", () -> new TemplateSaplingBlock(BlockBehaviour.Properties.of()
+            .randomTicks().ignitedByLava().mapColor(MapColor.COLOR_GREEN).sound(SoundType.GRASS).strength(0.5f, 10f).noCollission().noOcclusion(),
+            new ResourceLocation[]{
+                    PaperKiteManor.resourceLocation("canopy_tree_a"),
+                    PaperKiteManor.resourceLocation("canopy_tree_b"),
+                    PaperKiteManor.resourceLocation("canopy_tree_c"),
+                    PaperKiteManor.resourceLocation("canopy_tree_d"),
+                    PaperKiteManor.resourceLocation("canopy_tree_e"),
+                    PaperKiteManor.resourceLocation("canopy_tree_f")
+            }));
+
     RegistryObject<Block> CANOPY_TREE_LIMB = BLOCKS.register("canopy_tree_limb", () -> log(MapColor.COLOR_BROWN, MapColor.COLOR_BROWN));
 
-    RegistryObject<Block> CANOPY_TREE_FOLIAGE = BLOCKS.register("canopy_tree_foliage", () -> leaves(SoundType.GRASS));
+    RegistryObject<Block> CANOPY_TREE_FOLIAGE = BLOCKS.register("canopy_tree_foliage", () -> new DecorationBlock.HorizontalDirectional(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.GRASS).noOcclusion().isValidSpawn(ModBlocks::ocelotOrParrot)
+            .isSuffocating(ModBlocks::never).ignitedByLava().pushReaction(PushReaction.DESTROY).isRedstoneConductor(ModBlocks::never),
+            Block.box(0, 0, 0, 16, 16, 16)));
 
     RegistryObject<Block> CANOPY_TREE_FERN = BLOCKS.register("canopy_tree_fern", () -> new MossBlock(BlockBehaviour.Properties.of()
             .mapColor(MapColor.COLOR_GREEN).strength(0.1F).sound(SoundType.MOSS).pushReaction(PushReaction.DESTROY)){

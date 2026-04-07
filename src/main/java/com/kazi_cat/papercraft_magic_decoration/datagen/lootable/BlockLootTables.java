@@ -26,7 +26,6 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.LAND_NO1.get());
         dropSelf(ModBlocks.LUCKY_CACTUS.get());
         dropSelf(ModBlocks.POISON_RUM.get());
-
         dropSelf(ModBlocks.WHITE_PAPER_BLOCK.get());
         dropSelf(ModBlocks.BLUE_PAPER_BLOCK.get());
         dropSelf(ModBlocks.BLACK_PAPER_BLOCK.get());
@@ -34,12 +33,10 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.YELLOW_PAPER_BLOCK.get());
         dropSelf(ModBlocks.DEWY_MEMBRANE_BLOCK.get());
         dropSelf(ModBlocks.COTTON_SERGE_BLOCK.get());
-
         dropSelf(ModBlocks.PAPER_CUTTING_TABLE.get());
         dropSelf(ModBlocks.COPPER_BARTENDER.get());
         dropSelf(ModBlocks.COPPER_STILL.get());
         dropSelf(ModBlocks.SPORES_COLLECTION_PLATE.get());
-
         dropSelf(ModBlocks.UNDERGROUND_PANELLING.get());
         dropSelf(ModBlocks.ROSES_IN_WATER_BOTTLE.get());
         dropSelf(ModBlocks.STAR_EMBELLISHED_CEILING.get());
@@ -54,14 +51,17 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.LARGE_DINING_TABLE.get());
         dropSelf(ModBlocks.GIFT_FROM_KAZI_MANOR.get());
         dropSelf(ModBlocks.KEY_UNDER_THE_LAKE.get());
-
         dropSelf(ModBlocks.CANOPY_TREE_DROOPING_ROOT.get());
         dropSelf(ModBlocks.CANOPY_TREE_FERN.get());
         dropSelf(ModBlocks.CANOPY_TREE_FOLIAGE.get());
         dropSelf(ModBlocks.CANOPY_TREE_MUSHROOM.get());
         dropSelf(ModBlocks.CANOPY_TREE_TRUNK.get());
         dropSelf(ModBlocks.CANOPY_TREE_LIMB.get());
-
+        dropSelf(ModBlocks.PALM_TREE_CROWN.get());
+        dropSelf(ModBlocks.PALM_TREE_TRUNK.get());
+        dropSelf(ModBlocks.PALM_TREE_TOP.get());
+        dropSelf(ModBlocks.PALM_TREE_TRUNK_TOP.get());
+        dropSelf(ModBlocks.ROUGH_PALM_TREE_TRUNK.get());
         dropSelf(ModBlocks.WINE_AROMA_RED_WALLPAPER_WALL.get());
         dropSelf(ModBlocks.WINE_AROMA_BLUE_WALLPAPER_WALL.get());
         dropSelf(ModBlocks.UNDERGROUND_WALLPAPER_WALL.get());
@@ -69,8 +69,10 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.BLACK_AND_WHITE_CHECKER_BOARD_TILE.get());
         dropSelf(ModBlocks.BLUE_AND_WHITE_CHECKER_BOARD_TILE.get());
         dropSelf(ModBlocks.KAZI_LUCKY_CAT.get());
-
+        dropSelf(ModBlocks.UMBRELLA_CASHEW.get());
         dropSelf(ModBlocks.BUCKET_OF_FRIED_CHICKEN.get());
+        dropSelf(ModBlocks.MINI_CANOPY_TREE.get());
+        dropSelf(ModBlocks.MINI_PALM_TREE.get());
 
         dropOther(ModBlocks.DIRT_HOLE.get(), Items.DIRT);
         dropOther(ModBlocks.COFFEE_PASTINACA_SATIVA.get(), ModItems.COFFEE_FRUIT.get());

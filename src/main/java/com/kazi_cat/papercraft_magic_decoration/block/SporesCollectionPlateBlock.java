@@ -107,7 +107,7 @@ public class SporesCollectionPlateBlock extends Block implements SimpleWaterlogg
 
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-        if (!level.isClientSide() && state.getValue(FILLED) && player.getMainHandItem().is(Items.GLASS_BOTTLE)) {
+        if (state.getValue(FILLED) && player.getMainHandItem().is(Items.GLASS_BOTTLE)) {
             player.getMainHandItem().shrink(1);
             ItemUtils.spawnItemEntity(level, pos.getCenter(), ModItems.VITALITY_SPORES.get().getDefaultInstance(), Vec3.ZERO);
             level.setBlockAndUpdate(pos, state.setValue(FILLED, false));
