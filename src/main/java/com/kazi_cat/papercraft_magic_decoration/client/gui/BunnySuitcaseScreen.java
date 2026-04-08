@@ -1,17 +1,17 @@
 package com.kazi_cat.papercraft_magic_decoration.client.gui;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
-import com.kazi_cat.papercraft_magic_decoration.inventory.container.DirtHoleContainer;
+import com.kazi_cat.papercraft_magic_decoration.inventory.container.BunnySuitcaseContainer;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-public class DirtHoleScreen extends AbstractContainerScreen<DirtHoleContainer> {
-    public static final ResourceLocation backgroundImage = PaperKiteManor.resourceLocation("textures/screens/dirt_hole.png");
+public class BunnySuitcaseScreen extends AbstractContainerScreen<BunnySuitcaseContainer> {
+    public static final ResourceLocation backgroundImage = PaperKiteManor.resourceLocation("textures/screens/bunny_suitcase.png");
 
-    public DirtHoleScreen(DirtHoleContainer container, Inventory inventory, Component title) {
+    public BunnySuitcaseScreen(BunnySuitcaseContainer container, Inventory inventory, Component title) {
         super(container, inventory, title);
         this.imageWidth = 176;
         this.imageHeight = 166;

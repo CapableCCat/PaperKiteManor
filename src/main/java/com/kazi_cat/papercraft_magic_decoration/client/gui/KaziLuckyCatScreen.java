@@ -9,7 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 public class KaziLuckyCatScreen extends AbstractContainerScreen<KaziLuckyCatContainer> {
-    public static final ResourceLocation backgroundImage = PaperKiteManor.resourceLocation("textures/screens/kazi_lucky_cat_ui.png");
+    public static final ResourceLocation backgroundImage = PaperKiteManor.resourceLocation("textures/screens/kazi_lucky_cat.png");
 
     public KaziLuckyCatScreen(KaziLuckyCatContainer container, Inventory inventory, Component title) {
         super(container, inventory, title);

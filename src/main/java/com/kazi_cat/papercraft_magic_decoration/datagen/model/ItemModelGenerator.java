@@ -139,6 +139,7 @@ public class ItemModelGenerator extends ItemModelProvider {
         withExistingParent("underground_door_frames", modLoc("block/underground_door_frames"));
         withExistingParent("mini_palm_tree", modLoc("block/mini_palm_tree"));
         withExistingParent("mini_canopy_tree", modLoc("block/mini_canopy_tree"));
+        withExistingParent("vodka", modLoc("block/vodka"));
     }
 
     public ItemModelBuilder handheldItem(Item item) {

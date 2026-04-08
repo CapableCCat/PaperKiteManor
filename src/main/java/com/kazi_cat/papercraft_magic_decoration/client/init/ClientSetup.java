@@ -1,5 +1,6 @@
 package com.kazi_cat.papercraft_magic_decoration.client.init;
 
+import com.kazi_cat.papercraft_magic_decoration.client.gui.BunnySuitcaseScreen;
 import com.kazi_cat.papercraft_magic_decoration.client.gui.CopperBartenderScreen;
 import com.kazi_cat.papercraft_magic_decoration.client.gui.DirtHoleScreen;
 import com.kazi_cat.papercraft_magic_decoration.client.gui.KaziLuckyCatScreen;
@@ -10,8 +11,10 @@ import com.kazi_cat.papercraft_magic_decoration.client.render.block.DistillerBlo
 import com.kazi_cat.papercraft_magic_decoration.client.render.block.DrinkBlockRenderer;
 import com.kazi_cat.papercraft_magic_decoration.client.render.block.PaperCuttingTableBlockRenderer;
 import com.kazi_cat.papercraft_magic_decoration.client.render.entity.AoaoRenderer;
+import com.kazi_cat.papercraft_magic_decoration.client.render.entity.WhiteRabbitMaidRenderer;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import com.kazi_cat.papercraft_magic_decoration.init.ModEntities;
+import com.kazi_cat.papercraft_magic_decoration.inventory.container.BunnySuitcaseContainer;
 import com.kazi_cat.papercraft_magic_decoration.inventory.container.CopperBartenderContainer;
 import com.kazi_cat.papercraft_magic_decoration.inventory.container.DirtHoleContainer;
 import com.kazi_cat.papercraft_magic_decoration.inventory.container.KaziLuckyCatContainer;
@@ -32,6 +35,7 @@ public class ClientSetup {
         event.enqueueWork(() -> MenuScreens.register(CopperBartenderContainer.TYPE, CopperBartenderScreen::new));
         event.enqueueWork(() -> MenuScreens.register(DirtHoleContainer.TYPE, DirtHoleScreen::new));
         event.enqueueWork(() -> MenuScreens.register(KaziLuckyCatContainer.TYPE, KaziLuckyCatScreen::new));
+        event.enqueueWork(() -> MenuScreens.register(BunnySuitcaseContainer.TYPE, BunnySuitcaseScreen::new));
     }
 
     @SubscribeEvent
@@ -46,5 +50,7 @@ public class ClientSetup {
 
         event.registerEntityRenderer(ModEntities.AOAO.get(), AoaoRenderer::new);
         event.registerEntityRenderer(ModEntities.FLYING_CHICKEN.get(), ThrownItemRenderer::new);
+        event.registerEntityRenderer(ModEntities.WHITE_RABBIT_MAID.get(), WhiteRabbitMaidRenderer::new);
+        event.registerEntityRenderer(ModEntities.THROWN_VODKA.get(), ThrownItemRenderer::new);
     }
 }

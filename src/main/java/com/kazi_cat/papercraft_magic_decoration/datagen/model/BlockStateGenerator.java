@@ -135,6 +135,7 @@ public class BlockStateGenerator extends BlockStateProvider {
         simpleBlock(ModBlocks.EMERALD_BLUE_EARTH_TILE.get(), new ModelFile.UncheckedModelFile(modLoc("block/emerald_blue_earth_tile")));
         simpleBlock(ModBlocks.MINI_PALM_TREE.get(), new ModelFile.UncheckedModelFile(modLoc("block/mini_palm_tree")));
         simpleBlock(ModBlocks.MINI_CANOPY_TREE.get(), new ModelFile.UncheckedModelFile(modLoc("block/mini_canopy_tree")));
+        simpleBlock(ModBlocks.VODKA.get(), new ModelFile.UncheckedModelFile(modLoc("block/vodka")));
 
         distiller(ModBlocks.COPPER_STILL.get(), "copper_still");
 

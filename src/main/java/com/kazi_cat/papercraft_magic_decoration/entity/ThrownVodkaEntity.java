@@ -21,20 +21,20 @@ import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.network.PlayMessages;
 
 @OnlyIn(value = Dist.CLIENT, _interface = ItemSupplier.class)
-public class FlyingChickenEntity extends AbstractArrow implements ItemSupplier {
-    public FlyingChickenEntity(PlayMessages.SpawnEntity packet, Level world) {
-        super(ModEntities.FLYING_CHICKEN.get(), world);
+public class ThrownVodkaEntity extends AbstractArrow implements ItemSupplier {
+    public ThrownVodkaEntity(PlayMessages.SpawnEntity packet, Level world) {
+        super(ModEntities.THROWN_VODKA.get(), world);
     }
 
-    public FlyingChickenEntity(EntityType<? extends FlyingChickenEntity> type, Level world) {
+    public ThrownVodkaEntity(EntityType<? extends ThrownVodkaEntity> type, Level world) {
         super(type, world);
     }
 
-    public FlyingChickenEntity(EntityType<? extends FlyingChickenEntity> type, double x, double y, double z, Level world) {
+    public ThrownVodkaEntity(EntityType<? extends ThrownVodkaEntity> type, double x, double y, double z, Level world) {
         super(type, x, y, z, world);
     }
 
-    public FlyingChickenEntity(EntityType<? extends FlyingChickenEntity> type, LivingEntity entity, Level world) {
+    public ThrownVodkaEntity(EntityType<? extends ThrownVodkaEntity> type, LivingEntity entity, Level world) {
         super(type, entity, world);
     }
 
@@ -46,12 +46,12 @@ public class FlyingChickenEntity extends AbstractArrow implements ItemSupplier {
     @Override
     @OnlyIn(Dist.CLIENT)
     public ItemStack getItem() {
-        return ModItems.FRIED_CHICKEN_LEG.get().getDefaultInstance();
+        return ModItems.VODKA.get().getDefaultInstance();
     }
 
     @Override
     protected ItemStack getPickupItem() {
-        return ModItems.FRIED_CHICKEN_LEG.get().getDefaultInstance();
+        return ModItems.VODKA.get().getDefaultInstance();
     }
 
     @Override
@@ -79,12 +79,12 @@ public class FlyingChickenEntity extends AbstractArrow implements ItemSupplier {
             this.discard();
     }
 
-    public static FlyingChickenEntity shoot(Level world, LivingEntity entity, RandomSource source) {
+    public static ThrownVodkaEntity shoot(Level world, LivingEntity entity, RandomSource source) {
         return shoot(world, entity, source, 1f, 5, 1);
     }
 
-    public static FlyingChickenEntity shoot(Level world, LivingEntity entity, RandomSource random, float power, double damage, int knockback) {
-        FlyingChickenEntity projectile = new FlyingChickenEntity(ModEntities.FLYING_CHICKEN.get(), entity, world);
+    public static ThrownVodkaEntity shoot(Level world, LivingEntity entity, RandomSource random, float power, double damage, int knockback) {
+        ThrownVodkaEntity projectile = new ThrownVodkaEntity(ModEntities.THROWN_VODKA.get(), entity, world);
         projectile.shoot(entity.getViewVector(1).x, entity.getViewVector(1).y, entity.getViewVector(1).z, power * 2, 0);
         projectile.setSilent(true);
         projectile.setBaseDamage(damage);
@@ -94,8 +94,8 @@ public class FlyingChickenEntity extends AbstractArrow implements ItemSupplier {
         return projectile;
     }
 
-    public static FlyingChickenEntity shoot(LivingEntity entity, LivingEntity target) {
-        FlyingChickenEntity projectile = new FlyingChickenEntity(ModEntities.FLYING_CHICKEN.get(), entity, entity.level());
+    public static ThrownVodkaEntity shoot(LivingEntity entity, LivingEntity target) {
+        ThrownVodkaEntity projectile = new ThrownVodkaEntity(ModEntities.THROWN_VODKA.get(), entity, entity.level());
         double dx = target.getX() - entity.getX();
         double dy = target.getY() + target.getEyeHeight() - 1.1;
         double dz = target.getZ() - entity.getZ();
@@ -109,11 +109,11 @@ public class FlyingChickenEntity extends AbstractArrow implements ItemSupplier {
         return projectile;
     }
 
-    public static final EntityType<FlyingChickenEntity> TYPE = EntityType.Builder.<FlyingChickenEntity>of(FlyingChickenEntity::new, MobCategory.MISC)
-            .setCustomClientFactory(FlyingChickenEntity::new)
+    public static final EntityType<ThrownVodkaEntity> TYPE = EntityType.Builder.<ThrownVodkaEntity>of(ThrownVodkaEntity::new, MobCategory.MISC)
+            .setCustomClientFactory(ThrownVodkaEntity::new)
             .setShouldReceiveVelocityUpdates(true)
             .setTrackingRange(64)
             .setUpdateInterval(1)
             .sized(0.5f, 0.5f)
-            .build("flying_chicken_projectile");
+            .build("thrown_vodka");
 }

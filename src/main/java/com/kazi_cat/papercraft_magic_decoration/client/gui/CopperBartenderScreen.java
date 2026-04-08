@@ -10,7 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 public class CopperBartenderScreen extends AbstractContainerScreen<CopperBartenderContainer> {
-    public static final ResourceLocation backgroundImage = PaperKiteManor.resourceLocation("textures/screens/copper_bartender_ui.png");
+    public static final ResourceLocation backgroundImage = PaperKiteManor.resourceLocation("textures/screens/copper_bartender.png");
     public static final ResourceLocation clockworkImage = PaperKiteManor.resourceLocation("textures/screens/atlas/clockwork.png");
     ImageButton clockwork;
 

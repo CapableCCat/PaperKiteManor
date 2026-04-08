@@ -3,7 +3,7 @@ package com.kazi_cat.papercraft_magic_decoration.client.render.entity;
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.client.model.FixedGeoModel;
 import com.kazi_cat.papercraft_magic_decoration.client.render.entity.layer.EyesGlowLayer;
-import com.kazi_cat.papercraft_magic_decoration.entity.AoaoEntity;
+import com.kazi_cat.papercraft_magic_decoration.entity.WhiteRabbitMaidEntity;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -15,16 +15,16 @@ import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.model.data.EntityModelData;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
-public class AoaoRenderer extends GeoEntityRenderer<AoaoEntity> {
-    public AoaoRenderer(EntityRendererProvider.Context renderManager) {
+public class WhiteRabbitMaidRenderer extends GeoEntityRenderer<WhiteRabbitMaidEntity> {
+    public WhiteRabbitMaidRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new FixedGeoModel<>(
-                PaperKiteManor.resourceLocation("geo/aoao.geo.json"),
-                PaperKiteManor.resourceLocation("textures/entities/aoao.png"),
-                PaperKiteManor.resourceLocation("animations/aoao.animation.json")
+                PaperKiteManor.resourceLocation("geo/white_rabbit_maid.geo.json"),
+                PaperKiteManor.resourceLocation("textures/entities/white_rabbit_maid.png"),
+                PaperKiteManor.resourceLocation("animations/white_rabbit_maid.animation.json")
         ) {
             @SuppressWarnings("unchecked")
             @Override
-            public void setCustomAnimations(AoaoEntity animatable, long instanceId, AnimationState animationState) {
+            public void setCustomAnimations(WhiteRabbitMaidEntity animatable, long instanceId, AnimationState animationState) {
                 CoreGeoBone head = getAnimationProcessor().getBone("head");
                 if (head != null) {
                     EntityModelData entityData = (EntityModelData) animationState.getData(DataTickets.ENTITY_MODEL_DATA);
@@ -34,11 +34,11 @@ public class AoaoRenderer extends GeoEntityRenderer<AoaoEntity> {
             }
         });
         this.shadowRadius = 0.5f;
-        this.addRenderLayer(new EyesGlowLayer<>(this, PaperKiteManor.resourceLocation("textures/entities/aoao_glow.png")));
+        this.addRenderLayer(new EyesGlowLayer<>(this, PaperKiteManor.resourceLocation("textures/entities/white_rabbit_maid_glow.png")));
     }
 
     @Override
-    public RenderType getRenderType(AoaoEntity animatable, ResourceLocation texture, MultiBufferSource bufferSource, float partialTick) {
+    public RenderType getRenderType(WhiteRabbitMaidEntity animatable, ResourceLocation texture, MultiBufferSource bufferSource, float partialTick) {
         return RenderType.entityTranslucent(getTextureLocation(animatable));
     }
 }

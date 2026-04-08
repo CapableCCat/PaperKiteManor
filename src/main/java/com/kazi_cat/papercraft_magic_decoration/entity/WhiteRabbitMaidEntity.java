@@ -3,33 +3,47 @@ package com.kazi_cat.papercraft_magic_decoration.entity;
 
 import com.kazi_cat.papercraft_magic_decoration.api.entity.IShooterEntity;
 import com.kazi_cat.papercraft_magic_decoration.init.ModEntities;
-import com.kazi_cat.papercraft_magic_decoration.init.ModItems;
-import com.kazi_cat.papercraft_magic_decoration.init.ModSounds;
+import com.kazi_cat.papercraft_magic_decoration.inventory.container.BunnySuitcaseContainer;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.server.level.ServerLevel;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraftforge.event.ForgeEventFactory;
-import net.minecraftforge.network.PlayMessages;
+import net.minecraftforge.network.NetworkHooks;
+import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.util.GeckoLibUtil;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animatable.GeoEntity;
 
+import net.minecraftforge.network.PlayMessages;
+import net.minecraftforge.items.wrapper.EntityHandsInvWrapper;
+import net.minecraftforge.items.wrapper.EntityArmorInvWrapper;
+import net.minecraftforge.items.wrapper.CombinedInvWrapper;
+import net.minecraftforge.items.ItemStackHandler;
+import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
+import net.minecraftforge.common.capabilities.Capability;
+
 import net.minecraft.world.level.Level;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
+import net.minecraft.world.entity.ai.goal.RangedAttackGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.PanicGoal;
 import net.minecraft.world.entity.ai.goal.MoveBackToVillageGoal;
@@ -37,24 +51,39 @@ import net.minecraft.world.entity.ai.goal.FollowOwnerGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.ClimbOnTopOfPowderSnowGoal;
 import net.minecraft.world.entity.ai.goal.BreathAirGoal;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.core.Direction;
 
-public class AoaoEntity extends TamableAnimal implements RangedAttackMob, GeoEntity, IShooterEntity {
-    public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(AoaoEntity.class, EntityDataSerializers.BOOLEAN);
+import javax.annotation.Nullable;
+
+public class WhiteRabbitMaidEntity extends TamableAnimal implements RangedAttackMob, GeoEntity, IShooterEntity, MenuProvider {
+    public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(WhiteRabbitMaidEntity.class, EntityDataSerializers.BOOLEAN);
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     private boolean swinging;
     private long lastSwing;
     public String animationProcedure = "empty";
+    private final ItemStackHandler inventory = new ItemStackHandler(21) {
+        @Override
+        protected void onContentsChanged(int slot) {
+            super.onContentsChanged(slot);
+            setPersistenceRequired();
+        }
+    };
+    private final CombinedInvWrapper combined = new CombinedInvWrapper(inventory, new EntityHandsInvWrapper(this), new EntityArmorInvWrapper(this));
 
-    public AoaoEntity(PlayMessages.SpawnEntity packet, Level world) {
-        this(ModEntities.AOAO.get(), world);
+    public WhiteRabbitMaidEntity(PlayMessages.SpawnEntity packet, Level world) {
+        this(ModEntities.WHITE_RABBIT_MAID.get(), world);
     }
 
-    public AoaoEntity(EntityType<AoaoEntity> type, Level world) {
+    public WhiteRabbitMaidEntity(EntityType<WhiteRabbitMaidEntity> type, Level world) {
         super(type, world);
         xpReward = 0;
         setNoAi(false);
@@ -78,7 +107,7 @@ public class AoaoEntity extends TamableAnimal implements RangedAttackMob, GeoEnt
         this.goalSelector.addGoal(7, new BreathAirGoal(this));
         this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(9, new WaterAvoidingRandomStrollGoal(this, 0.8));
-        this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 40, 10f));
+        this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 40, 16f));
     }
 
     @Override
@@ -90,6 +119,53 @@ public class AoaoEntity extends TamableAnimal implements RangedAttackMob, GeoEnt
         if (source.is(DamageTypes.FALL))
             return false;
         return super.hurt(source, amount);
+    }
+
+    @Override
+    public <T> LazyOptional<T> getCapability(Capability<T> capability, @Nullable Direction side) {
+        if (this.isAlive() && capability == ForgeCapabilities.ITEM_HANDLER)
+            return LazyOptional.of(() -> combined).cast();
+        return super.getCapability(capability, side);
+    }
+
+    @Override
+    protected void dropEquipment() {
+        super.dropEquipment();
+        for (int i = 0; i < inventory.getSlots(); ++i) {
+            ItemStack itemstack = inventory.getStackInSlot(i);
+            if (!itemstack.isEmpty() && !EnchantmentHelper.hasVanishingCurse(itemstack)) {
+                this.spawnAtLocation(itemstack);
+            }
+        }
+    }
+
+    @Override
+    public SoundEvent getAmbientSound() {
+        return SoundEvents.RABBIT_AMBIENT;
+    }
+
+    @Override
+    public SoundEvent getHurtSound(DamageSource ds) {
+        return SoundEvents.RABBIT_HURT;
+    }
+
+    @Override
+    public SoundEvent getDeathSound() {
+        return SoundEvents.RABBIT_DEATH;
+    }
+
+    @Override
+    public void addAdditionalSaveData(CompoundTag compoundTag) {
+        super.addAdditionalSaveData(compoundTag);
+        compoundTag.put("inventory", inventory.serializeNBT());
+    }
+
+    @Override
+    public void readAdditionalSaveData(CompoundTag compoundTag) {
+        super.readAdditionalSaveData(compoundTag);
+        if (compoundTag.contains("inventory")) {
+            this.inventory.deserializeNBT(compoundTag.getCompound("inventory"));
+        }
     }
 
     @Override
@@ -128,6 +204,13 @@ public class AoaoEntity extends TamableAnimal implements RangedAttackMob, GeoEnt
                 this.setPersistenceRequired();
                 return InteractionResult.SUCCESS;
             }
+        } else {
+            if (!player.level().isClientSide() && player instanceof ServerPlayer serverPlayer) {
+                NetworkHooks.openScreen(serverPlayer, this, buf -> {
+                    buf.writeVarInt(this.getId());
+                });
+                return InteractionResult.SUCCESS;
+            }
         }
 
         return InteractionResult.PASS;
@@ -135,19 +218,19 @@ public class AoaoEntity extends TamableAnimal implements RangedAttackMob, GeoEnt
 
     @Override
     public void performRangedAttack(LivingEntity target, float f) {
-        FlyingChickenEntity.shoot(this, target);
+        ThrownVodkaEntity.shoot(this, target);
     }
 
     @Override
     public AgeableMob getBreedOffspring(ServerLevel serverWorld, AgeableMob ageAble) {
-        AoaoEntity entity = ModEntities.AOAO.get().create(serverWorld);
+        WhiteRabbitMaidEntity entity = ModEntities.WHITE_RABBIT_MAID.get().create(serverWorld);
         entity.finalizeSpawn(serverWorld, serverWorld.getCurrentDifficultyAt(entity.blockPosition()), MobSpawnType.BREEDING, null, null);
         return entity;
     }
 
     @Override
     public boolean isFood(ItemStack stack) {
-        return stack.is(ModItems.FRIED_CHICKEN_LEG.get());
+        return stack.is(Items.COOKIE);
     }
 
     @Override
@@ -160,24 +243,35 @@ public class AoaoEntity extends TamableAnimal implements RangedAttackMob, GeoEnt
     protected void tickDeath() {
         ++this.deathTime;
         if (this.deathTime == 20) {
-            this.remove(AoaoEntity.RemovalReason.KILLED);
+            this.remove(WhiteRabbitMaidEntity.RemovalReason.KILLED);
             this.dropExperience();
         }
     }
 
     @Override
-    public SoundEvent getAmbientSound() {
-        return ModSounds.AOAO_IDLE.get();
+    public Component getDisplayName() {
+        return Component.empty();
     }
 
     @Override
-    public SoundEvent getHurtSound(DamageSource ds) {
-        return ModSounds.AOAO_HURT.get();
+    public @Nullable AbstractContainerMenu createMenu(int containerId, Inventory playerInventory, Player player) {
+        return new BunnySuitcaseContainer(containerId, playerInventory, this);
     }
 
-    @Override
-    public SoundEvent getDeathSound() {
-        return ModSounds.AOAO_DEATH.get();
+    public ItemStackHandler getInventory() {
+        return this.inventory;
+    }
+
+    @SuppressWarnings("all")
+    public static AttributeSupplier.Builder createAttributes() {
+        AttributeSupplier.Builder builder = Mob.createMobAttributes();
+        builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
+        builder = builder.add(Attributes.MAX_HEALTH, 30);
+        builder = builder.add(Attributes.ARMOR, 0);
+        builder = builder.add(Attributes.ATTACK_DAMAGE, 0);
+        builder = builder.add(Attributes.FOLLOW_RANGE, 16);
+        builder = builder.add(Attributes.ATTACK_KNOCKBACK, 0.5);
+        return builder;
     }
 
     @Override
@@ -185,20 +279,20 @@ public class AoaoEntity extends TamableAnimal implements RangedAttackMob, GeoEnt
         this.entityData.set(SHOOT, value);
     }
 
-    private PlayState movementPredicate(AnimationState<AoaoEntity> event) {
+    private PlayState movementPredicate(AnimationState<WhiteRabbitMaidEntity> event) {
         if (this.animationProcedure.equals("empty")) {
             if ((event.isMoving() || !(event.getLimbSwingAmount() > -0.15F && event.getLimbSwingAmount() < 0.15F))) {
-                return event.setAndContinue(RawAnimation.begin().thenLoop("animation.aoao.walking"));
+                return event.setAndContinue(RawAnimation.begin().thenLoop("animation.white_rabbit_maid.walking"));
             }
             if (this.isInWaterOrBubble()) {
-                return event.setAndContinue(RawAnimation.begin().thenLoop("animation.aoao.swim"));
+                return event.setAndContinue(RawAnimation.begin().thenLoop("animation.white_rabbit_maid.swim"));
             }
-            return event.setAndContinue(RawAnimation.begin().thenLoop("animation.aoao.idle"));
+            return event.setAndContinue(RawAnimation.begin().thenLoop("animation.white_rabbit_maid.idle"));
         }
         return PlayState.STOP;
     }
 
-    private PlayState attackingPredicate(AnimationState<AoaoEntity> event) {
+    private PlayState attackingPredicate(AnimationState<WhiteRabbitMaidEntity> event) {
         if (getAttackAnim(event.getPartialTick()) > 0f && !this.swinging) {
             this.swinging = true;
             this.lastSwing = level().getGameTime();
@@ -208,12 +302,12 @@ public class AoaoEntity extends TamableAnimal implements RangedAttackMob, GeoEnt
         }
         if ((this.swinging || this.entityData.get(SHOOT)) && event.getController().getAnimationState() == AnimationController.State.STOPPED) {
             event.getController().forceAnimationReset();
-            return event.setAndContinue(RawAnimation.begin().thenPlay("animation.aoao.attack"));
+            return event.setAndContinue(RawAnimation.begin().thenPlay("animation.white_rabbit_maid.attack"));
         }
         return PlayState.CONTINUE;
     }
 
-    private PlayState procedurePredicate(AnimationState<AoaoEntity> event) {
+    private PlayState procedurePredicate(AnimationState<WhiteRabbitMaidEntity> event) {
         if (!animationProcedure.equals("empty") && event.getController().getAnimationState() == AnimationController.State.STOPPED) {
             event.getController().setAnimation(RawAnimation.begin().thenPlay(this.animationProcedure));
             if (event.getController().getAnimationState() == AnimationController.State.STOPPED) {
@@ -238,23 +332,12 @@ public class AoaoEntity extends TamableAnimal implements RangedAttackMob, GeoEnt
         return this.cache;
     }
 
-    public static AttributeSupplier.Builder createAttributes() {
-        AttributeSupplier.Builder builder = Mob.createMobAttributes();
-        builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
-        builder = builder.add(Attributes.MAX_HEALTH, 30);
-        builder = builder.add(Attributes.ARMOR, 0);
-        builder = builder.add(Attributes.ATTACK_DAMAGE, 0);
-        builder = builder.add(Attributes.FOLLOW_RANGE, 16);
-        builder = builder.add(Attributes.ATTACK_KNOCKBACK, 0.5);
-        return builder;
-    }
-
-    public static final EntityType<AoaoEntity> TYPE = EntityType.Builder.<AoaoEntity>of(AoaoEntity::new, MobCategory.CREATURE)
+    public static final EntityType<WhiteRabbitMaidEntity> TYPE = EntityType.Builder.<WhiteRabbitMaidEntity>of(WhiteRabbitMaidEntity::new, MobCategory.CREATURE)
             .setShouldReceiveVelocityUpdates(true)
             .setTrackingRange(64)
             .setUpdateInterval(3)
-            .setCustomClientFactory(AoaoEntity::new)
+            .setCustomClientFactory(WhiteRabbitMaidEntity::new)
             .fireImmune()
             .sized(0.6f, 1.2f)
-            .build("aoao");
+            .build("white_rabbit_maid");
 }

@@ -488,6 +488,8 @@ public interface ModBlocks {
                     ).build(null)
     );
 
+    RegistryObject<Block> VODKA = BLOCKS.register("vodka", () -> new Block(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.GLASS).strength(1f, 10f).noOcclusion()));
+
     // 食物部分
     RegistryObject<Block> BUCKET_OF_FRIED_CHICKEN = BLOCKS.register("bucket_of_fried_chicken", () -> new DecorationBlock.HorizontalDirectional.Waterlogged(
             BlockBehaviour.Properties.of().sound(SoundType.SNOW).strength(1f, 4f).noOcclusion(),
