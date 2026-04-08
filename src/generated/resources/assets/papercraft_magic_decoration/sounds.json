@@ -1,0 +1,30 @@
+{
+  "entity.aoao_death": {
+    "sounds": [
+      "papercraft_magic_decoration:entity/aoao_death_01",
+      "papercraft_magic_decoration:entity/aoao_death_02"
+    ],
+    "subtitle": "subtitles.papercraft_magic_decoration.entity.aoao_death"
+  },
+  "entity.aoao_hurt": {
+    "sounds": [
+      "papercraft_magic_decoration:entity/aoao_hurt_01",
+      "papercraft_magic_decoration:entity/aoao_hurt_02",
+      "papercraft_magic_decoration:entity/aoao_hurt_03",
+      "papercraft_magic_decoration:entity/aoao_hurt_04"
+    ],
+    "subtitle": "subtitles.papercraft_magic_decoration.entity.aoao_hurt"
+  },
+  "entity.aoao_idle": {
+    "sounds": [
+      "papercraft_magic_decoration:entity/aoao_idle_01",
+      "papercraft_magic_decoration:entity/aoao_idle_02",
+      "papercraft_magic_decoration:entity/aoao_idle_03",
+      "papercraft_magic_decoration:entity/aoao_idle_04",
+      "papercraft_magic_decoration:entity/aoao_idle_05",
+      "papercraft_magic_decoration:entity/aoao_idle_06",
+      "papercraft_magic_decoration:entity/aoao_idle_07"
+    ],
+    "subtitle": "subtitles.papercraft_magic_decoration.entity.aoao_idle"
+  }
+}

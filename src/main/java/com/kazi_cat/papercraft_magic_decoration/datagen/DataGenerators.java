@@ -4,6 +4,7 @@ import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.datagen.lootable.LootTableGenerator;
 import com.kazi_cat.papercraft_magic_decoration.datagen.model.*;
 import com.kazi_cat.papercraft_magic_decoration.datagen.recipe.ModRecipeGenerator;
+import com.kazi_cat.papercraft_magic_decoration.datagen.sound.SoundDefinitionsGenerator;
 import com.kazi_cat.papercraft_magic_decoration.datagen.tag.TagBlock;
 import com.kazi_cat.papercraft_magic_decoration.datagen.tag.TagItem;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -30,5 +31,6 @@ public class DataGenerators {
         generator.addProvider(event.includeClient(), new ItemModelGenerator(pack, helper));
         generator.addProvider(event.includeClient(), new BlockGeoModelMappingsGenerator(pack));
         generator.addProvider(event.includeClient(), new ItemGeoModelMappingsGenerator(pack));
+        generator.addProvider(event.includeServer(), new SoundDefinitionsGenerator(pack, helper));
     }
 }

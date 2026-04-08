@@ -9,11 +9,14 @@ import com.kazi_cat.papercraft_magic_decoration.client.render.block.BaseGeoBlock
 import com.kazi_cat.papercraft_magic_decoration.client.render.block.DistillerBlockRenderer;
 import com.kazi_cat.papercraft_magic_decoration.client.render.block.DrinkBlockRenderer;
 import com.kazi_cat.papercraft_magic_decoration.client.render.block.PaperCuttingTableBlockRenderer;
+import com.kazi_cat.papercraft_magic_decoration.client.render.entity.AoaoRenderer;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
+import com.kazi_cat.papercraft_magic_decoration.init.ModEntities;
 import com.kazi_cat.papercraft_magic_decoration.inventory.container.CopperBartenderContainer;
 import com.kazi_cat.papercraft_magic_decoration.inventory.container.DirtHoleContainer;
 import com.kazi_cat.papercraft_magic_decoration.inventory.container.KaziLuckyCatContainer;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -40,5 +43,8 @@ public class ClientSetup {
         event.registerBlockEntityRenderer(ModBlocks.KAZI_LUCKY_CAT_BE.get(), context -> new BaseGeoBlockRenderer<>(ModBlocks.KAZI_LUCKY_CAT_BE.get()));
         event.registerBlockEntityRenderer(ModBlocks.ANIMATED_BE.get(), context -> new BaseGeoBlockRenderer<>(ModBlocks.ANIMATED_BE.get()));
         event.registerBlockEntityRenderer(ModBlocks.ANIMATED_SMELTABLE_BE.get(), context -> new BaseGeoBlockRenderer<>(ModBlocks.ANIMATED_SMELTABLE_BE.get()));
+
+        event.registerEntityRenderer(ModEntities.AOAO.get(), AoaoRenderer::new);
+        event.registerEntityRenderer(ModEntities.FLYING_CHICKEN.get(), ThrownItemRenderer::new);
     }
 }

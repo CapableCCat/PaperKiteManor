@@ -2,10 +2,14 @@ package com.kazi_cat.papercraft_magic_decoration.init.registry;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.block.dispenser.SporesCollectionPlateBlockDispenseBehavior;
+import com.kazi_cat.papercraft_magic_decoration.init.ModEntities;
 import com.kazi_cat.papercraft_magic_decoration.init.ModItems;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.DispenserBlock;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -17,6 +21,7 @@ public class CommonRegistry {
     public static void onSetupEvent(FMLCommonSetupEvent event) {
         event.enqueueWork(CommonRegistry::addDispenserBehavior);
         event.enqueueWork(CommonRegistry::registerBrewingRecipes);
+        event.enqueueWork(CommonRegistry::registerSpawnPlacements);
     }
 
     private static void addDispenserBehavior() {
@@ -35,5 +40,11 @@ public class CommonRegistry {
                 Ingredient.of(ModItems.VITALITY_SPORES.get()),
                 ModItems.MINI_CANOPY_TREE.get().getDefaultInstance()
         );
+    }
+
+    @SuppressWarnings("deprecation")
+    private static void registerSpawnPlacements() {
+        SpawnPlacements.register(ModEntities.AOAO.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                (entityType, world, reason, pos, random) -> (world.getBlockState(pos.below()).is(BlockTags.ANIMALS_SPAWNABLE_ON) && world.getRawBrightness(pos, 0) > 8));
     }
 }
