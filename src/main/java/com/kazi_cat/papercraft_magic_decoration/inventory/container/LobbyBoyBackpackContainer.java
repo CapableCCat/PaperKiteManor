@@ -2,10 +2,8 @@ package com.kazi_cat.papercraft_magic_decoration.inventory.container;
 
 import com.kazi_cat.papercraft_magic_decoration.entity.BlackCatLobbyBoyEntity;
 import com.kazi_cat.papercraft_magic_decoration.init.ModContainers;
-import net.minecraft.core.NonNullList;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.Container;
-import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -16,14 +14,13 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.extensions.IForgeMenuType;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
 public class LobbyBoyBackpackContainer extends AbstractContainerMenu {
     public static final MenuType<LobbyBoyBackpackContainer> TYPE = IForgeMenuType.create(LobbyBoyBackpackContainer::new);
 
-    protected final BlackCatLobbyBoyEntity entity;
+    public final BlackCatLobbyBoyEntity entity;
     protected final Level level;
     protected final SimpleContainer container;
 
@@ -56,10 +53,6 @@ public class LobbyBoyBackpackContainer extends AbstractContainerMenu {
 
     public LobbyBoyBackpackContainer(int containerId, Inventory playerInv, FriendlyByteBuf extraData) {
         this(containerId, playerInv, (BlackCatLobbyBoyEntity) playerInv.player.level().getEntity(extraData.readVarInt()));
-    }
-
-    public void reload() {
-
     }
 
     @Override

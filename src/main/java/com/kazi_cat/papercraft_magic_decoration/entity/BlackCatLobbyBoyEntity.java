@@ -98,6 +98,14 @@ public class BlackCatLobbyBoyEntity extends TamableAnimal implements RangedAttac
         offers.set(1, new Offer(8, ModItems.GIFT_FROM_KAZI_MANOR.get().getDefaultInstance(), 16));
         offers.set(2, new Offer(8, new ItemStack(ModItems.KEY_UNDER_THE_LAKE.get(), 8), 16));
         setPersistenceRequired();
+        if (!level().isClientSide) {
+            for (Player player : level().players()) {
+                if (player.containerMenu instanceof LobbyBoyBackpackContainer container
+                        && container.entity == this) {
+                    NetworkHandler.sendToClientPlayer(new OffersSyncMessage(this.getId(), this.offers), player);
+                }
+            }
+        }
     }
 
     public boolean canRestock(Level level) {
