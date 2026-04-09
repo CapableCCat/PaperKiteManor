@@ -10,7 +10,10 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.ItemSupplier;
 import net.minecraft.world.item.ItemStack;
@@ -23,20 +26,20 @@ import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.network.PlayMessages;
 
 @OnlyIn(value = Dist.CLIENT, _interface = ItemSupplier.class)
-public class ThrownVodkaEntity extends AbstractArrow implements ItemSupplier {
-    public ThrownVodkaEntity(PlayMessages.SpawnEntity packet, Level world) {
+public class ThrownFireWhiskeyEntity extends AbstractArrow implements ItemSupplier {
+    public ThrownFireWhiskeyEntity(PlayMessages.SpawnEntity packet, Level world) {
         super(ModEntities.THROWN_VODKA.get(), world);
     }
 
-    public ThrownVodkaEntity(EntityType<? extends ThrownVodkaEntity> type, Level world) {
+    public ThrownFireWhiskeyEntity(EntityType<? extends ThrownFireWhiskeyEntity> type, Level world) {
         super(type, world);
     }
 
-    public ThrownVodkaEntity(EntityType<? extends ThrownVodkaEntity> type, double x, double y, double z, Level world) {
+    public ThrownFireWhiskeyEntity(EntityType<? extends ThrownFireWhiskeyEntity> type, double x, double y, double z, Level world) {
         super(type, x, y, z, world);
     }
 
-    public ThrownVodkaEntity(EntityType<? extends ThrownVodkaEntity> type, LivingEntity entity, Level world) {
+    public ThrownFireWhiskeyEntity(EntityType<? extends ThrownFireWhiskeyEntity> type, LivingEntity entity, Level world) {
         super(type, entity, world);
     }
 
@@ -48,12 +51,12 @@ public class ThrownVodkaEntity extends AbstractArrow implements ItemSupplier {
     @Override
     @OnlyIn(Dist.CLIENT)
     public ItemStack getItem() {
-        return ModItems.VODKA.get().getDefaultInstance();
+        return ModItems.FIRE_WHISKEY.get().getDefaultInstance();
     }
 
     @Override
     protected ItemStack getPickupItem() {
-        return ModItems.VODKA.get().getDefaultInstance();
+        return ModItems.FIRE_WHISKEY.get().getDefaultInstance();
     }
 
     @Override
@@ -68,9 +71,9 @@ public class ThrownVodkaEntity extends AbstractArrow implements ItemSupplier {
             if ((target instanceof TamableAnimal tamable && tamable.isTame()) || (this.getOwner() instanceof TamableAnimal source && source.getOwner() == target)) {
                 target.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100 ,3));
             } else {
-                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2));
                 super.onHitEntity(entityHitResult);
-                target.level().levelEvent(2001, target.blockPosition(), Block.getId(ModBlocks.VODKA.get().defaultBlockState()));
+                target.level().levelEvent(2001, target.blockPosition(), Block.getId(ModBlocks.FIRE_WHISKEY.get().defaultBlockState()));
+                target.setSecondsOnFire(10);
             }
         }
     }
@@ -82,12 +85,12 @@ public class ThrownVodkaEntity extends AbstractArrow implements ItemSupplier {
             this.discard();
     }
 
-    public static ThrownVodkaEntity shoot(Level world, LivingEntity entity, RandomSource source) {
+    public static ThrownFireWhiskeyEntity shoot(Level world, LivingEntity entity, RandomSource source) {
         return shoot(world, entity, source, 1f, 5, 1);
     }
 
-    public static ThrownVodkaEntity shoot(Level world, LivingEntity entity, RandomSource random, float power, double damage, int knockback) {
-        ThrownVodkaEntity projectile = new ThrownVodkaEntity(ModEntities.THROWN_VODKA.get(), entity, world);
+    public static ThrownFireWhiskeyEntity shoot(Level world, LivingEntity entity, RandomSource random, float power, double damage, int knockback) {
+        ThrownFireWhiskeyEntity projectile = new ThrownFireWhiskeyEntity(ModEntities.THROWN_FIRE_WHISKEY.get(), entity, world);
         projectile.shoot(entity.getViewVector(1).x, entity.getViewVector(1).y, entity.getViewVector(1).z, power * 2, 0);
         projectile.setSilent(true);
         projectile.setBaseDamage(damage);
@@ -97,8 +100,8 @@ public class ThrownVodkaEntity extends AbstractArrow implements ItemSupplier {
         return projectile;
     }
 
-    public static ThrownVodkaEntity shoot(LivingEntity entity, LivingEntity target) {
-        ThrownVodkaEntity projectile = new ThrownVodkaEntity(ModEntities.THROWN_VODKA.get(), entity, entity.level());
+    public static ThrownFireWhiskeyEntity shoot(LivingEntity entity, LivingEntity target) {
+        ThrownFireWhiskeyEntity projectile = new ThrownFireWhiskeyEntity(ModEntities.THROWN_FIRE_WHISKEY.get(), entity, entity.level());
         double dx = target.getX() - entity.getX();
         double dy = target.getY() + target.getEyeHeight() - 1.1;
         double dz = target.getZ() - entity.getZ();
@@ -112,11 +115,11 @@ public class ThrownVodkaEntity extends AbstractArrow implements ItemSupplier {
         return projectile;
     }
 
-    public static final EntityType<ThrownVodkaEntity> TYPE = EntityType.Builder.<ThrownVodkaEntity>of(ThrownVodkaEntity::new, MobCategory.MISC)
-            .setCustomClientFactory(ThrownVodkaEntity::new)
+    public static final EntityType<ThrownFireWhiskeyEntity> TYPE = EntityType.Builder.<ThrownFireWhiskeyEntity>of(ThrownFireWhiskeyEntity::new, MobCategory.MISC)
+            .setCustomClientFactory(ThrownFireWhiskeyEntity::new)
             .setShouldReceiveVelocityUpdates(true)
             .setTrackingRange(64)
             .setUpdateInterval(1)
             .sized(0.5f, 0.5f)
-            .build("thrown_vodka");
+            .build("thrown_fire_whiskey");
 }

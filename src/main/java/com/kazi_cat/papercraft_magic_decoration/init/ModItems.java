@@ -236,6 +236,8 @@ public interface ModItems {
 
     RegistryObject<Item> VODKA = ITEMS.register("vodka", () -> new BlockItem(ModBlocks.VODKA.get(), new Item.Properties()));
 
+    RegistryObject<Item> FIRE_WHISKEY = ITEMS.register("fire_whiskey", () -> new BlockItem(ModBlocks.FIRE_WHISKEY.get(), new Item.Properties()));
+
     // 食物部分
     RegistryObject<Item> BREADED_RAW_CHICKEN = ITEMS.register("breaded_raw_chicken", () -> new Item(new Item.Properties()));
 

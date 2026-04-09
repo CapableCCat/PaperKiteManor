@@ -1,13 +1,17 @@
 package com.kazi_cat.papercraft_magic_decoration.entity;
 
-
-import com.kazi_cat.papercraft_magic_decoration.api.entity.IShooterEntity;
 import com.kazi_cat.papercraft_magic_decoration.init.ModEntities;
-import com.kazi_cat.papercraft_magic_decoration.inventory.container.BunnySuitcaseContainer;
+import com.kazi_cat.papercraft_magic_decoration.init.ModItems;
+import com.kazi_cat.papercraft_magic_decoration.inventory.container.LobbyBoyBackpackContainer;
+import com.kazi_cat.papercraft_magic_decoration.network.NetworkHandler;
+import com.kazi_cat.papercraft_magic_decoration.network.message.OffersSyncMessage;
+import net.minecraft.core.NonNullList;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -15,28 +19,21 @@ import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraftforge.common.util.INBTSerializable;
 import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.network.NetworkHooks;
-import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.util.GeckoLibUtil;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.core.animation.AnimationController;
+import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animatable.GeoEntity;
 
 import net.minecraftforge.network.PlayMessages;
-import net.minecraftforge.items.wrapper.EntityHandsInvWrapper;
-import net.minecraftforge.items.wrapper.EntityArmorInvWrapper;
-import net.minecraftforge.items.wrapper.CombinedInvWrapper;
-import net.minecraftforge.items.ItemStackHandler;
-import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
-import net.minecraftforge.common.capabilities.Capability;
 
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
@@ -55,44 +52,84 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.EntityDataAccessor;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.core.Direction;
+
+import com.kazi_cat.papercraft_magic_decoration.api.entity.IShooterEntity;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
-public class WhiteRabbitMaidEntity extends TamableAnimal implements RangedAttackMob, GeoEntity, IShooterEntity, MenuProvider {
-    public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(WhiteRabbitMaidEntity.class, EntityDataSerializers.BOOLEAN);
+public class BlackCatLobbyBoyEntity extends TamableAnimal implements RangedAttackMob, GeoEntity, IShooterEntity, MenuProvider {
+    public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(BlackCatLobbyBoyEntity.class, EntityDataSerializers.BOOLEAN);
+    public static final EntityDataAccessor<Long> LAST_RESTOCK_DAY = SynchedEntityData.defineId(BlackCatLobbyBoyEntity.class, EntityDataSerializers.LONG);
+
+    private static final List<ItemStack> wineTradePool = List.of(
+            ModItems.DIPLOMATICO_COFFEE.get().getDefaultInstance(),
+            ModItems.DEVIL_MARGARITA.get().getDefaultInstance(),
+            ModItems.KALEIDOSCOPE_WHISKEY_SOUR.get().getDefaultInstance(),
+            ModItems.DIONYSUS.get().getDefaultInstance(),
+            ModItems.BLOODY_MARY.get().getDefaultInstance(),
+            ModItems.NOCTURNAL_CAT_COFFEE.get().getDefaultInstance()
+    );
+
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     private boolean swinging;
     private long lastSwing;
     public String animationProcedure = "empty";
-    private final ItemStackHandler inventory = new ItemStackHandler(21) {
-        @Override
-        protected void onContentsChanged(int slot) {
-            super.onContentsChanged(slot);
-            setPersistenceRequired();
-        }
-    };
-    private final CombinedInvWrapper combined = new CombinedInvWrapper(inventory, new EntityHandsInvWrapper(this), new EntityArmorInvWrapper(this));
+    private final List<Offer> offers = NonNullList.withSize(6, Offer.EMPTY);
 
-    public WhiteRabbitMaidEntity(PlayMessages.SpawnEntity packet, Level world) {
-        this(ModEntities.WHITE_RABBIT_MAID.get(), world);
+    public BlackCatLobbyBoyEntity(PlayMessages.SpawnEntity packet, Level world) {
+        this(ModEntities.BLACK_CAT_LOBBY_BOY.get(), world);
     }
 
-    public WhiteRabbitMaidEntity(EntityType<WhiteRabbitMaidEntity> type, Level world) {
+    public BlackCatLobbyBoyEntity(EntityType<BlackCatLobbyBoyEntity> type, Level world) {
         super(type, world);
         xpReward = 0;
         setNoAi(false);
+    }
+
+    public void restock() {
+        offers.clear();
+        offers.set(0, new Offer(4, wineTradePool.get(this.random.nextInt(wineTradePool.size())).copy(), 1));
+        offers.set(1, new Offer(8, ModItems.GIFT_FROM_KAZI_MANOR.get().getDefaultInstance(), 16));
+        offers.set(2, new Offer(8, new ItemStack(ModItems.KEY_UNDER_THE_LAKE.get(), 8), 16));
+        setPersistenceRequired();
+    }
+
+    public boolean canRestock(Level level) {
+        long today = level.getGameTime() / 24000;
+        if (today > getLastRestockDay()) {
+            setLastRestockDay(today);
+            return true;
+        }
+        return false;
+    }
+
+    public long getLastRestockDay() {
+        return this.entityData.get(LAST_RESTOCK_DAY);
+    }
+
+    public void setLastRestockDay(long day) {
+        this.entityData.set(LAST_RESTOCK_DAY, day);
+    }
+
+    public List<Offer> getOffers() { return offers; }
+
+    public void setOffers(List<Offer> offers) {
+        for (int i = 0; i < Math.min(offers.size(), this.offers.size()); i++) {
+            this.offers.set(i, offers.get(i));
+        }
     }
 
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.entityData.define(SHOOT, false);
+        this.entityData.define(LAST_RESTOCK_DAY, (long) -1);
     }
 
     @Override
@@ -107,7 +144,27 @@ public class WhiteRabbitMaidEntity extends TamableAnimal implements RangedAttack
         this.goalSelector.addGoal(7, new BreathAirGoal(this));
         this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(9, new WaterAvoidingRandomStrollGoal(this, 0.8));
-        this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 40, 16f));
+        this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 40, 10f));
+    }
+
+    @Override
+    public SoundEvent getAmbientSound() {
+        return SoundEvents.CAT_PURR;
+    }
+
+    @Override
+    public SoundEvent getHurtSound(DamageSource ds) {
+        return SoundEvents.CAT_HURT;
+    }
+
+    @Override
+    public SoundEvent getDeathSound() {
+        return SoundEvents.CAT_DEATH;
+    }
+
+    @Override
+    public void setShoot(boolean value) {
+        this.entityData.set(SHOOT, value);
     }
 
     @Override
@@ -120,49 +177,26 @@ public class WhiteRabbitMaidEntity extends TamableAnimal implements RangedAttack
     }
 
     @Override
-    public <T> LazyOptional<T> getCapability(Capability<T> capability, @Nullable Direction side) {
-        if (this.isAlive() && capability == ForgeCapabilities.ITEM_HANDLER)
-            return LazyOptional.of(() -> combined).cast();
-        return super.getCapability(capability, side);
+    public void addAdditionalSaveData(CompoundTag tag) {
+        super.addAdditionalSaveData(tag);
+        tag.putLong("lastRestockDay", getLastRestockDay());
+        ListTag listTag = new ListTag();
+        offers.forEach(o -> listTag.add(o.serializeNBT()));
+        tag.put("offers", listTag);
     }
 
     @Override
-    protected void dropEquipment() {
-        super.dropEquipment();
-        for (int i = 0; i < inventory.getSlots(); ++i) {
-            ItemStack itemstack = inventory.getStackInSlot(i);
-            if (!itemstack.isEmpty() && !EnchantmentHelper.hasVanishingCurse(itemstack)) {
-                this.spawnAtLocation(itemstack);
-            }
+    public void readAdditionalSaveData(CompoundTag tag) {
+        super.readAdditionalSaveData(tag);
+        if (tag.contains("lastRestockDay")) {
+            setLastRestockDay(tag.getLong("lastRestockDay"));
         }
-    }
-
-    @Override
-    public SoundEvent getAmbientSound() {
-        return SoundEvents.RABBIT_AMBIENT;
-    }
-
-    @Override
-    public SoundEvent getHurtSound(DamageSource ds) {
-        return SoundEvents.RABBIT_HURT;
-    }
-
-    @Override
-    public SoundEvent getDeathSound() {
-        return SoundEvents.RABBIT_DEATH;
-    }
-
-    @Override
-    public void addAdditionalSaveData(CompoundTag compoundTag) {
-        super.addAdditionalSaveData(compoundTag);
-        compoundTag.put("inventory", inventory.serializeNBT());
-    }
-
-    @Override
-    public void readAdditionalSaveData(CompoundTag compoundTag) {
-        super.readAdditionalSaveData(compoundTag);
-        if (compoundTag.contains("inventory")) {
-            this.inventory.deserializeNBT(compoundTag.getCompound("inventory"));
+        if (tag.contains("offers")) {
+            this.offers.clear();
+            ListTag listTag = tag.getList("offers", Tag.TAG_COMPOUND);
+            for (int i = 0; i < Math.min(6, listTag.size()); i++) {
+                offers.set(i, new Offer(listTag.getCompound(i)));
+            }
         }
     }
 
@@ -170,6 +204,19 @@ public class WhiteRabbitMaidEntity extends TamableAnimal implements RangedAttack
     public void baseTick() {
         super.baseTick();
         this.refreshDimensions();
+        if (level().getGameTime() % 19 == 0 && canRestock(level())) {
+            restock();
+        }
+    }
+
+    @Override
+    public Component getDisplayName() {
+        return Component.empty();
+    }
+
+    @Override
+    public @Nullable AbstractContainerMenu createMenu(int containerId, Inventory playerInventory, Player player) {
+        return new LobbyBoyBackpackContainer(containerId, playerInventory, this);
     }
 
     @Override
@@ -204,6 +251,7 @@ public class WhiteRabbitMaidEntity extends TamableAnimal implements RangedAttack
             }
         } else {
             if (!player.level().isClientSide() && player instanceof ServerPlayer serverPlayer) {
+                NetworkHandler.sendToClientPlayer(new OffersSyncMessage(this.getId(), this.offers), player);
                 NetworkHooks.openScreen(serverPlayer, this, buf -> {
                     buf.writeVarInt(this.getId());
                 });
@@ -216,19 +264,19 @@ public class WhiteRabbitMaidEntity extends TamableAnimal implements RangedAttack
 
     @Override
     public void performRangedAttack(LivingEntity target, float f) {
-        ThrownVodkaEntity.shoot(this, target);
+        ThrownFireWhiskeyEntity.shoot(this, target);
     }
 
     @Override
     public AgeableMob getBreedOffspring(ServerLevel serverWorld, AgeableMob ageAble) {
-        WhiteRabbitMaidEntity entity = ModEntities.WHITE_RABBIT_MAID.get().create(serverWorld);
+        BlackCatLobbyBoyEntity entity = ModEntities.BLACK_CAT_LOBBY_BOY.get().create(serverWorld);
         entity.finalizeSpawn(serverWorld, serverWorld.getCurrentDifficultyAt(entity.blockPosition()), MobSpawnType.BREEDING, null, null);
         return entity;
     }
 
     @Override
     public boolean isFood(ItemStack stack) {
-        return stack.is(Items.COOKIE);
+        return stack.is(Items.COOKED_BEEF);
     }
 
     @Override
@@ -237,60 +285,31 @@ public class WhiteRabbitMaidEntity extends TamableAnimal implements RangedAttack
         this.updateSwingTime();
     }
 
-    @Override
-    protected void tickDeath() {
-        ++this.deathTime;
-        if (this.deathTime == 20) {
-            this.remove(WhiteRabbitMaidEntity.RemovalReason.KILLED);
-            this.dropExperience();
-        }
-    }
-
-    @Override
-    public Component getDisplayName() {
-        return Component.empty();
-    }
-
-    @Override
-    public @Nullable AbstractContainerMenu createMenu(int containerId, Inventory playerInventory, Player player) {
-        return new BunnySuitcaseContainer(containerId, playerInventory, this);
-    }
-
-    public ItemStackHandler getInventory() {
-        return this.inventory;
-    }
-
-    @SuppressWarnings("all")
     public static AttributeSupplier.Builder createAttributes() {
         AttributeSupplier.Builder builder = Mob.createMobAttributes();
         builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
-        builder = builder.add(Attributes.MAX_HEALTH, 30);
-        builder = builder.add(Attributes.ARMOR, 0);
+        builder = builder.add(Attributes.MAX_HEALTH, 40);
+        builder = builder.add(Attributes.ARMOR, 6);
         builder = builder.add(Attributes.ATTACK_DAMAGE, 0);
         builder = builder.add(Attributes.FOLLOW_RANGE, 16);
         builder = builder.add(Attributes.ATTACK_KNOCKBACK, 0.5);
         return builder;
     }
 
-    @Override
-    public void setShoot(boolean value) {
-        this.entityData.set(SHOOT, value);
-    }
-
-    private PlayState movementPredicate(AnimationState<WhiteRabbitMaidEntity> event) {
+    private PlayState movementPredicate(AnimationState<BlackCatLobbyBoyEntity> event) {
         if (this.animationProcedure.equals("empty")) {
             if ((event.isMoving() || !(event.getLimbSwingAmount() > -0.15F && event.getLimbSwingAmount() < 0.15F))) {
-                return event.setAndContinue(RawAnimation.begin().thenLoop("animation.white_rabbit_maid.walking"));
+                return event.setAndContinue(RawAnimation.begin().thenLoop("animation.black_cat_lobby_boy.walking"));
             }
             if (this.isInWaterOrBubble()) {
-                return event.setAndContinue(RawAnimation.begin().thenLoop("animation.white_rabbit_maid.swim"));
+                return event.setAndContinue(RawAnimation.begin().thenLoop("animation.black_cat_lobby_boy.swim"));
             }
-            return event.setAndContinue(RawAnimation.begin().thenLoop("animation.white_rabbit_maid.idle"));
+            return event.setAndContinue(RawAnimation.begin().thenLoop("animation.black_cat_lobby_boy.idle"));
         }
         return PlayState.STOP;
     }
 
-    private PlayState attackingPredicate(AnimationState<WhiteRabbitMaidEntity> event) {
+    private PlayState attackingPredicate(AnimationState<BlackCatLobbyBoyEntity> event) {
         if (getAttackAnim(event.getPartialTick()) > 0f && !this.swinging) {
             this.swinging = true;
             this.lastSwing = level().getGameTime();
@@ -300,12 +319,12 @@ public class WhiteRabbitMaidEntity extends TamableAnimal implements RangedAttack
         }
         if ((this.swinging || this.entityData.get(SHOOT)) && event.getController().getAnimationState() == AnimationController.State.STOPPED) {
             event.getController().forceAnimationReset();
-            return event.setAndContinue(RawAnimation.begin().thenPlay("animation.white_rabbit_maid.attack"));
+            return event.setAndContinue(RawAnimation.begin().thenPlay("animation.black_cat_lobby_boy.attack"));
         }
         return PlayState.CONTINUE;
     }
 
-    private PlayState procedurePredicate(AnimationState<WhiteRabbitMaidEntity> event) {
+    private PlayState procedurePredicate(AnimationState<BlackCatLobbyBoyEntity> event) {
         if (!animationProcedure.equals("empty") && event.getController().getAnimationState() == AnimationController.State.STOPPED) {
             event.getController().setAnimation(RawAnimation.begin().thenPlay(this.animationProcedure));
             if (event.getController().getAnimationState() == AnimationController.State.STOPPED) {
@@ -316,6 +335,15 @@ public class WhiteRabbitMaidEntity extends TamableAnimal implements RangedAttack
             return PlayState.STOP;
         }
         return PlayState.CONTINUE;
+    }
+
+    @Override
+    protected void tickDeath() {
+        ++this.deathTime;
+        if (this.deathTime == 20) {
+            this.remove(BlackCatLobbyBoyEntity.RemovalReason.KILLED);
+            this.dropExperience();
+        }
     }
 
     @Override
@@ -330,12 +358,60 @@ public class WhiteRabbitMaidEntity extends TamableAnimal implements RangedAttack
         return this.cache;
     }
 
-    public static final EntityType<WhiteRabbitMaidEntity> TYPE = EntityType.Builder.<WhiteRabbitMaidEntity>of(WhiteRabbitMaidEntity::new, MobCategory.CREATURE)
+    public static final EntityType<BlackCatLobbyBoyEntity> TYPE = EntityType.Builder.<BlackCatLobbyBoyEntity>of(BlackCatLobbyBoyEntity::new, MobCategory.CREATURE)
             .setShouldReceiveVelocityUpdates(true)
             .setTrackingRange(64)
             .setUpdateInterval(3)
-            .setCustomClientFactory(WhiteRabbitMaidEntity::new)
+            .setCustomClientFactory(BlackCatLobbyBoyEntity::new)
             .fireImmune()
             .sized(0.6f, 1.2f)
-            .build("white_rabbit_maid");
+            .build("black_cat_lobby_boy");
+
+    public static class Offer implements INBTSerializable<CompoundTag> {
+        public static final Offer EMPTY = new Offer(0, ItemStack.EMPTY, -1);
+
+        public int price;
+        public int tradeLimit;
+        public ItemStack result;
+
+        public Offer(int price, ItemStack result, int tradeLimit) {
+            this.price = price;
+            this.result = result;
+            this.tradeLimit = tradeLimit;
+        }
+
+        public Offer(int price, ItemStack result) {
+            this(price, result, -1);
+        }
+
+        public Offer(CompoundTag tag) {
+            deserializeNBT(tag);
+        }
+
+        public boolean isEmpty() {
+            return result.isEmpty();
+        }
+
+        @Override
+        public CompoundTag serializeNBT() {
+            CompoundTag tag = new CompoundTag();
+            tag.putInt("price", price);
+            tag.putInt("tradeLimit", tradeLimit);
+            tag.put("result", result.serializeNBT());
+            return tag;
+        }
+
+        @Override
+        public void deserializeNBT(CompoundTag tag) {
+            if (tag.contains("price")) {
+                this.price = tag.getInt("price");
+            }
+            if (tag.contains("tradeLimit")) {
+                this.tradeLimit = tag.getInt("tradeLimit");
+            }
+            if (tag.contains("result")) {
+                this.result = ItemStack.of(tag.getCompound("result"));
+            }
+        }
+    }
 }
