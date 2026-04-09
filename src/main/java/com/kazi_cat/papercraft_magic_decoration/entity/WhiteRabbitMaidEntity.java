@@ -6,6 +6,8 @@ import com.kazi_cat.papercraft_magic_decoration.init.ModEntities;
 import com.kazi_cat.papercraft_magic_decoration.inventory.container.BunnySuitcaseContainer;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -85,14 +87,17 @@ public class WhiteRabbitMaidEntity extends TamableAnimal implements RangedAttack
 
     public WhiteRabbitMaidEntity(EntityType<WhiteRabbitMaidEntity> type, Level world) {
         super(type, world);
-        xpReward = 0;
-        setNoAi(false);
     }
 
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.entityData.define(SHOOT, false);
+    }
+
+    @Override
+    public Packet<ClientGamePacketListener> getAddEntityPacket() {
+        return NetworkHooks.getEntitySpawningPacket(this);
     }
 
     @Override

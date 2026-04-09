@@ -11,6 +11,8 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
@@ -88,8 +90,6 @@ public class BlackCatLobbyBoyEntity extends TamableAnimal implements RangedAttac
 
     public BlackCatLobbyBoyEntity(EntityType<BlackCatLobbyBoyEntity> type, Level world) {
         super(type, world);
-        xpReward = 0;
-        setNoAi(false);
     }
 
     public void restock() {
@@ -138,6 +138,11 @@ public class BlackCatLobbyBoyEntity extends TamableAnimal implements RangedAttac
         super.defineSynchedData();
         this.entityData.define(SHOOT, false);
         this.entityData.define(LAST_RESTOCK_DAY, (long) -1);
+    }
+
+    @Override
+    public Packet<ClientGamePacketListener> getAddEntityPacket() {
+        return NetworkHooks.getEntitySpawningPacket(this);
     }
 
     @Override

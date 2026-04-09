@@ -7,9 +7,7 @@ import com.kazi_cat.papercraft_magic_decoration.client.render.block.BaseGeoBlock
 import com.kazi_cat.papercraft_magic_decoration.client.render.block.DistillerBlockRenderer;
 import com.kazi_cat.papercraft_magic_decoration.client.render.block.DrinkBlockRenderer;
 import com.kazi_cat.papercraft_magic_decoration.client.render.block.PaperCuttingTableBlockRenderer;
-import com.kazi_cat.papercraft_magic_decoration.client.render.entity.AoaoRenderer;
-import com.kazi_cat.papercraft_magic_decoration.client.render.entity.BlackCatLobbyBoyRenderer;
-import com.kazi_cat.papercraft_magic_decoration.client.render.entity.WhiteRabbitMaidRenderer;
+import com.kazi_cat.papercraft_magic_decoration.client.render.entity.*;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import com.kazi_cat.papercraft_magic_decoration.init.ModEntities;
 import com.kazi_cat.papercraft_magic_decoration.inventory.container.*;
@@ -45,10 +43,12 @@ public class ClientSetup {
         event.registerBlockEntityRenderer(ModBlocks.ANIMATED_SMELTABLE_BE.get(), context -> new BaseGeoBlockRenderer<>(ModBlocks.ANIMATED_SMELTABLE_BE.get()));
 
         event.registerEntityRenderer(ModEntities.AOAO.get(), AoaoRenderer::new);
-        event.registerEntityRenderer(ModEntities.FLYING_CHICKEN.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(ModEntities.WHITE_RABBIT_MAID.get(), WhiteRabbitMaidRenderer::new);
-        event.registerEntityRenderer(ModEntities.THROWN_VODKA.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(ModEntities.BLACK_CAT_LOBBY_BOY.get(), BlackCatLobbyBoyRenderer::new);
+        event.registerEntityRenderer(ModEntities.AIR_FLOW_CARP.get(), AirFlowCarpRenderer::new);
+        event.registerEntityRenderer(ModEntities.PAPER_TIGER.get(), PaperTigerRenderer::new);
+        event.registerEntityRenderer(ModEntities.FLYING_CHICKEN.get(), ThrownItemRenderer::new);
+        event.registerEntityRenderer(ModEntities.THROWN_VODKA.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(ModEntities.THROWN_FIRE_WHISKEY.get(), ThrownItemRenderer::new);
     }
 }

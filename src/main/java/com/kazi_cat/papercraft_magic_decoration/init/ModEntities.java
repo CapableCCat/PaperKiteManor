@@ -15,10 +15,12 @@ public class ModEntities {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, PaperKiteManor.MOD_ID);
 
     public static final RegistryObject<EntityType<AoaoEntity>> AOAO = ENTITY_TYPES.register("aoao", () -> AoaoEntity.TYPE);
-    public static final RegistryObject<EntityType<FlyingChickenEntity>> FLYING_CHICKEN = ENTITY_TYPES.register("flying_chicken_projectile", () -> FlyingChickenEntity.TYPE);
     public static final RegistryObject<EntityType<WhiteRabbitMaidEntity>> WHITE_RABBIT_MAID = ENTITY_TYPES.register("white_rabbit_maid", () -> WhiteRabbitMaidEntity.TYPE);
-    public static final RegistryObject<EntityType<ThrownVodkaEntity>> THROWN_VODKA = ENTITY_TYPES.register("thrown_vodka", () -> ThrownVodkaEntity.TYPE);
     public static final RegistryObject<EntityType<BlackCatLobbyBoyEntity>> BLACK_CAT_LOBBY_BOY = ENTITY_TYPES.register("black_cat_lobby_boy", () -> BlackCatLobbyBoyEntity.TYPE);
+    public static final RegistryObject<EntityType<AirFlowCarpEntity>> AIR_FLOW_CARP = ENTITY_TYPES.register("air_flow_carp", () -> AirFlowCarpEntity.TYPE);
+    public static final RegistryObject<EntityType<PaperTigerEntity>> PAPER_TIGER = ENTITY_TYPES.register("paper_tiger", () -> PaperTigerEntity.TYPE);
+    public static final RegistryObject<EntityType<FlyingChickenEntity>> FLYING_CHICKEN = ENTITY_TYPES.register("flying_chicken_projectile", () -> FlyingChickenEntity.TYPE);
+    public static final RegistryObject<EntityType<ThrownVodkaEntity>> THROWN_VODKA = ENTITY_TYPES.register("thrown_vodka", () -> ThrownVodkaEntity.TYPE);
     public static final RegistryObject<EntityType<ThrownFireWhiskeyEntity>> THROWN_FIRE_WHISKEY = ENTITY_TYPES.register("thrown_fire_whiskey", () -> ThrownFireWhiskeyEntity.TYPE);
 
     @SubscribeEvent
@@ -26,5 +28,7 @@ public class ModEntities {
         event.put(AoaoEntity.TYPE, AoaoEntity.createAttributes().build());
         event.put(WhiteRabbitMaidEntity.TYPE, WhiteRabbitMaidEntity.createAttributes().build());
         event.put(BlackCatLobbyBoyEntity.TYPE, BlackCatLobbyBoyEntity.createAttributes().build());
+        event.put(AirFlowCarpEntity.TYPE, AirFlowCarpEntity.createAttributes().build());
+        event.put(PaperTigerEntity.TYPE, PaperTigerEntity.createAttributes().build());
     }
 }

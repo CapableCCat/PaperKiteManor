@@ -26,5 +26,20 @@
       "papercraft_magic_decoration:entity/aoao_idle_07"
     ],
     "subtitle": "subtitles.papercraft_magic_decoration.entity.aoao_idle"
+  },
+  "entity.paper_tiger_death": {
+    "sounds": [
+      "papercraft_magic_decoration:entity/paper_tiger_death"
+    ],
+    "subtitle": "entity.paper_tiger_death"
+  },
+  "entity.paper_tiger_idle": {
+    "sounds": [
+      "papercraft_magic_decoration:entity/paper_tiger_idle_01",
+      "papercraft_magic_decoration:entity/paper_tiger_idle_02",
+      "papercraft_magic_decoration:entity/paper_tiger_idle_03",
+      "papercraft_magic_decoration:entity/paper_tiger_idle_04"
+    ],
+    "subtitle": "entity.paper_tiger_idle"
   }
 }

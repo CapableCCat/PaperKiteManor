@@ -36,6 +36,17 @@ public class SoundDefinitionsGenerator extends SoundDefinitionsProvider {
                 .with(sound("entity/aoao_death_01"))
                 .with(sound("entity/aoao_death_02"));
         this.add(ModSounds.AOAO_DEATH, aoaoDeath);
+
+        SoundDefinition paperTigerIdle = definition().subtitle("entity.paper_tiger_idle")
+                .with(sound("entity/paper_tiger_idle_01"))
+                .with(sound("entity/paper_tiger_idle_02"))
+                .with(sound("entity/paper_tiger_idle_03"))
+                .with(sound("entity/paper_tiger_idle_04"));
+        this.add(ModSounds.PAPER_TIGER_IDLE, paperTigerIdle);
+
+        SoundDefinition paperTigerDeath = definition().subtitle("entity.paper_tiger_death")
+                .with(sound("entity/paper_tiger_death"));
+        this.add(ModSounds.PAPER_TIGER_DEATH, paperTigerDeath);
     }
 
     protected static SoundDefinition.Sound sound(final String name) {
