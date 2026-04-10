@@ -3,7 +3,6 @@ package com.kazi_cat.papercraft_magic_decoration.compat.jei.category;
 import com.google.common.collect.Lists;
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.crafting.recipe.MixologyRecipe;
-import com.kazi_cat.papercraft_magic_decoration.crafting.recipe.PaperMakingRecipe;
 import com.kazi_cat.papercraft_magic_decoration.init.ModItems;
 import com.kazi_cat.papercraft_magic_decoration.init.ModRecipes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;

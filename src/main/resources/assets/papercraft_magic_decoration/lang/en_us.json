@@ -136,5 +136,12 @@
   "config.jade.plugin_papercraft_magic_decoration.copper_bartender": "铜酒保",
   "config.jade.plugin_papercraft_magic_decoration.spores_collection_plate": "孢子收集盆",
   "config.jade.plugin_papercraft_magic_decoration.mocha_pot": "摩卡壶",
-  "config.jade.plugin_papercraft_magic_decoration.kazi_lucky_cat": "咔吱招财猫"
+  "config.jade.plugin_papercraft_magic_decoration.kazi_lucky_cat": "咔吱招财猫",
+
+  "papercraft_magic_decoration.ponder.copper_still.header": "使用蒸馏器制酒",
+  "papercraft_magic_decoration.ponder.copper_still.text_1": "向蒸馏器右侧放入酒基",
+  "papercraft_magic_decoration.ponder.copper_still.text_2": "向左上方的原料仓内放入原料",
+  "papercraft_magic_decoration.ponder.copper_still.text_3": "确认无误后，为蒸馏器添加燃料，开始蒸馏",
+  "papercraft_magic_decoration.ponder.copper_still.text_4": "接下来，只需要等待一段时间...",
+  "papercraft_magic_decoration.ponder.copper_still.text_5": "...蒸馏就完成了!"
 }

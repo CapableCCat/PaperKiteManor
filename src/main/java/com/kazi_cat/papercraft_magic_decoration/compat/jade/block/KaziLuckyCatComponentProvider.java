@@ -1,6 +1,5 @@
 package com.kazi_cat.papercraft_magic_decoration.compat.jade.block;
 
-import com.kazi_cat.papercraft_magic_decoration.blockentity.CopperBartenderBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.KaziLuckyCatBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.compat.jade.ModPlugin;
 import net.minecraft.resources.ResourceLocation;

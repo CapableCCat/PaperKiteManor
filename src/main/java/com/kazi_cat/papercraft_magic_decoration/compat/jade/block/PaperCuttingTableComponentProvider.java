@@ -2,7 +2,6 @@ package com.kazi_cat.papercraft_magic_decoration.compat.jade.block;
 
 import com.kazi_cat.papercraft_magic_decoration.blockentity.PaperCuttingTableBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.compat.jade.ModPlugin;
-import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
