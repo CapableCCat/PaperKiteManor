@@ -23,9 +23,9 @@ public enum MochaPotComponentProvider implements IBlockComponentProvider {
         tooltip.add(stackName);
         int currentTick = mochaPot.getCurrentTick();
         if (currentTick > 0) {
-            tooltip.add(Component.literal("剩余加热时间: %d".formatted(currentTick / 20)));
+            tooltip.add(Component.translatable("jade.papercraft_magic_decoration.mocha_pot.heat_time", currentTick / 20));
         } else if (!mochaPot.getResult().isEmpty()) {
-            tooltip.add(Component.literal("已完成加热"));
+            tooltip.add(Component.translatable("jade.papercraft_magic_decoration.mocha_pot.heat_finished"));
         }
     }
 

@@ -21,11 +21,11 @@ public enum SporesCollectionPlateComponentProvider implements IBlockComponentPro
         BlockState blockState = accessor.getBlockState();
         if (blockState.getValue(SporesCollectionPlateBlock.FILLED)) {
             IElement icon = IElementHelper.get().smallItem(ModItems.VITALITY_SPORES.get().getDefaultInstance());
-            tooltip.add(Component.literal("满"));
+            tooltip.add(Component.translatable("jade.papercraft_magic_decoration.spores_collection_plate.filled"));
             tooltip.append(IElementHelper.get().spacer(2, 1));
             tooltip.append(icon);
         } else {
-            tooltip.add(Component.literal("空"));
+            tooltip.add(Component.translatable("jade.papercraft_magic_decoration.spores_collection_plate.empty"));
         }
     }
 

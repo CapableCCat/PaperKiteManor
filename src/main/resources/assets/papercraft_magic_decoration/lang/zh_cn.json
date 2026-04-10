@@ -137,6 +137,15 @@
   "config.jade.plugin_papercraft_magic_decoration.spores_collection_plate": "孢子收集盆",
   "config.jade.plugin_papercraft_magic_decoration.mocha_pot": "摩卡壶",
   "config.jade.plugin_papercraft_magic_decoration.kazi_lucky_cat": "咔吱招财猫",
+  "jade.papercraft_magic_decoration.mocha_pot.heat_time" : "剩余加热时间: %d",
+  "jade.papercraft_magic_decoration.mocha_pot.heat_finished" : "已完成加热",
+  "jade.papercraft_magic_decoration.spores_collection_plate.empty" : "空",
+  "jade.papercraft_magic_decoration.spores_collection_plate.filled" : "满",
+
+  "jei.papercraft_magic_decoration.papercutting.title": "剪纸",
+  "jei.papercraft_magic_decoration.papermaking.title": "造纸",
+  "jei.papercraft_magic_decoration.mixology.title": "调酒",
+  "jei.papercraft_magic_decoration.distiller.title": "蒸馏",
 
   "papercraft_magic_decoration.ponder.copper_still.header": "使用蒸馏器制酒",
   "papercraft_magic_decoration.ponder.copper_still.text_1": "向蒸馏器右侧放入酒基",

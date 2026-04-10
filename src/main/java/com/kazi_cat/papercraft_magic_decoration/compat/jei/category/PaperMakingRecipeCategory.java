@@ -29,7 +29,7 @@ public class PaperMakingRecipeCategory implements IRecipeCategory<PaperMakingRec
     public static final RecipeType<PaperMakingRecipe> TYPE = RecipeType.create(PaperKiteManor.MOD_ID, "papermaking", PaperMakingRecipe.class);
 
     private static final ResourceLocation BG = PaperKiteManor.resourceLocation("textures/gui/jei/papermaking.png");
-    private static final MutableComponent TITLE = Component.literal("造纸");
+    private static final MutableComponent TITLE = Component.translatable("jei.papercraft_magic_decoration.papermaking.title");
 
     public static final int WIDTH = 132;
     public static final int HEIGHT = 50;

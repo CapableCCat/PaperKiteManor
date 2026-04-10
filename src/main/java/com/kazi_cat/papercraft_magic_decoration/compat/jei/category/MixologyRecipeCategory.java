@@ -29,7 +29,7 @@ public class MixologyRecipeCategory implements IRecipeCategory<MixologyRecipe> {
     public static final RecipeType<MixologyRecipe> TYPE = RecipeType.create(PaperKiteManor.MOD_ID, "mixology", MixologyRecipe.class);
 
     private static final ResourceLocation BG = PaperKiteManor.resourceLocation("textures/gui/jei/mixology.png");
-    private static final MutableComponent TITLE = Component.literal("调酒");
+    private static final MutableComponent TITLE = Component.translatable("jei.papercraft_magic_decoration.mixology.title");
 
     public static final int WIDTH = 114;
     public static final int HEIGHT = 147;

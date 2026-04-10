@@ -3,7 +3,6 @@ package com.kazi_cat.papercraft_magic_decoration.compat.jei.category;
 import com.google.common.collect.Lists;
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.crafting.recipe.PaperCuttingRecipe;
-import com.kazi_cat.papercraft_magic_decoration.crafting.recipe.PaperMakingRecipe;
 import com.kazi_cat.papercraft_magic_decoration.init.ModItems;
 import com.kazi_cat.papercraft_magic_decoration.init.ModRecipes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
@@ -30,7 +29,7 @@ public class PaperCuttingRecipeCategory implements IRecipeCategory<PaperCuttingR
     public static final RecipeType<PaperCuttingRecipe> TYPE = RecipeType.create(PaperKiteManor.MOD_ID, "papercutting", PaperCuttingRecipe.class);
 
     private static final ResourceLocation BG = PaperKiteManor.resourceLocation("textures/gui/jei/papercutting.png");
-    private static final MutableComponent TITLE = Component.literal("剪纸");
+    private static final MutableComponent TITLE = Component.translatable("jei.papercraft_magic_decoration.papercutting.title");
 
     public static final int WIDTH = 155;
     public static final int HEIGHT = 86;
