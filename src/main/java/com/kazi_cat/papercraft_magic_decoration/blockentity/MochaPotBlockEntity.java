@@ -124,4 +124,8 @@ public class MochaPotBlockEntity extends BaseBlockEntity {
             this.currentTick = tag.getInt(CURRENT_TICK);
         }
     }
+
+    public ItemStack getResult() { return result; }
+
+    public int getCurrentTick() { return currentTick; }
 }

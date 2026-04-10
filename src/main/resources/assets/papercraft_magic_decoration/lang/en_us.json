@@ -130,5 +130,11 @@
   "item.papercraft_magic_decoration.monster_steak": "怪物肉排",
   "item.papercraft_magic_decoration.large_steak": "大肉排",
   "item.papercraft_magic_decoration.raw_manga_meat": "生的漫画肉",
-  "item.papercraft_magic_decoration.manga_meat": "熟的漫画肉"
+  "item.papercraft_magic_decoration.manga_meat": "熟的漫画肉",
+
+  "config.jade.plugin_papercraft_magic_decoration.papercutting_table": "剪纸台",
+  "config.jade.plugin_papercraft_magic_decoration.copper_bartender": "铜酒保",
+  "config.jade.plugin_papercraft_magic_decoration.spores_collection_plate": "孢子收集盆",
+  "config.jade.plugin_papercraft_magic_decoration.mocha_pot": "摩卡壶",
+  "config.jade.plugin_papercraft_magic_decoration.kazi_lucky_cat": "咔吱招财猫"
 }

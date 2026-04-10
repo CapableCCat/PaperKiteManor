@@ -228,11 +228,11 @@ public class DistillerBlock extends HorizontalDirectionalBlock implements Entity
     public void playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
         int part = state.getValue(PART);
         if (!level.isClientSide && player.isCreative() && part != LEFT_DOWN) {
-            Direction right = state.getValue(FACING).getCounterClockWise();
+            Direction left = state.getValue(FACING).getClockWise();
             BlockPos leftDownPos = switch (part) {
-                case RIGHT_DOWN -> pos.relative(right);
+                case RIGHT_DOWN -> pos.relative(left);
                 case LEFT_UP -> pos.above();
-                case RIGHT_UP -> pos.above().relative(right);
+                case RIGHT_UP -> pos.above().relative(left);
                 default -> pos;
             };
             BlockState leftDownState = level.getBlockState(leftDownPos);
