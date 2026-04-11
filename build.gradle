@@ -142,6 +142,9 @@ dependencies {
     implementation fg.deobf("net.createmod.ponder:Ponder-Forge-1.20.1:1.0.80")
     runtimeOnly fg.deobf("maven.modrinth:create:1.20.1-6.0.6")
 
+    // Patchouli
+    implementation "curse.maven:patchouli-306770:6842247"
+
     // geckolib
     implementation fg.deobf("curse.maven:geckolib-388172:7553267")
 }

@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "item": "papercraft_magic_decoration:bottle_vitality_spores"
+    },
+    "title": {
+      "translate": "advancements.magic_from_the_lush_caves.title"
+    },
+    "description": {
+      "translate": "advancements.magic_from_the_lush_caves.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "magic_from_the_lush_caves": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "papercraft_magic_decoration:bottle_vitality_spores"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "papercraft_magic_decoration:magic_scissors"
+}

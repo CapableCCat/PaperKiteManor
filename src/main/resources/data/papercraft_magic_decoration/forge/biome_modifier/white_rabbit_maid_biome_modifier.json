@@ -1,0 +1,15 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "forest",
+    "flower_forest",
+    "birch_forest",
+    "old_growth_birch_forest"
+  ],
+  "spawners": {
+    "type": "papercraft_magic_decoration:white_rabbit_maid",
+    "weight": 6,
+    "minCount": 1,
+    "maxCount": 3
+  }
+}

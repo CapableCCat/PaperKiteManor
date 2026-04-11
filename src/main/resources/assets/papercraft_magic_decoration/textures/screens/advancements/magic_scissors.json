@@ -1,0 +1,36 @@
+{
+  "display": {
+    "background": "papercraft_magic_decoration:textures/screens/achievements_background.png",
+    "icon": {
+      "item": "papercraft_magic_decoration:amethyst_scissors"
+    },
+    "title": {
+      "translate": "advancements.magic_scissors.title"
+    },
+    "description": {
+      "translate": "advancements.magic_scissors.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "magic_scissors": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:amethyst_shard"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
+      }
+    }
+  }
+}

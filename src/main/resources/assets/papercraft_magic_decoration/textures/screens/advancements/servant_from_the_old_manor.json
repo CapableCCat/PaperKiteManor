@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "item": "papercraft_magic_decoration:kite_icon"
+    },
+    "title": {
+      "translate": "advancements.servant_from_the_old_manor.title"
+    },
+    "description": {
+      "translate": "advancements.servant_from_the_old_manor.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "servant_from_the_old_manor": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "papercraft_magic_decoration:gift_from_kazi_manor"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "papercraft_magic_decoration:magic_scissors"
+}

@@ -1,0 +1,14 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "jungle",
+    "bamboo_jungle",
+    "sparse_jungle"
+  ],
+  "spawners": {
+    "type": "papercraft_magic_decoration:air_flow_carp",
+    "weight": 6,
+    "minCount": 1,
+    "maxCount": 3
+  }
+}

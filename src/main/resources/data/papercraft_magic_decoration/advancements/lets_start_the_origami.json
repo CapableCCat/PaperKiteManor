@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "item": "papercraft_magic_decoration:paper_cutting_table"
+    },
+    "title": {
+      "translate": "advancements.lets_start_the_origami.title"
+    },
+    "description": {
+      "translate": "advancements.lets_start_the_origami.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "lets_start_the_origami": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "papercraft_magic_decoration:paper_cutting_table"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "papercraft_magic_decoration:magic_scissors"
+}

@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "item": "papercraft_magic_decoration:golden_coffee_fruit"
+    },
+    "title": {
+      "translate": "advancements.lucky_bean.title"
+    },
+    "description": {
+      "translate": "advancements.lucky_bean.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "lucky_bean": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "papercraft_magic_decoration:golden_coffee_fruit"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "papercraft_magic_decoration:a_radish_that_grows_coffee"
+}

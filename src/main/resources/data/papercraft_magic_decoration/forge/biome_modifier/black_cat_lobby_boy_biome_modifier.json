@@ -1,0 +1,15 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "old_growth_pine_taiga",
+    "old_growth_spruce_taiga",
+    "snowy_taiga",
+    "taiga"
+  ],
+  "spawners": {
+    "type": "papercraft_magic_decoration:black_cat_lobby_boy",
+    "weight": 6,
+    "minCount": 1,
+    "maxCount": 3
+  }
+}

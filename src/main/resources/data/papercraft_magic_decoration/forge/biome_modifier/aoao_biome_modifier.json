@@ -1,0 +1,19 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "forest",
+    "flower_forest",
+    "birch_forest",
+    "old_growth_birch_forest",
+    "bamboo_jungle",
+    "taiga",
+    "old_growth_pine_taiga",
+    "old_growth_spruce_taiga"
+  ],
+  "spawners": {
+    "type": "papercraft_magic_decoration:aoao",
+    "weight": 1,
+    "minCount": 1,
+    "maxCount": 3
+  }
+}

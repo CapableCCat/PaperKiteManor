@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "item": "papercraft_magic_decoration:whiskeyraw"
+    },
+    "title": {
+      "translate": "advancements.preparation_for_brewing.title"
+    },
+    "description": {
+      "translate": "advancements.preparation_for_brewing.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "preparation_for_brewing": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "papercraft_magic_decoration:whiskeyraw"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "papercraft_magic_decoration:magic_scissors"
+}
