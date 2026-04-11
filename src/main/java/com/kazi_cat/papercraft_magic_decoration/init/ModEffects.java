@@ -15,4 +15,5 @@ public interface ModEffects {
     RegistryObject<MobEffect> CAT_EYE = EFFECTS.register("cat_eye", () -> new CatEyeEffect(0x161231));
     RegistryObject<MobEffect> ACID_JAZZ = EFFECTS.register("acid_jazz", () -> new BaseEffect(0xFF831A));
     RegistryObject<MobEffect> SKY_TRACTION = EFFECTS.register("sky_traction", () -> new SkyTractionEffect(0x8ABBCB));
+    RegistryObject<MobEffect> LOVE_BAND_AID = EFFECTS.register("love_band_aid", () -> new BaseEffect(0xFFBDD9));
 }

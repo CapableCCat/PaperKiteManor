@@ -110,6 +110,12 @@ public interface ModItems {
                     .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, 2400, 3), 1)
                     .build()));
 
+    RegistryObject<Item> WHITE_RABBIT_MOCHA = ITEMS.register("white_rabbit_mocha",
+            () -> new DrinkBlockItem(ModBlocks.WHITE_RABBIT_MOCHA.get(), DrinkBlockItem.defaultFood.get()
+                    .effect(() -> new MobEffectInstance(MobEffects.JUMP, 6000, 0), 1)
+                    .effect(() -> new MobEffectInstance(ModEffects.LOVE_BAND_AID.get(), 6000, 0), 1)
+                    .build()));
+
     RegistryObject<Item> GUANG_S = ITEMS.register("guang_s",
             () -> new DrinkBlockItem(ModBlocks.GUANG_S.get(), DrinkBlockItem.defaultFood.get()
                     .effect(() -> new MobEffectInstance(MobEffects.SATURATION, 120, 0), 1)

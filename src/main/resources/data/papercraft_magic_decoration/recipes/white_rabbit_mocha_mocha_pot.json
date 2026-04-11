@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "papercraft_magic_decoration:mocha_pot"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    },
+    {
+      "item": "minecraft:milk_bucket"
+    },
+    {
+      "item": "minecraft:cocoa_beans"
+    },
+    {
+      "item": "papercraft_magic_decoration:coffee_fruit"
+    }
+  ],
+  "result": {
+    "item": "papercraft_magic_decoration:mocha_pot",
+    "nbt": "{BlockEntityTag:{currentTick:1200,result:{Count:2b,id:\"papercraft_magic_decoration:white_rabbit_mocha\"}}}"
+  }
+}

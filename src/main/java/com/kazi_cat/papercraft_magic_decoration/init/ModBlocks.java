@@ -82,8 +82,17 @@ public interface ModBlocks {
             Block.box(2, 0, 2, 14, 16, 14)
     ).build());
 
-    RegistryObject<Block> LUCKY_CACTUS = BLOCKS.register("lucky_cactus", DrinkBlock.create().maxCount(1).shapes(
-            Block.box(4, 0, 4, 12, 10, 12)
+    RegistryObject<Block> LUCKY_CACTUS = BLOCKS.register("lucky_cactus", DrinkBlock.create().maxCount(3).shapes(
+            Block.box(4, 0, 4, 12, 10, 12),
+            Shapes.or(
+                    Block.box(1, 0, 1, 15, 1, 15),
+                    Block.box(2, 1, 2, 9, 10, 9),
+                    Block.box(8.5, 1, 8.5, 13.5, 10, 13.5)
+            ),
+            Shapes.or(
+                    Block.box(1, 0, 1, 15, 1, 15),
+                    Block.box(2, 1, 2, 14, 10, 14)
+            )
     ).build());
 
     RegistryObject<Block> POISON_RUM = BLOCKS.register("poison_rum", DrinkBlock.create().maxCount(1).shapes(
@@ -118,6 +127,10 @@ public interface ModBlocks {
             Block.box(4, 0, 4, 12, 6, 12)
     ).build(BlockBehaviour.Properties.of().noOcclusion().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.WOOD)));
 
+    RegistryObject<Block> WHITE_RABBIT_MOCHA = BLOCKS.register("white_rabbit_mocha", DrinkBlock.create().maxCount(1).shapes(
+            Block.box(4, 0, 4, 12, 6, 12)
+    ).build(BlockBehaviour.Properties.of().noOcclusion().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.WOOD)));
+
     RegistryObject<Block> GUANG_S = BLOCKS.register("guang_s", () -> new BoxedDrinkBlock(BlockBehaviour.Properties.of()
                     .noOcclusion().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.LANTERN), 4, 2, 0.25,
                     Block.box(5, 0, 5, 11, 11, 11),
@@ -148,6 +161,7 @@ public interface ModBlocks {
                             KALEIDOSCOPE_WHISKEY_SOUR.get(),
                             NOCTURNAL_CAT_COFFEE.get(),
                             GOLD_MEDAL_COFFEE.get(),
+                            WHITE_RABBIT_MOCHA.get(),
                             GUANG_S.get()
                     ).build(null)
     );

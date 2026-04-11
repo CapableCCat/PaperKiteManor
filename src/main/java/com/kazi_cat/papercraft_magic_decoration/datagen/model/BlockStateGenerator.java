@@ -44,6 +44,7 @@ public class BlockStateGenerator extends BlockStateProvider {
         drink(ModBlocks.KALEIDOSCOPE_WHISKEY_SOUR.get(), "kaleidoscope_whiskey_sour");
         drink(ModBlocks.NOCTURNAL_CAT_COFFEE.get(), "nocturnal_cat_coffee");
         drink(ModBlocks.GOLD_MEDAL_COFFEE.get(), "gold_medal_coffee");
+        drink(ModBlocks.WHITE_RABBIT_MOCHA.get(), "white_rabbit_mocha");
 
         boxedDrink(ModBlocks.GUANG_S.get(), "guang_s");
 

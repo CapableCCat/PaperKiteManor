@@ -73,6 +73,7 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.KALEIDOSCOPE_WHISKEY_SOUR.get());
                 output.accept(ModItems.NOCTURNAL_CAT_COFFEE.get());
                 output.accept(ModItems.GOLD_MEDAL_COFFEE.get());
+                output.accept(ModItems.WHITE_RABBIT_MOCHA.get());
                 output.accept(ModItems.GUANG_S.get());
 
                 output.accept(ModItems.BOTTLE_OF_BLAZE_WHISKEY.get());

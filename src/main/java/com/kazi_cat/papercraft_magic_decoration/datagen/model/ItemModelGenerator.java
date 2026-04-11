@@ -38,6 +38,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 
         basicItem(ModItems.NOCTURNAL_CAT_COFFEE.get());
         basicItem(ModItems.GOLD_MEDAL_COFFEE.get());
+        basicItem(ModItems.WHITE_RABBIT_MOCHA.get());
         basicItem(ModItems.BOTTLE_OF_BLAZE_WHISKEY.get());
         basicItem(ModItems.BOTTLE_OF_FERRY_WHISKEY.get());
         basicItem(ModItems.BOTTLE_OF_FLY_WHISKEY.get());

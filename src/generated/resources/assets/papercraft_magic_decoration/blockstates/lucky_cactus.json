@@ -59,6 +59,66 @@
     "count=1,facing=west,waterlogged=true": {
       "model": "papercraft_magic_decoration:block/drink/lucky_cactus/count1",
       "y": 270
+    },
+    "count=2,facing=east,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/drink/lucky_cactus/count2",
+      "y": 90
+    },
+    "count=2,facing=east,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/drink/lucky_cactus/count2",
+      "y": 90
+    },
+    "count=2,facing=north,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/drink/lucky_cactus/count2"
+    },
+    "count=2,facing=north,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/drink/lucky_cactus/count2"
+    },
+    "count=2,facing=south,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/drink/lucky_cactus/count2",
+      "y": 180
+    },
+    "count=2,facing=south,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/drink/lucky_cactus/count2",
+      "y": 180
+    },
+    "count=2,facing=west,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/drink/lucky_cactus/count2",
+      "y": 270
+    },
+    "count=2,facing=west,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/drink/lucky_cactus/count2",
+      "y": 270
+    },
+    "count=3,facing=east,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/drink/lucky_cactus/count3",
+      "y": 90
+    },
+    "count=3,facing=east,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/drink/lucky_cactus/count3",
+      "y": 90
+    },
+    "count=3,facing=north,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/drink/lucky_cactus/count3"
+    },
+    "count=3,facing=north,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/drink/lucky_cactus/count3"
+    },
+    "count=3,facing=south,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/drink/lucky_cactus/count3",
+      "y": 180
+    },
+    "count=3,facing=south,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/drink/lucky_cactus/count3",
+      "y": 180
+    },
+    "count=3,facing=west,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/drink/lucky_cactus/count3",
+      "y": 270
+    },
+    "count=3,facing=west,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/drink/lucky_cactus/count3",
+      "y": 270
     }
   }
 }
