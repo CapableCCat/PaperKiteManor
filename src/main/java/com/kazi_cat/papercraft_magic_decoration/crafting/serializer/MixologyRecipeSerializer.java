@@ -32,12 +32,15 @@ public class MixologyRecipeSerializer implements RecipeSerializer<MixologyRecipe
         for (int i = 0; i < 4; i++) {
             inputs.add(Ingredient.fromNetwork(buf));
         }
-        return new MixologyRecipe(recipeId, inputs, buf.readItem());
+        ItemStack result = buf.readItem();
+        return new MixologyRecipe(recipeId, inputs, result);
     }
 
     @Override
     public void toNetwork(FriendlyByteBuf buf, MixologyRecipe recipe) {
-        recipe.getIngredients().forEach(i -> i.toNetwork(buf));
+        for (int i = 0; i < 4; i++) {
+            recipe.getIngredients().get(i).toNetwork(buf);
+        }
         buf.writeItem(recipe.result());
     }
 }

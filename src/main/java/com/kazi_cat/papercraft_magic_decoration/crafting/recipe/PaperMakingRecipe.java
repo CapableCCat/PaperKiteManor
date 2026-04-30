@@ -1,6 +1,7 @@
 package com.kazi_cat.papercraft_magic_decoration.crafting.recipe;
 
 import com.kazi_cat.papercraft_magic_decoration.init.ModRecipes;
+import net.minecraft.core.NonNullList;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
@@ -20,6 +21,9 @@ public class PaperMakingRecipe extends SingleItemRecipe {
     public boolean matches(Container container, Level level) {
         return this.ingredient.test(container.getItem(0));
     }
+
+    @Override
+    public NonNullList<Ingredient> getIngredients() { return NonNullList.of(Ingredient.EMPTY, ingredient); }
 
     public Ingredient getIngredient() {
         return this.ingredient;

@@ -21,7 +21,9 @@ public class PaperCuttingRecipeSerializer implements RecipeSerializer<PaperCutti
 
     @Override
     public @Nullable PaperCuttingRecipe fromNetwork(ResourceLocation recipeId, FriendlyByteBuf buf) {
-        return new PaperCuttingRecipe(recipeId, Ingredient.fromNetwork(buf), buf.readItem());
+        Ingredient ingredient = Ingredient.fromNetwork(buf);
+        ItemStack result = buf.readItem();
+        return new PaperCuttingRecipe(recipeId, ingredient, result);
     }
 
     @Override

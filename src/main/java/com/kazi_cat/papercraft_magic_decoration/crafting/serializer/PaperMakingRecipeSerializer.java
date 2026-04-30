@@ -21,7 +21,9 @@ public class PaperMakingRecipeSerializer implements RecipeSerializer<PaperMaking
 
     @Override
     public @Nullable PaperMakingRecipe fromNetwork(ResourceLocation recipeId, FriendlyByteBuf buf) {
-        return new PaperMakingRecipe(recipeId, Ingredient.fromNetwork(buf), buf.readItem());
+        Ingredient ingredient = Ingredient.fromNetwork(buf);
+        ItemStack result = buf.readItem();
+        return new PaperMakingRecipe(recipeId, ingredient, result);
     }
 
     @Override

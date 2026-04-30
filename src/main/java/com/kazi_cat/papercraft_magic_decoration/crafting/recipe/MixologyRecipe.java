@@ -30,6 +30,11 @@ public record MixologyRecipe(ResourceLocation id, NonNullList<Ingredient> ingred
     }
 
     @Override
+    public NonNullList<Ingredient> getIngredients() {
+        return ingredients;
+    }
+    
+    @Override
     public ItemStack getResultItem(RegistryAccess registryAccess) {
         return this.result;
     }

@@ -29,6 +29,11 @@ public record DistillerRecipe(ResourceLocation id, Ingredient wineBase, NonNullL
     }
 
     @Override
+    public NonNullList<Ingredient> getIngredients() {
+        return ingredients;
+    }
+
+    @Override
     public ItemStack getResultItem(RegistryAccess registryAccess) {
         return this.result;
     }
