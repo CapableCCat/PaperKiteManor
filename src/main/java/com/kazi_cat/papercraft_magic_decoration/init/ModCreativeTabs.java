@@ -14,6 +14,7 @@ public interface ModCreativeTabs {
             .title(Component.translatable("item_group.papercraft_magic_decoration.manor_main.name"))
             .icon(ModItems.AMETHYST_SCISSORS.get()::getDefaultInstance)
             .displayItems((par, output) -> {
+                output.accept(ModItems.KAZI_STAR.get());
                 output.accept(ModItems.AMETHYST_SCISSORS.get());
                 output.accept(ModItems.GARDEN_TROWEL.get());
 
@@ -147,6 +148,8 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.KAZI_LUCKY_CAT.get());
                 output.accept(ModItems.GIFT_FROM_KAZI_MANOR.get());
                 output.accept(ModItems.KEY_UNDER_THE_LAKE.get());
+                output.accept(ModItems.KNITTED_LEOPARD_RUG.get());
+                output.accept(ModItems.FOAM_BOX_WITH_DIRT.get());
 
                 output.accept(ModItems.MINI_PALM_TREE.get());
                 output.accept(ModItems.PALM_TREE_CROWN.get());

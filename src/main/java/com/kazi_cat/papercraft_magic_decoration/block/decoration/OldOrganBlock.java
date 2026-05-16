@@ -64,7 +64,7 @@ public class OldOrganBlock extends TwoByThreeVerticalBlock.Animated.Waterlogged 
     @Nullable
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
         if (state.getValue(PART) != CENTER_DOWN) return null;
-        return createTickerHelper(blockEntityType, ModBlocks.SMELTABLE_BE.get(),
-                (levelIn, blockPos, blockState, smeltable) -> smeltable.tick(levelIn));
+        return createTickerHelper(blockEntityType, ModBlocks.OLD_ORGAN_BE.get(),
+                (levelIn, blockPos, blockState, organ) -> organ.tick(levelIn));
     }
 }

@@ -182,6 +182,9 @@ public interface ModItems {
     RegistryObject<Item> VITALITY_SPORES = ITEMS.register("vitality_spores", () -> new Item(new Item.Properties()));
     RegistryObject<Item> WHISKEY_RAW = ITEMS.register("whiskey_raw", () -> new Item(new Item.Properties()));
 
+    // 唱片
+    RegistryObject<Item> KAZI_STAR = ITEMS.register("kazi_star", () -> new RecordItem(0, ModSounds.KAZI_STAR, new Item.Properties().stacksTo(1), 1540));
+
     // 剪纸台
     RegistryObject<Item> PAPER_CUTTING_TABLE = ITEMS.register("paper_cutting_table", () -> new GeoBlockItem(ModBlocks.PAPER_CUTTING_TABLE.get(), new Item.Properties()));
 
@@ -231,6 +234,8 @@ public interface ModItems {
     RegistryObject<Item> UNDERGROUND_DOOR_FRAMES = ITEMS.register("underground_door_frames", () -> new BlockItem(ModBlocks.UNDERGROUND_DOOR_FRAMES.get(), new Item.Properties()));
     RegistryObject<Item> ROSES_IN_WATER_BOTTLE = ITEMS.register("roses_in_water_bottle", () -> new BlockItem(ModBlocks.ROSES_IN_WATER_BOTTLE.get(), new Item.Properties()));
     RegistryObject<Item> STAR_EMBELLISHED_CEILING = ITEMS.register("star_embellished_ceiling", () -> new BlockItem(ModBlocks.STAR_EMBELLISHED_CEILING.get(), new Item.Properties()));
+    RegistryObject<Item> KNITTED_LEOPARD_RUG = ITEMS.register("knitted_leopard_rug", () -> new BlockItem(ModBlocks.KNITTED_LEOPARD_RUG.get(), new Item.Properties()));
+    RegistryObject<Item> FOAM_BOX_WITH_DIRT = ITEMS.register("foam_box_with_dirt", () -> new BlockItem(ModBlocks.FOAM_BOX_WITH_DIRT.get(), new Item.Properties()));
 
     RegistryObject<Item> LOW_CABINET_WITH_TABLECLOTH = ITEMS.register("low_cabinet_with_tablecloth", () -> new GeoBlockItem(ModBlocks.LOW_CABINET_WITH_TABLECLOTH.get(), new Item.Properties()));
     RegistryObject<Item> WOODEN_BARREL_BOOKSHELF = ITEMS.register("wooden_barrel_bookshelf", () -> new GeoBlockItem(ModBlocks.WOODEN_BARREL_BOOKSHELF.get(), new Item.Properties()));

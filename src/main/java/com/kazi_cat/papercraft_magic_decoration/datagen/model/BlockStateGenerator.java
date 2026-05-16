@@ -97,6 +97,11 @@ public class BlockStateGenerator extends BlockStateProvider {
             ResourceLocation file = modLoc("block/tray%d".formatted(variant));
             return new ModelFile.UncheckedModelFile(file);
         });
+        horizontalBlock(ModBlocks.KNITTED_LEOPARD_RUG.get(), state -> {
+            int variant = state.getValue(((DecorationBlock.HorizontalDirectional.Variant.Waterlogged) ModBlocks.TRAY_BLOCK.get()).getVariantProperty());
+            ResourceLocation file = modLoc("block/knitted_leopard_rug%s".formatted(variant == 0 ? "" : "_tail"));
+            return new ModelFile.UncheckedModelFile(file);
+        });
         horizontalBlock(ModBlocks.KAZI_LUCKY_CAT.get(), new ModelFile.UncheckedModelFile(modLoc("block/kazi_lucky_cat")));
         horizontalBlock(ModBlocks.MOCHA_POT.get(), state -> {
             boolean boiled = state.getValue(MochaPotBlock.BOILED);
@@ -168,6 +173,7 @@ public class BlockStateGenerator extends BlockStateProvider {
         simpleBlock(ModBlocks.MINI_CANOPY_TREE.get(), new ModelFile.UncheckedModelFile(modLoc("block/mini_canopy_tree")));
         simpleBlock(ModBlocks.VODKA.get(), new ModelFile.UncheckedModelFile(modLoc("block/vodka")));
         simpleBlock(ModBlocks.FIRE_WHISKEY.get(), new ModelFile.UncheckedModelFile(modLoc("block/fire_whiskey")));
+        simpleBlock(ModBlocks.FOAM_BOX_WITH_DIRT.get(), new ModelFile.UncheckedModelFile(modLoc("block/foam_box_with_dirt")));
 
         distiller(ModBlocks.COPPER_STILL.get(), "copper_still");
 

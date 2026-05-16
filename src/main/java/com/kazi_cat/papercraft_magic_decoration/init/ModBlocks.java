@@ -436,38 +436,84 @@ public interface ModBlocks {
         }
     });
 
-    RegistryObject<Block> GIFT_FROM_KAZI_MANOR = BLOCKS.register("gift_from_kazi_manor", () -> new DecorationBlock.HorizontalDirectional.Animated.Waterlogged(
-            BlockBehaviour.Properties.of().sound(SoundType.SNOW).strength(1f, 5f).noOcclusion(),
-            Block.box(2, 0, 2, 14, 10, 14)));
+    RegistryObject<Block> GIFT_FROM_KAZI_MANOR = BLOCKS.register("gift_from_kazi_manor",
+            () -> new DecorationBlock.HorizontalDirectional.Animated.Waterlogged(
+                    BlockBehaviour.Properties.of()
+                            .sound(SoundType.SNOW)
+                            .strength(1f, 5f)
+                            .noOcclusion(),
+                    Block.box(2, 0, 2, 14, 10, 14)
+            ));
 
-    RegistryObject<Block> KEY_UNDER_THE_LAKE = BLOCKS.register("key_under_the_lake", () -> new DecorationBlock.HorizontalDirectional.Animated.Waterlogged(
-            BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1f, 5f).noOcclusion(),
-            Block.box(1, 0, 1, 15, 7, 15)));
+    RegistryObject<Block> KEY_UNDER_THE_LAKE = BLOCKS.register("key_under_the_lake",
+            () -> new DecorationBlock.HorizontalDirectional.Animated.Waterlogged(
+                    BlockBehaviour.Properties.of()
+                            .sound(SoundType.METAL)
+                            .strength(1f, 5f)
+                            .noOcclusion(),
+                    Block.box(1, 0, 1, 15, 7, 15)
+            ));
+
+    RegistryObject<Block> KNITTED_LEOPARD_RUG = BLOCKS.register("knitted_leopard_rug", () -> new KnittedLeopardRugBlock(
+            BlockBehaviour.Properties.of()
+                    .ignitedByLava()
+                    .sound(SoundType.SNOW)
+                    .strength(0.5f, 10f)
+                    .noCollission()
+                    .noOcclusion(),
+            Block.box(-16, 0, -16, 32, 0.5, 24)
+    ));
+
+    RegistryObject<Block> FOAM_BOX_WITH_DIRT = BLOCKS.register("foam_box_with_dirt", () -> new FoamBoxWithDirtBlock(
+            BlockBehaviour.Properties.of()
+                    .sound(SoundType.SNOW)
+                    .strength(0.5f)
+    ));
 
     RegistryObject<Block> LOUD_BUTTON = BLOCKS.register("loud_button", LoudButtonBlock::new);
 
     RegistryObject<Block> LOW_CABINET_WITH_TABLECLOTH = BLOCKS.register("low_cabinet_with_tablecloth",
-            () -> new DecorationBlock.HorizontalDirectional.Animated.Waterlogged(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_RED).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
-                    Block.box(0, 0, 0, 16, 15, 16)));
+            () -> new DecorationBlock.HorizontalDirectional.Animated.Waterlogged(
+                    BlockBehaviour.Properties.of()
+                        .mapColor(MapColor.COLOR_RED)
+                        .sound(SoundType.WOOD)
+                        .strength(2f, 10f)
+                        .noOcclusion(),
+                    Block.box(0, 0, 0, 16, 15, 16)
+            ));
 
     RegistryObject<Block> WOODEN_BARREL_BOOKSHELF = BLOCKS.register("wooden_barrel_bookshelf",
-            () -> new DecorationBlock.HorizontalDirectional.Animated.Waterlogged(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
-                    Block.box(0, 0, 0, 14, 16, 16)));
+            () -> new DecorationBlock.HorizontalDirectional.Animated.Waterlogged(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.COLOR_BROWN)
+                            .sound(SoundType.WOOD)
+                            .strength(2f, 10f)
+                            .noOcclusion(),
+                    Block.box(0, 0, 0, 14, 16, 16)
+            ));
 
     RegistryObject<Block> WOODWORKING_TABLE = BLOCKS.register("woodworking_table",
-            () -> new OneByTwoBlock.Animated.Waterlogged(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
+            () -> new OneByTwoBlock.Animated.Waterlogged(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.COLOR_BROWN)
+                            .sound(SoundType.WOOD)
+                            .strength(2f, 10f)
+                            .noOcclusion(),
                     Block.box(1, 0, 0, 16, 16, 16),
-                    Block.box(0, 0, 0, 15, 16, 16)));
+                    Block.box(0, 0, 0, 15, 16, 16)
+            ));
 
     RegistryObject<Block> LONG_STORAGE_TABLE = BLOCKS.register("long_storage_table",
-            () -> new OneByThreeBlock.Animated.Waterlogged(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
+            () -> new OneByThreeBlock.Animated.Waterlogged(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.COLOR_BROWN)
+                            .sound(SoundType.WOOD)
+                            .strength(2f, 10f)
+                            .noOcclusion(),
                     Block.box(1, 0, 0, 16, 15, 16),
                     Block.box(0, 0, 0, 16, 15, 16),
-                    Block.box(0, 0, 0, 15, 15, 16)));
+                    Block.box(0, 0, 0, 15, 15, 16)
+            ));
 
     RegistryObject<Block> EDGED_CHALKBOARD = BLOCKS.register("edged_chalkboard", () -> new TwoByThreeVerticalBlock.Animated.Waterlogged(
             BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),

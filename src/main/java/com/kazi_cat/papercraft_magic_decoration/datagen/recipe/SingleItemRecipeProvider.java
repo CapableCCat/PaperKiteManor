@@ -128,8 +128,7 @@ public class SingleItemRecipeProvider extends ModRecipeProvider {
         SingleItemRecipeBuilder.stonecutting(
                 Ingredient.of(ModItems.GIFT_FROM_KAZI_MANOR.get()),
                 RecipeCategory.DECORATIONS,
-                ModItems.LOUD_BUTTON.get(),
-                4)
+                ModItems.LOUD_BUTTON.get(), 4)
                 .unlockedBy("has_gift_from_kazi_manor", has(ModItems.GIFT_FROM_KAZI_MANOR.get()))
                 .save(consumer, stoneCuttingLoc(ModItems.LOUD_BUTTON.get()));
 
@@ -139,6 +138,13 @@ public class SingleItemRecipeProvider extends ModRecipeProvider {
                 ModItems.ROSES_IN_WATER_BOTTLE.get())
                 .unlockedBy("has_gift_from_kazi_manor", has(ModItems.GIFT_FROM_KAZI_MANOR.get()))
                 .save(consumer, stoneCuttingLoc(ModItems.ROSES_IN_WATER_BOTTLE.get()));
+
+        SingleItemRecipeBuilder.stonecutting(
+                Ingredient.of(ModItems.GIFT_FROM_KAZI_MANOR.get()),
+                RecipeCategory.DECORATIONS,
+                ModItems.KNITTED_LEOPARD_RUG.get(), 2)
+                .unlockedBy("has_gift_from_kazi_manor", has(ModItems.GIFT_FROM_KAZI_MANOR.get()))
+                .save(consumer, stoneCuttingLoc(ModItems.KNITTED_LEOPARD_RUG.get()));
 
         SimpleCookingRecipeBuilder.smelting(
                 Ingredient.of(ModItems.DARK_COCOA_IN_MOLD.get()),

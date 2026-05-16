@@ -59,6 +59,10 @@ public class SoundDefinitionsGenerator extends SoundDefinitionsProvider {
         SoundDefinition organ = definition().subtitle("block.organ")
                 .with(sound("block/organ"));
         this.add(ModSounds.ORGAN, organ);
+
+        SoundDefinition kaziStar = definition().subtitle("kazi_star")
+                .with(sound("kazi_star"));
+        this.add(ModSounds.KAZI_STAR, kaziStar);
     }
 
     protected static SoundDefinition.Sound sound(final String name) {

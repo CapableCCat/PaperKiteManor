@@ -248,5 +248,31 @@ public class ShapedRecipeProvider extends ModRecipeProvider {
                 .define('B', Items.BUCKET)
                 .unlockedBy("has_iron_ingot", has(Items.IRON_INGOT))
                 .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.FOAM_BOX_WITH_DIRT.get())
+                .pattern("ABA")
+                .pattern("CBC")
+                .pattern("ACA")
+                .define('A', ModItems.COTTON_SERGE.get())
+                .define('B', Items.DIRT)
+                .define('C', ModItems.YELLOW_PAPER.get())
+                .unlockedBy("has_cotton_serge", has(ModItems.COTTON_SERGE.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.KAZI_STAR.get())
+                .pattern("ABC")
+                .pattern("DEF")
+                .pattern("GHI")
+                .define('A', ModItems.RED_PAPER_BLOCK.get())
+                .define('B', ModItems.BLUE_PAPER_BLOCK.get())
+                .define('C', ModItems.YELLOW_PAPER_BLOCK.get())
+                .define('D', ModItems.BLACK_PAPER_BLOCK.get())
+                .define('E', Items.AMETHYST_SHARD)
+                .define('F', ModItems.DEWY_MEMBRANE_BLOCK.get())
+                .define('G', ModItems.COTTON_SERGE_BLOCK.get())
+                .define('H', Items.CAMPFIRE)
+                .define('I', ModItems.WHITE_PAPER_BLOCK.get())
+                .unlockedBy("has_amethyst_shard", has(Items.AMETHYST_SHARD))
+                .save(consumer);
     }
 }

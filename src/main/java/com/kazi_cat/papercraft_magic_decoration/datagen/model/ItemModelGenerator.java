@@ -97,6 +97,8 @@ public class ItemModelGenerator extends ItemModelProvider {
         basicItem(ModItems.MILK_CHOCOLATE.get());
         basicItem(ModItems.PRALINE_CHOCOLATE.get());
         basicItem(ModItems.OVERSIZED_BOX_OF_CHOCOLATES.get());
+        basicItem(ModItems.KNITTED_LEOPARD_RUG.get());
+        basicItem(ModItems.KAZI_STAR.get());
 
         handheldItem(ModItems.GARDEN_TROWEL.get());
 

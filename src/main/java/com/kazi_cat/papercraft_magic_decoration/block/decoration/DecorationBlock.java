@@ -33,6 +33,8 @@ public final class DecorationBlock {
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
 
+    private DecorationBlock() {}
+
     public static class Waterlogged extends Block implements SimpleWaterloggedBlock {
         @Nullable
         protected VoxelShape shape = null;

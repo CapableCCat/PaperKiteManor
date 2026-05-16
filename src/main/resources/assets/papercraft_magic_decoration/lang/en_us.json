@@ -92,6 +92,8 @@
   "block.papercraft_magic_decoration.praline_chocolate_in_mold": "Praline Chocolate In Mold",
   "block.papercraft_magic_decoration.praline_chocolate": "Praline Chocolate",
   "block.papercraft_magic_decoration.oversized_box_of_chocolates": "Oversized Box of Chocolates",
+  "block.papercraft_magic_decoration.knitted_leopard_rug": "Knitted Leopard Rug",
+  "block.papercraft_magic_decoration.foam_box_with_dirt": "Foam Box With Dirt",
 
   "effect.papercraft_magic_decoration.wines_aroma": "Wines Aroma",
   "effect.papercraft_magic_decoration.bloodthirsty_devil": "Bloodthirsty Devil",
@@ -162,6 +164,10 @@
   "item.papercraft_magic_decoration.melted_praline_cocoa_in_mold": "Melted Praline Cocoa In Mold",
   "item.papercraft_magic_decoration.praline_chocolate": "Praline Chocolate",
   "item.papercraft_magic_decoration.oversized_box_of_chocolates": "Oversized Box of Chocolates",
+  "item.papercraft_magic_decoration.knitted_leopard_rug": "Knitted Leopard Rug",
+  "item.papercraft_magic_decoration.foam_box_with_dirt": "Foam Box With Dirt",
+  "item.papercraft_magic_decoration.kazi_star": "Kazi Star",
+  "item.papercraft_magic_decoration.kazi_star.desc": "Kazi Star----KaziCat",
 
   "advancements.lets_start_the_origami.title": "Let\u0027s Start The Origami",
   "advancements.lets_start_the_origami.descr": "Making an Paper Cutting Table,For cutting paper blocks and making various origami activation blocks",

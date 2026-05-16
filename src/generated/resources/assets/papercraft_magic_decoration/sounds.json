@@ -59,5 +59,11 @@
       "papercraft_magic_decoration:entity/paper_tiger_idle_04"
     ],
     "subtitle": "entity.paper_tiger_idle"
+  },
+  "kazi_star": {
+    "sounds": [
+      "papercraft_magic_decoration:kazi_star"
+    ],
+    "subtitle": "kazi_star"
   }
 }

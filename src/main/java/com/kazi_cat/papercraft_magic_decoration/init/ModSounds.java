@@ -17,4 +17,5 @@ public interface ModSounds {
     RegistryObject<SoundEvent> LOUD_BUTTON_PRESSED = SOUND_EVENTS.register("block.loud_button_pressed", () -> SoundEvent.createVariableRangeEvent(PaperKiteManor.resourceLocation("block.loud_button_pressed")));
     RegistryObject<SoundEvent> COCKTAIL_SHAKING = SOUND_EVENTS.register("block.cocktail_shaking", () -> SoundEvent.createVariableRangeEvent(PaperKiteManor.resourceLocation("block.cocktail_shaking")));
     RegistryObject<SoundEvent> ORGAN = SOUND_EVENTS.register("block.organ", () -> SoundEvent.createVariableRangeEvent(PaperKiteManor.resourceLocation("block.organ")));
+    RegistryObject<SoundEvent> KAZI_STAR = SOUND_EVENTS.register("kazi_star", () -> SoundEvent.createVariableRangeEvent(PaperKiteManor.resourceLocation("kazi_star")));
 }
