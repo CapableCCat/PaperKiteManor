@@ -22,5 +22,25 @@ public class ShapelessRecipeProvider extends ModRecipeProvider {
                 .requires(Items.COCOA_BEANS)
                 .unlockedBy("has_vitality_spores", has(ModItems.VITALITY_SPORES.get()))
                 .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.DARK_COCOA_IN_MOLD.get(), 1)
+                .requires(Items.BUCKET)
+                .requires(Items.COCOA_BEANS, 3)
+                .unlockedBy("has_cocoa_beans", has(Items.COCOA_BEANS))
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.MILK_COCOA_IN_MOLD.get(), 1)
+                .requires(Items.MILK_BUCKET)
+                .requires(Items.SUGAR)
+                .requires(Items.COCOA_BEANS, 2)
+                .unlockedBy("has_cocoa_beans", has(Items.COCOA_BEANS))
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.PRALINE_COCOA_IN_MOLD.get(), 1)
+                .requires(Items.BUCKET)
+                .requires(ModItems.GLOW_CASHEWS.get())
+                .requires(Items.COCOA_BEANS, 2)
+                .unlockedBy("has_cocoa_beans", has(Items.COCOA_BEANS))
+                .save(consumer);
     }
 }

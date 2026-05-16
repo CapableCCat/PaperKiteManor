@@ -13,9 +13,9 @@ import com.kazi_cat.papercraft_magic_decoration.blockentity.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -119,6 +119,10 @@ public interface ModBlocks {
             Block.box(4, 0, 4, 12, 8.5, 12)
     ).build());
 
+    RegistryObject<Block> LONG_ISLAND_POPSICLE_TEA = BLOCKS.register("long_island_popsicle_tea", DrinkBlock.create().maxCount(1).shapes(
+            Block.box(4, 0, 4, 12, 8.5, 12)
+    ).build());
+
     RegistryObject<Block> NOCTURNAL_CAT_COFFEE = BLOCKS.register("nocturnal_cat_coffee", DrinkBlock.create().maxCount(1).shapes(
             Block.box(4, 0, 4, 12, 6, 12)
     ).build(BlockBehaviour.Properties.of().noOcclusion().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.WOOD)));
@@ -159,6 +163,7 @@ public interface ModBlocks {
                             DEVIL_MARGARITA.get(),
                             DIONYSUS.get(),
                             KALEIDOSCOPE_WHISKEY_SOUR.get(),
+                            LONG_ISLAND_POPSICLE_TEA.get(),
                             NOCTURNAL_CAT_COFFEE.get(),
                             GOLD_MEDAL_COFFEE.get(),
                             WHITE_RABBIT_MOCHA.get(),
@@ -213,8 +218,9 @@ public interface ModBlocks {
     RegistryObject<Block> YELLOW_PAPER_BLOCK = BLOCKS.register("yellow_paper_block", () -> new Block(BlockBehaviour.Properties.of()
             .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.COLOR_YELLOW).sound(SoundType.SOUL_SAND).instabreak().lightLevel((s) -> 10)));
 
-    RegistryObject<Block> DEWY_MEMBRANE_BLOCK = BLOCKS.register("dewy_membrane_block", () -> new Block(BlockBehaviour.Properties.of()
-            .instrument(NoteBlockInstrument.HAT).mapColor(MapColor.COLOR_GREEN).sound(SoundType.LILY_PAD).instabreak().noOcclusion().isRedstoneConductor((bs, br, bp) -> false)));
+    RegistryObject<Block> DEWY_MEMBRANE_BLOCK = BLOCKS.register("dewy_membrane_block", () -> new GlassBlock(BlockBehaviour.Properties.of()
+            .instrument(NoteBlockInstrument.HAT).mapColor(MapColor.COLOR_GREEN).sound(SoundType.LILY_PAD).instabreak().noOcclusion()
+            .isRedstoneConductor(ModBlocks::never).isSuffocating(ModBlocks::never).isViewBlocking(ModBlocks::never)));
 
     RegistryObject<Block> COTTON_SERGE_BLOCK = BLOCKS.register("cotton_serge_block", () -> new Block(BlockBehaviour.Properties.of()
             .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.SNOW).sound(SoundType.SNOW).instabreak()));
@@ -285,7 +291,11 @@ public interface ModBlocks {
                     PaperKiteManor.resourceLocation("palm_tree_d"),
                     PaperKiteManor.resourceLocation("palm_tree_e"),
                     PaperKiteManor.resourceLocation("palm_tree_f")
-            }));
+            }) {
+        protected boolean mayPlaceOn(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
+            return pState.is(BlockTags.DIRT) || pState.is(Blocks.FARMLAND) || pState.is(BlockTags.SAND);
+        }
+    });
 
     RegistryObject<Block> PALM_TREE_CROWN = BLOCKS.register("palm_tree_crown", () -> new DecorationBlock.HorizontalDirectional.Waterlogged(BlockBehaviour.Properties.of()
             .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.PLANT).sound(SoundType.AZALEA_LEAVES).instabreak().noCollission().noOcclusion(),
@@ -326,10 +336,13 @@ public interface ModBlocks {
 
     RegistryObject<Block> CANOPY_TREE_LIMB = BLOCKS.register("canopy_tree_limb", () -> log(MapColor.COLOR_BROWN, MapColor.COLOR_BROWN));
 
-    RegistryObject<Block> CANOPY_TREE_FOLIAGE = BLOCKS.register("canopy_tree_foliage", () -> new DecorationBlock.HorizontalDirectional(BlockBehaviour.Properties.of()
-            .mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.GRASS).noOcclusion().isValidSpawn(ModBlocks::ocelotOrParrot)
-            .isSuffocating(ModBlocks::never).ignitedByLava().pushReaction(PushReaction.DESTROY).isRedstoneConductor(ModBlocks::never),
-            Block.box(0, 0, 0, 16, 16, 16)));
+    RegistryObject<Block> CANOPY_TREE_FOLIAGE = BLOCKS.register("canopy_tree_foliage", () -> new Block(BlockBehaviour.Properties.of()
+            .ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.PLANT).sound(SoundType.AZALEA_LEAVES).strength(0.5f, 0.2f)) {
+        @Override
+        public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
+            return true;
+        }
+    });
 
     RegistryObject<Block> CANOPY_TREE_FERN = BLOCKS.register("canopy_tree_fern", () -> new MossBlock(BlockBehaviour.Properties.of()
             .mapColor(MapColor.COLOR_GREEN).strength(0.1F).sound(SoundType.MOSS).pushReaction(PushReaction.DESTROY)){
@@ -483,6 +496,10 @@ public interface ModBlocks {
             )
     ));
 
+    RegistryObject<Block> OLD_ORGAN = BLOCKS.register("old_organ", () -> new OldOrganBlock(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD).strength(1f, 10f).noOcclusion(),
+            Block.box(0, 0, 4, 16, 16, 16)));
+
     RegistryObject<Block> LARGE_DINING_TABLE = BLOCKS.register("large_dining_table", () -> new ThreeByThreeBlock.Waterlogged(
             BlockBehaviour.Properties.of().ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
             Block.box(0, 0, 0, 16, 15, 16)));
@@ -500,6 +517,10 @@ public interface ModBlocks {
                             LONG_STORAGE_TABLE.get(),
                             EDGED_CHALKBOARD.get()
                     ).build(null)
+    );
+
+    RegistryObject<BlockEntityType<OldOrganBlockEntity>> OLD_ORGAN_BE = BLOCK_ENTITIES.register(
+            "old_organ", () -> BlockEntityType.Builder.of(OldOrganBlockEntity::new, OLD_ORGAN.get()).build(null)
     );
 
     RegistryObject<Block> VODKA = BLOCKS.register("vodka", () -> new Block(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.GLASS).strength(1f, 10f).noOcclusion()));
@@ -607,6 +628,46 @@ public interface ModBlocks {
     RegistryObject<BlockEntityType<KaziLuckyCatBlockEntity>> KAZI_LUCKY_CAT_BE = BLOCK_ENTITIES.register("kazi_lucky_cat",
             () -> BlockEntityType.Builder.of(KaziLuckyCatBlockEntity::new, KAZI_LUCKY_CAT.get()).build(null));
 
+    // 巧克力
+    RegistryObject<Block> TRUFFLE_CHOCOLATE_IN_MOLD = BLOCKS.register("truffle_chocolate_in_mold", () -> new ChocolateInMoldBlock(BlockBehaviour.Properties.of()
+            .sound(SoundType.LANTERN).strength(1f, 4f).noOcclusion(), ModItems.TRUFFLE_CHOCOLATE));
+
+    RegistryObject<Block> MILK_CHOCOLATE_IN_MOLD = BLOCKS.register("milk_chocolate_in_mold", () -> new ChocolateInMoldBlock(BlockBehaviour.Properties.of()
+            .sound(SoundType.LANTERN).strength(1f, 4f).noOcclusion(), ModItems.MILK_CHOCOLATE));
+
+    RegistryObject<Block> PRALINE_CHOCOLATE_IN_MOLD = BLOCKS.register("praline_chocolate_in_mold", () -> new ChocolateInMoldBlock(BlockBehaviour.Properties.of()
+            .sound(SoundType.LANTERN).strength(1f, 4f).noOcclusion(), ModItems.PRALINE_CHOCOLATE));
+
+    RegistryObject<Block> MELTED_DARK_COCOA_IN_MOLD = BLOCKS.register("melted_dark_cocoa_in_mold", () -> new MeltedCocoaInMoldBlock(BlockBehaviour.Properties.of()
+            .sound(SoundType.LANTERN).strength(1f, 4f).noOcclusion(), TRUFFLE_CHOCOLATE_IN_MOLD, 400));
+
+    RegistryObject<Block> MELTED_MILK_COCOA_IN_MOLD = BLOCKS.register("melted_milk_cocoa_in_mold", () -> new MeltedCocoaInMoldBlock(BlockBehaviour.Properties.of()
+            .sound(SoundType.LANTERN).strength(1f, 4f).noOcclusion(), MILK_CHOCOLATE_IN_MOLD, 400));
+
+    RegistryObject<Block> MELTED_PRALINE_COCOA_IN_MOLD = BLOCKS.register("melted_praline_cocoa_in_mold", () -> new MeltedCocoaInMoldBlock(BlockBehaviour.Properties.of()
+            .sound(SoundType.LANTERN).strength(1f, 4f).noOcclusion(), PRALINE_CHOCOLATE_IN_MOLD, 400));
+
+    RegistryObject<BlockEntityType<MeltedCocoaInMoldBlockEntity>> MELTED_COCOA_IN_MOLD_BE = BLOCK_ENTITIES.register(
+            "melted_cocoa_in_mold_be", () -> BlockEntityType.Builder
+                    .of(MeltedCocoaInMoldBlockEntity::new,
+                            MELTED_DARK_COCOA_IN_MOLD.get(),
+                            MELTED_MILK_COCOA_IN_MOLD.get(),
+                            MELTED_PRALINE_COCOA_IN_MOLD.get()
+                    ).build(null)
+    );
+
+    RegistryObject<Block> TRUFFLE_CHOCOLATE = BLOCKS.register("truffle_chocolate", () -> new ChocolateBlock(BlockBehaviour.Properties.of()
+            .sound(SoundType.BONE_BLOCK).strength(0.5f, 2f).noOcclusion(), Block.box(1.5, 0 ,1.5, 14.5, 8, 14.5)));
+
+    RegistryObject<Block> MILK_CHOCOLATE = BLOCKS.register("milk_chocolate", () -> new ChocolateBlock(BlockBehaviour.Properties.of()
+            .sound(SoundType.BONE_BLOCK).strength(0.5f, 2f).noOcclusion(), Block.box(1.5, 0 ,1.5, 14.5, 8, 14.5)));
+
+    RegistryObject<Block> PRALINE_CHOCOLATE = BLOCKS.register("praline_chocolate", () -> new ChocolateBlock(BlockBehaviour.Properties.of()
+            .sound(SoundType.BONE_BLOCK).strength(0.5f, 2f).noOcclusion(), Block.box(1.5, 0 ,1.5, 14.5, 8, 14.5)));
+
+    RegistryObject<Block> OVERSIZED_BOX_OF_CHOCOLATES = BLOCKS.register("oversized_box_of_chocolates", () -> new OversizedBoxOfChocolatesBlock(BlockBehaviour.Properties.of()
+            .sound(SoundType.BAMBOO_WOOD).strength(1f, 4f).noOcclusion()));
+
     @SuppressWarnings("all")
     private static RotatedPillarBlock log(MapColor topColor, MapColor sideColor) {
         return new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(
@@ -614,27 +675,7 @@ public interface ModBlocks {
                 .instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava());
     }
 
-    @SuppressWarnings("all")
-    private static LeavesBlock leaves(SoundType soundType) {
-        return new LeavesBlock(BlockBehaviour.Properties.of()
-                .mapColor(MapColor.PLANT)
-                .strength(0.2F)
-                .randomTicks()
-                .sound(soundType)
-                .noOcclusion()
-                .isValidSpawn(ModBlocks::ocelotOrParrot)
-                .isSuffocating(ModBlocks::never)
-                .isViewBlocking(ModBlocks::never)
-                .ignitedByLava()
-                .pushReaction(PushReaction.DESTROY)
-                .isRedstoneConductor(ModBlocks::never));
-    }
-
     private static boolean never(BlockState state, BlockGetter getter, BlockPos pos) {
         return false;
-    }
-
-    private static Boolean ocelotOrParrot(BlockState state, BlockGetter getter, BlockPos pos, EntityType<?> entityType) {
-        return (entityType == EntityType.OCELOT || entityType == EntityType.PARROT);
     }
 }

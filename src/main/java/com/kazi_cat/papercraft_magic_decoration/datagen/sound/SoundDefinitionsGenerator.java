@@ -47,6 +47,18 @@ public class SoundDefinitionsGenerator extends SoundDefinitionsProvider {
         SoundDefinition paperTigerDeath = definition().subtitle("entity.paper_tiger_death")
                 .with(sound("entity/paper_tiger_death"));
         this.add(ModSounds.PAPER_TIGER_DEATH, paperTigerDeath);
+
+        SoundDefinition loudButtonPressed = definition().subtitle("block.loud_button_pressed")
+                .with(sound("block/loud_button"));
+        this.add(ModSounds.LOUD_BUTTON_PRESSED, loudButtonPressed);
+
+        SoundDefinition cocktailShaking = definition().subtitle("block.cocktail_shaking")
+                .with(sound("block/cocktail_shaking"));
+        this.add(ModSounds.COCKTAIL_SHAKING, cocktailShaking);
+
+        SoundDefinition organ = definition().subtitle("block.organ")
+                .with(sound("block/organ"));
+        this.add(ModSounds.ORGAN, organ);
     }
 
     protected static SoundDefinition.Sound sound(final String name) {

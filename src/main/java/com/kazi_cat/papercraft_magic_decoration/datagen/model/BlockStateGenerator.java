@@ -42,6 +42,7 @@ public class BlockStateGenerator extends BlockStateProvider {
         drink(ModBlocks.DIPLOMATICO_COFFEE.get(), "diplomatico_coffee");
         drink(ModBlocks.DIONYSUS.get(), "dionysus");
         drink(ModBlocks.KALEIDOSCOPE_WHISKEY_SOUR.get(), "kaleidoscope_whiskey_sour");
+        drink(ModBlocks.LONG_ISLAND_POPSICLE_TEA.get(), "long_island_popsicle_tea");
         drink(ModBlocks.NOCTURNAL_CAT_COFFEE.get(), "nocturnal_cat_coffee");
         drink(ModBlocks.GOLD_MEDAL_COFFEE.get(), "gold_medal_coffee");
         drink(ModBlocks.WHITE_RABBIT_MOCHA.get(), "white_rabbit_mocha");
@@ -65,6 +66,7 @@ public class BlockStateGenerator extends BlockStateProvider {
         horizontalBlock(ModBlocks.WOODWORKING_TABLE.get(), new ModelFile.UncheckedModelFile(modLoc("block/woodworking_table")));
         horizontalBlock(ModBlocks.LONG_STORAGE_TABLE.get(), new ModelFile.UncheckedModelFile(modLoc("block/long_storage_table")));
         horizontalBlock(ModBlocks.EDGED_CHALKBOARD.get(), new ModelFile.UncheckedModelFile(modLoc("block/edged_chalkboard")));
+        horizontalBlock(ModBlocks.OLD_ORGAN.get(), new ModelFile.UncheckedModelFile(modLoc("block/old_organ")));
         horizontalBlock(ModBlocks.GIFT_FROM_KAZI_MANOR.get(), new ModelFile.UncheckedModelFile(modLoc("block/gift_from_kazi_manor")));
         horizontalBlock(ModBlocks.KEY_UNDER_THE_LAKE.get(), new ModelFile.UncheckedModelFile(modLoc("block/key_under_the_lake")));
         horizontalBlock(ModBlocks.BUCKET_OF_FRIED_CHICKEN.get(), new ModelFile.UncheckedModelFile(modLoc("block/bucket_of_fried_chicken")));
@@ -108,6 +110,34 @@ public class BlockStateGenerator extends BlockStateProvider {
             ResourceLocation file = modLoc("block/umbrella_cashew%s".formatted(mature ? "_mature" : ""));
             return new ModelFile.UncheckedModelFile(file);
         });
+        horizontalBlock(ModBlocks.TRUFFLE_CHOCOLATE_IN_MOLD.get(), new ModelFile.UncheckedModelFile(modLoc("block/truffle_chocolate_in_mold")));
+        horizontalBlock(ModBlocks.MILK_CHOCOLATE_IN_MOLD.get(), new ModelFile.UncheckedModelFile(modLoc("block/milk_chocolate_in_mold")));
+        horizontalBlock(ModBlocks.PRALINE_CHOCOLATE_IN_MOLD.get(), new ModelFile.UncheckedModelFile(modLoc("block/praline_chocolate_in_mold")));
+        horizontalBlock(ModBlocks.MELTED_DARK_COCOA_IN_MOLD.get(), new ModelFile.UncheckedModelFile(modLoc("block/melted_dark_cocoa_in_mold")));
+        horizontalBlock(ModBlocks.MELTED_MILK_COCOA_IN_MOLD.get(), new ModelFile.UncheckedModelFile(modLoc("block/melted_milk_cocoa_in_mold")));
+        horizontalBlock(ModBlocks.MELTED_PRALINE_COCOA_IN_MOLD.get(), new ModelFile.UncheckedModelFile(modLoc("block/melted_praline_cocoa_in_mold")));
+        horizontalBlock(ModBlocks.OVERSIZED_BOX_OF_CHOCOLATES.get(), state -> {
+            boolean opened = state.getValue(OversizedBoxOfChocolatesBlock.OPENED);
+            int content = state.getValue(OversizedBoxOfChocolatesBlock.CONTENT);
+            int part = state.getValue(OversizedBoxOfChocolatesBlock.PART);
+            String name;
+            if (opened) {
+                name = switch (content) {
+                    case 0 -> "empty";
+                    case 1 -> "truffle";
+                    case 2 -> "milk";
+                    case 3 -> "praline";
+                    default -> "";
+                };
+            } else {
+                name = "unopened";
+            }
+            ResourceLocation file = modLoc("block/oversized_box_of_chocolates/%s_%d".formatted(name, part));
+            return new ModelFile.UncheckedModelFile(file);
+        });
+        horizontalBlock(ModBlocks.TRUFFLE_CHOCOLATE.get(), new ModelFile.UncheckedModelFile(modLoc("block/truffle_chocolate")));
+        horizontalBlock(ModBlocks.MILK_CHOCOLATE.get(), new ModelFile.UncheckedModelFile(modLoc("block/milk_chocolate")));
+        horizontalBlock(ModBlocks.PRALINE_CHOCOLATE.get(), new ModelFile.UncheckedModelFile(modLoc("block/praline_chocolate")));
 
         simpleBlock(ModBlocks.WHITE_PAPER_BLOCK.get());
         simpleBlock(ModBlocks.BLUE_PAPER_BLOCK.get());

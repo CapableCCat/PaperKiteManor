@@ -3,6 +3,8 @@ package com.kazi_cat.papercraft_magic_decoration.item;
 import com.kazi_cat.papercraft_magic_decoration.block.DirtHoleBlock;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ShovelItem;
@@ -25,6 +27,7 @@ public class GardenTrowelItem extends ShovelItem {
 
         if (FLATTENABLES.containsKey(level.getBlockState(pos).getBlock())) {
             digHole(level, pos);
+            level.playSound(player, pos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1.0F, 1.0F);
             if (player != null && !player.isCreative()) {
                 context.getItemInHand().hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(context.getHand()));
             }

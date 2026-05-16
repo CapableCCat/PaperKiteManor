@@ -4,13 +4,14 @@ import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.block.food.ChunkySalmonBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.food.TwoByOneSmeltableBlock;
 import com.kazi_cat.papercraft_magic_decoration.item.*;
+import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemNameBlockItem;
-import net.minecraft.world.item.Tiers;
+import net.minecraft.world.item.*;
+import net.minecraft.world.level.Level;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -92,6 +93,11 @@ public interface ModItems {
     RegistryObject<Item> KALEIDOSCOPE_WHISKEY_SOUR = ITEMS.register("kaleidoscope_whiskey_sour",
             () -> new DrinkBlockItem(ModBlocks.KALEIDOSCOPE_WHISKEY_SOUR.get(), DrinkBlockItem.defaultFood.get()
                     .effect(() -> new MobEffectInstance(ModEffects.ACID_JAZZ.get(), 2400, 0), 1)
+                    .build()));
+
+    RegistryObject<Item> LONG_ISLAND_POPSICLE_TEA = ITEMS.register("long_island_popsicle_tea",
+            () -> new DrinkBlockItem(ModBlocks.LONG_ISLAND_POPSICLE_TEA.get(), DrinkBlockItem.defaultFood.get()
+                    .effect(() -> new MobEffectInstance(ModEffects.DOUBLE_ICE_SHOCK.get(), 2400, 0), 1)
                     .build()));
 
     RegistryObject<Item> NOCTURNAL_CAT_COFFEE = ITEMS.register("nocturnal_cat_coffee",
@@ -233,6 +239,7 @@ public interface ModItems {
     RegistryObject<Item> EDGED_CHALKBOARD = ITEMS.register("edged_chalkboard", () -> new GeoBlockItem(ModBlocks.EDGED_CHALKBOARD.get(), new Item.Properties()));
     RegistryObject<Item> CUPBOARD = ITEMS.register("cupboard", () -> new BlockItem(ModBlocks.CUPBOARD.get(), new Item.Properties()));
     RegistryObject<Item> FIREPLACE_DECORATION = ITEMS.register("fireplace_decoration", () -> new BlockItem(ModBlocks.FIREPLACE_DECORATION.get(), new Item.Properties()));
+    RegistryObject<Item> OLD_ORGAN = ITEMS.register("old_organ", () -> new GeoBlockItem(ModBlocks.OLD_ORGAN.get(), new Item.Properties()));
     RegistryObject<Item> LARGE_DINING_TABLE = ITEMS.register("large_dining_table", () -> new BlockItem(ModBlocks.LARGE_DINING_TABLE.get(), new Item.Properties()));
 
     RegistryObject<Item> LOUD_BUTTON = ITEMS.register("loud_button", () -> new GeoBlockItem(ModBlocks.LOUD_BUTTON.get(), new Item.Properties()));
@@ -261,7 +268,7 @@ public interface ModItems {
     RegistryObject<Item> CUBED_SAUSAGE = ITEMS.register("cubed_sausage", () ->
             new Item(new Item.Properties().food((new FoodProperties.Builder()).nutrition(14).saturationMod(0.7f).build())));
 
-    RegistryObject<Item> JUMBO_SALMON = ITEMS.register("jumbo_salmon", () -> new TwoByThreeStructureBlockItem(new Item.Properties(), () -> List.of(
+    RegistryObject<Item> JUMBO_SALMON = ITEMS.register("jumbo_salmon", () -> new TwoByThreeStructureItem(new Item.Properties(), () -> List.of(
             ModBlocks.SALMON_HEAD.get().defaultBlockState().setValue(TwoByOneSmeltableBlock.PART, 0),
             ModBlocks.CHUNKY_SALMON.get().defaultBlockState().setValue(ChunkySalmonBlock.VARIANT, 0),
             ModBlocks.CHUNKY_SALMON.get().defaultBlockState().setValue(ChunkySalmonBlock.VARIANT, 1),
@@ -288,6 +295,35 @@ public interface ModItems {
 
     RegistryObject<Item> LARGE_STEAK = ITEMS.register("large_steak", () -> new Item(new Item.Properties().food((new FoodProperties.Builder()).nutrition(12).saturationMod(0.7f).meat().build())));
 
+    // 巧克力
+    RegistryObject<Item> DARK_COCOA_IN_MOLD = ITEMS.register("dark_cocoa_in_mold", () -> new Item(new Item.Properties()));
+    RegistryObject<Item> MILK_COCOA_IN_MOLD = ITEMS.register("milk_cocoa_in_mold", () -> new Item(new Item.Properties()));
+    RegistryObject<Item> PRALINE_COCOA_IN_MOLD = ITEMS.register("praline_cocoa_in_mold", () -> new Item(new Item.Properties()));
+
+    RegistryObject<Item> MELTED_DARK_COCOA_IN_MOLD = ITEMS.register("melted_dark_cocoa_in_mold", () -> new BlockItem(ModBlocks.MELTED_DARK_COCOA_IN_MOLD.get(), new Item.Properties()));
+    RegistryObject<Item> MELTED_MILK_COCOA_IN_MOLD = ITEMS.register("melted_milk_cocoa_in_mold", () -> new BlockItem(ModBlocks.MELTED_MILK_COCOA_IN_MOLD.get(), new Item.Properties()));
+    RegistryObject<Item> MELTED_PRALINE_COCOA_IN_MOLD = ITEMS.register("melted_praline_cocoa_in_mold", () -> new BlockItem(ModBlocks.MELTED_PRALINE_COCOA_IN_MOLD.get(), new Item.Properties()));
+
+    RegistryObject<Item> TRUFFLE_CHOCOLATE = ITEMS.register("truffle_chocolate", () -> new ShiftPlaceBlockItem(ModBlocks.TRUFFLE_CHOCOLATE.get(), new Item.Properties()
+            .food(new FoodProperties.Builder().nutrition(4).saturationMod(1).alwaysEat()
+                    .effect(() -> new MobEffectInstance(ModEffects.SILKY_FEEL.get(), 3600), 1)
+                    .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3600, 1), 1).build())));
+    RegistryObject<Item> MILK_CHOCOLATE = ITEMS.register("milk_chocolate", () -> new ShiftPlaceBlockItem(ModBlocks.MILK_CHOCOLATE.get(), new Item.Properties()
+            .food(new FoodProperties.Builder().nutrition(4).saturationMod(1).alwaysEat()
+                    .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 600, 0), 1).build())) {
+        @Override
+        public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
+            entity.getActiveEffectsMap().keySet().stream().filter(i -> i.getCategory().equals(MobEffectCategory.HARMFUL)).toList().forEach(entity::removeEffect);
+            return super.finishUsingItem(stack, level, entity);
+        }
+    });
+    RegistryObject<Item> PRALINE_CHOCOLATE = ITEMS.register("praline_chocolate", () -> new ShiftPlaceBlockItem(ModBlocks.PRALINE_CHOCOLATE.get(), new Item.Properties()
+            .food(new FoodProperties.Builder().nutrition(4).saturationMod(1).alwaysEat()
+                    .effect(() -> new MobEffectInstance(ModEffects.SKY_TRACTION.get(), 6000, 0), 1).build())));
+
+    RegistryObject<Item> OVERSIZED_BOX_OF_CHOCOLATES = ITEMS.register("oversized_box_of_chocolates", () ->
+            new OversizedBoxOfChocolatesItem(ModBlocks.OVERSIZED_BOX_OF_CHOCOLATES.get(), new Item.Properties().stacksTo(1)));
+
     // 折纸
     RegistryObject<Item> LOW_CABINET_WITH_TABLECLOTH_ORIGAMI = ITEMS.register("low_cabinet_with_tablecloth_origami", () -> new Item(new Item.Properties()));
     RegistryObject<Item> WOODEN_BARREL_BOOKSHELF_ORIGAMI = ITEMS.register("wooden_barrel_bookshelf_origami", () -> new Item(new Item.Properties()));
@@ -299,4 +335,25 @@ public interface ModItems {
     RegistryObject<Item> LARGE_DINING_TABLE_ORIGAMI = ITEMS.register("large_dining_table_origami", () -> new Item(new Item.Properties()));
     RegistryObject<Item> RED_VELVET_CHAISE_LONGUE_ORIGAMI = ITEMS.register("red_velvet_chaise_longue_origami", () -> new Item(new Item.Properties()));
     RegistryObject<Item> OLD_ORGAN_ORIGAMI = ITEMS.register("old_organ_origami", () -> new Item(new Item.Properties()));
+
+    // 刷怪蛋
+    RegistryObject<Item> AOAO_SPAWN_EGG = ITEMS.register("aoao_spawn_egg", () -> new ForgeSpawnEggItem(
+            ModEntities.AOAO, 0xFFFFFF, 0xFFFFFF, new Item.Properties()
+    ));
+
+    RegistryObject<Item> WHITE_RABBIT_MAID_SPAWN_EGG = ITEMS.register("white_rabbit_maid_spawn_egg", () -> new ForgeSpawnEggItem(
+            ModEntities.WHITE_RABBIT_MAID, 0xFFFFFF, 0xFFFFFF, new Item.Properties()
+    ));
+
+    RegistryObject<Item> BLACK_CAT_LOBBY_BOY_SPAWN_EGG = ITEMS.register("black_cat_lobby_boy_spawn_egg", () -> new ForgeSpawnEggItem(
+            ModEntities.BLACK_CAT_LOBBY_BOY, 0xFFFFFF, 0xFFFFFF, new Item.Properties()
+    ));
+
+    RegistryObject<Item> AIR_FLOW_CARP_SPAWN_EGG = ITEMS.register("air_flow_carp_spawn_egg", () -> new ForgeSpawnEggItem(
+            ModEntities.AIR_FLOW_CARP, 0xFFFFFF, 0xFFFFFF, new Item.Properties()
+    ));
+
+    RegistryObject<Item> PAPER_TIGER_SPAWN_EGG = ITEMS.register("paper_tiger_spawn_egg", () -> new ForgeSpawnEggItem(
+            ModEntities.PAPER_TIGER, 0xFFFFFF, 0xFFFFFF, new Item.Properties()
+    ));
 }

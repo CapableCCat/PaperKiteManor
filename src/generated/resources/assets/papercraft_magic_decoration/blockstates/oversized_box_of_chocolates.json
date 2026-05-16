@@ -1,0 +1,724 @@
+{
+  "variants": {
+    "content=0,facing=east,opened=false,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_0",
+      "y": 90
+    },
+    "content=0,facing=east,opened=false,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_1",
+      "y": 90
+    },
+    "content=0,facing=east,opened=false,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_2",
+      "y": 90
+    },
+    "content=0,facing=east,opened=false,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_3",
+      "y": 90
+    },
+    "content=0,facing=east,opened=false,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_4",
+      "y": 90
+    },
+    "content=0,facing=east,opened=false,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_5",
+      "y": 90
+    },
+    "content=0,facing=east,opened=true,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/empty_0",
+      "y": 90
+    },
+    "content=0,facing=east,opened=true,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/empty_1",
+      "y": 90
+    },
+    "content=0,facing=east,opened=true,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/empty_2",
+      "y": 90
+    },
+    "content=0,facing=east,opened=true,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/empty_3",
+      "y": 90
+    },
+    "content=0,facing=east,opened=true,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/empty_4",
+      "y": 90
+    },
+    "content=0,facing=east,opened=true,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/empty_5",
+      "y": 90
+    },
+    "content=0,facing=north,opened=false,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_0"
+    },
+    "content=0,facing=north,opened=false,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_1"
+    },
+    "content=0,facing=north,opened=false,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_2"
+    },
+    "content=0,facing=north,opened=false,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_3"
+    },
+    "content=0,facing=north,opened=false,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_4"
+    },
+    "content=0,facing=north,opened=false,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_5"
+    },
+    "content=0,facing=north,opened=true,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/empty_0"
+    },
+    "content=0,facing=north,opened=true,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/empty_1"
+    },
+    "content=0,facing=north,opened=true,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/empty_2"
+    },
+    "content=0,facing=north,opened=true,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/empty_3"
+    },
+    "content=0,facing=north,opened=true,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/empty_4"
+    },
+    "content=0,facing=north,opened=true,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/empty_5"
+    },
+    "content=0,facing=south,opened=false,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_0",
+      "y": 180
+    },
+    "content=0,facing=south,opened=false,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_1",
+      "y": 180
+    },
+    "content=0,facing=south,opened=false,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_2",
+      "y": 180
+    },
+    "content=0,facing=south,opened=false,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_3",
+      "y": 180
+    },
+    "content=0,facing=south,opened=false,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_4",
+      "y": 180
+    },
+    "content=0,facing=south,opened=false,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_5",
+      "y": 180
+    },
+    "content=0,facing=south,opened=true,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/empty_0",
+      "y": 180
+    },
+    "content=0,facing=south,opened=true,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/empty_1",
+      "y": 180
+    },
+    "content=0,facing=south,opened=true,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/empty_2",
+      "y": 180
+    },
+    "content=0,facing=south,opened=true,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/empty_3",
+      "y": 180
+    },
+    "content=0,facing=south,opened=true,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/empty_4",
+      "y": 180
+    },
+    "content=0,facing=south,opened=true,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/empty_5",
+      "y": 180
+    },
+    "content=0,facing=west,opened=false,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_0",
+      "y": 270
+    },
+    "content=0,facing=west,opened=false,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_1",
+      "y": 270
+    },
+    "content=0,facing=west,opened=false,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_2",
+      "y": 270
+    },
+    "content=0,facing=west,opened=false,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_3",
+      "y": 270
+    },
+    "content=0,facing=west,opened=false,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_4",
+      "y": 270
+    },
+    "content=0,facing=west,opened=false,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_5",
+      "y": 270
+    },
+    "content=0,facing=west,opened=true,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/empty_0",
+      "y": 270
+    },
+    "content=0,facing=west,opened=true,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/empty_1",
+      "y": 270
+    },
+    "content=0,facing=west,opened=true,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/empty_2",
+      "y": 270
+    },
+    "content=0,facing=west,opened=true,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/empty_3",
+      "y": 270
+    },
+    "content=0,facing=west,opened=true,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/empty_4",
+      "y": 270
+    },
+    "content=0,facing=west,opened=true,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/empty_5",
+      "y": 270
+    },
+    "content=1,facing=east,opened=false,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_0",
+      "y": 90
+    },
+    "content=1,facing=east,opened=false,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_1",
+      "y": 90
+    },
+    "content=1,facing=east,opened=false,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_2",
+      "y": 90
+    },
+    "content=1,facing=east,opened=false,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_3",
+      "y": 90
+    },
+    "content=1,facing=east,opened=false,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_4",
+      "y": 90
+    },
+    "content=1,facing=east,opened=false,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_5",
+      "y": 90
+    },
+    "content=1,facing=east,opened=true,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/truffle_0",
+      "y": 90
+    },
+    "content=1,facing=east,opened=true,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/truffle_1",
+      "y": 90
+    },
+    "content=1,facing=east,opened=true,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/truffle_2",
+      "y": 90
+    },
+    "content=1,facing=east,opened=true,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/truffle_3",
+      "y": 90
+    },
+    "content=1,facing=east,opened=true,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/truffle_4",
+      "y": 90
+    },
+    "content=1,facing=east,opened=true,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/truffle_5",
+      "y": 90
+    },
+    "content=1,facing=north,opened=false,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_0"
+    },
+    "content=1,facing=north,opened=false,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_1"
+    },
+    "content=1,facing=north,opened=false,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_2"
+    },
+    "content=1,facing=north,opened=false,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_3"
+    },
+    "content=1,facing=north,opened=false,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_4"
+    },
+    "content=1,facing=north,opened=false,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_5"
+    },
+    "content=1,facing=north,opened=true,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/truffle_0"
+    },
+    "content=1,facing=north,opened=true,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/truffle_1"
+    },
+    "content=1,facing=north,opened=true,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/truffle_2"
+    },
+    "content=1,facing=north,opened=true,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/truffle_3"
+    },
+    "content=1,facing=north,opened=true,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/truffle_4"
+    },
+    "content=1,facing=north,opened=true,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/truffle_5"
+    },
+    "content=1,facing=south,opened=false,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_0",
+      "y": 180
+    },
+    "content=1,facing=south,opened=false,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_1",
+      "y": 180
+    },
+    "content=1,facing=south,opened=false,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_2",
+      "y": 180
+    },
+    "content=1,facing=south,opened=false,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_3",
+      "y": 180
+    },
+    "content=1,facing=south,opened=false,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_4",
+      "y": 180
+    },
+    "content=1,facing=south,opened=false,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_5",
+      "y": 180
+    },
+    "content=1,facing=south,opened=true,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/truffle_0",
+      "y": 180
+    },
+    "content=1,facing=south,opened=true,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/truffle_1",
+      "y": 180
+    },
+    "content=1,facing=south,opened=true,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/truffle_2",
+      "y": 180
+    },
+    "content=1,facing=south,opened=true,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/truffle_3",
+      "y": 180
+    },
+    "content=1,facing=south,opened=true,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/truffle_4",
+      "y": 180
+    },
+    "content=1,facing=south,opened=true,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/truffle_5",
+      "y": 180
+    },
+    "content=1,facing=west,opened=false,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_0",
+      "y": 270
+    },
+    "content=1,facing=west,opened=false,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_1",
+      "y": 270
+    },
+    "content=1,facing=west,opened=false,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_2",
+      "y": 270
+    },
+    "content=1,facing=west,opened=false,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_3",
+      "y": 270
+    },
+    "content=1,facing=west,opened=false,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_4",
+      "y": 270
+    },
+    "content=1,facing=west,opened=false,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_5",
+      "y": 270
+    },
+    "content=1,facing=west,opened=true,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/truffle_0",
+      "y": 270
+    },
+    "content=1,facing=west,opened=true,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/truffle_1",
+      "y": 270
+    },
+    "content=1,facing=west,opened=true,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/truffle_2",
+      "y": 270
+    },
+    "content=1,facing=west,opened=true,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/truffle_3",
+      "y": 270
+    },
+    "content=1,facing=west,opened=true,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/truffle_4",
+      "y": 270
+    },
+    "content=1,facing=west,opened=true,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/truffle_5",
+      "y": 270
+    },
+    "content=2,facing=east,opened=false,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_0",
+      "y": 90
+    },
+    "content=2,facing=east,opened=false,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_1",
+      "y": 90
+    },
+    "content=2,facing=east,opened=false,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_2",
+      "y": 90
+    },
+    "content=2,facing=east,opened=false,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_3",
+      "y": 90
+    },
+    "content=2,facing=east,opened=false,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_4",
+      "y": 90
+    },
+    "content=2,facing=east,opened=false,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_5",
+      "y": 90
+    },
+    "content=2,facing=east,opened=true,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/milk_0",
+      "y": 90
+    },
+    "content=2,facing=east,opened=true,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/milk_1",
+      "y": 90
+    },
+    "content=2,facing=east,opened=true,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/milk_2",
+      "y": 90
+    },
+    "content=2,facing=east,opened=true,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/milk_3",
+      "y": 90
+    },
+    "content=2,facing=east,opened=true,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/milk_4",
+      "y": 90
+    },
+    "content=2,facing=east,opened=true,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/milk_5",
+      "y": 90
+    },
+    "content=2,facing=north,opened=false,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_0"
+    },
+    "content=2,facing=north,opened=false,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_1"
+    },
+    "content=2,facing=north,opened=false,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_2"
+    },
+    "content=2,facing=north,opened=false,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_3"
+    },
+    "content=2,facing=north,opened=false,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_4"
+    },
+    "content=2,facing=north,opened=false,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_5"
+    },
+    "content=2,facing=north,opened=true,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/milk_0"
+    },
+    "content=2,facing=north,opened=true,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/milk_1"
+    },
+    "content=2,facing=north,opened=true,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/milk_2"
+    },
+    "content=2,facing=north,opened=true,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/milk_3"
+    },
+    "content=2,facing=north,opened=true,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/milk_4"
+    },
+    "content=2,facing=north,opened=true,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/milk_5"
+    },
+    "content=2,facing=south,opened=false,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_0",
+      "y": 180
+    },
+    "content=2,facing=south,opened=false,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_1",
+      "y": 180
+    },
+    "content=2,facing=south,opened=false,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_2",
+      "y": 180
+    },
+    "content=2,facing=south,opened=false,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_3",
+      "y": 180
+    },
+    "content=2,facing=south,opened=false,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_4",
+      "y": 180
+    },
+    "content=2,facing=south,opened=false,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_5",
+      "y": 180
+    },
+    "content=2,facing=south,opened=true,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/milk_0",
+      "y": 180
+    },
+    "content=2,facing=south,opened=true,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/milk_1",
+      "y": 180
+    },
+    "content=2,facing=south,opened=true,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/milk_2",
+      "y": 180
+    },
+    "content=2,facing=south,opened=true,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/milk_3",
+      "y": 180
+    },
+    "content=2,facing=south,opened=true,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/milk_4",
+      "y": 180
+    },
+    "content=2,facing=south,opened=true,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/milk_5",
+      "y": 180
+    },
+    "content=2,facing=west,opened=false,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_0",
+      "y": 270
+    },
+    "content=2,facing=west,opened=false,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_1",
+      "y": 270
+    },
+    "content=2,facing=west,opened=false,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_2",
+      "y": 270
+    },
+    "content=2,facing=west,opened=false,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_3",
+      "y": 270
+    },
+    "content=2,facing=west,opened=false,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_4",
+      "y": 270
+    },
+    "content=2,facing=west,opened=false,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_5",
+      "y": 270
+    },
+    "content=2,facing=west,opened=true,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/milk_0",
+      "y": 270
+    },
+    "content=2,facing=west,opened=true,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/milk_1",
+      "y": 270
+    },
+    "content=2,facing=west,opened=true,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/milk_2",
+      "y": 270
+    },
+    "content=2,facing=west,opened=true,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/milk_3",
+      "y": 270
+    },
+    "content=2,facing=west,opened=true,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/milk_4",
+      "y": 270
+    },
+    "content=2,facing=west,opened=true,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/milk_5",
+      "y": 270
+    },
+    "content=3,facing=east,opened=false,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_0",
+      "y": 90
+    },
+    "content=3,facing=east,opened=false,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_1",
+      "y": 90
+    },
+    "content=3,facing=east,opened=false,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_2",
+      "y": 90
+    },
+    "content=3,facing=east,opened=false,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_3",
+      "y": 90
+    },
+    "content=3,facing=east,opened=false,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_4",
+      "y": 90
+    },
+    "content=3,facing=east,opened=false,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_5",
+      "y": 90
+    },
+    "content=3,facing=east,opened=true,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/praline_0",
+      "y": 90
+    },
+    "content=3,facing=east,opened=true,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/praline_1",
+      "y": 90
+    },
+    "content=3,facing=east,opened=true,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/praline_2",
+      "y": 90
+    },
+    "content=3,facing=east,opened=true,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/praline_3",
+      "y": 90
+    },
+    "content=3,facing=east,opened=true,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/praline_4",
+      "y": 90
+    },
+    "content=3,facing=east,opened=true,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/praline_5",
+      "y": 90
+    },
+    "content=3,facing=north,opened=false,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_0"
+    },
+    "content=3,facing=north,opened=false,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_1"
+    },
+    "content=3,facing=north,opened=false,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_2"
+    },
+    "content=3,facing=north,opened=false,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_3"
+    },
+    "content=3,facing=north,opened=false,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_4"
+    },
+    "content=3,facing=north,opened=false,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_5"
+    },
+    "content=3,facing=north,opened=true,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/praline_0"
+    },
+    "content=3,facing=north,opened=true,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/praline_1"
+    },
+    "content=3,facing=north,opened=true,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/praline_2"
+    },
+    "content=3,facing=north,opened=true,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/praline_3"
+    },
+    "content=3,facing=north,opened=true,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/praline_4"
+    },
+    "content=3,facing=north,opened=true,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/praline_5"
+    },
+    "content=3,facing=south,opened=false,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_0",
+      "y": 180
+    },
+    "content=3,facing=south,opened=false,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_1",
+      "y": 180
+    },
+    "content=3,facing=south,opened=false,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_2",
+      "y": 180
+    },
+    "content=3,facing=south,opened=false,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_3",
+      "y": 180
+    },
+    "content=3,facing=south,opened=false,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_4",
+      "y": 180
+    },
+    "content=3,facing=south,opened=false,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_5",
+      "y": 180
+    },
+    "content=3,facing=south,opened=true,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/praline_0",
+      "y": 180
+    },
+    "content=3,facing=south,opened=true,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/praline_1",
+      "y": 180
+    },
+    "content=3,facing=south,opened=true,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/praline_2",
+      "y": 180
+    },
+    "content=3,facing=south,opened=true,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/praline_3",
+      "y": 180
+    },
+    "content=3,facing=south,opened=true,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/praline_4",
+      "y": 180
+    },
+    "content=3,facing=south,opened=true,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/praline_5",
+      "y": 180
+    },
+    "content=3,facing=west,opened=false,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_0",
+      "y": 270
+    },
+    "content=3,facing=west,opened=false,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_1",
+      "y": 270
+    },
+    "content=3,facing=west,opened=false,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_2",
+      "y": 270
+    },
+    "content=3,facing=west,opened=false,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_3",
+      "y": 270
+    },
+    "content=3,facing=west,opened=false,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_4",
+      "y": 270
+    },
+    "content=3,facing=west,opened=false,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/unopened_5",
+      "y": 270
+    },
+    "content=3,facing=west,opened=true,part=0": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/praline_0",
+      "y": 270
+    },
+    "content=3,facing=west,opened=true,part=1": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/praline_1",
+      "y": 270
+    },
+    "content=3,facing=west,opened=true,part=2": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/praline_2",
+      "y": 270
+    },
+    "content=3,facing=west,opened=true,part=3": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/praline_3",
+      "y": 270
+    },
+    "content=3,facing=west,opened=true,part=4": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/praline_4",
+      "y": 270
+    },
+    "content=3,facing=west,opened=true,part=5": {
+      "model": "papercraft_magic_decoration:block/oversized_box_of_chocolates/praline_5",
+      "y": 270
+    }
+  }
+}

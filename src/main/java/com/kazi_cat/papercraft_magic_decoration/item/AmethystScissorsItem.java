@@ -3,6 +3,8 @@ package com.kazi_cat.papercraft_magic_decoration.item;
 import com.kazi_cat.papercraft_magic_decoration.utils.ItemUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -35,6 +37,7 @@ public class AmethystScissorsItem extends ScissorsItem {
             if (player != null && !player.isCreative()) {
                 context.getItemInHand().hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(context.getHand()));
             }
+            level.playSound(context.getPlayer(), pos, SoundEvents.SNOW_GOLEM_SHEAR, SoundSource.PLAYERS);
             level.destroyBlock(pos, false, context.getPlayer(), Block.UPDATE_ALL);
             ItemUtils.spawnItemEntity(level, pos.getCenter(), new ItemStack(Items.BUDDING_AMETHYST));
             return InteractionResult.SUCCESS;

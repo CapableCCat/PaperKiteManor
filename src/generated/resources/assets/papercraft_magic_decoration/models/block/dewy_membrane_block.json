@@ -1,6 +1,7 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "papercraft_magic_decoration:block/dewy_membrane_block"
-  }
+    "all": "papercraft_magic_decoration:block/_block"
+  },
+  "render_type": "translucent"
 }

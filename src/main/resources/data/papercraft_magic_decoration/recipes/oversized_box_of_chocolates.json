@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "papercraft_magic_decoration:truffle_chocolate"
+    },
+    "B": {
+      "item": "papercraft_magic_decoration:praline_chocolate"
+    },
+    "C": {
+      "item": "papercraft_magic_decoration:milk_chocolate"
+    },
+    "D": {
+      "item": "minecraft:paper"
+    }
+  },
+  "pattern": [
+    "CBA",
+    "ACB",
+    "DDD"
+  ],
+  "result": {
+    "item": "papercraft_magic_decoration:oversized_box_of_chocolates",
+    "nbt": "{content:[I;1,2,3,2,3,1]}"
+  },
+  "show_notification": true
+}

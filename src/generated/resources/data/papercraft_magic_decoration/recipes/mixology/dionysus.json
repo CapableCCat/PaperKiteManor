@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "kaleidoscope_tavern"
+    }
+  ],
+  "type": "papercraft_magic_decoration:mixology",
+  "ingredients": [
+    {
+      "tag": "forge:fruits/grapes"
+    },
+    {
+      "item": "kaleidoscope_tavern:brandy"
+    },
+    {
+      "item": "kaleidoscope_tavern:wine"
+    },
+    {
+      "item": "minecraft:egg"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "papercraft_magic_decoration:dionysus"
+  }
+}

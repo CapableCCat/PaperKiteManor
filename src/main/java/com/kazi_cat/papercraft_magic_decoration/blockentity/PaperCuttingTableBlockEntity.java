@@ -56,6 +56,7 @@ public class PaperCuttingTableBlockEntity extends BaseBlockEntity implements Geo
                         worldPosition.getZ() + 0.5,
                         10, 0.25, 0.2, 0.25, 0.05);
             }
+            user.level().playSound(user, worldPosition, SoundEvents.SNOW_GOLEM_SHEAR, SoundSource.PLAYERS, 1.0F, 1.0F);
             scissors.hurtAndBreak(1, user, (p) -> p.broadcastBreakEvent(hand));
             content.shrink(1);
             ItemEntity itemEntity = new ItemEntity(user.level(),

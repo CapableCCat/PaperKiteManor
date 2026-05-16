@@ -71,6 +71,7 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.DIPLOMATICO_COFFEE.get());
                 output.accept(ModItems.DIONYSUS.get());
                 output.accept(ModItems.KALEIDOSCOPE_WHISKEY_SOUR.get());
+                output.accept(ModItems.LONG_ISLAND_POPSICLE_TEA.get());
                 output.accept(ModItems.NOCTURNAL_CAT_COFFEE.get());
                 output.accept(ModItems.GOLD_MEDAL_COFFEE.get());
                 output.accept(ModItems.WHITE_RABBIT_MOCHA.get());
@@ -102,6 +103,17 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.MANGA_MEAT.get());
                 output.accept(ModItems.MONSTER_STEAK.get());
                 output.accept(ModItems.LARGE_STEAK.get());
+
+                output.accept(ModItems.DARK_COCOA_IN_MOLD.get());
+                output.accept(ModItems.MILK_COCOA_IN_MOLD.get());
+                output.accept(ModItems.PRALINE_COCOA_IN_MOLD.get());
+                output.accept(ModItems.MELTED_DARK_COCOA_IN_MOLD.get());
+                output.accept(ModItems.MELTED_MILK_COCOA_IN_MOLD.get());
+                output.accept(ModItems.MELTED_PRALINE_COCOA_IN_MOLD.get());
+                output.accept(ModItems.TRUFFLE_CHOCOLATE.get());
+                output.accept(ModItems.MILK_CHOCOLATE.get());
+                output.accept(ModItems.PRALINE_CHOCOLATE.get());
+                output.accept(ModItems.OVERSIZED_BOX_OF_CHOCOLATES.get());
             }).build());
 
     RegistryObject<CreativeModeTab> MANOR_DECORATION_TAB = TABS.register("manor_decoration", () -> CreativeModeTab.builder()
@@ -128,6 +140,7 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.EDGED_CHALKBOARD.get());
                 output.accept(ModItems.CUPBOARD.get());
                 output.accept(ModItems.FIREPLACE_DECORATION.get());
+                output.accept(ModItems.OLD_ORGAN.get());
                 output.accept(ModItems.LARGE_DINING_TABLE.get());
 
                 output.accept(ModItems.LOUD_BUTTON.get());

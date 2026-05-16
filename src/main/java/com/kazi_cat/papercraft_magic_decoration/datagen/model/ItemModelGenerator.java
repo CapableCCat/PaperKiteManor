@@ -34,6 +34,7 @@ public class ItemModelGenerator extends ItemModelProvider {
         handheld3DDrinkItem("devil_margarita");
         handheld3DDrinkItem("dionysus");
         handheld3DDrinkItem("kaleidoscope_whiskey_sour");
+        handheld3DDrinkItem("long_island_popsicle_tea");
         handheld3DDrinkItem("guang_s");
 
         basicItem(ModItems.NOCTURNAL_CAT_COFFEE.get());
@@ -81,6 +82,21 @@ public class ItemModelGenerator extends ItemModelProvider {
         basicItem(ModItems.LARGE_STEAK.get());
         basicItem(ModItems.JUMBO_SALMON.get());
         basicItem(ModItems.GLOW_CASHEWS.get());
+        basicItem(ModItems.AOAO_SPAWN_EGG.get());
+        basicItem(ModItems.WHITE_RABBIT_MAID_SPAWN_EGG.get());
+        basicItem(ModItems.BLACK_CAT_LOBBY_BOY_SPAWN_EGG.get());
+        basicItem(ModItems.AIR_FLOW_CARP_SPAWN_EGG.get());
+        basicItem(ModItems.PAPER_TIGER_SPAWN_EGG.get());
+        basicItem(ModItems.DARK_COCOA_IN_MOLD.get());
+        basicItem(ModItems.MILK_COCOA_IN_MOLD.get());
+        basicItem(ModItems.PRALINE_COCOA_IN_MOLD.get());
+        basicItem(ModItems.MELTED_DARK_COCOA_IN_MOLD.get());
+        basicItem(ModItems.MELTED_MILK_COCOA_IN_MOLD.get());
+        basicItem(ModItems.MELTED_PRALINE_COCOA_IN_MOLD.get());
+        basicItem(ModItems.TRUFFLE_CHOCOLATE.get());
+        basicItem(ModItems.MILK_CHOCOLATE.get());
+        basicItem(ModItems.PRALINE_CHOCOLATE.get());
+        basicItem(ModItems.OVERSIZED_BOX_OF_CHOCOLATES.get());
 
         handheldItem(ModItems.GARDEN_TROWEL.get());
 
@@ -142,6 +158,7 @@ public class ItemModelGenerator extends ItemModelProvider {
         withExistingParent("mini_canopy_tree", modLoc("block/mini_canopy_tree"));
         withExistingParent("vodka", modLoc("block/vodka"));
         withExistingParent("fire_whiskey", modLoc("block/fire_whiskey"));
+        withExistingParent("old_organ", modLoc("displaysettings/old_organ"));
     }
 
     public ItemModelBuilder handheldItem(Item item) {

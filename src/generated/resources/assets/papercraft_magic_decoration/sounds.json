@@ -1,4 +1,22 @@
 {
+  "block.cocktail_shaking": {
+    "sounds": [
+      "papercraft_magic_decoration:block/cocktail_shaking"
+    ],
+    "subtitle": "block.cocktail_shaking"
+  },
+  "block.loud_button_pressed": {
+    "sounds": [
+      "papercraft_magic_decoration:block/loud_button"
+    ],
+    "subtitle": "block.loud_button_pressed"
+  },
+  "block.organ": {
+    "sounds": [
+      "papercraft_magic_decoration:block/organ"
+    ],
+    "subtitle": "block.organ"
+  },
   "entity.aoao_death": {
     "sounds": [
       "papercraft_magic_decoration:entity/aoao_death_01",

@@ -17,7 +17,6 @@ public class BlockModelGenerator extends BlockModelProvider {
         cubeAll("black_paper_block", modLoc("block/black_paper_block"));
         cubeAll("red_paper_block", modLoc("block/red_paper_block"));
         cubeAll("yellow_paper_block", modLoc("block/yellow_paper_block"));
-        cubeAll("dewy_membrane_block", modLoc("block/dewy_membrane_block"));
         cubeAll("cotton_serge_block", modLoc("block/cotton_serge_block"));
         cubeAll("paper_cutting_table", modLoc("block/paper_cutting_table"));
         cubeAll("copper_bartender", modLoc("block/copper_bartender"));
@@ -39,6 +38,7 @@ public class BlockModelGenerator extends BlockModelProvider {
                 .texture("particle", modLoc("block/manga_meat_particle"));
         cubeAll("raw_manga_meat", modLoc("block/raw_manga_meat_grill"));
         cubeAll("kazi_lucky_cat", modLoc("block/kazi_lucky_cat"));
+        cubeAll("old_organ", modLoc("block/old_organ"));
 
         cubeBottomTop("coffee_pastinaca_sativa_core",
                 modLoc("block/coffee_pastinaca_sativa_side"),

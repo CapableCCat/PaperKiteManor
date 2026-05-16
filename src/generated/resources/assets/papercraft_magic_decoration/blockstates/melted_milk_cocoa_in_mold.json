@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "papercraft_magic_decoration:block/melted_milk_cocoa_in_mold",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "papercraft_magic_decoration:block/melted_milk_cocoa_in_mold"
+    },
+    "facing=south": {
+      "model": "papercraft_magic_decoration:block/melted_milk_cocoa_in_mold",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "papercraft_magic_decoration:block/melted_milk_cocoa_in_mold",
+      "y": 270
+    }
+  }
+}

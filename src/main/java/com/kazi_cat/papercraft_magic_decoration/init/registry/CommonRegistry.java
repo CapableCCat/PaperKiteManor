@@ -6,11 +6,13 @@ import com.kazi_cat.papercraft_magic_decoration.init.ModEntities;
 import com.kazi_cat.papercraft_magic_decoration.init.ModItems;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -55,5 +57,16 @@ public class CommonRegistry {
 
         SpawnPlacements.register(ModEntities.AIR_FLOW_CARP.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 (entityType, world, reason, pos, random) -> (world.getBlockState(pos.below()).is(BlockTags.ANIMALS_SPAWNABLE_ON) && world.getRawBrightness(pos, 0) > 8));
+    }
+
+    @SubscribeEvent
+    public static void onBuildCreativeModeTabContents(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
+            event.accept(ModItems.AOAO_SPAWN_EGG.get());
+            event.accept(ModItems.WHITE_RABBIT_MAID_SPAWN_EGG.get());
+            event.accept(ModItems.BLACK_CAT_LOBBY_BOY_SPAWN_EGG.get());
+            event.accept(ModItems.AIR_FLOW_CARP_SPAWN_EGG.get());
+            event.accept(ModItems.PAPER_TIGER_SPAWN_EGG.get());
+        }
     }
 }

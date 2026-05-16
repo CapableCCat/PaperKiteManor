@@ -5,6 +5,7 @@ import com.kazi_cat.papercraft_magic_decoration.init.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.data.recipes.SingleItemRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -138,9 +139,49 @@ public class SingleItemRecipeProvider extends ModRecipeProvider {
                 ModItems.ROSES_IN_WATER_BOTTLE.get())
                 .unlockedBy("has_gift_from_kazi_manor", has(ModItems.GIFT_FROM_KAZI_MANOR.get()))
                 .save(consumer, stoneCuttingLoc(ModItems.ROSES_IN_WATER_BOTTLE.get()));
+
+        SimpleCookingRecipeBuilder.smelting(
+                Ingredient.of(ModItems.DARK_COCOA_IN_MOLD.get()),
+                RecipeCategory.FOOD,
+                ModItems.MELTED_DARK_COCOA_IN_MOLD.get(),
+                0.1f,
+                200)
+                .unlockedBy("has_dark_cocoa_in_mold", has(ModItems.DARK_COCOA_IN_MOLD.get()))
+                .save(consumer);
+
+        SimpleCookingRecipeBuilder.smelting(
+                        Ingredient.of(ModItems.DARK_COCOA_IN_MOLD.get()),
+                        RecipeCategory.FOOD,
+                        ModItems.MELTED_DARK_COCOA_IN_MOLD.get(),
+                        0.1f,
+                        200)
+                .unlockedBy("has_dark_cocoa_in_mold", has(ModItems.DARK_COCOA_IN_MOLD.get()))
+                .save(consumer, smeltingLoc(ModItems.MELTED_DARK_COCOA_IN_MOLD.get()));
+
+        SimpleCookingRecipeBuilder.smelting(
+                        Ingredient.of(ModItems.MILK_COCOA_IN_MOLD.get()),
+                        RecipeCategory.FOOD,
+                        ModItems.MELTED_MILK_COCOA_IN_MOLD.get(),
+                        0.1f,
+                        200)
+                .unlockedBy("has_milk_cocoa_in_mold", has(ModItems.MILK_COCOA_IN_MOLD.get()))
+                .save(consumer, smeltingLoc(ModItems.MELTED_MILK_COCOA_IN_MOLD.get()));
+
+        SimpleCookingRecipeBuilder.smelting(
+                        Ingredient.of(ModItems.PRALINE_COCOA_IN_MOLD.get()),
+                        RecipeCategory.FOOD,
+                        ModItems.MELTED_PRALINE_COCOA_IN_MOLD.get(),
+                        0.1f,
+                        200)
+                .unlockedBy("has_praline_cocoa_in_mold", has(ModItems.PRALINE_COCOA_IN_MOLD.get()))
+                .save(consumer, smeltingLoc(ModItems.MELTED_PRALINE_COCOA_IN_MOLD.get()));
     }
 
     private ResourceLocation stoneCuttingLoc(Item item) {
         return PaperKiteManor.resourceLocation("stonecutting/%s".formatted(Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(item)).getPath()));
+    }
+
+    private ResourceLocation smeltingLoc(Item item) {
+        return PaperKiteManor.resourceLocation("smelting/%s".formatted(Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(item)).getPath()));
     }
 }

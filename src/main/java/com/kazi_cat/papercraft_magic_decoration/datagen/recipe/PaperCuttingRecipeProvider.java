@@ -89,5 +89,10 @@ public class PaperCuttingRecipeProvider extends ModRecipeProvider {
                 .setIngredient(ModItems.LARGE_DINING_TABLE_ORIGAMI.get())
                 .setResult(ModItems.LARGE_DINING_TABLE.get())
                 .save(consumer);
+
+        PaperCuttingBuilder.builder()
+                .setIngredient(ModItems.OLD_ORGAN_ORIGAMI.get())
+                .setResult(ModItems.OLD_ORGAN.get())
+                .save(consumer);
     }
 }

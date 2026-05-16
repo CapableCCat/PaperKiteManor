@@ -43,6 +43,7 @@ public class ClientSetup {
         event.registerBlockEntityRenderer(ModBlocks.KAZI_LUCKY_CAT_BE.get(), context -> new BaseGeoBlockRenderer<>(ModBlocks.KAZI_LUCKY_CAT_BE.get()));
         event.registerBlockEntityRenderer(ModBlocks.ANIMATED_BE.get(), context -> new BaseGeoBlockRenderer<>(ModBlocks.ANIMATED_BE.get()));
         event.registerBlockEntityRenderer(ModBlocks.ANIMATED_SMELTABLE_BE.get(), context -> new BaseGeoBlockRenderer<>(ModBlocks.ANIMATED_SMELTABLE_BE.get()));
+        event.registerBlockEntityRenderer(ModBlocks.OLD_ORGAN_BE.get(), context -> new BaseGeoBlockRenderer<>(ModBlocks.OLD_ORGAN_BE.get()));
 
         event.registerEntityRenderer(ModEntities.AOAO.get(), AoaoRenderer::new);
         event.registerEntityRenderer(ModEntities.WHITE_RABBIT_MAID.get(), WhiteRabbitMaidRenderer::new);

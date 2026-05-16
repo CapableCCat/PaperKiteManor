@@ -16,4 +16,6 @@ public interface ModEffects {
     RegistryObject<MobEffect> ACID_JAZZ = EFFECTS.register("acid_jazz", () -> new BaseEffect(0xFF831A));
     RegistryObject<MobEffect> SKY_TRACTION = EFFECTS.register("sky_traction", () -> new SkyTractionEffect(0x8ABBCB));
     RegistryObject<MobEffect> LOVE_BAND_AID = EFFECTS.register("love_band_aid", () -> new BaseEffect(0xFFBDD9));
+    RegistryObject<MobEffect> DOUBLE_ICE_SHOCK = EFFECTS.register("double_ice_shock", () -> new BaseEffect(0xbcfffc));
+    RegistryObject<MobEffect> SILKY_FEEL = EFFECTS.register("silky_feel", () -> new BaseEffect(0x2a0e08));
 }

@@ -20,12 +20,12 @@ public class BlockLootTables extends BlockLootSubProvider {
 
     @Override
     public void generate() {
-        dropSelf(ModBlocks.BLAZE_WHISKEY.get());
-        dropSelf(ModBlocks.FERRY_WHISKEY.get());
-        dropSelf(ModBlocks.FLY_WHISKEY.get());
-        dropSelf(ModBlocks.LAND_NO1.get());
-        dropSelf(ModBlocks.LUCKY_CACTUS.get());
-        dropSelf(ModBlocks.POISON_RUM.get());
+        dropSelf(ModBlocks.BOTTLE_OF_BLAZE_WHISKEY.get());
+        dropSelf(ModBlocks.BOTTLE_OF_FERRY_WHISKEY.get());
+        dropSelf(ModBlocks.BOTTLE_OF_FLY_WHISKEY.get());
+        dropSelf(ModBlocks.BOTTLE_OF_LAND_NO1.get());
+        dropSelf(ModBlocks.BOTTLE_OF_LUCKY_CACTUS.get());
+        dropSelf(ModBlocks.BOTTLE_OF_POISON_RUM.get());
         dropSelf(ModBlocks.WHITE_PAPER_BLOCK.get());
         dropSelf(ModBlocks.BLUE_PAPER_BLOCK.get());
         dropSelf(ModBlocks.BLACK_PAPER_BLOCK.get());

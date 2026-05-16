@@ -34,8 +34,9 @@ public class AnimatedBlockEntity extends BaseBlockEntity implements GeoBlockEnti
         return super.getRenderBoundingBox();
     }
 
-    public void triggerAnim() {
+    public boolean triggerAnim() {
         triggerAnim("animate_controller", "animate");
+        return true;
     }
 
     @Override

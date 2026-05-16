@@ -247,8 +247,9 @@ public class TwoByThreeVerticalBlock extends HorizontalDirectionalBlock {
                 BlockState centerState = level.getBlockState(centerPos);
                 if (centerState.is(state.getBlock()) && centerState.getValue(PART) == CENTER_DOWN) {
                     if (level.getBlockEntity(centerPos) instanceof AnimatedBlockEntity animated) {
-                        animated.triggerAnim();
-                        return InteractionResult.SUCCESS;
+                        if (animated.triggerAnim()) {
+                            return InteractionResult.SUCCESS;
+                        }
                     }
                 }
                 return InteractionResult.FAIL;

@@ -3,6 +3,7 @@ package com.kazi_cat.papercraft_magic_decoration.blockentity;
 import com.kazi_cat.papercraft_magic_decoration.crafting.recipe.MixologyRecipe;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import com.kazi_cat.papercraft_magic_decoration.init.ModRecipes;
+import com.kazi_cat.papercraft_magic_decoration.init.ModSounds;
 import com.kazi_cat.papercraft_magic_decoration.inventory.container.CopperBartenderContainer;
 import com.kazi_cat.papercraft_magic_decoration.utils.ItemUtils;
 import net.minecraft.core.BlockPos;
@@ -12,6 +13,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
@@ -57,6 +59,7 @@ public class CopperBartenderBlockEntity extends BaseBlockEntity implements GeoBl
         return !isShaking() && !isInputEmpty() && quickCheck.getRecipeFor(getContainer(), level).map(recipe -> {
             currentTick = 87;
             triggerShakeAnim(false);
+            level.playSound(null, worldPosition, ModSounds.COCKTAIL_SHAKING.get(), SoundSource.BLOCKS, 1, 1);
             refresh();
             return true;
         }).orElse(false);

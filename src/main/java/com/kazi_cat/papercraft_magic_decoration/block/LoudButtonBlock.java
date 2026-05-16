@@ -1,8 +1,13 @@
 package com.kazi_cat.papercraft_magic_decoration.block;
 
 import com.kazi_cat.papercraft_magic_decoration.blockentity.AnimatedBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.init.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
@@ -10,6 +15,8 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
@@ -50,9 +57,20 @@ public class LoudButtonBlock extends ButtonBlock implements EntityBlock {
         return RenderShape.ENTITYBLOCK_ANIMATED;
     }
 
+    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+        if (pState.getValue(POWERED)) {
+            return InteractionResult.CONSUME;
+        } else {
+            this.press(pState, pLevel, pPos);
+            pLevel.gameEvent(pPlayer, GameEvent.BLOCK_ACTIVATE, pPos);
+            return InteractionResult.sidedSuccess(pLevel.isClientSide);
+        }
+    }
+
     public void press(BlockState state, Level level, BlockPos pos) {
         super.press(state, level, pos);
         if (level.getBlockEntity(pos) instanceof AnimatedBlockEntity animated) {
+            level.playSound(null, pos, ModSounds.LOUD_BUTTON_PRESSED.get(), SoundSource.BLOCKS);
             animated.triggerAnim();
         }
     }

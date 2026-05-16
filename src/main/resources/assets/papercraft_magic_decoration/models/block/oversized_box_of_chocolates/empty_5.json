@@ -1,0 +1,44 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"render_type": "cutout",
+	"texture_size": [48, 48],
+	"textures": {
+		"0": "papercraft_magic_decoration:block/opened_oversized_box_of_chocolates",
+		"particle": "papercraft_magic_decoration:block/opened_oversized_box_of_chocolates"
+	},
+	"elements": [
+		{
+			"from": [1.5, 0, 0],
+			"to": [16.5, 10, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [1, 0, -1]},
+			"faces": {
+				"south": {"uv": [0, 0, 5, 3.33333], "texture": "#0"},
+				"west": {"uv": [0, 0, 5, 3.33333], "texture": "#0"},
+				"up": {"uv": [0, 13.33333, 5, 8.33333], "texture": "#0"},
+				"down": {"uv": [0, 3.33333, 5, 8.33333], "texture": "#0"}
+			}
+		},
+		{
+			"from": [15.5, 10, 14],
+			"to": [2.5, 4, 1],
+			"rotation": {"angle": 0, "axis": "y", "origin": [9, 6, 8]},
+			"faces": {
+				"north": {"uv": [0, 16, 4.33333, 14], "texture": "#0"},
+				"east": {"uv": [0, 16, 4.33333, 14], "texture": "#0"},
+				"south": {"uv": [0, 16, 4.33333, 14], "texture": "#0"},
+				"west": {"uv": [0, 16, 4.33333, 14], "texture": "#0"},
+				"up": {"uv": [10, 0, 14.33333, 4.33333], "texture": "#0"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "group_6",
+			"origin": [-15, 0, 15],
+			"scope": 0,
+			"color": 0,
+			"children": [0, 1]
+		}
+	]
+}

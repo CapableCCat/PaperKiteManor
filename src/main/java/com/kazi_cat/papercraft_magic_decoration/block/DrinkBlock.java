@@ -29,6 +29,7 @@ import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.items.ItemHandlerHelper;
 import org.jetbrains.annotations.Nullable;
@@ -101,7 +102,7 @@ public class DrinkBlock extends HorizontalDirectionalBlock implements SimpleWate
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player,
                                  InteractionHand hand, BlockHitResult hitResult) {
         // 如果是空手，那么可以尝试取回或偏移
-        if (!player.getMainHandItem().isEmpty()) {
+        if (!player.getMainHandItem().isEmpty() || hand == InteractionHand.OFF_HAND) {
             return super.use(state, level, pos, player, hand, hitResult);
         }
 
@@ -191,6 +192,10 @@ public class DrinkBlock extends HorizontalDirectionalBlock implements SimpleWate
     @Override
     public RenderShape getRenderShape(BlockState state) {
         return RenderShape.ENTITYBLOCK_ANIMATED;
+    }
+
+    public VoxelShape getVisualShape(BlockState pState, BlockGetter pReader, BlockPos pPos, CollisionContext pContext) {
+        return Shapes.empty();
     }
 
     public IntegerProperty getCountProperty() {
