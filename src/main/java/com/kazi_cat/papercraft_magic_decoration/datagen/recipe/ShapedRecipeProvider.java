@@ -274,5 +274,14 @@ public class ShapedRecipeProvider extends ModRecipeProvider {
                 .define('I', ModItems.WHITE_PAPER_BLOCK.get())
                 .unlockedBy("has_amethyst_shard", has(Items.AMETHYST_SHARD))
                 .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.DUSTY_PAINTING.get())
+                .pattern("AAA")
+                .pattern("ABA")
+                .pattern("AAA")
+                .define('A', Items.STICK)
+                .define('B', ModItems.COTTON_SERGE.get())
+                .unlockedBy("has_cotton_serge", has(ModItems.COTTON_SERGE.get()))
+                .save(consumer);
     }
 }

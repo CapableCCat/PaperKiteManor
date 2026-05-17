@@ -94,6 +94,7 @@
   "block.papercraft_magic_decoration.oversized_box_of_chocolates": "超大号巧克力盒",
   "block.papercraft_magic_decoration.knitted_leopard_rug": "花豹地毯",
   "block.papercraft_magic_decoration.foam_box_with_dirt": "泡沫种植箱",
+  "block.papercraft_magic_decoration.red_velvet_chaise_longue": "红丝绒躺椅",
 
   "effect.papercraft_magic_decoration.wines_aroma": "葡萄香气",
   "effect.papercraft_magic_decoration.bloodthirsty_devil": "嗜血恶魔",
@@ -168,6 +169,8 @@
   "item.papercraft_magic_decoration.foam_box_with_dirt": "泡沫种植箱",
   "item.papercraft_magic_decoration.kazi_star": "Kazi Star咔吱星",
   "item.papercraft_magic_decoration.kazi_star.desc": "Kazi Star咔吱星----KaziCat",
+  "item.papercraft_magic_decoration.dusty_painting": "尘封的画",
+  "item.papercraft_magic_decoration.red_velvet_chaise_longue": "红丝绒躺椅",
 
   "advancements.lets_start_the_origami.title": "开始折纸吧!",
   "advancements.lets_start_the_origami.descr": "制作剪纸台，并用于切割纸块和激活各类折纸激活方块",

@@ -1,0 +1,72 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"texture_size": [128, 128],
+	"render_type": "cutout",
+	"textures": {
+		"0": "papercraft_magic_decoration:block/red_velvet_chaise_longue",
+		"particle": "papercraft_magic_decoration:block/red_velvet_chaise_longue"
+	},
+	"elements": [
+		{
+			"from": [5, -1.2, 7],
+			"to": [18, 10.8, 16],
+			"rotation": {"angle": 22.5, "axis": "z", "origin": [5, -8.2, 17.5]},
+			"faces": {
+				"north": {"uv": [2.375, 2.375, 4, 3.875], "texture": "#0"},
+				"east": {"uv": [1.25, 2.375, 2.375, 3.875], "texture": "#0"},
+				"west": {"uv": [0, 0, 1.125, 1.5], "texture": "#0"},
+				"up": {"uv": [4, 2.375, 2.375, 1.25], "texture": "#0"},
+				"down": {"uv": [1.5, 6, 0, 7.125], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [64, 0, 0],
+			"translation": [0, 0.75, -0.75],
+			"scale": [0.2, 0.2, 0.2]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [64, 0, 0],
+			"translation": [0, 0.75, -0.75],
+			"scale": [0.2, 0.2, 0.2]
+		},
+		"firstperson_righthand": {
+			"rotation": [-16, 128, 0],
+			"translation": [2.75, 0.5, -0.75],
+			"scale": [0.2, 0.2, 0.2]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-16, 128, 0],
+			"translation": [2.75, 0.5, -0.75],
+			"scale": [0.2, 0.2, 0.2]
+		},
+		"ground": {
+			"translation": [0, 1.25, 0],
+			"scale": [0.2, 0.2, 0.2]
+		},
+		"gui": {
+			"rotation": [32, -180, 0],
+			"translation": [-0.75, -1.5, 0],
+			"scale": [0.35, 0.35, 0.35]
+		},
+		"head": {
+			"translation": [2.5, 8, 2],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"fixed": {
+			"translation": [1.25, -2.75, -3],
+			"scale": [0.5, 0.5, 0.5]
+		}
+	},
+	"groups": [
+		{
+			"name": "7",
+			"origin": [21, 7.8, 1.5],
+			"scope": 0,
+			"color": 0,
+			"children": [0]
+		}
+	]
+}

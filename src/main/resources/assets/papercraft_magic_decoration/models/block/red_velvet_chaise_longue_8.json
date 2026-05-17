@@ -1,0 +1,83 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"texture_size": [128, 128],
+	"render_type": "cutout",
+	"textures": {
+		"0": "papercraft_magic_decoration:block/red_velvet_chaise_longue",
+		"particle": "papercraft_magic_decoration:block/red_velvet_chaise_longue"
+	},
+	"elements": [
+		{
+			"from": [-0.05, 0, 10],
+			"to": [8.975, 14, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [5.975, -2, 11]},
+			"faces": {
+				"north": {"uv": [4.75, 11.25, 5.87813, 13], "texture": "#0"},
+				"east": {"uv": [4, 11.25, 4.75, 13], "texture": "#0"},
+				"south": {"uv": [5.87813, 11.25, 4.75, 13], "texture": "#0"},
+				"up": {"uv": [5.87813, 11.25, 4.75, 10.5], "texture": "#0"}
+			}
+		},
+		{
+			"from": [5, -1.2, 0],
+			"to": [18, 10.8, 10],
+			"rotation": {"angle": 22.5, "axis": "z", "origin": [5, -8.2, 1.5]},
+			"faces": {
+				"east": {"uv": [0, 2.375, 1.25, 3.875], "texture": "#0"},
+				"south": {"uv": [4, 2.375, 2.375, 3.875], "texture": "#0"},
+				"west": {"uv": [1.125, 0, 2.375, 1.5], "texture": "#0"},
+				"up": {"uv": [4, 1.25, 2.375, 0], "texture": "#0"},
+				"down": {"uv": [1.5, 4.75, 0, 6], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [64, 0, 0],
+			"translation": [0, 0.75, -0.75],
+			"scale": [0.2, 0.2, 0.2]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [64, 0, 0],
+			"translation": [0, 0.75, -0.75],
+			"scale": [0.2, 0.2, 0.2]
+		},
+		"firstperson_righthand": {
+			"rotation": [-16, 128, 0],
+			"translation": [2.75, 0.5, -0.75],
+			"scale": [0.2, 0.2, 0.2]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-16, 128, 0],
+			"translation": [2.75, 0.5, -0.75],
+			"scale": [0.2, 0.2, 0.2]
+		},
+		"ground": {
+			"translation": [0, 1.25, 0],
+			"scale": [0.2, 0.2, 0.2]
+		},
+		"gui": {
+			"rotation": [32, -180, 0],
+			"translation": [-0.75, -1.5, 0],
+			"scale": [0.35, 0.35, 0.35]
+		},
+		"head": {
+			"translation": [2.5, 8, 2],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"fixed": {
+			"translation": [1.25, -2.75, -3],
+			"scale": [0.5, 0.5, 0.5]
+		}
+	},
+	"groups": [
+		{
+			"name": "9",
+			"origin": [21, 7.8, 1.5],
+			"scope": 0,
+			"color": 0,
+			"children": [0, 1]
+		}
+	]
+}

@@ -4,10 +4,7 @@ import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.api.block.ISmeltableBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.*;
 import com.kazi_cat.papercraft_magic_decoration.block.crop.UmbrellaCashewBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.decoration.DecorationBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.decoration.ThreeByThreeBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.decoration.TwoByOneBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.decoration.TwoByThreeVerticalBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.decoration.*;
 import com.kazi_cat.papercraft_magic_decoration.block.food.ChunkySalmonBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.food.MonsterSteakBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.food.TwoByOneSmeltableBlock;
@@ -143,6 +140,11 @@ public class BlockStateGenerator extends BlockStateProvider {
         horizontalBlock(ModBlocks.TRUFFLE_CHOCOLATE.get(), new ModelFile.UncheckedModelFile(modLoc("block/truffle_chocolate")));
         horizontalBlock(ModBlocks.MILK_CHOCOLATE.get(), new ModelFile.UncheckedModelFile(modLoc("block/milk_chocolate")));
         horizontalBlock(ModBlocks.PRALINE_CHOCOLATE.get(), new ModelFile.UncheckedModelFile(modLoc("block/praline_chocolate")));
+        horizontalBlock(ModBlocks.RED_VELVET_CHAISE_LONGUE.get(), state -> {
+            int part = state.getValue(RedVelvetChaiseLongueBlock.PART);
+            ResourceLocation file = modLoc("block/red_velvet_chaise_longue_%d".formatted(part));
+            return new ModelFile.UncheckedModelFile(file);
+        });
 
         simpleBlock(ModBlocks.WHITE_PAPER_BLOCK.get());
         simpleBlock(ModBlocks.BLUE_PAPER_BLOCK.get());

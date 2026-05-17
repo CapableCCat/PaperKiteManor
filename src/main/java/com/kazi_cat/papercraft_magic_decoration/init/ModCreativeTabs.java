@@ -55,6 +55,7 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.LARGE_DINING_TABLE_ORIGAMI.get());
                 output.accept(ModItems.RED_VELVET_CHAISE_LONGUE_ORIGAMI.get());
                 output.accept(ModItems.OLD_ORGAN_ORIGAMI.get());
+                output.accept(ModItems.DUSTY_PAINTING.get());
             }).build());
 
     RegistryObject<CreativeModeTab> MANOR_FOOD_TAB = TABS.register("manor_food", () -> CreativeModeTab.builder()
@@ -143,6 +144,7 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.FIREPLACE_DECORATION.get());
                 output.accept(ModItems.OLD_ORGAN.get());
                 output.accept(ModItems.LARGE_DINING_TABLE.get());
+                output.accept(ModItems.RED_VELVET_CHAISE_LONGUE.get());
 
                 output.accept(ModItems.LOUD_BUTTON.get());
                 output.accept(ModItems.KAZI_LUCKY_CAT.get());

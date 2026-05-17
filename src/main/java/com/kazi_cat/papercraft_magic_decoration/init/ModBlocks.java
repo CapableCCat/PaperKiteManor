@@ -550,6 +550,15 @@ public interface ModBlocks {
             BlockBehaviour.Properties.of().ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.WOOD).strength(2f, 10f).noOcclusion(),
             Block.box(0, 0, 0, 16, 15, 16)));
 
+    RegistryObject<Block> RED_VELVET_CHAISE_LONGUE = BLOCKS.register("red_velvet_chaise_longue", () -> new RedVelvetChaiseLongueBlock(
+            BlockBehaviour.Properties.of()
+                    .ignitedByLava()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .sound(SoundType.WOOD)
+                    .strength(1f, 10f)
+                    .noOcclusion()
+    ));
+
     // 使用简单geckolib动画的通用方块实体
     RegistryObject<BlockEntityType<AnimatedBlockEntity>> ANIMATED_BE = BLOCK_ENTITIES.register(
             "animated", () -> BlockEntityType.Builder

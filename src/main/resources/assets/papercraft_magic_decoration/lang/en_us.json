@@ -94,6 +94,7 @@
   "block.papercraft_magic_decoration.oversized_box_of_chocolates": "Oversized Box of Chocolates",
   "block.papercraft_magic_decoration.knitted_leopard_rug": "Knitted Leopard Rug",
   "block.papercraft_magic_decoration.foam_box_with_dirt": "Foam Box With Dirt",
+  "block.papercraft_magic_decoration.red_velvet_chaise_longue": "Red Velvet Chaise Longue",
 
   "effect.papercraft_magic_decoration.wines_aroma": "Wines Aroma",
   "effect.papercraft_magic_decoration.bloodthirsty_devil": "Bloodthirsty Devil",
@@ -168,6 +169,8 @@
   "item.papercraft_magic_decoration.foam_box_with_dirt": "Foam Box With Dirt",
   "item.papercraft_magic_decoration.kazi_star": "Kazi Star",
   "item.papercraft_magic_decoration.kazi_star.desc": "Kazi Star----KaziCat",
+  "item.papercraft_magic_decoration.dusty_painting": "Dusty Painting",
+  "item.papercraft_magic_decoration.red_velvet_chaise_longue": "Red Velvet Chaise Longue",
 
   "advancements.lets_start_the_origami.title": "Let\u0027s Start The Origami",
   "advancements.lets_start_the_origami.descr": "Making an Paper Cutting Table,For cutting paper blocks and making various origami activation blocks",

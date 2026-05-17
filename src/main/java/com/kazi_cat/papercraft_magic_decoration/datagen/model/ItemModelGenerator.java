@@ -99,6 +99,7 @@ public class ItemModelGenerator extends ItemModelProvider {
         basicItem(ModItems.OVERSIZED_BOX_OF_CHOCOLATES.get());
         basicItem(ModItems.KNITTED_LEOPARD_RUG.get());
         basicItem(ModItems.KAZI_STAR.get());
+        basicItem(ModItems.DUSTY_PAINTING.get());
 
         handheldItem(ModItems.GARDEN_TROWEL.get());
 
@@ -161,6 +162,7 @@ public class ItemModelGenerator extends ItemModelProvider {
         withExistingParent("vodka", modLoc("block/vodka"));
         withExistingParent("fire_whiskey", modLoc("block/fire_whiskey"));
         withExistingParent("old_organ", modLoc("displaysettings/old_organ"));
+        withExistingParent("red_velvet_chaise_longue", modLoc("block/red_velvet_chaise_longue"));
     }
 
     public ItemModelBuilder handheldItem(Item item) {

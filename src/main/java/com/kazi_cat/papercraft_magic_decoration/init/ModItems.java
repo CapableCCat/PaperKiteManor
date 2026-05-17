@@ -246,11 +246,13 @@ public interface ModItems {
     RegistryObject<Item> FIREPLACE_DECORATION = ITEMS.register("fireplace_decoration", () -> new BlockItem(ModBlocks.FIREPLACE_DECORATION.get(), new Item.Properties()));
     RegistryObject<Item> OLD_ORGAN = ITEMS.register("old_organ", () -> new GeoBlockItem(ModBlocks.OLD_ORGAN.get(), new Item.Properties()));
     RegistryObject<Item> LARGE_DINING_TABLE = ITEMS.register("large_dining_table", () -> new BlockItem(ModBlocks.LARGE_DINING_TABLE.get(), new Item.Properties()));
+    RegistryObject<Item> RED_VELVET_CHAISE_LONGUE = ITEMS.register("red_velvet_chaise_longue", () -> new BlockItem(ModBlocks.RED_VELVET_CHAISE_LONGUE.get(), new Item.Properties()));
 
     RegistryObject<Item> LOUD_BUTTON = ITEMS.register("loud_button", () -> new GeoBlockItem(ModBlocks.LOUD_BUTTON.get(), new Item.Properties()));
     RegistryObject<Item> KAZI_LUCKY_CAT = ITEMS.register("kazi_lucky_cat", () -> new GeoBlockItem(ModBlocks.KAZI_LUCKY_CAT.get(), new Item.Properties()));
     RegistryObject<Item> GIFT_FROM_KAZI_MANOR = ITEMS.register("gift_from_kazi_manor", () -> new BlockItem(ModBlocks.GIFT_FROM_KAZI_MANOR.get(), new Item.Properties()));
     RegistryObject<Item> KEY_UNDER_THE_LAKE = ITEMS.register("key_under_the_lake", () -> new BlockItem(ModBlocks.KEY_UNDER_THE_LAKE.get(), new Item.Properties()));
+    RegistryObject<Item> DUSTY_PAINTING = ITEMS.register("dusty_painting", () -> new Item(new Item.Properties()));
 
     RegistryObject<Item> VODKA = ITEMS.register("vodka", () -> new BlockItem(ModBlocks.VODKA.get(), new Item.Properties()));
 
