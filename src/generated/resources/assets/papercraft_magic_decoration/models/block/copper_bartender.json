@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "papercraft_magic_decoration:block/copper_bartender"
-  }
-}

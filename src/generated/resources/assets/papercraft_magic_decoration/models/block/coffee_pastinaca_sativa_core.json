@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/cube_bottom_top",
-  "textures": {
-    "bottom": "papercraft_magic_decoration:block/coffee_pastinaca_sativa_bottom",
-    "side": "papercraft_magic_decoration:block/coffee_pastinaca_sativa_side",
-    "top": "papercraft_magic_decoration:block/coffee_pastinaca_sativa_top"
-  }
-}
