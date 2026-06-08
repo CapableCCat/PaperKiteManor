@@ -1,6 +1,7 @@
 package com.kazi_cat.papercraft_magic_decoration.datagen.model;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
+import com.kazi_cat.papercraft_magic_decoration.init.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
@@ -14,10 +15,18 @@ public class ItemModelGenerator extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        basicItem(ModItems.SMOKED_SALMON_HEAD.get());
+        basicItem(ModItems.CHUNKY_SALMON.get());
+        basicItem(ModItems.CHUNKY_SMOKED_SALMON.get());
+        basicItem(ModItems.JUMBO_SALMON.get());
         withExistingParent("sausage_mace_weapon", modLoc("displaysettings/sausage_mace_weapon"))
                 .texture("layer0", "papercraft_magic_decoration:block/sausage_mace_weapon");
         withExistingParent("raw_sausage_mace_weapon", modLoc("displaysettings/sausage_mace_weapon"))
                 .texture("layer0", "papercraft_magic_decoration:block/raw_sausage_mace_weapon");
+        withExistingParent("manga_meat", modLoc("displaysettings/manga_meat"))
+                .texture("layer0", "papercraft_magic_decoration:block/manga_meat_grill");
+        withExistingParent("raw_manga_meat", modLoc("displaysettings/manga_meat"))
+                .texture("layer0", "papercraft_magic_decoration:block/raw_manga_meat_grill");
     }
 
     public void handheldItem(ResourceLocation item) {

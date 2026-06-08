@@ -27,9 +27,9 @@ public class SmeltableBlockEntity extends BaseBlockEntity {
         super(entityType, pos, state);
     }
 
-//    public SmeltableBlockEntity(BlockPos pos, BlockState state) {
-//        super(ModBlocks.SMELTABLE_BE.get(), pos, state);
-//    }
+    public SmeltableBlockEntity(BlockPos pos, BlockState state) {
+        super(ModBlocks.SMELTABLE_BE.get(), pos, state);
+    }
 
     public void tick(Level level) {
         if (level.getGameTime() % 5 == 0) {

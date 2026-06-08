@@ -1,0 +1,124 @@
+{
+  "variants": {
+    "cooked=false,facing=east,has_base=false,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_manga_meat",
+      "y": 90
+    },
+    "cooked=false,facing=east,has_base=false,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_manga_meat",
+      "y": 90
+    },
+    "cooked=false,facing=east,has_base=true,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_manga_meat",
+      "y": 90
+    },
+    "cooked=false,facing=east,has_base=true,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_manga_meat",
+      "y": 90
+    },
+    "cooked=false,facing=north,has_base=false,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_manga_meat"
+    },
+    "cooked=false,facing=north,has_base=false,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_manga_meat"
+    },
+    "cooked=false,facing=north,has_base=true,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_manga_meat"
+    },
+    "cooked=false,facing=north,has_base=true,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_manga_meat"
+    },
+    "cooked=false,facing=south,has_base=false,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_manga_meat",
+      "y": 180
+    },
+    "cooked=false,facing=south,has_base=false,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_manga_meat",
+      "y": 180
+    },
+    "cooked=false,facing=south,has_base=true,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_manga_meat",
+      "y": 180
+    },
+    "cooked=false,facing=south,has_base=true,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_manga_meat",
+      "y": 180
+    },
+    "cooked=false,facing=west,has_base=false,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_manga_meat",
+      "y": 270
+    },
+    "cooked=false,facing=west,has_base=false,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_manga_meat",
+      "y": 270
+    },
+    "cooked=false,facing=west,has_base=true,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_manga_meat",
+      "y": 270
+    },
+    "cooked=false,facing=west,has_base=true,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_manga_meat",
+      "y": 270
+    },
+    "cooked=true,facing=east,has_base=false,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/manga_meat",
+      "y": 90
+    },
+    "cooked=true,facing=east,has_base=false,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/manga_meat",
+      "y": 90
+    },
+    "cooked=true,facing=east,has_base=true,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/manga_meat",
+      "y": 90
+    },
+    "cooked=true,facing=east,has_base=true,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/manga_meat",
+      "y": 90
+    },
+    "cooked=true,facing=north,has_base=false,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/manga_meat"
+    },
+    "cooked=true,facing=north,has_base=false,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/manga_meat"
+    },
+    "cooked=true,facing=north,has_base=true,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/manga_meat"
+    },
+    "cooked=true,facing=north,has_base=true,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/manga_meat"
+    },
+    "cooked=true,facing=south,has_base=false,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/manga_meat",
+      "y": 180
+    },
+    "cooked=true,facing=south,has_base=false,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/manga_meat",
+      "y": 180
+    },
+    "cooked=true,facing=south,has_base=true,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/manga_meat",
+      "y": 180
+    },
+    "cooked=true,facing=south,has_base=true,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/manga_meat",
+      "y": 180
+    },
+    "cooked=true,facing=west,has_base=false,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/manga_meat",
+      "y": 270
+    },
+    "cooked=true,facing=west,has_base=false,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/manga_meat",
+      "y": 270
+    },
+    "cooked=true,facing=west,has_base=true,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/manga_meat",
+      "y": 270
+    },
+    "cooked=true,facing=west,has_base=true,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/manga_meat",
+      "y": 270
+    }
+  }
+}

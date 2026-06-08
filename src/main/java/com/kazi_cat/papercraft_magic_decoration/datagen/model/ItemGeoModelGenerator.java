@@ -40,6 +40,11 @@ public class ItemGeoModelGenerator implements DataProvider {
         simple(ModItems.SAUSAGE_MACE_WEAPON);
         ModelData rawSausageMaceWeapon = ModelData.simple("sausage_mace_weapon", "raw_sausage_mace_weapon", "sausage_mace_weapon");
         add(ModItems.RAW_SAUSAGE_MACE_WEAPON, rawSausageMaceWeapon);
+
+        ModelData mangaMeat = ModelData.simple("manga_meat", "manga_meat_grill", "manga_meat");
+        ModelData rawMangaMeat = ModelData.simple("manga_meat", "raw_manga_meat_grill", "manga_meat");
+        add(ModItems.MANGA_MEAT, mangaMeat);
+        add(ModItems.RAW_MANGA_MEAT, rawMangaMeat);
     }
 
     public void simple(RegistryObject<Item> key) {

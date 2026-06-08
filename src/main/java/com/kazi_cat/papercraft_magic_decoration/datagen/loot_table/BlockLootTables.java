@@ -2,7 +2,6 @@ package com.kazi_cat.papercraft_magic_decoration.datagen.loot_table;
 
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootTable;
 
@@ -18,6 +17,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 
     @Override
     public void generate() {
+        //TODO 为SmeltableBlock添加战利品表
     }
 
     @Override

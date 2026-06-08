@@ -55,6 +55,24 @@ public class SmeltableBlockDataProvider implements DataProvider {
                 100, 2, 20,
                 ModItems.SAUSAGE_MACE_WEAPON.get()
         ));
+
+        this.add(ModBlocks.MANGA_MEAT.get(), new SmeltableBlockData(
+                ModBlocks.MANGA_MEAT.get(),
+                100, 2, 16,
+                ModItems.MANGA_MEAT.get()
+        ));
+
+        this.add(ModBlocks.SALMON_HEAD.get(), new SmeltableBlockData(
+                ModBlocks.SALMON_HEAD.get(),
+                100, 0, 0,
+                ModItems.SMOKED_SALMON_HEAD.get()
+        ));
+
+        this.add(ModBlocks.CHUNKY_SALMON.get(), new SmeltableBlockData(
+                ModBlocks.CHUNKY_SALMON.get(),
+                100, 0, 0,
+                ModItems.CHUNKY_SMOKED_SALMON.get()
+        ));
     }
 
     /**

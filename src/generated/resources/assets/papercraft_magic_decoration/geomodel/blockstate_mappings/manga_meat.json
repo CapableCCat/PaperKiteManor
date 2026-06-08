@@ -1,0 +1,58 @@
+{
+  "variants": {
+    "cooked=false,facing=east,has_base=false,waterlogged=false": "0",
+    "cooked=false,facing=east,has_base=false,waterlogged=true": "0",
+    "cooked=false,facing=east,has_base=true,waterlogged=false": "2",
+    "cooked=false,facing=east,has_base=true,waterlogged=true": "2",
+    "cooked=false,facing=north,has_base=false,waterlogged=false": "0",
+    "cooked=false,facing=north,has_base=false,waterlogged=true": "0",
+    "cooked=false,facing=north,has_base=true,waterlogged=false": "2",
+    "cooked=false,facing=north,has_base=true,waterlogged=true": "2",
+    "cooked=false,facing=south,has_base=false,waterlogged=false": "0",
+    "cooked=false,facing=south,has_base=false,waterlogged=true": "0",
+    "cooked=false,facing=south,has_base=true,waterlogged=false": "2",
+    "cooked=false,facing=south,has_base=true,waterlogged=true": "2",
+    "cooked=false,facing=west,has_base=false,waterlogged=false": "0",
+    "cooked=false,facing=west,has_base=false,waterlogged=true": "0",
+    "cooked=false,facing=west,has_base=true,waterlogged=false": "2",
+    "cooked=false,facing=west,has_base=true,waterlogged=true": "2",
+    "cooked=true,facing=east,has_base=false,waterlogged=false": "1",
+    "cooked=true,facing=east,has_base=false,waterlogged=true": "1",
+    "cooked=true,facing=east,has_base=true,waterlogged=false": "3",
+    "cooked=true,facing=east,has_base=true,waterlogged=true": "3",
+    "cooked=true,facing=north,has_base=false,waterlogged=false": "1",
+    "cooked=true,facing=north,has_base=false,waterlogged=true": "1",
+    "cooked=true,facing=north,has_base=true,waterlogged=false": "3",
+    "cooked=true,facing=north,has_base=true,waterlogged=true": "3",
+    "cooked=true,facing=south,has_base=false,waterlogged=false": "1",
+    "cooked=true,facing=south,has_base=false,waterlogged=true": "1",
+    "cooked=true,facing=south,has_base=true,waterlogged=false": "3",
+    "cooked=true,facing=south,has_base=true,waterlogged=true": "3",
+    "cooked=true,facing=west,has_base=false,waterlogged=false": "1",
+    "cooked=true,facing=west,has_base=false,waterlogged=true": "1",
+    "cooked=true,facing=west,has_base=true,waterlogged=false": "3",
+    "cooked=true,facing=west,has_base=true,waterlogged=true": "3"
+  },
+  "models": {
+    "3": {
+      "model": "papercraft_magic_decoration:geo/manga_meat_grill.geo.json",
+      "texture": "papercraft_magic_decoration:textures/block/manga_meat_grill.png",
+      "animation": "papercraft_magic_decoration:animations/manga_meat_grill.animation.json"
+    },
+    "1": {
+      "model": "papercraft_magic_decoration:geo/manga_meat.geo.json",
+      "texture": "papercraft_magic_decoration:textures/block/manga_meat_grill.png",
+      "animation": "papercraft_magic_decoration:animations/manga_meat_grill.animation.json"
+    },
+    "2": {
+      "model": "papercraft_magic_decoration:geo/manga_meat_grill.geo.json",
+      "texture": "papercraft_magic_decoration:textures/block/raw_manga_meat_grill.png",
+      "animation": "papercraft_magic_decoration:animations/manga_meat_grill.animation.json"
+    },
+    "0": {
+      "model": "papercraft_magic_decoration:geo/manga_meat.geo.json",
+      "texture": "papercraft_magic_decoration:textures/block/raw_manga_meat_grill.png",
+      "animation": "papercraft_magic_decoration:animations/manga_meat_grill.animation.json"
+    }
+  }
+}

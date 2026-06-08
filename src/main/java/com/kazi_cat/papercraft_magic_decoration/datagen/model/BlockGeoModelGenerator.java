@@ -11,12 +11,11 @@ import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonWriter;
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.api.block.SmeltableBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.smeltable.SausageMaceWeaponBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.smeltable.MangaMeatBlock;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import net.minecraft.Util;
 import net.minecraft.client.renderer.block.BlockModelShaper;
-import net.minecraft.core.Direction;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
@@ -69,6 +68,16 @@ public class BlockGeoModelGenerator implements DataProvider {
                 case FLOOR -> cooked ? sausageFloor : rawSausageFloor;
                 case CEILING -> cooked ? sausageCeiling : rawSausageCeiling;
             };
+        }));
+
+        ModelData rawMangaMeat = ModelData.simple("0", "manga_meat", "raw_manga_meat_grill", "manga_meat_grill");
+        ModelData mangaMeat = ModelData.simple("1", "manga_meat", "manga_meat_grill", "manga_meat_grill");
+        ModelData rawMangaMeatGrill = ModelData.simple("2", "manga_meat_grill", "raw_manga_meat_grill", "manga_meat_grill");
+        ModelData mangaMeatGrill = ModelData.simple("3", "manga_meat_grill", "manga_meat_grill", "manga_meat_grill");
+        this.add("manga_meat", new MappingBuilder(ModBlocks.MANGA_MEAT.get()).forAllStates(state -> {
+            boolean cooked = state.getValue(SmeltableBlock.COOKED);
+            boolean hasBase = state.getValue(MangaMeatBlock.HAS_BASE);
+            return cooked ? (hasBase ? mangaMeatGrill : mangaMeat) : (hasBase ? rawMangaMeatGrill : rawMangaMeat);
         }));
     }
 
