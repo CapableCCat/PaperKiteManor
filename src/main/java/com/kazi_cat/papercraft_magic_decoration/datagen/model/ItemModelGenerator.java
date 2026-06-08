@@ -19,6 +19,9 @@ public class ItemModelGenerator extends ItemModelProvider {
         basicItem(ModItems.CHUNKY_SALMON.get());
         basicItem(ModItems.CHUNKY_SMOKED_SALMON.get());
         basicItem(ModItems.JUMBO_SALMON.get());
+        basicItem(ModItems.MONSTER_STEAK.get());
+        basicItem(ModItems.LARGE_STEAK.get());
+        basicItem(ModItems.CUBED_SAUSAGE.get());
         withExistingParent("sausage_mace_weapon", modLoc("displaysettings/sausage_mace_weapon"))
                 .texture("layer0", "papercraft_magic_decoration:block/sausage_mace_weapon");
         withExistingParent("raw_sausage_mace_weapon", modLoc("displaysettings/sausage_mace_weapon"))

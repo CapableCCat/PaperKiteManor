@@ -6,7 +6,7 @@
 	"texture_size": [96, 96],
 	"textures": {
 		"0": "papercraft_magic_decoration:block/jumbo_salmon",
-		"particle": "papercraft_magic_decoration:block/jumbo_salmon"
+		"particle": "papercraft_magic_decoration:block/salmon_head_break"
 	},
 	"elements": [
 		{

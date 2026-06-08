@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "block": "papercraft_magic_decoration:monster_steak",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "cooked": "true"
+                  }
+                }
+              ],
+              "name": "papercraft_magic_decoration:large_steak"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "papercraft_magic_decoration:monster_steak"
+            }
+          ]
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "papercraft_magic_decoration:blocks/monster_steak"
+}

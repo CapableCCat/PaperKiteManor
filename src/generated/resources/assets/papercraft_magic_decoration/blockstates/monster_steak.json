@@ -1,0 +1,364 @@
+{
+  "variants": {
+    "cooked=false,facing=east,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_0",
+      "y": 90
+    },
+    "cooked=false,facing=east,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_0",
+      "y": 90
+    },
+    "cooked=false,facing=east,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_1",
+      "y": 90
+    },
+    "cooked=false,facing=east,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_1",
+      "y": 90
+    },
+    "cooked=false,facing=east,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_2",
+      "y": 90
+    },
+    "cooked=false,facing=east,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_2",
+      "y": 90
+    },
+    "cooked=false,facing=east,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_3",
+      "y": 90
+    },
+    "cooked=false,facing=east,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_3",
+      "y": 90
+    },
+    "cooked=false,facing=east,part=4,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_4",
+      "y": 90
+    },
+    "cooked=false,facing=east,part=4,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_4",
+      "y": 90
+    },
+    "cooked=false,facing=east,part=5,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_5",
+      "y": 90
+    },
+    "cooked=false,facing=east,part=5,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_5",
+      "y": 90
+    },
+    "cooked=false,facing=north,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_0"
+    },
+    "cooked=false,facing=north,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_0"
+    },
+    "cooked=false,facing=north,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_1"
+    },
+    "cooked=false,facing=north,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_1"
+    },
+    "cooked=false,facing=north,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_2"
+    },
+    "cooked=false,facing=north,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_2"
+    },
+    "cooked=false,facing=north,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_3"
+    },
+    "cooked=false,facing=north,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_3"
+    },
+    "cooked=false,facing=north,part=4,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_4"
+    },
+    "cooked=false,facing=north,part=4,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_4"
+    },
+    "cooked=false,facing=north,part=5,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_5"
+    },
+    "cooked=false,facing=north,part=5,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_5"
+    },
+    "cooked=false,facing=south,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_0",
+      "y": 180
+    },
+    "cooked=false,facing=south,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_0",
+      "y": 180
+    },
+    "cooked=false,facing=south,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_1",
+      "y": 180
+    },
+    "cooked=false,facing=south,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_1",
+      "y": 180
+    },
+    "cooked=false,facing=south,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_2",
+      "y": 180
+    },
+    "cooked=false,facing=south,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_2",
+      "y": 180
+    },
+    "cooked=false,facing=south,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_3",
+      "y": 180
+    },
+    "cooked=false,facing=south,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_3",
+      "y": 180
+    },
+    "cooked=false,facing=south,part=4,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_4",
+      "y": 180
+    },
+    "cooked=false,facing=south,part=4,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_4",
+      "y": 180
+    },
+    "cooked=false,facing=south,part=5,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_5",
+      "y": 180
+    },
+    "cooked=false,facing=south,part=5,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_5",
+      "y": 180
+    },
+    "cooked=false,facing=west,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_0",
+      "y": 270
+    },
+    "cooked=false,facing=west,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_0",
+      "y": 270
+    },
+    "cooked=false,facing=west,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_1",
+      "y": 270
+    },
+    "cooked=false,facing=west,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_1",
+      "y": 270
+    },
+    "cooked=false,facing=west,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_2",
+      "y": 270
+    },
+    "cooked=false,facing=west,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_2",
+      "y": 270
+    },
+    "cooked=false,facing=west,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_3",
+      "y": 270
+    },
+    "cooked=false,facing=west,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_3",
+      "y": 270
+    },
+    "cooked=false,facing=west,part=4,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_4",
+      "y": 270
+    },
+    "cooked=false,facing=west,part=4,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_4",
+      "y": 270
+    },
+    "cooked=false,facing=west,part=5,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_5",
+      "y": 270
+    },
+    "cooked=false,facing=west,part=5,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_monster_steak_5",
+      "y": 270
+    },
+    "cooked=true,facing=east,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/monster_steak_0",
+      "y": 90
+    },
+    "cooked=true,facing=east,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/monster_steak_0",
+      "y": 90
+    },
+    "cooked=true,facing=east,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/monster_steak_1",
+      "y": 90
+    },
+    "cooked=true,facing=east,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/monster_steak_1",
+      "y": 90
+    },
+    "cooked=true,facing=east,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/monster_steak_2",
+      "y": 90
+    },
+    "cooked=true,facing=east,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/monster_steak_2",
+      "y": 90
+    },
+    "cooked=true,facing=east,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/monster_steak_3",
+      "y": 90
+    },
+    "cooked=true,facing=east,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/monster_steak_3",
+      "y": 90
+    },
+    "cooked=true,facing=east,part=4,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/monster_steak_4",
+      "y": 90
+    },
+    "cooked=true,facing=east,part=4,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/monster_steak_4",
+      "y": 90
+    },
+    "cooked=true,facing=east,part=5,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/monster_steak_5",
+      "y": 90
+    },
+    "cooked=true,facing=east,part=5,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/monster_steak_5",
+      "y": 90
+    },
+    "cooked=true,facing=north,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/monster_steak_0"
+    },
+    "cooked=true,facing=north,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/monster_steak_0"
+    },
+    "cooked=true,facing=north,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/monster_steak_1"
+    },
+    "cooked=true,facing=north,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/monster_steak_1"
+    },
+    "cooked=true,facing=north,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/monster_steak_2"
+    },
+    "cooked=true,facing=north,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/monster_steak_2"
+    },
+    "cooked=true,facing=north,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/monster_steak_3"
+    },
+    "cooked=true,facing=north,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/monster_steak_3"
+    },
+    "cooked=true,facing=north,part=4,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/monster_steak_4"
+    },
+    "cooked=true,facing=north,part=4,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/monster_steak_4"
+    },
+    "cooked=true,facing=north,part=5,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/monster_steak_5"
+    },
+    "cooked=true,facing=north,part=5,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/monster_steak_5"
+    },
+    "cooked=true,facing=south,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/monster_steak_0",
+      "y": 180
+    },
+    "cooked=true,facing=south,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/monster_steak_0",
+      "y": 180
+    },
+    "cooked=true,facing=south,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/monster_steak_1",
+      "y": 180
+    },
+    "cooked=true,facing=south,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/monster_steak_1",
+      "y": 180
+    },
+    "cooked=true,facing=south,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/monster_steak_2",
+      "y": 180
+    },
+    "cooked=true,facing=south,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/monster_steak_2",
+      "y": 180
+    },
+    "cooked=true,facing=south,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/monster_steak_3",
+      "y": 180
+    },
+    "cooked=true,facing=south,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/monster_steak_3",
+      "y": 180
+    },
+    "cooked=true,facing=south,part=4,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/monster_steak_4",
+      "y": 180
+    },
+    "cooked=true,facing=south,part=4,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/monster_steak_4",
+      "y": 180
+    },
+    "cooked=true,facing=south,part=5,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/monster_steak_5",
+      "y": 180
+    },
+    "cooked=true,facing=south,part=5,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/monster_steak_5",
+      "y": 180
+    },
+    "cooked=true,facing=west,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/monster_steak_0",
+      "y": 270
+    },
+    "cooked=true,facing=west,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/monster_steak_0",
+      "y": 270
+    },
+    "cooked=true,facing=west,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/monster_steak_1",
+      "y": 270
+    },
+    "cooked=true,facing=west,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/monster_steak_1",
+      "y": 270
+    },
+    "cooked=true,facing=west,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/monster_steak_2",
+      "y": 270
+    },
+    "cooked=true,facing=west,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/monster_steak_2",
+      "y": 270
+    },
+    "cooked=true,facing=west,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/monster_steak_3",
+      "y": 270
+    },
+    "cooked=true,facing=west,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/monster_steak_3",
+      "y": 270
+    },
+    "cooked=true,facing=west,part=4,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/monster_steak_4",
+      "y": 270
+    },
+    "cooked=true,facing=west,part=4,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/monster_steak_4",
+      "y": 270
+    },
+    "cooked=true,facing=west,part=5,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/monster_steak_5",
+      "y": 270
+    },
+    "cooked=true,facing=west,part=5,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/monster_steak_5",
+      "y": 270
+    }
+  }
+}

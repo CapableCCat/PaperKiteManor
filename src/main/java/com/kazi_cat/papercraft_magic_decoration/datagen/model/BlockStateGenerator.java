@@ -3,6 +3,7 @@ package com.kazi_cat.papercraft_magic_decoration.datagen.model;
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.api.block.SmeltableBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.base.MultipartBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.decoration.VariantDecorationBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.smeltable.ChunkySalmonBlock;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import net.minecraft.data.PackOutput;
@@ -24,6 +25,16 @@ public class BlockStateGenerator extends BlockStateProvider {
         smeltable(ModBlocks.MANGA_MEAT.get(), "manga_meat");
         multipartSmeltable(ModBlocks.SALMON_HEAD.get(), "salmon_head");
         multipartSmeltable(ModBlocks.CHUNKY_SALMON.get(), "chunky_salmon", ChunkySalmonBlock.VARIANT);
+        multipartSmeltable(ModBlocks.MONSTER_STEAK.get(), "monster_steak");
+        variant(ModBlocks.TRAY_BLOCK.get(), "tray", ((VariantDecorationBlock) ModBlocks.TRAY_BLOCK.get()).getVariantProperty());
+    }
+
+    public void variant(Block block, String name, IntegerProperty property) {
+        horizontalBlock(block, state -> {
+            int part = state.getValue(property);
+            ResourceLocation file = modLoc("block/%s_%s".formatted(name, part));
+            return new ModelFile.UncheckedModelFile(file);
+        });
     }
 
     public void smeltable(Block block, String name) {

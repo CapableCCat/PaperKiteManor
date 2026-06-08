@@ -18,4 +18,12 @@ public interface ModFoods {
     FoodProperties MANGA_MEAT = (new FoodProperties.Builder())
             .nutrition(15).saturationMod(0.6F)
             .meat().build();
+
+    FoodProperties LARGE_STEAK = (new FoodProperties.Builder())
+            .nutrition(12).saturationMod(0.7f)
+            .meat().build();
+
+    FoodProperties CUBED_SAUSAGE = (new FoodProperties.Builder())
+            .nutrition(14).saturationMod(0.7f)
+            .meat().build();
 }

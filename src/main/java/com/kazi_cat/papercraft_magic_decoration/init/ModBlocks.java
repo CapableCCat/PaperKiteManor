@@ -1,10 +1,8 @@
 package com.kazi_cat.papercraft_magic_decoration.init;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
-import com.kazi_cat.papercraft_magic_decoration.block.smeltable.ChunkySalmonBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.smeltable.MangaMeatBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.smeltable.SausageMaceWeaponBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.smeltable.TwoByOneSmeltableBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.decoration.VariantDecorationBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.smeltable.*;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.AnimatedSmeltableBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.SmeltableBlockEntity;
 import net.minecraft.world.level.block.Block;
@@ -20,6 +18,7 @@ public interface ModBlocks {
     DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, PaperKiteManor.MOD_ID);
     DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, PaperKiteManor.MOD_ID);
 
+    // 可烤制食物
     RegistryObject<Block> SAUSAGE_MACE_WEAPON_BLOCK = BLOCKS.register("sausage_mace_weapon", () -> new SausageMaceWeaponBlock(
             BlockBehaviour.Properties.of()
                     .sound(SoundType.SHROOMLIGHT)
@@ -50,11 +49,19 @@ public interface ModBlocks {
                     .noOcclusion()
     ));
 
+    RegistryObject<Block> MONSTER_STEAK = BLOCKS.register("monster_steak", () -> new MonsterSteakBlock(
+            BlockBehaviour.Properties.of()
+                    .sound(SoundType.SHROOMLIGHT)
+                    .strength(1f, 4f)
+                    .noOcclusion()
+    ));
+
     RegistryObject<BlockEntityType<SmeltableBlockEntity>> SMELTABLE_BE = BLOCK_ENTITIES.register(
             "smeltable_block", () -> BlockEntityType.Builder
                     .of(SmeltableBlockEntity::new,
                             SALMON_HEAD.get(),
-                            CHUNKY_SALMON.get()
+                            CHUNKY_SALMON.get(),
+                            MONSTER_STEAK.get()
                     ).build(null)
     );
 
@@ -65,4 +72,13 @@ public interface ModBlocks {
                             MANGA_MEAT.get()
                     ).build(null)
     );
+
+    // 装饰方块
+    RegistryObject<Block> TRAY_BLOCK = BLOCKS.register("tray", () -> new VariantDecorationBlock(
+            BlockBehaviour.Properties.of()
+                    .strength(0.5f, 10f)
+                    .noOcclusion()
+                    .noLootTable(),
+            Block.box(0, 0, 0, 16, 2, 16), 2
+    ));
 }

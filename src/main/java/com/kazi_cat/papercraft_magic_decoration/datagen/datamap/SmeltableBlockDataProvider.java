@@ -73,6 +73,12 @@ public class SmeltableBlockDataProvider implements DataProvider {
                 100, 0, 0,
                 ModItems.CHUNKY_SMOKED_SALMON.get()
         ));
+
+        this.add(ModBlocks.MONSTER_STEAK.get(), new SmeltableBlockData(
+                ModBlocks.MONSTER_STEAK.get(),
+                100, 0, 0,
+                ModItems.LARGE_STEAK.get()
+        ));
     }
 
     /**

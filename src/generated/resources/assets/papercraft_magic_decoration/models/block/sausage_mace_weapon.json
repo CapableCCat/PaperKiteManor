@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "papercraft_magic_decoration:block/sausage_mace_weapon"
+    "all": "papercraft_magic_decoration:block/sausage_mace_weapon_break"
   }
 }

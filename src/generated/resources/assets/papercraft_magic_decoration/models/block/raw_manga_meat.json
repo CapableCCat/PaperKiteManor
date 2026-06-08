@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "papercraft_magic_decoration:block/raw_manga_meat_grill"
+    "all": "papercraft_magic_decoration:block/raw_manga_meat_break"
   }
 }

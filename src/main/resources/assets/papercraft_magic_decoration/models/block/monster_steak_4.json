@@ -4,8 +4,8 @@
   "render_type": "cutout",
   "texture_size": [96, 96],
   "textures": {
-    "0": "papercraft_magic_decoration:block/raw_monster_steak",
-    "particle": "papercraft_magic_decoration:block/raw_monster_steak"
+    "0": "papercraft_magic_decoration:block/monster_steak",
+    "particle": "papercraft_magic_decoration:block/monster_steak_break"
   },
   "elements": [
     {

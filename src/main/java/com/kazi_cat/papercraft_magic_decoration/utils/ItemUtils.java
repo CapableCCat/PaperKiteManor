@@ -35,16 +35,10 @@ public class ItemUtils {
         }
     }
 
-    public static void spawnItemEntity(Level level, Vec3 pos, ItemStack itemStack) {
+    public static ItemEntity spawnItemEntity(Level level, Vec3 pos, ItemStack itemStack) {
         ItemEntity itemEntity = new ItemEntity(level, pos.x(), pos.y(), pos.z(), itemStack);
         itemEntity.setDefaultPickUpDelay();
         level.addFreshEntity(itemEntity);
-    }
-
-    public static void spawnItemEntity(Level level, Vec3 pos, ItemStack itemStack, Vec3 deltaMovement) {
-        ItemEntity itemEntity = new ItemEntity(level, pos.x(), pos.y(), pos.z(), itemStack);
-        itemEntity.setDeltaMovement(deltaMovement);
-        itemEntity.setDefaultPickUpDelay();
-        level.addFreshEntity(itemEntity);
+        return itemEntity;
     }
 }

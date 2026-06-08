@@ -1,7 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "papercraft_magic_decoration:block/manga_meat_grill",
-    "particle": "papercraft_magic_decoration:block/manga_meat_particle"
+    "all": "papercraft_magic_decoration:block/manga_meat_break"
   }
 }
