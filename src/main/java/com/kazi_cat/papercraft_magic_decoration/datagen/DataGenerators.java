@@ -1,0 +1,38 @@
+package com.kazi_cat.papercraft_magic_decoration.datagen;
+
+import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
+import com.kazi_cat.papercraft_magic_decoration.datagen.datamap.SmeltableBlockDataProvider;
+import com.kazi_cat.papercraft_magic_decoration.datagen.loot_table.LootTableGenerator;
+import com.kazi_cat.papercraft_magic_decoration.datagen.model.*;
+import com.kazi_cat.papercraft_magic_decoration.datagen.recipe.ModRecipeGenerator;
+import com.kazi_cat.papercraft_magic_decoration.datagen.sound.SoundDefinitionsGenerator;
+import com.kazi_cat.papercraft_magic_decoration.datagen.tag.TagBlock;
+import com.kazi_cat.papercraft_magic_decoration.datagen.tag.TagItem;
+import net.minecraftforge.data.event.GatherDataEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+
+@Mod.EventBusSubscriber(modid = PaperKiteManor.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+public class DataGenerators {
+    @SubscribeEvent
+    public static void gatherData(GatherDataEvent event) {
+        var generator = event.getGenerator();
+        var registries = event.getLookupProvider();
+        var vanillaPack = generator.getVanillaPack(true);
+        var helper = event.getExistingFileHelper();
+        var pack = generator.getPackOutput();
+
+        var block = vanillaPack.addProvider(packOutput -> new TagBlock(packOutput, registries, helper));
+        vanillaPack.addProvider(packOutput -> new TagItem(packOutput, registries, block.contentsGetter(), helper));
+
+        generator.addProvider(event.includeServer(), new LootTableGenerator(pack));
+        generator.addProvider(event.includeServer(), new ModRecipeGenerator(pack));
+        generator.addProvider(event.includeClient(), new BlockModelGenerator(pack, helper));
+        generator.addProvider(event.includeClient(), new BlockStateGenerator(pack, helper));
+        generator.addProvider(event.includeClient(), new ItemModelGenerator(pack, helper));
+        generator.addProvider(event.includeClient(), new BlockGeoModelGenerator(pack));
+        generator.addProvider(event.includeClient(), new ItemGeoModelGenerator(pack));
+        generator.addProvider(event.includeServer(), new SmeltableBlockDataProvider(pack));
+        generator.addProvider(event.includeServer(), new SoundDefinitionsGenerator(pack, helper));
+    }
+}

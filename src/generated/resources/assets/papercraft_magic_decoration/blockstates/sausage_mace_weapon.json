@@ -1,0 +1,724 @@
+{
+  "variants": {
+    "cooked=false,face=ceiling,facing=east,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=false,face=ceiling,facing=east,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=false,face=ceiling,facing=east,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=false,face=ceiling,facing=east,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=false,face=ceiling,facing=east,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=false,face=ceiling,facing=east,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=false,face=ceiling,facing=east,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=false,face=ceiling,facing=east,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=false,face=ceiling,facing=north,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon"
+    },
+    "cooked=false,face=ceiling,facing=north,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon"
+    },
+    "cooked=false,face=ceiling,facing=north,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon"
+    },
+    "cooked=false,face=ceiling,facing=north,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon"
+    },
+    "cooked=false,face=ceiling,facing=north,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon"
+    },
+    "cooked=false,face=ceiling,facing=north,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon"
+    },
+    "cooked=false,face=ceiling,facing=north,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon"
+    },
+    "cooked=false,face=ceiling,facing=north,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon"
+    },
+    "cooked=false,face=ceiling,facing=south,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=false,face=ceiling,facing=south,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=false,face=ceiling,facing=south,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=false,face=ceiling,facing=south,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=false,face=ceiling,facing=south,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=false,face=ceiling,facing=south,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=false,face=ceiling,facing=south,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=false,face=ceiling,facing=south,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=false,face=ceiling,facing=west,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=false,face=ceiling,facing=west,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=false,face=ceiling,facing=west,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=false,face=ceiling,facing=west,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=false,face=ceiling,facing=west,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=false,face=ceiling,facing=west,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=false,face=ceiling,facing=west,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=false,face=ceiling,facing=west,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=false,face=floor,facing=east,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=false,face=floor,facing=east,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=false,face=floor,facing=east,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=false,face=floor,facing=east,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=false,face=floor,facing=east,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=false,face=floor,facing=east,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=false,face=floor,facing=east,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=false,face=floor,facing=east,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=false,face=floor,facing=north,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon"
+    },
+    "cooked=false,face=floor,facing=north,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon"
+    },
+    "cooked=false,face=floor,facing=north,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon"
+    },
+    "cooked=false,face=floor,facing=north,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon"
+    },
+    "cooked=false,face=floor,facing=north,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon"
+    },
+    "cooked=false,face=floor,facing=north,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon"
+    },
+    "cooked=false,face=floor,facing=north,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon"
+    },
+    "cooked=false,face=floor,facing=north,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon"
+    },
+    "cooked=false,face=floor,facing=south,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=false,face=floor,facing=south,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=false,face=floor,facing=south,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=false,face=floor,facing=south,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=false,face=floor,facing=south,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=false,face=floor,facing=south,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=false,face=floor,facing=south,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=false,face=floor,facing=south,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=false,face=floor,facing=west,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=false,face=floor,facing=west,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=false,face=floor,facing=west,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=false,face=floor,facing=west,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=false,face=floor,facing=west,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=false,face=floor,facing=west,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=false,face=floor,facing=west,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=false,face=floor,facing=west,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=false,face=wall,facing=east,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=false,face=wall,facing=east,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=false,face=wall,facing=east,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=false,face=wall,facing=east,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=false,face=wall,facing=east,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=false,face=wall,facing=east,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=false,face=wall,facing=east,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=false,face=wall,facing=east,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=false,face=wall,facing=north,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon"
+    },
+    "cooked=false,face=wall,facing=north,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon"
+    },
+    "cooked=false,face=wall,facing=north,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon"
+    },
+    "cooked=false,face=wall,facing=north,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon"
+    },
+    "cooked=false,face=wall,facing=north,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon"
+    },
+    "cooked=false,face=wall,facing=north,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon"
+    },
+    "cooked=false,face=wall,facing=north,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon"
+    },
+    "cooked=false,face=wall,facing=north,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon"
+    },
+    "cooked=false,face=wall,facing=south,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=false,face=wall,facing=south,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=false,face=wall,facing=south,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=false,face=wall,facing=south,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=false,face=wall,facing=south,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=false,face=wall,facing=south,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=false,face=wall,facing=south,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=false,face=wall,facing=south,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=false,face=wall,facing=west,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=false,face=wall,facing=west,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=false,face=wall,facing=west,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=false,face=wall,facing=west,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=false,face=wall,facing=west,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=false,face=wall,facing=west,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=false,face=wall,facing=west,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=false,face=wall,facing=west,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/raw_sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=true,face=ceiling,facing=east,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=true,face=ceiling,facing=east,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=true,face=ceiling,facing=east,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=true,face=ceiling,facing=east,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=true,face=ceiling,facing=east,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=true,face=ceiling,facing=east,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=true,face=ceiling,facing=east,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=true,face=ceiling,facing=east,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=true,face=ceiling,facing=north,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon"
+    },
+    "cooked=true,face=ceiling,facing=north,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon"
+    },
+    "cooked=true,face=ceiling,facing=north,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon"
+    },
+    "cooked=true,face=ceiling,facing=north,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon"
+    },
+    "cooked=true,face=ceiling,facing=north,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon"
+    },
+    "cooked=true,face=ceiling,facing=north,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon"
+    },
+    "cooked=true,face=ceiling,facing=north,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon"
+    },
+    "cooked=true,face=ceiling,facing=north,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon"
+    },
+    "cooked=true,face=ceiling,facing=south,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=true,face=ceiling,facing=south,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=true,face=ceiling,facing=south,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=true,face=ceiling,facing=south,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=true,face=ceiling,facing=south,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=true,face=ceiling,facing=south,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=true,face=ceiling,facing=south,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=true,face=ceiling,facing=south,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=true,face=ceiling,facing=west,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=true,face=ceiling,facing=west,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=true,face=ceiling,facing=west,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=true,face=ceiling,facing=west,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=true,face=ceiling,facing=west,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=true,face=ceiling,facing=west,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=true,face=ceiling,facing=west,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=true,face=ceiling,facing=west,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=true,face=floor,facing=east,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=true,face=floor,facing=east,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=true,face=floor,facing=east,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=true,face=floor,facing=east,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=true,face=floor,facing=east,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=true,face=floor,facing=east,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=true,face=floor,facing=east,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=true,face=floor,facing=east,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=true,face=floor,facing=north,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon"
+    },
+    "cooked=true,face=floor,facing=north,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon"
+    },
+    "cooked=true,face=floor,facing=north,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon"
+    },
+    "cooked=true,face=floor,facing=north,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon"
+    },
+    "cooked=true,face=floor,facing=north,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon"
+    },
+    "cooked=true,face=floor,facing=north,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon"
+    },
+    "cooked=true,face=floor,facing=north,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon"
+    },
+    "cooked=true,face=floor,facing=north,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon"
+    },
+    "cooked=true,face=floor,facing=south,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=true,face=floor,facing=south,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=true,face=floor,facing=south,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=true,face=floor,facing=south,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=true,face=floor,facing=south,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=true,face=floor,facing=south,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=true,face=floor,facing=south,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=true,face=floor,facing=south,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=true,face=floor,facing=west,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=true,face=floor,facing=west,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=true,face=floor,facing=west,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=true,face=floor,facing=west,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=true,face=floor,facing=west,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=true,face=floor,facing=west,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=true,face=floor,facing=west,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=true,face=floor,facing=west,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=true,face=wall,facing=east,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=true,face=wall,facing=east,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=true,face=wall,facing=east,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=true,face=wall,facing=east,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=true,face=wall,facing=east,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=true,face=wall,facing=east,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=true,face=wall,facing=east,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=true,face=wall,facing=east,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 90
+    },
+    "cooked=true,face=wall,facing=north,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon"
+    },
+    "cooked=true,face=wall,facing=north,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon"
+    },
+    "cooked=true,face=wall,facing=north,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon"
+    },
+    "cooked=true,face=wall,facing=north,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon"
+    },
+    "cooked=true,face=wall,facing=north,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon"
+    },
+    "cooked=true,face=wall,facing=north,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon"
+    },
+    "cooked=true,face=wall,facing=north,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon"
+    },
+    "cooked=true,face=wall,facing=north,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon"
+    },
+    "cooked=true,face=wall,facing=south,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=true,face=wall,facing=south,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=true,face=wall,facing=south,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=true,face=wall,facing=south,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=true,face=wall,facing=south,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=true,face=wall,facing=south,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=true,face=wall,facing=south,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=true,face=wall,facing=south,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 180
+    },
+    "cooked=true,face=wall,facing=west,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=true,face=wall,facing=west,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=true,face=wall,facing=west,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=true,face=wall,facing=west,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=true,face=wall,facing=west,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=true,face=wall,facing=west,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=true,face=wall,facing=west,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 270
+    },
+    "cooked=true,face=wall,facing=west,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/sausage_mace_weapon",
+      "y": 270
+    }
+  }
+}
