@@ -12,6 +12,7 @@ public class ModRecipeGenerator extends ModRecipeProvider {
 
     public ModRecipeGenerator(PackOutput output) {
         super(output);
+        providers.add(new PaperMakingRecipeProvider(output));
     }
 
     @Override

@@ -23,6 +23,13 @@ public class BlockStateGenerator extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+        simpleBlock(ModBlocks.WHITE_PAPER_BLOCK.get());
+        simpleBlock(ModBlocks.BLUE_PAPER_BLOCK.get());
+        simpleBlock(ModBlocks.BLACK_PAPER_BLOCK.get());
+        simpleBlock(ModBlocks.RED_PAPER_BLOCK.get());
+        simpleBlock(ModBlocks.YELLOW_PAPER_BLOCK.get());
+        simpleBlock(ModBlocks.COTTON_SERGE_BLOCK.get());
+        simpleBlock(ModBlocks.DEWY_MEMBRANE_BLOCK.get(), new ModelFile.UncheckedModelFile(modLoc("block/dewy_membrane_block")));
         drink(ModBlocks.BLAZE_WHISKEY.get(), "blaze_whiskey");
         drink(ModBlocks.FERRY_WHISKEY.get(), "ferry_whiskey");
         drink(ModBlocks.FLY_WHISKEY.get(), "fly_whiskey");
@@ -46,6 +53,12 @@ public class BlockStateGenerator extends BlockStateProvider {
         multipartSmeltable(ModBlocks.MONSTER_STEAK.get(), "monster_steak");
         variant(ModBlocks.TRAY_BLOCK.get(), "tray", ((VariantDecorationBlock) ModBlocks.TRAY_BLOCK.get()).getVariantProperty());
         horizontalBlock(ModBlocks.BUCKET_OF_FRIED_CHICKEN.get(), new ModelFile.UncheckedModelFile(modLoc("block/bucket_of_fried_chicken")));
+        horizontalBlock(ModBlocks.BOTTLE_OF_BLAZE_WHISKEY.get(), new ModelFile.UncheckedModelFile(modLoc("block/bottle_of_blaze_whiskey")));
+        horizontalBlock(ModBlocks.BOTTLE_OF_FERRY_WHISKEY.get(), new ModelFile.UncheckedModelFile(modLoc("block/bottle_of_ferry_whiskey")));
+        horizontalBlock(ModBlocks.BOTTLE_OF_FLY_WHISKEY.get(), new ModelFile.UncheckedModelFile(modLoc("block/bottle_of_fly_whiskey")));
+        horizontalBlock(ModBlocks.BOTTLE_OF_LAND_NO1.get(), new ModelFile.UncheckedModelFile(modLoc("block/bottle_of_land_no1")));
+        horizontalBlock(ModBlocks.BOTTLE_OF_LUCKY_CACTUS.get(), new ModelFile.UncheckedModelFile(modLoc("block/bottle_of_lucky_cactus")));
+        horizontalBlock(ModBlocks.BOTTLE_OF_POISON_RUM.get(), new ModelFile.UncheckedModelFile(modLoc("block/bottle_of_poison_rum")));
     }
 
     public void drink(Block block, String name) {

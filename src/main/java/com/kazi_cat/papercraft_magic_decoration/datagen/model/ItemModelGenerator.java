@@ -43,10 +43,25 @@ public class ItemModelGenerator extends ItemModelProvider {
         drinkItem(ModItems.DIONYSUS.get());
         drinkItem(ModItems.KALEIDOSCOPE_WHISKEY_SOUR.get());
         drinkItem(ModItems.LONG_ISLAND_POPSICLE_TEA.get());
-        drinkItem(ModItems.NOCTURNAL_CAT_COFFEE.get());
-        drinkItem(ModItems.GOLD_MEDAL_COFFEE.get());
-        drinkItem(ModItems.WHITE_RABBIT_MOCHA.get());
         drinkItem(ModItems.GUANG_S.get());
+
+        basicItem(ModItems.NOCTURNAL_CAT_COFFEE.get());
+        basicItem(ModItems.GOLD_MEDAL_COFFEE.get());
+        basicItem(ModItems.WHITE_RABBIT_MOCHA.get());
+        basicItem(ModItems.BOTTLE_OF_BLAZE_WHISKEY.get());
+        basicItem(ModItems.BOTTLE_OF_FERRY_WHISKEY.get());
+        basicItem(ModItems.BOTTLE_OF_FLY_WHISKEY.get());
+        basicItem(ModItems.BOTTLE_OF_LAND_NO1.get());
+        basicItem(ModItems.BOTTLE_OF_LUCKY_CACTUS.get());
+        basicItem(ModItems.BOTTLE_OF_POISON_RUM.get());
+        basicItem(ModItems.WHITE_PAPER.get());
+        basicItem(ModItems.BLUE_PAPER.get());
+        basicItem(ModItems.BLACK_PAPER.get());
+        basicItem(ModItems.RED_PAPER.get());
+        basicItem(ModItems.YELLOW_PAPER.get());
+        basicItem(ModItems.DEWY_MEMBRANE.get());
+        basicItem(ModItems.COTTON_SERGE.get());
+        basicItem(ModItems.AMETHYST_SCISSORS.get());
 
         withExistingParent("sausage_mace_weapon", modLoc("displaysettings/sausage_mace_weapon"))
                 .texture("layer0", "papercraft_magic_decoration:block/sausage_mace_weapon");
@@ -58,6 +73,13 @@ public class ItemModelGenerator extends ItemModelProvider {
                 .texture("layer0", "papercraft_magic_decoration:block/raw_manga_meat_grill");
         withExistingParent("bucket_of_fried_chicken", modLoc("block/bucket_of_fried_chicken"));
         withExistingParent("pack_of_guang_s", modLoc("block/drink/guang_s/count4_boxed"));
+        withExistingParent("white_paper_block", modLoc("block/white_paper_block"));
+        withExistingParent("blue_paper_block", modLoc("block/blue_paper_block"));
+        withExistingParent("black_paper_block", modLoc("block/black_paper_block"));
+        withExistingParent("red_paper_block", modLoc("block/red_paper_block"));
+        withExistingParent("yellow_paper_block", modLoc("block/yellow_paper_block"));
+        withExistingParent("dewy_membrane_block", modLoc("block/dewy_membrane_block"));
+        withExistingParent("cotton_serge_block", modLoc("block/cotton_serge_block"));
     }
 
     public void handheldItem(ResourceLocation item) {
