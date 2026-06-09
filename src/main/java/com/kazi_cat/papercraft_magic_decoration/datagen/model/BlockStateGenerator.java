@@ -27,6 +27,7 @@ public class BlockStateGenerator extends BlockStateProvider {
         multipartSmeltable(ModBlocks.CHUNKY_SALMON.get(), "chunky_salmon", ChunkySalmonBlock.VARIANT);
         multipartSmeltable(ModBlocks.MONSTER_STEAK.get(), "monster_steak");
         variant(ModBlocks.TRAY_BLOCK.get(), "tray", ((VariantDecorationBlock) ModBlocks.TRAY_BLOCK.get()).getVariantProperty());
+        horizontalBlock(ModBlocks.BUCKET_OF_FRIED_CHICKEN.get(), new ModelFile.UncheckedModelFile(modLoc("block/bucket_of_fried_chicken")));
     }
 
     public void variant(Block block, String name, IntegerProperty property) {

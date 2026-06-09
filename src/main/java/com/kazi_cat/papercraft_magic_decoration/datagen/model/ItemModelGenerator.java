@@ -22,6 +22,8 @@ public class ItemModelGenerator extends ItemModelProvider {
         basicItem(ModItems.MONSTER_STEAK.get());
         basicItem(ModItems.LARGE_STEAK.get());
         basicItem(ModItems.CUBED_SAUSAGE.get());
+        basicItem(ModItems.BREADED_RAW_CHICKEN.get());
+        basicItem(ModItems.FRIED_CHICKEN_LEG.get());
         withExistingParent("sausage_mace_weapon", modLoc("displaysettings/sausage_mace_weapon"))
                 .texture("layer0", "papercraft_magic_decoration:block/sausage_mace_weapon");
         withExistingParent("raw_sausage_mace_weapon", modLoc("displaysettings/sausage_mace_weapon"))
@@ -30,6 +32,7 @@ public class ItemModelGenerator extends ItemModelProvider {
                 .texture("layer0", "papercraft_magic_decoration:block/manga_meat_grill");
         withExistingParent("raw_manga_meat", modLoc("displaysettings/manga_meat"))
                 .texture("layer0", "papercraft_magic_decoration:block/raw_manga_meat_grill");
+        withExistingParent("bucket_of_fried_chicken", modLoc("block/bucket_of_fried_chicken"));
     }
 
     public void handheldItem(ResourceLocation item) {

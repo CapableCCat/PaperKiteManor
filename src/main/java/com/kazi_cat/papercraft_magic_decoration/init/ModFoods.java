@@ -26,4 +26,8 @@ public interface ModFoods {
     FoodProperties CUBED_SAUSAGE = (new FoodProperties.Builder())
             .nutrition(14).saturationMod(0.7f)
             .meat().build();
+
+    FoodProperties FRIED_CHICKEN_LEG = (new FoodProperties.Builder())
+            .nutrition(8).saturationMod(0.6f)
+            .meat().build();
 }

@@ -122,6 +122,11 @@ public class MangaMeatBlock extends HorizontalDirectionalBlock implements Smelta
     }
 
     @Override
+    public FluidState getFluidState(BlockState state) {
+        return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
+    }
+
+    @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         VoxelShape shape = SHAPES.get(state.getValue(FACING));
         return state.getValue(HAS_BASE) ? shape.move(0, -0.4, 0) : shape;

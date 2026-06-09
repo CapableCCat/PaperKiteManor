@@ -1,10 +1,12 @@
 package com.kazi_cat.papercraft_magic_decoration.init;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
+import com.kazi_cat.papercraft_magic_decoration.block.decoration.PickableDecorationBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.VariantDecorationBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.smeltable.*;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.AnimatedSmeltableBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.SmeltableBlockEntity;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -12,6 +14,8 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.List;
 
 @SuppressWarnings({"DataFlowIssue"})
 public interface ModBlocks {
@@ -72,6 +76,15 @@ public interface ModBlocks {
                             MANGA_MEAT.get()
                     ).build(null)
     );
+
+    RegistryObject<Block> BUCKET_OF_FRIED_CHICKEN = BLOCKS.register("bucket_of_fried_chicken", () -> new PickableDecorationBlock(
+            BlockBehaviour.Properties.of()
+                    .sound(SoundType.SNOW)
+                    .strength(1f, 4f)
+                    .noOcclusion(),
+            () -> List.of(new ItemStack(ModItems.FRIED_CHICKEN_LEG.get(), 4)),
+            Block.box(2, 0, 2, 14, 14, 14)
+    ));
 
     // 装饰方块
     RegistryObject<Block> TRAY_BLOCK = BLOCKS.register("tray", () -> new VariantDecorationBlock(

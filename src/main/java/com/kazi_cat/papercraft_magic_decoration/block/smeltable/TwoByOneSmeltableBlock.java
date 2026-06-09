@@ -152,6 +152,11 @@ public class TwoByOneSmeltableBlock extends MultipartBlock implements SmeltableB
     }
 
     @Override
+    public FluidState getFluidState(BlockState state) {
+        return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
+    }
+
+    @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         Direction facing = state.getValue(FACING);
         return switch (state.getValue(partProperty)) {

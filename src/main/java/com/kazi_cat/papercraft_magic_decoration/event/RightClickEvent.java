@@ -15,12 +15,14 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.items.ItemHandlerHelper;
 
 @Mod.EventBusSubscriber(modid = PaperKiteManor.MOD_ID)
 public class RightClickEvent {
@@ -72,6 +74,15 @@ public class RightClickEvent {
                 level.setBlockAndUpdate(pos, ModBlocks.TRAY_BLOCK.get().defaultBlockState()
                         .setValue(BlockStateProperties.WATERLOGGED, state.getValue(BlockStateProperties.WATERLOGGED))
                         .setValue(HorizontalDirectionalBlock.FACING, state.getValue(HorizontalDirectionalBlock.FACING)));
+                player.swing(hand);
+                event.setCancellationResult(InteractionResult.SUCCESS);
+            }
+        }
+
+        if (itemInHand.is(ModItems.BREADED_RAW_CHICKEN.get())) {
+            if (state.is(Blocks.LAVA_CAULDRON)) {
+                itemInHand.shrink(1);
+                ItemHandlerHelper.giveItemToPlayer(player, ModItems.BUCKET_OF_FRIED_CHICKEN.get().getDefaultInstance());
                 player.swing(hand);
                 event.setCancellationResult(InteractionResult.SUCCESS);
             }
