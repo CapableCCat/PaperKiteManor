@@ -4,6 +4,8 @@ import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.api.block.SmeltableBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.base.MultipartBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.VariantDecorationBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.drink.BoxedDrinkBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.drink.DrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.smeltable.ChunkySalmonBlock;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import net.minecraft.data.PackOutput;
@@ -21,6 +23,22 @@ public class BlockStateGenerator extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+        drink(ModBlocks.BLAZE_WHISKEY.get(), "blaze_whiskey");
+        drink(ModBlocks.FERRY_WHISKEY.get(), "ferry_whiskey");
+        drink(ModBlocks.FLY_WHISKEY.get(), "fly_whiskey");
+        drink(ModBlocks.LAND_NO1.get(), "land_no1");
+        drink(ModBlocks.LUCKY_CACTUS.get(), "lucky_cactus");
+        drink(ModBlocks.POISON_RUM.get(), "poison_rum");
+        drink(ModBlocks.BLOODY_MARY.get(), "bloody_mary");
+        drink(ModBlocks.DEVIL_MARGARITA.get(), "devil_margarita");
+        drink(ModBlocks.DIPLOMATICO_COFFEE.get(), "diplomatico_coffee");
+        drink(ModBlocks.DIONYSUS.get(), "dionysus");
+        drink(ModBlocks.KALEIDOSCOPE_WHISKEY_SOUR.get(), "kaleidoscope_whiskey_sour");
+        drink(ModBlocks.LONG_ISLAND_POPSICLE_TEA.get(), "long_island_popsicle_tea");
+        drink(ModBlocks.NOCTURNAL_CAT_COFFEE.get(), "nocturnal_cat_coffee");
+        drink(ModBlocks.GOLD_MEDAL_COFFEE.get(), "gold_medal_coffee");
+        drink(ModBlocks.WHITE_RABBIT_MOCHA.get(), "white_rabbit_mocha");
+        boxedDrink(ModBlocks.GUANG_S.get(), "guang_s");
         smeltable(ModBlocks.SAUSAGE_MACE_WEAPON_BLOCK.get(), "sausage_mace_weapon");
         smeltable(ModBlocks.MANGA_MEAT.get(), "manga_meat");
         multipartSmeltable(ModBlocks.SALMON_HEAD.get(), "salmon_head");
@@ -28,6 +46,27 @@ public class BlockStateGenerator extends BlockStateProvider {
         multipartSmeltable(ModBlocks.MONSTER_STEAK.get(), "monster_steak");
         variant(ModBlocks.TRAY_BLOCK.get(), "tray", ((VariantDecorationBlock) ModBlocks.TRAY_BLOCK.get()).getVariantProperty());
         horizontalBlock(ModBlocks.BUCKET_OF_FRIED_CHICKEN.get(), new ModelFile.UncheckedModelFile(modLoc("block/bucket_of_fried_chicken")));
+    }
+
+    public void drink(Block block, String name) {
+        if (block instanceof DrinkBlock drink) {
+            horizontalBlock(block, blockState -> {
+                int count = blockState.getValue(drink.getCountProperty());
+                ResourceLocation file = modLoc("block/drink/%s/count%d".formatted(name, count));
+                return new ModelFile.UncheckedModelFile(file);
+            });
+        }
+    }
+
+    public void boxedDrink(Block block, String name) {
+        if (block instanceof BoxedDrinkBlock drink) {
+            horizontalBlock(block, blockState -> {
+                int count = blockState.getValue(drink.getCountProperty());
+                boolean boxed = blockState.getValue(BoxedDrinkBlock.BOXED);
+                ResourceLocation file = modLoc("block/drink/%s/count%d%s".formatted(name, count, boxed ? "_boxed" : ""));
+                return new ModelFile.UncheckedModelFile(file);
+            });
+        }
     }
 
     public void variant(Block block, String name, IntegerProperty property) {

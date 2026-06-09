@@ -3,14 +3,19 @@ package com.kazi_cat.papercraft_magic_decoration.init;
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.PickableDecorationBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.VariantDecorationBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.drink.BoxedDrinkBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.drink.DrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.smeltable.*;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.AnimatedSmeltableBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.DrinkBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.SmeltableBlockEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -77,6 +82,7 @@ public interface ModBlocks {
                     ).build(null)
     );
 
+    // 炸鸡桶
     RegistryObject<Block> BUCKET_OF_FRIED_CHICKEN = BLOCKS.register("bucket_of_fried_chicken", () -> new PickableDecorationBlock(
             BlockBehaviour.Properties.of()
                     .sound(SoundType.SNOW)
@@ -85,6 +91,145 @@ public interface ModBlocks {
             () -> List.of(new ItemStack(ModItems.FRIED_CHICKEN_LEG.get(), 4)),
             Block.box(2, 0, 2, 14, 14, 14)
     ));
+
+    // 饮品方块
+    RegistryObject<Block> BLAZE_WHISKEY = BLOCKS.register("blaze_whiskey", () -> new DrinkBlock(3,
+            Block.box(4, 0, 4, 12, 9, 12),
+            Shapes.or(
+                    Block.box(1, 0, 1, 15, 1, 15),
+                    Block.box(2, 1, 2, 9, 10, 9),
+                    Block.box(8.5, 1, 8.5, 13.5, 10, 13.5)
+            ),
+            Shapes.or(
+                    Block.box(1, 0, 1, 15, 1, 15),
+                    Block.box(5, 1, 1.5, 11.5, 10, 8),
+                    Block.box(1.5, 1, 8, 8, 10, 14),
+                    Block.box(9, 1, 9, 14, 10, 14)
+            )
+    ));
+
+    RegistryObject<Block> FERRY_WHISKEY = BLOCKS.register("ferry_whiskey", () -> new DrinkBlock(1,
+            Block.box(4, 0, 4, 12, 10, 12)
+    ));
+
+    RegistryObject<Block> FLY_WHISKEY = BLOCKS.register("fly_whiskey", () -> new DrinkBlock(1,
+            Block.box(4, 0, 4, 12, 10, 12)
+    ));
+
+    RegistryObject<Block> LAND_NO1 = BLOCKS.register("land_no1", () -> new DrinkBlock(4,
+            Block.box(6, 0, 6, 10, 16, 10),
+            Block.box(2, 0, 6, 14, 16, 10),
+            Shapes.or(
+                    Block.box(2, 0, 10, 14, 16, 14),
+                    Block.box(6, 0, 2, 10, 16, 14)
+            ),
+            Block.box(2, 0, 2, 14, 16, 14)
+    ));
+
+    RegistryObject<Block> LUCKY_CACTUS = BLOCKS.register("lucky_cactus", () -> new DrinkBlock(3,
+            Block.box(4, 0, 4, 12, 10, 12),
+            Shapes.or(
+                    Block.box(1, 0, 1, 15, 1, 15),
+                    Block.box(2, 1, 2, 9, 10, 9),
+                    Block.box(8.5, 1, 8.5, 13.5, 10, 13.5)
+            ),
+            Shapes.or(
+                    Block.box(1, 0, 1, 15, 1, 15),
+                    Block.box(2, 1, 2, 14, 10, 14)
+            )
+    ));
+
+    RegistryObject<Block> POISON_RUM = BLOCKS.register("poison_rum", () -> new DrinkBlock(1,
+            Block.box(4, 0, 4, 12, 10, 12)
+    ));
+
+    RegistryObject<Block> BLOODY_MARY = BLOCKS.register("bloody_mary", () -> new DrinkBlock(1,
+            Block.box(4, 0, 4, 12, 13, 12)
+    ));
+
+    RegistryObject<Block> DIPLOMATICO_COFFEE = BLOCKS.register("diplomatico_coffee", () -> new DrinkBlock(1,
+            Block.box(4, 0, 4, 12, 10, 12)
+    ));
+
+    RegistryObject<Block> DEVIL_MARGARITA = BLOCKS.register("devil_margarita", () -> new DrinkBlock(1,
+            Block.box(4, 0, 4, 12, 10, 12)
+    ));
+
+    RegistryObject<Block> DIONYSUS = BLOCKS.register("dionysus", () -> new DrinkBlock(1,
+            Block.box(4, 0, 4, 12, 10, 12)
+    ));
+
+    RegistryObject<Block> KALEIDOSCOPE_WHISKEY_SOUR = BLOCKS.register("kaleidoscope_whiskey_sour", () -> new DrinkBlock(1,
+            Block.box(4, 0, 4, 12, 8.5, 12)
+    ));
+
+    RegistryObject<Block> LONG_ISLAND_POPSICLE_TEA = BLOCKS.register("long_island_popsicle_tea", () -> new DrinkBlock(1,
+            Block.box(4, 0, 4, 12, 8.5, 12)
+    ));
+
+    RegistryObject<Block> NOCTURNAL_CAT_COFFEE = BLOCKS.register("nocturnal_cat_coffee", () -> new DrinkBlock(
+                    BlockBehaviour.Properties.of()
+                            .noOcclusion()
+                            .instabreak()
+                            .sound(SoundType.WOOD)
+                            .pushReaction(PushReaction.DESTROY),
+            1, Block.box(4, 0, 4, 12, 6, 12))
+    );
+
+    RegistryObject<Block> GOLD_MEDAL_COFFEE = BLOCKS.register("gold_medal_coffee", () -> new DrinkBlock(
+            BlockBehaviour.Properties.of()
+                    .noOcclusion()
+                    .instabreak()
+                    .sound(SoundType.WOOD)
+                    .pushReaction(PushReaction.DESTROY),
+            1, Block.box(4, 0, 4, 12, 6, 12)
+    ));
+
+    RegistryObject<Block> WHITE_RABBIT_MOCHA = BLOCKS.register("white_rabbit_mocha", () -> new DrinkBlock(
+            BlockBehaviour.Properties.of()
+                    .noOcclusion()
+                    .instabreak()
+                    .sound(SoundType.WOOD)
+                    .pushReaction(PushReaction.DESTROY),
+            1, Block.box(4, 0, 4, 12, 6, 12)
+    ));
+
+    RegistryObject<Block> GUANG_S = BLOCKS.register("guang_s", () -> new BoxedDrinkBlock(
+            BlockBehaviour.Properties.of()
+                    .noOcclusion()
+                    .instabreak()
+                    .pushReaction(PushReaction.DESTROY)
+                    .sound(SoundType.LANTERN), 4,
+            Block.box(5, 0, 5, 11, 11, 11),
+            Block.box(2, 0, 5, 14, 11, 11),
+            Shapes.or(
+                    Block.box(2, 0, 9, 14, 11, 15),
+                    Block.box(5, 0, 2, 11, 11, 15)
+            ),
+            Block.box(1, 0, 1, 15, 11, 15)
+    ));
+
+    RegistryObject<BlockEntityType<DrinkBlockEntity>> DRINK_BE = BLOCK_ENTITIES.register(
+            "drink", () -> BlockEntityType.Builder
+                    .of(DrinkBlockEntity::new,
+                            BLAZE_WHISKEY.get(),
+                            FERRY_WHISKEY.get(),
+                            FLY_WHISKEY.get(),
+                            LAND_NO1.get(),
+                            LUCKY_CACTUS.get(),
+                            POISON_RUM.get(),
+                            BLOODY_MARY.get(),
+                            DIPLOMATICO_COFFEE.get(),
+                            DEVIL_MARGARITA.get(),
+                            DIONYSUS.get(),
+                            KALEIDOSCOPE_WHISKEY_SOUR.get(),
+                            LONG_ISLAND_POPSICLE_TEA.get(),
+                            NOCTURNAL_CAT_COFFEE.get(),
+                            GOLD_MEDAL_COFFEE.get(),
+                            WHITE_RABBIT_MOCHA.get(),
+                            GUANG_S.get()
+                    ).build(null)
+    );
 
     // 装饰方块
     RegistryObject<Block> TRAY_BLOCK = BLOCKS.register("tray", () -> new VariantDecorationBlock(

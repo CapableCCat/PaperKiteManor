@@ -1,0 +1,27 @@
+{
+  "base": {
+    "parent": "papercraft_magic_decoration:block/drink/devil_margarita/handheld"
+  },
+  "gui_light": "front",
+  "loader": "forge:separate_transforms",
+  "perspectives": {
+    "fixed": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "papercraft_magic_decoration:item/devil_margarita"
+      }
+    },
+    "ground": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "papercraft_magic_decoration:item/devil_margarita"
+      }
+    },
+    "gui": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "papercraft_magic_decoration:item/devil_margarita"
+      }
+    }
+  }
+}

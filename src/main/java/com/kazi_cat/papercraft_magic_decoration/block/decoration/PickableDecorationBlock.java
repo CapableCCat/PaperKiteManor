@@ -3,6 +3,8 @@ package com.kazi_cat.papercraft_magic_decoration.block.decoration;
 import com.kazi_cat.papercraft_magic_decoration.utils.VoxelShapeUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -10,10 +12,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraft.world.level.block.SimpleWaterloggedBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -56,6 +55,13 @@ public class PickableDecorationBlock extends HorizontalDirectionalBlock implemen
             for (var stack : pickupLoot.get()) {
                 ItemHandlerHelper.giveItemToPlayer(player, stack);
             }
+            SoundType soundType = state.getSoundType(level, pos, player);
+            SoundEvent sound = soundType.getPlaceSound();
+            level.playSound(
+                    player, pos, sound, SoundSource.BLOCKS,
+                    (soundType.getVolume() + 1) / 2f,
+                    soundType.getPitch() * 0.8f
+            );
             level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
             return InteractionResult.SUCCESS;
         }

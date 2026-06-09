@@ -2,6 +2,7 @@ package com.kazi_cat.papercraft_magic_decoration.utils;
 
 import com.google.common.collect.Lists;
 import net.minecraft.core.Direction;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
@@ -11,9 +12,13 @@ import java.util.List;
 
 public class VoxelShapeUtils {
     public static EnumMap<Direction, VoxelShape> horizontalShapes(@NotNull VoxelShape northShape) {
+        return horizontalShapes(northShape, Vec3.ZERO);
+    }
+
+    public static EnumMap<Direction, VoxelShape> horizontalShapes(@NotNull VoxelShape northShape, Vec3 offset) {
         EnumMap<Direction, VoxelShape> result = new EnumMap<>(Direction.class);
         for (Direction direction : Direction.Plane.HORIZONTAL) {
-            result.put(direction, rotateShape(northShape, direction));
+            result.put(direction, rotateShape(northShape, direction).move(offset.x, offset.y, offset.z));
         }
         return result;
     }

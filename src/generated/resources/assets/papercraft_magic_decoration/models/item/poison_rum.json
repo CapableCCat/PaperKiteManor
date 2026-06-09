@@ -1,0 +1,27 @@
+{
+  "base": {
+    "parent": "papercraft_magic_decoration:block/drink/poison_rum/handheld"
+  },
+  "gui_light": "front",
+  "loader": "forge:separate_transforms",
+  "perspectives": {
+    "fixed": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "papercraft_magic_decoration:item/poison_rum"
+      }
+    },
+    "ground": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "papercraft_magic_decoration:item/poison_rum"
+      }
+    },
+    "gui": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "papercraft_magic_decoration:item/poison_rum"
+      }
+    }
+  }
+}

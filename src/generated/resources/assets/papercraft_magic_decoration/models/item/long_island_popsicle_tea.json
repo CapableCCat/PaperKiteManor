@@ -1,0 +1,27 @@
+{
+  "base": {
+    "parent": "papercraft_magic_decoration:block/drink/long_island_popsicle_tea/handheld"
+  },
+  "gui_light": "front",
+  "loader": "forge:separate_transforms",
+  "perspectives": {
+    "fixed": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "papercraft_magic_decoration:item/long_island_popsicle_tea"
+      }
+    },
+    "ground": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "papercraft_magic_decoration:item/long_island_popsicle_tea"
+      }
+    },
+    "gui": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "papercraft_magic_decoration:item/long_island_popsicle_tea"
+      }
+    }
+  }
+}
