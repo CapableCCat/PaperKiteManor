@@ -22,7 +22,6 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
-import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
@@ -71,14 +70,6 @@ public class DrinkBlock extends HorizontalDirectionalBlock implements SimpleWate
                 .setValue(WATERLOGGED, false)
                 .setValue(X_OFFSET, 2)
                 .setValue(Z_OFFSET, 2));
-    }
-
-    public DrinkBlock(int maxCount, VoxelShape... shapes) {
-        this(Properties.of()
-                .noOcclusion()
-                .instabreak()
-                .pushReaction(PushReaction.DESTROY)
-                .sound(SoundType.GLASS), maxCount, shapes);
     }
 
     @Override

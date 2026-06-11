@@ -1,11 +1,13 @@
 package com.kazi_cat.papercraft_magic_decoration.init;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
+import com.kazi_cat.papercraft_magic_decoration.block.chocolate.OversizedBoxOfChocolatesBlock;
 import com.kazi_cat.papercraft_magic_decoration.init.registry.DrinkRegistry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -68,6 +70,20 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.MANGA_MEAT.get());
                 output.accept(ModItems.MONSTER_STEAK.get());
                 output.accept(ModItems.LARGE_STEAK.get());
+
+                output.accept(ModItems.DARK_COCOA_IN_MOLD.get());
+                output.accept(ModItems.MILK_COCOA_IN_MOLD.get());
+                output.accept(ModItems.PRALINE_COCOA_IN_MOLD.get());
+                output.accept(ModItems.MELTED_DARK_COCOA_IN_MOLD.get());
+                output.accept(ModItems.MELTED_MILK_COCOA_IN_MOLD.get());
+                output.accept(ModItems.MELTED_PRALINE_COCOA_IN_MOLD.get());
+                output.accept(ModItems.TRUFFLE_CHOCOLATE.get());
+                output.accept(ModItems.MILK_CHOCOLATE.get());
+                output.accept(ModItems.PRALINE_CHOCOLATE.get());
+
+                ItemStack chocolateBox = ModItems.OVERSIZED_BOX_OF_CHOCOLATES.get().getDefaultInstance();
+                OversizedBoxOfChocolatesBlock.setContent(chocolateBox, new int[] {1,2,3,2,3,1});
+                output.accept(chocolateBox);
             }).build());
 
 //    RegistryObject<CreativeModeTab> MANOR_DECORATION_TAB = TABS.register("manor_decoration", () -> CreativeModeTab.builder()

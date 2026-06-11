@@ -1,11 +1,14 @@
 package com.kazi_cat.papercraft_magic_decoration.init;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
+import com.kazi_cat.papercraft_magic_decoration.block.chocolate.ChocolateInMoldBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.chocolate.OversizedBoxOfChocolatesBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.PickableDecorationBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.VariantDecorationBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.BottleDrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.smeltable.*;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.AnimatedSmeltableBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.ChocolateInMoldBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.SmeltableBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.init.registry.DrinkRegistry;
 import net.minecraft.core.BlockPos;
@@ -112,6 +115,66 @@ public interface ModBlocks {
     RegistryObject<Block> BOTTLE_OF_POISON_RUM = BLOCKS.register("bottle_of_poison_rum", () -> new BottleDrinkBlock(
             () -> Collections.singletonList(new ItemStack(DrinkRegistry.getItem(DrinkRegistry.POISON_RUM), 4)),
             Block.box(2, 0, 2, 14, 20, 14)));
+
+    // 巧克力
+    RegistryObject<Block> TRUFFLE_CHOCOLATE = BLOCKS.register("truffle_chocolate", () -> new PickableDecorationBlock(
+            BlockBehaviour.Properties.of()
+                    .noOcclusion()
+                    .strength(0.5f, 2f)
+                    .sound(SoundType.BONE_BLOCK),
+            () -> List.of(ModItems.TRUFFLE_CHOCOLATE.get().getDefaultInstance()),
+            Block.box(1.5, 0 ,1.5, 14.5, 8, 14.5)));
+
+    RegistryObject<Block> MILK_CHOCOLATE = BLOCKS.register("milk_chocolate", () -> new PickableDecorationBlock(
+            BlockBehaviour.Properties.of()
+                    .noOcclusion()
+                    .strength(0.5f, 2f)
+                    .sound(SoundType.BONE_BLOCK),
+            () -> List.of(ModItems.MILK_CHOCOLATE.get().getDefaultInstance()),
+            Block.box(1.5, 0 ,1.5, 14.5, 8, 14.5)));
+
+    RegistryObject<Block> PRALINE_CHOCOLATE = BLOCKS.register("praline_chocolate", () -> new PickableDecorationBlock(
+            BlockBehaviour.Properties.of()
+                    .noOcclusion()
+                    .strength(0.5f, 2f)
+                    .sound(SoundType.BONE_BLOCK),
+            () -> List.of(ModItems.PRALINE_CHOCOLATE.get().getDefaultInstance()),
+            Block.box(1.5, 0 ,1.5, 14.5, 8, 14.5)));
+
+    RegistryObject<Block> TRUFFLE_CHOCOLATE_IN_MOLD = BLOCKS.register("truffle_chocolate_in_mold", () -> new ChocolateInMoldBlock(
+            BlockBehaviour.Properties.of()
+                    .noOcclusion()
+                    .sound(SoundType.LANTERN)
+                    .strength(1f, 4f),
+            ModItems.TRUFFLE_CHOCOLATE));
+
+    RegistryObject<Block> MILK_CHOCOLATE_IN_MOLD = BLOCKS.register("milk_chocolate_in_mold", () -> new ChocolateInMoldBlock(
+            BlockBehaviour.Properties.of()
+                    .noOcclusion()
+                    .sound(SoundType.LANTERN)
+                    .strength(1f, 4f),
+            ModItems.MILK_CHOCOLATE));
+
+    RegistryObject<Block> PRALINE_CHOCOLATE_IN_MOLD = BLOCKS.register("praline_chocolate_in_mold", () -> new ChocolateInMoldBlock(
+            BlockBehaviour.Properties.of()
+                    .noOcclusion()
+                    .sound(SoundType.LANTERN)
+                    .strength(1f, 4f),
+            ModItems.PRALINE_CHOCOLATE));
+
+    RegistryObject<Block> OVERSIZED_BOX_OF_CHOCOLATES = BLOCKS.register("oversized_box_of_chocolates", () -> new OversizedBoxOfChocolatesBlock(
+            BlockBehaviour.Properties.of()
+                    .noOcclusion()
+                    .sound(SoundType.BAMBOO_WOOD)
+                    .strength(1f, 4f)));
+
+    RegistryObject<BlockEntityType<ChocolateInMoldBlockEntity>> CHOCOLATE_IN_MOLD_BE = BLOCK_ENTITIES.register(
+            "melted_cocoa_in_mold_be", () -> BlockEntityType.Builder
+                    .of(ChocolateInMoldBlockEntity::new,
+                            TRUFFLE_CHOCOLATE_IN_MOLD.get(),
+                            MILK_CHOCOLATE_IN_MOLD.get(),
+                            PRALINE_CHOCOLATE_IN_MOLD.get()
+                    ).build(null));
 
     // 纸块
     RegistryObject<Block> WHITE_PAPER_BLOCK = BLOCKS.register("white_paper_block", () -> new Block(

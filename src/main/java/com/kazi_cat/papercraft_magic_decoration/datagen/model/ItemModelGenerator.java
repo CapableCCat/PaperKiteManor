@@ -38,6 +38,16 @@ public class ItemModelGenerator extends ItemModelProvider {
         basicItem(ModItems.BOTTLE_OF_LAND_NO1.get());
         basicItem(ModItems.BOTTLE_OF_LUCKY_CACTUS.get());
         basicItem(ModItems.BOTTLE_OF_POISON_RUM.get());
+        basicItem(ModItems.TRUFFLE_CHOCOLATE.get());
+        basicItem(ModItems.MILK_CHOCOLATE.get());
+        basicItem(ModItems.PRALINE_CHOCOLATE.get());
+        basicItem(ModItems.DARK_COCOA_IN_MOLD.get());
+        basicItem(ModItems.MILK_COCOA_IN_MOLD.get());
+        basicItem(ModItems.PRALINE_COCOA_IN_MOLD.get());
+        basicItem(ModItems.MELTED_DARK_COCOA_IN_MOLD.get());
+        basicItem(ModItems.MELTED_MILK_COCOA_IN_MOLD.get());
+        basicItem(ModItems.MELTED_PRALINE_COCOA_IN_MOLD.get());
+        basicItem(ModItems.OVERSIZED_BOX_OF_CHOCOLATES.get());
         basicItem(ModItems.WHITE_PAPER.get());
         basicItem(ModItems.BLUE_PAPER.get());
         basicItem(ModItems.BLACK_PAPER.get());

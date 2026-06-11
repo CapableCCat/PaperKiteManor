@@ -9,11 +9,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
@@ -34,14 +32,6 @@ public class BoxedDrinkBlock extends DrinkBlock {
                 .setValue(X_OFFSET, 2)
                 .setValue(Z_OFFSET, 2)
                 .setValue(BOXED, false));
-    }
-
-    public BoxedDrinkBlock(int maxCount, VoxelShape... shapes) {
-        this(Properties.of()
-                .noOcclusion()
-                .instabreak()
-                .sound(SoundType.GLASS)
-                .pushReaction(PushReaction.DESTROY), maxCount, shapes);
     }
 
     @Override

@@ -143,4 +143,20 @@ public interface ModFoods {
             .effect(() -> new MobEffectInstance(MobEffects.SATURATION, 120, 0), 1)
             .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 6000, 1), 1)
             .alwaysEat().build();
+
+    FoodProperties TRUFFLE_CHOCOLATE = (new FoodProperties.Builder())
+            .nutrition(4).saturationMod(1)
+            //.effect(() -> new MobEffectInstance(ModEffects.SILKY_FEEL.get(), 3600), 1)
+            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3600, 1), 1)
+            .alwaysEat().build();
+
+    FoodProperties MILK_CHOCOLATE = (new FoodProperties.Builder())
+            .nutrition(4).saturationMod(1)
+            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 600, 0), 1)
+            .alwaysEat().build();
+
+    FoodProperties PRALINE_CHOCOLATE = (new FoodProperties.Builder())
+            .nutrition(4).saturationMod(1)
+            //.effect(() -> new MobEffectInstance(ModEffects.SKY_TRACTION.get(), 6000, 0), 1)
+            .alwaysEat().build();
 }

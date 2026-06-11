@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "facing=east,melted=false,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/praline_chocolate_in_mold",
+      "y": 90
+    },
+    "facing=east,melted=false,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/praline_chocolate_in_mold",
+      "y": 90
+    },
+    "facing=east,melted=true,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/melted_praline_cocoa_in_mold",
+      "y": 90
+    },
+    "facing=east,melted=true,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/melted_praline_cocoa_in_mold",
+      "y": 90
+    },
+    "facing=north,melted=false,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/praline_chocolate_in_mold"
+    },
+    "facing=north,melted=false,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/praline_chocolate_in_mold"
+    },
+    "facing=north,melted=true,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/melted_praline_cocoa_in_mold"
+    },
+    "facing=north,melted=true,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/melted_praline_cocoa_in_mold"
+    },
+    "facing=south,melted=false,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/praline_chocolate_in_mold",
+      "y": 180
+    },
+    "facing=south,melted=false,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/praline_chocolate_in_mold",
+      "y": 180
+    },
+    "facing=south,melted=true,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/melted_praline_cocoa_in_mold",
+      "y": 180
+    },
+    "facing=south,melted=true,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/melted_praline_cocoa_in_mold",
+      "y": 180
+    },
+    "facing=west,melted=false,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/praline_chocolate_in_mold",
+      "y": 270
+    },
+    "facing=west,melted=false,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/praline_chocolate_in_mold",
+      "y": 270
+    },
+    "facing=west,melted=true,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/melted_praline_cocoa_in_mold",
+      "y": 270
+    },
+    "facing=west,melted=true,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/melted_praline_cocoa_in_mold",
+      "y": 270
+    }
+  }
+}

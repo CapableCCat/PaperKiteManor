@@ -1,6 +1,7 @@
 package com.kazi_cat.papercraft_magic_decoration.datagen.loot_table;
 
 import com.kazi_cat.papercraft_magic_decoration.api.block.SmeltableBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.chocolate.ChocolateInMoldBlock;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import com.kazi_cat.papercraft_magic_decoration.init.ModItems;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
@@ -31,11 +32,33 @@ public class BlockLootTables extends BlockLootSubProvider {
 
     @Override
     public void generate() {
+        dropSelf(ModBlocks.TRUFFLE_CHOCOLATE.get());
+        dropSelf(ModBlocks.MILK_CHOCOLATE.get());
+        dropSelf(ModBlocks.PRALINE_CHOCOLATE.get());
+        dropSelf(ModBlocks.WHITE_PAPER_BLOCK.get());
+        dropSelf(ModBlocks.BLUE_PAPER_BLOCK.get());
+        dropSelf(ModBlocks.BLACK_PAPER_BLOCK.get());
+        dropSelf(ModBlocks.RED_PAPER_BLOCK.get());
+        dropSelf(ModBlocks.YELLOW_PAPER_BLOCK.get());
+        dropSelf(ModBlocks.DEWY_MEMBRANE_BLOCK.get());
+        dropSelf(ModBlocks.COTTON_SERGE_BLOCK.get());
+        dropSelf(ModBlocks.BUCKET_OF_FRIED_CHICKEN.get());
+        dropSelf(ModBlocks.BOTTLE_OF_BLAZE_WHISKEY.get());
+        dropSelf(ModBlocks.BOTTLE_OF_FERRY_WHISKEY.get());
+        dropSelf(ModBlocks.BOTTLE_OF_FLY_WHISKEY.get());
+        dropSelf(ModBlocks.BOTTLE_OF_LAND_NO1.get());
+        dropSelf(ModBlocks.BOTTLE_OF_LUCKY_CACTUS.get());
+        dropSelf(ModBlocks.BOTTLE_OF_POISON_RUM.get());
+
         dropSmeltable(ModBlocks.SAUSAGE_MACE_WEAPON_BLOCK.get(), List.of(ModItems.RAW_SAUSAGE_MACE_WEAPON.get()), List.of(ModItems.SAUSAGE_MACE_WEAPON.get()));
         dropSmeltable(ModBlocks.MANGA_MEAT.get(), List.of(ModItems.RAW_MANGA_MEAT.get()), List.of(ModItems.MANGA_MEAT.get()));
         dropSmeltable(ModBlocks.SALMON_HEAD.get(), List.of(Items.SALMON), List.of(ModItems.SMOKED_SALMON_HEAD.get()));
         dropSmeltable(ModBlocks.CHUNKY_SALMON.get(), List.of(ModItems.CHUNKY_SALMON.get()), List.of(ModItems.CHUNKY_SMOKED_SALMON.get()));
         dropSmeltable(ModBlocks.MONSTER_STEAK.get(), List.of(ModItems.MONSTER_STEAK.get()), List.of(ModItems.LARGE_STEAK.get()));
+
+        dropChocolateInMold(ModBlocks.TRUFFLE_CHOCOLATE_IN_MOLD.get());
+        dropChocolateInMold(ModBlocks.MILK_CHOCOLATE_IN_MOLD.get());
+        dropChocolateInMold(ModBlocks.PRALINE_CHOCOLATE_IN_MOLD.get());
     }
 
     public void dropSmeltable(Block block, List<ItemLike> rawLoot, List<ItemLike> cookedLoot) {
@@ -64,6 +87,25 @@ public class BlockLootTables extends BlockLootSubProvider {
                 lootTable.withPool(rolls);
             }
         }
+
+        this.add(block, lootTable);
+    }
+
+    public void dropChocolateInMold(Block block) {
+        if (!(block instanceof ChocolateInMoldBlock chocolate)) {
+            return;
+        }
+        ConstantValue exactly = ConstantValue.exactly(1);
+        StatePropertiesPredicate.Builder melted = StatePropertiesPredicate.Builder.properties().hasProperty(ChocolateInMoldBlock.MELTED, true);
+        LootItemCondition.Builder builder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(melted);
+
+        LootTable.Builder lootTable = LootTable.lootTable();
+        LootPool.Builder rolls = LootPool.lootPool().setRolls(exactly).when(ExplosionCondition.survivesExplosion());
+        rolls.add(LootItem.lootTableItem(block.asItem()).when(builder).otherwise(LootItem.lootTableItem(chocolate.getChocolate().get())));
+        LootPool.Builder rolls1 = LootPool.lootPool().setRolls(exactly).when(ExplosionCondition.survivesExplosion());;
+        rolls1.add(EmptyLootItem.emptyItem().when(builder).otherwise(LootItem.lootTableItem(Items.BUCKET)));
+        lootTable.withPool(rolls);
+        lootTable.withPool(rolls1);
 
         this.add(block, lootTable);
     }

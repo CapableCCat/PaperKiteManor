@@ -1,0 +1,71 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "block": "papercraft_magic_decoration:praline_chocolate_in_mold",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "melted": "true"
+                  }
+                }
+              ],
+              "name": "papercraft_magic_decoration:melted_praline_cocoa_in_mold"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "papercraft_magic_decoration:praline_chocolate"
+            }
+          ]
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:empty",
+              "conditions": [
+                {
+                  "block": "papercraft_magic_decoration:praline_chocolate_in_mold",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "melted": "true"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "minecraft:bucket"
+            }
+          ]
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "papercraft_magic_decoration:blocks/praline_chocolate_in_mold"
+}

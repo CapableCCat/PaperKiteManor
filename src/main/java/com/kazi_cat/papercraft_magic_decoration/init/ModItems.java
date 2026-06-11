@@ -39,6 +39,18 @@ public interface ModItems {
     RegistryObject<Item> BOTTLE_OF_POISON_RUM = ITEMS.register("bottle_of_poison_rum", () -> new BlockItem(ModBlocks.BOTTLE_OF_POISON_RUM.get(), new Item.Properties().stacksTo(16)));
     RegistryObject<Item> PACK_OF_GUANG_S = ITEMS.register("pack_of_guang_s", () -> new PackOfGuangSItem(new Item.Properties()));
 
+    // 巧克力
+    RegistryObject<Item> TRUFFLE_CHOCOLATE = ITEMS.register("truffle_chocolate", () -> new BlockItem(ModBlocks.TRUFFLE_CHOCOLATE.get(), new Item.Properties().food(ModFoods.TRUFFLE_CHOCOLATE)));
+    RegistryObject<Item> MILK_CHOCOLATE = ITEMS.register("milk_chocolate", () -> new MilkChocolateItem(ModBlocks.MILK_CHOCOLATE.get(), new Item.Properties().food(ModFoods.MILK_CHOCOLATE)));
+    RegistryObject<Item> PRALINE_CHOCOLATE = ITEMS.register("praline_chocolate", () -> new BlockItem(ModBlocks.PRALINE_CHOCOLATE.get(), new Item.Properties().food(ModFoods.PRALINE_CHOCOLATE)));
+    RegistryObject<Item> DARK_COCOA_IN_MOLD = ITEMS.register("dark_cocoa_in_mold", () -> new Item(new Item.Properties()));
+    RegistryObject<Item> MILK_COCOA_IN_MOLD = ITEMS.register("milk_cocoa_in_mold", () -> new Item(new Item.Properties()));
+    RegistryObject<Item> PRALINE_COCOA_IN_MOLD = ITEMS.register("praline_cocoa_in_mold", () -> new Item(new Item.Properties()));
+    RegistryObject<Item> MELTED_DARK_COCOA_IN_MOLD = ITEMS.register("melted_dark_cocoa_in_mold", () -> new MeltedCocoaInMoldBlockItem(ModBlocks.TRUFFLE_CHOCOLATE_IN_MOLD.get(), new Item.Properties(), 200));
+    RegistryObject<Item> MELTED_MILK_COCOA_IN_MOLD = ITEMS.register("melted_milk_cocoa_in_mold", () -> new MeltedCocoaInMoldBlockItem(ModBlocks.MILK_CHOCOLATE_IN_MOLD.get(), new Item.Properties(), 200));
+    RegistryObject<Item> MELTED_PRALINE_COCOA_IN_MOLD = ITEMS.register("melted_praline_cocoa_in_mold", () -> new MeltedCocoaInMoldBlockItem(ModBlocks.PRALINE_CHOCOLATE_IN_MOLD.get(), new Item.Properties(), 200));
+    RegistryObject<Item> OVERSIZED_BOX_OF_CHOCOLATES = ITEMS.register("oversized_box_of_chocolates", () -> new BlockItem(ModBlocks.OVERSIZED_BOX_OF_CHOCOLATES.get(), new Item.Properties().stacksTo(1)));
+
     // 纸块
     RegistryObject<Item> WHITE_PAPER_BLOCK = ITEMS.register("white_paper_block", () -> new BlockItem(ModBlocks.WHITE_PAPER_BLOCK.get(), new Item.Properties()));
     RegistryObject<Item> BLUE_PAPER_BLOCK = ITEMS.register("blue_paper_block", () -> new BlockItem(ModBlocks.BLUE_PAPER_BLOCK.get(), new Item.Properties()));
