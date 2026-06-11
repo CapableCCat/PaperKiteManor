@@ -1,0 +1,5 @@
+{
+  "model": "papercraft_magic_decoration:geo/copper_bartender.geo.json",
+  "texture": "papercraft_magic_decoration:textures/block/copper_bartender.png",
+  "animation": "papercraft_magic_decoration:copper_bartender.animation.json"
+}

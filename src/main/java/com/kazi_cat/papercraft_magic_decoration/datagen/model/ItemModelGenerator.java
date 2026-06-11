@@ -56,6 +56,8 @@ public class ItemModelGenerator extends ItemModelProvider {
         basicItem(ModItems.DEWY_MEMBRANE.get());
         basicItem(ModItems.COTTON_SERGE.get());
         basicItem(ModItems.AMETHYST_SCISSORS.get());
+        basicItem(ModItems.WHISKEY_RAW.get());
+        basicItem(ModItems.VITALITY_SPORES.get());
 
         withExistingParent("sausage_mace_weapon", modLoc("displaysettings/sausage_mace_weapon"))
                 .texture("layer0", "papercraft_magic_decoration:block/sausage_mace_weapon");
@@ -75,6 +77,7 @@ public class ItemModelGenerator extends ItemModelProvider {
         withExistingParent("dewy_membrane_block", modLoc("block/dewy_membrane_block"));
         withExistingParent("cotton_serge_block", modLoc("block/cotton_serge_block"));
         withExistingParent("paper_cutting_table", modLoc("displaysettings/paper_cutting_table"));
+        withExistingParent("copper_bartender", modLoc("displaysettings/copper_bartender"));
 
         DrinkRegistry.DRINK_DATA_MAP.forEach((key, data) -> {
             Item item = ForgeRegistries.ITEMS.getValue(key);

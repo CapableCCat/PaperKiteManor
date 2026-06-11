@@ -1,4 +1,4 @@
-package com.kazi_cat.papercraft_magic_decoration.crafting.builder;
+package com.kazi_cat.papercraft_magic_decoration.datagen.builder;
 
 import com.google.gson.JsonObject;
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;

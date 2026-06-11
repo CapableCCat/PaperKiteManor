@@ -1,9 +1,11 @@
-package com.kazi_cat.papercraft_magic_decoration.crafting.builder;
+package com.kazi_cat.papercraft_magic_decoration.datagen.builder;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.init.ModRecipes;
 import net.minecraft.advancements.CriterionTriggerInstance;
+import net.minecraft.core.NonNullList;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
@@ -19,32 +21,35 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-public class PaperMakingBuilder implements RecipeBuilder {
-    private static final String NAME = "papermaking";
+public class MixologyBuilder implements RecipeBuilder {
+    private static final String NAME = "mixology";
 
-    private Ingredient ingredient = Ingredient.EMPTY;
+    private final NonNullList<Ingredient> ingredients = NonNullList.withSize(4, Ingredient.EMPTY);
+    private int currentIndex;
     private ItemStack result = ItemStack.EMPTY;
 
-    public static PaperMakingBuilder builder() {
-        return new PaperMakingBuilder();
+    public static MixologyBuilder builder() {
+        return new MixologyBuilder();
     }
 
-    public PaperMakingBuilder setIngredient(ItemLike itemLike) {
-        this.ingredient = Ingredient.of(itemLike);
+    public MixologyBuilder addIngredient(ItemLike itemLike) {
+        this.ingredients.set(currentIndex, Ingredient.of(itemLike));
+        currentIndex++;
         return this;
     }
 
-    public PaperMakingBuilder setIngredient(TagKey<Item> itemLike) {
-        this.ingredient = Ingredient.of(itemLike);
+    public MixologyBuilder addIngredient(TagKey<Item> itemLike) {
+        this.ingredients.set(currentIndex, Ingredient.of(itemLike));
+        currentIndex++;
         return this;
     }
 
-    public PaperMakingBuilder setResult(ItemStack itemStack) {
+    public MixologyBuilder setResult(ItemStack itemStack) {
         this.result = itemStack;
         return this;
     }
 
-    public PaperMakingBuilder setResult(ItemLike itemLike) {
+    public MixologyBuilder setResult(ItemLike itemLike) {
         this.result = new ItemStack(itemLike);
         return this;
     }
@@ -77,26 +82,31 @@ public class PaperMakingBuilder implements RecipeBuilder {
 
     @Override
     public void save(Consumer<FinishedRecipe> recipeOutput, ResourceLocation id) {
-        recipeOutput.accept(new PaperMakingBuilderFinishedRecipe(id, this.ingredient, this.result));
+        recipeOutput.accept(new MixologyBuilderFinishedRecipe(id, this.ingredients, this.result));
     }
 
-    public static class PaperMakingBuilderFinishedRecipe implements FinishedRecipe {
+    public static class MixologyBuilderFinishedRecipe implements FinishedRecipe {
         private final ResourceLocation id;
-        private final Ingredient ingredient;
+        private final NonNullList<Ingredient> ingredients;
         private final ItemStack result;
 
-        public PaperMakingBuilderFinishedRecipe(ResourceLocation id, Ingredient ingredient, ItemStack result) {
+        public MixologyBuilderFinishedRecipe(ResourceLocation id, NonNullList<Ingredient> ingredients, ItemStack result) {
             this.id = id;
-            this.ingredient = ingredient;
+            this.ingredients = ingredients;
             this.result = result;
         }
 
         @Override
         public void serializeRecipeData(JsonObject json) {
-            json.add("ingredient", this.ingredient.toJson());
+            JsonArray ingredients = new JsonArray();
+            for (Ingredient ingredient : this.ingredients) {
+                ingredients.add(ingredient.toJson());
+            }
+            json.add("ingredients", ingredients);
 
             JsonObject resultJson = new JsonObject();
             resultJson.addProperty("item", Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(this.result.getItem())).toString());
+            resultJson.addProperty("count", this.result.getCount());
             json.add("result", resultJson);
         }
 
@@ -106,9 +116,7 @@ public class PaperMakingBuilder implements RecipeBuilder {
         }
 
         @Override
-        public RecipeSerializer<?> getType() {
-            return ModRecipes.PAPERMAKING_SERIALIZER.get();
-        }
+        public RecipeSerializer<?> getType() { return ModRecipes.MIXOLOGY_SERIALIZER.get(); }
 
         @Override
         @Nullable

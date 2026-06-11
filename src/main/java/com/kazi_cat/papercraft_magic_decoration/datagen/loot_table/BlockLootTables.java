@@ -50,6 +50,7 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.BOTTLE_OF_LUCKY_CACTUS.get());
         dropSelf(ModBlocks.BOTTLE_OF_POISON_RUM.get());
         dropSelf(ModBlocks.PAPER_CUTTING_TABLE.get());
+        dropSelf(ModBlocks.COPPER_BARTENDER.get());
 
         dropSmeltable(ModBlocks.SAUSAGE_MACE_WEAPON_BLOCK.get(), List.of(ModItems.RAW_SAUSAGE_MACE_WEAPON.get()), List.of(ModItems.SAUSAGE_MACE_WEAPON.get()));
         dropSmeltable(ModBlocks.MANGA_MEAT.get(), List.of(ModItems.RAW_MANGA_MEAT.get()), List.of(ModItems.MANGA_MEAT.get()));

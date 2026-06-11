@@ -1,6 +1,6 @@
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-package com.kazi_cat.papercraft_magic_decoration.crafting.builder;
+package com.kazi_cat.papercraft_magic_decoration.datagen.builder;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
 

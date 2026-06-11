@@ -25,6 +25,7 @@ public class BlockModelGenerator extends BlockModelProvider {
         cubeAll("yellow_paper_block", modLoc("block/yellow_paper_block"));
         cubeAll("cotton_serge_block", modLoc("block/cotton_serge_block"));
         cubeAll("paper_cutting_table", modLoc("block/paper_cutting_table"));
+        cubeAll("copper_bartender", modLoc("block/copper_bartender"));
 
         DrinkRegistry.DRINK_DATA_MAP.forEach(((key, data) -> {
             for (int i = 1; i <= data.getMaxCount(); i++) {

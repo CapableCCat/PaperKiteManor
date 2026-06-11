@@ -1,8 +1,10 @@
 package com.kazi_cat.papercraft_magic_decoration.init;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
+import com.kazi_cat.papercraft_magic_decoration.crafting.recipe.MixologyRecipe;
 import com.kazi_cat.papercraft_magic_decoration.crafting.recipe.PaperCuttingRecipe;
 import com.kazi_cat.papercraft_magic_decoration.crafting.recipe.PaperMakingRecipe;
+import com.kazi_cat.papercraft_magic_decoration.crafting.serializer.MixologyRecipeSerializer;
 import com.kazi_cat.papercraft_magic_decoration.crafting.serializer.PaperCuttingRecipeSerializer;
 import com.kazi_cat.papercraft_magic_decoration.crafting.serializer.PaperMakingRecipeSerializer;
 import net.minecraft.core.registries.Registries;
@@ -21,15 +23,18 @@ public class ModRecipes {
 
     public static RegistryObject<RecipeSerializer<?>> PAPERMAKING_SERIALIZER = RECIPE_SERIALIZERS.register("papermaking", PaperMakingRecipeSerializer::new);
     public static RegistryObject<RecipeSerializer<?>> PAPERCUTTING_SERIALIZER = RECIPE_SERIALIZERS.register("papercutting", PaperCuttingRecipeSerializer::new);
+    public static RegistryObject<RecipeSerializer<?>> MIXOLOGY_SERIALIZER = RECIPE_SERIALIZERS.register("mixology", MixologyRecipeSerializer::new);
 
     public static RecipeType<PaperMakingRecipe> PAPERMAKING_RECIPE;
     public static RecipeType<PaperCuttingRecipe> PAPERCUTTING_RECIPE;
+    public static RecipeType<MixologyRecipe> MIXOLOGY_RECIPE;
 
     @SubscribeEvent
-    public static void register(RegisterEvent evt) {
-        if (evt.getRegistryKey().equals(Registries.RECIPE_SERIALIZER)) {
+    public static void register(RegisterEvent event) {
+        if (event.getRegistryKey().equals(Registries.RECIPE_SERIALIZER)) {
             PAPERMAKING_RECIPE = RecipeType.simple(PaperKiteManor.modLoc("papermaking"));
             PAPERCUTTING_RECIPE = RecipeType.simple(PaperKiteManor.modLoc("papercutting"));
+            MIXOLOGY_RECIPE = RecipeType.simple(PaperKiteManor.modLoc("mixology"));
         }
     }
 }

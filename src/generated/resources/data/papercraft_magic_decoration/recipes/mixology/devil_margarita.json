@@ -1,0 +1,21 @@
+{
+  "type": "papercraft_magic_decoration:mixology",
+  "ingredients": [
+    {
+      "item": "papercraft_magic_decoration:lucky_cactus"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:nether_wart"
+    },
+    {
+      "item": "papercraft_magic_decoration:land_no1"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "papercraft_magic_decoration:devil_margarita"
+  }
+}

@@ -7,11 +7,9 @@ import com.kazi_cat.papercraft_magic_decoration.block.decoration.PickableDecorat
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.VariantDecorationBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.BottleDrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.smeltable.*;
+import com.kazi_cat.papercraft_magic_decoration.block.utility.CopperBartenderBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.utility.PaperCuttingTableBlock;
-import com.kazi_cat.papercraft_magic_decoration.blockentity.AnimatedSmeltableBlockEntity;
-import com.kazi_cat.papercraft_magic_decoration.blockentity.ChocolateInMoldBlockEntity;
-import com.kazi_cat.papercraft_magic_decoration.blockentity.PaperCuttingTableBlockEntity;
-import com.kazi_cat.papercraft_magic_decoration.blockentity.SmeltableBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.*;
 import com.kazi_cat.papercraft_magic_decoration.init.registry.DrinkRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.ItemStack;
@@ -117,6 +115,11 @@ public interface ModBlocks {
     RegistryObject<Block> BOTTLE_OF_POISON_RUM = BLOCKS.register("bottle_of_poison_rum", () -> new BottleDrinkBlock(
             () -> Collections.singletonList(new ItemStack(DrinkRegistry.getItem(DrinkRegistry.POISON_RUM), 4)),
             Block.box(2, 0, 2, 14, 20, 14)));
+
+    // 铜酒保
+    RegistryObject<Block> COPPER_BARTENDER = BLOCKS.register("copper_bartender", CopperBartenderBlock::new);
+
+    RegistryObject<BlockEntityType<CopperBartenderBlockEntity>> COPPER_BARTENDER_BE = BLOCK_ENTITIES.register("copper_bartender_block", () -> BlockEntityType.Builder.of(CopperBartenderBlockEntity::new, COPPER_BARTENDER.get()).build(null));
 
     // 巧克力
     RegistryObject<Block> TRUFFLE_CHOCOLATE = BLOCKS.register("truffle_chocolate", () -> new PickableDecorationBlock(

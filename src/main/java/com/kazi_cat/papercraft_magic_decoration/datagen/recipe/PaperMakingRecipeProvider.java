@@ -1,6 +1,6 @@
 package com.kazi_cat.papercraft_magic_decoration.datagen.recipe;
 
-import com.kazi_cat.papercraft_magic_decoration.crafting.builder.PaperMakingBuilder;
+import com.kazi_cat.papercraft_magic_decoration.datagen.builder.PaperMakingBuilder;
 import com.kazi_cat.papercraft_magic_decoration.init.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;

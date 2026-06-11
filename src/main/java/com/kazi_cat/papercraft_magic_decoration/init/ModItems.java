@@ -39,6 +39,9 @@ public interface ModItems {
     RegistryObject<Item> BOTTLE_OF_POISON_RUM = ITEMS.register("bottle_of_poison_rum", () -> new BlockItem(ModBlocks.BOTTLE_OF_POISON_RUM.get(), new Item.Properties().stacksTo(16)));
     RegistryObject<Item> PACK_OF_GUANG_S = ITEMS.register("pack_of_guang_s", () -> new PackOfGuangSItem(new Item.Properties()));
 
+    // 铜酒保
+    RegistryObject<Item> COPPER_BARTENDER = ITEMS.register("copper_bartender", () -> new GeoBlockItem(ModBlocks.COPPER_BARTENDER.get(), new Item.Properties()));
+
     // 巧克力
     RegistryObject<Item> TRUFFLE_CHOCOLATE = ITEMS.register("truffle_chocolate", () -> new BlockItem(ModBlocks.TRUFFLE_CHOCOLATE.get(), new Item.Properties().food(ModFoods.TRUFFLE_CHOCOLATE)));
     RegistryObject<Item> MILK_CHOCOLATE = ITEMS.register("milk_chocolate", () -> new MilkChocolateItem(ModBlocks.MILK_CHOCOLATE.get(), new Item.Properties().food(ModFoods.MILK_CHOCOLATE)));
@@ -74,4 +77,8 @@ public interface ModItems {
 
     // 剪纸台
     RegistryObject<Item> PAPER_CUTTING_TABLE = ITEMS.register("paper_cutting_table", () -> new GeoBlockItem(ModBlocks.PAPER_CUTTING_TABLE.get(), new Item.Properties()));
+
+    // 基础素材
+    RegistryObject<Item> VITALITY_SPORES = ITEMS.register("vitality_spores", () -> new Item(new Item.Properties()));
+    RegistryObject<Item> WHISKEY_RAW = ITEMS.register("whiskey_raw", () -> new Item(new Item.Properties()));
 }

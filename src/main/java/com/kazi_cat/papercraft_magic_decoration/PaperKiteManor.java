@@ -28,6 +28,7 @@ public class PaperKiteManor {
         ModEffects.EFFECTS.register(modEventBus);
         ModCreativeTabs.TABS.register(modEventBus);
         ModRecipes.RECIPE_SERIALIZERS.register(modEventBus);
+        ModContainers.CONTAINER_TYPES.register(modEventBus);
         ModSounds.SOUND_EVENTS.register(modEventBus);
     }
 }

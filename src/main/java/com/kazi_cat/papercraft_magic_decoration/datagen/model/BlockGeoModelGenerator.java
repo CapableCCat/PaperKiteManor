@@ -55,6 +55,7 @@ public class BlockGeoModelGenerator implements DataProvider {
 
     private void addMappings() {
         simple(ModBlocks.PAPER_CUTTING_TABLE);
+        simple(ModBlocks.COPPER_BARTENDER);
 
         // 狼牙棒火腿肠
         ModelData sausage = ModelData.simple("0", "sausage_mace_weapon");
