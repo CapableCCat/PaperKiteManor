@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "papercraft_magic_decoration:block/crop/coffee_pastinaca_sativa/age0"
+    },
+    "age=1": {
+      "model": "papercraft_magic_decoration:block/crop/coffee_pastinaca_sativa/age1"
+    },
+    "age=2": {
+      "model": "papercraft_magic_decoration:block/crop/coffee_pastinaca_sativa/age2"
+    },
+    "age=3": {
+      "model": "papercraft_magic_decoration:block/crop/coffee_pastinaca_sativa/age3"
+    },
+    "age=4": {
+      "model": "papercraft_magic_decoration:block/crop/coffee_pastinaca_sativa/age4"
+    },
+    "age=5": {
+      "model": "papercraft_magic_decoration:block/crop/coffee_pastinaca_sativa/age5"
+    },
+    "age=6": {
+      "model": "papercraft_magic_decoration:block/crop/coffee_pastinaca_sativa/age6"
+    },
+    "age=7": {
+      "model": "papercraft_magic_decoration:block/crop/coffee_pastinaca_sativa/age7"
+    }
+  }
+}

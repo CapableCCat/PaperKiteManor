@@ -304,6 +304,5 @@ public class BlockGeoModelGenerator implements DataProvider {
                     && Objects.equals(rotation, that.rotation)
                     && Objects.equals(scale, that.scale);
         }
-
     }
 }

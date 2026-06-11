@@ -5,6 +5,7 @@ import com.kazi_cat.papercraft_magic_decoration.api.block.SmeltableBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.base.MultipartBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.chocolate.ChocolateInMoldBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.chocolate.OversizedBoxOfChocolatesBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.decoration.TwoByOneDecorationBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.VariantDecorationBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.BoxedDrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.DrinkBlock;
@@ -14,11 +15,14 @@ import com.kazi_cat.papercraft_magic_decoration.init.registry.DrinkRegistry;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 public class BlockStateGenerator extends BlockStateProvider {
     public BlockStateGenerator(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -35,6 +39,10 @@ public class BlockStateGenerator extends BlockStateProvider {
         simpleBlock(ModBlocks.COTTON_SERGE_BLOCK.get());
         simpleBlock(ModBlocks.DEWY_MEMBRANE_BLOCK.get(), new ModelFile.UncheckedModelFile(modLoc("block/dewy_membrane_block")));
         simpleBlock(ModBlocks.DIRT_HOLE.get(), new ModelFile.UncheckedModelFile(modLoc("block/dirt_hole")));
+        simpleBlock(ModBlocks.COFFEE_PASTINACA_SATIVA_CORE.get(), new ModelFile.UncheckedModelFile(modLoc("block/coffee_pastinaca_sativa_core")));
+        simpleBlock(ModBlocks.COFFEE_PASTINACA_SATIVA_FLOWERS.get(), new ModelFile.UncheckedModelFile(modLoc("block/coffee_pastinaca_sativa_flowers")));
+
+        crop(ModBlocks.COFFEE_PASTINACA_SATIVA, "coffee_pastinaca_sativa");
 
         smeltable(ModBlocks.SAUSAGE_MACE_WEAPON_BLOCK.get(), "sausage_mace_weapon");
         smeltable(ModBlocks.MANGA_MEAT.get(), "manga_meat");
@@ -43,8 +51,10 @@ public class BlockStateGenerator extends BlockStateProvider {
         multipartSmeltable(ModBlocks.CHUNKY_SALMON.get(), "chunky_salmon", ChunkySalmonBlock.VARIANT);
         multipartSmeltable(ModBlocks.MONSTER_STEAK.get(), "monster_steak");
 
+        variant(ModBlocks.COFFEE_PASTINACA_SATIVA_RIM.get(), "coffee_pastinaca_sativa_rim", ((TwoByOneDecorationBlock) ModBlocks.COFFEE_PASTINACA_SATIVA_RIM.get()).getPartProperty());
         variant(ModBlocks.TRAY_BLOCK.get(), "tray", ((VariantDecorationBlock) ModBlocks.TRAY_BLOCK.get()).getVariantProperty());
 
+        horizontalBlock(ModBlocks.COFFEE_PASTINACA_SATIVA_FRUITING_STEM.get(), new ModelFile.UncheckedModelFile(modLoc("block/coffee_pastinaca_sativa_fruiting_stem")));
         horizontalBlock(ModBlocks.KAZI_LUCKY_CAT.get(), new ModelFile.UncheckedModelFile(modLoc("block/kazi_lucky_cat")));
         horizontalBlock(ModBlocks.PAPER_CUTTING_TABLE.get(), new ModelFile.UncheckedModelFile(modLoc("block/paper_cutting_table")));
         horizontalBlock(ModBlocks.COPPER_BARTENDER.get(), new ModelFile.UncheckedModelFile(modLoc("block/copper_bartender")));
@@ -117,6 +127,16 @@ public class BlockStateGenerator extends BlockStateProvider {
                 return new ModelFile.UncheckedModelFile(file);
             });
         }
+    }
+
+    public void crop(RegistryObject<Block> block, String name) {
+        getVariantBuilder(block.get()).forAllStates(state -> {
+            int age = state.getValue(CropBlock.AGE);
+            ResourceLocation file = modLoc("block/crop/%s/age%d".formatted(name, age));
+            return ConfiguredModel.builder()
+                    .modelFile(new ModelFile.UncheckedModelFile(file))
+                    .build();
+        });
     }
 
     public void variant(Block block, String name, IntegerProperty property) {

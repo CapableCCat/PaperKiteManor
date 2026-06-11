@@ -159,4 +159,8 @@ public interface ModFoods {
             .nutrition(4).saturationMod(1)
             .effect(() -> new MobEffectInstance(ModEffects.SKY_TRACTION.get(), 6000, 0), 1)
             .alwaysEat().build();
+
+    FoodProperties COFFEE_PASTINACA_SATIVA_TUBER = (new FoodProperties.Builder())
+            .nutrition(6).saturationMod(0.3f)
+            .build();
 }

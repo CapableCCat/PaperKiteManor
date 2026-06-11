@@ -3,9 +3,8 @@ package com.kazi_cat.papercraft_magic_decoration.init;
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.block.chocolate.ChocolateInMoldBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.chocolate.OversizedBoxOfChocolatesBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.decoration.KaziLuckyCatBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.decoration.PickableDecorationBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.decoration.VariantDecorationBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.crop.CoffeePastinacaSativaCropBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.decoration.*;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.BottleDrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.misc.DirtHoleBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.smeltable.*;
@@ -24,6 +23,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -31,7 +31,7 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.Collections;
 import java.util.List;
 
-@SuppressWarnings({"DataFlowIssue"})
+@SuppressWarnings({"DataFlowIssue","deprecation"})
 public interface ModBlocks {
     DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, PaperKiteManor.MOD_ID);
     DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, PaperKiteManor.MOD_ID);
@@ -251,6 +251,41 @@ public interface ModBlocks {
     RegistryObject<Block> PAPER_CUTTING_TABLE = BLOCKS.register("paper_cutting_table", PaperCuttingTableBlock::new);
 
     RegistryObject<BlockEntityType<PaperCuttingTableBlockEntity>> PAPER_CUTTING_TABLE_BE = BLOCK_ENTITIES.register("paper_cutting_table", () -> BlockEntityType.Builder.of(PaperCuttingTableBlockEntity::new, PAPER_CUTTING_TABLE.get()).build(null));
+
+    // 咖啡欧防风
+    RegistryObject<Block> COFFEE_PASTINACA_SATIVA = BLOCKS.register("coffee_pastinaca_sativa", CoffeePastinacaSativaCropBlock::new);
+
+    RegistryObject<Block> COFFEE_PASTINACA_SATIVA_FRUITING_STEM = BLOCKS.register("coffee_pastinaca_sativa_fruiting_stem", () -> new SimpleDecorationBlock(
+            BlockBehaviour.Properties.of()
+                    .instabreak()
+                    .replaceable()
+                    .noCollission()
+                    .ignitedByLava()
+                    .sound(SoundType.LILY_PAD)
+                    .pushReaction(PushReaction.DESTROY),
+            Block.box(0, 0, 0, 16, 16, 16)));
+
+    RegistryObject<Block> COFFEE_PASTINACA_SATIVA_CORE = BLOCKS.register("coffee_pastinaca_sativa_core", () -> new Block(
+            BlockBehaviour.Properties.of()
+                    .forceSolidOn()
+                    .ignitedByLava()
+                    .strength(2f, 10f)));
+
+    RegistryObject<Block> COFFEE_PASTINACA_SATIVA_RIM = BLOCKS.register("coffee_pastinaca_sativa_rim", ()-> new TwoByOneDecorationBlock(
+            BlockBehaviour.Properties.of()
+                    .ignitedByLava()
+                    .strength(2f, 10f),
+            Block.box(0, 0, 0, 8, 16, 16),
+            Block.box(0, 0, 0, 8, 16, 8)));
+
+    RegistryObject<Block> COFFEE_PASTINACA_SATIVA_FLOWERS = BLOCKS.register("coffee_pastinaca_sativa_flowers", () -> new WaterloggedOnlyBlock(
+            BlockBehaviour.Properties.of()
+                    .instabreak()
+                    .replaceable()
+                    .noCollission()
+                    .ignitedByLava()
+                    .sound(SoundType.LILY_PAD)
+                    .pushReaction(PushReaction.DESTROY), null));
 
     // 装饰方块
     RegistryObject<Block> TRAY_BLOCK = BLOCKS.register("tray", () -> new VariantDecorationBlock(

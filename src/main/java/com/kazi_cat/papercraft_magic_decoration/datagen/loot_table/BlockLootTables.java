@@ -54,6 +54,9 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.KAZI_LUCKY_CAT.get());
 
         dropOther(ModBlocks.DIRT_HOLE.get(), Items.DIRT);
+        dropOther(ModBlocks.COFFEE_PASTINACA_SATIVA.get(), ModItems.COFFEE_FRUIT.get());
+        dropOther(ModBlocks.COFFEE_PASTINACA_SATIVA_CORE.get(), ModItems.COFFEE_PASTINACA_SATIVA_TUBER.get());
+        dropOther(ModBlocks.COFFEE_PASTINACA_SATIVA_RIM.get(), ModItems.COFFEE_PASTINACA_SATIVA_TUBER.get());
 
         dropSmeltable(ModBlocks.SAUSAGE_MACE_WEAPON_BLOCK.get(), List.of(ModItems.RAW_SAUSAGE_MACE_WEAPON.get()), List.of(ModItems.SAUSAGE_MACE_WEAPON.get()));
         dropSmeltable(ModBlocks.MANGA_MEAT.get(), List.of(ModItems.RAW_MANGA_MEAT.get()), List.of(ModItems.MANGA_MEAT.get()));

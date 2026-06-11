@@ -1,6 +1,7 @@
 package com.kazi_cat.papercraft_magic_decoration.block.misc;
 
 import com.kazi_cat.papercraft_magic_decoration.blockentity.DirtHoleBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.init.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -41,9 +42,9 @@ public class DirtHoleBlock extends Block implements EntityBlock {
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player,
                                  InteractionHand hand, BlockHitResult hitResult) {
         ItemStack itemInHand = player.getItemInHand(hand);
-//        if (itemInHand.is(ModItems.COFFEE_FRUIT.get())) {
-//            return InteractionResult.PASS;
-//        }
+        if (itemInHand.is(ModItems.COFFEE_FRUIT.get())) {
+            return InteractionResult.PASS;
+        }
 
         if (!level.isClientSide() && level.getBlockEntity(pos) instanceof DirtHoleBlockEntity be) {
             if (player instanceof ServerPlayer serverPlayer) {

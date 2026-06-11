@@ -82,6 +82,9 @@ public interface ModItems {
     // 基础素材
     RegistryObject<Item> VITALITY_SPORES = ITEMS.register("vitality_spores", () -> new Item(new Item.Properties()));
     RegistryObject<Item> WHISKEY_RAW = ITEMS.register("whiskey_raw", () -> new Item(new Item.Properties()));
+    RegistryObject<Item> COFFEE_FRUIT = ITEMS.register("coffee_fruit", () -> new CoffeeFruitItem(ModBlocks.COFFEE_PASTINACA_SATIVA.get(), new Item.Properties()));
+    RegistryObject<Item> GOLDEN_COFFEE_FRUIT = ITEMS.register("golden_coffee_fruit", () -> new Item(new Item.Properties()));
+    RegistryObject<Item> COFFEE_PASTINACA_SATIVA_TUBER = ITEMS.register("coffee_pastinaca_sativa_tuber", () -> new Item(new Item.Properties().food(ModFoods.COFFEE_PASTINACA_SATIVA_TUBER)));
 
     // 园丁铲
     RegistryObject<Item> GARDEN_TROWEL = ITEMS.register("garden_trowel", () -> new GardenTrowelItem(Tiers.IRON, 0, -2.4F, new Item.Properties().durability(50)));

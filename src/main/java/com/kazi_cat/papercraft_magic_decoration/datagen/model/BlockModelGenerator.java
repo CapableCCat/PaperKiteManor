@@ -28,6 +28,11 @@ public class BlockModelGenerator extends BlockModelProvider {
         cubeAll("copper_bartender", modLoc("block/copper_bartender"));
         cubeAll("kazi_lucky_cat", modLoc("block/kazi_lucky_cat"));
 
+        cubeBottomTop("coffee_pastinaca_sativa_core",
+                modLoc("block/coffee_pastinaca_sativa_side"),
+                modLoc("block/coffee_pastinaca_sativa_bottom"),
+                modLoc("block/coffee_pastinaca_sativa_top"));
+
         DrinkRegistry.DRINK_DATA_MAP.forEach(((key, data) -> {
             for (int i = 1; i <= data.getMaxCount(); i++) {
                 ResourceLocation parent = modLoc("block/drink/%s/count%d".formatted(key.getPath(), i));
