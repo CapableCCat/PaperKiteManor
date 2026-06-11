@@ -33,6 +33,10 @@ public interface ModFoods {
             .nutrition(8).saturationMod(0.6f)
             .meat().build();
 
+    FoodProperties DRINK_DEFAULT = (new FoodProperties.Builder())
+            .nutrition(1).saturationMod(0.5f)
+            .alwaysEat().build();
+
     FoodProperties BLAZE_WHISKEY = (new FoodProperties.Builder())
             .nutrition(1).saturationMod(0.5f)
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 400, 0), 1)

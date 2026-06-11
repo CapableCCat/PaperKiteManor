@@ -1,0 +1,11 @@
+{
+  "parent": "papercraft_magic_decoration:block/drink/lucky_cactus/count2",
+  "render_type": "minecraft:cutout",
+  "transform": {
+    "translation": [
+      -0.5,
+      0.0,
+      -0.0
+    ]
+  }
+}

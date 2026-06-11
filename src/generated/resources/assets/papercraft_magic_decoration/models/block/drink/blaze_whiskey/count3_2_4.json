@@ -1,0 +1,11 @@
+{
+  "parent": "papercraft_magic_decoration:block/drink/blaze_whiskey/count3",
+  "render_type": "minecraft:cutout",
+  "transform": {
+    "translation": [
+      -0.0,
+      0.0,
+      -0.5
+    ]
+  }
+}

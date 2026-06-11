@@ -1,7 +1,7 @@
 package com.kazi_cat.papercraft_magic_decoration.item;
 
 import com.kazi_cat.papercraft_magic_decoration.block.drink.BoxedDrinkBlock;
-import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
+import com.kazi_cat.papercraft_magic_decoration.init.registry.DrinkRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionResult;
@@ -26,10 +26,10 @@ public class PackOfGuangSItem extends Item {
         }
 
         if (!level.isClientSide()) {
-            BoxedDrinkBlock block = (BoxedDrinkBlock) ModBlocks.GUANG_S.get();
+            BoxedDrinkBlock block = (BoxedDrinkBlock) DrinkRegistry.getBlock(DrinkRegistry.GUANG_S);
             Direction facing = context.getHorizontalDirection().getOpposite();
             FluidState fluidState = level.getFluidState(pos);
-            level.setBlockAndUpdate(pos, ModBlocks.GUANG_S.get().defaultBlockState()
+            level.setBlockAndUpdate(pos, block.defaultBlockState()
                     .setValue(block.getCountProperty(), 4)
                     .setValue(BoxedDrinkBlock.BOXED, true)
                     .setValue(BlockStateProperties.HORIZONTAL_FACING, facing)

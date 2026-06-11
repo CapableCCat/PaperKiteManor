@@ -1,0 +1,11 @@
+{
+  "parent": "papercraft_magic_decoration:block/drink/gold_medal_coffee/count1",
+  "render_type": "minecraft:cutout",
+  "transform": {
+    "translation": [
+      0.25,
+      0.0,
+      -0.5
+    ]
+  }
+}

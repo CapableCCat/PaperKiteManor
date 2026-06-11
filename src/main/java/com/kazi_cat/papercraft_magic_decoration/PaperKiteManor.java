@@ -4,6 +4,7 @@ import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import com.kazi_cat.papercraft_magic_decoration.init.ModCreativeTabs;
 import com.kazi_cat.papercraft_magic_decoration.init.ModItems;
 import com.kazi_cat.papercraft_magic_decoration.init.ModRecipes;
+import com.kazi_cat.papercraft_magic_decoration.init.registry.DrinkRegistry;
 import com.mojang.logging.LogUtils;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -22,6 +23,9 @@ public class PaperKiteManor {
 
     public PaperKiteManor() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        DrinkRegistry.init();
+
         ModBlocks.BLOCKS.register(modEventBus);
         ModBlocks.BLOCK_ENTITIES.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);

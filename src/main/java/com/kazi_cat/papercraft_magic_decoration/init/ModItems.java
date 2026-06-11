@@ -30,24 +30,6 @@ public interface ModItems {
     RegistryObject<Item> BUCKET_OF_FRIED_CHICKEN = ITEMS.register("bucket_of_fried_chicken", () -> new BlockItem(ModBlocks.BUCKET_OF_FRIED_CHICKEN.get(), new Item.Properties()));
     RegistryObject<Item> FRIED_CHICKEN_LEG = ITEMS.register("fried_chicken_leg", () -> new Item(new Item.Properties().food(ModFoods.FRIED_CHICKEN_LEG)));
 
-    // 杯装酒
-    RegistryObject<Item> BLAZE_WHISKEY = ITEMS.register("blaze_whiskey", () -> new DrinkBlockItem(ModBlocks.BLAZE_WHISKEY.get(), ModFoods.BLAZE_WHISKEY));
-    RegistryObject<Item> FERRY_WHISKEY = ITEMS.register("ferry_whiskey", () -> new DrinkBlockItem(ModBlocks.FERRY_WHISKEY.get(), ModFoods.FERRY_WHISKEY));
-    RegistryObject<Item> FLY_WHISKEY = ITEMS.register("fly_whiskey", () -> new DrinkBlockItem(ModBlocks.FLY_WHISKEY.get(), ModFoods.FLY_WHISKEY));
-    RegistryObject<Item> LAND_NO1 = ITEMS.register("land_no1", () -> new DrinkBlockItem(ModBlocks.LAND_NO1.get(), ModFoods.LAND_NO1));
-    RegistryObject<Item> LUCKY_CACTUS = ITEMS.register("lucky_cactus", () -> new DrinkBlockItem(ModBlocks.LUCKY_CACTUS.get(), ModFoods.LUCKY_CACTUS));
-    RegistryObject<Item> POISON_RUM = ITEMS.register("poison_rum", () -> new DrinkBlockItem(ModBlocks.POISON_RUM.get(), ModFoods.POISON_RUM));
-    RegistryObject<Item> BLOODY_MARY = ITEMS.register("bloody_mary", () -> new DrinkBlockItem(ModBlocks.BLOODY_MARY.get(), ModFoods.BLOODY_MARY));
-    RegistryObject<Item> DIPLOMATICO_COFFEE = ITEMS.register("diplomatico_coffee", () -> new DrinkBlockItem(ModBlocks.DIPLOMATICO_COFFEE.get(), ModFoods.DIPLOMATICO_COFFEE));
-    RegistryObject<Item> DEVIL_MARGARITA = ITEMS.register("devil_margarita", () -> new DrinkBlockItem(ModBlocks.DEVIL_MARGARITA.get(), ModFoods.DEVIL_MARGARITA));
-    RegistryObject<Item> DIONYSUS = ITEMS.register("dionysus", () -> new DrinkBlockItem(ModBlocks.DIONYSUS.get(), ModFoods.DIONYSUS));
-    RegistryObject<Item> KALEIDOSCOPE_WHISKEY_SOUR = ITEMS.register("kaleidoscope_whiskey_sour", () -> new DrinkBlockItem(ModBlocks.KALEIDOSCOPE_WHISKEY_SOUR.get(), ModFoods.KALEIDOSCOPE_WHISKEY_SOUR));
-    RegistryObject<Item> LONG_ISLAND_POPSICLE_TEA = ITEMS.register("long_island_popsicle_tea", () -> new DrinkBlockItem(ModBlocks.LONG_ISLAND_POPSICLE_TEA.get(), ModFoods.LONG_ISLAND_POPSICLE_TEA));
-    RegistryObject<Item> NOCTURNAL_CAT_COFFEE = ITEMS.register("nocturnal_cat_coffee", () -> new DrinkBlockItem(ModBlocks.NOCTURNAL_CAT_COFFEE.get(), ModFoods.NOCTURNAL_CAT_COFFEE));
-    RegistryObject<Item> GOLD_MEDAL_COFFEE = ITEMS.register("gold_medal_coffee", () -> new DrinkBlockItem(ModBlocks.GOLD_MEDAL_COFFEE.get(), ModFoods.GOLD_MEDAL_COFFEE));
-    RegistryObject<Item> WHITE_RABBIT_MOCHA = ITEMS.register("white_rabbit_mocha", () -> new DrinkBlockItem(ModBlocks.WHITE_RABBIT_MOCHA.get(), ModFoods.WHITE_RABBIT_MOCHA));
-    RegistryObject<Item> GUANG_S = ITEMS.register("guang_s", () -> new DrinkBlockItem(ModBlocks.GUANG_S.get(), ModFoods.GUANG_S));
-
     // 瓶装酒
     RegistryObject<Item> BOTTLE_OF_BLAZE_WHISKEY = ITEMS.register("bottle_of_blaze_whiskey", () -> new BlockItem(ModBlocks.BOTTLE_OF_BLAZE_WHISKEY.get(), new Item.Properties().stacksTo(16)));
     RegistryObject<Item> BOTTLE_OF_FERRY_WHISKEY = ITEMS.register("bottle_of_ferry_whiskey", () -> new BlockItem(ModBlocks.BOTTLE_OF_FERRY_WHISKEY.get(), new Item.Properties().stacksTo(16)));

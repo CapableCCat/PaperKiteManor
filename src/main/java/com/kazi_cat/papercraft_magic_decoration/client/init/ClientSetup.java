@@ -3,7 +3,6 @@ package com.kazi_cat.papercraft_magic_decoration.client.init;
 import com.kazi_cat.papercraft_magic_decoration.client.model.BlockGeoModelManager;
 import com.kazi_cat.papercraft_magic_decoration.client.model.ItemGeoModelManager;
 import com.kazi_cat.papercraft_magic_decoration.client.render.block.BaseGeoBlockRenderer;
-import com.kazi_cat.papercraft_magic_decoration.client.render.block.DrinkBlockRenderer;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -21,7 +20,6 @@ public class ClientSetup {
 
     @SubscribeEvent
     public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerBlockEntityRenderer(ModBlocks.DRINK_BE.get(), DrinkBlockRenderer::new);
         event.registerBlockEntityRenderer(ModBlocks.ANIMATED_SMELTABLE_BE.get(), context -> new BaseGeoBlockRenderer<>(ModBlocks.ANIMATED_SMELTABLE_BE.get()));
     }
 }

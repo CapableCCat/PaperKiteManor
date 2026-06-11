@@ -1,6 +1,5 @@
 package com.kazi_cat.papercraft_magic_decoration.block.drink;
 
-import com.kazi_cat.papercraft_magic_decoration.blockentity.DrinkBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.utils.VoxelShapeUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -16,7 +15,6 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -39,8 +37,10 @@ import java.util.EnumMap;
 import java.util.List;
 
 @SuppressWarnings({"unchecked","deprecation"})
-public class DrinkBlock extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock, EntityBlock {
+public class DrinkBlock extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock {
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+    public static final IntegerProperty X_OFFSET = IntegerProperty.create("x_offset", 0, 4);
+    public static final IntegerProperty Z_OFFSET = IntegerProperty.create("z_offset", 0, 4);
     public static final double STEP_LENGTH = 0.25D;
 
     protected final int maxCount;
@@ -54,9 +54,9 @@ public class DrinkBlock extends HorizontalDirectionalBlock implements SimpleWate
         this.shapes = new EnumMap[shapes.length][5][5];
         for (int i = 0; i < shapes.length; i++) {
             for (int x = 0; x < 5; x++) {
-                for (int y = 0; y <5; y++) {
-                    Vec3 offset = new Vec3((x - 2) * STEP_LENGTH, 0, (y - 2) * STEP_LENGTH);
-                    this.shapes[i][x][y] = VoxelShapeUtils.horizontalShapes(shapes[i], offset);
+                for (int z = 0; z <5; z++) {
+                    Vec3 offset = new Vec3((x - 2) * STEP_LENGTH, 0, (z - 2) * STEP_LENGTH);
+                    this.shapes[i][x][z] = VoxelShapeUtils.horizontalShapes(shapes[i], offset);
                 }
             }
         }
@@ -68,7 +68,9 @@ public class DrinkBlock extends HorizontalDirectionalBlock implements SimpleWate
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(countProperty, 1)
                 .setValue(FACING, Direction.NORTH)
-                .setValue(WATERLOGGED, false));
+                .setValue(WATERLOGGED, false)
+                .setValue(X_OFFSET, 2)
+                .setValue(Z_OFFSET, 2));
     }
 
     public DrinkBlock(int maxCount, VoxelShape... shapes) {
@@ -107,13 +109,11 @@ public class DrinkBlock extends HorizontalDirectionalBlock implements SimpleWate
 
         if (itemInHand.isEmpty()) {
             if (player.isSecondaryUseActive() && hitResult.getDirection().getAxis().isHorizontal()) {
-                if (level.getBlockEntity(pos) instanceof DrinkBlockEntity be) {
-                    Direction direction = hitResult.getDirection().getOpposite();
-                    int x = Mth.clamp(be.getXOffset() + direction.getStepX(), -2, 2);
-                    int y = Mth.clamp(be.getYOffset() + direction.getStepZ(), -2, 2);
-                    be.setOffset(x, y);
-                    return InteractionResult.SUCCESS;
-                }
+                Direction direction = hitResult.getDirection().getOpposite();
+                int x = Mth.clamp(state.getValue(X_OFFSET) + direction.getStepX(), 0, 4);
+                int z = Mth.clamp(state.getValue(Z_OFFSET) + direction.getStepZ(), 0, 4);
+                level.setBlockAndUpdate(pos, state.setValue(X_OFFSET, x).setValue(Z_OFFSET, z));
+                return InteractionResult.SUCCESS;
             }
 
             int count = state.getValue(this.countProperty);
@@ -132,7 +132,7 @@ public class DrinkBlock extends HorizontalDirectionalBlock implements SimpleWate
     }
 
     protected void overrideBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING, WATERLOGGED, countProperty);
+        builder.add(FACING, WATERLOGGED, X_OFFSET, Z_OFFSET, countProperty);
     }
 
     public IntegerProperty getCountProperty() {
@@ -165,11 +165,6 @@ public class DrinkBlock extends HorizontalDirectionalBlock implements SimpleWate
     }
 
     @Override
-    public @Nullable BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new DrinkBlockEntity(pos, state);
-    }
-
-    @Override
     public FluidState getFluidState(BlockState state) {
         return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
     }
@@ -184,17 +179,9 @@ public class DrinkBlock extends HorizontalDirectionalBlock implements SimpleWate
             count = this.shapes.length;
         }
         Direction direction = state.getValue(FACING);
-        int x = 2,y = 2;
-        if (level.getBlockEntity(pos) instanceof DrinkBlockEntity be) {
-            x = Mth.clamp(be.getXOffset() + 2, 0, 4);
-            y = Mth.clamp(be.getYOffset() + 2, 0, 4);
-        }
-        return this.shapes[count - 1][x][y].getOrDefault(direction, super.getShape(state, level, pos, context));
-    }
-
-    @Override
-    public RenderShape getRenderShape(BlockState state) {
-        return RenderShape.ENTITYBLOCK_ANIMATED;
+        int x = state.getValue(X_OFFSET);
+        int z = state.getValue(Z_OFFSET);
+        return this.shapes[count - 1][x][z].getOrDefault(direction, super.getShape(state, level, pos, context));
     }
 
     public VoxelShape getVisualShape(BlockState pState, BlockGetter pReader, BlockPos pPos, CollisionContext pContext) {

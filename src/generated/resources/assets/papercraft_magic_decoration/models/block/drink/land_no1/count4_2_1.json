@@ -1,0 +1,11 @@
+{
+  "parent": "papercraft_magic_decoration:block/drink/land_no1/count4",
+  "render_type": "minecraft:cutout",
+  "transform": {
+    "translation": [
+      -0.0,
+      0.0,
+      0.25
+    ]
+  }
+}

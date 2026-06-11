@@ -2,6 +2,7 @@ package com.kazi_cat.papercraft_magic_decoration.datagen.model;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.init.ModItems;
+import com.kazi_cat.papercraft_magic_decoration.init.registry.DrinkRegistry;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -31,23 +32,6 @@ public class ItemModelGenerator extends ItemModelProvider {
         basicItem(ModItems.BREADED_RAW_CHICKEN.get());
         basicItem(ModItems.FRIED_CHICKEN_LEG.get());
 
-        drinkItem(ModItems.BLAZE_WHISKEY.get());
-        drinkItem(ModItems.FERRY_WHISKEY.get());
-        drinkItem(ModItems.FLY_WHISKEY.get());
-        drinkItem(ModItems.LAND_NO1.get());
-        drinkItem(ModItems.LUCKY_CACTUS.get());
-        drinkItem(ModItems.POISON_RUM.get());
-        drinkItem(ModItems.BLOODY_MARY.get());
-        drinkItem(ModItems.DIPLOMATICO_COFFEE.get());
-        drinkItem(ModItems.DEVIL_MARGARITA.get());
-        drinkItem(ModItems.DIONYSUS.get());
-        drinkItem(ModItems.KALEIDOSCOPE_WHISKEY_SOUR.get());
-        drinkItem(ModItems.LONG_ISLAND_POPSICLE_TEA.get());
-        drinkItem(ModItems.GUANG_S.get());
-
-        basicItem(ModItems.NOCTURNAL_CAT_COFFEE.get());
-        basicItem(ModItems.GOLD_MEDAL_COFFEE.get());
-        basicItem(ModItems.WHITE_RABBIT_MOCHA.get());
         basicItem(ModItems.BOTTLE_OF_BLAZE_WHISKEY.get());
         basicItem(ModItems.BOTTLE_OF_FERRY_WHISKEY.get());
         basicItem(ModItems.BOTTLE_OF_FLY_WHISKEY.get());
@@ -80,6 +64,16 @@ public class ItemModelGenerator extends ItemModelProvider {
         withExistingParent("yellow_paper_block", modLoc("block/yellow_paper_block"));
         withExistingParent("dewy_membrane_block", modLoc("block/dewy_membrane_block"));
         withExistingParent("cotton_serge_block", modLoc("block/cotton_serge_block"));
+
+        DrinkRegistry.DRINK_DATA_MAP.forEach((key, data) -> {
+            Item item = ForgeRegistries.ITEMS.getValue(key);
+            if (item != null) {
+                switch (data.getItemModelType()) {
+                    case BASIC -> basicItem(item);
+                    case HANDHELD3D -> drinkItem(item);
+                }
+            }
+        });
     }
 
     public void handheldItem(ResourceLocation item) {

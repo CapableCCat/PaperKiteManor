@@ -1,63 +1,1503 @@
 {
   "variants": {
-    "count=0,facing=east,waterlogged=false": {
-      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count0",
+    "count=0,facing=east,waterlogged=false,x_offset=0,z_offset=0": {
+      "model": "minecraft:air",
       "y": 90
     },
-    "count=0,facing=east,waterlogged=true": {
-      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count0",
+    "count=0,facing=east,waterlogged=false,x_offset=0,z_offset=1": {
+      "model": "minecraft:air",
       "y": 90
     },
-    "count=0,facing=north,waterlogged=false": {
-      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count0"
+    "count=0,facing=east,waterlogged=false,x_offset=0,z_offset=2": {
+      "model": "minecraft:air",
+      "y": 90
     },
-    "count=0,facing=north,waterlogged=true": {
-      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count0"
+    "count=0,facing=east,waterlogged=false,x_offset=0,z_offset=3": {
+      "model": "minecraft:air",
+      "y": 90
     },
-    "count=0,facing=south,waterlogged=false": {
-      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count0",
+    "count=0,facing=east,waterlogged=false,x_offset=0,z_offset=4": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=false,x_offset=1,z_offset=0": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=false,x_offset=1,z_offset=1": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=false,x_offset=1,z_offset=2": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=false,x_offset=1,z_offset=3": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=false,x_offset=1,z_offset=4": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=false,x_offset=2,z_offset=0": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=false,x_offset=2,z_offset=1": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=false,x_offset=2,z_offset=2": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=false,x_offset=2,z_offset=3": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=false,x_offset=2,z_offset=4": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=false,x_offset=3,z_offset=0": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=false,x_offset=3,z_offset=1": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=false,x_offset=3,z_offset=2": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=false,x_offset=3,z_offset=3": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=false,x_offset=3,z_offset=4": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=false,x_offset=4,z_offset=0": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=false,x_offset=4,z_offset=1": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=false,x_offset=4,z_offset=2": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=false,x_offset=4,z_offset=3": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=false,x_offset=4,z_offset=4": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=true,x_offset=0,z_offset=0": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=true,x_offset=0,z_offset=1": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=true,x_offset=0,z_offset=2": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=true,x_offset=0,z_offset=3": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=true,x_offset=0,z_offset=4": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=true,x_offset=1,z_offset=0": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=true,x_offset=1,z_offset=1": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=true,x_offset=1,z_offset=2": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=true,x_offset=1,z_offset=3": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=true,x_offset=1,z_offset=4": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=true,x_offset=2,z_offset=0": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=true,x_offset=2,z_offset=1": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=true,x_offset=2,z_offset=2": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=true,x_offset=2,z_offset=3": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=true,x_offset=2,z_offset=4": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=true,x_offset=3,z_offset=0": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=true,x_offset=3,z_offset=1": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=true,x_offset=3,z_offset=2": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=true,x_offset=3,z_offset=3": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=true,x_offset=3,z_offset=4": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=true,x_offset=4,z_offset=0": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=true,x_offset=4,z_offset=1": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=true,x_offset=4,z_offset=2": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=true,x_offset=4,z_offset=3": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=east,waterlogged=true,x_offset=4,z_offset=4": {
+      "model": "minecraft:air",
+      "y": 90
+    },
+    "count=0,facing=north,waterlogged=false,x_offset=0,z_offset=0": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=false,x_offset=0,z_offset=1": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=false,x_offset=0,z_offset=2": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=false,x_offset=0,z_offset=3": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=false,x_offset=0,z_offset=4": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=false,x_offset=1,z_offset=0": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=false,x_offset=1,z_offset=1": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=false,x_offset=1,z_offset=2": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=false,x_offset=1,z_offset=3": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=false,x_offset=1,z_offset=4": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=false,x_offset=2,z_offset=0": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=false,x_offset=2,z_offset=1": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=false,x_offset=2,z_offset=2": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=false,x_offset=2,z_offset=3": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=false,x_offset=2,z_offset=4": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=false,x_offset=3,z_offset=0": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=false,x_offset=3,z_offset=1": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=false,x_offset=3,z_offset=2": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=false,x_offset=3,z_offset=3": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=false,x_offset=3,z_offset=4": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=false,x_offset=4,z_offset=0": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=false,x_offset=4,z_offset=1": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=false,x_offset=4,z_offset=2": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=false,x_offset=4,z_offset=3": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=false,x_offset=4,z_offset=4": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=true,x_offset=0,z_offset=0": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=true,x_offset=0,z_offset=1": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=true,x_offset=0,z_offset=2": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=true,x_offset=0,z_offset=3": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=true,x_offset=0,z_offset=4": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=true,x_offset=1,z_offset=0": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=true,x_offset=1,z_offset=1": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=true,x_offset=1,z_offset=2": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=true,x_offset=1,z_offset=3": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=true,x_offset=1,z_offset=4": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=true,x_offset=2,z_offset=0": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=true,x_offset=2,z_offset=1": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=true,x_offset=2,z_offset=2": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=true,x_offset=2,z_offset=3": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=true,x_offset=2,z_offset=4": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=true,x_offset=3,z_offset=0": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=true,x_offset=3,z_offset=1": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=true,x_offset=3,z_offset=2": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=true,x_offset=3,z_offset=3": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=true,x_offset=3,z_offset=4": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=true,x_offset=4,z_offset=0": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=true,x_offset=4,z_offset=1": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=true,x_offset=4,z_offset=2": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=true,x_offset=4,z_offset=3": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=north,waterlogged=true,x_offset=4,z_offset=4": {
+      "model": "minecraft:air"
+    },
+    "count=0,facing=south,waterlogged=false,x_offset=0,z_offset=0": {
+      "model": "minecraft:air",
       "y": 180
     },
-    "count=0,facing=south,waterlogged=true": {
-      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count0",
+    "count=0,facing=south,waterlogged=false,x_offset=0,z_offset=1": {
+      "model": "minecraft:air",
       "y": 180
     },
-    "count=0,facing=west,waterlogged=false": {
-      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count0",
+    "count=0,facing=south,waterlogged=false,x_offset=0,z_offset=2": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=false,x_offset=0,z_offset=3": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=false,x_offset=0,z_offset=4": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=false,x_offset=1,z_offset=0": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=false,x_offset=1,z_offset=1": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=false,x_offset=1,z_offset=2": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=false,x_offset=1,z_offset=3": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=false,x_offset=1,z_offset=4": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=false,x_offset=2,z_offset=0": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=false,x_offset=2,z_offset=1": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=false,x_offset=2,z_offset=2": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=false,x_offset=2,z_offset=3": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=false,x_offset=2,z_offset=4": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=false,x_offset=3,z_offset=0": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=false,x_offset=3,z_offset=1": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=false,x_offset=3,z_offset=2": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=false,x_offset=3,z_offset=3": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=false,x_offset=3,z_offset=4": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=false,x_offset=4,z_offset=0": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=false,x_offset=4,z_offset=1": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=false,x_offset=4,z_offset=2": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=false,x_offset=4,z_offset=3": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=false,x_offset=4,z_offset=4": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=true,x_offset=0,z_offset=0": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=true,x_offset=0,z_offset=1": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=true,x_offset=0,z_offset=2": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=true,x_offset=0,z_offset=3": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=true,x_offset=0,z_offset=4": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=true,x_offset=1,z_offset=0": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=true,x_offset=1,z_offset=1": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=true,x_offset=1,z_offset=2": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=true,x_offset=1,z_offset=3": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=true,x_offset=1,z_offset=4": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=true,x_offset=2,z_offset=0": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=true,x_offset=2,z_offset=1": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=true,x_offset=2,z_offset=2": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=true,x_offset=2,z_offset=3": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=true,x_offset=2,z_offset=4": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=true,x_offset=3,z_offset=0": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=true,x_offset=3,z_offset=1": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=true,x_offset=3,z_offset=2": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=true,x_offset=3,z_offset=3": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=true,x_offset=3,z_offset=4": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=true,x_offset=4,z_offset=0": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=true,x_offset=4,z_offset=1": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=true,x_offset=4,z_offset=2": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=true,x_offset=4,z_offset=3": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=south,waterlogged=true,x_offset=4,z_offset=4": {
+      "model": "minecraft:air",
+      "y": 180
+    },
+    "count=0,facing=west,waterlogged=false,x_offset=0,z_offset=0": {
+      "model": "minecraft:air",
       "y": 270
     },
-    "count=0,facing=west,waterlogged=true": {
-      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count0",
+    "count=0,facing=west,waterlogged=false,x_offset=0,z_offset=1": {
+      "model": "minecraft:air",
       "y": 270
     },
-    "count=1,facing=east,waterlogged=false": {
-      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1",
-      "y": 90
-    },
-    "count=1,facing=east,waterlogged=true": {
-      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1",
-      "y": 90
-    },
-    "count=1,facing=north,waterlogged=false": {
-      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1"
-    },
-    "count=1,facing=north,waterlogged=true": {
-      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1"
-    },
-    "count=1,facing=south,waterlogged=false": {
-      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1",
-      "y": 180
-    },
-    "count=1,facing=south,waterlogged=true": {
-      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1",
-      "y": 180
-    },
-    "count=1,facing=west,waterlogged=false": {
-      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1",
+    "count=0,facing=west,waterlogged=false,x_offset=0,z_offset=2": {
+      "model": "minecraft:air",
       "y": 270
     },
-    "count=1,facing=west,waterlogged=true": {
-      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1",
+    "count=0,facing=west,waterlogged=false,x_offset=0,z_offset=3": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=false,x_offset=0,z_offset=4": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=false,x_offset=1,z_offset=0": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=false,x_offset=1,z_offset=1": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=false,x_offset=1,z_offset=2": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=false,x_offset=1,z_offset=3": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=false,x_offset=1,z_offset=4": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=false,x_offset=2,z_offset=0": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=false,x_offset=2,z_offset=1": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=false,x_offset=2,z_offset=2": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=false,x_offset=2,z_offset=3": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=false,x_offset=2,z_offset=4": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=false,x_offset=3,z_offset=0": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=false,x_offset=3,z_offset=1": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=false,x_offset=3,z_offset=2": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=false,x_offset=3,z_offset=3": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=false,x_offset=3,z_offset=4": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=false,x_offset=4,z_offset=0": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=false,x_offset=4,z_offset=1": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=false,x_offset=4,z_offset=2": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=false,x_offset=4,z_offset=3": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=false,x_offset=4,z_offset=4": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=true,x_offset=0,z_offset=0": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=true,x_offset=0,z_offset=1": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=true,x_offset=0,z_offset=2": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=true,x_offset=0,z_offset=3": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=true,x_offset=0,z_offset=4": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=true,x_offset=1,z_offset=0": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=true,x_offset=1,z_offset=1": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=true,x_offset=1,z_offset=2": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=true,x_offset=1,z_offset=3": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=true,x_offset=1,z_offset=4": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=true,x_offset=2,z_offset=0": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=true,x_offset=2,z_offset=1": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=true,x_offset=2,z_offset=2": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=true,x_offset=2,z_offset=3": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=true,x_offset=2,z_offset=4": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=true,x_offset=3,z_offset=0": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=true,x_offset=3,z_offset=1": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=true,x_offset=3,z_offset=2": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=true,x_offset=3,z_offset=3": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=true,x_offset=3,z_offset=4": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=true,x_offset=4,z_offset=0": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=true,x_offset=4,z_offset=1": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=true,x_offset=4,z_offset=2": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=true,x_offset=4,z_offset=3": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=0,facing=west,waterlogged=true,x_offset=4,z_offset=4": {
+      "model": "minecraft:air",
+      "y": 270
+    },
+    "count=1,facing=east,waterlogged=false,x_offset=0,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_0",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=false,x_offset=0,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_1",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=false,x_offset=0,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_2",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=false,x_offset=0,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_3",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=false,x_offset=0,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_4",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=false,x_offset=1,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_0",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=false,x_offset=1,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_1",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=false,x_offset=1,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_2",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=false,x_offset=1,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_3",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=false,x_offset=1,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_4",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=false,x_offset=2,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_0",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=false,x_offset=2,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_1",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=false,x_offset=2,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_2",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=false,x_offset=2,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_3",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=false,x_offset=2,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_4",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=false,x_offset=3,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_0",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=false,x_offset=3,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_1",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=false,x_offset=3,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_2",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=false,x_offset=3,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_3",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=false,x_offset=3,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_4",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=false,x_offset=4,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_0",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=false,x_offset=4,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_1",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=false,x_offset=4,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_2",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=false,x_offset=4,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_3",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=false,x_offset=4,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_4",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=true,x_offset=0,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_0",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=true,x_offset=0,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_1",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=true,x_offset=0,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_2",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=true,x_offset=0,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_3",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=true,x_offset=0,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_4",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=true,x_offset=1,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_0",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=true,x_offset=1,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_1",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=true,x_offset=1,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_2",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=true,x_offset=1,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_3",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=true,x_offset=1,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_4",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=true,x_offset=2,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_0",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=true,x_offset=2,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_1",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=true,x_offset=2,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_2",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=true,x_offset=2,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_3",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=true,x_offset=2,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_4",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=true,x_offset=3,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_0",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=true,x_offset=3,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_1",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=true,x_offset=3,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_2",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=true,x_offset=3,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_3",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=true,x_offset=3,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_4",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=true,x_offset=4,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_0",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=true,x_offset=4,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_1",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=true,x_offset=4,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_2",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=true,x_offset=4,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_3",
+      "y": 90
+    },
+    "count=1,facing=east,waterlogged=true,x_offset=4,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_4",
+      "y": 90
+    },
+    "count=1,facing=north,waterlogged=false,x_offset=0,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_0"
+    },
+    "count=1,facing=north,waterlogged=false,x_offset=0,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_1"
+    },
+    "count=1,facing=north,waterlogged=false,x_offset=0,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_2"
+    },
+    "count=1,facing=north,waterlogged=false,x_offset=0,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_3"
+    },
+    "count=1,facing=north,waterlogged=false,x_offset=0,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_4"
+    },
+    "count=1,facing=north,waterlogged=false,x_offset=1,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_0"
+    },
+    "count=1,facing=north,waterlogged=false,x_offset=1,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_1"
+    },
+    "count=1,facing=north,waterlogged=false,x_offset=1,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_2"
+    },
+    "count=1,facing=north,waterlogged=false,x_offset=1,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_3"
+    },
+    "count=1,facing=north,waterlogged=false,x_offset=1,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_4"
+    },
+    "count=1,facing=north,waterlogged=false,x_offset=2,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_0"
+    },
+    "count=1,facing=north,waterlogged=false,x_offset=2,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_1"
+    },
+    "count=1,facing=north,waterlogged=false,x_offset=2,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_2"
+    },
+    "count=1,facing=north,waterlogged=false,x_offset=2,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_3"
+    },
+    "count=1,facing=north,waterlogged=false,x_offset=2,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_4"
+    },
+    "count=1,facing=north,waterlogged=false,x_offset=3,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_0"
+    },
+    "count=1,facing=north,waterlogged=false,x_offset=3,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_1"
+    },
+    "count=1,facing=north,waterlogged=false,x_offset=3,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_2"
+    },
+    "count=1,facing=north,waterlogged=false,x_offset=3,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_3"
+    },
+    "count=1,facing=north,waterlogged=false,x_offset=3,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_4"
+    },
+    "count=1,facing=north,waterlogged=false,x_offset=4,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_0"
+    },
+    "count=1,facing=north,waterlogged=false,x_offset=4,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_1"
+    },
+    "count=1,facing=north,waterlogged=false,x_offset=4,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_2"
+    },
+    "count=1,facing=north,waterlogged=false,x_offset=4,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_3"
+    },
+    "count=1,facing=north,waterlogged=false,x_offset=4,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_4"
+    },
+    "count=1,facing=north,waterlogged=true,x_offset=0,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_0"
+    },
+    "count=1,facing=north,waterlogged=true,x_offset=0,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_1"
+    },
+    "count=1,facing=north,waterlogged=true,x_offset=0,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_2"
+    },
+    "count=1,facing=north,waterlogged=true,x_offset=0,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_3"
+    },
+    "count=1,facing=north,waterlogged=true,x_offset=0,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_4"
+    },
+    "count=1,facing=north,waterlogged=true,x_offset=1,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_0"
+    },
+    "count=1,facing=north,waterlogged=true,x_offset=1,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_1"
+    },
+    "count=1,facing=north,waterlogged=true,x_offset=1,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_2"
+    },
+    "count=1,facing=north,waterlogged=true,x_offset=1,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_3"
+    },
+    "count=1,facing=north,waterlogged=true,x_offset=1,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_4"
+    },
+    "count=1,facing=north,waterlogged=true,x_offset=2,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_0"
+    },
+    "count=1,facing=north,waterlogged=true,x_offset=2,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_1"
+    },
+    "count=1,facing=north,waterlogged=true,x_offset=2,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_2"
+    },
+    "count=1,facing=north,waterlogged=true,x_offset=2,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_3"
+    },
+    "count=1,facing=north,waterlogged=true,x_offset=2,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_4"
+    },
+    "count=1,facing=north,waterlogged=true,x_offset=3,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_0"
+    },
+    "count=1,facing=north,waterlogged=true,x_offset=3,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_1"
+    },
+    "count=1,facing=north,waterlogged=true,x_offset=3,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_2"
+    },
+    "count=1,facing=north,waterlogged=true,x_offset=3,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_3"
+    },
+    "count=1,facing=north,waterlogged=true,x_offset=3,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_4"
+    },
+    "count=1,facing=north,waterlogged=true,x_offset=4,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_0"
+    },
+    "count=1,facing=north,waterlogged=true,x_offset=4,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_1"
+    },
+    "count=1,facing=north,waterlogged=true,x_offset=4,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_2"
+    },
+    "count=1,facing=north,waterlogged=true,x_offset=4,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_3"
+    },
+    "count=1,facing=north,waterlogged=true,x_offset=4,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_4"
+    },
+    "count=1,facing=south,waterlogged=false,x_offset=0,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_0",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=false,x_offset=0,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_1",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=false,x_offset=0,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_2",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=false,x_offset=0,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_3",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=false,x_offset=0,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_4",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=false,x_offset=1,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_0",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=false,x_offset=1,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_1",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=false,x_offset=1,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_2",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=false,x_offset=1,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_3",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=false,x_offset=1,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_4",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=false,x_offset=2,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_0",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=false,x_offset=2,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_1",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=false,x_offset=2,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_2",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=false,x_offset=2,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_3",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=false,x_offset=2,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_4",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=false,x_offset=3,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_0",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=false,x_offset=3,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_1",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=false,x_offset=3,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_2",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=false,x_offset=3,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_3",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=false,x_offset=3,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_4",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=false,x_offset=4,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_0",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=false,x_offset=4,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_1",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=false,x_offset=4,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_2",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=false,x_offset=4,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_3",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=false,x_offset=4,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_4",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=true,x_offset=0,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_0",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=true,x_offset=0,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_1",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=true,x_offset=0,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_2",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=true,x_offset=0,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_3",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=true,x_offset=0,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_4",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=true,x_offset=1,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_0",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=true,x_offset=1,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_1",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=true,x_offset=1,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_2",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=true,x_offset=1,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_3",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=true,x_offset=1,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_4",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=true,x_offset=2,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_0",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=true,x_offset=2,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_1",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=true,x_offset=2,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_2",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=true,x_offset=2,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_3",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=true,x_offset=2,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_4",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=true,x_offset=3,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_0",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=true,x_offset=3,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_1",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=true,x_offset=3,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_2",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=true,x_offset=3,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_3",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=true,x_offset=3,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_4",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=true,x_offset=4,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_0",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=true,x_offset=4,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_1",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=true,x_offset=4,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_2",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=true,x_offset=4,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_3",
+      "y": 180
+    },
+    "count=1,facing=south,waterlogged=true,x_offset=4,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_4",
+      "y": 180
+    },
+    "count=1,facing=west,waterlogged=false,x_offset=0,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_0",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=false,x_offset=0,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_1",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=false,x_offset=0,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_2",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=false,x_offset=0,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_3",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=false,x_offset=0,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_4",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=false,x_offset=1,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_0",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=false,x_offset=1,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_1",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=false,x_offset=1,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_2",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=false,x_offset=1,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_3",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=false,x_offset=1,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_4",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=false,x_offset=2,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_0",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=false,x_offset=2,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_1",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=false,x_offset=2,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_2",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=false,x_offset=2,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_3",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=false,x_offset=2,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_4",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=false,x_offset=3,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_0",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=false,x_offset=3,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_1",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=false,x_offset=3,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_2",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=false,x_offset=3,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_3",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=false,x_offset=3,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_4",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=false,x_offset=4,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_0",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=false,x_offset=4,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_1",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=false,x_offset=4,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_2",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=false,x_offset=4,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_3",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=false,x_offset=4,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_4",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=true,x_offset=0,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_0",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=true,x_offset=0,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_1",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=true,x_offset=0,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_2",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=true,x_offset=0,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_3",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=true,x_offset=0,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_0_4",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=true,x_offset=1,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_0",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=true,x_offset=1,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_1",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=true,x_offset=1,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_2",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=true,x_offset=1,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_3",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=true,x_offset=1,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_1_4",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=true,x_offset=2,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_0",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=true,x_offset=2,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_1",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=true,x_offset=2,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_2",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=true,x_offset=2,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_3",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=true,x_offset=2,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_2_4",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=true,x_offset=3,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_0",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=true,x_offset=3,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_1",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=true,x_offset=3,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_2",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=true,x_offset=3,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_3",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=true,x_offset=3,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_3_4",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=true,x_offset=4,z_offset=0": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_0",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=true,x_offset=4,z_offset=1": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_1",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=true,x_offset=4,z_offset=2": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_2",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=true,x_offset=4,z_offset=3": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_3",
+      "y": 270
+    },
+    "count=1,facing=west,waterlogged=true,x_offset=4,z_offset=4": {
+      "model": "papercraft_magic_decoration:block/drink/nocturnal_cat_coffee/count1_4_4",
       "y": 270
     }
   }

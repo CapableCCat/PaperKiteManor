@@ -31,6 +31,8 @@ public class BoxedDrinkBlock extends DrinkBlock {
                 .setValue(countProperty, 1)
                 .setValue(FACING, Direction.NORTH)
                 .setValue(WATERLOGGED, false)
+                .setValue(X_OFFSET, 2)
+                .setValue(Z_OFFSET, 2)
                 .setValue(BOXED, false));
     }
 
@@ -55,6 +57,6 @@ public class BoxedDrinkBlock extends DrinkBlock {
     }
 
     protected void createBoxedBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING, BOXED, WATERLOGGED, countProperty);
+        builder.add(FACING, BOXED, WATERLOGGED, X_OFFSET, Z_OFFSET, countProperty);
     }
 }
