@@ -54,6 +54,9 @@ public class BlockGeoModelGenerator implements DataProvider {
     }
 
     private void addMappings() {
+        simple(ModBlocks.PAPER_CUTTING_TABLE);
+
+        // 狼牙棒火腿肠
         ModelData sausage = ModelData.simple("0", "sausage_mace_weapon");
         ModelData rawSausage = ModelData.simple("1", "sausage_mace_weapon", "raw_sausage_mace_weapon", "sausage_mace_weapon");
         ModelData sausageFloor = ModelData.simple("2", "sausage_mace_weapon_floor", "sausage_mace_weapon", "sausage_mace_weapon");
@@ -70,6 +73,7 @@ public class BlockGeoModelGenerator implements DataProvider {
             };
         }));
 
+        // 漫画肉
         ModelData rawMangaMeat = ModelData.simple("0", "manga_meat", "raw_manga_meat_grill", "manga_meat_grill");
         ModelData mangaMeat = ModelData.simple("1", "manga_meat", "manga_meat_grill", "manga_meat_grill");
         ModelData rawMangaMeatGrill = ModelData.simple("2", "manga_meat_grill", "raw_manga_meat_grill", "manga_meat_grill");
@@ -79,6 +83,15 @@ public class BlockGeoModelGenerator implements DataProvider {
             boolean hasBase = state.getValue(MangaMeatBlock.HAS_BASE);
             return cooked ? (hasBase ? mangaMeatGrill : mangaMeat) : (hasBase ? rawMangaMeatGrill : rawMangaMeat);
         }));
+    }
+
+    public void simple(RegistryObject<Block> block) {
+        var blockKey = ForgeRegistries.BLOCKS.getKey(block.get());
+        if (blockKey == null) {
+            throw new IllegalArgumentException("Block not registered: " + block.getId());
+        }
+        MappingBuilder builder = MappingBuilder.simple(block.get(), ModelData.simple("0", blockKey.getPath()));
+        this.add(blockKey.getPath(), builder);
     }
 
     public void smeltable(RegistryObject<Block> block, ModelData raw, ModelData cooked) {

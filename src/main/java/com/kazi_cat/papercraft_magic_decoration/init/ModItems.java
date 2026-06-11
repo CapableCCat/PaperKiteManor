@@ -71,4 +71,7 @@ public interface ModItems {
 
     // 紫水晶剪刀
     RegistryObject<Item> AMETHYST_SCISSORS = ITEMS.register("amethyst_scissors", () -> new AmethystScissorsItem(new Item.Properties().durability(250)));
+
+    // 剪纸台
+    RegistryObject<Item> PAPER_CUTTING_TABLE = ITEMS.register("paper_cutting_table", () -> new GeoBlockItem(ModBlocks.PAPER_CUTTING_TABLE.get(), new Item.Properties()));
 }

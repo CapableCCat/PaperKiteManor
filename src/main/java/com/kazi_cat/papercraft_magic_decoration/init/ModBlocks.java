@@ -7,8 +7,10 @@ import com.kazi_cat.papercraft_magic_decoration.block.decoration.PickableDecorat
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.VariantDecorationBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.BottleDrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.smeltable.*;
+import com.kazi_cat.papercraft_magic_decoration.block.utility.PaperCuttingTableBlock;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.AnimatedSmeltableBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.ChocolateInMoldBlockEntity;
+import com.kazi_cat.papercraft_magic_decoration.blockentity.PaperCuttingTableBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.SmeltableBlockEntity;
 import com.kazi_cat.papercraft_magic_decoration.init.registry.DrinkRegistry;
 import net.minecraft.core.BlockPos;
@@ -239,6 +241,11 @@ public interface ModBlocks {
                     .mapColor(MapColor.SNOW)
                     .sound(SoundType.SNOW)
                     .instabreak()));
+
+    // 剪纸台
+    RegistryObject<Block> PAPER_CUTTING_TABLE = BLOCKS.register("paper_cutting_table", PaperCuttingTableBlock::new);
+
+    RegistryObject<BlockEntityType<PaperCuttingTableBlockEntity>> PAPER_CUTTING_TABLE_BE = BLOCK_ENTITIES.register("paper_cutting_table", () -> BlockEntityType.Builder.of(PaperCuttingTableBlockEntity::new, PAPER_CUTTING_TABLE.get()).build(null));
 
     // 装饰方块
     RegistryObject<Block> TRAY_BLOCK = BLOCKS.register("tray", () -> new VariantDecorationBlock(

@@ -74,6 +74,7 @@ public class ItemModelGenerator extends ItemModelProvider {
         withExistingParent("yellow_paper_block", modLoc("block/yellow_paper_block"));
         withExistingParent("dewy_membrane_block", modLoc("block/dewy_membrane_block"));
         withExistingParent("cotton_serge_block", modLoc("block/cotton_serge_block"));
+        withExistingParent("paper_cutting_table", modLoc("displaysettings/paper_cutting_table"));
 
         DrinkRegistry.DRINK_DATA_MAP.forEach((key, data) -> {
             Item item = ForgeRegistries.ITEMS.getValue(key);

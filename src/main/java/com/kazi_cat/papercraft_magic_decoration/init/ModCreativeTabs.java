@@ -34,6 +34,9 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.RED_PAPER_BLOCK.get());
                 output.accept(ModItems.WHITE_PAPER_BLOCK.get());
                 output.accept(ModItems.YELLOW_PAPER_BLOCK.get());
+
+                output.accept(ModItems.AMETHYST_SCISSORS.get());
+                output.accept(ModItems.PAPER_CUTTING_TABLE.get());
             }).build());
 
     RegistryObject<CreativeModeTab> MANOR_FOOD_TAB = TABS.register("manor_food", () -> CreativeModeTab.builder()
