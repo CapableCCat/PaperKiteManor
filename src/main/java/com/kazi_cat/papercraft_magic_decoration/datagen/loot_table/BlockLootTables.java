@@ -102,7 +102,7 @@ public class BlockLootTables extends BlockLootSubProvider {
         LootTable.Builder lootTable = LootTable.lootTable();
         LootPool.Builder rolls = LootPool.lootPool().setRolls(exactly).when(ExplosionCondition.survivesExplosion());
         rolls.add(LootItem.lootTableItem(block.asItem()).when(builder).otherwise(LootItem.lootTableItem(chocolate.getChocolate().get())));
-        LootPool.Builder rolls1 = LootPool.lootPool().setRolls(exactly).when(ExplosionCondition.survivesExplosion());;
+        LootPool.Builder rolls1 = LootPool.lootPool().setRolls(exactly).when(ExplosionCondition.survivesExplosion());
         rolls1.add(EmptyLootItem.emptyItem().when(builder).otherwise(LootItem.lootTableItem(Items.BUCKET)));
         lootTable.withPool(rolls);
         lootTable.withPool(rolls1);

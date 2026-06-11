@@ -98,33 +98,33 @@ public interface ModFoods {
 
     FoodProperties DEVIL_MARGARITA = (new FoodProperties.Builder())
             .nutrition(1).saturationMod(0.5f)
-            //.effect(() -> new MobEffectInstance(ModEffects.BLOODTHIRSTY_DEVIL.get(), 1200, 0), 1)
+            .effect(() -> new MobEffectInstance(ModEffects.BLOODTHIRSTY_DEVIL.get(), 1200, 0), 1)
             .alwaysEat().build();
 
     FoodProperties DIONYSUS = (new FoodProperties.Builder())
             .nutrition(1).saturationMod(0.5f)
-            //.effect(() -> new MobEffectInstance(ModEffects.WINES_AROMA.get(), 2400, 0), 1)
+            .effect(() -> new MobEffectInstance(ModEffects.WINES_AROMA.get(), 2400, 0), 1)
             .alwaysEat().build();
 
     FoodProperties KALEIDOSCOPE_WHISKEY_SOUR = (new FoodProperties.Builder())
             .nutrition(1).saturationMod(0.5f)
-            //.effect(() -> new MobEffectInstance(ModEffects.ACID_JAZZ.get(), 2400, 0), 1)
+            .effect(() -> new MobEffectInstance(ModEffects.ACID_JAZZ.get(), 2400, 0), 1)
             .alwaysEat().build();
 
     FoodProperties LONG_ISLAND_POPSICLE_TEA = (new FoodProperties.Builder())
             .nutrition(1).saturationMod(0.5f)
-            //.effect(() -> new MobEffectInstance(ModEffects.DOUBLE_ICE_SHOCK.get(), 2400, 0), 1)
+            .effect(() -> new MobEffectInstance(ModEffects.DOUBLE_ICE_SHOCK.get(), 2400, 0), 1)
             .alwaysEat().build();
 
     FoodProperties NOCTURNAL_CAT_COFFEE = (new FoodProperties.Builder())
             .nutrition(1).saturationMod(0.5f)
-            //.effect(() -> new MobEffectInstance(ModEffects.CAT_EYE.get(), 6000, 0), 1)
+            .effect(() -> new MobEffectInstance(ModEffects.CAT_EYE.get(), 6000, 0), 1)
             .effect(() -> new MobEffectInstance(MobEffects.NIGHT_VISION, 6000, 0), 1)
             .alwaysEat().build();
 
     FoodProperties GOLD_MEDAL_COFFEE = (new FoodProperties.Builder())
             .nutrition(1).saturationMod(0.5f)
-            //.effect(() -> new MobEffectInstance(ModEffects.CAT_EYE.get(), 6000, 0), 1)
+            .effect(() -> new MobEffectInstance(ModEffects.CAT_EYE.get(), 6000, 0), 1)
             .effect(() -> new MobEffectInstance(MobEffects.NIGHT_VISION, 6000, 0), 1)
             .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 400, 1), 1)
             .effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 6000, 0), 1)
@@ -135,7 +135,7 @@ public interface ModFoods {
     FoodProperties WHITE_RABBIT_MOCHA = (new FoodProperties.Builder())
             .nutrition(1).saturationMod(0.5f)
             .effect(() -> new MobEffectInstance(MobEffects.JUMP, 6000, 0), 1)
-            //.effect(() -> new MobEffectInstance(ModEffects.LOVE_BAND_AID.get(), 6000, 0), 1)
+            .effect(() -> new MobEffectInstance(ModEffects.LOVE_BAND_AID.get(), 6000, 0), 1)
             .alwaysEat().build();
 
     FoodProperties GUANG_S = (new FoodProperties.Builder())
@@ -146,7 +146,7 @@ public interface ModFoods {
 
     FoodProperties TRUFFLE_CHOCOLATE = (new FoodProperties.Builder())
             .nutrition(4).saturationMod(1)
-            //.effect(() -> new MobEffectInstance(ModEffects.SILKY_FEEL.get(), 3600), 1)
+            .effect(() -> new MobEffectInstance(ModEffects.SILKY_FEEL.get(), 3600), 1)
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3600, 1), 1)
             .alwaysEat().build();
 
@@ -157,6 +157,6 @@ public interface ModFoods {
 
     FoodProperties PRALINE_CHOCOLATE = (new FoodProperties.Builder())
             .nutrition(4).saturationMod(1)
-            //.effect(() -> new MobEffectInstance(ModEffects.SKY_TRACTION.get(), 6000, 0), 1)
+            .effect(() -> new MobEffectInstance(ModEffects.SKY_TRACTION.get(), 6000, 0), 1)
             .alwaysEat().build();
 }
