@@ -17,9 +17,10 @@ public interface ModCreativeTabs {
 
     RegistryObject<CreativeModeTab> MANOR_MAIN_TAB = TABS.register("manor_main", () -> CreativeModeTab.builder()
             .title(Component.translatable("item_group.papercraft_magic_decoration.manor_main.name"))
-            .icon(ModItems.DEWY_MEMBRANE.get()::getDefaultInstance)
+            .icon(ModItems.AMETHYST_SCISSORS.get()::getDefaultInstance)
             .displayItems((par, output) -> {
                 output.accept(ModItems.AMETHYST_SCISSORS.get());
+                output.accept(ModItems.GARDEN_TROWEL.get());
 
                 output.accept(ModItems.PAPER_CUTTING_TABLE.get());
                 output.accept(ModItems.COPPER_BARTENDER.get());
@@ -91,10 +92,10 @@ public interface ModCreativeTabs {
                 output.accept(chocolateBox);
             }).build());
 
-//    RegistryObject<CreativeModeTab> MANOR_DECORATION_TAB = TABS.register("manor_decoration", () -> CreativeModeTab.builder()
-//            .title(Component.translatable("item_group.papercraft_magic_decoration.manor_decoration.name"))
-//            .icon(ModItems.ROSES_IN_WATER_BOTTLE.get()::getDefaultInstance)
-//            .displayItems((par, output) -> {
-//
-//            }).build());
+    RegistryObject<CreativeModeTab> MANOR_DECORATION_TAB = TABS.register("manor_decoration", () -> CreativeModeTab.builder()
+            .title(Component.translatable("item_group.papercraft_magic_decoration.manor_decoration.name"))
+            .icon(ModItems.KAZI_LUCKY_CAT.get()::getDefaultInstance)
+            .displayItems((par, output) -> {
+                output.accept(ModItems.KAZI_LUCKY_CAT.get());
+            }).build());
 }

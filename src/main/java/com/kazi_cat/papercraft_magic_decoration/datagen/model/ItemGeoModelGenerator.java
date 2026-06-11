@@ -39,6 +39,7 @@ public class ItemGeoModelGenerator implements DataProvider {
     private void addMappings() {
         simple(ModItems.PAPER_CUTTING_TABLE);
         simple(ModItems.COPPER_BARTENDER);
+        simple(ModItems.KAZI_LUCKY_CAT);
 
         // 狼牙棒火腿肠
         simple(ModItems.SAUSAGE_MACE_WEAPON);

@@ -5,6 +5,7 @@ import com.kazi_cat.papercraft_magic_decoration.item.*;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.Tiers;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -81,4 +82,10 @@ public interface ModItems {
     // 基础素材
     RegistryObject<Item> VITALITY_SPORES = ITEMS.register("vitality_spores", () -> new Item(new Item.Properties()));
     RegistryObject<Item> WHISKEY_RAW = ITEMS.register("whiskey_raw", () -> new Item(new Item.Properties()));
+
+    // 园丁铲
+    RegistryObject<Item> GARDEN_TROWEL = ITEMS.register("garden_trowel", () -> new GardenTrowelItem(Tiers.IRON, 0, -2.4F, new Item.Properties().durability(50)));
+
+    // 咔吱招财猫
+    RegistryObject<Item> KAZI_LUCKY_CAT = ITEMS.register("kazi_lucky_cat", () -> new GeoBlockItem(ModBlocks.KAZI_LUCKY_CAT.get(), new Item.Properties()));
 }

@@ -59,6 +59,8 @@ public class ItemModelGenerator extends ItemModelProvider {
         basicItem(ModItems.WHISKEY_RAW.get());
         basicItem(ModItems.VITALITY_SPORES.get());
 
+        handheldItem(ModItems.GARDEN_TROWEL.get());
+
         withExistingParent("sausage_mace_weapon", modLoc("displaysettings/sausage_mace_weapon"))
                 .texture("layer0", "papercraft_magic_decoration:block/sausage_mace_weapon");
         withExistingParent("raw_sausage_mace_weapon", modLoc("displaysettings/sausage_mace_weapon"))
@@ -78,6 +80,7 @@ public class ItemModelGenerator extends ItemModelProvider {
         withExistingParent("cotton_serge_block", modLoc("block/cotton_serge_block"));
         withExistingParent("paper_cutting_table", modLoc("displaysettings/paper_cutting_table"));
         withExistingParent("copper_bartender", modLoc("displaysettings/copper_bartender"));
+        withExistingParent("kazi_lucky_cat", modLoc("displaysettings/kazi_lucky_cat"));
 
         DrinkRegistry.DRINK_DATA_MAP.forEach((key, data) -> {
             Item item = ForgeRegistries.ITEMS.getValue(key);
@@ -90,10 +93,14 @@ public class ItemModelGenerator extends ItemModelProvider {
         });
     }
 
-    public void handheldItem(ResourceLocation item) {
-        getBuilder(item.toString())
+    public void handheldItem(Item item) {
+        ResourceLocation itemKey = ForgeRegistries.ITEMS.getKey(item);
+        if (itemKey == null) {
+            throw new IllegalArgumentException("Item not registered: " + Item.getId(item));
+        }
+        getBuilder(itemKey.toString())
                 .parent(new ModelFile.UncheckedModelFile("item/handheld"))
-                .texture("layer0", new ResourceLocation(item.getNamespace(), "item/" + item.getPath()));
+                .texture("layer0", new ResourceLocation(itemKey.getNamespace(), "item/" + itemKey.getPath()));
     }
 
     public void drinkItem(Item item) {

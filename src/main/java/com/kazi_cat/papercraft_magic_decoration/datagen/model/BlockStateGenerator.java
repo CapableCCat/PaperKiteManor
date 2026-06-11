@@ -34,6 +34,7 @@ public class BlockStateGenerator extends BlockStateProvider {
         simpleBlock(ModBlocks.YELLOW_PAPER_BLOCK.get());
         simpleBlock(ModBlocks.COTTON_SERGE_BLOCK.get());
         simpleBlock(ModBlocks.DEWY_MEMBRANE_BLOCK.get(), new ModelFile.UncheckedModelFile(modLoc("block/dewy_membrane_block")));
+        simpleBlock(ModBlocks.DIRT_HOLE.get(), new ModelFile.UncheckedModelFile(modLoc("block/dirt_hole")));
 
         smeltable(ModBlocks.SAUSAGE_MACE_WEAPON_BLOCK.get(), "sausage_mace_weapon");
         smeltable(ModBlocks.MANGA_MEAT.get(), "manga_meat");
@@ -44,6 +45,7 @@ public class BlockStateGenerator extends BlockStateProvider {
 
         variant(ModBlocks.TRAY_BLOCK.get(), "tray", ((VariantDecorationBlock) ModBlocks.TRAY_BLOCK.get()).getVariantProperty());
 
+        horizontalBlock(ModBlocks.KAZI_LUCKY_CAT.get(), new ModelFile.UncheckedModelFile(modLoc("block/kazi_lucky_cat")));
         horizontalBlock(ModBlocks.PAPER_CUTTING_TABLE.get(), new ModelFile.UncheckedModelFile(modLoc("block/paper_cutting_table")));
         horizontalBlock(ModBlocks.COPPER_BARTENDER.get(), new ModelFile.UncheckedModelFile(modLoc("block/copper_bartender")));
         horizontalBlock(ModBlocks.BUCKET_OF_FRIED_CHICKEN.get(), new ModelFile.UncheckedModelFile(modLoc("block/bucket_of_fried_chicken")));

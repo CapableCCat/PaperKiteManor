@@ -3,9 +3,11 @@ package com.kazi_cat.papercraft_magic_decoration.init;
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.block.chocolate.ChocolateInMoldBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.chocolate.OversizedBoxOfChocolatesBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.decoration.KaziLuckyCatBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.PickableDecorationBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.VariantDecorationBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.BottleDrinkBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.misc.DirtHoleBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.smeltable.*;
 import com.kazi_cat.papercraft_magic_decoration.block.utility.CopperBartenderBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.utility.PaperCuttingTableBlock;
@@ -257,6 +259,14 @@ public interface ModBlocks {
                     .noOcclusion()
                     .noLootTable(),
             Block.box(0, 0, 0, 16, 2, 16), 2));
+
+    RegistryObject<Block> DIRT_HOLE = BLOCKS.register("dirt_hole", DirtHoleBlock::new);
+
+    RegistryObject<BlockEntityType<DirtHoleBlockEntity>> DIRT_HOLE_BE = BLOCK_ENTITIES.register("dirt_hole", () -> BlockEntityType.Builder.of(DirtHoleBlockEntity::new, DIRT_HOLE.get()).build(null));
+
+    RegistryObject<Block> KAZI_LUCKY_CAT = BLOCKS.register("kazi_lucky_cat", KaziLuckyCatBlock::new);
+
+    RegistryObject<BlockEntityType<KaziLuckyCatBlockEntity>> KAZI_LUCKY_CAT_BE = BLOCK_ENTITIES.register("kazi_lucky_cat", () -> BlockEntityType.Builder.of(KaziLuckyCatBlockEntity::new, KAZI_LUCKY_CAT.get()).build(null));
 
     private static boolean never(BlockState state, BlockGetter getter, BlockPos pos) {
         return false;

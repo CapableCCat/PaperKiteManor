@@ -1,0 +1,5 @@
+{
+  "model": "papercraft_magic_decoration:geo/kazi_lucky_cat.geo.json",
+  "texture": "papercraft_magic_decoration:textures/block/kazi_lucky_cat.png",
+  "animation": "papercraft_magic_decoration:kazi_lucky_cat.animation.json"
+}

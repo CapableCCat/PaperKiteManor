@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=east,part=0,waterlogged=false": "0",
+    "facing=east,part=0,waterlogged=true": "0",
+    "facing=east,part=1,waterlogged=false": "0",
+    "facing=east,part=1,waterlogged=true": "0",
+    "facing=north,part=0,waterlogged=false": "0",
+    "facing=north,part=0,waterlogged=true": "0",
+    "facing=north,part=1,waterlogged=false": "0",
+    "facing=north,part=1,waterlogged=true": "0",
+    "facing=south,part=0,waterlogged=false": "0",
+    "facing=south,part=0,waterlogged=true": "0",
+    "facing=south,part=1,waterlogged=false": "0",
+    "facing=south,part=1,waterlogged=true": "0",
+    "facing=west,part=0,waterlogged=false": "0",
+    "facing=west,part=0,waterlogged=true": "0",
+    "facing=west,part=1,waterlogged=false": "0",
+    "facing=west,part=1,waterlogged=true": "0"
+  },
+  "models": {
+    "0": {
+      "model": "papercraft_magic_decoration:geo/kazi_lucky_cat.geo.json",
+      "texture": "papercraft_magic_decoration:textures/block/kazi_lucky_cat.png",
+      "animation": "papercraft_magic_decoration:animations/kazi_lucky_cat.animation.json"
+    }
+  }
+}
