@@ -47,6 +47,10 @@ public class TagBlock extends BlockTagsProvider {
                         ModBlocks.WINE_AROMA_RED_WALLPAPER_WALL.get(), ModBlocks.WINE_AROMA_BLUE_WALLPAPER_WALL.get(),
                         ModBlocks.UNDERGROUND_WALLPAPER_WALL.get(), ModBlocks.RUSTIC_BLUE_WALLPAPER_WALL.get(),
                         ModBlocks.UNDERGROUND_PANELLING.get(), ModBlocks.RUSTIC_PANELLING.get(),
-                        ModBlocks.UNDERGROUND_DOOR_FRAMES.get(), ModBlocks.STAR_EMBELLISHED_CEILING.get());
+                        ModBlocks.UNDERGROUND_DOOR_FRAMES.get(), ModBlocks.STAR_EMBELLISHED_CEILING.get(),
+                        ModBlocks.LOW_CABINET_WITH_TABLECLOTH.get(), ModBlocks.WOODEN_BARREL_BOOKSHELF.get(),
+                        ModBlocks.WOODWORKING_TABLE.get(), ModBlocks.LONG_STORAGE_TABLE.get(),
+                        ModBlocks.EDGED_CHALKBOARD.get(), ModBlocks.CUPBOARD.get(),
+                        ModBlocks.FIREPLACE_DECORATION.get());
     }
 }

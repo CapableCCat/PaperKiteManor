@@ -1,0 +1,5 @@
+{
+  "model": "papercraft_magic_decoration:geo/loud_button.geo.json",
+  "texture": "papercraft_magic_decoration:textures/block/loud_button.png",
+  "animation": "papercraft_magic_decoration:loud_button.animation.json"
+}

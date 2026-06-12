@@ -1,6 +1,7 @@
 package com.kazi_cat.papercraft_magic_decoration.blockentity;
 
 import com.kazi_cat.papercraft_magic_decoration.api.block.ICustomRenderBoundingBox;
+import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -20,9 +21,9 @@ public class SimpleAnimatedBlockEntity extends BaseBlockEntity implements GeoBlo
         super(entityType, pos, state);
     }
 
-//    public SimpleAnimatedBlockEntity(BlockPos pos, BlockState state) {
-//        super(ModBlocks.ANIMATED_BE.get(), pos, state);
-//    }
+    public SimpleAnimatedBlockEntity(BlockPos pos, BlockState state) {
+        super(ModBlocks.SIMPLE_ANIMATED_BE.get(), pos, state);
+    }
 
     public void triggerAnimation() {
         triggerAnim("main_controller", "animate");

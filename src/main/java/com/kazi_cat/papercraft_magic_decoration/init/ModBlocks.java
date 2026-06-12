@@ -591,6 +591,101 @@ public interface ModBlocks {
                     .strength(0.5f)
                     .noOcclusion()));
 
+    RegistryObject<Block> LOUD_BUTTON = BLOCKS.register("loud_button", LoudButtonBlock::new);
+
+    RegistryObject<Block> GIFT_FROM_KAZI_MANOR = BLOCKS.register("gift_from_kazi_manor", () -> new AnimatedDecorationBlock(
+                    BlockBehaviour.Properties.of()
+                            .noOcclusion()
+                            .sound(SoundType.SNOW)
+                            .strength(1f, 5f),
+                    Block.box(2, 0, 2, 14, 10, 14)));
+
+    RegistryObject<Block> KEY_UNDER_THE_LAKE = BLOCKS.register("key_under_the_lake", () -> new AnimatedDecorationBlock(
+                    BlockBehaviour.Properties.of()
+                            .noOcclusion()
+                            .sound(SoundType.METAL)
+                            .strength(1f, 5f),
+                    Block.box(1, 0, 1, 15, 7, 15)));
+
+    RegistryObject<Block> LOW_CABINET_WITH_TABLECLOTH = BLOCKS.register("low_cabinet_with_tablecloth", () -> new AnimatedDecorationBlock(
+                    BlockBehaviour.Properties.of()
+                            .noOcclusion()
+                            .sound(SoundType.WOOD)
+                            .mapColor(MapColor.COLOR_RED)
+                            .strength(2f, 10f),
+                    Block.box(0, 0, 0, 16, 15, 16)));
+
+    RegistryObject<Block> WOODEN_BARREL_BOOKSHELF = BLOCKS.register("wooden_barrel_bookshelf", () -> new AnimatedDecorationBlock(
+                    BlockBehaviour.Properties.of()
+                            .noOcclusion()
+                            .sound(SoundType.WOOD)
+                            .mapColor(MapColor.COLOR_BROWN)
+                            .strength(2f, 10f),
+                    Block.box(0, 0, 0, 14, 16, 16)));
+
+    RegistryObject<Block> WOODWORKING_TABLE = BLOCKS.register("woodworking_table", () -> new AnimatedOneByTwoBlock(
+                    BlockBehaviour.Properties.of()
+                            .noOcclusion()
+                            .sound(SoundType.WOOD)
+                            .mapColor(MapColor.COLOR_BROWN)
+                            .strength(2f, 10f),
+                    Block.box(1, 0, 0, 16, 16, 16),
+                    Block.box(0, 0, 0, 15, 16, 16)));
+
+    RegistryObject<Block> LONG_STORAGE_TABLE = BLOCKS.register("long_storage_table", () -> new AnimatedOneByThreeBlock(
+                    BlockBehaviour.Properties.of()
+                            .noOcclusion()
+                            .sound(SoundType.WOOD)
+                            .mapColor(MapColor.COLOR_BROWN)
+                            .strength(2f, 10f),
+                    Block.box(1, 0, 0, 16, 15, 16),
+                    Block.box(0, 0, 0, 16, 15, 16),
+                    Block.box(0, 0, 0, 15, 15, 16)));
+
+    RegistryObject<Block> EDGED_CHALKBOARD = BLOCKS.register("edged_chalkboard", () -> new AnimatedTwoByThreeVerticalBlock(
+            BlockBehaviour.Properties.of()
+                    .noOcclusion()
+                    .sound(SoundType.WOOD)
+                    .strength(2f, 10f),
+            Block.box(0, 0, 13, 16, 16, 16)));
+
+    RegistryObject<Block> CUPBOARD = BLOCKS.register("cupboard", () -> new TwoByThreeVerticalDecorationBlock(
+            BlockBehaviour.Properties.of()
+                    .noOcclusion()
+                    .ignitedByLava()
+                    .sound(SoundType.WOOD)
+                    .mapColor(MapColor.COLOR_BROWN)
+                    .instrument(NoteBlockInstrument.BASS)
+                    .strength(2f, 10f),
+            Block.box(0, 0, 12, 16, 16, 16)));
+
+    RegistryObject<Block> FIREPLACE_DECORATION = BLOCKS.register("fireplace_decoration", () -> new TwoByThreeVerticalDecorationBlock(
+            BlockBehaviour.Properties.of()
+                    .noOcclusion()
+                    .sound(SoundType.WOOD)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .strength(3f, 15f),
+            Block.box(0, 0, 9, 15, 16, 16),
+            Block.box(0, 0, 0, 0, 0, 0),
+            Block.box(1, 0, 9, 16, 16, 16),
+            Shapes.or(Block.box(0, 0, 9, 15, 16, 16), Block.box(0, 10, 2, 16, 16, 16)),
+            Shapes.or(Block.box(0, 0, 9, 16, 16, 16), Block.box(0, 10, 2, 16, 16, 16)),
+            Shapes.or(Block.box(1, 0, 9, 16, 16, 16), Block.box(0, 10, 2, 16, 16, 16))));
+
+    RegistryObject<BlockEntityType<SimpleAnimatedBlockEntity>> SIMPLE_ANIMATED_BE = BLOCK_ENTITIES.register(
+            "simple_animated", () -> BlockEntityType.Builder
+                    .of(SimpleAnimatedBlockEntity::new,
+                            LOUD_BUTTON.get(),
+                            GIFT_FROM_KAZI_MANOR.get(),
+                            KEY_UNDER_THE_LAKE.get(),
+                            LOW_CABINET_WITH_TABLECLOTH.get(),
+                            WOODEN_BARREL_BOOKSHELF.get(),
+                            WOODWORKING_TABLE.get(),
+                            LONG_STORAGE_TABLE.get(),
+                            EDGED_CHALKBOARD.get()
+                    ).build(null)
+    );
+
     private static boolean never(BlockState state, BlockGetter getter, BlockPos pos) {
         return false;
     }

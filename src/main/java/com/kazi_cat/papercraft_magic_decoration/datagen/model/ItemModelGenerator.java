@@ -64,6 +64,8 @@ public class ItemModelGenerator extends ItemModelProvider {
         basicItem(ModItems.COPPER_STILL.get());
         basicItem(ModItems.GLOW_CASHEWS.get());
         basicItem(ModItems.KNITTED_LEOPARD_RUG.get());
+        basicItem(ModItems.GIFT_FROM_KAZI_MANOR.get());
+        basicItem(ModItems.KEY_UNDER_THE_LAKE.get());
 
         handheldItem(ModItems.GARDEN_TROWEL.get());
 
@@ -114,6 +116,14 @@ public class ItemModelGenerator extends ItemModelProvider {
         withExistingParent("emerald_blue_earth_tile", modLoc("block/emerald_blue_earth_tile"));
         withExistingParent("roses_in_water_bottle", modLoc("block/roses_in_water_bottle"));
         withExistingParent("star_embellished_ceiling", modLoc("block/star_embellished_ceiling"));
+        withExistingParent("loud_button", modLoc("displaysettings/loud_button"));
+        withExistingParent("low_cabinet_with_tablecloth", modLoc("displaysettings/low_cabinet_with_tablecloth"));
+        withExistingParent("wooden_barrel_bookshelf", modLoc("displaysettings/wooden_barrel_bookshelf"));
+        withExistingParent("woodworking_table", modLoc("displaysettings/woodworking_table"));
+        withExistingParent("long_storage_table", modLoc("displaysettings/long_storage_table"));
+        withExistingParent("edged_chalkboard", modLoc("displaysettings/edged_chalkboard"));
+        withExistingParent("cupboard", modLoc("block/cupboard"));
+        withExistingParent("fireplace_decoration", modLoc("block/fireplace_decoration"));
 
         DrinkRegistry.DRINK_DATA_MAP.forEach((key, data) -> {
             Item item = ForgeRegistries.ITEMS.getValue(key);

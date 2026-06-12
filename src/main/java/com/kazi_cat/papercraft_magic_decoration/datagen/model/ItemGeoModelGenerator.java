@@ -40,6 +40,12 @@ public class ItemGeoModelGenerator implements DataProvider {
         simple(ModItems.PAPER_CUTTING_TABLE);
         simple(ModItems.COPPER_BARTENDER);
         simple(ModItems.KAZI_LUCKY_CAT);
+        simple(ModItems.LOUD_BUTTON);
+        simple(ModItems.LOW_CABINET_WITH_TABLECLOTH);
+        simple(ModItems.WOODEN_BARREL_BOOKSHELF);
+        simple(ModItems.WOODWORKING_TABLE);
+        simple(ModItems.LONG_STORAGE_TABLE);
+        simple(ModItems.EDGED_CHALKBOARD);
 
         // 狼牙棒火腿肠
         simple(ModItems.SAUSAGE_MACE_WEAPON);

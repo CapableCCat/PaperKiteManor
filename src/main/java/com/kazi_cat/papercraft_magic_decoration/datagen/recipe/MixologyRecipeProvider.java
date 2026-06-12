@@ -39,29 +39,5 @@ public class MixologyRecipeProvider extends ModRecipeProvider {
                 .addIngredient(Items.COCOA_BEANS)
                 .setResult(DrinkRegistry.getItem(DrinkRegistry.DIPLOMATICO_COFFEE))
                 .save(consumer);
-
-//        MixologyBuilder.builder()
-//                .addIngredient(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "fruits/grapes")))
-//                .addIngredient(com.github.ysbbbbbb.kaleidoscopetavern.init.ModItems.BRANDY.get())
-//                .addIngredient(com.github.ysbbbbbb.kaleidoscopetavern.init.ModItems.WINE.get())
-//                .addIngredient(Items.EGG)
-//                .setResult(ModItems.DIONYSUS.get())
-//                .save(consumer);
-//
-//        MixologyBuilder.builder()
-//                .addIngredient(com.github.ysbbbbbb.kaleidoscopetavern.init.ModItems.WHISKEY.get())
-//                .addIngredient(Items.SUGAR)
-//                .addIngredient(com.github.ysbbbbbb.kaleidoscopetavern.init.ModItems.WINE.get())
-//                .addIngredient(Items.GLOW_BERRIES)
-//                .setResult(ModItems.KALEIDOSCOPE_WHISKEY_SOUR.get())
-//                .save(consumer);
-//
-//        MixologyBuilder.builder()
-//                .addIngredient(com.github.ysbbbbbb.kaleidoscopetavern.init.ModItems.WHISKEY.get())
-//                .addIngredient(com.github.ysbbbbbb.kaleidoscopetavern.init.ModItems.VODKA.get())
-//                .addIngredient(ModItems.LUCKY_CACTUS.get())
-//                .addIngredient(ModItems.POISON_RUM.get())
-//                .setResult(ModItems.LONG_ISLAND_POPSICLE_TEA.get())
-//                .save(consumer);
     }
 }

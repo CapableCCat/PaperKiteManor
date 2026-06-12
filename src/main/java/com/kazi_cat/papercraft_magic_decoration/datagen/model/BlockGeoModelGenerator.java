@@ -57,6 +57,13 @@ public class BlockGeoModelGenerator implements DataProvider {
         simple(ModBlocks.PAPER_CUTTING_TABLE);
         simple(ModBlocks.COPPER_BARTENDER);
         simple(ModBlocks.KAZI_LUCKY_CAT);
+        simple(ModBlocks.GIFT_FROM_KAZI_MANOR);
+        simple(ModBlocks.KEY_UNDER_THE_LAKE);
+        simple(ModBlocks.LOW_CABINET_WITH_TABLECLOTH);
+        simple(ModBlocks.WOODEN_BARREL_BOOKSHELF);
+        simple(ModBlocks.WOODWORKING_TABLE);
+        simple(ModBlocks.LONG_STORAGE_TABLE);
+        simple(ModBlocks.EDGED_CHALKBOARD);
 
         // 狼牙棒火腿肠
         ModelData sausage = ModelData.simple("0", "sausage_mace_weapon");

@@ -1,0 +1,5 @@
+{
+  "model": "papercraft_magic_decoration:geo/wooden_barrel_bookshelf.geo.json",
+  "texture": "papercraft_magic_decoration:textures/block/wooden_barrel_bookshelf.png",
+  "animation": "papercraft_magic_decoration:wooden_barrel_bookshelf.animation.json"
+}

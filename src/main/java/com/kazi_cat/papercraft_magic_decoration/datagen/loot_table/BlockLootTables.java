@@ -83,6 +83,16 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.STAR_EMBELLISHED_CEILING.get());
         dropSelf(ModBlocks.KNITTED_LEOPARD_RUG.get());
         dropSelf(ModBlocks.FOAM_BOX_WITH_DIRT.get());
+        dropSelf(ModBlocks.LOUD_BUTTON.get());
+        dropSelf(ModBlocks.GIFT_FROM_KAZI_MANOR.get());
+        dropSelf(ModBlocks.KEY_UNDER_THE_LAKE.get());
+        dropSelf(ModBlocks.LOW_CABINET_WITH_TABLECLOTH.get());
+        dropSelf(ModBlocks.WOODEN_BARREL_BOOKSHELF.get());
+        dropSelf(ModBlocks.WOODWORKING_TABLE.get());
+        dropSelf(ModBlocks.LONG_STORAGE_TABLE.get());
+        dropSelf(ModBlocks.EDGED_CHALKBOARD.get());
+        dropSelf(ModBlocks.CUPBOARD.get());
+        dropSelf(ModBlocks.FIREPLACE_DECORATION.get());
 
         dropOther(ModBlocks.DIRT_HOLE.get(), Items.DIRT);
         dropOther(ModBlocks.COFFEE_PASTINACA_SATIVA.get(), ModItems.COFFEE_FRUIT.get());

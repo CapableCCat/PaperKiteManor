@@ -18,6 +18,7 @@ import com.kazi_cat.papercraft_magic_decoration.init.registry.DrinkRegistry;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
@@ -78,7 +79,16 @@ public class BlockStateGenerator extends BlockStateProvider {
 
         multipart(ModBlocks.COFFEE_PASTINACA_SATIVA_RIM.get(), "coffee_pastinaca_sativa_rim");
         multipart(ModBlocks.ROSES_IN_WATER_BOTTLE.get(), "roses_in_water_bottle");
+        multipart(ModBlocks.CUPBOARD.get(), "cupboard");
+        multipart(ModBlocks.FIREPLACE_DECORATION.get(), "fireplace_decoration");
 
+        horizontalBlock(ModBlocks.WOODWORKING_TABLE.get(), new ModelFile.UncheckedModelFile(modLoc("block/woodworking_table")));
+        horizontalBlock(ModBlocks.LONG_STORAGE_TABLE.get(), new ModelFile.UncheckedModelFile(modLoc("block/long_storage_table")));
+        horizontalBlock(ModBlocks.EDGED_CHALKBOARD.get(), new ModelFile.UncheckedModelFile(modLoc("block/edged_chalkboard")));
+        horizontalBlock(ModBlocks.GIFT_FROM_KAZI_MANOR.get(), new ModelFile.UncheckedModelFile(modLoc("block/gift_from_kazi_manor")));
+        horizontalBlock(ModBlocks.KEY_UNDER_THE_LAKE.get(), new ModelFile.UncheckedModelFile(modLoc("block/key_under_the_lake")));
+        horizontalBlock(ModBlocks.LOW_CABINET_WITH_TABLECLOTH.get(), new ModelFile.UncheckedModelFile(modLoc("block/low_cabinet_with_tablecloth")));
+        horizontalBlock(ModBlocks.WOODEN_BARREL_BOOKSHELF.get(), new ModelFile.UncheckedModelFile(modLoc("block/wooden_barrel_bookshelf")));
         horizontalBlock(ModBlocks.UNDERGROUND_DOOR_FRAMES.get(), new ModelFile.UncheckedModelFile(modLoc("block/underground_door_frames")));
         horizontalBlock(ModBlocks.UNDERGROUND_PANELLING.get(), new ModelFile.UncheckedModelFile(modLoc("block/underground_panelling")));
         horizontalBlock(ModBlocks.RUSTIC_PANELLING.get(), new ModelFile.UncheckedModelFile(modLoc("block/rustic_panelling")));
@@ -144,6 +154,8 @@ public class BlockStateGenerator extends BlockStateProvider {
         });
 
         axisBlock((RotatedPillarBlock) ModBlocks.CANOPY_TREE_LIMB.get(), new ModelFile.UncheckedModelFile(modLoc("block/canopy_tree_limb")), new ModelFile.UncheckedModelFile(modLoc("block/canopy_tree_limb_horizontal")));
+
+        buttonBlock((ButtonBlock) ModBlocks.LOUD_BUTTON.get(), new ModelFile.UncheckedModelFile(modLoc("block/loud_button")), new ModelFile.UncheckedModelFile(modLoc("block/loud_button")));
 
         DrinkRegistry.DRINK_DATA_MAP.forEach((key, data) -> {
             Block block = ForgeRegistries.BLOCKS.getValue(key);
