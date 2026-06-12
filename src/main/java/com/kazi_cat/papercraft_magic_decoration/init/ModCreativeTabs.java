@@ -24,6 +24,7 @@ public interface ModCreativeTabs {
 
                 output.accept(ModItems.PAPER_CUTTING_TABLE.get());
                 output.accept(ModItems.COPPER_BARTENDER.get());
+                output.accept(ModItems.SPORES_COLLECTION_PLATE.get());
                 output.accept(ModItems.COPPER_STILL.get());
 
                 output.accept(ModItems.BLACK_PAPER.get());
@@ -41,6 +42,11 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.RED_PAPER_BLOCK.get());
                 output.accept(ModItems.WHITE_PAPER_BLOCK.get());
                 output.accept(ModItems.YELLOW_PAPER_BLOCK.get());
+
+                output.accept(ModItems.VITALITY_SPORES.get());
+                output.accept(ModItems.WHISKEY_RAW.get());
+                output.accept(ModItems.COFFEE_FRUIT.get());
+                output.accept(ModItems.GOLDEN_COFFEE_FRUIT.get());
             }).build());
 
     RegistryObject<CreativeModeTab> MANOR_FOOD_TAB = TABS.register("manor_food", () -> CreativeModeTab.builder()

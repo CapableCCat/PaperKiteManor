@@ -11,6 +11,7 @@ import com.kazi_cat.papercraft_magic_decoration.block.smeltable.*;
 import com.kazi_cat.papercraft_magic_decoration.block.utility.CopperBartenderBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.utility.CopperStillBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.utility.PaperCuttingTableBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.utility.SporesCollectionPlateBlock;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.*;
 import com.kazi_cat.papercraft_magic_decoration.init.registry.DrinkRegistry;
 import net.minecraft.core.BlockPos;
@@ -131,6 +132,8 @@ public interface ModBlocks {
     RegistryObject<Block> PAPER_CUTTING_TABLE = BLOCKS.register("paper_cutting_table", PaperCuttingTableBlock::new);
 
     RegistryObject<BlockEntityType<PaperCuttingTableBlockEntity>> PAPER_CUTTING_TABLE_BE = BLOCK_ENTITIES.register("paper_cutting_table", () -> BlockEntityType.Builder.of(PaperCuttingTableBlockEntity::new, PAPER_CUTTING_TABLE.get()).build(null));
+
+    RegistryObject<Block> SPORES_COLLECTION_PLATE = BLOCKS.register("spores_collection_plate", SporesCollectionPlateBlock::new);
 
     // 巧克力
     RegistryObject<Block> TRUFFLE_CHOCOLATE = BLOCKS.register("truffle_chocolate", () -> new PickableDecorationBlock(

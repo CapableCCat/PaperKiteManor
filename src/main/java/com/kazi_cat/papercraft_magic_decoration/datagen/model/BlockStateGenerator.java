@@ -11,6 +11,7 @@ import com.kazi_cat.papercraft_magic_decoration.block.drink.BoxedDrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.DrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.smeltable.ChunkySalmonBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.utility.CopperStillBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.utility.SporesCollectionPlateBlock;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import com.kazi_cat.papercraft_magic_decoration.init.registry.DrinkRegistry;
 import net.minecraft.data.PackOutput;
@@ -96,6 +97,12 @@ public class BlockStateGenerator extends BlockStateProvider {
             int status = state.getValue(CopperStillBlock.STATUS);
             ResourceLocation file = modLoc("block/%s/part%d_status%d".formatted("copper_still", part, status));
             return new ModelFile.UncheckedModelFile(file);
+        });
+
+        getVariantBuilder(ModBlocks.SPORES_COLLECTION_PLATE.get()).forAllStates(state -> {
+            boolean filled = state.getValue(SporesCollectionPlateBlock.FILLED);
+            ResourceLocation file = modLoc("block/spores_collection_plate%s".formatted(filled ? "_filled" : ""));
+            return ConfiguredModel.builder().modelFile(new ModelFile.UncheckedModelFile(file)).build();
         });
 
         DrinkRegistry.DRINK_DATA_MAP.forEach((key, data) -> {

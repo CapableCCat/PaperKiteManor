@@ -31,12 +31,16 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Collections;
 import java.util.EnumMap;
 import java.util.List;
 
@@ -221,6 +225,35 @@ public class CopperStillBlock extends MultipartBlock implements SimpleWaterlogge
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return SHAPE_MAP[state.getValue(partProperty)].get(state.getValue(FACING));
+    }
+
+    @Override
+    public List<ItemStack> getDrops(BlockState state, LootParams.Builder params) {
+        if (state.getValue(partProperty) != 0) {
+            return Collections.emptyList();
+        }
+        List<ItemStack> stacks = super.getDrops(state, params);
+        int status = state.getValue(STATUS);
+        if (status == 2) {
+            return stacks;
+        }
+        BlockEntity parameter = params.getParameter(LootContextParams.BLOCK_ENTITY);
+        if (parameter instanceof CopperStillBlockEntity be) {
+            ItemStackHandler items = be.getItems();
+            for (int i = 0; i < items.getSlots(); i++) {
+                ItemStack itemStack = items.getStackInSlot(i);
+                if (!itemStack.isEmpty()) {
+                    stacks.add(itemStack);
+                }
+            }
+            if (!be.getWineBase().isEmpty()) {
+                stacks.add(be.getWineBase());
+            }
+            if (status == 3 && !be.getResult().isEmpty()) {
+                stacks.add(be.getResult());
+            }
+        }
+        return stacks;
     }
 
     public static void updateStatus(Level level, BlockPos pos, BlockState state, int status) {
