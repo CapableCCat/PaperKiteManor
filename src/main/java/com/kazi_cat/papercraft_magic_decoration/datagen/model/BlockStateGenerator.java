@@ -11,6 +11,7 @@ import com.kazi_cat.papercraft_magic_decoration.block.drink.BoxedDrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.DrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.smeltable.ChunkySalmonBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.utility.CopperStillBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.utility.MochaPotBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.utility.SporesCollectionPlateBlock;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import com.kazi_cat.papercraft_magic_decoration.init.registry.DrinkRegistry;
@@ -96,6 +97,11 @@ public class BlockStateGenerator extends BlockStateProvider {
             int part = state.getValue(((MultipartBlock) ModBlocks.COPPER_STILL.get()).getPartProperty());
             int status = state.getValue(CopperStillBlock.STATUS);
             ResourceLocation file = modLoc("block/%s/part%d_status%d".formatted("copper_still", part, status));
+            return new ModelFile.UncheckedModelFile(file);
+        });
+        horizontalBlock(ModBlocks.MOCHA_POT.get(), state -> {
+            boolean boiled = state.getValue(MochaPotBlock.BOILED);
+            ResourceLocation file = modLoc("block/mocha_pot%s".formatted(boiled ? "_boiled" : ""));
             return new ModelFile.UncheckedModelFile(file);
         });
 

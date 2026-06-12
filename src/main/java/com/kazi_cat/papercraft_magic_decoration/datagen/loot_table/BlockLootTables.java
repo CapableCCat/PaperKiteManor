@@ -54,6 +54,7 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.KAZI_LUCKY_CAT.get());
         dropSelf(ModBlocks.COPPER_STILL.get());
         dropSelf(ModBlocks.SPORES_COLLECTION_PLATE.get());
+        dropSelf(ModBlocks.MOCHA_POT.get());
 
         dropOther(ModBlocks.DIRT_HOLE.get(), Items.DIRT);
         dropOther(ModBlocks.COFFEE_PASTINACA_SATIVA.get(), ModItems.COFFEE_FRUIT.get());

@@ -86,6 +86,7 @@ public interface ModItems {
     RegistryObject<Item> COPPER_BARTENDER = ITEMS.register("copper_bartender", () -> new GeoBlockItem(ModBlocks.COPPER_BARTENDER.get(), new Item.Properties()));
     RegistryObject<Item> COPPER_STILL = ITEMS.register("copper_still", () -> new BlockItem(ModBlocks.COPPER_STILL.get(), new Item.Properties()));
     RegistryObject<Item> SPORES_COLLECTION_PLATE = ITEMS.register("spores_collection_plate", () -> new BlockItem(ModBlocks.SPORES_COLLECTION_PLATE.get(), new Item.Properties()));
+    RegistryObject<Item> MOCHA_POT = ITEMS.register("mocha_pot", MochaPotItem::new);
 
     // 装饰物
     RegistryObject<Item> KAZI_LUCKY_CAT = ITEMS.register("kazi_lucky_cat", () -> new GeoBlockItem(ModBlocks.KAZI_LUCKY_CAT.get(), new Item.Properties()));

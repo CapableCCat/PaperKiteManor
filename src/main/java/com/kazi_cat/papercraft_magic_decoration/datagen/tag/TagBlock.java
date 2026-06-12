@@ -30,7 +30,8 @@ public class TagBlock extends BlockTagsProvider {
                 .add(ModBlocks.DIRT_HOLE.get());
 
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(ModBlocks.COPPER_BARTENDER.get(), ModBlocks.COPPER_STILL.get());
+                .add(ModBlocks.COPPER_BARTENDER.get(), ModBlocks.COPPER_STILL.get(),
+                        ModBlocks.MOCHA_POT.get());
 
         tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(ModBlocks.PAPER_CUTTING_TABLE.get(), ModBlocks.COFFEE_PASTINACA_SATIVA_CORE.get(),
