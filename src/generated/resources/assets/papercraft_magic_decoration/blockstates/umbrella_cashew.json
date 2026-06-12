@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "facing=east,mature=false,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/umbrella_cashew",
+      "y": 90
+    },
+    "facing=east,mature=false,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/umbrella_cashew",
+      "y": 90
+    },
+    "facing=east,mature=true,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/umbrella_cashew_mature",
+      "y": 90
+    },
+    "facing=east,mature=true,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/umbrella_cashew_mature",
+      "y": 90
+    },
+    "facing=north,mature=false,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/umbrella_cashew"
+    },
+    "facing=north,mature=false,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/umbrella_cashew"
+    },
+    "facing=north,mature=true,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/umbrella_cashew_mature"
+    },
+    "facing=north,mature=true,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/umbrella_cashew_mature"
+    },
+    "facing=south,mature=false,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/umbrella_cashew",
+      "y": 180
+    },
+    "facing=south,mature=false,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/umbrella_cashew",
+      "y": 180
+    },
+    "facing=south,mature=true,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/umbrella_cashew_mature",
+      "y": 180
+    },
+    "facing=south,mature=true,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/umbrella_cashew_mature",
+      "y": 180
+    },
+    "facing=west,mature=false,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/umbrella_cashew",
+      "y": 270
+    },
+    "facing=west,mature=false,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/umbrella_cashew",
+      "y": 270
+    },
+    "facing=west,mature=true,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/umbrella_cashew_mature",
+      "y": 270
+    },
+    "facing=west,mature=true,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/umbrella_cashew_mature",
+      "y": 270
+    }
+  }
+}

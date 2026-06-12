@@ -26,6 +26,9 @@ public class WaterloggedOnlyBlock extends Block implements SimpleWaterloggedBloc
     public WaterloggedOnlyBlock(Properties properties, @Nullable VoxelShape shape) {
         super(properties);
         this.shape = shape;
+
+        this.registerDefaultState(this.stateDefinition.any()
+                .setValue(WATERLOGGED, false));
     }
 
     @Override

@@ -8,23 +8,25 @@ import com.kazi_cat.papercraft_magic_decoration.block.decoration.*;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.BottleDrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.misc.DirtHoleBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.misc.TemplateSaplingBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.misc.UmbrellaCashewBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.smeltable.*;
 import com.kazi_cat.papercraft_magic_decoration.block.utility.*;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.*;
 import com.kazi_cat.papercraft_magic_decoration.init.registry.DrinkRegistry;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.GlassBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -366,6 +368,84 @@ public interface ModBlocks {
                     .instrument(NoteBlockInstrument.BASS)
                     .strength(2f, 10f),
             Block.box(2, 0, 2, 14, 16, 14)));
+
+    // 阴幕树
+    RegistryObject<Block> UMBRELLA_CASHEW = BLOCKS.register("umbrella_cashew", UmbrellaCashewBlock::new);
+
+    RegistryObject<Block> MINI_CANOPY_TREE = BLOCKS.register("mini_canopy_tree", () -> new TemplateSaplingBlock(
+            BlockBehaviour.Properties.of()
+                    .randomTicks()
+                    .noOcclusion()
+                    .noCollission()
+                    .ignitedByLava()
+                    .sound(SoundType.GRASS)
+                    .mapColor(MapColor.COLOR_GREEN)
+                    .strength(0.5f, 10f),
+            TemplateSaplingBlock.Entry.of(PaperKiteManor.modLoc("canopy_tree_a"), 36, 1),
+            TemplateSaplingBlock.Entry.of(PaperKiteManor.modLoc("canopy_tree_b"), 37, 1),
+            TemplateSaplingBlock.Entry.of(PaperKiteManor.modLoc("canopy_tree_c"), 34, 1),
+            TemplateSaplingBlock.Entry.of(PaperKiteManor.modLoc("canopy_tree_d"), 34, 1),
+            TemplateSaplingBlock.Entry.of(PaperKiteManor.modLoc("canopy_tree_e"), 30, 1),
+            TemplateSaplingBlock.Entry.of(PaperKiteManor.modLoc("canopy_tree_f"), 29, 1)));
+
+    RegistryObject<Block> CANOPY_TREE_LIMB = BLOCKS.register("canopy_tree_limb", () -> new RotatedPillarBlock(
+            BlockBehaviour.Properties.of()
+                    .ignitedByLava()
+                    .sound(SoundType.WOOD)
+                    .strength(2.0F)
+                    .mapColor(MapColor.COLOR_BROWN)
+                    .instrument(NoteBlockInstrument.BASS)));
+
+    RegistryObject<Block> CANOPY_TREE_FOLIAGE = BLOCKS.register("canopy_tree_foliage", () -> new Block(
+            BlockBehaviour.Properties.of()
+                    .ignitedByLava()
+                    .mapColor(MapColor.PLANT)
+                    .sound(SoundType.AZALEA_LEAVES)
+                    .instrument(NoteBlockInstrument.BASS)
+                    .strength(0.5f, 0.2f)) {
+        @Override
+        public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
+            return true;
+        }
+    });
+
+    RegistryObject<Block> CANOPY_TREE_FERN = BLOCKS.register("canopy_tree_fern", () -> new MossBlock(
+            BlockBehaviour.Properties.of()
+                    .sound(SoundType.MOSS)
+                    .strength(0.1F)
+                    .mapColor(MapColor.COLOR_GREEN)
+                    .pushReaction(PushReaction.DESTROY)){
+        @Override
+        public boolean canSustainPlant(BlockState state, BlockGetter level, BlockPos pos, Direction facing, IPlantable plantable) { return true; }
+    });
+
+    RegistryObject<Block> CANOPY_TREE_TRUNK = BLOCKS.register("canopy_tree_trunk", () -> new SimpleDecorationBlock(
+            BlockBehaviour.Properties.of()
+                    .noOcclusion()
+                    .ignitedByLava()
+                    .sound(SoundType.WOOD)
+                    .instrument(NoteBlockInstrument.BASS)
+                    .strength(2f, 10f),
+            Block.box(0, 0, 4, 12, 16, 16)));
+
+    RegistryObject<Block> CANOPY_TREE_MUSHROOM = BLOCKS.register("canopy_tree_mushroom", () -> new CustomShapeBlock(
+            BlockBehaviour.Properties.of()
+                    .noOcclusion()
+                    .ignitedByLava()
+                    .sound(SoundType.SHROOMLIGHT)
+                    .lightLevel(s -> 5)
+                    .instrument(NoteBlockInstrument.BASS)
+                    .strength(0.5f, 0.2f),
+            Shapes.or(Block.box(-4, 8, -4, 20, 16, 20), Block.box(-10, 0, -10, 26, 8, 26))));
+
+    RegistryObject<Block> CANOPY_TREE_DROOPING_ROOT = BLOCKS.register("canopy_tree_drooping_root", () -> new Block(
+            BlockBehaviour.Properties.of()
+                    .ignitedByLava()
+                    .sound(SoundType.WOOD)
+                    .mapColor(MapColor.WOOD)
+                    .instrument(NoteBlockInstrument.BASS)
+                    .strength(0.5f, 10f)));
+
 
     // 装饰方块
     RegistryObject<Block> TRAY_BLOCK = BLOCKS.register("tray", () -> new VariantDecorationBlock(

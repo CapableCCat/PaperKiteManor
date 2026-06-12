@@ -163,4 +163,9 @@ public interface ModFoods {
     FoodProperties COFFEE_PASTINACA_SATIVA_TUBER = (new FoodProperties.Builder())
             .nutrition(6).saturationMod(0.3f)
             .build();
+
+    FoodProperties GLOW_CASHEWS = (new FoodProperties.Builder())
+            .nutrition(2).saturationMod(0.2f)
+            .effect(() -> new MobEffectInstance(ModEffects.SKY_TRACTION.get(), 2400, 0), 1)
+            .alwaysEat().build();
 }

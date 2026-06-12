@@ -62,6 +62,7 @@ public class ItemModelGenerator extends ItemModelProvider {
         basicItem(ModItems.GOLDEN_COFFEE_FRUIT.get());
         basicItem(ModItems.COFFEE_PASTINACA_SATIVA_TUBER.get());
         basicItem(ModItems.COPPER_STILL.get());
+        basicItem(ModItems.GLOW_CASHEWS.get());
 
         handheldItem(ModItems.GARDEN_TROWEL.get());
 
@@ -93,6 +94,13 @@ public class ItemModelGenerator extends ItemModelProvider {
         withExistingParent("palm_tree_trunk", modLoc("block/palm_tree_trunk"));
         withExistingParent("palm_tree_trunk_top", modLoc("block/palm_tree_trunk_top"));
         withExistingParent("rough_palm_tree_trunk", modLoc("block/rough_palm_tree_trunk"));
+        withExistingParent("canopy_tree_drooping_root", modLoc("block/canopy_tree_drooping_root"));
+        withExistingParent("canopy_tree_fern", modLoc("block/canopy_tree_fern"));
+        withExistingParent("canopy_tree_foliage", modLoc("block/canopy_tree_foliage"));
+        withExistingParent("canopy_tree_mushroom", modLoc("block/canopy_tree_mushroom"));
+        withExistingParent("canopy_tree_trunk", modLoc("block/canopy_tree_trunk"));
+        withExistingParent("canopy_tree_limb", modLoc("block/canopy_tree_limb"));
+        withExistingParent("mini_canopy_tree", modLoc("block/mini_canopy_tree"));
 
         DrinkRegistry.DRINK_DATA_MAP.forEach((key, data) -> {
             Item item = ForgeRegistries.ITEMS.getValue(key);

@@ -33,6 +33,9 @@ public class BlockModelGenerator extends BlockModelProvider {
                 modLoc("block/coffee_pastinaca_sativa_bottom"),
                 modLoc("block/coffee_pastinaca_sativa_top"));
 
+        cubeColumn("canopy_tree_limb", modLoc("block/canopy_tree_limb_side"), modLoc("block/canopy_tree_limb_top"));
+        cubeColumnHorizontal("canopy_tree_limb_horizontal", modLoc("block/canopy_tree_limb_side"), modLoc("block/canopy_tree_limb_top"));
+
         DrinkRegistry.DRINK_DATA_MAP.forEach(((key, data) -> {
             for (int i = 1; i <= data.getMaxCount(); i++) {
                 ResourceLocation parent = modLoc("block/drink/%s/count%d".formatted(key.getPath(), i));

@@ -26,6 +26,9 @@ public class TagBlock extends BlockTagsProvider {
         tag(BlockTags.CROPS)
                 .add(ModBlocks.COFFEE_PASTINACA_SATIVA.get());
 
+        tag(BlockTags.MINEABLE_WITH_HOE)
+                .add(ModBlocks.CANOPY_TREE_FERN.get(), ModBlocks.CANOPY_TREE_MUSHROOM.get());
+
         tag(BlockTags.MINEABLE_WITH_SHOVEL)
                 .add(ModBlocks.DIRT_HOLE.get());
 
@@ -38,6 +41,7 @@ public class TagBlock extends BlockTagsProvider {
                         ModBlocks.COFFEE_PASTINACA_SATIVA_RIM.get(), ModBlocks.SPORES_COLLECTION_PLATE.get(),
                         ModBlocks.TRAY_BLOCK.get(), ModBlocks.PALM_TREE_TRUNK.get(),
                         ModBlocks.ROUGH_PALM_TREE_TRUNK.get(), ModBlocks.PALM_TREE_TOP.get(),
-                        ModBlocks.PALM_TREE_TRUNK_TOP.get());
+                        ModBlocks.PALM_TREE_TRUNK_TOP.get(), ModBlocks.CANOPY_TREE_LIMB.get(),
+                        ModBlocks.CANOPY_TREE_DROOPING_ROOT.get(), ModBlocks.CANOPY_TREE_TRUNK.get());
     }
 }

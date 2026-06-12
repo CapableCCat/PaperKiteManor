@@ -9,6 +9,7 @@ import com.kazi_cat.papercraft_magic_decoration.block.decoration.TwoByOneDecorat
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.VariantDecorationBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.BoxedDrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.DrinkBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.misc.UmbrellaCashewBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.smeltable.ChunkySalmonBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.utility.CopperStillBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.utility.MochaPotBlock;
@@ -19,6 +20,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
@@ -49,6 +51,11 @@ public class BlockStateGenerator extends BlockStateProvider {
         simpleBlock(ModBlocks.PALM_TREE_TRUNK.get(), new ModelFile.UncheckedModelFile(modLoc("block/palm_tree_trunk")));
         simpleBlock(ModBlocks.ROUGH_PALM_TREE_TRUNK.get(), new ModelFile.UncheckedModelFile(modLoc("block/rough_palm_tree_trunk")));
         simpleBlock(ModBlocks.MINI_PALM_TREE.get(), new ModelFile.UncheckedModelFile(modLoc("block/mini_palm_tree")));
+        simpleBlock(ModBlocks.CANOPY_TREE_DROOPING_ROOT.get(), new ModelFile.UncheckedModelFile(modLoc("block/canopy_tree_drooping_root")));
+        simpleBlock(ModBlocks.CANOPY_TREE_FERN.get(), new ModelFile.UncheckedModelFile(modLoc("block/canopy_tree_fern")));
+        simpleBlock(ModBlocks.CANOPY_TREE_FOLIAGE.get(), new ModelFile.UncheckedModelFile(modLoc("block/canopy_tree_foliage")));
+        simpleBlock(ModBlocks.CANOPY_TREE_MUSHROOM.get(), new ModelFile.UncheckedModelFile(modLoc("block/canopy_tree_mushroom")));
+        simpleBlock(ModBlocks.MINI_CANOPY_TREE.get(), new ModelFile.UncheckedModelFile(modLoc("block/mini_canopy_tree")));
 
         crop(ModBlocks.COFFEE_PASTINACA_SATIVA, "coffee_pastinaca_sativa");
 
@@ -62,6 +69,7 @@ public class BlockStateGenerator extends BlockStateProvider {
         variant(ModBlocks.COFFEE_PASTINACA_SATIVA_RIM.get(), "coffee_pastinaca_sativa_rim", ((TwoByOneDecorationBlock) ModBlocks.COFFEE_PASTINACA_SATIVA_RIM.get()).getPartProperty());
         variant(ModBlocks.TRAY_BLOCK.get(), "tray", ((VariantDecorationBlock) ModBlocks.TRAY_BLOCK.get()).getVariantProperty());
 
+        horizontalBlock(ModBlocks.CANOPY_TREE_TRUNK.get(), new ModelFile.UncheckedModelFile(modLoc("block/canopy_tree_trunk")));
         horizontalBlock(ModBlocks.PALM_TREE_CROWN.get(), new ModelFile.UncheckedModelFile(modLoc("block/palm_tree_crown")));
         horizontalBlock(ModBlocks.COFFEE_PASTINACA_SATIVA_FRUITING_STEM.get(), new ModelFile.UncheckedModelFile(modLoc("block/coffee_pastinaca_sativa_fruiting_stem")));
         horizontalBlock(ModBlocks.KAZI_LUCKY_CAT.get(), new ModelFile.UncheckedModelFile(modLoc("block/kazi_lucky_cat")));
@@ -110,12 +118,19 @@ public class BlockStateGenerator extends BlockStateProvider {
             ResourceLocation file = modLoc("block/mocha_pot%s".formatted(boiled ? "_boiled" : ""));
             return new ModelFile.UncheckedModelFile(file);
         });
+        horizontalBlock(ModBlocks.UMBRELLA_CASHEW.get(), state -> {
+            boolean mature = state.getValue(UmbrellaCashewBlock.MATURE);
+            ResourceLocation file = modLoc("block/umbrella_cashew%s".formatted(mature ? "_mature" : ""));
+            return new ModelFile.UncheckedModelFile(file);
+        });
 
         getVariantBuilder(ModBlocks.SPORES_COLLECTION_PLATE.get()).forAllStates(state -> {
             boolean filled = state.getValue(SporesCollectionPlateBlock.FILLED);
             ResourceLocation file = modLoc("block/spores_collection_plate%s".formatted(filled ? "_filled" : ""));
             return ConfiguredModel.builder().modelFile(new ModelFile.UncheckedModelFile(file)).build();
         });
+
+        axisBlock((RotatedPillarBlock) ModBlocks.CANOPY_TREE_LIMB.get(), new ModelFile.UncheckedModelFile(modLoc("block/canopy_tree_limb")), new ModelFile.UncheckedModelFile(modLoc("block/canopy_tree_limb_horizontal")));
 
         DrinkRegistry.DRINK_DATA_MAP.forEach((key, data) -> {
             Block block = ForgeRegistries.BLOCKS.getValue(key);
