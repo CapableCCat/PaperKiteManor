@@ -9,6 +9,7 @@ import com.kazi_cat.papercraft_magic_decoration.block.drink.BottleDrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.misc.DirtHoleBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.smeltable.*;
 import com.kazi_cat.papercraft_magic_decoration.block.utility.CopperBartenderBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.utility.CopperStillBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.utility.PaperCuttingTableBlock;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.*;
 import com.kazi_cat.papercraft_magic_decoration.init.registry.DrinkRegistry;
@@ -31,7 +32,7 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.Collections;
 import java.util.List;
 
-@SuppressWarnings({"DataFlowIssue","deprecation"})
+@SuppressWarnings({"DataFlowIssue"})
 public interface ModBlocks {
     DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, PaperKiteManor.MOD_ID);
     DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, PaperKiteManor.MOD_ID);
@@ -118,10 +119,18 @@ public interface ModBlocks {
             () -> Collections.singletonList(new ItemStack(DrinkRegistry.getItem(DrinkRegistry.POISON_RUM), 4)),
             Block.box(2, 0, 2, 14, 20, 14)));
 
-    // 铜酒保
+    // 功能方块
     RegistryObject<Block> COPPER_BARTENDER = BLOCKS.register("copper_bartender", CopperBartenderBlock::new);
 
     RegistryObject<BlockEntityType<CopperBartenderBlockEntity>> COPPER_BARTENDER_BE = BLOCK_ENTITIES.register("copper_bartender_block", () -> BlockEntityType.Builder.of(CopperBartenderBlockEntity::new, COPPER_BARTENDER.get()).build(null));
+
+    RegistryObject<Block> COPPER_STILL = BLOCKS.register("copper_still", CopperStillBlock::new);
+
+    RegistryObject<BlockEntityType<CopperStillBlockEntity>> COPPER_STILL_BE = BLOCK_ENTITIES.register("copper_still", () -> BlockEntityType.Builder.of(CopperStillBlockEntity::new, COPPER_STILL.get()).build(null));
+
+    RegistryObject<Block> PAPER_CUTTING_TABLE = BLOCKS.register("paper_cutting_table", PaperCuttingTableBlock::new);
+
+    RegistryObject<BlockEntityType<PaperCuttingTableBlockEntity>> PAPER_CUTTING_TABLE_BE = BLOCK_ENTITIES.register("paper_cutting_table", () -> BlockEntityType.Builder.of(PaperCuttingTableBlockEntity::new, PAPER_CUTTING_TABLE.get()).build(null));
 
     // 巧克力
     RegistryObject<Block> TRUFFLE_CHOCOLATE = BLOCKS.register("truffle_chocolate", () -> new PickableDecorationBlock(
@@ -246,11 +255,6 @@ public interface ModBlocks {
                     .mapColor(MapColor.SNOW)
                     .sound(SoundType.SNOW)
                     .instabreak()));
-
-    // 剪纸台
-    RegistryObject<Block> PAPER_CUTTING_TABLE = BLOCKS.register("paper_cutting_table", PaperCuttingTableBlock::new);
-
-    RegistryObject<BlockEntityType<PaperCuttingTableBlockEntity>> PAPER_CUTTING_TABLE_BE = BLOCK_ENTITIES.register("paper_cutting_table", () -> BlockEntityType.Builder.of(PaperCuttingTableBlockEntity::new, PAPER_CUTTING_TABLE.get()).build(null));
 
     // 咖啡欧防风
     RegistryObject<Block> COFFEE_PASTINACA_SATIVA = BLOCKS.register("coffee_pastinaca_sativa", CoffeePastinacaSativaCropBlock::new);

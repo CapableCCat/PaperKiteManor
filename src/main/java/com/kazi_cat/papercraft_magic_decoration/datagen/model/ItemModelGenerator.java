@@ -61,6 +61,7 @@ public class ItemModelGenerator extends ItemModelProvider {
         basicItem(ModItems.COFFEE_FRUIT.get());
         basicItem(ModItems.GOLDEN_COFFEE_FRUIT.get());
         basicItem(ModItems.COFFEE_PASTINACA_SATIVA_TUBER.get());
+        basicItem(ModItems.COPPER_STILL.get());
 
         handheldItem(ModItems.GARDEN_TROWEL.get());
 

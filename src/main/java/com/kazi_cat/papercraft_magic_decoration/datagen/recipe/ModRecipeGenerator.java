@@ -15,6 +15,7 @@ public class ModRecipeGenerator extends ModRecipeProvider {
         providers.add(new PaperMakingRecipeProvider(output));
         providers.add(new PaperCuttingRecipeProvider(output));
         providers.add(new MixologyRecipeProvider(output));
+        providers.add(new DistillationRecipeProvider(output));
     }
 
     @Override

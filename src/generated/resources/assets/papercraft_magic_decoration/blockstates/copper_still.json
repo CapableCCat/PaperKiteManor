@@ -1,0 +1,484 @@
+{
+  "variants": {
+    "facing=east,part=0,status=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status0",
+      "y": 90
+    },
+    "facing=east,part=0,status=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status0",
+      "y": 90
+    },
+    "facing=east,part=0,status=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status1",
+      "y": 90
+    },
+    "facing=east,part=0,status=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status1",
+      "y": 90
+    },
+    "facing=east,part=0,status=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status2",
+      "y": 90
+    },
+    "facing=east,part=0,status=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status2",
+      "y": 90
+    },
+    "facing=east,part=0,status=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status3",
+      "y": 90
+    },
+    "facing=east,part=0,status=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status3",
+      "y": 90
+    },
+    "facing=east,part=1,status=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status0",
+      "y": 90
+    },
+    "facing=east,part=1,status=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status0",
+      "y": 90
+    },
+    "facing=east,part=1,status=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status1",
+      "y": 90
+    },
+    "facing=east,part=1,status=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status1",
+      "y": 90
+    },
+    "facing=east,part=1,status=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status2",
+      "y": 90
+    },
+    "facing=east,part=1,status=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status2",
+      "y": 90
+    },
+    "facing=east,part=1,status=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status3",
+      "y": 90
+    },
+    "facing=east,part=1,status=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status3",
+      "y": 90
+    },
+    "facing=east,part=2,status=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status0",
+      "y": 90
+    },
+    "facing=east,part=2,status=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status0",
+      "y": 90
+    },
+    "facing=east,part=2,status=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status1",
+      "y": 90
+    },
+    "facing=east,part=2,status=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status1",
+      "y": 90
+    },
+    "facing=east,part=2,status=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status2",
+      "y": 90
+    },
+    "facing=east,part=2,status=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status2",
+      "y": 90
+    },
+    "facing=east,part=2,status=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status3",
+      "y": 90
+    },
+    "facing=east,part=2,status=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status3",
+      "y": 90
+    },
+    "facing=east,part=3,status=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status0",
+      "y": 90
+    },
+    "facing=east,part=3,status=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status0",
+      "y": 90
+    },
+    "facing=east,part=3,status=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status1",
+      "y": 90
+    },
+    "facing=east,part=3,status=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status1",
+      "y": 90
+    },
+    "facing=east,part=3,status=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status2",
+      "y": 90
+    },
+    "facing=east,part=3,status=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status2",
+      "y": 90
+    },
+    "facing=east,part=3,status=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status3",
+      "y": 90
+    },
+    "facing=east,part=3,status=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status3",
+      "y": 90
+    },
+    "facing=north,part=0,status=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status0"
+    },
+    "facing=north,part=0,status=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status0"
+    },
+    "facing=north,part=0,status=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status1"
+    },
+    "facing=north,part=0,status=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status1"
+    },
+    "facing=north,part=0,status=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status2"
+    },
+    "facing=north,part=0,status=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status2"
+    },
+    "facing=north,part=0,status=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status3"
+    },
+    "facing=north,part=0,status=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status3"
+    },
+    "facing=north,part=1,status=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status0"
+    },
+    "facing=north,part=1,status=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status0"
+    },
+    "facing=north,part=1,status=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status1"
+    },
+    "facing=north,part=1,status=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status1"
+    },
+    "facing=north,part=1,status=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status2"
+    },
+    "facing=north,part=1,status=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status2"
+    },
+    "facing=north,part=1,status=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status3"
+    },
+    "facing=north,part=1,status=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status3"
+    },
+    "facing=north,part=2,status=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status0"
+    },
+    "facing=north,part=2,status=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status0"
+    },
+    "facing=north,part=2,status=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status1"
+    },
+    "facing=north,part=2,status=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status1"
+    },
+    "facing=north,part=2,status=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status2"
+    },
+    "facing=north,part=2,status=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status2"
+    },
+    "facing=north,part=2,status=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status3"
+    },
+    "facing=north,part=2,status=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status3"
+    },
+    "facing=north,part=3,status=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status0"
+    },
+    "facing=north,part=3,status=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status0"
+    },
+    "facing=north,part=3,status=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status1"
+    },
+    "facing=north,part=3,status=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status1"
+    },
+    "facing=north,part=3,status=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status2"
+    },
+    "facing=north,part=3,status=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status2"
+    },
+    "facing=north,part=3,status=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status3"
+    },
+    "facing=north,part=3,status=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status3"
+    },
+    "facing=south,part=0,status=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status0",
+      "y": 180
+    },
+    "facing=south,part=0,status=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status0",
+      "y": 180
+    },
+    "facing=south,part=0,status=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status1",
+      "y": 180
+    },
+    "facing=south,part=0,status=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status1",
+      "y": 180
+    },
+    "facing=south,part=0,status=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status2",
+      "y": 180
+    },
+    "facing=south,part=0,status=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status2",
+      "y": 180
+    },
+    "facing=south,part=0,status=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status3",
+      "y": 180
+    },
+    "facing=south,part=0,status=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status3",
+      "y": 180
+    },
+    "facing=south,part=1,status=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status0",
+      "y": 180
+    },
+    "facing=south,part=1,status=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status0",
+      "y": 180
+    },
+    "facing=south,part=1,status=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status1",
+      "y": 180
+    },
+    "facing=south,part=1,status=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status1",
+      "y": 180
+    },
+    "facing=south,part=1,status=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status2",
+      "y": 180
+    },
+    "facing=south,part=1,status=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status2",
+      "y": 180
+    },
+    "facing=south,part=1,status=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status3",
+      "y": 180
+    },
+    "facing=south,part=1,status=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status3",
+      "y": 180
+    },
+    "facing=south,part=2,status=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status0",
+      "y": 180
+    },
+    "facing=south,part=2,status=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status0",
+      "y": 180
+    },
+    "facing=south,part=2,status=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status1",
+      "y": 180
+    },
+    "facing=south,part=2,status=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status1",
+      "y": 180
+    },
+    "facing=south,part=2,status=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status2",
+      "y": 180
+    },
+    "facing=south,part=2,status=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status2",
+      "y": 180
+    },
+    "facing=south,part=2,status=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status3",
+      "y": 180
+    },
+    "facing=south,part=2,status=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status3",
+      "y": 180
+    },
+    "facing=south,part=3,status=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status0",
+      "y": 180
+    },
+    "facing=south,part=3,status=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status0",
+      "y": 180
+    },
+    "facing=south,part=3,status=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status1",
+      "y": 180
+    },
+    "facing=south,part=3,status=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status1",
+      "y": 180
+    },
+    "facing=south,part=3,status=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status2",
+      "y": 180
+    },
+    "facing=south,part=3,status=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status2",
+      "y": 180
+    },
+    "facing=south,part=3,status=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status3",
+      "y": 180
+    },
+    "facing=south,part=3,status=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status3",
+      "y": 180
+    },
+    "facing=west,part=0,status=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status0",
+      "y": 270
+    },
+    "facing=west,part=0,status=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status0",
+      "y": 270
+    },
+    "facing=west,part=0,status=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status1",
+      "y": 270
+    },
+    "facing=west,part=0,status=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status1",
+      "y": 270
+    },
+    "facing=west,part=0,status=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status2",
+      "y": 270
+    },
+    "facing=west,part=0,status=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status2",
+      "y": 270
+    },
+    "facing=west,part=0,status=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status3",
+      "y": 270
+    },
+    "facing=west,part=0,status=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part0_status3",
+      "y": 270
+    },
+    "facing=west,part=1,status=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status0",
+      "y": 270
+    },
+    "facing=west,part=1,status=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status0",
+      "y": 270
+    },
+    "facing=west,part=1,status=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status1",
+      "y": 270
+    },
+    "facing=west,part=1,status=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status1",
+      "y": 270
+    },
+    "facing=west,part=1,status=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status2",
+      "y": 270
+    },
+    "facing=west,part=1,status=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status2",
+      "y": 270
+    },
+    "facing=west,part=1,status=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status3",
+      "y": 270
+    },
+    "facing=west,part=1,status=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part1_status3",
+      "y": 270
+    },
+    "facing=west,part=2,status=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status0",
+      "y": 270
+    },
+    "facing=west,part=2,status=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status0",
+      "y": 270
+    },
+    "facing=west,part=2,status=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status1",
+      "y": 270
+    },
+    "facing=west,part=2,status=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status1",
+      "y": 270
+    },
+    "facing=west,part=2,status=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status2",
+      "y": 270
+    },
+    "facing=west,part=2,status=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status2",
+      "y": 270
+    },
+    "facing=west,part=2,status=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status3",
+      "y": 270
+    },
+    "facing=west,part=2,status=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part2_status3",
+      "y": 270
+    },
+    "facing=west,part=3,status=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status0",
+      "y": 270
+    },
+    "facing=west,part=3,status=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status0",
+      "y": 270
+    },
+    "facing=west,part=3,status=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status1",
+      "y": 270
+    },
+    "facing=west,part=3,status=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status1",
+      "y": 270
+    },
+    "facing=west,part=3,status=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status2",
+      "y": 270
+    },
+    "facing=west,part=3,status=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status2",
+      "y": 270
+    },
+    "facing=west,part=3,status=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status3",
+      "y": 270
+    },
+    "facing=west,part=3,status=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/copper_still/part3_status3",
+      "y": 270
+    }
+  }
+}

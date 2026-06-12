@@ -10,6 +10,7 @@ import com.kazi_cat.papercraft_magic_decoration.block.decoration.VariantDecorati
 import com.kazi_cat.papercraft_magic_decoration.block.drink.BoxedDrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.DrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.smeltable.ChunkySalmonBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.utility.CopperStillBlock;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import com.kazi_cat.papercraft_magic_decoration.init.registry.DrinkRegistry;
 import net.minecraft.data.PackOutput;
@@ -88,6 +89,12 @@ public class BlockStateGenerator extends BlockStateProvider {
                 name = "unopened";
             }
             ResourceLocation file = modLoc("block/oversized_box_of_chocolates/%s_%d".formatted(name, part));
+            return new ModelFile.UncheckedModelFile(file);
+        });
+        horizontalBlock(ModBlocks.COPPER_STILL.get(), state -> {
+            int part = state.getValue(((MultipartBlock) ModBlocks.COPPER_STILL.get()).getPartProperty());
+            int status = state.getValue(CopperStillBlock.STATUS);
+            ResourceLocation file = modLoc("block/%s/part%d_status%d".formatted("copper_still", part, status));
             return new ModelFile.UncheckedModelFile(file);
         });
 

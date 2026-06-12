@@ -24,6 +24,7 @@ public interface ModCreativeTabs {
 
                 output.accept(ModItems.PAPER_CUTTING_TABLE.get());
                 output.accept(ModItems.COPPER_BARTENDER.get());
+                output.accept(ModItems.COPPER_STILL.get());
 
                 output.accept(ModItems.BLACK_PAPER.get());
                 output.accept(ModItems.BLUE_PAPER.get());
