@@ -7,11 +7,13 @@ import com.kazi_cat.papercraft_magic_decoration.block.crop.CoffeePastinacaSativa
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.*;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.BottleDrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.misc.DirtHoleBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.misc.TemplateSaplingBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.smeltable.*;
 import com.kazi_cat.papercraft_magic_decoration.block.utility.*;
 import com.kazi_cat.papercraft_magic_decoration.blockentity.*;
 import com.kazi_cat.papercraft_magic_decoration.init.registry.DrinkRegistry;
 import net.minecraft.core.BlockPos;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
@@ -294,6 +296,76 @@ public interface ModBlocks {
                     .ignitedByLava()
                     .sound(SoundType.LILY_PAD)
                     .pushReaction(PushReaction.DESTROY), null));
+
+    // 棕榈树
+    RegistryObject<Block> MINI_PALM_TREE = BLOCKS.register("mini_palm_tree", () -> new TemplateSaplingBlock(
+            BlockBehaviour.Properties.of()
+                    .instabreak()
+                    .randomTicks()
+                    .noOcclusion()
+                    .noCollission()
+                    .ignitedByLava()
+                    .sound(SoundType.GRASS)
+                    .mapColor(MapColor.COLOR_GREEN),
+            TemplateSaplingBlock.Entry.of(PaperKiteManor.modLoc("palm_tree_a"), 12, 0),
+            TemplateSaplingBlock.Entry.of(PaperKiteManor.modLoc("palm_tree_b"), 16, 0),
+            TemplateSaplingBlock.Entry.of(PaperKiteManor.modLoc("palm_tree_c"), 18, 0),
+            TemplateSaplingBlock.Entry.of(PaperKiteManor.modLoc("palm_tree_d"), 20, 0),
+            TemplateSaplingBlock.Entry.of(PaperKiteManor.modLoc("palm_tree_e"), 22, 0),
+            TemplateSaplingBlock.Entry.of(PaperKiteManor.modLoc("palm_tree_f"), 23, 0)) {
+        protected boolean mayPlaceOn(BlockState state, BlockGetter level, BlockPos pos) {
+            return super.mayPlaceOn(state, level, pos) || state.is(BlockTags.SAND);
+        }
+    });
+
+    RegistryObject<Block> PALM_TREE_CROWN = BLOCKS.register("palm_tree_crown", () -> new SimpleDecorationBlock(
+            BlockBehaviour.Properties.of()
+                    .instabreak()
+                    .noOcclusion()
+                    .noCollission()
+                    .ignitedByLava()
+                    .mapColor(MapColor.PLANT)
+                    .sound(SoundType.AZALEA_LEAVES)
+                    .instrument(NoteBlockInstrument.BASS),
+            Block.box(-16, -16, -16, 16, 32, 16)));
+
+    RegistryObject<Block> PALM_TREE_TOP = BLOCKS.register("palm_tree_top", () -> new Block(
+            BlockBehaviour.Properties.of()
+                    .instabreak()
+                    .noOcclusion()
+                    .ignitedByLava()
+                    .sound(SoundType.WOOD)
+                    .mapColor(MapColor.PLANT)
+                    .instrument(NoteBlockInstrument.BASS)));
+
+    RegistryObject<Block> PALM_TREE_TRUNK_TOP = BLOCKS.register("palm_tree_trunk_top", () -> new Block(
+            BlockBehaviour.Properties.of()
+                    .noOcclusion()
+                    .ignitedByLava()
+                    .sound(SoundType.WOOD)
+                    .mapColor(MapColor.WOOD)
+                    .instrument(NoteBlockInstrument.BASS)
+                    .strength(2f, 10f)));
+
+    RegistryObject<Block> PALM_TREE_TRUNK = BLOCKS.register("palm_tree_trunk", () -> new WaterloggedOnlyBlock(
+            BlockBehaviour.Properties.of()
+                    .noOcclusion()
+                    .ignitedByLava()
+                    .sound(SoundType.WOOD)
+                    .mapColor(MapColor.WOOD)
+                    .instrument(NoteBlockInstrument.BASS)
+                    .strength(2f, 10f),
+            Block.box(3, 0, 3, 13, 16, 13)));
+
+    RegistryObject<Block> ROUGH_PALM_TREE_TRUNK = BLOCKS.register("rough_palm_tree_trunk", () -> new WaterloggedOnlyBlock(
+            BlockBehaviour.Properties.of()
+                    .noOcclusion()
+                    .ignitedByLava()
+                    .sound(SoundType.WOOD)
+                    .mapColor(MapColor.WOOD)
+                    .instrument(NoteBlockInstrument.BASS)
+                    .strength(2f, 10f),
+            Block.box(2, 0, 2, 14, 16, 14)));
 
     // 装饰方块
     RegistryObject<Block> TRAY_BLOCK = BLOCKS.register("tray", () -> new VariantDecorationBlock(

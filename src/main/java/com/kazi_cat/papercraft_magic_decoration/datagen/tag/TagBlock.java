@@ -36,6 +36,8 @@ public class TagBlock extends BlockTagsProvider {
         tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(ModBlocks.PAPER_CUTTING_TABLE.get(), ModBlocks.COFFEE_PASTINACA_SATIVA_CORE.get(),
                         ModBlocks.COFFEE_PASTINACA_SATIVA_RIM.get(), ModBlocks.SPORES_COLLECTION_PLATE.get(),
-                        ModBlocks.TRAY_BLOCK.get());
+                        ModBlocks.TRAY_BLOCK.get(), ModBlocks.PALM_TREE_TRUNK.get(),
+                        ModBlocks.ROUGH_PALM_TREE_TRUNK.get(), ModBlocks.PALM_TREE_TOP.get(),
+                        ModBlocks.PALM_TREE_TRUNK_TOP.get());
     }
 }

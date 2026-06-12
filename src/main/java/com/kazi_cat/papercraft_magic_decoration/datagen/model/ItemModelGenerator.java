@@ -87,6 +87,12 @@ public class ItemModelGenerator extends ItemModelProvider {
         withExistingParent("kazi_lucky_cat", modLoc("displaysettings/kazi_lucky_cat"));
         withExistingParent("spores_collection_plate", modLoc("block/spores_collection_plate"));
         withExistingParent("mocha_pot", modLoc("block/mocha_pot"));
+        withExistingParent("mini_palm_tree", modLoc("block/mini_palm_tree"));
+        withExistingParent("palm_tree_crown", modLoc("block/palm_tree_crown"));
+        withExistingParent("palm_tree_top", modLoc("block/palm_tree_top"));
+        withExistingParent("palm_tree_trunk", modLoc("block/palm_tree_trunk"));
+        withExistingParent("palm_tree_trunk_top", modLoc("block/palm_tree_trunk_top"));
+        withExistingParent("rough_palm_tree_trunk", modLoc("block/rough_palm_tree_trunk"));
 
         DrinkRegistry.DRINK_DATA_MAP.forEach((key, data) -> {
             Item item = ForgeRegistries.ITEMS.getValue(key);
