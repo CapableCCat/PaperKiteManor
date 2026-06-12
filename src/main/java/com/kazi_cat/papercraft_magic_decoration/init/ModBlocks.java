@@ -7,6 +7,7 @@ import com.kazi_cat.papercraft_magic_decoration.block.crop.CoffeePastinacaSativa
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.*;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.BottleDrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.misc.DirtHoleBlock;
+import com.kazi_cat.papercraft_magic_decoration.block.misc.FoamBoxWithDirtBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.misc.TemplateSaplingBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.misc.UmbrellaCashewBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.smeltable.*;
@@ -18,14 +19,18 @@ import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -34,7 +39,7 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.Collections;
 import java.util.List;
 
-@SuppressWarnings({"DataFlowIssue"})
+@SuppressWarnings({"DataFlowIssue","deprecation"})
 public interface ModBlocks {
     DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, PaperKiteManor.MOD_ID);
     DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, PaperKiteManor.MOD_ID);
@@ -448,13 +453,6 @@ public interface ModBlocks {
 
 
     // 装饰方块
-    RegistryObject<Block> TRAY_BLOCK = BLOCKS.register("tray", () -> new VariantDecorationBlock(
-            BlockBehaviour.Properties.of()
-                    .strength(0.5f, 10f)
-                    .noOcclusion()
-                    .noLootTable(),
-            Block.box(0, 0, 0, 16, 2, 16), 2));
-
     RegistryObject<Block> DIRT_HOLE = BLOCKS.register("dirt_hole", DirtHoleBlock::new);
 
     RegistryObject<BlockEntityType<DirtHoleBlockEntity>> DIRT_HOLE_BE = BLOCK_ENTITIES.register("dirt_hole", () -> BlockEntityType.Builder.of(DirtHoleBlockEntity::new, DIRT_HOLE.get()).build(null));
@@ -462,6 +460,136 @@ public interface ModBlocks {
     RegistryObject<Block> KAZI_LUCKY_CAT = BLOCKS.register("kazi_lucky_cat", KaziLuckyCatBlock::new);
 
     RegistryObject<BlockEntityType<KaziLuckyCatBlockEntity>> KAZI_LUCKY_CAT_BE = BLOCK_ENTITIES.register("kazi_lucky_cat", () -> BlockEntityType.Builder.of(KaziLuckyCatBlockEntity::new, KAZI_LUCKY_CAT.get()).build(null));
+
+    RegistryObject<Block> TRAY_BLOCK = BLOCKS.register("tray", () -> new VariantDecorationBlock(
+            BlockBehaviour.Properties.of()
+                    .strength(0.5f, 10f)
+                    .noOcclusion()
+                    .noLootTable(),
+            Block.box(0, 0, 0, 16, 2, 16), 2));
+
+    RegistryObject<Block> WINE_AROMA_RED_WALLPAPER_WALL = BLOCKS.register("wine_aroma_red_wallpaper_wall", () -> new Block(
+            BlockBehaviour.Properties.of()
+                    .ignitedByLava()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .mapColor(MapColor.COLOR_RED)
+                    .sound(SoundType.WOOD)
+                    .strength(2f, 6f)));
+
+    RegistryObject<Block> WINE_AROMA_BLUE_WALLPAPER_WALL = BLOCKS.register("wine_aroma_blue_wallpaper_wall", () -> new Block(
+            BlockBehaviour.Properties.of()
+                    .ignitedByLava()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .mapColor(MapColor.COLOR_BLUE)
+                    .sound(SoundType.WOOD)
+                    .strength(2f, 6f)));
+
+    RegistryObject<Block> BLACK_AND_WHITE_CHECKER_BOARD_TILE = BLOCKS.register("black_and_white_checker_board_tile", () -> new Block(
+            BlockBehaviour.Properties.of()
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .mapColor(MapColor.COLOR_BLACK).sound(SoundType.STONE)
+                    .strength(3f, 15f)
+                    .requiresCorrectToolForDrops()));
+
+    RegistryObject<Block> BLUE_AND_WHITE_CHECKER_BOARD_TILE = BLOCKS.register("blue_and_white_checker_board_tile", () -> new Block(
+            BlockBehaviour.Properties.of()
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .mapColor(MapColor.TERRACOTTA_WHITE)
+                    .sound(SoundType.STONE).strength(3f, 15f)
+                    .requiresCorrectToolForDrops()));
+
+    RegistryObject<Block> UNDERGROUND_WALLPAPER_WALL = BLOCKS.register("underground_wallpaper_wall", () -> new Block(
+            BlockBehaviour.Properties.of()
+                    .ignitedByLava()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .mapColor(MapColor.COLOR_GREEN).sound(SoundType.WOOD)
+                    .strength(2f, 3f)));
+
+    RegistryObject<Block> RUSTIC_BLUE_WALLPAPER_WALL = BLOCKS.register("rustic_blue_wallpaper_wall", () -> new Block(
+            BlockBehaviour.Properties.of()
+                    .ignitedByLava()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .mapColor(MapColor.COLOR_BLUE).sound(SoundType.WOOD)
+                    .strength(2f, 3f)));
+
+    RegistryObject<Block> EMERALD_BLUE_EARTH_TILE = BLOCKS.register("emerald_blue_earth_tile", () -> new Block(
+            BlockBehaviour.Properties.of()
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .mapColor(MapColor.TERRACOTTA_WHITE).sound(SoundType.STONE)
+                    .strength(1.5f, 10f)
+                    .requiresCorrectToolForDrops()));
+
+    RegistryObject<Block> UNDERGROUND_PANELLING = BLOCKS.register("underground_panelling", () -> new HorizontalDirectionalOnlyBlock(
+            BlockBehaviour.Properties.of()
+                    .ignitedByLava()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .mapColor(MapColor.WOOD)
+                    .sound(SoundType.WOOD)
+                    .strength(2f, 10f)
+                    .noOcclusion(),
+            Block.box(0, 0, 1, 16, 16, 16)));
+
+    RegistryObject<Block> RUSTIC_PANELLING = BLOCKS.register("rustic_panelling", () -> new HorizontalDirectionalOnlyBlock(
+            BlockBehaviour.Properties.of()
+                    .ignitedByLava()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .sound(SoundType.WOOD)
+                    .strength(1f, 3f),
+            Block.box(0, 0, 1, 16, 16, 16)));
+
+    RegistryObject<Block> UNDERGROUND_DOOR_FRAMES = BLOCKS.register("underground_door_frames", () -> new SimpleDecorationBlock(
+            BlockBehaviour.Properties.of()
+                    .ignitedByLava()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .mapColor(MapColor.WOOD)
+                    .sound(SoundType.WOOD)
+                    .strength(1f, 3f)
+                    .noCollission()
+                    .noOcclusion(),
+            Block.box(-7, 8, 12, 23, 32, 16)));
+
+    RegistryObject<Block> STAR_EMBELLISHED_CEILING = BLOCKS.register("star_embellished_ceiling", () -> new FaceAttachedHorizontalDirectionalBlock(
+            BlockBehaviour.Properties.of()
+                    .ignitedByLava()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .sound(SoundType.WOOD)
+                    .strength(2f, 10f)
+                    .noOcclusion()){
+        @Override
+        public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+            return true;
+        }
+        @Override
+        protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) { builder.add(FACING, FACE); }
+    });
+
+    RegistryObject<Block> ROSES_IN_WATER_BOTTLE = BLOCKS.register("roses_in_water_bottle", () -> new TwoByOneVerticalDecorationBlock(
+            BlockBehaviour.Properties.of()
+                    .noOcclusion()
+                    .pushReaction(PushReaction.DESTROY)
+                    .sound(SoundType.GLASS),
+            Block.box(5.5, 0, 5.5, 10.5, 16, 10.5),
+            Block.box(0, 0, 0, 16, 8, 16)){
+        @Override
+        public VoxelShape getCollisionShape(BlockState state, BlockGetter blockGetter, BlockPos pos, CollisionContext context) {
+            return state.getValue(partProperty) == 0 ? getShape(state, blockGetter, pos, context) : Shapes.empty();
+        }
+    });
+
+    RegistryObject<Block> KNITTED_LEOPARD_RUG = BLOCKS.register("knitted_leopard_rug", () -> new KnittedLeopardRugBlock(
+            BlockBehaviour.Properties.of()
+                    .ignitedByLava()
+                    .sound(SoundType.SNOW)
+                    .strength(0.5f, 10f)
+                    .noCollission()
+                    .noOcclusion(),
+            Block.box(-16, 0, -16, 32, 0.5, 24)));
+
+    RegistryObject<Block> FOAM_BOX_WITH_DIRT = BLOCKS.register("foam_box_with_dirt", () -> new FoamBoxWithDirtBlock(
+            BlockBehaviour.Properties.of()
+                    .sound(SoundType.SNOW)
+                    .strength(0.5f)
+                    .noOcclusion()));
 
     private static boolean never(BlockState state, BlockGetter getter, BlockPos pos) {
         return false;

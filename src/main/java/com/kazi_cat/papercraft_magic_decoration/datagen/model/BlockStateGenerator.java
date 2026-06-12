@@ -5,7 +5,6 @@ import com.kazi_cat.papercraft_magic_decoration.api.block.SmeltableBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.base.MultipartBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.chocolate.ChocolateInMoldBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.chocolate.OversizedBoxOfChocolatesBlock;
-import com.kazi_cat.papercraft_magic_decoration.block.decoration.TwoByOneDecorationBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.decoration.VariantDecorationBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.BoxedDrinkBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.drink.DrinkBlock;
@@ -42,6 +41,10 @@ public class BlockStateGenerator extends BlockStateProvider {
         simpleBlock(ModBlocks.RED_PAPER_BLOCK.get());
         simpleBlock(ModBlocks.YELLOW_PAPER_BLOCK.get());
         simpleBlock(ModBlocks.COTTON_SERGE_BLOCK.get());
+        simpleBlock(ModBlocks.WINE_AROMA_RED_WALLPAPER_WALL.get());
+        simpleBlock(ModBlocks.WINE_AROMA_BLUE_WALLPAPER_WALL.get());
+        simpleBlock(ModBlocks.UNDERGROUND_WALLPAPER_WALL.get());
+        simpleBlock(ModBlocks.RUSTIC_BLUE_WALLPAPER_WALL.get());
         simpleBlock(ModBlocks.DEWY_MEMBRANE_BLOCK.get(), new ModelFile.UncheckedModelFile(modLoc("block/dewy_membrane_block")));
         simpleBlock(ModBlocks.DIRT_HOLE.get(), new ModelFile.UncheckedModelFile(modLoc("block/dirt_hole")));
         simpleBlock(ModBlocks.COFFEE_PASTINACA_SATIVA_CORE.get(), new ModelFile.UncheckedModelFile(modLoc("block/coffee_pastinaca_sativa_core")));
@@ -56,6 +59,10 @@ public class BlockStateGenerator extends BlockStateProvider {
         simpleBlock(ModBlocks.CANOPY_TREE_FOLIAGE.get(), new ModelFile.UncheckedModelFile(modLoc("block/canopy_tree_foliage")));
         simpleBlock(ModBlocks.CANOPY_TREE_MUSHROOM.get(), new ModelFile.UncheckedModelFile(modLoc("block/canopy_tree_mushroom")));
         simpleBlock(ModBlocks.MINI_CANOPY_TREE.get(), new ModelFile.UncheckedModelFile(modLoc("block/mini_canopy_tree")));
+        simpleBlock(ModBlocks.BLACK_AND_WHITE_CHECKER_BOARD_TILE.get(), new ModelFile.UncheckedModelFile(modLoc("block/black_and_white_checker_board_tile")));
+        simpleBlock(ModBlocks.BLUE_AND_WHITE_CHECKER_BOARD_TILE.get(), new ModelFile.UncheckedModelFile(modLoc("block/blue_and_white_checker_board_tile")));
+        simpleBlock(ModBlocks.EMERALD_BLUE_EARTH_TILE.get(), new ModelFile.UncheckedModelFile(modLoc("block/emerald_blue_earth_tile")));
+        simpleBlock(ModBlocks.FOAM_BOX_WITH_DIRT.get(), new ModelFile.UncheckedModelFile(modLoc("block/foam_box_with_dirt")));
 
         crop(ModBlocks.COFFEE_PASTINACA_SATIVA, "coffee_pastinaca_sativa");
 
@@ -66,9 +73,15 @@ public class BlockStateGenerator extends BlockStateProvider {
         multipartSmeltable(ModBlocks.CHUNKY_SALMON.get(), "chunky_salmon", ChunkySalmonBlock.VARIANT);
         multipartSmeltable(ModBlocks.MONSTER_STEAK.get(), "monster_steak");
 
-        variant(ModBlocks.COFFEE_PASTINACA_SATIVA_RIM.get(), "coffee_pastinaca_sativa_rim", ((TwoByOneDecorationBlock) ModBlocks.COFFEE_PASTINACA_SATIVA_RIM.get()).getPartProperty());
         variant(ModBlocks.TRAY_BLOCK.get(), "tray", ((VariantDecorationBlock) ModBlocks.TRAY_BLOCK.get()).getVariantProperty());
+        variant(ModBlocks.KNITTED_LEOPARD_RUG.get(), "knitted_leopard_rug", ((VariantDecorationBlock) ModBlocks.KNITTED_LEOPARD_RUG.get()).getVariantProperty());
 
+        multipart(ModBlocks.COFFEE_PASTINACA_SATIVA_RIM.get(), "coffee_pastinaca_sativa_rim");
+        multipart(ModBlocks.ROSES_IN_WATER_BOTTLE.get(), "roses_in_water_bottle");
+
+        horizontalBlock(ModBlocks.UNDERGROUND_DOOR_FRAMES.get(), new ModelFile.UncheckedModelFile(modLoc("block/underground_door_frames")));
+        horizontalBlock(ModBlocks.UNDERGROUND_PANELLING.get(), new ModelFile.UncheckedModelFile(modLoc("block/underground_panelling")));
+        horizontalBlock(ModBlocks.RUSTIC_PANELLING.get(), new ModelFile.UncheckedModelFile(modLoc("block/rustic_panelling")));
         horizontalBlock(ModBlocks.CANOPY_TREE_TRUNK.get(), new ModelFile.UncheckedModelFile(modLoc("block/canopy_tree_trunk")));
         horizontalBlock(ModBlocks.PALM_TREE_CROWN.get(), new ModelFile.UncheckedModelFile(modLoc("block/palm_tree_crown")));
         horizontalBlock(ModBlocks.COFFEE_PASTINACA_SATIVA_FRUITING_STEM.get(), new ModelFile.UncheckedModelFile(modLoc("block/coffee_pastinaca_sativa_fruiting_stem")));
@@ -186,6 +199,13 @@ public class BlockStateGenerator extends BlockStateProvider {
             ResourceLocation file = modLoc("block/%s_%s".formatted(name, part));
             return new ModelFile.UncheckedModelFile(file);
         });
+    }
+
+    public void multipart(Block block, String name) {
+        if (!(block instanceof MultipartBlock multipart)) {
+            return;
+        }
+       variant(block, name, multipart.getPartProperty());
     }
 
     public void smeltable(Block block, String name) {

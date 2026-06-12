@@ -30,11 +30,12 @@ public class TagBlock extends BlockTagsProvider {
                 .add(ModBlocks.CANOPY_TREE_FERN.get(), ModBlocks.CANOPY_TREE_MUSHROOM.get());
 
         tag(BlockTags.MINEABLE_WITH_SHOVEL)
-                .add(ModBlocks.DIRT_HOLE.get());
+                .add(ModBlocks.DIRT_HOLE.get(), ModBlocks.FOAM_BOX_WITH_DIRT.get());
 
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.COPPER_BARTENDER.get(), ModBlocks.COPPER_STILL.get(),
-                        ModBlocks.MOCHA_POT.get());
+                        ModBlocks.MOCHA_POT.get(), ModBlocks.BLACK_AND_WHITE_CHECKER_BOARD_TILE.get(),
+                        ModBlocks.BLUE_AND_WHITE_CHECKER_BOARD_TILE.get(), ModBlocks.EMERALD_BLUE_EARTH_TILE.get());
 
         tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(ModBlocks.PAPER_CUTTING_TABLE.get(), ModBlocks.COFFEE_PASTINACA_SATIVA_CORE.get(),
@@ -42,6 +43,10 @@ public class TagBlock extends BlockTagsProvider {
                         ModBlocks.TRAY_BLOCK.get(), ModBlocks.PALM_TREE_TRUNK.get(),
                         ModBlocks.ROUGH_PALM_TREE_TRUNK.get(), ModBlocks.PALM_TREE_TOP.get(),
                         ModBlocks.PALM_TREE_TRUNK_TOP.get(), ModBlocks.CANOPY_TREE_LIMB.get(),
-                        ModBlocks.CANOPY_TREE_DROOPING_ROOT.get(), ModBlocks.CANOPY_TREE_TRUNK.get());
+                        ModBlocks.CANOPY_TREE_DROOPING_ROOT.get(), ModBlocks.CANOPY_TREE_TRUNK.get(),
+                        ModBlocks.WINE_AROMA_RED_WALLPAPER_WALL.get(), ModBlocks.WINE_AROMA_BLUE_WALLPAPER_WALL.get(),
+                        ModBlocks.UNDERGROUND_WALLPAPER_WALL.get(), ModBlocks.RUSTIC_BLUE_WALLPAPER_WALL.get(),
+                        ModBlocks.UNDERGROUND_PANELLING.get(), ModBlocks.RUSTIC_PANELLING.get(),
+                        ModBlocks.UNDERGROUND_DOOR_FRAMES.get(), ModBlocks.STAR_EMBELLISHED_CEILING.get());
     }
 }

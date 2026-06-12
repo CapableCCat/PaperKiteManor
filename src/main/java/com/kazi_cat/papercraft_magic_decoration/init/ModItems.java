@@ -106,6 +106,20 @@ public interface ModItems {
     RegistryObject<Item> CANOPY_TREE_TRUNK = ITEMS.register("canopy_tree_trunk", () -> new BlockItem(ModBlocks.CANOPY_TREE_TRUNK.get(), new Item.Properties()));
     RegistryObject<Item> CANOPY_TREE_MUSHROOM = ITEMS.register("canopy_tree_mushroom", () -> new BlockItem(ModBlocks.CANOPY_TREE_MUSHROOM.get(), new Item.Properties()));
 
-    // 装饰物
+    // 装饰方块
     RegistryObject<Item> KAZI_LUCKY_CAT = ITEMS.register("kazi_lucky_cat", () -> new GeoBlockItem(ModBlocks.KAZI_LUCKY_CAT.get(), new Item.Properties()));
+    RegistryObject<Item> WINE_AROMA_RED_WALLPAPER_WALL = ITEMS.register("wine_aroma_red_wallpaper_wall", () -> new BlockItem(ModBlocks.WINE_AROMA_RED_WALLPAPER_WALL.get(), new Item.Properties()));
+    RegistryObject<Item> WINE_AROMA_BLUE_WALLPAPER_WALL = ITEMS.register("wine_aroma_blue_wallpaper_wall", () -> new BlockItem(ModBlocks.WINE_AROMA_BLUE_WALLPAPER_WALL.get(), new Item.Properties()));
+    RegistryObject<Item> BLACK_AND_WHITE_CHECKER_BOARD_TILE = ITEMS.register("black_and_white_checker_board_tile", () -> new BlockItem(ModBlocks.BLACK_AND_WHITE_CHECKER_BOARD_TILE.get(), new Item.Properties()));
+    RegistryObject<Item> BLUE_AND_WHITE_CHECKER_BOARD_TILE = ITEMS.register("blue_and_white_checker_board_tile", () -> new BlockItem(ModBlocks.BLUE_AND_WHITE_CHECKER_BOARD_TILE.get(), new Item.Properties()));
+    RegistryObject<Item> UNDERGROUND_WALLPAPER_WALL = ITEMS.register("underground_wallpaper_wall", () -> new BlockItem(ModBlocks.UNDERGROUND_WALLPAPER_WALL.get(), new Item.Properties()));
+    RegistryObject<Item> RUSTIC_BLUE_WALLPAPER_WALL = ITEMS.register("rustic_blue_wallpaper_wall", () -> new BlockItem(ModBlocks.RUSTIC_BLUE_WALLPAPER_WALL.get(), new Item.Properties()));
+    RegistryObject<Item> EMERALD_BLUE_EARTH_TILE = ITEMS.register("emerald_blue_earth_tile", () -> new BlockItem(ModBlocks.EMERALD_BLUE_EARTH_TILE.get(), new Item.Properties()));
+    RegistryObject<Item> UNDERGROUND_PANELLING = ITEMS.register("underground_panelling", () -> new BlockItem(ModBlocks.UNDERGROUND_PANELLING.get(), new Item.Properties()));
+    RegistryObject<Item> RUSTIC_PANELLING = ITEMS.register("rustic_panelling", () -> new BlockItem(ModBlocks.RUSTIC_PANELLING.get(), new Item.Properties()));
+    RegistryObject<Item> UNDERGROUND_DOOR_FRAMES = ITEMS.register("underground_door_frames", () -> new BlockItem(ModBlocks.UNDERGROUND_DOOR_FRAMES.get(), new Item.Properties()));
+    RegistryObject<Item> ROSES_IN_WATER_BOTTLE = ITEMS.register("roses_in_water_bottle", () -> new BlockItem(ModBlocks.ROSES_IN_WATER_BOTTLE.get(), new Item.Properties()));
+    RegistryObject<Item> STAR_EMBELLISHED_CEILING = ITEMS.register("star_embellished_ceiling", () -> new BlockItem(ModBlocks.STAR_EMBELLISHED_CEILING.get(), new Item.Properties()));
+    RegistryObject<Item> KNITTED_LEOPARD_RUG = ITEMS.register("knitted_leopard_rug", () -> new BlockItem(ModBlocks.KNITTED_LEOPARD_RUG.get(), new Item.Properties()));
+    RegistryObject<Item> FOAM_BOX_WITH_DIRT = ITEMS.register("foam_box_with_dirt", () -> new BlockItem(ModBlocks.FOAM_BOX_WITH_DIRT.get(), new Item.Properties()));
 }

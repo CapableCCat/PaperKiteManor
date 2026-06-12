@@ -107,6 +107,23 @@ public interface ModCreativeTabs {
             .title(Component.translatable("item_group.papercraft_magic_decoration.manor_decoration.name"))
             .icon(ModItems.KAZI_LUCKY_CAT.get()::getDefaultInstance)
             .displayItems((par, output) -> {
+                output.accept(ModItems.WINE_AROMA_RED_WALLPAPER_WALL.get());
+                output.accept(ModItems.WINE_AROMA_BLUE_WALLPAPER_WALL.get());
+                output.accept(ModItems.UNDERGROUND_WALLPAPER_WALL.get());
+                output.accept(ModItems.RUSTIC_BLUE_WALLPAPER_WALL.get());
+                output.accept(ModItems.BLACK_AND_WHITE_CHECKER_BOARD_TILE.get());
+                output.accept(ModItems.BLUE_AND_WHITE_CHECKER_BOARD_TILE.get());
+                output.accept(ModItems.EMERALD_BLUE_EARTH_TILE.get());
+                output.accept(ModItems.STAR_EMBELLISHED_CEILING.get());
+
+                output.accept(ModItems.UNDERGROUND_PANELLING.get());
+                output.accept(ModItems.RUSTIC_PANELLING.get());
+                output.accept(ModItems.UNDERGROUND_DOOR_FRAMES.get());
+
+                output.accept(ModItems.ROSES_IN_WATER_BOTTLE.get());
+                output.accept(ModItems.KNITTED_LEOPARD_RUG.get());
+                output.accept(ModItems.FOAM_BOX_WITH_DIRT.get());
+
                 output.accept(ModItems.KAZI_LUCKY_CAT.get());
 
                 output.accept(ModItems.MINI_PALM_TREE.get());

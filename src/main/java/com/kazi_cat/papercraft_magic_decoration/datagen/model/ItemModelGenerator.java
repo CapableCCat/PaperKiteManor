@@ -63,6 +63,7 @@ public class ItemModelGenerator extends ItemModelProvider {
         basicItem(ModItems.COFFEE_PASTINACA_SATIVA_TUBER.get());
         basicItem(ModItems.COPPER_STILL.get());
         basicItem(ModItems.GLOW_CASHEWS.get());
+        basicItem(ModItems.KNITTED_LEOPARD_RUG.get());
 
         handheldItem(ModItems.GARDEN_TROWEL.get());
 
@@ -101,6 +102,18 @@ public class ItemModelGenerator extends ItemModelProvider {
         withExistingParent("canopy_tree_trunk", modLoc("block/canopy_tree_trunk"));
         withExistingParent("canopy_tree_limb", modLoc("block/canopy_tree_limb"));
         withExistingParent("mini_canopy_tree", modLoc("block/mini_canopy_tree"));
+        withExistingParent("wine_aroma_red_wallpaper_wall", modLoc("block/wine_aroma_red_wallpaper_wall"));
+        withExistingParent("wine_aroma_blue_wallpaper_wall", modLoc("block/wine_aroma_blue_wallpaper_wall"));
+        withExistingParent("underground_wallpaper_wall", modLoc("block/underground_wallpaper_wall"));
+        withExistingParent("rustic_blue_wallpaper_wall", modLoc("block/rustic_blue_wallpaper_wall"));
+        withExistingParent("black_and_white_checker_board_tile", modLoc("block/black_and_white_checker_board_tile"));
+        withExistingParent("blue_and_white_checker_board_tile", modLoc("block/blue_and_white_checker_board_tile"));
+        withExistingParent("underground_panelling", modLoc("block/underground_panelling"));
+        withExistingParent("rustic_panelling", modLoc("block/rustic_panelling"));
+        withExistingParent("underground_door_frames", modLoc("block/underground_door_frames"));
+        withExistingParent("emerald_blue_earth_tile", modLoc("block/emerald_blue_earth_tile"));
+        withExistingParent("roses_in_water_bottle", modLoc("block/roses_in_water_bottle"));
+        withExistingParent("star_embellished_ceiling", modLoc("block/star_embellished_ceiling"));
 
         DrinkRegistry.DRINK_DATA_MAP.forEach((key, data) -> {
             Item item = ForgeRegistries.ITEMS.getValue(key);

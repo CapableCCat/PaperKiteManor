@@ -27,6 +27,10 @@ public class BlockModelGenerator extends BlockModelProvider {
         cubeAll("paper_cutting_table", modLoc("block/paper_cutting_table"));
         cubeAll("copper_bartender", modLoc("block/copper_bartender"));
         cubeAll("kazi_lucky_cat", modLoc("block/kazi_lucky_cat"));
+        cubeAll("wine_aroma_red_wallpaper_wall", modLoc("block/wine_aroma_red_wallpaper_wall"));
+        cubeAll("wine_aroma_blue_wallpaper_wall", modLoc("block/wine_aroma_blue_wallpaper_wall"));
+        cubeAll("underground_wallpaper_wall", modLoc("block/underground_wallpaper_wall"));
+        cubeAll("rustic_blue_wallpaper_wall", modLoc("block/rustic_blue_wallpaper_wall"));
 
         cubeBottomTop("coffee_pastinaca_sativa_core",
                 modLoc("block/coffee_pastinaca_sativa_side"),
