@@ -15,6 +15,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -88,6 +89,14 @@ public class UmbrellaCashewBlock extends HorizontalDirectionalBlock implements S
     }
 
     @Override
+    public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+        if (!canSurvive(state, level, pos)) {
+            return Blocks.AIR.defaultBlockState();
+        }
+        return state;
+    }
+
+    @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         return level.getBlockState(pos.above()).is(ModBlocks.CANOPY_TREE_FOLIAGE.get());
     }
@@ -134,6 +143,11 @@ public class UmbrellaCashewBlock extends HorizontalDirectionalBlock implements S
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return state.getValue(MATURE) ? SHAPES_MATURE.get(state.getValue(FACING)) : SHAPES.get(state.getValue(FACING));
+    }
+
+    @Override
+    public FluidState getFluidState(BlockState state) {
+        return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
     }
 
     @Override

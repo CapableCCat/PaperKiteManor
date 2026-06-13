@@ -1,8 +1,13 @@
 package com.kazi_cat.papercraft_magic_decoration.entity;
 
+import com.kazi_cat.papercraft_magic_decoration.init.ModItems;
 import com.kazi_cat.papercraft_magic_decoration.init.ModSounds;
+import com.kazi_cat.papercraft_magic_decoration.init.tag.TagMod;
+import com.kazi_cat.papercraft_magic_decoration.utils.ItemUtils;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
@@ -13,6 +18,7 @@ import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.network.NetworkHooks;
@@ -45,8 +51,22 @@ public class PaperTigerEntity extends PathfinderMob implements GeoEntity {
 
     @Override
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
-        if (player.getMainHandItem().isEmpty() && hand == InteractionHand.MAIN_HAND && this.getPassengers().isEmpty()) {
+        ItemStack itemInHand = player.getItemInHand(hand);
+
+        if (itemInHand.isEmpty() && hand == InteractionHand.MAIN_HAND && this.getPassengers().isEmpty()) {
             player.startRiding(this);
+            return InteractionResult.SUCCESS;
+        }
+
+        if (itemInHand.is(TagMod.MAGIC_PAPER) && this.getHealth() < this.getMaxHealth()) {
+            itemInHand.shrink(1);
+            player.swing(hand);
+            this.heal(8);
+            if (player.level() instanceof ServerLevel level) {
+                level.sendParticles(ParticleTypes.HEART,
+                        this.getX(), this.getY() + this.getBbHeight(), this.getZ(),
+                        5, 0.2, 0.2, 0.2, 0.01);
+            }
             return InteractionResult.SUCCESS;
         }
 
@@ -102,6 +122,12 @@ public class PaperTigerEntity extends PathfinderMob implements GeoEntity {
         if (source.is(DamageTypes.FALL))
             return false;
         return super.hurt(source, amount);
+    }
+
+    @Override
+    public void die(DamageSource source) {
+        super.die(source);
+        ItemUtils.spawnItemEntity(level(), position(), ModItems.PAPER_FOLD_TIGER.get().getDefaultInstance());
     }
 
     @Override

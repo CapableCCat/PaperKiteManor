@@ -19,6 +19,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -280,7 +281,15 @@ public interface ModBlocks {
                     .ignitedByLava()
                     .sound(SoundType.LILY_PAD)
                     .pushReaction(PushReaction.DESTROY),
-            Block.box(0, 0, 0, 16, 16, 16)));
+            Block.box(0, 0, 0, 16, 16, 16)) {
+        @Override
+        public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+            if (direction == Direction.DOWN && !(neighborState.isFaceSturdy(level, pos, Direction.UP) || neighborState.is(COFFEE_PASTINACA_SATIVA_RIM.get()))) {
+                return Blocks.AIR.defaultBlockState();
+            }
+            return state;
+        }
+    });
 
     RegistryObject<Block> COFFEE_PASTINACA_SATIVA_CORE = BLOCKS.register("coffee_pastinaca_sativa_core", () -> new Block(
             BlockBehaviour.Properties.of()
@@ -302,7 +311,15 @@ public interface ModBlocks {
                     .noCollission()
                     .ignitedByLava()
                     .sound(SoundType.LILY_PAD)
-                    .pushReaction(PushReaction.DESTROY), null));
+                    .pushReaction(PushReaction.DESTROY), null) {
+        @Override
+        public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+            if (direction == Direction.DOWN && !neighborState.isFaceSturdy(level, pos, Direction.UP)) {
+                return Blocks.AIR.defaultBlockState();
+            }
+            return state;
+        }
+    });
 
     // 棕榈树
     RegistryObject<Block> MINI_PALM_TREE = BLOCKS.register("mini_palm_tree", () -> new TemplateSaplingBlock(

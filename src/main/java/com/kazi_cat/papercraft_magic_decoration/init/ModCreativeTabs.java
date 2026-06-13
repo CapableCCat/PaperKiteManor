@@ -61,6 +61,7 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.LARGE_DINING_TABLE_ORIGAMI.get());
                 output.accept(ModItems.RED_VELVET_CHAISE_LONGUE_ORIGAMI.get());
                 output.accept(ModItems.OLD_ORGAN_ORIGAMI.get());
+                output.accept(ModItems.PAPER_FOLD_TIGER.get());
                 output.accept(ModItems.DUSTY_PAINTING.get());
             }).build());
 

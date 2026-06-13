@@ -1,6 +1,8 @@
 package com.kazi_cat.papercraft_magic_decoration.datagen.tag;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
+import com.kazi_cat.papercraft_magic_decoration.init.ModItems;
+import com.kazi_cat.papercraft_magic_decoration.init.tag.TagMod;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -18,5 +20,10 @@ public class TagItem extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+        tag(TagMod.MAGIC_PAPER)
+                .add(ModItems.WHITE_PAPER.get(), ModItems.BLUE_PAPER.get(),
+                        ModItems.BLACK_PAPER.get(), ModItems.RED_PAPER.get(),
+                        ModItems.YELLOW_PAPER.get(), ModItems.DEWY_MEMBRANE.get(),
+                        ModItems.COTTON_SERGE.get());
     }
 }

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "papercraft_magic_decoration:black_paper_block"
+    },
+    "B": {
+      "item": "papercraft_magic_decoration:yellow_paper_block"
+    },
+    "C": {
+      "item": "papercraft_magic_decoration:cotton_serge_block"
+    },
+    "D": {
+      "item": "papercraft_magic_decoration:cotton_serge"
+    }
+  },
+  "pattern": [
+    "ABA",
+    "BCB",
+    "D D"
+  ],
+  "result": {
+    "item": "papercraft_magic_decoration:paper_fold_tiger"
+  },
+  "show_notification": true
+}

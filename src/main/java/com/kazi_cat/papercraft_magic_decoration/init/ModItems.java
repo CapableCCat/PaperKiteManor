@@ -151,6 +151,7 @@ public interface ModItems {
     RegistryObject<Item> RED_VELVET_CHAISE_LONGUE_ORIGAMI = ITEMS.register("red_velvet_chaise_longue_origami", () -> new Item(new Item.Properties()));
     RegistryObject<Item> OLD_ORGAN_ORIGAMI = ITEMS.register("old_organ_origami", () -> new Item(new Item.Properties()));
     RegistryObject<Item> DUSTY_PAINTING = ITEMS.register("dusty_painting", () -> new Item(new Item.Properties()));
+    RegistryObject<Item> PAPER_FOLD_TIGER = ITEMS.register("paper_fold_tiger", () -> new Item(new Item.Properties()));
 
     // 唱片
     RegistryObject<Item> KAZI_STAR = ITEMS.register("kazi_star", () -> new RecordItem(0, ModSounds.KAZI_STAR, new Item.Properties().stacksTo(1), 1540));

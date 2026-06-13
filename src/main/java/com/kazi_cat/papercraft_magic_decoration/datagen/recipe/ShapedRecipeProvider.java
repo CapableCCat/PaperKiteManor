@@ -283,5 +283,16 @@ public class ShapedRecipeProvider extends ModRecipeProvider {
                 .define('B', ModItems.COTTON_SERGE.get())
                 .unlockedBy("has_cotton_serge", has(ModItems.COTTON_SERGE.get()))
                 .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.PAPER_FOLD_TIGER.get())
+                .pattern("ABA")
+                .pattern("BCB")
+                .pattern("D D")
+                .define('A', ModItems.BLACK_PAPER_BLOCK.get())
+                .define('B', ModItems.YELLOW_PAPER_BLOCK.get())
+                .define('C', ModItems.COTTON_SERGE_BLOCK.get())
+                .define('D', ModItems.COTTON_SERGE.get())
+                .unlockedBy("has_cotton_serge", has(ModItems.COTTON_SERGE.get()))
+                .save(consumer);
     }
 }

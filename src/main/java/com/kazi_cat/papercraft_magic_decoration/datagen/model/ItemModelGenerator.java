@@ -83,6 +83,7 @@ public class ItemModelGenerator extends ItemModelProvider {
         basicItem(ModItems.BLACK_CAT_LOBBY_BOY_SPAWN_EGG.get());
         basicItem(ModItems.AIR_FLOW_CARP_SPAWN_EGG.get());
         basicItem(ModItems.PAPER_TIGER_SPAWN_EGG.get());
+        basicItem(ModItems.PAPER_FOLD_TIGER.get());
 
         handheldItem(ModItems.GARDEN_TROWEL.get());
 

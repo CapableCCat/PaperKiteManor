@@ -11,6 +11,8 @@ import net.minecraft.world.level.block.Block;
 public interface TagMod {
     TagKey<Block> HEAT_SOURCE_WITHOUT_LIT = blockTag("heat_source_without_lit");
 
+    TagKey<Item> MAGIC_PAPER = itemTag("magic_paper");
+
     static TagKey<Item> itemTag(String name) {
         return TagKey.create(Registries.ITEM, PaperKiteManor.modLoc(name));
     }

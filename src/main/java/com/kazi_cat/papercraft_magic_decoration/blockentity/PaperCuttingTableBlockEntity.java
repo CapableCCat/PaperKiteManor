@@ -1,7 +1,10 @@
 package com.kazi_cat.papercraft_magic_decoration.blockentity;
 
 import com.kazi_cat.papercraft_magic_decoration.crafting.recipe.PaperCuttingRecipe;
+import com.kazi_cat.papercraft_magic_decoration.entity.PaperTigerEntity;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
+import com.kazi_cat.papercraft_magic_decoration.init.ModEntities;
+import com.kazi_cat.papercraft_magic_decoration.init.ModItems;
 import com.kazi_cat.papercraft_magic_decoration.init.ModRecipes;
 import com.kazi_cat.papercraft_magic_decoration.item.AmethystScissorsItem;
 import com.kazi_cat.papercraft_magic_decoration.utils.AABBUtils;
@@ -23,6 +26,7 @@ import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoBlockEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -46,6 +50,27 @@ public class PaperCuttingTableBlockEntity extends BaseBlockEntity implements Geo
     public boolean cut(LivingEntity user, ItemStack scissors, InteractionHand hand) {
         if (content.isEmpty() || !(scissors.getItem() instanceof AmethystScissorsItem)) {
             return false;
+        }
+
+        if (content.is(ModItems.PAPER_FOLD_TIGER.get())) {
+            triggerAnim("main_controller", "animate");
+            if (user.level() instanceof ServerLevel serverLevel) {
+                ItemParticleOption option = new ItemParticleOption(ParticleTypes.ITEM, content.copy());
+                serverLevel.sendParticles(option,
+                        worldPosition.getX() + 0.5,
+                        worldPosition.getY() + 1.25,
+                        worldPosition.getZ() + 0.5,
+                        10, 0.25, 0.2, 0.25, 0.05);
+                user.level().playSound(user, worldPosition, SoundEvents.SNOW_GOLEM_SHEAR, SoundSource.PLAYERS, 1.0F, 1.0F);
+                scissors.hurtAndBreak(1, user, (p) -> p.broadcastBreakEvent(hand));
+                content.shrink(1);
+                PaperTigerEntity paperTiger = new PaperTigerEntity(ModEntities.PAPER_TIGER.get(), user.level());
+                paperTiger.setPos(worldPosition.above().getCenter());
+                paperTiger.setDeltaMovement(new Vec3(0, 0.5, 0));
+                user.level().addFreshEntity(paperTiger);
+                refresh();
+            }
+            return true;
         }
 
         return quickCheck.getRecipeFor(new SimpleContainer(content), user.level()).map(recipe -> {
