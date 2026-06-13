@@ -135,6 +135,9 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.EDGED_CHALKBOARD.get());
                 output.accept(ModItems.CUPBOARD.get());
                 output.accept(ModItems.FIREPLACE_DECORATION.get());
+                output.accept(ModItems.OLD_ORGAN.get());
+                output.accept(ModItems.LARGE_DINING_TABLE.get());
+                output.accept(ModItems.RED_VELVET_CHAISE_LONGUE.get());
 
                 output.accept(ModItems.MINI_PALM_TREE.get());
                 output.accept(ModItems.PALM_TREE_CROWN.get());

@@ -25,8 +25,9 @@ public class SimpleAnimatedBlockEntity extends BaseBlockEntity implements GeoBlo
         super(ModBlocks.SIMPLE_ANIMATED_BE.get(), pos, state);
     }
 
-    public void triggerAnimation() {
+    public boolean triggerAnimation() {
         triggerAnim("main_controller", "animate");
+        return true;
     }
 
     @Override

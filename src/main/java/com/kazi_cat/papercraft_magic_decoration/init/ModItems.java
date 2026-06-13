@@ -133,4 +133,11 @@ public interface ModItems {
     RegistryObject<Item> EDGED_CHALKBOARD = ITEMS.register("edged_chalkboard", () -> new GeoBlockItem(ModBlocks.EDGED_CHALKBOARD.get(), new Item.Properties()));
     RegistryObject<Item> CUPBOARD = ITEMS.register("cupboard", () -> new BlockItem(ModBlocks.CUPBOARD.get(), new Item.Properties()));
     RegistryObject<Item> FIREPLACE_DECORATION = ITEMS.register("fireplace_decoration", () -> new BlockItem(ModBlocks.FIREPLACE_DECORATION.get(), new Item.Properties()));
+    RegistryObject<Item> OLD_ORGAN = ITEMS.register("old_organ", () -> new GeoBlockItem(ModBlocks.OLD_ORGAN.get(), new Item.Properties()));
+    RegistryObject<Item> LARGE_DINING_TABLE = ITEMS.register("large_dining_table", () -> new BlockItem(ModBlocks.LARGE_DINING_TABLE.get(), new Item.Properties()));
+    RegistryObject<Item> RED_VELVET_CHAISE_LONGUE = ITEMS.register("red_velvet_chaise_longue", () -> new BlockItem(ModBlocks.RED_VELVET_CHAISE_LONGUE.get(), new Item.Properties()));
+
+    // 仅用于投掷物
+    RegistryObject<Item> VODKA = ITEMS.register("vodka", () -> new BlockItem(ModBlocks.VODKA.get(), new Item.Properties()));
+    RegistryObject<Item> FIRE_WHISKEY = ITEMS.register("fire_whiskey", () -> new BlockItem(ModBlocks.FIRE_WHISKEY.get(), new Item.Properties()));
 }

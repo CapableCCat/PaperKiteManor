@@ -41,8 +41,9 @@ public class AnimatedTwoByThreeVerticalBlock extends TwoByThreeVerticalDecoratio
                 default -> BlockPos.ZERO;
             };
             if (level.getBlockEntity(ep) instanceof SimpleAnimatedBlockEntity be) {
-                be.triggerAnimation();
-                return InteractionResult.SUCCESS;
+                if (be.triggerAnimation()) {
+                    return InteractionResult.SUCCESS;
+                }
             }
         }
 

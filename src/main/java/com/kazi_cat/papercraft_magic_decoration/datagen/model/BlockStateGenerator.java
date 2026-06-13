@@ -64,6 +64,8 @@ public class BlockStateGenerator extends BlockStateProvider {
         simpleBlock(ModBlocks.BLUE_AND_WHITE_CHECKER_BOARD_TILE.get(), new ModelFile.UncheckedModelFile(modLoc("block/blue_and_white_checker_board_tile")));
         simpleBlock(ModBlocks.EMERALD_BLUE_EARTH_TILE.get(), new ModelFile.UncheckedModelFile(modLoc("block/emerald_blue_earth_tile")));
         simpleBlock(ModBlocks.FOAM_BOX_WITH_DIRT.get(), new ModelFile.UncheckedModelFile(modLoc("block/foam_box_with_dirt")));
+        simpleBlock(ModBlocks.VODKA.get(), new ModelFile.UncheckedModelFile(modLoc("block/vodka")));
+        simpleBlock(ModBlocks.FIRE_WHISKEY.get(), new ModelFile.UncheckedModelFile(modLoc("block/fire_whiskey")));
 
         crop(ModBlocks.COFFEE_PASTINACA_SATIVA, "coffee_pastinaca_sativa");
 
@@ -81,7 +83,10 @@ public class BlockStateGenerator extends BlockStateProvider {
         multipart(ModBlocks.ROSES_IN_WATER_BOTTLE.get(), "roses_in_water_bottle");
         multipart(ModBlocks.CUPBOARD.get(), "cupboard");
         multipart(ModBlocks.FIREPLACE_DECORATION.get(), "fireplace_decoration");
+        multipart(ModBlocks.LARGE_DINING_TABLE.get(), "large_dining_table");
+        multipart(ModBlocks.RED_VELVET_CHAISE_LONGUE.get(), "red_velvet_chaise_longue");
 
+        horizontalBlock(ModBlocks.OLD_ORGAN.get(), new ModelFile.UncheckedModelFile(modLoc("block/old_organ")));
         horizontalBlock(ModBlocks.WOODWORKING_TABLE.get(), new ModelFile.UncheckedModelFile(modLoc("block/woodworking_table")));
         horizontalBlock(ModBlocks.LONG_STORAGE_TABLE.get(), new ModelFile.UncheckedModelFile(modLoc("block/long_storage_table")));
         horizontalBlock(ModBlocks.EDGED_CHALKBOARD.get(), new ModelFile.UncheckedModelFile(modLoc("block/edged_chalkboard")));

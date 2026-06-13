@@ -124,6 +124,11 @@ public class ItemModelGenerator extends ItemModelProvider {
         withExistingParent("edged_chalkboard", modLoc("displaysettings/edged_chalkboard"));
         withExistingParent("cupboard", modLoc("block/cupboard"));
         withExistingParent("fireplace_decoration", modLoc("block/fireplace_decoration"));
+        withExistingParent("old_organ", modLoc("displaysettings/old_organ"));
+        withExistingParent("large_dining_table", modLoc("block/large_dining_table"));
+        withExistingParent("red_velvet_chaise_longue", modLoc("block/red_velvet_chaise_longue"));
+        withExistingParent("vodka", modLoc("block/vodka"));
+        withExistingParent("fire_whiskey", modLoc("block/fire_whiskey"));
 
         DrinkRegistry.DRINK_DATA_MAP.forEach((key, data) -> {
             Item item = ForgeRegistries.ITEMS.getValue(key);

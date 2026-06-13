@@ -1,0 +1,5 @@
+{
+  "model": "papercraft_magic_decoration:geo/old_organ.geo.json",
+  "texture": "papercraft_magic_decoration:textures/block/old_organ.png",
+  "animation": "papercraft_magic_decoration:old_organ.animation.json"
+}

@@ -69,8 +69,9 @@ public class AnimatedOneByTwoBlock extends MultipartBlock implements SimpleWater
             Direction facing = state.getValue(FACING);
             BlockPos ep = state.getValue(partProperty) == 0 ? pos : pos.relative(facing.getClockWise());
             if (level.getBlockEntity(ep) instanceof SimpleAnimatedBlockEntity be) {
-                be.triggerAnimation();
-                return InteractionResult.SUCCESS;
+                if (be.triggerAnimation()) {
+                    return InteractionResult.SUCCESS;
+                }
             }
         }
 

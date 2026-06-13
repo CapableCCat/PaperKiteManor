@@ -1,0 +1,334 @@
+{
+  "variants": {
+    "facing=east,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_0",
+      "y": 90
+    },
+    "facing=east,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_0",
+      "y": 90
+    },
+    "facing=east,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_1",
+      "y": 90
+    },
+    "facing=east,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_1",
+      "y": 90
+    },
+    "facing=east,part=10,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_10",
+      "y": 90
+    },
+    "facing=east,part=10,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_10",
+      "y": 90
+    },
+    "facing=east,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_2",
+      "y": 90
+    },
+    "facing=east,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_2",
+      "y": 90
+    },
+    "facing=east,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_3",
+      "y": 90
+    },
+    "facing=east,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_3",
+      "y": 90
+    },
+    "facing=east,part=4,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_4",
+      "y": 90
+    },
+    "facing=east,part=4,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_4",
+      "y": 90
+    },
+    "facing=east,part=5,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_5",
+      "y": 90
+    },
+    "facing=east,part=5,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_5",
+      "y": 90
+    },
+    "facing=east,part=6,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_6",
+      "y": 90
+    },
+    "facing=east,part=6,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_6",
+      "y": 90
+    },
+    "facing=east,part=7,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_7",
+      "y": 90
+    },
+    "facing=east,part=7,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_7",
+      "y": 90
+    },
+    "facing=east,part=8,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_8",
+      "y": 90
+    },
+    "facing=east,part=8,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_8",
+      "y": 90
+    },
+    "facing=east,part=9,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_9",
+      "y": 90
+    },
+    "facing=east,part=9,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_9",
+      "y": 90
+    },
+    "facing=north,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_0"
+    },
+    "facing=north,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_0"
+    },
+    "facing=north,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_1"
+    },
+    "facing=north,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_1"
+    },
+    "facing=north,part=10,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_10"
+    },
+    "facing=north,part=10,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_10"
+    },
+    "facing=north,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_2"
+    },
+    "facing=north,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_2"
+    },
+    "facing=north,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_3"
+    },
+    "facing=north,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_3"
+    },
+    "facing=north,part=4,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_4"
+    },
+    "facing=north,part=4,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_4"
+    },
+    "facing=north,part=5,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_5"
+    },
+    "facing=north,part=5,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_5"
+    },
+    "facing=north,part=6,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_6"
+    },
+    "facing=north,part=6,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_6"
+    },
+    "facing=north,part=7,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_7"
+    },
+    "facing=north,part=7,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_7"
+    },
+    "facing=north,part=8,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_8"
+    },
+    "facing=north,part=8,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_8"
+    },
+    "facing=north,part=9,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_9"
+    },
+    "facing=north,part=9,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_9"
+    },
+    "facing=south,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_0",
+      "y": 180
+    },
+    "facing=south,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_0",
+      "y": 180
+    },
+    "facing=south,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_1",
+      "y": 180
+    },
+    "facing=south,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_1",
+      "y": 180
+    },
+    "facing=south,part=10,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_10",
+      "y": 180
+    },
+    "facing=south,part=10,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_10",
+      "y": 180
+    },
+    "facing=south,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_2",
+      "y": 180
+    },
+    "facing=south,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_2",
+      "y": 180
+    },
+    "facing=south,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_3",
+      "y": 180
+    },
+    "facing=south,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_3",
+      "y": 180
+    },
+    "facing=south,part=4,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_4",
+      "y": 180
+    },
+    "facing=south,part=4,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_4",
+      "y": 180
+    },
+    "facing=south,part=5,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_5",
+      "y": 180
+    },
+    "facing=south,part=5,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_5",
+      "y": 180
+    },
+    "facing=south,part=6,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_6",
+      "y": 180
+    },
+    "facing=south,part=6,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_6",
+      "y": 180
+    },
+    "facing=south,part=7,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_7",
+      "y": 180
+    },
+    "facing=south,part=7,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_7",
+      "y": 180
+    },
+    "facing=south,part=8,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_8",
+      "y": 180
+    },
+    "facing=south,part=8,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_8",
+      "y": 180
+    },
+    "facing=south,part=9,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_9",
+      "y": 180
+    },
+    "facing=south,part=9,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_9",
+      "y": 180
+    },
+    "facing=west,part=0,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_0",
+      "y": 270
+    },
+    "facing=west,part=0,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_0",
+      "y": 270
+    },
+    "facing=west,part=1,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_1",
+      "y": 270
+    },
+    "facing=west,part=1,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_1",
+      "y": 270
+    },
+    "facing=west,part=10,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_10",
+      "y": 270
+    },
+    "facing=west,part=10,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_10",
+      "y": 270
+    },
+    "facing=west,part=2,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_2",
+      "y": 270
+    },
+    "facing=west,part=2,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_2",
+      "y": 270
+    },
+    "facing=west,part=3,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_3",
+      "y": 270
+    },
+    "facing=west,part=3,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_3",
+      "y": 270
+    },
+    "facing=west,part=4,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_4",
+      "y": 270
+    },
+    "facing=west,part=4,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_4",
+      "y": 270
+    },
+    "facing=west,part=5,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_5",
+      "y": 270
+    },
+    "facing=west,part=5,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_5",
+      "y": 270
+    },
+    "facing=west,part=6,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_6",
+      "y": 270
+    },
+    "facing=west,part=6,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_6",
+      "y": 270
+    },
+    "facing=west,part=7,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_7",
+      "y": 270
+    },
+    "facing=west,part=7,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_7",
+      "y": 270
+    },
+    "facing=west,part=8,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_8",
+      "y": 270
+    },
+    "facing=west,part=8,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_8",
+      "y": 270
+    },
+    "facing=west,part=9,waterlogged=false": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_9",
+      "y": 270
+    },
+    "facing=west,part=9,waterlogged=true": {
+      "model": "papercraft_magic_decoration:block/red_velvet_chaise_longue_9",
+      "y": 270
+    }
+  }
+}

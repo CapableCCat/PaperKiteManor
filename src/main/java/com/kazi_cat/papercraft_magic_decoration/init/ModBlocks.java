@@ -686,6 +686,37 @@ public interface ModBlocks {
                     ).build(null)
     );
 
+    RegistryObject<Block> OLD_ORGAN = BLOCKS.register("old_organ", () -> new OldOrganBlock(
+            BlockBehaviour.Properties.of()
+                    .noOcclusion()
+                    .sound(SoundType.WOOD)
+                    .mapColor(MapColor.COLOR_BROWN)
+                    .strength(1f, 10f),
+            Block.box(0, 0, 4, 16, 16, 16)));
+
+    RegistryObject<BlockEntityType<OldOrganBlockEntity>> OLD_ORGAN_BE = BLOCK_ENTITIES.register("old_organ", () -> BlockEntityType.Builder.of(OldOrganBlockEntity::new, OLD_ORGAN.get()).build(null));
+
+    RegistryObject<Block> LARGE_DINING_TABLE = BLOCKS.register("large_dining_table", () -> new ThreeByThreeDecorationBlock(
+            BlockBehaviour.Properties.of()
+                    .noOcclusion()
+                    .ignitedByLava()
+                    .sound(SoundType.WOOD)
+                    .instrument(NoteBlockInstrument.BASS)
+                    .strength(2f, 10f),
+            Block.box(0, 0, 0, 16, 15, 16)));
+
+    RegistryObject<Block> RED_VELVET_CHAISE_LONGUE = BLOCKS.register("red_velvet_chaise_longue", () -> new RedVelvetChaiseLongueBlock(
+            BlockBehaviour.Properties.of()
+                    .noOcclusion()
+                    .ignitedByLava()
+                    .sound(SoundType.WOOD)
+                    .instrument(NoteBlockInstrument.BASS)
+                    .strength(1f, 10f)));
+
+    // 仅用于投掷物
+    RegistryObject<Block> VODKA = BLOCKS.register("vodka", () -> new Block(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.GLASS).strength(1f, 10f).noOcclusion()));
+    RegistryObject<Block> FIRE_WHISKEY = BLOCKS.register("fire_whiskey", () -> new Block(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.GLASS).strength(1f, 10f).noOcclusion()));
+
     private static boolean never(BlockState state, BlockGetter getter, BlockPos pos) {
         return false;
     }

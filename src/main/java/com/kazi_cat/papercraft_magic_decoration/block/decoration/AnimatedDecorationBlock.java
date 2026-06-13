@@ -24,8 +24,9 @@ public class AnimatedDecorationBlock extends SimpleDecorationBlock implements En
     public InteractionResult use(BlockState blockstate, Level level, BlockPos pos,
                                  Player player, InteractionHand hand, BlockHitResult hit) {
         if (player.getItemInHand(hand).isEmpty() && level.getBlockEntity(pos) instanceof SimpleAnimatedBlockEntity be) {
-            be.triggerAnimation();
-            return InteractionResult.SUCCESS;
+            if (be.triggerAnimation()) {
+                return InteractionResult.SUCCESS;
+            }
         }
 
         return InteractionResult.PASS;

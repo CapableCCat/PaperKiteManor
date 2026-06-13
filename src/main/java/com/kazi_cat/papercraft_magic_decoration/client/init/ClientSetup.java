@@ -38,5 +38,6 @@ public class ClientSetup {
         event.registerBlockEntityRenderer(ModBlocks.PAPER_CUTTING_TABLE_BE.get(), context -> new PaperCuttingTableBlockRenderer());
         event.registerBlockEntityRenderer(ModBlocks.COPPER_BARTENDER_BE.get(), context -> new BaseGeoBlockRenderer<>(ModBlocks.COPPER_BARTENDER_BE.get()));
         event.registerBlockEntityRenderer(ModBlocks.KAZI_LUCKY_CAT_BE.get(), context -> new BaseGeoBlockRenderer<>(ModBlocks.KAZI_LUCKY_CAT_BE.get()));
+        event.registerBlockEntityRenderer(ModBlocks.OLD_ORGAN_BE.get(), context -> new BaseGeoBlockRenderer<>(ModBlocks.OLD_ORGAN_BE.get()));
     }
 }

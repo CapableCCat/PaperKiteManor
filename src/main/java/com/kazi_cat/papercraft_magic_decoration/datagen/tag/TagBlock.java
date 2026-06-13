@@ -51,6 +51,7 @@ public class TagBlock extends BlockTagsProvider {
                         ModBlocks.LOW_CABINET_WITH_TABLECLOTH.get(), ModBlocks.WOODEN_BARREL_BOOKSHELF.get(),
                         ModBlocks.WOODWORKING_TABLE.get(), ModBlocks.LONG_STORAGE_TABLE.get(),
                         ModBlocks.EDGED_CHALKBOARD.get(), ModBlocks.CUPBOARD.get(),
-                        ModBlocks.FIREPLACE_DECORATION.get());
+                        ModBlocks.FIREPLACE_DECORATION.get(), ModBlocks.OLD_ORGAN.get(),
+                        ModBlocks.LARGE_DINING_TABLE.get(), ModBlocks.RED_VELVET_CHAISE_LONGUE.get());
     }
 }
