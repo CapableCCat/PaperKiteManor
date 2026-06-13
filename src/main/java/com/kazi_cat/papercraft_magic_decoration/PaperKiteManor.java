@@ -29,6 +29,7 @@ public class PaperKiteManor {
         ModCreativeTabs.TABS.register(modEventBus);
         ModRecipes.RECIPE_SERIALIZERS.register(modEventBus);
         ModContainers.CONTAINER_TYPES.register(modEventBus);
+        ModEntities.ENTITY_TYPES.register(modEventBus);
         ModSounds.SOUND_EVENTS.register(modEventBus);
     }
 }
