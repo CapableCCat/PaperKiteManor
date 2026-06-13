@@ -3,6 +3,7 @@ package com.kazi_cat.papercraft_magic_decoration.init;
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.item.*;
 import net.minecraft.world.item.*;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -153,4 +154,11 @@ public interface ModItems {
 
     // 唱片
     RegistryObject<Item> KAZI_STAR = ITEMS.register("kazi_star", () -> new RecordItem(0, ModSounds.KAZI_STAR, new Item.Properties().stacksTo(1), 1540));
+
+    // 刷怪蛋
+    RegistryObject<Item> AOAO_SPAWN_EGG = ITEMS.register("aoao_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.AOAO, 0xFFFFFF, 0xFFFFFF, new Item.Properties()));
+    RegistryObject<Item> WHITE_RABBIT_MAID_SPAWN_EGG = ITEMS.register("white_rabbit_maid_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.WHITE_RABBIT_MAID, 0xFFFFFF, 0xFFFFFF, new Item.Properties()));
+    RegistryObject<Item> BLACK_CAT_LOBBY_BOY_SPAWN_EGG = ITEMS.register("black_cat_lobby_boy_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.BLACK_CAT_LOBBY_BOY, 0xFFFFFF, 0xFFFFFF, new Item.Properties()));
+    RegistryObject<Item> AIR_FLOW_CARP_SPAWN_EGG = ITEMS.register("air_flow_carp_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.AIR_FLOW_CARP, 0xFFFFFF, 0xFFFFFF, new Item.Properties()));
+    RegistryObject<Item> PAPER_TIGER_SPAWN_EGG = ITEMS.register("paper_tiger_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.PAPER_TIGER, 0xFFFFFF, 0xFFFFFF, new Item.Properties()));
 }

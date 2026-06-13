@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "papercraft_magic_decoration:item/black_cat_lobby_boy_spawn_egg"
+  }
+}

@@ -1,4 +1,4 @@
-package com.kazi_cat.papercraft_magic_decoration.entity;
+package com.kazi_cat.papercraft_magic_decoration.entity.ai;
 
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;

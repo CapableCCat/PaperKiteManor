@@ -1,87 +1,63 @@
 package com.kazi_cat.papercraft_magic_decoration.entity;
 
 import com.kazi_cat.papercraft_magic_decoration.entity.ai.AnimatedRangedAttackGoal;
-import com.kazi_cat.papercraft_magic_decoration.entity.projectile.ThrownVodkaEntity;
+import com.kazi_cat.papercraft_magic_decoration.entity.projectile.FlyingChickenEntity;
 import com.kazi_cat.papercraft_magic_decoration.init.ModEntities;
-import com.kazi_cat.papercraft_magic_decoration.inventory.container.BunnySuitcaseContainer;
-import net.minecraft.core.Direction;
+import com.kazi_cat.papercraft_magic_decoration.init.ModItems;
+import com.kazi_cat.papercraft_magic_decoration.init.ModSounds;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.MenuProvider;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
 import net.minecraft.world.entity.monster.RangedAttackMob;
-import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
-import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.event.ForgeEventFactory;
-import net.minecraftforge.items.ItemStackHandler;
-import net.minecraftforge.items.wrapper.CombinedInvWrapper;
-import net.minecraftforge.items.wrapper.EntityArmorInvWrapper;
-import net.minecraftforge.items.wrapper.EntityHandsInvWrapper;
 import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.network.PlayMessages;
+import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-import javax.annotation.Nullable;
-
-public class WhiteRabbitMaidEntity extends TamableAnimal implements RangedAttackMob, GeoEntity, MenuProvider {
-    public static final EntityType<WhiteRabbitMaidEntity> TYPE = EntityType.Builder
-            .<WhiteRabbitMaidEntity>of(WhiteRabbitMaidEntity::new, MobCategory.CREATURE)
-            .setCustomClientFactory(WhiteRabbitMaidEntity::new)
+public class AoaoEntity extends TamableAnimal implements RangedAttackMob, GeoEntity {
+    public static final EntityType<AoaoEntity> TYPE = EntityType.Builder
+            .<AoaoEntity>of(AoaoEntity::new, MobCategory.CREATURE)
+            .setCustomClientFactory(AoaoEntity::new)
             .setShouldReceiveVelocityUpdates(true)
-            .fireImmune()
             .setTrackingRange(64)
             .setUpdateInterval(3)
+            .fireImmune()
             .sized(0.6f, 1.2f)
-            .build("white_rabbit_maid");
-    public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(WhiteRabbitMaidEntity.class, EntityDataSerializers.BOOLEAN);
+            .build("aoao");
+    public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(AoaoEntity.class, EntityDataSerializers.BOOLEAN);
 
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
-    private final ItemStackHandler inventory = new ItemStackHandler(21) {
-        @Override
-        protected void onContentsChanged(int slot) {
-            super.onContentsChanged(slot);
-            setPersistenceRequired();
-        }
-    };
-    private final CombinedInvWrapper wrapper = new CombinedInvWrapper(inventory, new EntityHandsInvWrapper(this), new EntityArmorInvWrapper(this));
     private boolean swinging;
     private long lastSwing;
 
-    public WhiteRabbitMaidEntity(PlayMessages.SpawnEntity packet, Level world) { this(TYPE, world); }
+    public AoaoEntity(PlayMessages.SpawnEntity packet, Level world) {
+        this(TYPE, world);
+    }
 
-    public WhiteRabbitMaidEntity(EntityType<WhiteRabbitMaidEntity> type, Level world) {
+    public AoaoEntity(EntityType<AoaoEntity> type, Level world) {
         super(type, world);
     }
 
@@ -111,13 +87,6 @@ public class WhiteRabbitMaidEntity extends TamableAnimal implements RangedAttack
                 this.setPersistenceRequired();
                 return InteractionResult.SUCCESS;
             }
-        } else {
-            if (!player.level().isClientSide() && player instanceof ServerPlayer serverPlayer) {
-                NetworkHooks.openScreen(serverPlayer, this, buf -> {
-                    buf.writeVarInt(this.getId());
-                });
-                return InteractionResult.SUCCESS;
-            }
         }
 
         return InteractionResult.PASS;
@@ -125,7 +94,7 @@ public class WhiteRabbitMaidEntity extends TamableAnimal implements RangedAttack
 
     @Override
     public void performRangedAttack(LivingEntity target, float f) {
-        ThrownVodkaEntity.shootTowards(this, target);
+        FlyingChickenEntity.shootTowards(this, target);
     }
 
     @Override
@@ -139,7 +108,7 @@ public class WhiteRabbitMaidEntity extends TamableAnimal implements RangedAttack
 
     @Override
     public boolean isFood(ItemStack stack) {
-        return stack.is(Items.COOKIE);
+        return stack.is(ModItems.FRIED_CHICKEN_LEG.get());
     }
 
     @Override
@@ -149,10 +118,10 @@ public class WhiteRabbitMaidEntity extends TamableAnimal implements RangedAttack
     }
 
     @Override
-    public @Nullable AgeableMob getBreedOffspring(ServerLevel level, AgeableMob pOtherParent) {
-        WhiteRabbitMaidEntity entity = ModEntities.WHITE_RABBIT_MAID.get().create(level);
+    public @Nullable AgeableMob getBreedOffspring(ServerLevel serverWorld, AgeableMob ageAble) {
+        AoaoEntity entity = ModEntities.AOAO.get().create(serverWorld);
         if (entity != null) {
-            entity.finalizeSpawn(level, level.getCurrentDifficultyAt(entity.blockPosition()), MobSpawnType.BREEDING, null, null);
+            entity.finalizeSpawn(serverWorld, serverWorld.getCurrentDifficultyAt(entity.blockPosition()), MobSpawnType.BREEDING, null, null);
         }
         return entity;
     }
@@ -180,83 +149,37 @@ public class WhiteRabbitMaidEntity extends TamableAnimal implements RangedAttack
         this.goalSelector.addGoal(7, new BreathAirGoal(this));
         this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(9, new WaterAvoidingRandomStrollGoal(this, 0.8));
-        this.goalSelector.addGoal(1, new AnimatedRangedAttackGoal(this, this::setShoot, 1.25, 40, 16f));
+        this.goalSelector.addGoal(1, new AnimatedRangedAttackGoal(this, this::setShoot, 1.25, 40, 10f));
     }
 
     private void setShoot(boolean value) { this.entityData.set(SHOOT, value); }
 
     @Override
-    public <T> LazyOptional<T> getCapability(Capability<T> capability, @Nullable Direction side) {
-        if (this.isAlive() && capability == ForgeCapabilities.ITEM_HANDLER)
-            return LazyOptional.of(() -> wrapper).cast();
-        return super.getCapability(capability, side);
-    }
-
-    @Override
-    protected void dropEquipment() {
-        super.dropEquipment();
-        for (int i = 0; i < inventory.getSlots(); ++i) {
-            ItemStack itemstack = inventory.getStackInSlot(i);
-            if (!itemstack.isEmpty() && !EnchantmentHelper.hasVanishingCurse(itemstack)) {
-                this.spawnAtLocation(itemstack);
-            }
-        }
-    }
-
-    @Override
     public SoundEvent getAmbientSound() {
-        return SoundEvents.RABBIT_AMBIENT;
+        return ModSounds.AOAO_IDLE.get();
     }
 
     @Override
     public SoundEvent getHurtSound(DamageSource ds) {
-        return SoundEvents.RABBIT_HURT;
+        return ModSounds.AOAO_HURT.get();
     }
 
     @Override
     public SoundEvent getDeathSound() {
-        return SoundEvents.RABBIT_DEATH;
+        return ModSounds.AOAO_DEATH.get();
     }
 
-    @Override
-    public void addAdditionalSaveData(CompoundTag compoundTag) {
-        super.addAdditionalSaveData(compoundTag);
-        compoundTag.put("inventory", inventory.serializeNBT());
-    }
-
-    @Override
-    public void readAdditionalSaveData(CompoundTag compoundTag) {
-        super.readAdditionalSaveData(compoundTag);
-        if (compoundTag.contains("inventory")) {
-            this.inventory.deserializeNBT(compoundTag.getCompound("inventory"));
-        }
-    }
-
-    @Override
-    public Component getDisplayName() {
-        return Component.empty();
-    }
-
-    @Override
-    public @Nullable AbstractContainerMenu createMenu(int id, Inventory playerInv, Player player) {
-        return new BunnySuitcaseContainer(id, playerInv, this);
-    }
-
-    public ItemStackHandler getInventory() {
-        return this.inventory;
-    }
-
-    private PlayState movementPredicate(AnimationState<WhiteRabbitMaidEntity> event) {
+    private PlayState movementPredicate(software.bernie.geckolib.core.animation.AnimationState<AoaoEntity> event) {
         if ((event.isMoving() || !(event.getLimbSwingAmount() > -0.15F && event.getLimbSwingAmount() < 0.15F))) {
-            return event.setAndContinue(RawAnimation.begin().thenLoop("animation.white_rabbit_maid.walking"));
+            return event.setAndContinue(RawAnimation.begin().thenLoop("animation.aoao.walking"));
         }
         if (this.isInWaterOrBubble()) {
-            return event.setAndContinue(RawAnimation.begin().thenLoop("animation.white_rabbit_maid.swim"));
+            return event.setAndContinue(RawAnimation.begin().thenLoop("animation.aoao.swim"));
         }
-        return event.setAndContinue(RawAnimation.begin().thenLoop("animation.white_rabbit_maid.idle"));
+        return event.setAndContinue(RawAnimation.begin().thenLoop("animation.aoao.idle"));
     }
 
-    private PlayState attackingPredicate(AnimationState<WhiteRabbitMaidEntity> event) {
+    private PlayState attackingPredicate(software.bernie.geckolib.core.animation.AnimationState<AoaoEntity> event) {
         if (getAttackAnim(event.getPartialTick()) > 0f && !this.swinging) {
             this.swinging = true;
             this.lastSwing = level().getGameTime();
@@ -266,7 +189,7 @@ public class WhiteRabbitMaidEntity extends TamableAnimal implements RangedAttack
         }
         if ((this.swinging || this.entityData.get(SHOOT)) && event.getController().getAnimationState() == AnimationController.State.STOPPED) {
             event.getController().forceAnimationReset();
-            return event.setAndContinue(RawAnimation.begin().thenPlay("animation.white_rabbit_maid.attack"));
+            return event.setAndContinue(RawAnimation.begin().thenPlay("animation.aoao.attack"));
         }
         return PlayState.CONTINUE;
     }

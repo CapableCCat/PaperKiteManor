@@ -28,4 +28,7 @@ public class BunnySuitcaseScreen extends AbstractContainerScreen<BunnySuitcaseCo
         super.render(graphics, mouseX, mouseY, pt);
         this.renderTooltip(graphics, mouseX, mouseY);
     }
+
+    @Override
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {}
 }

@@ -1,21 +1,15 @@
 package com.kazi_cat.papercraft_magic_decoration.client.init;
 
-import com.kazi_cat.papercraft_magic_decoration.client.gui.BunnySuitcaseScreen;
-import com.kazi_cat.papercraft_magic_decoration.client.gui.CopperBartenderScreen;
-import com.kazi_cat.papercraft_magic_decoration.client.gui.DirtHoleScreen;
-import com.kazi_cat.papercraft_magic_decoration.client.gui.KaziLuckyCatScreen;
+import com.kazi_cat.papercraft_magic_decoration.client.gui.*;
 import com.kazi_cat.papercraft_magic_decoration.client.model.BlockGeoModelManager;
 import com.kazi_cat.papercraft_magic_decoration.client.model.ItemGeoModelManager;
 import com.kazi_cat.papercraft_magic_decoration.client.render.block.BaseGeoBlockRenderer;
 import com.kazi_cat.papercraft_magic_decoration.client.render.block.CopperStillBlockRenderer;
 import com.kazi_cat.papercraft_magic_decoration.client.render.block.PaperCuttingTableBlockRenderer;
-import com.kazi_cat.papercraft_magic_decoration.client.render.entity.WhiteRabbitMaidRenderer;
+import com.kazi_cat.papercraft_magic_decoration.client.render.entity.*;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import com.kazi_cat.papercraft_magic_decoration.init.ModEntities;
-import com.kazi_cat.papercraft_magic_decoration.inventory.container.BunnySuitcaseContainer;
-import com.kazi_cat.papercraft_magic_decoration.inventory.container.CopperBartenderContainer;
-import com.kazi_cat.papercraft_magic_decoration.inventory.container.DirtHoleContainer;
-import com.kazi_cat.papercraft_magic_decoration.inventory.container.KaziLuckyCatContainer;
+import com.kazi_cat.papercraft_magic_decoration.inventory.container.*;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraftforge.api.distmarker.Dist;
@@ -34,6 +28,7 @@ public class ClientSetup {
         event.enqueueWork(() -> MenuScreens.register(DirtHoleContainer.TYPE, DirtHoleScreen::new));
         event.enqueueWork(() -> MenuScreens.register(KaziLuckyCatContainer.TYPE, KaziLuckyCatScreen::new));
         event.enqueueWork(() -> MenuScreens.register(BunnySuitcaseContainer.TYPE, BunnySuitcaseScreen::new));
+        event.enqueueWork(() -> MenuScreens.register(LobbyBoyBackpackContainer.TYPE, LobbyBoyBackpackScreen::new));
     }
 
     @SubscribeEvent
@@ -46,7 +41,13 @@ public class ClientSetup {
         event.registerBlockEntityRenderer(ModBlocks.KAZI_LUCKY_CAT_BE.get(), context -> new BaseGeoBlockRenderer<>(ModBlocks.KAZI_LUCKY_CAT_BE.get()));
         event.registerBlockEntityRenderer(ModBlocks.OLD_ORGAN_BE.get(), context -> new BaseGeoBlockRenderer<>(ModBlocks.OLD_ORGAN_BE.get()));
 
+        event.registerEntityRenderer(ModEntities.AOAO.get(), AoaoRenderer::new);
         event.registerEntityRenderer(ModEntities.WHITE_RABBIT_MAID.get(), WhiteRabbitMaidRenderer::new);
+        event.registerEntityRenderer(ModEntities.BLACK_CAT_LOBBY_BOY.get(), BlackCatLobbyBoyRenderer::new);
+        event.registerEntityRenderer(ModEntities.AIR_FLOW_CARP.get(), AirFlowCarpRenderer::new);
+        event.registerEntityRenderer(ModEntities.PAPER_TIGER.get(), PaperTigerRenderer::new);
+        event.registerEntityRenderer(ModEntities.FLYING_CHICKEN.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(ModEntities.THROWN_VODKA.get(), ThrownItemRenderer::new);
+        event.registerEntityRenderer(ModEntities.THROWN_FIRE_WHISKEY.get(), ThrownItemRenderer::new);
     }
 }

@@ -42,4 +42,7 @@ public class CopperBartenderScreen extends AbstractContainerScreen<CopperBartend
         });
         this.addRenderableWidget(clockwork);
     }
+
+    @Override
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {}
 }
