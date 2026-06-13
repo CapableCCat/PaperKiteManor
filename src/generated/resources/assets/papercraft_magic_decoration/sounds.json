@@ -3,19 +3,19 @@
     "sounds": [
       "papercraft_magic_decoration:block/cocktail_shaking"
     ],
-    "subtitle": "block.cocktail_shaking"
+    "subtitle": "subtitles.papercraft_magic_decoration.block.cocktail_shaking"
   },
   "block.loud_button_pressed": {
     "sounds": [
       "papercraft_magic_decoration:block/loud_button"
     ],
-    "subtitle": "block.loud_button_pressed"
+    "subtitle": "subtitles.papercraft_magic_decoration.block.loud_button_pressed"
   },
   "block.organ": {
     "sounds": [
       "papercraft_magic_decoration:block/organ"
     ],
-    "subtitle": "block.organ"
+    "subtitle": "subtitles.papercraft_magic_decoration.block.organ"
   },
   "entity.aoao_death": {
     "sounds": [
@@ -49,7 +49,7 @@
     "sounds": [
       "papercraft_magic_decoration:entity/paper_tiger_death"
     ],
-    "subtitle": "entity.paper_tiger_death"
+    "subtitle": "subtitles.papercraft_magic_decoration.entity.paper_tiger_death"
   },
   "entity.paper_tiger_idle": {
     "sounds": [
@@ -58,12 +58,12 @@
       "papercraft_magic_decoration:entity/paper_tiger_idle_03",
       "papercraft_magic_decoration:entity/paper_tiger_idle_04"
     ],
-    "subtitle": "entity.paper_tiger_idle"
+    "subtitle": "subtitles.papercraft_magic_decoration.entity.paper_tiger_idle"
   },
   "kazi_star": {
     "sounds": [
       "papercraft_magic_decoration:kazi_star"
     ],
-    "subtitle": "kazi_star"
+    "subtitle": "subtitles.papercraft_magic_decoration.kazi_star"
   }
 }

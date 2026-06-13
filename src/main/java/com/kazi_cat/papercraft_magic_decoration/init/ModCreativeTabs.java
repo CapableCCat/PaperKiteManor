@@ -19,6 +19,8 @@ public interface ModCreativeTabs {
             .title(Component.translatable("item_group.papercraft_magic_decoration.manor_main.name"))
             .icon(ModItems.AMETHYST_SCISSORS.get()::getDefaultInstance)
             .displayItems((par, output) -> {
+                output.accept(ModItems.KAZI_STAR.get());
+
                 output.accept(ModItems.AMETHYST_SCISSORS.get());
                 output.accept(ModItems.GARDEN_TROWEL.get());
 
@@ -48,6 +50,18 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.WHISKEY_RAW.get());
                 output.accept(ModItems.COFFEE_FRUIT.get());
                 output.accept(ModItems.GOLDEN_COFFEE_FRUIT.get());
+
+                output.accept(ModItems.LOW_CABINET_WITH_TABLECLOTH_ORIGAMI.get());
+                output.accept(ModItems.WOODEN_BARREL_BOOKSHELF_ORIGAMI.get());
+                output.accept(ModItems.WOODWORKING_TABLE_ORIGAMI.get());
+                output.accept(ModItems.LONG_STORAGE_TABLE_ORIGAMI.get());
+                output.accept(ModItems.EDGED_CHALKBOARD_ORIGAMI.get());
+                output.accept(ModItems.CUPBOARD_ORIGAMI.get());
+                output.accept(ModItems.FIREPLACE_DECORATION_ORIGAMI.get());
+                output.accept(ModItems.LARGE_DINING_TABLE_ORIGAMI.get());
+                output.accept(ModItems.RED_VELVET_CHAISE_LONGUE_ORIGAMI.get());
+                output.accept(ModItems.OLD_ORGAN_ORIGAMI.get());
+                output.accept(ModItems.DUSTY_PAINTING.get());
             }).build());
 
     RegistryObject<CreativeModeTab> MANOR_FOOD_TAB = TABS.register("manor_food", () -> CreativeModeTab.builder()
@@ -101,7 +115,7 @@ public interface ModCreativeTabs {
                 ItemStack chocolateBox = ModItems.OVERSIZED_BOX_OF_CHOCOLATES.get().getDefaultInstance();
                 OversizedBoxOfChocolatesBlock.setContent(chocolateBox, new int[] {1,2,3,2,3,1});
                 output.accept(chocolateBox);
-            }).build());
+            }).withTabsBefore(PaperKiteManor.modLoc("manor_main")).build());
 
     RegistryObject<CreativeModeTab> MANOR_DECORATION_TAB = TABS.register("manor_decoration", () -> CreativeModeTab.builder()
             .title(Component.translatable("item_group.papercraft_magic_decoration.manor_decoration.name"))
@@ -153,5 +167,5 @@ public interface ModCreativeTabs {
                 output.accept(ModItems.CANOPY_TREE_LIMB.get());
                 output.accept(ModItems.CANOPY_TREE_TRUNK.get());
                 output.accept(ModItems.CANOPY_TREE_MUSHROOM.get());
-            }).build());
+            }).withTabsBefore(PaperKiteManor.modLoc("manor_food")).build());
 }

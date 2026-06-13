@@ -37,30 +37,30 @@ public class SoundDefinitionsGenerator extends SoundDefinitionsProvider {
                 .with(sound("entity/aoao_death_02"));
         this.add(ModSounds.AOAO_DEATH, aoaoDeath);
 
-        SoundDefinition paperTigerIdle = definition().subtitle("entity.paper_tiger_idle")
+        SoundDefinition paperTigerIdle = definition().subtitle(subtitle("entity.paper_tiger_idle"))
                 .with(sound("entity/paper_tiger_idle_01"))
                 .with(sound("entity/paper_tiger_idle_02"))
                 .with(sound("entity/paper_tiger_idle_03"))
                 .with(sound("entity/paper_tiger_idle_04"));
         this.add(ModSounds.PAPER_TIGER_IDLE, paperTigerIdle);
 
-        SoundDefinition paperTigerDeath = definition().subtitle("entity.paper_tiger_death")
+        SoundDefinition paperTigerDeath = definition().subtitle(subtitle("entity.paper_tiger_death"))
                 .with(sound("entity/paper_tiger_death"));
         this.add(ModSounds.PAPER_TIGER_DEATH, paperTigerDeath);
 
-        SoundDefinition loudButtonPressed = definition().subtitle("block.loud_button_pressed")
+        SoundDefinition loudButtonPressed = definition().subtitle(subtitle("block.loud_button_pressed"))
                 .with(sound("block/loud_button"));
         this.add(ModSounds.LOUD_BUTTON_PRESSED, loudButtonPressed);
 
-        SoundDefinition cocktailShaking = definition().subtitle("block.cocktail_shaking")
+        SoundDefinition cocktailShaking = definition().subtitle(subtitle("block.cocktail_shaking"))
                 .with(sound("block/cocktail_shaking"));
         this.add(ModSounds.COCKTAIL_SHAKING, cocktailShaking);
 
-        SoundDefinition organ = definition().subtitle("block.organ")
+        SoundDefinition organ = definition().subtitle(subtitle("block.organ"))
                 .with(sound("block/organ"));
         this.add(ModSounds.ORGAN, organ);
 
-        SoundDefinition kaziStar = definition().subtitle("kazi_star")
+        SoundDefinition kaziStar = definition().subtitle(subtitle("kazi_star"))
                 .with(sound("kazi_star"));
         this.add(ModSounds.KAZI_STAR, kaziStar);
     }

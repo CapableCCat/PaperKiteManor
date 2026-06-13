@@ -50,54 +50,54 @@ public class PaperCuttingRecipeProvider extends ModRecipeProvider {
                 .setResult(new ItemStack(ModItems.YELLOW_PAPER.get(), 8))
                 .save(consumer);
 
-//        PaperCuttingBuilder.builder()
-//                .setIngredient(ModItems.LOW_CABINET_WITH_TABLECLOTH_ORIGAMI.get())
-//                .setResult(ModItems.LOW_CABINET_WITH_TABLECLOTH.get())
-//                .save(consumer);
-//
-//        PaperCuttingBuilder.builder()
-//                .setIngredient(ModItems.WOODEN_BARREL_BOOKSHELF_ORIGAMI.get())
-//                .setResult(ModItems.WOODEN_BARREL_BOOKSHELF.get())
-//                .save(consumer);
-//
-//        PaperCuttingBuilder.builder()
-//                .setIngredient(ModItems.WOODWORKING_TABLE_ORIGAMI.get())
-//                .setResult(ModItems.WOODWORKING_TABLE.get())
-//                .save(consumer);
-//
-//        PaperCuttingBuilder.builder()
-//                .setIngredient(ModItems.LONG_STORAGE_TABLE_ORIGAMI.get())
-//                .setResult(ModItems.LONG_STORAGE_TABLE.get())
-//                .save(consumer);
-//
-//        PaperCuttingBuilder.builder()
-//                .setIngredient(ModItems.EDGED_CHALKBOARD_ORIGAMI.get())
-//                .setResult(ModItems.EDGED_CHALKBOARD.get())
-//                .save(consumer);
-//
-//        PaperCuttingBuilder.builder()
-//                .setIngredient(ModItems.CUPBOARD_ORIGAMI.get())
-//                .setResult(ModItems.CUPBOARD.get())
-//                .save(consumer);
-//
-//        PaperCuttingBuilder.builder()
-//                .setIngredient(ModItems.FIREPLACE_DECORATION_ORIGAMI.get())
-//                .setResult(ModItems.FIREPLACE_DECORATION.get())
-//                .save(consumer);
-//
-//        PaperCuttingBuilder.builder()
-//                .setIngredient(ModItems.LARGE_DINING_TABLE_ORIGAMI.get())
-//                .setResult(ModItems.LARGE_DINING_TABLE.get())
-//                .save(consumer);
-//
-//        PaperCuttingBuilder.builder()
-//                .setIngredient(ModItems.OLD_ORGAN_ORIGAMI.get())
-//                .setResult(ModItems.OLD_ORGAN.get())
-//                .save(consumer);
-//
-//        PaperCuttingBuilder.builder()
-//                .setIngredient(ModItems.RED_VELVET_CHAISE_LONGUE_ORIGAMI.get())
-//                .setResult(ModItems.RED_VELVET_CHAISE_LONGUE.get())
-//                .save(consumer);
+        PaperCuttingBuilder.builder()
+                .setIngredient(ModItems.LOW_CABINET_WITH_TABLECLOTH_ORIGAMI.get())
+                .setResult(ModItems.LOW_CABINET_WITH_TABLECLOTH.get())
+                .save(consumer);
+
+        PaperCuttingBuilder.builder()
+                .setIngredient(ModItems.WOODEN_BARREL_BOOKSHELF_ORIGAMI.get())
+                .setResult(ModItems.WOODEN_BARREL_BOOKSHELF.get())
+                .save(consumer);
+
+        PaperCuttingBuilder.builder()
+                .setIngredient(ModItems.WOODWORKING_TABLE_ORIGAMI.get())
+                .setResult(ModItems.WOODWORKING_TABLE.get())
+                .save(consumer);
+
+        PaperCuttingBuilder.builder()
+                .setIngredient(ModItems.LONG_STORAGE_TABLE_ORIGAMI.get())
+                .setResult(ModItems.LONG_STORAGE_TABLE.get())
+                .save(consumer);
+
+        PaperCuttingBuilder.builder()
+                .setIngredient(ModItems.EDGED_CHALKBOARD_ORIGAMI.get())
+                .setResult(ModItems.EDGED_CHALKBOARD.get())
+                .save(consumer);
+
+        PaperCuttingBuilder.builder()
+                .setIngredient(ModItems.CUPBOARD_ORIGAMI.get())
+                .setResult(ModItems.CUPBOARD.get())
+                .save(consumer);
+
+        PaperCuttingBuilder.builder()
+                .setIngredient(ModItems.FIREPLACE_DECORATION_ORIGAMI.get())
+                .setResult(ModItems.FIREPLACE_DECORATION.get())
+                .save(consumer);
+
+        PaperCuttingBuilder.builder()
+                .setIngredient(ModItems.LARGE_DINING_TABLE_ORIGAMI.get())
+                .setResult(ModItems.LARGE_DINING_TABLE.get())
+                .save(consumer);
+
+        PaperCuttingBuilder.builder()
+                .setIngredient(ModItems.OLD_ORGAN_ORIGAMI.get())
+                .setResult(ModItems.OLD_ORGAN.get())
+                .save(consumer);
+
+        PaperCuttingBuilder.builder()
+                .setIngredient(ModItems.RED_VELVET_CHAISE_LONGUE_ORIGAMI.get())
+                .setResult(ModItems.RED_VELVET_CHAISE_LONGUE.get())
+                .save(consumer);
     }
 }

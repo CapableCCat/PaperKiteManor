@@ -173,6 +173,16 @@
   "item.papercraft_magic_decoration.dusty_painting": "尘封的画",
   "item.papercraft_magic_decoration.red_velvet_chaise_longue": "红丝绒躺椅",
 
+  "subtitles.papercraft_magic_decoration.block.cocktail_shaking": "调酒",
+  "subtitles.papercraft_magic_decoration.block.loud_button_pressed": "按下惊叹按钮",
+  "subtitles.papercraft_magic_decoration.block.organ": "管风琴演奏",
+  "subtitles.papercraft_magic_decoration.entity.aoao_death": "嗷嗷死亡",
+  "subtitles.papercraft_magic_decoration.entity.aoao_hurt": "嗷嗷受伤",
+  "subtitles.papercraft_magic_decoration.entity.aoao_idle": "嗷嗷闲置",
+  "subtitles.papercraft_magic_decoration.entity.paper_tiger_death": "纸老虎死亡",
+  "subtitles.papercraft_magic_decoration.entity.paper_tiger_idle": "纸老虎闲置",
+  "subtitles.papercraft_magic_decoration.kazi_star": "Kazi Star",
+
   "advancements.lets_start_the_origami.title": "开始折纸吧!",
   "advancements.lets_start_the_origami.descr": "制作剪纸台，并用于切割纸块和激活各类折纸激活方块",
   "advancements.magic_scissors.title": "魔法剪刀",

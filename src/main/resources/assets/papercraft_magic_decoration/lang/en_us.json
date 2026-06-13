@@ -173,6 +173,16 @@
   "item.papercraft_magic_decoration.dusty_painting": "Dusty Painting",
   "item.papercraft_magic_decoration.red_velvet_chaise_longue": "Red Velvet Chaise Longue",
 
+  "subtitles.papercraft_magic_decoration.block.cocktail_shaking": "Cocktail Shaking",
+  "subtitles.papercraft_magic_decoration.block.loud_button_pressed": "Loud Button Pressed",
+  "subtitles.papercraft_magic_decoration.block.organ": "Organ Playing",
+  "subtitles.papercraft_magic_decoration.entity.aoao_death": "Aoao Death",
+  "subtitles.papercraft_magic_decoration.entity.aoao_hurt": "Aoao Hurt",
+  "subtitles.papercraft_magic_decoration.entity.aoao_idle": "Aoao Idle",
+  "subtitles.papercraft_magic_decoration.entity.paper_tiger_death": "Paper Tiger Death",
+  "subtitles.papercraft_magic_decoration.entity.paper_tiger_idle": "Paper Tiger Idle",
+  "subtitles.papercraft_magic_decoration.kazi_star": "Kazi Star",
+
   "advancements.lets_start_the_origami.title": "Let\u0027s Start The Origami",
   "advancements.lets_start_the_origami.descr": "Making an Paper Cutting Table,For cutting paper blocks and making various origami activation blocks",
   "advancements.past_memories_resurfacing.title": "Past memories resurfacing?",

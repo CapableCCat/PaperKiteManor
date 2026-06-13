@@ -2,10 +2,7 @@ package com.kazi_cat.papercraft_magic_decoration.init;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
 import com.kazi_cat.papercraft_magic_decoration.item.*;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemNameBlockItem;
-import net.minecraft.world.item.Tiers;
+import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -140,4 +137,20 @@ public interface ModItems {
     // 仅用于投掷物
     RegistryObject<Item> VODKA = ITEMS.register("vodka", () -> new BlockItem(ModBlocks.VODKA.get(), new Item.Properties()));
     RegistryObject<Item> FIRE_WHISKEY = ITEMS.register("fire_whiskey", () -> new BlockItem(ModBlocks.FIRE_WHISKEY.get(), new Item.Properties()));
+
+    // 折纸
+    RegistryObject<Item> LOW_CABINET_WITH_TABLECLOTH_ORIGAMI = ITEMS.register("low_cabinet_with_tablecloth_origami", () -> new Item(new Item.Properties()));
+    RegistryObject<Item> WOODEN_BARREL_BOOKSHELF_ORIGAMI = ITEMS.register("wooden_barrel_bookshelf_origami", () -> new Item(new Item.Properties()));
+    RegistryObject<Item> WOODWORKING_TABLE_ORIGAMI = ITEMS.register("woodworking_table_origami", () -> new Item(new Item.Properties()));
+    RegistryObject<Item> LONG_STORAGE_TABLE_ORIGAMI = ITEMS.register("long_storage_table_origami", () -> new Item(new Item.Properties()));
+    RegistryObject<Item> EDGED_CHALKBOARD_ORIGAMI = ITEMS.register("edged_chalkboard_origami", () -> new Item(new Item.Properties()));
+    RegistryObject<Item> CUPBOARD_ORIGAMI = ITEMS.register("cupboard_origami", () -> new Item(new Item.Properties()));
+    RegistryObject<Item> FIREPLACE_DECORATION_ORIGAMI = ITEMS.register("fireplace_decoration_origami", () -> new Item(new Item.Properties()));
+    RegistryObject<Item> LARGE_DINING_TABLE_ORIGAMI = ITEMS.register("large_dining_table_origami", () -> new Item(new Item.Properties()));
+    RegistryObject<Item> RED_VELVET_CHAISE_LONGUE_ORIGAMI = ITEMS.register("red_velvet_chaise_longue_origami", () -> new Item(new Item.Properties()));
+    RegistryObject<Item> OLD_ORGAN_ORIGAMI = ITEMS.register("old_organ_origami", () -> new Item(new Item.Properties()));
+    RegistryObject<Item> DUSTY_PAINTING = ITEMS.register("dusty_painting", () -> new Item(new Item.Properties()));
+
+    // 唱片
+    RegistryObject<Item> KAZI_STAR = ITEMS.register("kazi_star", () -> new RecordItem(0, ModSounds.KAZI_STAR, new Item.Properties().stacksTo(1), 1540));
 }

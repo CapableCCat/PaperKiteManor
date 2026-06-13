@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "C": {
+      "item": "minecraft:copper_ingot"
+    }
+  },
+  "pattern": [
+    "A A",
+    " C ",
+    "C C"
+  ],
+  "result": {
+    "item": "papercraft_magic_decoration:amethyst_scissors"
+  },
+  "show_notification": true
+}

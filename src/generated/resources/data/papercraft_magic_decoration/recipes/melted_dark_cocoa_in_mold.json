@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "papercraft_magic_decoration:dark_cocoa_in_mold"
+  },
+  "result": "papercraft_magic_decoration:melted_dark_cocoa_in_mold"
+}

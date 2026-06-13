@@ -66,6 +66,18 @@ public class ItemModelGenerator extends ItemModelProvider {
         basicItem(ModItems.KNITTED_LEOPARD_RUG.get());
         basicItem(ModItems.GIFT_FROM_KAZI_MANOR.get());
         basicItem(ModItems.KEY_UNDER_THE_LAKE.get());
+        basicItem(ModItems.LOW_CABINET_WITH_TABLECLOTH_ORIGAMI.get());
+        basicItem(ModItems.WOODEN_BARREL_BOOKSHELF_ORIGAMI.get());
+        basicItem(ModItems.WOODWORKING_TABLE_ORIGAMI.get());
+        basicItem(ModItems.LONG_STORAGE_TABLE_ORIGAMI.get());
+        basicItem(ModItems.EDGED_CHALKBOARD_ORIGAMI.get());
+        basicItem(ModItems.CUPBOARD_ORIGAMI.get());
+        basicItem(ModItems.FIREPLACE_DECORATION_ORIGAMI.get());
+        basicItem(ModItems.LARGE_DINING_TABLE_ORIGAMI.get());
+        basicItem(ModItems.RED_VELVET_CHAISE_LONGUE_ORIGAMI.get());
+        basicItem(ModItems.OLD_ORGAN_ORIGAMI.get());
+        basicItem(ModItems.DUSTY_PAINTING.get());
+        basicItem(ModItems.KAZI_STAR.get());
 
         handheldItem(ModItems.GARDEN_TROWEL.get());
 

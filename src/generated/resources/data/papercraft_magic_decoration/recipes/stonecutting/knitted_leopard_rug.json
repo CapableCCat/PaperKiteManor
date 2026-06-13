@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "papercraft_magic_decoration:gift_from_kazi_manor"
+  },
+  "result": "papercraft_magic_decoration:knitted_leopard_rug"
+}
