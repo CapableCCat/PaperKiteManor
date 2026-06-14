@@ -7,7 +7,7 @@ import com.kazi_cat.papercraft_magic_decoration.init.ModItems;
 import com.kazi_cat.papercraft_magic_decoration.init.registry.DrinkRegistry;
 import com.kazi_cat.papercraft_magic_decoration.inventory.container.LobbyBoyBackpackContainer;
 import com.kazi_cat.papercraft_magic_decoration.network.NetworkHandler;
-import com.kazi_cat.papercraft_magic_decoration.network.message.SyncOffersMessage;
+import com.kazi_cat.papercraft_magic_decoration.network.message.OffersSyncS2CMessage;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -99,7 +99,7 @@ public class BlackCatLobbyBoyEntity extends TamableAnimal implements RangedAttac
         }
         for (var player : level.players()) {
             if (player.containerMenu instanceof LobbyBoyBackpackContainer container && container.entity == this) {
-                NetworkHandler.sendToClientPlayer(new SyncOffersMessage(this.getId(), this.offers), player);
+                NetworkHandler.sendToClientPlayer(new OffersSyncS2CMessage(this.getId(), this.offers), player);
             }
         }
     }
@@ -141,7 +141,7 @@ public class BlackCatLobbyBoyEntity extends TamableAnimal implements RangedAttac
             }
         } else {
             if (!player.level().isClientSide() && player instanceof ServerPlayer serverPlayer) {
-                NetworkHandler.sendToClientPlayer(new SyncOffersMessage(this.getId(), this.offers), player);
+                NetworkHandler.sendToClientPlayer(new OffersSyncS2CMessage(this.getId(), this.offers), player);
                 NetworkHooks.openScreen(serverPlayer, this, buf -> buf.writeVarInt(this.getId()));
                 return InteractionResult.SUCCESS;
             }

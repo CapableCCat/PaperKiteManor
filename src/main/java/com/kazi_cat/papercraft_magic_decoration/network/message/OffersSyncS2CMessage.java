@@ -13,24 +13,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
-public record SyncOffersMessage(int entityId, List<BlackCatLobbyBoyEntity.Offer> offers) {
-    public static void encode(SyncOffersMessage message, FriendlyByteBuf buf) {
+public record OffersSyncS2CMessage(int entityId, List<BlackCatLobbyBoyEntity.Offer> offers) {
+    public static void encode(OffersSyncS2CMessage message, FriendlyByteBuf buf) {
         buf.writeVarInt(message.entityId);
         buf.writeVarInt(message.offers.size());
         message.offers.forEach(o -> buf.writeJsonWithCodec(CompoundTag.CODEC, o.serializeNBT()));
     }
 
-    public static SyncOffersMessage decode(FriendlyByteBuf buf) {
+    public static OffersSyncS2CMessage decode(FriendlyByteBuf buf) {
         int entityId = buf.readVarInt();
         List<BlackCatLobbyBoyEntity.Offer> offers = new ArrayList<>();
         int length = buf.readVarInt();
         for (int i = 0; i < length; i++) {
             offers.add(BlackCatLobbyBoyEntity.Offer.of(buf.readJsonWithCodec(CompoundTag.CODEC)));
         }
-        return new SyncOffersMessage(entityId, offers);
+        return new OffersSyncS2CMessage(entityId, offers);
     }
 
-    public static void handle(SyncOffersMessage message, Supplier<NetworkEvent.Context> contextSupplier) {
+    public static void handle(OffersSyncS2CMessage message, Supplier<NetworkEvent.Context> contextSupplier) {
         NetworkEvent.Context context = contextSupplier.get();
         if (context.getDirection().getReceptionSide().isClient()) {
             context.enqueueWork(() -> write(message));
@@ -40,7 +40,7 @@ public record SyncOffersMessage(int entityId, List<BlackCatLobbyBoyEntity.Offer>
     }
 
     @OnlyIn(Dist.CLIENT)
-    private static void write(SyncOffersMessage message) {
+    private static void write(OffersSyncS2CMessage message) {
         Level level = Minecraft.getInstance().level;
         if (level == null) {
             return;
