@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.Block;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Map;
 
+// TODO 服务端向客户端主动同步
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 public class SmeltableBlockDataReloadListener extends SimpleJsonResourceReloadListener {

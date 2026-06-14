@@ -1,18 +1,20 @@
 package com.kazi_cat.papercraft_magic_decoration.compat.jei;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
-import com.kazi_cat.papercraft_magic_decoration.compat.jei.category.DistillationRecipeCategory;
-import com.kazi_cat.papercraft_magic_decoration.compat.jei.category.MixologyRecipeCategory;
-import com.kazi_cat.papercraft_magic_decoration.compat.jei.category.PaperCuttingRecipeCategory;
-import com.kazi_cat.papercraft_magic_decoration.compat.jei.category.PaperMakingRecipeCategory;
+import com.kazi_cat.papercraft_magic_decoration.compat.jei.category.*;
 import com.kazi_cat.papercraft_magic_decoration.init.ModItems;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
-import mezz.jei.api.registration.*;
-import net.minecraft.ChatFormatting;
+import mezz.jei.api.registration.IRecipeCatalystRegistration;
+import mezz.jei.api.registration.IRecipeCategoryRegistration;
+import mezz.jei.api.registration.IRecipeRegistration;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
@@ -28,6 +30,7 @@ public class ModJeiPlugin implements IModPlugin {
         registration.addRecipeCategories(new MixologyRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new PaperCuttingRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new DistillationRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new SmeltableBlockCategory(registration.getJeiHelpers().getGuiHelper()));
     }
 
     @Override
@@ -36,6 +39,7 @@ public class ModJeiPlugin implements IModPlugin {
         registration.addRecipes(MixologyRecipeCategory.TYPE, MixologyRecipeCategory.getRecipes());
         registration.addRecipes(PaperCuttingRecipeCategory.TYPE, PaperCuttingRecipeCategory.getRecipes());
         registration.addRecipes(DistillationRecipeCategory.TYPE, DistillationRecipeCategory.getRecipes());
+        registration.addRecipes(SmeltableBlockCategory.TYPE, SmeltableBlockCategory.getRecipes());
         registerItemStackInfos(registration);
     }
 
@@ -45,6 +49,7 @@ public class ModJeiPlugin implements IModPlugin {
         registration.addRecipeCatalyst(ModItems.COPPER_BARTENDER.get(), MixologyRecipeCategory.TYPE);
         registration.addRecipeCatalyst(ModItems.PAPER_CUTTING_TABLE.get(), PaperCuttingRecipeCategory.TYPE);
         registration.addRecipeCatalyst(ModItems.COPPER_STILL.get(), DistillationRecipeCategory.TYPE);
+        registration.addRecipeCatalyst(Items.CAMPFIRE, SmeltableBlockCategory.TYPE);
     }
 
     @Override
@@ -53,15 +58,24 @@ public class ModJeiPlugin implements IModPlugin {
     }
 
     private void registerItemStackInfos(IRecipeRegistration registration) {
-        registration.addItemStackInfo(ModItems.VITALITY_SPORES.get().getDefaultInstance(),
-                Component.literal("制作一个孢子收集盆,将其放置在孢子花的正下方一格处,就能收集孢子花逸散出的孢子。\n当盆内收集了足够多的孢子后，用玻璃瓶右键收集盆即可获得瓶装源生孢子。").withStyle(ChatFormatting.WHITE));
-        registration.addItemStackInfo(ModItems.GIFT_FROM_KAZI_MANOR.get().getDefaultInstance(),
-                Component.literal("用紫水晶与黑猫门童交易获取。").withStyle(ChatFormatting.WHITE));
-        registration.addItemStackInfo(ModItems.CUBED_SAUSAGE.get().getDefaultInstance(),
-                Component.literal("用斧头右键切割烤熟的狼牙棒火腿肠以获取。").withStyle(ChatFormatting.WHITE));
-        registration.addItemStackInfo(ModItems.LARGE_STEAK.get().getDefaultInstance(),
-                Component.literal("用斧头右键切割烤熟的大肉排以获取。").withStyle(ChatFormatting.WHITE));
-        registration.addItemStackInfo(ModItems.GLOW_CASHEWS.get().getDefaultInstance(),
-                Component.literal("种植阴幕树，从其上生长的伞腰果植株处收获发光腰果。").withStyle(ChatFormatting.WHITE));
+        registerSimpleItemInfo(registration, ModItems.VITALITY_SPORES.get());
+        registerSimpleItemInfo(registration, ModItems.GIFT_FROM_KAZI_MANOR.get());
+        registerSimpleItemInfo(registration, ModItems.CUBED_SAUSAGE.get());
+        registerSimpleItemInfo(registration, ModItems.LARGE_STEAK.get());
+        registerSimpleItemInfo(registration, ModItems.GLOW_CASHEWS.get());
+        registerSimpleItemInfo(registration, ModItems.COFFEE_FRUIT.get());
+        registerSimpleItemInfo(registration, ModItems.GOLDEN_COFFEE_FRUIT.get());
+        registerSimpleItemInfo(registration, ModItems.PAPER_FOLD_TIGER.get());
+        registerSimpleItemInfo(registration, ModItems.COPPER_BARTENDER.get());
+    }
+
+    private void registerSimpleItemInfo(IRecipeRegistration registration, Item item) {
+        ResourceLocation itemKey = ForgeRegistries.ITEMS.getKey(item);
+        if (itemKey == null) {
+            return;
+        }
+        registration.addItemStackInfo(item.getDefaultInstance(), Component
+                .translatable("jei.papercraft_magic_decoration.item_info.%s".formatted(itemKey.getPath()))
+                .withStyle(Style.EMPTY.withColor(0x555555)));
     }
 }

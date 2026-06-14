@@ -40,7 +40,7 @@ public class MangaMeatBlock extends HorizontalDirectionalBlock implements Smelta
     public static final BooleanProperty HAS_BASE = BooleanProperty.create("has_base");
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
-    private static final EnumMap<Direction, VoxelShape> SHAPES = VoxelShapeUtils.horizontalShapes(Block.box(1, 0, 0, 15, 15, 16));
+    private static final EnumMap<Direction, VoxelShape> SHAPES = VoxelShapeUtils.horizontalShapes(Block.box(0, 0, 1, 16, 14, 15));
 
     public MangaMeatBlock(Properties properties) {
         super(properties);
@@ -129,7 +129,7 @@ public class MangaMeatBlock extends HorizontalDirectionalBlock implements Smelta
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         VoxelShape shape = SHAPES.get(state.getValue(FACING));
-        return state.getValue(HAS_BASE) ? shape.move(0, -0.4, 0) : shape;
+        return state.getValue(HAS_BASE) ? shape.move(0, -0.36875, 0) : shape;
     }
 
     @Override

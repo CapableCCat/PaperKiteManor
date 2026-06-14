@@ -165,13 +165,13 @@ public class SausageMaceWeaponBlock extends MultipartBlock implements SmeltableB
     }
 
     @Override
-    public boolean hasLitSource(Level level, BlockState state, BlockPos pos) {
+    public boolean hasHeatSource(Level level, BlockState state, BlockPos pos) {
         Direction facing = state.getValue(FACING).getOpposite();
         BlockPos pos1 = pos.relative(facing);
         BlockState state1 = level.getBlockState(pos1);
         return state.getValue(FACE) == AttachFace.WALL
-                && SmeltableBlock.super.hasLitSource(level, state, pos)
-                && SmeltableBlock.super.hasLitSource(level, state1, pos1);
+                && SmeltableBlock.super.hasHeatSource(level, state, pos)
+                && SmeltableBlock.super.hasHeatSource(level, state1, pos1);
     }
 
     @Override

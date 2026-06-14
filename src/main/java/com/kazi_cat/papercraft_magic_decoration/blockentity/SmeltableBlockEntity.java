@@ -85,8 +85,7 @@ public class SmeltableBlockEntity extends BaseBlockEntity {
     }
 
     public void updateLitLevel(Level level) {
-        SmeltableBlock smeltable = getSmeltable();
-        litLevel = smeltable != null && smeltable.hasLitSource(level, getBlockState(), getBlockPos()) ? 1 : 0;
+        litLevel = hasHeatSource(level) ? 1 : 0;
     }
 
     public float getProgressPercent() {
@@ -96,6 +95,11 @@ public class SmeltableBlockEntity extends BaseBlockEntity {
         }
         int total = Math.max(data.time(), 1);
         return (float) progress / total;
+    }
+
+    public boolean hasHeatSource(Level level) {
+        SmeltableBlock block = getSmeltable();
+        return block != null && block.hasHeatSource(level, getBlockState(), worldPosition);
     }
 
     @Nullable

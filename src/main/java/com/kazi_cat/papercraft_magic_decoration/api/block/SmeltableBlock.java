@@ -14,7 +14,7 @@ import org.jetbrains.annotations.Nullable;
 public interface SmeltableBlock {
     BooleanProperty COOKED = BooleanProperty.create("cooked");
 
-    default boolean hasLitSource(Level level, BlockState state, BlockPos pos) {
+    default boolean hasHeatSource(Level level, BlockState state, BlockPos pos) {
         BlockState belowState = level.getBlockState(pos.below());
         if (belowState.hasProperty(BlockStateProperties.LIT)) {
             return belowState.getValue(BlockStateProperties.LIT);
@@ -23,7 +23,6 @@ public interface SmeltableBlock {
     }
 
     default void onCookFinished(Level level, BlockState state, BlockPos pos) {
-        //level.addDestroyBlockEffect(pos, state);
         if (level instanceof ServerLevel serverLevel) {
             serverLevel.sendParticles(ParticleTypes.SMOKE,
                     pos.getX() + 0.5,

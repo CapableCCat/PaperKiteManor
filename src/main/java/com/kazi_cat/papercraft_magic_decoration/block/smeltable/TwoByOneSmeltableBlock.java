@@ -103,12 +103,12 @@ public class TwoByOneSmeltableBlock extends MultipartBlock implements SmeltableB
     }
 
     @Override
-    public boolean hasLitSource(Level level, BlockState state, BlockPos pos) {
+    public boolean hasHeatSource(Level level, BlockState state, BlockPos pos) {
         Direction facing = state.getValue(FACING);
         BlockPos behind = pos.relative(facing.getOpposite());
         BlockState stateBehind = level.getBlockState(behind);
-        return  SmeltableBlock.super.hasLitSource(level, state, pos)
-                && SmeltableBlock.super.hasLitSource(level, stateBehind, behind);
+        return  SmeltableBlock.super.hasHeatSource(level, state, pos)
+                && SmeltableBlock.super.hasHeatSource(level, stateBehind, behind);
     }
 
     @Override

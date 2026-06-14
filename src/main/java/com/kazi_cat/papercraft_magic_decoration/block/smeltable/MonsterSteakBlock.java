@@ -124,9 +124,9 @@ public class MonsterSteakBlock extends MultipartBlock implements SmeltableBlock,
     }
 
     @Override
-    public boolean hasLitSource(Level level, BlockState state, BlockPos pos) {
+    public boolean hasHeatSource(Level level, BlockState state, BlockPos pos) {
         for (var part : getOrderedParts(pos, state)) {
-            if (!SmeltableBlock.super.hasLitSource(level, level.getBlockState(part), part)) {
+            if (!SmeltableBlock.super.hasHeatSource(level, level.getBlockState(part), part)) {
                 return false;
             }
         }

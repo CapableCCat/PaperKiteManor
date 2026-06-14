@@ -27,7 +27,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class DistillationRecipeCategory implements IRecipeCategory<DistillationRecipe> {
-    public static final RecipeType<DistillationRecipe> TYPE = RecipeType.create(PaperKiteManor.MOD_ID, "distiller", DistillationRecipe.class);
+    public static final RecipeType<DistillationRecipe> TYPE = RecipeType.create(PaperKiteManor.MOD_ID, "distillation", DistillationRecipe.class);
 
     private static final ResourceLocation BG = PaperKiteManor.modLoc("textures/gui/jei/distillation.png");
     private static final MutableComponent TITLE = Component.translatable("jei.papercraft_magic_decoration.distillation.title");

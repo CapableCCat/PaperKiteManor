@@ -52,10 +52,9 @@ public enum SmeltableBlockComponent implements IBlockComponentProvider {
         Item item = cooked ? data.result() : data.ingredient();
         tooltip.add(item.getDefaultInstance().getHoverName().copy().withStyle(ChatFormatting.WHITE));
         if (!cooked && block.getBlockEntity(level, state, pos) instanceof SmeltableBlockEntity be
-                && block.hasLitSource(level, state, pos)) {
+                && be.hasHeatSource(level)) {
             IElementHelper helper = IElementHelper.get();
-            tooltip.add(helper.spacer(4, 1));
-            tooltip.append(helper.item(item.getDefaultInstance()));
+            tooltip.add(helper.item(Items.CAMPFIRE.getDefaultInstance()));
             tooltip.append(new ProgressArrowElement(be.getProgressPercent()));
             tooltip.append(helper.item(data.result().getDefaultInstance()));
         }

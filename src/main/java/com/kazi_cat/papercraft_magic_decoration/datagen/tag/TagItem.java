@@ -25,5 +25,8 @@ public class TagItem extends ItemTagsProvider {
                         ModItems.BLACK_PAPER.get(), ModItems.RED_PAPER.get(),
                         ModItems.YELLOW_PAPER.get(), ModItems.DEWY_MEMBRANE.get(),
                         ModItems.COTTON_SERGE.get());
+
+        tag(TagMod.WINE_BASE)
+                .add(ModItems.WHISKEY_RAW.get());
     }
 }

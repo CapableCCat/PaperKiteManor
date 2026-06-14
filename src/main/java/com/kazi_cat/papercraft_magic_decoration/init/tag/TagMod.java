@@ -12,6 +12,7 @@ public interface TagMod {
     TagKey<Block> HEAT_SOURCE_WITHOUT_LIT = blockTag("heat_source_without_lit");
 
     TagKey<Item> MAGIC_PAPER = itemTag("magic_paper");
+    TagKey<Item> WINE_BASE = itemTag("wine_base");
 
     static TagKey<Item> itemTag(String name) {
         return TagKey.create(Registries.ITEM, PaperKiteManor.modLoc(name));

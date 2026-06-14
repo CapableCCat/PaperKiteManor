@@ -5,8 +5,8 @@ import com.kazi_cat.papercraft_magic_decoration.block.utility.CopperStillBlock;
 import com.kazi_cat.papercraft_magic_decoration.crafting.container.DistillationContainer;
 import com.kazi_cat.papercraft_magic_decoration.crafting.recipe.DistillationRecipe;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
-import com.kazi_cat.papercraft_magic_decoration.init.ModItems;
 import com.kazi_cat.papercraft_magic_decoration.init.ModRecipes;
+import com.kazi_cat.papercraft_magic_decoration.init.tag.TagMod;
 import com.kazi_cat.papercraft_magic_decoration.utils.ItemUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -80,7 +80,7 @@ public class CopperStillBlockEntity extends BaseBlockEntity {
     }
 
     public boolean addWineBase(Level level, @Nullable LivingEntity user, ItemStack itemStack) {
-        if (getStatus() != 0 || !wineBase.isEmpty() || !itemStack.is(ModItems.WHISKEY_RAW.get())) {
+        if (getStatus() != 0 || !wineBase.isEmpty() || !itemStack.is(TagMod.WINE_BASE)) {
             return false;
         }
 
