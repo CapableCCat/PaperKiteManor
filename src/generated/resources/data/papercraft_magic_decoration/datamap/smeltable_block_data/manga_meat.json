@@ -1,7 +1,8 @@
 {
   "block": "papercraft_magic_decoration:manga_meat",
-  "flips": 2,
   "cooldown": 16,
+  "ingredient": "papercraft_magic_decoration:raw_manga_meat",
   "result": "papercraft_magic_decoration:manga_meat",
-  "time": 100
+  "time": 100,
+  "flips": 2
 }

@@ -8,7 +8,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.ForgeRegistries;
 
-public record SmeltableBlockData(Block block, int time, int flips, int cooldown, Item result) {
+public record SmeltableBlockData(Block block, int time, int flips, int cooldown, Item ingredient, Item result) {
     private static final Codec<Item> ITEM_CODEC = ResourceLocation.CODEC.comapFlatMap(id -> {
         Item item = ForgeRegistries.ITEMS.getValue(id);
         return item != null ? DataResult.success(item) : DataResult.error(() -> "Unknown item: " + id);
@@ -24,6 +24,7 @@ public record SmeltableBlockData(Block block, int time, int flips, int cooldown,
             Codec.INT.fieldOf("time").forGetter(SmeltableBlockData::time),
             Codec.INT.fieldOf("flips").forGetter(SmeltableBlockData::flips),
             Codec.INT.fieldOf("cooldown").forGetter(SmeltableBlockData::cooldown),
+            ITEM_CODEC.fieldOf("ingredient").forGetter(SmeltableBlockData::ingredient),
             ITEM_CODEC.fieldOf("result").forGetter(SmeltableBlockData::result)
     ).apply(instance, SmeltableBlockData::new));
 }

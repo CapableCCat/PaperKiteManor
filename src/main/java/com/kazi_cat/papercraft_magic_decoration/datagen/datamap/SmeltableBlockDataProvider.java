@@ -18,6 +18,7 @@ import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.util.GsonHelper;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -53,30 +54,35 @@ public class SmeltableBlockDataProvider implements DataProvider {
         this.add(ModBlocks.SAUSAGE_MACE_WEAPON_BLOCK.get(), new SmeltableBlockData(
                 ModBlocks.SAUSAGE_MACE_WEAPON_BLOCK.get(),
                 100, 2, 20,
+                ModItems.RAW_SAUSAGE_MACE_WEAPON.get(),
                 ModItems.SAUSAGE_MACE_WEAPON.get()
         ));
 
         this.add(ModBlocks.MANGA_MEAT.get(), new SmeltableBlockData(
                 ModBlocks.MANGA_MEAT.get(),
                 100, 2, 16,
+                ModItems.RAW_MANGA_MEAT.get(),
                 ModItems.MANGA_MEAT.get()
         ));
 
         this.add(ModBlocks.SALMON_HEAD.get(), new SmeltableBlockData(
                 ModBlocks.SALMON_HEAD.get(),
                 100, 0, 0,
+                Items.AIR,
                 ModItems.SMOKED_SALMON_HEAD.get()
         ));
 
         this.add(ModBlocks.CHUNKY_SALMON.get(), new SmeltableBlockData(
                 ModBlocks.CHUNKY_SALMON.get(),
                 100, 0, 0,
+                ModItems.CHUNKY_SALMON.get(),
                 ModItems.CHUNKY_SMOKED_SALMON.get()
         ));
 
         this.add(ModBlocks.MONSTER_STEAK.get(), new SmeltableBlockData(
                 ModBlocks.MONSTER_STEAK.get(),
                 100, 0, 0,
+                ModItems.MONSTER_STEAK.get(),
                 ModItems.LARGE_STEAK.get()
         ));
     }

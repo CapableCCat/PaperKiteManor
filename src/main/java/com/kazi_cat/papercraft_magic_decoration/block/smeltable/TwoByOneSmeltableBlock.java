@@ -118,6 +118,12 @@ public class TwoByOneSmeltableBlock extends MultipartBlock implements SmeltableB
         }
     }
 
+    @Override
+    public @Nullable BlockEntity getBlockEntity(Level level, BlockState state, BlockPos pos) {
+        Direction facing = state.getValue(FACING);
+        return state.getValue(partProperty) == 0 ? level.getBlockEntity(pos) : level.getBlockEntity(pos.relative(facing));
+    }
+
     @Nullable
     @SuppressWarnings("all")
     protected static <E extends BlockEntity, A extends BlockEntity> BlockEntityTicker<A> createTickerHelper(

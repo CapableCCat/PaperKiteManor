@@ -1,7 +1,8 @@
 {
   "block": "papercraft_magic_decoration:salmon_head",
-  "flips": 0,
   "cooldown": 0,
+  "ingredient": "minecraft:air",
   "result": "papercraft_magic_decoration:smoked_salmon_head",
-  "time": 100
+  "time": 100,
+  "flips": 0
 }

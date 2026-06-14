@@ -140,6 +140,22 @@ public class MonsterSteakBlock extends MultipartBlock implements SmeltableBlock,
         }
     }
 
+    @Override
+    @Nullable
+    public BlockEntity getBlockEntity(Level level, BlockState state, BlockPos pos) {
+        Direction direction = state.getValue(FACING).getOpposite();
+        BlockPos center = switch (state.getValue(partProperty)) {
+            case 0 -> pos.relative(direction.getClockWise());
+            case 1 -> pos;
+            case 2 -> pos.relative(direction.getCounterClockWise());
+            case 3 -> pos.relative(direction.getClockWise()).relative(direction.getOpposite());
+            case 4 -> pos.relative(direction.getOpposite());
+            case 5 -> pos.relative(direction.getCounterClockWise()).relative(direction.getOpposite());
+            default -> BlockPos.ZERO;
+        };
+        return level.getBlockEntity(center);
+    }
+
     @Nullable
     @SuppressWarnings("all")
     protected static <E extends BlockEntity, A extends BlockEntity> BlockEntityTicker<A> createTickerHelper(

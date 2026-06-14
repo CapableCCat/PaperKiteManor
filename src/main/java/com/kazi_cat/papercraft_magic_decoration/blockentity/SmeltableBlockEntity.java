@@ -89,6 +89,15 @@ public class SmeltableBlockEntity extends BaseBlockEntity {
         litLevel = smeltable != null && smeltable.hasLitSource(level, getBlockState(), getBlockPos()) ? 1 : 0;
     }
 
+    public float getProgressPercent() {
+        SmeltableBlockData data = getData();
+        if (data == null) {
+            return 0;
+        }
+        int total = Math.max(data.time(), 1);
+        return (float) progress / total;
+    }
+
     @Nullable
     public SmeltableBlock getSmeltable() {
         return getBlockState().getBlock() instanceof SmeltableBlock smeltable ? smeltable : null;

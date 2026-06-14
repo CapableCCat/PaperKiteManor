@@ -86,15 +86,7 @@ public class SausageMaceWeaponBlock extends MultipartBlock implements SmeltableB
             return InteractionResult.PASS;
         }
 
-        Direction facing = state.getValue(FACING).getOpposite();
-        BlockPos center = switch (state.getValue(partProperty)) {
-            case 0 -> pos.relative(facing);
-            case 1 -> pos;
-            case 2 -> pos.relative(facing.getOpposite());
-            case 3 -> pos.relative(facing.getOpposite(), 2);
-            default -> BlockPos.ZERO;
-        };
-        if (level.getBlockEntity(center) instanceof SmeltableBlockEntity smeltableBE) {
+        if (getBlockEntity(level, state, pos) instanceof SmeltableBlockEntity smeltableBE) {
             return smeltableBE.flip(level, player) ? InteractionResult.SUCCESS : InteractionResult.PASS;
         }
 
@@ -187,6 +179,19 @@ public class SausageMaceWeaponBlock extends MultipartBlock implements SmeltableB
         for (var part : getOrderedParts(pos, state)) {
             SmeltableBlock.super.onCookFinished(level, level.getBlockState(part), part);
         }
+    }
+
+    @Override
+    public @Nullable BlockEntity getBlockEntity(Level level, BlockState state, BlockPos pos) {
+        Direction facing = state.getValue(FACING).getOpposite();
+        BlockPos center = switch (state.getValue(partProperty)) {
+            case 0 -> pos.relative(facing);
+            case 1 -> pos;
+            case 2 -> pos.relative(facing.getOpposite());
+            case 3 -> pos.relative(facing.getOpposite(), 2);
+            default -> BlockPos.ZERO;
+        };
+        return level.getBlockEntity(center);
     }
 
     @Nullable

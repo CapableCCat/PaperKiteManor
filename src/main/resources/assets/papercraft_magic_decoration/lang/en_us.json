@@ -208,6 +208,7 @@
   "config.jade.plugin_papercraft_magic_decoration.spores_collection_plate": "Spores Collection Plate",
   "config.jade.plugin_papercraft_magic_decoration.mocha_pot": "Mocha Pot",
   "config.jade.plugin_papercraft_magic_decoration.kazi_lucky_cat": "Kazi Lucky Cat",
+  "config.jade.plugin_papercraft_magic_decoration.smeltable_block": "Smeltable Block",
   "jade.papercraft_magic_decoration.mocha_pot.heat_time": "Remaining heating time: %d",
   "jade.papercraft_magic_decoration.mocha_pot.heat_finished": "Heating completed",
   "jade.papercraft_magic_decoration.spores_collection_plate.empty": "Empty",
@@ -216,7 +217,7 @@
   "jei.papercraft_magic_decoration.papercutting.title": "Papercutting",
   "jei.papercraft_magic_decoration.papermaking.title": "Papermaking",
   "jei.papercraft_magic_decoration.mixology.title": "Mixology",
-  "jei.papercraft_magic_decoration.distiller.title": "Distillation",
+  "jei.papercraft_magic_decoration.distillation.title": "Distillation",
 
   "papercraft_magic_decoration.ponder.copper_still.header": "Using the Copper Still to Make Wine",
   "papercraft_magic_decoration.ponder.copper_still.text_1": "Place the base wine into the right slot of the still.",

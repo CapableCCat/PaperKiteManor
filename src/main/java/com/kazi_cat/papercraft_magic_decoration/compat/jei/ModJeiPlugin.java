@@ -8,14 +8,16 @@ import com.kazi_cat.papercraft_magic_decoration.compat.jei.category.PaperMakingR
 import com.kazi_cat.papercraft_magic_decoration.init.ModItems;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
-import mezz.jei.api.registration.IRecipeCatalystRegistration;
-import mezz.jei.api.registration.IRecipeCategoryRegistration;
-import mezz.jei.api.registration.IRecipeRegistration;
+import mezz.jei.api.registration.*;
 import net.minecraft.ChatFormatting;
+import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import org.jetbrains.annotations.NotNull;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
+@ParametersAreNonnullByDefault
+@MethodsReturnNonnullByDefault
 @JeiPlugin
 public class ModJeiPlugin implements IModPlugin {
     private static final ResourceLocation UID = PaperKiteManor.modLoc("jei");
@@ -46,7 +48,6 @@ public class ModJeiPlugin implements IModPlugin {
     }
 
     @Override
-    @NotNull
     public ResourceLocation getPluginUid() {
         return UID;
     }

@@ -7,6 +7,7 @@ import com.kazi_cat.papercraft_magic_decoration.client.render.block.BaseGeoBlock
 import com.kazi_cat.papercraft_magic_decoration.client.render.block.CopperStillBlockRenderer;
 import com.kazi_cat.papercraft_magic_decoration.client.render.block.PaperCuttingTableBlockRenderer;
 import com.kazi_cat.papercraft_magic_decoration.client.render.entity.*;
+import com.kazi_cat.papercraft_magic_decoration.compat.ponder.PonderCompat;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
 import com.kazi_cat.papercraft_magic_decoration.init.ModEntities;
 import com.kazi_cat.papercraft_magic_decoration.inventory.container.*;
@@ -24,6 +25,7 @@ public class ClientSetup {
     public static void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(BlockGeoModelManager::loadModelMappings);
         event.enqueueWork(ItemGeoModelManager::loadModelMappings);
+        event.enqueueWork(PonderCompat::init);
         event.enqueueWork(() -> MenuScreens.register(CopperBartenderContainer.TYPE, CopperBartenderScreen::new));
         event.enqueueWork(() -> MenuScreens.register(DirtHoleContainer.TYPE, DirtHoleScreen::new));
         event.enqueueWork(() -> MenuScreens.register(KaziLuckyCatContainer.TYPE, KaziLuckyCatScreen::new));
