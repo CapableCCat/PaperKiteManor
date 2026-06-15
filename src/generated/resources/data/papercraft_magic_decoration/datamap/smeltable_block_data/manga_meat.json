@@ -1,6 +1,6 @@
 {
   "block": "papercraft_magic_decoration:manga_meat",
-  "cooldown": 16,
+  "cooldown": 20,
   "ingredient": "papercraft_magic_decoration:raw_manga_meat",
   "result": "papercraft_magic_decoration:manga_meat",
   "time": 1200,

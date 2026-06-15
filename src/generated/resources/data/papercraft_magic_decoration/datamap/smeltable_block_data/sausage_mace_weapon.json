@@ -1,6 +1,6 @@
 {
   "block": "papercraft_magic_decoration:sausage_mace_weapon",
-  "cooldown": 20,
+  "cooldown": 25,
   "ingredient": "papercraft_magic_decoration:raw_sausage_mace_weapon",
   "result": "papercraft_magic_decoration:sausage_mace_weapon",
   "time": 1200,

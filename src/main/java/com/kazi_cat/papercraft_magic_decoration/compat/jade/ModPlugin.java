@@ -1,6 +1,7 @@
 package com.kazi_cat.papercraft_magic_decoration.compat.jade;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
+import com.kazi_cat.papercraft_magic_decoration.block.chocolate.ChocolateInMoldBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.smeltable.*;
 import com.kazi_cat.papercraft_magic_decoration.block.utility.MochaPotBlock;
 import com.kazi_cat.papercraft_magic_decoration.block.utility.PaperCuttingTableBlock;
@@ -22,6 +23,7 @@ public class ModPlugin implements IWailaPlugin {
     public static final ResourceLocation KAZI_LUCKY_CAT = PaperKiteManor.modLoc("kazi_lucky_cat");
     public static final ResourceLocation SPORES_COLLECTION_PLATE = PaperKiteManor.modLoc("spores_collection_plate");
     public static final ResourceLocation COPPER_BARTENDER = PaperKiteManor.modLoc("copper_bartender");
+    public static final ResourceLocation CHOCOLATE_IN_MOLD = PaperKiteManor.modLoc("chocolate_in_mold");
 
     @Override
     public void register(IWailaCommonRegistration registration) {
@@ -39,6 +41,7 @@ public class ModPlugin implements IWailaPlugin {
         registration.registerBlockComponent(PaperCuttingTableComponentProvider.INSTANCE, PaperCuttingTableBlock.class);
         registration.registerBlockComponent(MochaPotComponentProvider.INSTANCE, MochaPotBlock.class);
         registration.registerBlockComponent(SporesCollectionPlateComponentProvider.INSTANCE, SporesCollectionPlateBlock.class);
+        registration.registerBlockComponent(ChocolateInMoldComponentProvider.INSTANCE, ChocolateInMoldBlock.class);
 
         registration.registerBlockIcon(SmeltableBlockComponent.INSTANCE, ChunkySalmonBlock.class);
         registration.registerBlockIcon(SmeltableBlockComponent.INSTANCE, MangaMeatBlock.class);
