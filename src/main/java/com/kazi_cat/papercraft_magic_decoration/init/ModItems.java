@@ -162,4 +162,8 @@ public interface ModItems {
     RegistryObject<Item> BLACK_CAT_LOBBY_BOY_SPAWN_EGG = ITEMS.register("black_cat_lobby_boy_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.BLACK_CAT_LOBBY_BOY, 0xFFFFFF, 0xFFFFFF, new Item.Properties()));
     RegistryObject<Item> AIR_FLOW_CARP_SPAWN_EGG = ITEMS.register("air_flow_carp_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.AIR_FLOW_CARP, 0xFFFFFF, 0xFFFFFF, new Item.Properties()));
     RegistryObject<Item> PAPER_TIGER_SPAWN_EGG = ITEMS.register("paper_tiger_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.PAPER_TIGER, 0xFFFFFF, 0xFFFFFF, new Item.Properties()));
+
+    // 仅用于JEI显示
+    RegistryObject<Item> SALMON_HEAD = ITEMS.register("salmon_head", () -> new Item(new Item.Properties()));
+    RegistryObject<Item> THE_FINISHING_TOUCH = ITEMS.register("the_finishing_touch", () -> new Item(new Item.Properties()));
 }

@@ -153,15 +153,6 @@ public class SingleItemRecipeProvider extends ModRecipeProvider {
                         0.1f,
                         200)
                 .unlockedBy("has_dark_cocoa_in_mold", has(ModItems.DARK_COCOA_IN_MOLD.get()))
-                .save(consumer);
-
-        SimpleCookingRecipeBuilder.smelting(
-                        Ingredient.of(ModItems.DARK_COCOA_IN_MOLD.get()),
-                        RecipeCategory.FOOD,
-                        ModItems.MELTED_DARK_COCOA_IN_MOLD.get(),
-                        0.1f,
-                        200)
-                .unlockedBy("has_dark_cocoa_in_mold", has(ModItems.DARK_COCOA_IN_MOLD.get()))
                 .save(consumer, smeltingLoc(ModItems.MELTED_DARK_COCOA_IN_MOLD.get()));
 
         SimpleCookingRecipeBuilder.smelting(

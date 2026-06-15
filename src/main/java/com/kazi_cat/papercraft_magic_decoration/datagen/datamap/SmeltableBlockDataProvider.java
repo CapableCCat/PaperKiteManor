@@ -52,14 +52,14 @@ public class SmeltableBlockDataProvider implements DataProvider {
     private void addEntry() {
         this.add(ModBlocks.SAUSAGE_MACE_WEAPON_BLOCK.get(), new SmeltableBlockData(
                 ModBlocks.SAUSAGE_MACE_WEAPON_BLOCK.get(),
-                1200, 6, 20,
+                1200, 6, 25,
                 ModItems.RAW_SAUSAGE_MACE_WEAPON.get(),
                 ModItems.SAUSAGE_MACE_WEAPON.get()
         ));
 
         this.add(ModBlocks.MANGA_MEAT.get(), new SmeltableBlockData(
                 ModBlocks.MANGA_MEAT.get(),
-                1200, 6, 16,
+                1200, 6, 20,
                 ModItems.RAW_MANGA_MEAT.get(),
                 ModItems.MANGA_MEAT.get()
         ));
@@ -67,7 +67,7 @@ public class SmeltableBlockDataProvider implements DataProvider {
         this.add(ModBlocks.SALMON_HEAD.get(), new SmeltableBlockData(
                 ModBlocks.SALMON_HEAD.get(),
                 1200, 0, 0,
-                ModItems.SMOKED_SALMON_HEAD.get(),
+                ModItems.SALMON_HEAD.get(),
                 ModItems.SMOKED_SALMON_HEAD.get()
         ));
 

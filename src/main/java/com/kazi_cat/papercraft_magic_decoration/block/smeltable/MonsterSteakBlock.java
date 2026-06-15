@@ -6,8 +6,10 @@ import com.kazi_cat.papercraft_magic_decoration.blockentity.SmeltableBlockEntity
 import com.kazi_cat.papercraft_magic_decoration.datamap.data.SmeltableBlockData;
 import com.kazi_cat.papercraft_magic_decoration.datamap.resources.SmeltableBlockDataReloadListener;
 import com.kazi_cat.papercraft_magic_decoration.init.ModBlocks;
+import com.kazi_cat.papercraft_magic_decoration.utils.VoxelShapeUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -29,18 +31,45 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collections;
+import java.util.EnumMap;
 import java.util.List;
 
-@SuppressWarnings("deprecation")
+@SuppressWarnings({"deprecation","unchecked"})
 public class MonsterSteakBlock extends MultipartBlock implements SmeltableBlock, SimpleWaterloggedBlock, EntityBlock {
     public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
-    private static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 12, 16);
+    private static final EnumMap<Direction, VoxelShape>[] SHAPE_MAP = new EnumMap[] {
+            VoxelShapeUtils.horizontalShapes(Shapes.or(
+                    Block.box(0, 0, 0, 16, 2, 16),
+                    Block.box(0, 1, 3, 13, 10, 16)
+            )),
+            VoxelShapeUtils.horizontalShapes(Shapes.or(
+                    Block.box(0, 0, 0, 16, 2, 16),
+                    Block.box(0, 2, 3, 16, 10, 16)
+            )),
+            VoxelShapeUtils.horizontalShapes(Shapes.or(
+                    Block.box(0, 0, 0, 16, 2, 16),
+                    Block.box(3, 2, 3, 16, 10, 16)
+            )),
+            VoxelShapeUtils.horizontalShapes(Shapes.or(
+                    Block.box(0, 0, 0, 16, 2, 16),
+                    Block.box(0, 2, 0, 13, 10, 13)
+            )),
+            VoxelShapeUtils.horizontalShapes(Shapes.or(
+                    Block.box(0, 0, 0, 16, 2, 16),
+                    Block.box(0, 2, 0, 16, 10, 13)
+            )),
+            VoxelShapeUtils.horizontalShapes(Shapes.or(
+                    Block.box(0, 0, 0, 16, 2, 16),
+                    Block.box(3, 2, 0, 16, 10, 8)
+            ))
+    };
 
     public MonsterSteakBlock(Properties properties) {
         super(properties, 6);
@@ -188,7 +217,8 @@ public class MonsterSteakBlock extends MultipartBlock implements SmeltableBlock,
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return SHAPE;
+        int count = Mth.clamp(state.getValue(partProperty), 0, SHAPE_MAP.length - 1);
+        return SHAPE_MAP[count].get(state.getValue(FACING));
     }
 
     @Override

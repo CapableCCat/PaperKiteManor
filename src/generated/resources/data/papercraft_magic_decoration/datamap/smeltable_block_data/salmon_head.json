@@ -1,7 +1,7 @@
 {
   "block": "papercraft_magic_decoration:salmon_head",
   "cooldown": 0,
-  "ingredient": "papercraft_magic_decoration:smoked_salmon_head",
+  "ingredient": "papercraft_magic_decoration:salmon_head",
   "result": "papercraft_magic_decoration:smoked_salmon_head",
   "time": 1200,
   "flips": 0

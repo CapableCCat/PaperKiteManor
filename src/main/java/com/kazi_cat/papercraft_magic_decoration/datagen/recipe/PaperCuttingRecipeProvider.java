@@ -99,5 +99,10 @@ public class PaperCuttingRecipeProvider extends ModRecipeProvider {
                 .setIngredient(ModItems.RED_VELVET_CHAISE_LONGUE_ORIGAMI.get())
                 .setResult(ModItems.RED_VELVET_CHAISE_LONGUE.get())
                 .save(consumer);
+
+        PaperCuttingBuilder.builder()
+                .setIngredient(ModItems.PAPER_FOLD_TIGER.get())
+                .setResult(ModItems.THE_FINISHING_TOUCH.get())
+                .save(consumer);
     }
 }
