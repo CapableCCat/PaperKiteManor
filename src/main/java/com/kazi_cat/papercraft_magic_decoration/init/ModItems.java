@@ -163,6 +163,14 @@ public interface ModItems {
     RegistryObject<Item> AIR_FLOW_CARP_SPAWN_EGG = ITEMS.register("air_flow_carp_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.AIR_FLOW_CARP, 0xFFFFFF, 0xFFFFFF, new Item.Properties()));
     RegistryObject<Item> PAPER_TIGER_SPAWN_EGG = ITEMS.register("paper_tiger_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.PAPER_TIGER, 0xFFFFFF, 0xFFFFFF, new Item.Properties()));
 
+    // 收纳工具：三个注册项共用一个类，靠 Scope 区分；只有空符进创造页，两个满符由使用产生
+    RegistryObject<Item> STORAGE_TOOL = ITEMS.register("storage_tool",
+            () -> new StorageToolItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE), null));
+    RegistryObject<Item> STORAGE_TOOL_MANOR = ITEMS.register("storage_tool_manor",
+            () -> new StorageToolItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE), StorageToolItem.Scope.MANOR));
+    RegistryObject<Item> STORAGE_TOOL_VANILLA = ITEMS.register("storage_tool_vanilla",
+            () -> new StorageToolItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE), StorageToolItem.Scope.VANILLA));
+
     // 仅用于JEI显示
     RegistryObject<Item> SALMON_HEAD = ITEMS.register("salmon_head", () -> new Item(new Item.Properties()));
     RegistryObject<Item> THE_FINISHING_TOUCH = ITEMS.register("the_finishing_touch", () -> new Item(new Item.Properties()));

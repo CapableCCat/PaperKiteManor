@@ -1,24 +1,29 @@
 package com.kazi_cat.papercraft_magic_decoration.item;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
+import com.kazi_cat.papercraft_magic_decoration.init.ModItems;
 import com.kazi_cat.papercraft_magic_decoration.inventory.container.EntityBoundMenu;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.NbtIo;
+import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.OwnableEntity;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
@@ -31,6 +36,7 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.IdentityHashMap;
+import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
@@ -223,8 +229,9 @@ public class StorageToolItem extends Item {
             placeEntity(spawned, serverLevel, spawnPos);
         }
 
-        // ⑤ 清空数据 + 冷却，防连点重复释放
-        clearEntityData(stack);
+        // ⑤ 换回空符 + 冷却，防连点重复释放
+        player.setItemInHand(context.getHand(), createEmptyTool());
+        player.getInventory().setChanged();
         player.getCooldowns().addCooldown(this, RELEASE_COOLDOWN_TICKS);
         return InteractionResult.SUCCESS;
     }
@@ -232,9 +239,9 @@ public class StorageToolItem extends Item {
     /**
      * 清空物品上的实体数据，让它回到「空」状态。
      *
-     * <p>T3 只清数据、**不换物品**：换物品需要引用「空符」那个注册项，而它要到 T5 才存在。
-     * T5 会把这里升级为「换成 {@code ModItems.STORAGE_TOOL} 的默认实例」，
-     * 那时满符与空符才会在贴图上区分开。
+     * <p>正常释放流程走的是「换成空符物品」（见 {@code onItemUseFirst}），
+     * 本方法用于**异常路径**与**测试**（例如数据写坏时把物品恢复成可用状态），
+     * 不改变物品 id。
      */
     public static void clearEntityData(ItemStack stack) {
         CompoundTag tag = stack.getTag();
@@ -406,6 +413,174 @@ public class StorageToolItem extends Item {
         SUCCESS,
         /** 数据体积超过 {@link StorageToolNbt#MAX_DATA_SIZE}，物品未被改动。 */
         TOO_LARGE
+    }
+
+    // ------------------------------------------------------------------
+    // 满符 / 空符互转与「满符」的展示、保护行为（T4）
+    // ------------------------------------------------------------------
+
+    /**
+     * 收纳成功后应该换成哪个满符；空符（无范围）返回 {@code null} 表示不该走到这里。
+     *
+     * <p>取值方式是延迟解析 {@code ModItems} 的 {@code RegistryObject}，
+     * 而不是在构造期捕获 {@code Item} 实例 —— 物品注册期 {@code RegistryObject} 还没解析完成，
+     * 提前取会在启动时抛异常。
+     */
+    @Nullable
+    private ItemStack createFullTool() {
+        if (this.scope == null) {
+            return null;
+        }
+        return switch (this.scope) {
+            case MANOR -> ModItems.STORAGE_TOOL_MANOR.get().getDefaultInstance();
+            case VANILLA -> ModItems.STORAGE_TOOL_VANILLA.get().getDefaultInstance();
+        };
+    }
+
+    /** 满符释放后应该换回的空符。 */
+    private static ItemStack createEmptyTool() {
+        return ModItems.STORAGE_TOOL.get().getDefaultInstance();
+    }
+
+    /**
+     * 结算「收纳一次」：把手上的符换成对应的满符。
+     *
+     * <p>用 {@code player.setItemInHand} 而不是往光标上放物品 —— 收纳时玩家的光标上
+     * 可能正拿着别的东西，用光标会把它顶掉。
+     *
+     * @return 成功时返回 {@code true}；空符或未注册时返回 {@code false}（调用方应放弃收纳）
+     */
+    public boolean swapToFullTool(ItemStack stack, Player player, InteractionHand hand) {
+        ItemStack full = createFullTool();
+        if (full == null) {
+            return false;
+        }
+        player.setItemInHand(hand, full);
+        // 满符与原空符不同 id，必须显式标记库存变化，否则客户端仍显示空符外观
+        player.getInventory().setChanged();
+        return true;
+    }
+
+    /**
+     * 满符自带附魔光效（TLM 做法）—— 让「装了东西」在远处也能一眼看出来，
+     * 不必悬停读文字。
+     */
+    @Override
+    public boolean isFoil(ItemStack stack) {
+        return this.scope != null || super.isFoil(stack);
+    }
+
+    /**
+     * 满符**不允许**放进容器（潜影盒 / 箱子等）。
+     *
+     * <p>理由：满符里装着实体数据，允许装箱等于开了「批量搬运实体数据」的口子，
+     * 是复制/刷实体面的温床。参考实现 TouhouLittleMaid 同样如此
+     * （{@code ItemSmartSlab.java:184-187}）。
+     */
+    @Override
+    public boolean canFitInsideContainerItems() {
+        return this.scope == null && super.canFitInsideContainerItems();
+    }
+
+    /**
+     * 掉在地上的满符：设为发光 + 无敌，并在掉到世界底部前拦住。
+     *
+     * <p>目的很直接 —— 里面装着玩家的宠物，被岩浆烧掉或被虚空吞掉都是**不可逆**的损失。
+     * 这里的三重保护让「失手丢出去」不会变成灾难（TLM 做法，{@code AbstractStoreMaidItem.java:38-53}）。
+     */
+    @Override
+    public boolean onEntityItemUpdate(ItemStack stack, ItemEntity entity) {
+        if (this.scope != null) {
+            if (!entity.isCurrentlyGlowing()) {
+                entity.setGlowingTag(true);
+            }
+            if (!entity.isInvulnerable()) {
+                entity.setInvulnerable(true);
+            }
+            double minY = entity.level().getMinBuildHeight();
+            Vec3 pos = entity.position();
+            if (pos.y < minY) {
+                entity.setNoGravity(true);
+                entity.setDeltaMovement(Vec3.ZERO);
+                entity.setPos(pos.x, minY, pos.z);
+            }
+        }
+        return super.onEntityItemUpdate(stack, entity);
+    }
+
+    /**
+     * 满符的悬浮说明：实体名 / 类型 / 生命值 / 背包件数。
+     *
+     * <p>这既是给玩家的信息（「我这符里装的是谁」），也是**验收手段** ——
+     * 只看这一行就能判断数据有没有正确写进去，不需要会任何指令。
+     *
+     * <p>注意：这里只做**只读**解析，不在客户端创建实体实例。
+     */
+    @Override
+    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+        super.appendHoverText(stack, level, tooltip, flag);
+        if (!StorageToolNbt.hasEntityData(stack)) {
+            return;
+        }
+        CompoundTag data = StorageToolNbt.getEntityData(stack);
+        if (data == null) {
+            return;
+        }
+        String typeId = data.getString(StorageToolNbt.ENTITY_TYPE);
+        EntityType<?> type = typeId.isEmpty() ? null : EntityType.byString(typeId).orElse(null);
+
+        // 实体名：优先自定义名，否则用实体类型的默认显示名
+        String name = data.contains("CustomName", Tag.TAG_STRING)
+                ? data.getString("CustomName")
+                : (type != null ? Component.translatable(type.getDescriptionId()).getString() : typeId);
+
+        tooltip.add(Component.literal(name).withStyle(ChatFormatting.AQUA));
+        tooltip.add(Component.translatable("item.papercraft_magic_decoration.storage_tool.lore.type",
+                typeId.isEmpty() ? "?" : typeId).withStyle(ChatFormatting.DARK_GRAY));
+
+        if (data.contains("Health")) {
+            float health = data.getFloat("Health");
+            tooltip.add(Component.translatable("item.papercraft_magic_decoration.storage_tool.lore.health",
+                    String.format("%.1f", health)).withStyle(ChatFormatting.GRAY));
+        }
+
+        // 背包件数：女仆/黑猫的背包是 ItemStackHandler 写在 inventory 键里；黑猫另有 Items 键
+        int items = countStoredItems(data);
+        if (items > 0) {
+            tooltip.add(Component.translatable("item.papercraft_magic_decoration.storage_tool.lore.items",
+                    items).withStyle(ChatFormatting.GRAY));
+        }
+        tooltip.add(Component.translatable("item.papercraft_magic_decoration.storage_tool.lore.release")
+                .withStyle(ChatFormatting.DARK_GREEN));
+    }
+
+    /**
+     * 统计实体 NBT 里装了多少件物品。
+     *
+     * <p>只认识本模组与 Forge 的两种写法（女仆族的 {@code inventory} = {@code ItemStackHandler}，
+     * 原版马/羊驼的 {@code Items} = 列表）；认不出来就报 0，不猜、不遍历全部 NBT。
+     */
+    private static int countStoredItems(CompoundTag data) {
+        int count = 0;
+        if (data.contains("inventory", Tag.TAG_COMPOUND)) {
+            CompoundTag inv = data.getCompound("inventory");
+            for (String key : inv.getAllKeys()) {
+                // Forge 的 ItemStackHandler 把每个槽位写成 "0".."n" 的子 compound；
+                // 空槽也存在但内容为空，靠 isEmpty() 过滤。
+                // 这里刻意用 getCompound 而不是 getTag：后者在当前映射下不可用。
+                CompoundTag slot = inv.getCompound(key);
+                if (!slot.isEmpty()) {
+                    count += slot.getInt("Count");
+                }
+            }
+        }
+        if (data.contains("Items", Tag.TAG_LIST)) {
+            ListTag list = data.getList("Items", Tag.TAG_COMPOUND);
+            for (int i = 0; i < list.size(); i++) {
+                count += list.getCompound(i).getInt("Count");
+            }
+        }
+        return count;
     }
 
     /**
