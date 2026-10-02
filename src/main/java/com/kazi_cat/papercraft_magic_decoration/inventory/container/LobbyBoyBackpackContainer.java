@@ -18,7 +18,7 @@ import net.minecraftforge.items.ItemHandlerHelper;
 
 import java.util.Optional;
 
-public class LobbyBoyBackpackContainer extends AbstractContainerMenu {
+public class LobbyBoyBackpackContainer extends AbstractContainerMenu implements EntityBoundMenu {
     public static final MenuType<LobbyBoyBackpackContainer> TYPE = IForgeMenuType.create(LobbyBoyBackpackContainer::new);
 
     public final BlackCatLobbyBoyEntity entity;
@@ -86,7 +86,14 @@ public class LobbyBoyBackpackContainer extends AbstractContainerMenu {
 
     @Override
     public boolean stillValid(Player player) {
-        return this.entity.isAlive();
+        // 同 BunnySuitcaseContainer：discard() 之后 isAlive() 仍可能为真，
+        // 所以额外要求实体确实还在世界上。
+        return this.entity.isAlive() && !this.entity.isRemoved();
+    }
+
+    @Override
+    public net.minecraft.world.entity.Entity getMenuEntity() {
+        return this.entity;
     }
 
     @Override

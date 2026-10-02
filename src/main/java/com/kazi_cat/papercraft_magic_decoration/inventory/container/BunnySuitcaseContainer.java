@@ -14,7 +14,7 @@ import net.minecraftforge.common.extensions.IForgeMenuType;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class BunnySuitcaseContainer extends AbstractContainerMenu {
+public class BunnySuitcaseContainer extends AbstractContainerMenu implements EntityBoundMenu {
     public static final MenuType<BunnySuitcaseContainer> TYPE = IForgeMenuType.create(BunnySuitcaseContainer::new);
 
     protected final WhiteRabbitMaidEntity entity;
@@ -84,6 +84,13 @@ public class BunnySuitcaseContainer extends AbstractContainerMenu {
 
     @Override
     public boolean stillValid(Player player) {
-        return this.entity != null && this.entity.isAlive();
+        // 注意：isAlive() 只代表「未被移除标记之外」的状态 —— 实体被收纳（discard）后
+        // 它仍可能为真，所以这里额外要求实体确实还在世界上，避免界面停留在已消失的女仆上。
+        return this.entity != null && this.entity.isAlive() && !this.entity.isRemoved();
+    }
+
+    @Override
+    public net.minecraft.world.entity.Entity getMenuEntity() {
+        return this.entity;
     }
 }

@@ -1,10 +1,17 @@
 package com.kazi_cat.papercraft_magic_decoration.item;
 
 import com.kazi_cat.papercraft_magic_decoration.PaperKiteManor;
+import com.kazi_cat.papercraft_magic_decoration.inventory.container.EntityBoundMenu;
+import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtIo;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.OwnableEntity;
@@ -12,6 +19,9 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,6 +32,7 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.IdentityHashMap;
 import java.util.Set;
+import java.util.UUID;
 
 /**
  * 【收纳工具】物品：把「自己拥有的」实体完整收进物品，再从物品还原实体。
@@ -42,6 +53,12 @@ import java.util.Set;
  */
 public class StorageToolItem extends Item {
     private static final Logger LOGGER = LoggerFactory.getLogger("PaperKiteManor/StorageTool");
+
+    /**
+     * 释放后的物品冷却（tick）。防连点导致同一件工具被连续释放两次
+     * （参考实现 TouhouLittleMaid 同样使用 20 tick，见 {@code ItemSmartSlab.java:145}）。
+     */
+    public static final int RELEASE_COOLDOWN_TICKS = 20;
 
     /**
      * 原版可收纳白名单：只放**可驯服且真正有主人**的宠物。
@@ -144,29 +161,204 @@ public class StorageToolItem extends Item {
     }
 
     /**
-     * 丢弃「正被玩家打开的容器」，堵住「收纳后仍能从旧容器隔空取物」的漏洞。
+     * 释放入口：手持满符右击方块时，把它记录的实体安置到点击面的外侧。
      *
-     * <p>背景：本模组女仆的背包界面 {@code BunnySuitcaseContainer} 持有实体引用，
-     * 其 {@code stillValid()} 只看 {@code isAlive()}，而 {@code discard()} 并不让该值为假 ——
+     * <p>放在 {@code onItemUseFirst} 而不是 {@code Item#useOn}：满符是强语义的功能物品，
+     * 应当优先于方块自身的交互（否则「右击箱子」会先开箱子、符不生效）。
+     * 返回 {@link InteractionResult#SUCCESS} 会阻止方块交互继续。
+     *
+     * <p>失败路径一律给**可读的中文提示**（lang key 见任务点清单 T5），
+     * 而不是静默什么都不做 —— 玩家必须知道「为什么放不出来」。
+     */
+    @Override
+    public InteractionResult onItemUseFirst(ItemStack stack, UseOnContext context) {
+        Level level = context.getLevel();
+        Player player = context.getPlayer();
+        if (player == null) {
+            return InteractionResult.PASS;
+        }
+        // 空符（无数据）不归本方法管，交回默认流程
+        if (!StorageToolNbt.hasEntityData(stack)) {
+            return InteractionResult.PASS;
+        }
+        // 只处理主手，避免一次右击触发两次
+        if (context.getHand() != InteractionHand.MAIN_HAND) {
+            return InteractionResult.PASS;
+        }
+        if (level.isClientSide()) {
+            // 世界改动只在服务端做；返回 SUCCESS 让客户端走「成功」的挥手表现
+            return InteractionResult.SUCCESS;
+        }
+
+        // ① 释放鉴权：只有物品里记录的实体主人本人能放出来，否则符被捡走就等于宠物易主
+        if (!canReleaseBy(stack, player)) {
+            player.displayClientMessage(
+                    Component.translatable("item.papercraft_magic_decoration.storage_tool.not_your_pet"), true);
+            return InteractionResult.FAIL;
+        }
+
+        // ② 实体类型必须能查到 —— 物品来自已卸载的模组时这里为 null，绝不能直接往下走
+        EntityType<?> type = readEntityType(stack);
+        if (type == null) {
+            player.displayClientMessage(
+                    Component.translatable("item.papercraft_magic_decoration.storage_tool.unknown_entity"), true);
+            return InteractionResult.FAIL;
+        }
+
+        // ③ 创建实例（create 可能返回 null，例如该类型在当前环境不可用）
+        Entity spawned = type.create(level);
+        if (spawned == null) {
+            player.displayClientMessage(
+                    Component.translatable("item.papercraft_magic_decoration.storage_tool.unknown_entity"), true);
+            return InteractionResult.FAIL;
+        }
+
+        // ④ 先读档，再定位（顺序不可颠倒，否则存档里的旧 Pos 会覆盖新位置）
+        CompoundTag data = StorageToolNbt.getEntityData(stack);
+        if (data != null) {
+            spawned.load(data);
+        }
+        BlockPos spawnPos = context.getClickedPos().relative(context.getClickedFace());
+        if (level instanceof ServerLevel serverLevel) {
+            placeEntity(spawned, serverLevel, spawnPos);
+        }
+
+        // ⑤ 清空数据 + 冷却，防连点重复释放
+        clearEntityData(stack);
+        player.getCooldowns().addCooldown(this, RELEASE_COOLDOWN_TICKS);
+        return InteractionResult.SUCCESS;
+    }
+
+    /**
+     * 清空物品上的实体数据，让它回到「空」状态。
+     *
+     * <p>T3 只清数据、**不换物品**：换物品需要引用「空符」那个注册项，而它要到 T5 才存在。
+     * T5 会把这里升级为「换成 {@code ModItems.STORAGE_TOOL} 的默认实例」，
+     * 那时满符与空符才会在贴图上区分开。
+     */
+    public static void clearEntityData(ItemStack stack) {
+        CompoundTag tag = stack.getTag();
+        if (tag == null) {
+            return;
+        }
+        tag.remove(StorageToolNbt.ROOT);
+        tag.remove(StorageToolNbt.ENTITY_TYPE);
+        tag.remove(StorageToolNbt.STORED_AT);
+        if (tag.isEmpty()) {
+            stack.setTag(null);
+        }
+    }
+
+    /**
+     * 关掉「正被该实体占用的容器」，堵住「收纳后仍能从已消失的实体隔空取物」的漏洞。
+     *
+     * <p><b>漏洞成因</b>：本模组女仆的背包界面 {@code BunnySuitcaseContainer} 持有实体引用，
+     * 其 {@code stillValid()} 原本只看 {@code isAlive()}，而 {@code discard()} 并不让该值为假 ——
      * 所以玩家可以「先打开女仆背包 → 再把她收进符 → 继续从已消失的实体身上掏东西」。
-     * 这里在收纳前主动关掉界面，让容器在服务端与客户端一起失效。
+     *
+     * <p><b>为什么不能判 {@code stillValid()}</b>：界面在打开的那一刻当然是有效的，
+     * 用「是否失效」当条件等于永远不关。必须判断<b>玩家当前开着的界面是否来自这个实体</b>。
+     *
+     * <p><b>两道防线</b>：
+     * <ol>
+     *   <li>本方法（主动关闭）—— 靠 {@link EntityBoundMenu#getMenuEntity()} 精确比对实体身份；</li>
+     *   <li>{@code BunnySuitcaseContainer} / {@code LobbyBoyBackpackContainer} 的 {@code stillValid()}
+     *       已补上 {@code !isRemoved()} —— 即使第 1 道漏了，界面也会在下一 tick 自动失效。</li>
+     * </ol>
      */
     public static void closeOpenContainer(Entity entity, Player player) {
         if (!(player instanceof ServerPlayer serverPlayer)) {
             return;
         }
-        // 实体自己实现了 MenuProvider 时（女仆 / 黑猫），直接关掉它开的那个界面
-        if (entity instanceof net.minecraft.world.MenuProvider provider) {
-            AbstractContainerMenu menu = serverPlayer.containerMenu;
-            if (menu != null && !menu.stillValid(serverPlayer)) {
-                serverPlayer.closeContainer();
-            }
+        AbstractContainerMenu menu = serverPlayer.containerMenu;
+        if (menu == null) {
             return;
         }
-        // 兜底：无论目标是不是 MenuProvider，只要玩家手上有不属于自己的容器就关掉
-        if (serverPlayer.containerMenu != null && !serverPlayer.containerMenu.stillValid(serverPlayer)) {
+        // 只有「这个实体开的界面」才关；玩家在看自己的背包 / 箱子时不该被牵连
+        if (menu instanceof EntityBoundMenu bound && bound.getMenuEntity() == entity) {
             serverPlayer.closeContainer();
         }
+    }
+
+    /**
+     * 从物品里读出实体类型。查不到时返回 {@code null}（调用方必须处理，否则会崩服）。
+     *
+     * <p>查不到的真实场景：这件物品的 NBT 来自某个**已卸载的模组**，或存档被外部工具改坏。
+     */
+    @Nullable
+    public static EntityType<?> readEntityType(ItemStack stack) {
+        CompoundTag data = StorageToolNbt.getEntityData(stack);
+        if (data == null) {
+            return null;
+        }
+        String id = data.getString(StorageToolNbt.ENTITY_TYPE);
+        if (id.isEmpty()) {
+            return null;
+        }
+        return EntityType.byString(id).orElse(null);
+    }
+
+    /**
+     * 这件物品里记录的实体主人（用于释放侧鉴权）。
+     *
+     * <p>取的是实体 NBT 自带的 {@code Owner} 键（原版狼/猫与 {@code TamableAnimal} 都写它），
+     * 不是本模组另加的字段。
+     *
+     * @return 主人 UUID；无主人（未驯服个体）或键缺失时返回 {@code null}
+     */
+    @Nullable
+    public static java.util.UUID readOwnerUuid(ItemStack stack) {
+        CompoundTag data = StorageToolNbt.getEntityData(stack);
+        if (data == null || !data.hasUUID(StorageToolNbt.OWNER)) {
+            return null;
+        }
+        return data.getUUID(StorageToolNbt.OWNER);
+    }
+
+    /**
+     * 释放鉴权：只有**物品里记录的实体主人本人**能把它放出来。
+     *
+     * <p>为什么释放也要校验：否则玩家 A 把宠物收进符后，符一旦被玩家 B 捡到 / 拿走，
+     * B 就能把 A 的宠物据为己有。参考实现 TouhouLittleMaid 同样在释放侧做这道校验
+     * （{@code ItemSmartSlab.java:125-132}）。
+     *
+     * @return 数据里没有主人记录时返回 {@code true}（原版生物蛋式「无主物品」应可被任何人释放），
+     *         有记录时要求与玩家一致
+     */
+    public static boolean canReleaseBy(ItemStack stack, Player player) {
+        var owner = readOwnerUuid(stack);
+        return owner == null || owner.equals(player.getUUID());
+    }
+
+    /**
+     * 把一个实体安置到目标位置并放入世界。
+     *
+     * <p>骨架借用原版生物蛋的放置流程（{@code SpawnEggItem#useOn}）：
+     * <b>创建 → 读档 → 定位 → 入世</b>。两处刻意偏离生物蛋：
+     * <ol>
+     *   <li><b>不调 {@code finalizeSpawn}</b> —— 它会按难度随机化属性，会把女仆的血量、自定义名冲掉；</li>
+     *   <li>不使用 {@code MobSpawnType.SPAWN_EGG}，避免触发刷怪相关逻辑。</li>
+     * </ol>
+     *
+     * <p><b>顺序要害</b>：必须先 {@code load} 再 {@code moveTo}。反过来会被 {@code load} 读回的
+     * 旧坐标覆盖 —— 因为 {@code saveWithoutId} 把 {@code Pos}/{@code Motion}/{@code FallDistance}
+     * 也一并写了出来（已核实）。
+     */
+    public static void placeEntity(Entity entity, ServerLevel level, BlockPos pos) {
+        entity.moveTo(pos.getX() + 0.5, pos.getY() + 1.0, pos.getZ() + 0.5,
+                entity.getYRot(), entity.getXRot());
+        entity.setDeltaMovement(Vec3.ZERO);
+        entity.resetFallDistance();
+
+        // 保险：若目标世界已存在同 UUID 的实体（创造模式中键复制、旧世界残留），重新生成 UUID。
+        // 注意这一步必须在 addFreshEntity 之前做，且要基于实体当前的 UUID 判断。
+        if (level.getEntity(entity.getUUID()) != null) {
+            LOGGER.warn("释放时发现 UUID 冲突（{}），已为 {} 重新生成 UUID",
+                    entity.getUUID(), entityTypeId(entity));
+            entity.setUUID(UUID.randomUUID());
+        }
+
+        level.addFreshEntity(entity);
     }
 
     /** 实体类型 id，形如 {@code papercraft_magic_decoration:white_rabbit_maid}。 */
