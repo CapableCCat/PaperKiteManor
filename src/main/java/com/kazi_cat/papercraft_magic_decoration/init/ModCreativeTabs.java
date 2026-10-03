@@ -23,6 +23,8 @@ public interface ModCreativeTabs {
 
                 output.accept(ModItems.AMETHYST_SCISSORS.get());
                 output.accept(ModItems.GARDEN_TROWEL.get());
+                // 收纳工具：只放空符 —— 两个满符是「使用产物」，放进创造页会是拿不到内容的空壳
+                output.accept(ModItems.STORAGE_TOOL.get());
 
                 output.accept(ModItems.PAPER_CUTTING_TABLE.get());
                 output.accept(ModItems.COPPER_BARTENDER.get());

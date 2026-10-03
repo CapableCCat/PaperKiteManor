@@ -24,4 +24,13 @@ versionRange = "${minecraft_version_range}"
 ordering = "NONE"
 side = "BOTH"
 
+# GeckoLib 是强依赖（全部 Geo 模型方块、实体与动画都基于它），但此前一直没在这里声明。
+# 缺声明时玩家若没装 GeckoLib，会得到一个难以理解的崩溃，而不是 FML 的友好缺依赖提示。
+[[dependencies."${mod_id}"]]
+modId = "geckolib"
+mandatory = true
+versionRange = "[4.0,)"
+ordering = "NONE"
+side = "BOTH"
+
 

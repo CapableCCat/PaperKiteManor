@@ -56,6 +56,10 @@ public class ItemModelGenerator extends ItemModelProvider {
         basicItem(ModItems.DEWY_MEMBRANE.get());
         basicItem(ModItems.COTTON_SERGE.get());
         basicItem(ModItems.AMETHYST_SCISSORS.get());
+        // 收纳工具：三个注册项都是平面物品（对齐紫水晶剪刀，而不是 handheldItem）
+        basicItem(ModItems.STORAGE_TOOL.get());
+        basicItem(ModItems.STORAGE_TOOL_MANOR.get());
+        basicItem(ModItems.STORAGE_TOOL_VANILLA.get());
         basicItem(ModItems.WHISKEY_RAW.get());
         basicItem(ModItems.VITALITY_SPORES.get());
         basicItem(ModItems.COFFEE_FRUIT.get());

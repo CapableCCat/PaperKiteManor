@@ -28,9 +28,12 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.items.ItemHandlerHelper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Mod.EventBusSubscriber(modid = PaperKiteManor.MOD_ID)
 public class RightClickEvent {
+    private static final Logger LOGGER = LoggerFactory.getLogger("PaperKiteManor/StorageTool");
     @SubscribeEvent
     public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
         Level level = event.getLevel();
@@ -122,6 +125,13 @@ public class RightClickEvent {
 
         Entity target = event.getTarget();
 
+        // 诊断日志：本方法一旦进入就无条件记录一行，用来判断「事件有没有触发」「手上到底是什么」。
+        // 定位完毕后会降级为 debug 或删除。
+        LOGGER.info("[收纳工具/诊断] 进入处理器 side={} hand={} 手持={} 目标={} 目标类型={}",
+                level.isClientSide() ? "CLIENT" : "SERVER",
+                hand, stack.getItem(), target.getName().getString(),
+                StorageToolItem.entityTypeId(target));
+
         // 被收的对象必须*不是*玩家自己。除了避免误触，也防「左手收右手」这类自指操作出怪问题
         if (target == player) {
             return;
@@ -129,8 +139,10 @@ public class RightClickEvent {
 
         // 判定不通过就静默放行，让实体自己的交互继续（例如女仆的喂食 / 开背包）
         if (!tool.canStore(target, player)) {
+            LOGGER.info("[收纳工具/诊断] 拒绝收纳：{}", StorageToolItem.refuseReason(tool.getScope(), target, player));
             return;
         }
+        LOGGER.info("[收纳工具/诊断] 判定通过，准备收纳 {}", StorageToolItem.entityTypeId(target));
 
         if (level.isClientSide()) {
             // 客户端只负责表现，真正改动在服务端；返回 SUCCESS 以阻止实体交互继续
@@ -152,8 +164,10 @@ public class RightClickEvent {
             return;
         }
 
-        // ③ 换成对应的满符；换不成就别移除实体（否则数据只存在于被换掉的那个 stack 上）
-        if (!tool.swapToFullTool(stack, player, hand)) {
+        // ③ 换成对应范围的满符；换不成就别移除实体（否则数据只存在于被换掉的那个 stack 上）
+        if (!tool.swapToFullTool(stack, player, hand, target)) {
+            LOGGER.warn("[收纳工具] 换符失败，已放弃收纳（实体未移除）：目标类型={}",
+                    StorageToolItem.entityTypeId(target));
             return;
         }
 

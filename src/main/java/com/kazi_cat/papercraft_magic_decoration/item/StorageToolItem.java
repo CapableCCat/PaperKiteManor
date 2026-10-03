@@ -84,6 +84,9 @@ public class StorageToolItem extends Item {
      */
     private static final Set<EntityType<?>> VANILLA_WHITELIST = createVanillaWhitelist();
 
+    /** 白名单的人类可读描述，只用于日志与诊断文案（避免与 {@link #VANILLA_WHITELIST} 漂移）。 */
+    private static final String VANILLA_WHITELIST_DESC = "狼 / 猫 / 鹦鹉 / 马 / 驴 / 骡 / 羊驼 / 商人羊驼";
+
     /** 该工具的收纳范围。{@code null} 表示空符（不具备收纳能力）。 */
     @Nullable
     private final Scope scope;
@@ -106,26 +109,70 @@ public class StorageToolItem extends Item {
     /**
      * 该实体此刻能否被本工具收纳。
      *
-     * <p>四项前置校验，任一不过即拒收：实体存活 → 不是玩家 → 落在本工具范围内 → 主人是本人。
+     * <p><b>关键语义（2026-10-03 修正）</b>：{@link Scope} 描述的是「工具**里装着**的东西属于哪个范围」，
+     * 不是「准入资格」。所以：
+     * <ul>
+     *   <li><b>空符</b>（{@code scope == null}）是**唯一能发起收纳**的形态 —— 它收纳任何范围内的实体，
+     *       成功后由 {@link #swapToFullTool} 换成对应范围的满符；</li>
+     *   <li><b>满符</b>（{@code scope != null}）已经装着东西，只能释放；若要收纳新实体，
+     *       必须先在物品栏里切回空符。</li>
+     * </ul>
      *
-     * <p>注意 {@code isRemoved()} 也在检查之列：防连点导致同一实体被收纳两次
-     * （第一次已 {@code discard()} 的实体不应再被写入第二件物品）。
+     * <p>⚠️ 曾经的实现把这里写成「空符一律拒收」，导致<b>满符永远无法被产生</b> ——
+     * 收纳能力被装在了唯一不能收纳的物品上，整条链在第一步就断了。
      */
     public boolean canStore(Entity entity, Player player) {
-        if (this.scope == null) {
-            return false;
+        return refuseReason(this.scope, entity, player) == null;
+    }
+
+    /**
+     * 判定该实体能否被「scope 的工具」收纳；可以则返回 {@code null}，否则返回**拒绝原因**。
+     *
+     * <p>把判定收敛到这一处的理由：{@link #canStore} 只回答「行不行」，
+     * 而排查游戏内问题时需要知道「为什么不行」。两处各写一份判定迟早会漂移，
+     * 所以只保留这一份实现，{@link #canStore} 与诊断日志都调它。
+     */
+    @Nullable
+    public static String refuseReason(@Nullable Scope scope, Entity entity, Player player) {
+        // 满符已经装着东西，不能再收 —— 这是「形态」限制，与实体本身无关
+        if (scope != null) {
+            return "手持的是满符（scope=" + scope + "），请先在物品栏里切回空符再收纳";
         }
-        if (!entity.isAlive() || entity.isRemoved()) {
-            return false;
+        if (entity == player) {
+            return "目标是玩家自己";
+        }
+        if (!entity.isAlive()) {
+            return "实体 isAlive()=false";
+        }
+        if (entity.isRemoved()) {
+            return "实体 isRemoved()=true（已从世界移除）";
         }
         if (entity instanceof Player) {
-            // 玩家不在任何范围内；显式拦掉以免将来范围放宽时误伤
-            return false;
+            return "目标是玩家";
         }
-        if (!this.scope.matches(entity)) {
-            return false;
+        // 空符收纳任何范围内的实体，具体归属由 Scope.forEntity 决定
+        Scope targetScope = Scope.forEntity(entity);
+        if (targetScope == null) {
+            return "不属于任何可收纳范围：实体类型 id = " + entityTypeId(entity)
+                    + "（纸鸢版收本模组实体，原版版收 " + VANILLA_WHITELIST_DESC + "）";
         }
-        return isOwnedBy(entity, player);
+        if (!(entity instanceof OwnableEntity ownable)) {
+            return "实体未实现 OwnableEntity，无法取得主人";
+        }
+        var ownerUuid = ownable.getOwnerUUID();
+        if (ownerUuid == null) {
+            return "实体没有主人（getOwnerUUID()=null，可能未真正驯服或驯服数据未落盘）";
+        }
+        if (!ownerUuid.equals(player.getUUID())) {
+            return "主人不匹配：实体主人=" + ownerUuid + "，当前玩家=" + player.getUUID();
+        }
+        return null;
+    }
+
+    /** 决定该实体收纳后应变成哪个范围的满符。 */
+    @Nullable
+    public static Scope scopeFor(Entity entity) {
+        return Scope.forEntity(entity);
     }
 
     /** 实体主人是否为该玩家。无主人的实体（未驯服个体、狐狸等）一律返回 {@code false}。 */
@@ -147,11 +194,14 @@ public class StorageToolItem extends Item {
      * 便于事后排查是哪种实体把体积顶上去的。
      */
     public Result writeEntityData(ItemStack stack, Entity entity) {
+        // 实体自身数据
         CompoundTag data = new CompoundTag();
         entity.saveWithoutId(data);
+        // ⚠️ 类型 id 必须写进 EntityData **内部**，与 StorageToolNbt 的契约一致；
+        // 写到物品根上会导致 readEntityType 永远读不到（F3 的根因，见任务点清单「一之五」）。
+        data.putString(StorageToolNbt.ENTITY_TYPE, entityTypeId(entity));
 
         CompoundTag itemTag = stack.getOrCreateTag();
-        itemTag.putString(StorageToolNbt.ENTITY_TYPE, entityTypeId(entity));
         itemTag.putLong(StorageToolNbt.STORED_AT, entity.level().getGameTime());
         itemTag.put(StorageToolNbt.ROOT, data);
 
@@ -180,6 +230,28 @@ public class StorageToolItem extends Item {
     public InteractionResult onItemUseFirst(ItemStack stack, UseOnContext context) {
         Level level = context.getLevel();
         Player player = context.getPlayer();
+
+        // 诊断日志：第一行无条件记录，用来判断「这个钩子到底有没有被调用」。
+        // 定位完毕后降级为 debug 或删除。
+        LOGGER.info("[收纳工具/诊断-释放] 进入 onItemUseFirst side={} hand={} 玩家={} 有数据={} 点击方块={} 面={}",
+                level.isClientSide() ? "CLIENT" : "SERVER",
+                context.getHand(),
+                player == null ? "null" : player.getName().getString(),
+                StorageToolNbt.hasEntityData(stack),
+                context.getClickedPos(),
+                context.getClickedFace());
+
+        // 把物品根 NBT 的键与 EntityData 的键直接打出来 —— 这是判断「数据到底写成了什么形状」
+        // 最直接的手段，比逐层断言快得多。
+        // ⚠️ 类型 id 应出现在 EntityData **内部**（契约见 StorageToolNbt）；出现在根上即为写错位置。
+        if (stack.getTag() != null) {
+            CompoundTag entityData = StorageToolNbt.getEntityData(stack);
+            LOGGER.info("[收纳工具/诊断-释放] 物品根键={} EntityData 键数={} EntityData 内的类型 id={}",
+                    stack.getTag().getAllKeys(),
+                    entityData == null ? "null" : entityData.getAllKeys().size(),
+                    entityData == null ? "null" : "'" + entityData.getString(StorageToolNbt.ENTITY_TYPE) + "'");
+        }
+
         if (player == null) {
             return InteractionResult.PASS;
         }
@@ -198,6 +270,8 @@ public class StorageToolItem extends Item {
 
         // ① 释放鉴权：只有物品里记录的实体主人本人能放出来，否则符被捡走就等于宠物易主
         if (!canReleaseBy(stack, player)) {
+            LOGGER.info("[收纳工具/诊断-释放] 鉴权失败：物品记录的主人={} 当前玩家={}",
+                    readOwnerUuid(stack), player.getUUID());
             player.displayClientMessage(
                     Component.translatable("item.papercraft_magic_decoration.storage_tool.not_your_pet"), true);
             return InteractionResult.FAIL;
@@ -205,6 +279,12 @@ public class StorageToolItem extends Item {
 
         // ② 实体类型必须能查到 —— 物品来自已卸载的模组时这里为 null，绝不能直接往下走
         EntityType<?> type = readEntityType(stack);
+        String recordedId = "";
+        CompoundTag stored = StorageToolNbt.getEntityData(stack);
+        if (stored != null) {
+            recordedId = stored.getString(StorageToolNbt.ENTITY_TYPE);
+        }
+        LOGGER.info("[收纳工具/诊断-释放] 鉴权通过，记录的实体 id='{}' 反查类型={}", recordedId, type);
         if (type == null) {
             player.displayClientMessage(
                     Component.translatable("item.papercraft_magic_decoration.storage_tool.unknown_entity"), true);
@@ -213,6 +293,7 @@ public class StorageToolItem extends Item {
 
         // ③ 创建实例（create 可能返回 null，例如该类型在当前环境不可用）
         Entity spawned = type.create(level);
+        LOGGER.info("[收纳工具/诊断-释放] type.create() 结果={}", spawned);
         if (spawned == null) {
             player.displayClientMessage(
                     Component.translatable("item.papercraft_magic_decoration.storage_tool.unknown_entity"), true);
@@ -225,14 +306,20 @@ public class StorageToolItem extends Item {
             spawned.load(data);
         }
         BlockPos spawnPos = context.getClickedPos().relative(context.getClickedFace());
+        LOGGER.info("[收纳工具/诊断-释放] 读档完成，准备在 {} 入世（level={}）", spawnPos, level.getClass().getSimpleName());
         if (level instanceof ServerLevel serverLevel) {
             placeEntity(spawned, serverLevel, spawnPos);
+            LOGGER.info("[收纳工具/诊断-释放] addFreshEntity 已调用，实体 UUID={} 位置={}",
+                    spawned.getUUID(), spawned.blockPosition());
+        } else {
+            LOGGER.warn("[收纳工具/诊断-释放] level 不是 ServerLevel，实体未入世：{}", level.getClass().getName());
         }
 
         // ⑤ 换回空符 + 冷却，防连点重复释放
         player.setItemInHand(context.getHand(), createEmptyTool());
         player.getInventory().setChanged();
         player.getCooldowns().addCooldown(this, RELEASE_COOLDOWN_TICKS);
+        LOGGER.info("[收纳工具/诊断-释放] 已换回空符，流程结束");
         return InteractionResult.SUCCESS;
     }
 
@@ -248,8 +335,9 @@ public class StorageToolItem extends Item {
         if (tag == null) {
             return;
         }
+        // 移除 ROOT 即等于移除整个实体数据（类型 id 与时间戳都在其内部/同级；
+        // 注意 ENTITY_TYPE 位于 EntityData **内部**，随 ROOT 一起被移除）。
         tag.remove(StorageToolNbt.ROOT);
-        tag.remove(StorageToolNbt.ENTITY_TYPE);
         tag.remove(StorageToolNbt.STORED_AT);
         if (tag.isEmpty()) {
             stack.setTag(null);
@@ -420,18 +508,22 @@ public class StorageToolItem extends Item {
     // ------------------------------------------------------------------
 
     /**
-     * 收纳成功后应该换成哪个满符；空符（无范围）返回 {@code null} 表示不该走到这里。
+     * 按**归属范围**构造对应的满符。
+     *
+     * <p>⚠️ 参数是「实体应该归入的范围」，**不是**工具自己的 {@code scope} ——
+     * 收纳是由空符（{@code scope == null}）发起的，用工具自己的 scope 会永远拿到 {@code null}，
+     * 于是换符失败、实体不被移除，功能完全失效（这是 2026-10-03 修正的第二个缺陷）。
      *
      * <p>取值方式是延迟解析 {@code ModItems} 的 {@code RegistryObject}，
-     * 而不是在构造期捕获 {@code Item} 实例 —— 物品注册期 {@code RegistryObject} 还没解析完成，
+     * 而不是构造期捕获 {@code Item} 实例 —— 物品注册期 {@code RegistryObject} 尚未解析完成，
      * 提前取会在启动时抛异常。
      */
     @Nullable
-    private ItemStack createFullTool() {
-        if (this.scope == null) {
+    private static ItemStack createFullTool(@Nullable Scope targetScope) {
+        if (targetScope == null) {
             return null;
         }
-        return switch (this.scope) {
+        return switch (targetScope) {
             case MANOR -> ModItems.STORAGE_TOOL_MANOR.get().getDefaultInstance();
             case VANILLA -> ModItems.STORAGE_TOOL_VANILLA.get().getDefaultInstance();
         };
@@ -443,21 +535,36 @@ public class StorageToolItem extends Item {
     }
 
     /**
-     * 结算「收纳一次」：把手上的符换成对应的满符。
+     * 结算「收纳一次」：把手上的空符换成**该实体归属范围**的满符，并把实体数据带过去。
+     *
+     * <p><b>⚠️ 数据必须显式转移（2026-10-03 修正的第三个缺陷）</b>：
+     * 实体 NBT 是写在 {@code stack} 上的，而 {@code createFullTool} 出来的是一个
+     * **全新的空满符**。先前直接 {@code setItemInHand(hand, full)} 会把写着数据的 stack 整个丢弃，
+     * 结果就是「实体被收走了，但符里什么都没有」—— 表现为收纳看似成功、却永远放不出来。
+     *
+     * <p>用 {@code setTag(originalTag.copy())} 而不是直接传引用：新 stack 应当拥有自己的 NBT，
+     * 避免两个 ItemStack 共享同一个 CompoundTag 而在后续被无意中互相改动。
      *
      * <p>用 {@code player.setItemInHand} 而不是往光标上放物品 —— 收纳时玩家的光标上
      * 可能正拿着别的东西，用光标会把它顶掉。
      *
-     * @return 成功时返回 {@code true}；空符或未注册时返回 {@code false}（调用方应放弃收纳）
+     * @param entity 被收纳的实体，用它的归属范围决定换成哪个满符
+     * @return 成功时返回 {@code true}；实体不属于任何范围、或物品未注册时返回 {@code false}
+     *         （调用方**必须**据此放弃收纳，否则数据会随被换掉的 stack 一起消失）
      */
-    public boolean swapToFullTool(ItemStack stack, Player player, InteractionHand hand) {
-        ItemStack full = createFullTool();
+    public boolean swapToFullTool(ItemStack stack, Player player, InteractionHand hand, Entity entity) {
+        ItemStack full = createFullTool(Scope.forEntity(entity));
         if (full == null) {
             return false;
         }
+        // 把刚写入的实体数据搬到新物品上 —— 漏掉这一步就等于把宠物数据丢进虚空
+        CompoundTag data = stack.getTag();
+        full.setTag(data == null ? null : data.copy());
         player.setItemInHand(hand, full);
         // 满符与原空符不同 id，必须显式标记库存变化，否则客户端仍显示空符外观
         player.getInventory().setChanged();
+        LOGGER.info("[收纳工具/诊断] 换符完成：新物品={} 新物品有数据={}",
+                full.getItem(), StorageToolNbt.hasEntityData(full));
         return true;
     }
 
@@ -584,8 +691,11 @@ public class StorageToolItem extends Item {
     }
 
     /**
-     * 收纳范围。两个满符各自独立判定，互不越界 —— 用原版版去收女仆、或用纸鸢版去收狼，
-     * 都应被拒绝。
+     * 收纳后的**归属范围** —— 描述「满符里装着的东西属于哪一类」，不是「准入资格」。
+     *
+     * <p>语义修正（2026-10-03）：早先把它当成准入判定用，导致空符（{@code scope == null}）
+     * 一律拒收、于是满符永远无法被产生。现在的正确分工是：
+     * 空符收纳**任意**范围内的实体，由 {@link #forEntity} 决定该变成哪个满符。
      */
     public enum Scope {
         /** 本模组实体：命名空间等于 {@code papercraft_magic_decoration}。 */
@@ -606,5 +716,22 @@ public class StorageToolItem extends Item {
 
         /** 该实体是否落在本范围内（只判类型，不判主人）。 */
         public abstract boolean matches(Entity entity);
+
+        /**
+         * 该实体收纳后应归入哪个范围；两类都不匹配时返回 {@code null}。
+         *
+         * <p>顺序有意义：先判本模组，再判原版白名单。本模组实体一定是
+         * {@code papercraft_magic_decoration} 命名空间，不可能落进原版白名单，所以顺序只影响可读性，
+         * 不影响结果。
+         */
+        @Nullable
+        public static Scope forEntity(Entity entity) {
+            for (Scope scope : values()) {
+                if (scope.matches(entity)) {
+                    return scope;
+                }
+            }
+            return null;
+        }
     }
 }
