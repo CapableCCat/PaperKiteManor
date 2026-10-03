@@ -230,28 +230,6 @@ public class StorageToolItem extends Item {
     public InteractionResult onItemUseFirst(ItemStack stack, UseOnContext context) {
         Level level = context.getLevel();
         Player player = context.getPlayer();
-
-        // 诊断日志：第一行无条件记录，用来判断「这个钩子到底有没有被调用」。
-        // 定位完毕后降级为 debug 或删除。
-        LOGGER.info("[收纳工具/诊断-释放] 进入 onItemUseFirst side={} hand={} 玩家={} 有数据={} 点击方块={} 面={}",
-                level.isClientSide() ? "CLIENT" : "SERVER",
-                context.getHand(),
-                player == null ? "null" : player.getName().getString(),
-                StorageToolNbt.hasEntityData(stack),
-                context.getClickedPos(),
-                context.getClickedFace());
-
-        // 把物品根 NBT 的键与 EntityData 的键直接打出来 —— 这是判断「数据到底写成了什么形状」
-        // 最直接的手段，比逐层断言快得多。
-        // ⚠️ 类型 id 应出现在 EntityData **内部**（契约见 StorageToolNbt）；出现在根上即为写错位置。
-        if (stack.getTag() != null) {
-            CompoundTag entityData = StorageToolNbt.getEntityData(stack);
-            LOGGER.info("[收纳工具/诊断-释放] 物品根键={} EntityData 键数={} EntityData 内的类型 id={}",
-                    stack.getTag().getAllKeys(),
-                    entityData == null ? "null" : entityData.getAllKeys().size(),
-                    entityData == null ? "null" : "'" + entityData.getString(StorageToolNbt.ENTITY_TYPE) + "'");
-        }
-
         if (player == null) {
             return InteractionResult.PASS;
         }
@@ -270,21 +248,14 @@ public class StorageToolItem extends Item {
 
         // ① 释放鉴权：只有物品里记录的实体主人本人能放出来，否则符被捡走就等于宠物易主
         if (!canReleaseBy(stack, player)) {
-            LOGGER.info("[收纳工具/诊断-释放] 鉴权失败：物品记录的主人={} 当前玩家={}",
-                    readOwnerUuid(stack), player.getUUID());
             player.displayClientMessage(
                     Component.translatable("item.papercraft_magic_decoration.storage_tool.not_your_pet"), true);
             return InteractionResult.FAIL;
         }
 
-        // ② 实体类型必须能查到 —— 物品来自已卸载的模组时这里为 null，绝不能直接往下走
+        // ② 实体类型必须能查到 —— 物品来自已卸载的模组时这里为 null，绝不能直接往下走。
+        // 失败时由 readEntityType 内部打 ERROR（含实际读到的值与键名），便于定位写读路径不一致的问题。
         EntityType<?> type = readEntityType(stack);
-        String recordedId = "";
-        CompoundTag stored = StorageToolNbt.getEntityData(stack);
-        if (stored != null) {
-            recordedId = stored.getString(StorageToolNbt.ENTITY_TYPE);
-        }
-        LOGGER.info("[收纳工具/诊断-释放] 鉴权通过，记录的实体 id='{}' 反查类型={}", recordedId, type);
         if (type == null) {
             player.displayClientMessage(
                     Component.translatable("item.papercraft_magic_decoration.storage_tool.unknown_entity"), true);
@@ -293,8 +264,8 @@ public class StorageToolItem extends Item {
 
         // ③ 创建实例（create 可能返回 null，例如该类型在当前环境不可用）
         Entity spawned = type.create(level);
-        LOGGER.info("[收纳工具/诊断-释放] type.create() 结果={}", spawned);
         if (spawned == null) {
+            LOGGER.warn("[收纳工具] type.create() 返回 null，无法释放：类型={}", type);
             player.displayClientMessage(
                     Component.translatable("item.papercraft_magic_decoration.storage_tool.unknown_entity"), true);
             return InteractionResult.FAIL;
@@ -306,20 +277,17 @@ public class StorageToolItem extends Item {
             spawned.load(data);
         }
         BlockPos spawnPos = context.getClickedPos().relative(context.getClickedFace());
-        LOGGER.info("[收纳工具/诊断-释放] 读档完成，准备在 {} 入世（level={}）", spawnPos, level.getClass().getSimpleName());
         if (level instanceof ServerLevel serverLevel) {
             placeEntity(spawned, serverLevel, spawnPos);
-            LOGGER.info("[收纳工具/诊断-释放] addFreshEntity 已调用，实体 UUID={} 位置={}",
-                    spawned.getUUID(), spawned.blockPosition());
         } else {
-            LOGGER.warn("[收纳工具/诊断-释放] level 不是 ServerLevel，实体未入世：{}", level.getClass().getName());
+            // 正常不会走到这里（客户端已在上面 return）；留着以防将来被别的调用方误用
+            LOGGER.warn("[收纳工具] 释放时 level 不是 ServerLevel，实体未入世：{}", level.getClass().getName());
         }
 
         // ⑤ 换回空符 + 冷却，防连点重复释放
         player.setItemInHand(context.getHand(), createEmptyTool());
         player.getInventory().setChanged();
         player.getCooldowns().addCooldown(this, RELEASE_COOLDOWN_TICKS);
-        LOGGER.info("[收纳工具/诊断-释放] 已换回空符，流程结束");
         return InteractionResult.SUCCESS;
     }
 
@@ -379,18 +347,30 @@ public class StorageToolItem extends Item {
      * 从物品里读出实体类型。查不到时返回 {@code null}（调用方必须处理，否则会崩服）。
      *
      * <p>查不到的真实场景：这件物品的 NBT 来自某个**已卸载的模组**，或存档被外部工具改坏。
+     *
+     * <p>失败时打一条 ERROR 并带上「实际读到的值」与「EntityData 的全部键」——
+     * F3 那个「写入写根上、读取读内部」的缺陷正是靠这种信息一眼定位的。
+     * 这是**唯一保留在正常路径上的诊断**，因为它只在出错时才产生输出。
      */
     @Nullable
     public static EntityType<?> readEntityType(ItemStack stack) {
         CompoundTag data = StorageToolNbt.getEntityData(stack);
         if (data == null) {
+            LOGGER.error("[收纳工具] 物品缺少 {} 数据，无法释放", StorageToolNbt.ROOT);
             return null;
         }
         String id = data.getString(StorageToolNbt.ENTITY_TYPE);
         if (id.isEmpty()) {
+            LOGGER.error("[收纳工具] {} 内缺少 {} 键（读到的值为空）。{} 现有键={}"
+                            + " —— 若类型 id 出现在物品根键上，说明写入位置写错了",
+                    StorageToolNbt.ROOT, StorageToolNbt.ENTITY_TYPE, StorageToolNbt.ROOT, data.getAllKeys());
             return null;
         }
-        return EntityType.byString(id).orElse(null);
+        EntityType<?> type = EntityType.byString(id).orElse(null);
+        if (type == null) {
+            LOGGER.error("[收纳工具] 无法识别实体类型 id='{}'（该模组可能已卸载）", id);
+        }
+        return type;
     }
 
     /**
@@ -557,14 +537,19 @@ public class StorageToolItem extends Item {
         if (full == null) {
             return false;
         }
-        // 把刚写入的实体数据搬到新物品上 —— 漏掉这一步就等于把宠物数据丢进虚空
+        // 把刚写入的实体数据搬到新物品上 —— 漏掉这一步就等于把宠物数据丢进虚空（F2 的根因）
         CompoundTag data = stack.getTag();
         full.setTag(data == null ? null : data.copy());
         player.setItemInHand(hand, full);
         // 满符与原空符不同 id，必须显式标记库存变化，否则客户端仍显示空符外观
         player.getInventory().setChanged();
-        LOGGER.info("[收纳工具/诊断] 换符完成：新物品={} 新物品有数据={}",
-                full.getItem(), StorageToolNbt.hasEntityData(full));
+
+        // 不变量自检：换符后新物品必须真的带着实体数据。F2 那种「数据没搬过去」的缺陷
+        // 编译期与运行期都不报错，只表现为「收进去了但放不出来」，所以这里主动验一次。
+        if (!StorageToolNbt.hasEntityData(full)) {
+            LOGGER.error("[收纳工具] 换符后新物品不含 {} 数据！收纳流程存在缺陷，请检查 {} 的 NBT 转移逻辑",
+                    StorageToolNbt.ROOT, getClass().getSimpleName());
+        }
         return true;
     }
 
